@@ -1,10 +1,34 @@
 import { Router } from 'express';
-import { GENDERS, MIN_AGE, TAGS } from '../../../shared/constants.js';
+import { GENDERS, MAX_PROFILE_PHOTOS, MIN_AGE, TAGS } from '../../../shared/constants.js';
+import { saveImage } from '../images.js';
 import { getUser, ownProfile } from '../model.js';
-import { HttpError, int, listOf, num, photo, str } from '../util.js';
+import { moderate } from '../services/moderation.js';
+import {
+  HttpError,
+  bool,
+  hashSecret,
+  int,
+  listOf,
+  nowIso,
+  num,
+  oneOf,
+  parseJson,
+  phone,
+  pin,
+  snapToGrid,
+  str,
+  verifySecret,
+} from '../util.js';
+import { requireAuth } from './auth.js';
 
-export function profileRoutes(db) {
+export function profileRoutes({ db }) {
   const r = Router();
+  r.use(requireAuth(db, { allowSuspended: true }));
+
+  const me = (req) => getUser(db, req.user.id);
+  const requirePassword = (req) => {
+    if (!verifySecret(req.body?.password, req.user.password_hash)) throw new HttpError(403, 'Špatné heslo.');
+  };
 
   r.get('/', (req, res) => res.json(ownProfile(req.user)));
 
@@ -13,42 +37,93 @@ export function profileRoutes(db) {
     const ageMin = int(b.ageMin, 'věk od', { min: MIN_AGE, max: 99 });
     const ageMax = int(b.ageMax, 'věk do', { min: MIN_AGE, max: 99 });
     if (ageMin > ageMax) throw new HttpError(400, 'Věk od musí být menší než věk do.');
-    const stiTest = str(b.stiTest, 'poslední test', { max: 7, optional: true });
-    if (stiTest && !/^\d{4}-\d{2}$/.test(stiTest)) throw new HttpError(400, 'Poslední test zadej jako RRRR-MM.');
+    const bio = str(b.bio, 'o mně', { max: 500, optional: true });
+    const verdict = moderate(bio);
+    if (verdict.action === 'block') throw new HttpError(400, verdict.message);
 
     const fields = {
       name: str(b.name, 'jméno', { min: 2, max: 40 }),
-      bio: str(b.bio, 'o mně', { max: 500, optional: true }),
-      photo: photo(b.photo),
-      gender: listOf([b.gender], 'pohlaví', GENDERS)[0],
+      bio,
+      gender: oneOf(b.gender, 'pohlaví', GENDERS),
       interested_in: JSON.stringify(listOf(b.interestedIn, 'koho hledáš', GENDERS, { min: 1 })),
       tags: JSON.stringify(listOf(b.tags ?? [], 'co hledám', TAGS)),
-      boundaries: str(b.boundaries, 'hranice', { max: 500, optional: true }),
-      sti_test: stiTest,
       age_min: ageMin,
       age_max: ageMax,
-      max_distance_km: int(b.maxDistanceKm, 'vzdálenost', { min: 1, max: 500 }),
-      trusted_name: str(b.trustedName, 'důvěryhodná osoba', { max: 60, optional: true }),
-      trusted_phone: str(b.trustedPhone, 'telefon důvěryhodné osoby', { max: 30, optional: true }),
+      max_distance_km: int(b.maxDistanceKm, 'vzdálenost', { min: 1, max: 300 }),
     };
-
     const columns = Object.keys(fields);
     db.prepare(`UPDATE users SET ${columns.map((c) => `${c} = ?`).join(', ')} WHERE id = ?`).run(
       ...columns.map((c) => fields[c]),
       req.user.id,
     );
-    res.json(ownProfile(getUser(db, req.user.id)));
+    res.json(ownProfile(me(req)));
   });
 
-  // Poloha pro hledání v okolí. Zaokrouhlujeme na ~1 km, přesnou polohu domova neukládáme.
+  // Poloha pro hledání v okolí – jen zaokrouhlená na mřížku ~1 km.
   r.put('/location', (req, res) => {
-    const lat = Math.round(num(req.body?.lat, 'lat', { min: -90, max: 90 }) * 100) / 100;
-    const lng = Math.round(num(req.body?.lng, 'lng', { min: -180, max: 180 }) * 100) / 100;
+    const lat = snapToGrid(num(req.body?.lat, 'lat', { min: -90, max: 90 }));
+    const lng = snapToGrid(num(req.body?.lng, 'lng', { min: -180, max: 180 }));
     db.prepare('UPDATE users SET lat = ?, lng = ? WHERE id = ?').run(lat, lng, req.user.id);
-    res.json(ownProfile(getUser(db, req.user.id)));
+    res.json(ownProfile(me(req)));
+  });
+
+  r.post('/photos', (req, res) => {
+    const photos = parseJson(req.user.photos, []);
+    if (photos.length >= MAX_PROFILE_PHOTOS) throw new HttpError(400, `Maximálně ${MAX_PROFILE_PHOTOS} fotky.`);
+    const id = saveImage(db, { ownerId: req.user.id, kind: 'profile', base64: req.body?.jpegBase64 });
+    db.prepare('UPDATE users SET photos = ? WHERE id = ?').run(JSON.stringify([...photos, id]), req.user.id);
+    res.status(201).json(ownProfile(me(req)));
+  });
+
+  r.delete('/photos/:id', (req, res) => {
+    const photos = parseJson(req.user.photos, []).filter((p) => p !== req.params.id);
+    db.prepare('UPDATE users SET photos = ? WHERE id = ?').run(JSON.stringify(photos), req.user.id);
+    db.prepare("DELETE FROM images WHERE id = ? AND owner_id = ? AND kind = 'profile'").run(req.params.id, req.user.id);
+    res.json(ownProfile(me(req)));
+  });
+
+  // Bezpečnostní nastavení. Změna PINů vyžaduje heslo – aby je nemohl přenastavit
+  // někdo, kdo se zmocní odemčeného telefonu.
+  r.put('/safety', (req, res) => {
+    const b = req.body ?? {};
+    const updates = {
+      trusted_name: str(b.trustedName, 'jméno důvěryhodné osoby', { min: 2, max: 40 }),
+      trusted_phone: phone(b.trustedPhone, 'telefon důvěryhodné osoby'),
+      discreet: bool(b.discreet) ? 1 : 0,
+    };
+    if (b.checkinPin !== undefined || b.duressPin !== undefined) {
+      if (req.user.checkin_pin_hash) requirePassword(req);
+      const checkin = pin(b.checkinPin, 'PIN');
+      const duress = pin(b.duressPin, 'Nouzový PIN');
+      if (checkin === duress) throw new HttpError(400, 'Nouzový PIN musí být jiný než běžný PIN.');
+      updates.checkin_pin_hash = hashSecret(checkin);
+      updates.duress_pin_hash = hashSecret(duress);
+    }
+    const columns = Object.keys(updates);
+    db.prepare(`UPDATE users SET ${columns.map((c) => `${c} = ?`).join(', ')} WHERE id = ?`).run(
+      ...columns.map((c) => updates[c]),
+      req.user.id,
+    );
+    res.json(ownProfile(me(req)));
   });
 
   r.delete('/', (req, res) => {
+    requirePassword(req);
+    // Ani protějšek nesmí smazáním účtu „uklidit“ schůzku, při které má druhý zapnutý bezpečnostní režim.
+    const active = db
+      .prepare(
+        `SELECT 1 FROM safety_sessions s LEFT JOIN matches m ON m.id = s.match_id
+         WHERE s.ended_at IS NULL AND (s.user_id = ? OR m.user_a = ? OR m.user_b = ?)`,
+      )
+      .get(req.user.id, req.user.id, req.user.id);
+    if (active) throw new HttpError(409, 'Účet teď nejde smazat – probíhá schůzka. Zkus to po jejím skončení.');
+    // Smazáním pozastaveného účtu se nejde vyhnout kontrole – osoba se nemůže znovu zaregistrovat.
+    if (req.user.status !== 'active') {
+      const ban = db.prepare('INSERT OR IGNORE INTO banned_identities (hash, reason, created_at) VALUES (?, ?, ?)');
+      for (const hash of [req.user.person_hash, req.user.document_hash].filter(Boolean)) {
+        ban.run(hash, 'Účet smazán během kontroly', nowIso());
+      }
+    }
     db.prepare('DELETE FROM users WHERE id = ?').run(req.user.id);
     res.status(204).end();
   });

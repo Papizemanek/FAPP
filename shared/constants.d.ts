@@ -1,0 +1,13 @@
+export declare const APP_NAME: string;
+export declare const MIN_AGE: number;
+export declare const GENDERS: Record<'man' | 'woman' | 'nonbinary', string>;
+export declare const TAGS: Record<'oneoff' | 'repeat' | 'myplace' | 'yourplace' | 'vanilla' | 'kinky', string>;
+export declare const ACTIVITIES: Record<'kissing' | 'oral' | 'vaginal' | 'anal' | 'toys' | 'overnight', string>;
+export declare const CONSENT_TEXT_VERSION: number;
+export declare const CONSENT_TEXT: string;
+export declare const CHECK_IN_OPTIONS: number[];
+export declare const CHECK_IN_GRACE_MINUTES: number;
+export declare const WRONG_PIN_ALARM_THRESHOLD: number;
+export declare const MAX_PROFILE_PHOTOS: number;
+export declare const REPORT_REASONS: Record<'consent' | 'violence' | 'minor' | 'harassment' | 'fake' | 'paid' | 'other', string>;
+export declare const FEEDBACK_REASONS: Record<'consent' | 'safety' | 'fake' | 'other', string>;

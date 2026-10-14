@@ -1,6 +1,8 @@
-// Číselníky sdílené serverem (validace) i webem (popisky).
+// Číselníky sdílené serverem (validace) i aplikací (popisky).
 
 export const APP_NAME = 'F*app';
+
+export const MIN_AGE = 18;
 
 export const GENDERS = {
   man: 'Muž',
@@ -12,12 +14,8 @@ export const GENDERS = {
 export const TAGS = {
   oneoff: 'Jednorázovka',
   repeat: 'Opakovaně',
-  fwb: 'FWB',
   myplace: 'U mě',
   yourplace: 'U tebe',
-  hotel: 'Hotel',
-  daytime: 'Přes den',
-  night: 'V noci',
   vanilla: 'Vanilka',
   kinky: 'Kinky',
 };
@@ -25,37 +23,27 @@ export const TAGS = {
 // Co je součástí dohody. Cokoli, co tu není zaškrtnuté, dohodnuté není.
 export const ACTIVITIES = {
   kissing: 'Líbání a mazlení',
-  touching: 'Petting a dotyky',
-  oral: 'Orální sex',
-  vaginal: 'Vaginální sex',
-  anal: 'Anální sex',
-  toys: 'Erotické hračky',
-  kink: 'Kink / BDSM (upřesnit v hranicích)',
+  oral: 'Orální',
+  vaginal: 'Vaginální',
+  anal: 'Anální',
+  toys: 'Hračky',
   overnight: 'Přespání',
 };
 
-// Prohlášení, která musí každý z dvojice výslovně zaškrtnout, než je dohoda potvrzená.
-export const CONSENTS = [
-  { key: 'adult', text: 'Je mi 18 let nebo víc.' },
-  { key: 'voluntary', text: 'Souhlasím dobrovolně, bez nátlaku a jsem při smyslech.' },
-  {
-    key: 'revocable',
-    text: 'Vím, že souhlas můžu kdykoli – i během schůzky – odvolat. „Ne“, „stop“ nebo stopslovo znamená okamžitý konec.',
-  },
-  {
-    key: 'scope',
-    text: 'Souhlas platí jen pro to, co je v téhle dohodě. Cokoli navíc se musí znovu a výslovně domluvit.',
-  },
-  {
-    key: 'safety',
-    text: 'Beru na vědomí, že protějšek může během schůzky sdílet svou polohu, moje jméno a fotku se svou důvěryhodnou osobou.',
-  },
-];
+// Prohlášení, které každý z dvojice výslovně potvrzuje. Při změně textu zvyš verzi.
+export const CONSENT_TEXT_VERSION = 1;
+export const CONSENT_TEXT =
+  'Je mi 18+, souhlasím dobrovolně a vím, že souhlas můžu kdykoli odvolat – i během schůzky.';
 
 export const CHECK_IN_OPTIONS = [15, 30, 45, 60, 90, 120];
 
-// Kolik minut po termínu check-inu se stav přepne na „nereaguje“.
+// Kolik minut po termínu check-inu se pošle upozornění důvěryhodné osobě.
 export const CHECK_IN_GRACE_MINUTES = 5;
+
+// Po kolika špatných PINech během jedné schůzky se spustí tichý poplach.
+export const WRONG_PIN_ALARM_THRESHOLD = 3;
+
+export const MAX_PROFILE_PHOTOS = 3;
 
 export const REPORT_REASONS = {
   consent: 'Porušení souhlasu nebo hranic',
@@ -67,4 +55,10 @@ export const REPORT_REASONS = {
   other: 'Jiné',
 };
 
-export const MIN_AGE = 18;
+// Důvody negativního hodnocení po schůzce. Protějšek hodnocení nikdy nevidí.
+export const FEEDBACK_REASONS = {
+  consent: 'Nerespektoval/a dohodu nebo „stop“',
+  safety: 'Cítil/a jsem se v ohrožení',
+  fake: 'Nevypadal/a jako na fotkách',
+  other: 'Něco jiného',
+};

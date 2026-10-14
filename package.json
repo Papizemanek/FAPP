@@ -1,0 +1,13 @@
+{
+  "name": "fapp",
+  "private": true,
+  "type": "module",
+  "workspaces": ["shared", "server", "app"],
+  "scripts": {
+    "server": "npm run dev -w server",
+    "seed": "npm run seed -w server",
+    "app": "npm start -w app",
+    "test": "npm test -w server",
+    "typecheck": "npm run typecheck -w app"
+  }
+}

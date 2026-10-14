@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>F*app – bezpečnostní odkaz</title>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<style>
+  :root {
+    --bg: #121014; --surface: #1C181F; --line: #2A2430; --text: #F5EFE9; --muted: #B4AAB8;
+    --accent: #FF6B8B; --safe: #62E0B5; --warn: #F5B94A; --alarm: #FF8A80; --sos: #FF4B3E;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  main { max-width: 480px; margin: 0 auto; padding: 20px 16px 32px; display: flex; flex-direction: column; gap: 14px; }
+  header { display: flex; align-items: center; justify-content: space-between; min-height: 44px; }
+  .logo { font-weight: 800; font-size: 22px; letter-spacing: -0.5px; }
+  .logo span { color: var(--accent); }
+  .muted { color: var(--muted); font-size: 14px; }
+  .card { padding: 20px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  .status h1 { margin: 0; font-size: 28px; line-height: 1.15; }
+  .status p { margin: 0; }
+  .status.ok { background: #15241F; border-color: #2E4A41; } .status.ok h1 { color: var(--safe); }
+  .status.overdue { background: #2A2418; border-color: #4A3E22; } .status.overdue h1 { color: var(--warn); }
+  .status.alarm { background: #2A1918; border-color: #4A2B28; } .status.alarm h1 { color: var(--alarm); }
+  .status.ended h1 { color: var(--text); }
+  #map { height: 240px; border-radius: 20px; border: 1px solid var(--line); background: #1E1B22; }
+  .row { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .partner { flex-direction: row; align-items: center; gap: 14px; }
+  .partner img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; background: #3B2A35; }
+  a.button { display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 999px; font-weight: 800; font-size: 17px; text-decoration: none; }
+  a.sos { background: var(--sos); color: #fff; }
+  a.ghost { border: 1.5px solid #4A4250; color: var(--text); font-weight: 700; font-size: 15px; min-height: 44px; padding: 0 16px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo">F<span>*</span>app</div>
+    <div class="muted">Bezpečnostní odkaz</div>
+  </header>
+
+  <section id="status" class="card status" aria-live="polite">
+    <h1 id="title">Načítám…</h1>
+    <p id="detail"></p>
+  </section>
+
+  <a id="call112" class="button sos" href="tel:112" hidden>Zavolat 112</a>
+
+  <div id="mapWrap" hidden>
+    <div id="map" role="img" aria-label="Mapa s poslední polohou"></div>
+    <div class="row" style="margin-top: 8px">
+      <span id="locInfo" class="muted"></span>
+      <a id="openMaps" class="button ghost" target="_blank" rel="noopener noreferrer">Otevřít v mapách</a>
+    </div>
+  </div>
+
+  <section id="partner" class="card partner" hidden>
+    <img id="partnerPhoto" alt="Fotka protějšku" hidden>
+    <div>
+      <div class="muted" id="partnerLead"></div>
+      <div style="font-weight: 700; font-size: 17px" id="partnerName"></div>
+      <div class="muted" id="meetInfo"></div>
+    </div>
+  </section>
+
+  <p class="muted" id="footer" style="text-align: center; font-size: 13px"></p>
+</main>
+
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script>
+  const token = location.pathname.split('/').pop();
+  const $ = (id) => document.getElementById(id);
+  const time = (iso) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
+  const dateTime = (iso) => new Date(iso).toLocaleString('cs-CZ', { weekday: 'short', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const ago = (iso) => {
+    const min = Math.round((Date.now() - Date.parse(iso)) / 60000);
+    return min < 1 ? 'právě teď' : `před ${min} min`;
+  };
+  let map, marker, circle;
+
+  function render(d) {
+    const texts = {
+      ok: [`${d.name} je v pořádku`, `Poslední potvrzení v ${d.lastCheckInAt && time(d.lastCheckInAt)}. Další čekáme do ${d.nextCheckInDue && time(d.nextCheckInDue)}.`],
+      overdue: [`${d.name} se neozval/a`, `Potvrzení mělo přijít do ${d.nextCheckInDue && time(d.nextCheckInDue)}. Zkus zavolat. Když to nebude brát, volej 112 a nadiktuj adresu z mapy.`],
+      alarm: [`${d.name} potřebuje pomoc`, `Poplach v ${d.alarmAt && time(d.alarmAt)}. Zavolej 112 a nadiktuj polohu z mapy a místo schůzky níže.`],
+      ended: ['Schůzka skončila', `${d.name} potvrdil/a, že je v pořádku.${d.hadAlarm ? ' Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.' : ''}`],
+    };
+    const [title, detail] = texts[d.status];
+    $('status').className = `card status ${d.status}`;
+    $('title').textContent = title;
+    $('detail').textContent = detail;
+    $('call112').hidden = !(d.status === 'alarm' || d.status === 'overdue');
+    $('footer').textContent = d.status === 'ended' ? '' : `Poloha přestane být vidět, jakmile ${d.name} schůzku ukončí.`;
+
+    $('partner').hidden = !d.partner;
+    if (d.partner) {
+      $('partnerLead').textContent = `${d.name} je na schůzce s`;
+      $('partnerName').textContent = `${d.partner.name}, ${d.partner.age}`;
+      $('meetInfo').textContent = `${dateTime(d.meetAt)} · ${d.place}`;
+      $('partnerPhoto').hidden = !d.partner.hasPhoto;
+      if (d.partner.hasPhoto && !$('partnerPhoto').src) $('partnerPhoto').src = `/api/share/${token}/partner-photo`;
+    }
+
+    $('mapWrap').hidden = !d.location;
+    if (d.location) {
+      const { lat, lng, accuracy, battery, at } = d.location;
+      $('locInfo').textContent = `Poloha ${ago(at)}${battery != null ? ` · baterie ${Math.round(battery * 100)} %` : ''}`;
+      $('openMaps').href = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+      if (window.L) {
+        if (!map) {
+          map = L.map('map', { zoomControl: false, attributionControl: true }).setView([lat, lng], 16);
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(map);
+          marker = L.circleMarker([lat, lng], { radius: 9, color: '#121014', weight: 3, fillColor: '#62E0B5', fillOpacity: 1 }).addTo(map);
+          circle = L.circle([lat, lng], { radius: accuracy || 0, color: '#62E0B5', weight: 1, fillOpacity: 0.12 }).addTo(map);
+        } else {
+          marker.setLatLng([lat, lng]);
+          circle.setLatLng([lat, lng]).setRadius(accuracy || 0);
+        }
+      }
+    }
+  }
+
+  async function refresh() {
+    try {
+      const res = await fetch(`/api/share/${token}`, { cache: 'no-store' });
+      if (res.status === 404) {
+        $('title').textContent = 'Odkaz už neplatí';
+        $('detail').textContent = '';
+        return;
+      }
+      render(await res.json());
+    } catch {
+      $('detail').textContent = 'Nepodařilo se načíst stav. Zkouším znovu…';
+    }
+  }
+  refresh();
+  setInterval(refresh, 15000);
+</script>
+</body>
+</html>

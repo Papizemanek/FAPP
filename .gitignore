@@ -4,3 +4,10 @@ dist/
 *.db-shm
 *.db-wal
 .env
+
+# Expo
+.expo/
+app/ios/
+app/android/
+app/expo-env.d.ts
+*.hbc

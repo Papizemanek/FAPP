@@ -9,18 +9,19 @@ export class HttpError extends Error {
 
 export const nowIso = () => new Date().toISOString();
 
-export const token = () => randomBytes(24).toString('base64url');
+export const token = (bytes = 24) => randomBytes(bytes).toString('base64url');
 
-export function hashPassword(password) {
+export function hashSecret(secret) {
   const salt = randomBytes(16);
-  const hash = scryptSync(password, salt, 64);
+  const hash = scryptSync(secret, salt, 64);
   return `${salt.toString('hex')}:${hash.toString('hex')}`;
 }
 
-export function verifyPassword(password, stored) {
+export function verifySecret(secret, stored) {
+  if (!stored || typeof secret !== 'string') return false;
   const [saltHex, hashHex] = stored.split(':');
   const expected = Buffer.from(hashHex, 'hex');
-  const actual = scryptSync(password, Buffer.from(saltHex, 'hex'), expected.length);
+  const actual = scryptSync(secret, Buffer.from(saltHex, 'hex'), expected.length);
   return timingSafeEqual(expected, actual);
 }
 
@@ -39,6 +40,9 @@ export function distanceKm(lat1, lng1, lat2, lng2) {
   const a = Math.sin(dLat / 2) ** 2 + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLng / 2) ** 2;
   return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
+
+// Mřížka ~1,1 km. Přesnou polohu domova nikdy neukládáme.
+export const snapToGrid = (deg) => Math.round(deg * 100) / 100;
 
 export const parseJson = (text, fallback) => {
   try {
@@ -79,7 +83,9 @@ export function num(value, field, { min, max }) {
 }
 
 export function oneOf(value, field, allowed) {
-  if (!Object.hasOwn(allowed, value)) throw new HttpError(400, `Neplatná hodnota pole ${field}.`);
+  if (typeof value !== 'string' || !Object.hasOwn(allowed, value)) {
+    throw new HttpError(400, `Neplatná hodnota pole ${field}.`);
+  }
   return value;
 }
 
@@ -91,9 +97,7 @@ export function listOf(value, field, allowed, { min = 0 } = {}) {
   return unique;
 }
 
-export function bool(value) {
-  return value === true;
-}
+export const bool = (value) => value === true;
 
 export function date(value, field) {
   const s = str(value, field, { max: 10 });
@@ -110,17 +114,23 @@ export function dateTime(value, field) {
   return new Date(t).toISOString();
 }
 
-export function photo(value) {
-  if (value === null || value === undefined || value === '') return null;
-  if (typeof value !== 'string' || !/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value)) {
-    throw new HttpError(400, 'Fotka musí být obrázek JPEG, PNG nebo WebP.');
-  }
-  if (value.length > 700_000) throw new HttpError(400, 'Fotka je příliš velká.');
-  return value;
-}
-
 export function email(value) {
   const s = str(value, 'e-mail', { max: 200 }).toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)) throw new HttpError(400, 'Neplatný e-mail.');
   return s;
+}
+
+/** Telefon v mezinárodním formátu. Bez předvolby doplní +420. */
+export function phone(value, field) {
+  const raw = str(value, field, { max: 30 }).replace(/[\s()-]/g, '');
+  const normalized = raw.startsWith('+') ? raw : raw.startsWith('00') ? `+${raw.slice(2)}` : `+420${raw}`;
+  if (!/^\+[1-9]\d{7,14}$/.test(normalized)) throw new HttpError(400, `Neplatné telefonní číslo (${field}).`);
+  return normalized;
+}
+
+export function pin(value, field) {
+  if (typeof value !== 'string' || !/^\d{4,6}$/.test(value)) {
+    throw new HttpError(400, `${field} musí mít 4–6 číslic.`);
+  }
+  return value;
 }
