@@ -97,7 +97,7 @@
 
     $('partner').hidden = !d.partner;
     if (d.partner) {
-      $('partnerLead').textContent = `${d.name} je na schůzce s`;
+      $('partnerLead').textContent = 'Na schůzce s:';
       $('partnerName').textContent = `${d.partner.name}, ${d.partner.age}`;
       $('meetInfo').textContent = `${dateTime(d.meetAt)} · ${d.place}`;
       $('partnerPhoto').hidden = !d.partner.hasPhoto;

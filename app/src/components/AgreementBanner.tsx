@@ -34,5 +34,5 @@ export function AgreementBanner({ detail }: { detail: MatchDetail }) {
   if (!agreement.confirmedByMe) {
     return <Banner tone="warn" title={`${partner.name} navrhl/a dohodu`} subtitle="Přečti si ji a potvrď, nebo navrhni změnu." action="Zobrazit" onPress={open} />;
   }
-  return <Banner tone="warn" title={`Čeká se na ${partner.name}`} subtitle="Dohoda platí, až ji potvrdíte oba." action="Zobrazit" onPress={open} />;
+  return <Banner tone="warn" title={`${partner.name} ještě nepotvrdil/a`} subtitle="Dohoda platí, až ji potvrdíte oba." action="Zobrazit" onPress={open} />;
 }

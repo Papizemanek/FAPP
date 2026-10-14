@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { api, setAuthToken, setUnauthorizedHandler, type Me } from './api';
+import { api, setAuthToken, setSessionReady, setUnauthorizedHandler, type Me } from './api';
 import { registerPushToken } from './notifications';
 import { storage } from './storage';
 
@@ -38,9 +38,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     setUnauthorizedHandler(() => void clear());
     (async () => {
-      const token = await storage.getToken();
-      if (!token) return setStatus('signedOut');
+      const token = await storage.getToken().catch(() => null);
       setAuthToken(token);
+      setSessionReady();
+      if (!token) return setStatus('signedOut');
       const fresh = await refresh();
       if (fresh) {
         setStatus('signedIn');

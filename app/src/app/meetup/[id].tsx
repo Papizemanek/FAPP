@@ -54,6 +54,8 @@ export default function Meetup() {
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => setNow(Date.now()), [session]);
+
   const partnerName = session?.partner.name ?? detail?.partner.name ?? '';
   const trustedName = session?.trustedName ?? me?.trustedName ?? '';
   const ready = !!me?.trustedPhone && !!me?.hasCheckinPin && !!me?.hasDuressPin;
@@ -135,7 +137,7 @@ export default function Meetup() {
   if (!session) {
     return (
       <Screen>
-        <Header title={`Schůzka s ${partnerName}`} />
+        <Header title={`Schůzka · ${partnerName}`} />
         <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }}>
           {!agreementOk ? (
             <Banner tone="warn" title="Nejdřív potvrzená dohoda" subtitle="Schůzku jde zahájit, až dohodu potvrdíte oba." action="Dohoda" onPress={() => router.replace(`/agreement/${id}`)} />
@@ -172,12 +174,12 @@ export default function Meetup() {
 
   // --- probíhající schůzka ---
   const due = Date.parse(session.nextCheckInDue);
-  const left = Math.ceil((due - now) / 60_000);
+  const left = Math.min(session.checkInMinutes, Math.ceil((due - now) / 60_000));
   const overdue = now > due + CHECK_IN_GRACE_MINUTES * 60_000;
 
   return (
     <Screen>
-      <Header title={`Schůzka s ${partnerName}`} />
+      <Header title={`Schůzka · ${partnerName}`} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 16, gap: 14, paddingBottom: 12 }}>
         <View style={s.map}>
           <MapView
@@ -223,23 +225,23 @@ export default function Meetup() {
               : `${partnerName} bezpečnostní režim zapnutý nemá.`}
           </Body>
         </View>
-        <Button variant="ghost" label={`Poslat odkaz ${trustedName} znovu`} height={44} onPress={() => Share.share({ message: session.shareUrl })} />
+        <Button variant="ghost" label="Poslat odkaz znovu" height={44} onPress={() => Share.share({ message: session.shareUrl })} />
       </ScrollView>
 
       <View style={{ paddingHorizontal: 16, paddingBottom: 12, gap: 10 }}>
         <Button variant="sos" label="SOS – podrž" onLongPress={sos} height={64} />
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button variant="ghost" label="Odvolat souhlas" height={48} style={{ flex: 1 }} onPress={revoke} disabled={!detail?.agreement || detail.agreement.status === 'revoked'} />
-          <Button variant="ghost" label="Ukončit – jsem OK" height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
+          <Button variant="ghost" label="Ukončit schůzku" height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
         </View>
       </View>
 
       <Modal visible={sosOpen} transparent animationType="slide" onRequestClose={() => {}}>
         <View style={s.sheetBackdrop}>
           <View style={s.sheet}>
-            <Text style={s.sheetTitle}>Upozornili jsme {trustedName}</Text>
+            <Text style={s.sheetTitle}>Poplach odeslán</Text>
             <Body>
-              Dostal/a tvoji přesnou polohu a informaci, s kým jsi. {partnerName} nic neuvidí.
+              {trustedName} dostal/a tvoji přesnou polohu a informaci, s kým jsi. {partnerName} nic neuvidí.
             </Body>
             <Button variant="ghost" label="Byl to omyl – jsem OK" onPress={() => setPinAction('cancelSos')} />
             <Button variant="ghost" label="Skrýt (poplach trvá dál)" height={44} onPress={() => setSosOpen(false)} />

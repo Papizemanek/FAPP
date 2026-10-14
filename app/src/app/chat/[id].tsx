@@ -83,7 +83,7 @@ export default function Chat() {
         text: 'Zablokovat',
         style: 'destructive',
         onPress: () =>
-          Alert.alert(`Zablokovat ${partner.name}?`, 'Už se navzájem neuvidíte a chat zmizí.', [
+          Alert.alert('Zablokovat?', `${partner.name} a ty se už navzájem neuvidíte a chat zmizí.`, [
             { text: 'Zrušit', style: 'cancel' },
             {
               text: 'Zablokovat',

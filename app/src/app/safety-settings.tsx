@@ -1,6 +1,6 @@
 import * as AppIcons from 'expo-alternate-app-icons';
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 import { Banner, Body, Button, ErrorText, Field, Header, Label, Screen, Toggle } from '@/components/ui';
 import { api, errorMessage, type Me } from '@/lib/api';
@@ -19,6 +19,15 @@ export default function SafetySettings() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+
+  // Profil se po studeném startu načítá asynchronně – formulář naplníme, až dorazí.
+  useEffect(() => {
+    if (!me) return;
+    setTrustedName(me.trustedName);
+    setTrustedPhone(me.trustedPhone);
+    setDiscreet(me.discreet);
+    setChangePins(!me.hasCheckinPin);
+  }, [me?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const save = async () => {
     setBusy(true);

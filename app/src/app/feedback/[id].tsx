@@ -32,7 +32,7 @@ export default function Feedback() {
     <Screen>
       <Header />
       <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }}>
-        <Title style={{ fontSize: 30 }}>Jak proběhla schůzka{name ? ` s ${name}` : ''}?</Title>
+        <Title style={{ fontSize: 30 }}>Jak proběhla schůzka?</Title>
         <Body muted>
           Odpověď uvidí jen náš tým, {name ?? 'protějšek'} ji nikdy neuvidí. Pomáhá nám udržet tu lidi, kteří respektují hranice.
         </Body>

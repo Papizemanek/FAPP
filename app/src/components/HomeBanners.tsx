@@ -24,7 +24,7 @@ export function HomeBanners() {
           key={s.id}
           tone={s.status === 'ok' ? 'safe' : 'warn'}
           icon="shieldCheck"
-          title={`Probíhá schůzka s ${s.partner.name}`}
+          title={`Probíhá schůzka · ${s.partner.name}`}
           subtitle={s.status === 'overdue' ? 'Zmeškal/a jsi check-in!' : 'Bezpečnostní režim je zapnutý.'}
           action="Otevřít"
           onPress={() => router.push(`/meetup/${s.matchId ?? 0}?safetyId=${s.id}`)}
@@ -34,8 +34,8 @@ export function HomeBanners() {
         <Banner
           key={f.agreementId}
           icon="shield"
-          title={`Jak proběhla schůzka s ${f.partnerName}?`}
-          subtitle="Odpověď uvidí jen náš tým."
+          title="Jak proběhla schůzka?"
+          subtitle={`${f.partnerName} – odpověď uvidí jen náš tým.`}
           action="Odpovědět"
           onPress={() => router.push(`/feedback/${f.agreementId}?name=${encodeURIComponent(f.partnerName)}`)}
         />

@@ -112,6 +112,12 @@ export class ApiError extends Error {
 }
 
 let authToken: string | null = null;
+
+// Požadavky počkají, než se po startu obnoví přihlášení z úložiště – jinak by obrazovka otevřená
+// z notifikace nebo odkazu poslala požadavek bez tokenu.
+let markSessionReady: () => void = () => {};
+const sessionReady = new Promise<void>((resolve) => (markSessionReady = resolve));
+export const setSessionReady = () => markSessionReady();
 let onUnauthorized: (() => void) | null = null;
 
 export const setAuthToken = (token: string | null) => {
@@ -123,6 +129,7 @@ export const setUnauthorizedHandler = (fn: (() => void) | null) => {
 };
 
 export async function api<T = unknown>(method: string, path: string, body?: unknown): Promise<T> {
+  await sessionReady;
   let res: Response;
   try {
     res = await fetch(`${API_URL}/api${path}`, {

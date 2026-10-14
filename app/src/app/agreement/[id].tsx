@@ -125,13 +125,13 @@ export default function AgreementScreen() {
     }
     if (agreement.status === 'confirmed' && !dirty) return <Banner tone="safe" icon="shieldCheck" title="Potvrzeno oběma. Platí jen tohle." />;
     if (dirty) return <Banner tone="warn" title="Upravuješ dohodu" subtitle="Změna = oba ji musíte potvrdit znovu." />;
-    if (agreement.confirmedByMe) return <Banner tone="warn" title={`Potvrdil/a jsi. Čeká se na ${partnerName}.`} />;
+    if (agreement.confirmedByMe) return <Banner tone="warn" title="Potvrdil/a jsi." subtitle={`${partnerName} ještě nepotvrdil/a.`} />;
     return <Banner tone="warn" title={`${partnerName} navrhl/a dohodu`} subtitle="Přečti si ji. Potvrď, nebo navrhni změnu." />;
   })();
 
   return (
     <Screen>
-      <Header title={`Dohoda s ${partnerName || '…'}`} />
+      <Header title={partnerName ? `Dohoda · ${partnerName}` : 'Dohoda'} />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 18 }} keyboardShouldPersistTaps="handled">
           {status}

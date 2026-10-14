@@ -19,7 +19,7 @@ export default function Report() {
     setError('');
     try {
       await api('POST', `/users/${id}/report`, { reason, details });
-      Alert.alert('Děkujeme', `Nahlášení jsme přijali. ${name ?? 'Uživatele'} už neuvidíš.`);
+      Alert.alert('Děkujeme', 'Nahlášení jsme přijali. Už se navzájem neuvidíte.');
       router.replace('/matches');
     } catch (err) {
       setError(errorMessage(err));
@@ -32,8 +32,8 @@ export default function Report() {
     <Screen>
       <Header />
       <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }}>
-        <Title>Nahlásit{name ? ` ${name}` : ''}</Title>
-        <Body muted>Nahlášení je anonymní. Zároveň tě zablokujeme, takže se už navzájem neuvidíte.</Body>
+        <Title>Nahlásit</Title>
+        <Body muted>{name ? `${name}. ` : ''}Nahlášení je anonymní. Zároveň tě zablokujeme, takže se už navzájem neuvidíte.</Body>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
           {reasons.map((r) => (
             <Chip key={r} label={REPORT_REASONS[r]} selected={reason === r} onPress={() => setReason(r)} />
