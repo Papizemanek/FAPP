@@ -86,7 +86,7 @@ export default function Verify() {
         </View>
         <View style={{ gap: 12 }}>
           {devMode ? (
-            <Button variant="safe" label="Vývoj: simulovat úspěšné ověření" onPress={devDecide} loading={busy} />
+            <Button variant="safe" label="Simulovat úspěšné ověření (testovací režim)" onPress={devDecide} loading={busy} />
           ) : (
             <Button label={state?.status === 'declined' ? 'Zkusit znovu' : 'Ověřit totožnost'} onPress={start} loading={busy} />
           )}

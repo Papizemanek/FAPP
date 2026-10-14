@@ -1,7 +1,8 @@
 import { ACTIVITIES, CONSENT_TEXT } from '@fapp/shared';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
+import { ConfirmSheet } from '@/components/Sheet';
 import { Banner, Body, Button, Checkbox, Chip, ErrorText, Field, Header, Label, Screen, Toggle } from '@/components/ui';
 import { api, errorMessage, type Activity, type Agreement, type MatchDetail } from '@/lib/api';
 
@@ -42,6 +43,7 @@ export default function AgreementScreen() {
   const [consent, setConsent] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [confirmRevoke, setConfirmRevoke] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -112,11 +114,7 @@ export default function AgreementScreen() {
 
   const confirm = () => run(() => api('POST', `/agreements/${agreement!.id}/confirm`, { version: agreement!.version, consent }));
 
-  const revoke = () =>
-    Alert.alert('Odvolat souhlas?', `Schůzka se nekoná. Nemusíš nic vysvětlovat – ${partnerName} dostane jen oznámení.`, [
-      { text: 'Zpět', style: 'cancel' },
-      { text: 'Odvolat', style: 'destructive', onPress: () => run(() => api('POST', `/agreements/${agreement!.id}/revoke`)) },
-    ]);
+  const revoke = () => run(() => api('POST', `/agreements/${agreement!.id}/revoke`));
 
   const status = (() => {
     if (!agreement || !editable) {
@@ -205,10 +203,19 @@ export default function AgreementScreen() {
             ) : agreement?.status === 'confirmed' ? (
               <Button variant="safe" label="Zahájit schůzku" onPress={() => router.push(`/meetup/${id}`)} />
             ) : null}
-            {editable && agreement && !dirty ? <Button variant="danger" label="Odvolat souhlas" onPress={revoke} height={48} /> : null}
+            {editable && agreement && !dirty ? <Button variant="danger" label="Odvolat souhlas" onPress={() => setConfirmRevoke(true)} height={48} /> : null}
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
+      <ConfirmSheet
+        visible={confirmRevoke}
+        title="Odvolat souhlas?"
+        message={`Schůzka se nekoná. Nemusíš nic vysvětlovat – ${partnerName} dostane jen oznámení.`}
+        confirmLabel="Odvolat souhlas"
+        destructive
+        onConfirm={revoke}
+        onClose={() => setConfirmRevoke(false)}
+      />
     </Screen>
   );
 }

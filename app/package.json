@@ -36,14 +36,18 @@
     "react-native-svg": "15.15.4"
   },
   "devDependencies": {
+    "@expo/metro-runtime": "~57.0.17",
     "@types/react": "~19.2.2",
+    "react-dom": "19.2.3",
+    "react-native-web": "~0.21.0",
     "typescript": "~6.0.3"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo:build": "node demo/build.mjs"
   },
   "private": true
 }

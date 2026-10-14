@@ -3,6 +3,7 @@
 Seznamka pro dospělé – jednoduchá jako Tinder, ale jen na sex. Navíc má výslovný souhlas obou a bezpečnou schůzku.
 
 Design (klikací návrh obrazovek): https://claude.ai/artifact/6t6o5Ewyci4ugkCSCMiwh1
+Prototyp (skutečná aplikace v prohlížeči s ukázkovými daty): https://claude.ai/artifact/E4og3hH6XUX8xTNuoe4Bb6
 
 ```
 shared/   číselníky sdílené serverem a aplikací (aktivity, text souhlasu, důvody nahlášení…)
@@ -66,6 +67,14 @@ Testy serveru (registrace, ověření, match, moderace, dohoda, nouzový PIN, hl
 npm test
 npm run typecheck   # TypeScript aplikace
 ```
+
+### Webový prototyp
+
+`npm run demo:build -w app` sestaví aplikaci pro web do jednoho souboru `app/demo/dist/fapp.html`.
+Místo serveru v něm běží simulovaný backend v prohlížeči (`app/demo/mockServer.ts` – stejná pravidla souhlasu,
+PINů a hlídání check-inů, moderace převzatá ze serveru) a nativní moduly mají prázdné náhrady (`app/demo/shims`).
+Přepínání řeší `app/metro.config.js` jen při `FAPP_DEMO=1` – běžné sestavení aplikace se nemění.
+Demo panel (štítek DEMO u pravého okraje) ukazuje „odeslané“ SMS, pohled důvěryhodné osoby a umí posunout čas.
 
 ## Produkce – co je potřeba zařídit
 

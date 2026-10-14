@@ -2,7 +2,8 @@ import { GENDERS, MAX_PROFILE_PHOTOS, TAGS } from '@fapp/shared';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { Banner, Button, Chip, ErrorText, Field, Label, Screen, Stepper, Title } from '@/components/ui';
 import { api, errorMessage, imageSource, type Gender, type Me, type Tag } from '@/lib/api';
@@ -22,6 +23,7 @@ export default function ProfileScreen() {
   const [saved, setSaved] = useState(false);
   const [deletePassword, setDeletePassword] = useState('');
   const [showDelete, setShowDelete] = useState(false);
+  const [photoToRemove, setPhotoToRemove] = useState<string | null>(null);
 
   // Formulář se přenačte jen při změně účtu – přidání fotky nesmaže rozepsané úpravy.
   useEffect(() => setForm(toForm(me)), [me?.id]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -55,11 +57,13 @@ export default function ProfileScreen() {
     }
   };
 
-  const removePhoto = (photoId: string) =>
-    Alert.alert('Smazat fotku?', undefined, [
-      { text: 'Zpět', style: 'cancel' },
-      { text: 'Smazat', style: 'destructive', onPress: async () => setMe(await api<Me>('DELETE', `/me/photos/${photoId}`)) },
-    ]);
+  const removePhoto = async (photoId: string) => {
+    try {
+      setMe(await api<Me>('DELETE', `/me/photos/${photoId}`));
+    } catch (err) {
+      setError(errorMessage(err));
+    }
+  };
 
   const deleteAccount = async () => {
     try {
@@ -91,7 +95,7 @@ export default function ProfileScreen() {
             {Array.from({ length: MAX_PROFILE_PHOTOS }, (_, i) => {
               const url = me.photos[i];
               return url ? (
-                <Pressable key={url} onLongPress={() => removePhoto(me.photoIds[i])} style={s.photo} accessibilityLabel="Fotka – podrž pro smazání">
+                <Pressable key={url} onLongPress={() => setPhotoToRemove(me.photoIds[i])} style={s.photo} accessibilityLabel="Fotka – podrž pro smazání">
                   <Image source={imageSource(url)} style={StyleSheet.absoluteFill} contentFit="cover" />
                 </Pressable>
               ) : (
@@ -149,6 +153,14 @@ export default function ProfileScreen() {
           )}
         </ScrollView>
       </KeyboardAvoidingView>
+      <ConfirmSheet
+        visible={!!photoToRemove}
+        title="Smazat fotku?"
+        confirmLabel="Smazat"
+        destructive
+        onConfirm={() => photoToRemove && removePhoto(photoToRemove)}
+        onClose={() => setPhotoToRemove(null)}
+      />
     </Screen>
   );
 }

@@ -3,6 +3,7 @@ import * as Location from 'expo-location';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, Linking, Modal, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
+import { ConfirmSheet } from '@/components/Sheet';
 import MapView from 'react-native-maps';
 import { Icon } from '@/components/Icon';
 import { PinPad } from '@/components/PinPad';
@@ -28,6 +29,7 @@ export default function Meetup() {
   const [now, setNow] = useState(Date.now());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [confirmRevoke, setConfirmRevoke] = useState(false);
 
   const load = useCallback(async () => {
     const [d, active] = await Promise.all([
@@ -71,12 +73,6 @@ export default function Meetup() {
       if (granted) await startSafetyTracking(s.id);
       await scheduleCheckInReminder(s.id, s.nextCheckInDue, !!me?.discreet).catch(() => {});
       setSession(s);
-      if (!granted) {
-        Alert.alert(
-          'Poloha jen s otevřenou aplikací',
-          `Bez povolení „Vždy“ uvidí ${trustedName} jen polohu z doby, kdy máš F*app otevřený. Hlídání check-inů funguje i tak.`,
-        );
-      }
     } catch (err) {
       setError(errorMessage(err));
     } finally {
@@ -108,27 +104,20 @@ export default function Meetup() {
   const sos = async () => {
     if (!session) return;
     setSosOpen(true);
+    setError('');
     try {
       setSession(await api<SafetySession>('POST', `/safety/${session.id}/sos`));
     } catch (err) {
-      Alert.alert('Poplach se nepodařilo odeslat', `${errorMessage(err)} Zkus to znovu nebo zavolej ${trustedName}.`);
+      setSosOpen(false);
+      setError(`Poplach se nepodařilo odeslat: ${errorMessage(err)} Zkus to znovu nebo zavolej ${trustedName}.`);
     }
   };
 
-  const revoke = () => {
+  const revoke = async () => {
     const agreement = detail?.agreement;
     if (!agreement || agreement.status === 'revoked') return;
-    Alert.alert('Odvolat souhlas?', `${partnerName} dostane oznámení. Bezpečnostní režim poběží dál, dokud ho neukončíš.`, [
-      { text: 'Zpět', style: 'cancel' },
-      {
-        text: 'Odvolat',
-        style: 'destructive',
-        onPress: async () => {
-          await api('POST', `/agreements/${agreement.id}/revoke`).catch(() => {});
-          await load();
-        },
-      },
-    ]);
+    await api('POST', `/agreements/${agreement.id}/revoke`).catch(() => {});
+    await load();
   };
 
   if (!loaded) return <Screen />;
@@ -225,13 +214,21 @@ export default function Meetup() {
               : `${partnerName} bezpečnostní režim zapnutý nemá.`}
           </Body>
         </View>
-        <Button variant="ghost" label="Poslat odkaz znovu" height={44} onPress={() => Share.share({ message: session.shareUrl })} />
+        <Button variant="ghost" label="Poslat odkaz znovu" height={44} onPress={() => Share.share({ message: session.shareUrl }).catch(() => {})} />
       </ScrollView>
 
       <View style={{ paddingHorizontal: 16, paddingBottom: 12, gap: 10 }}>
+        <ErrorText>{error}</ErrorText>
         <Button variant="sos" label="SOS – podrž" onLongPress={sos} height={64} />
         <View style={{ flexDirection: 'row', gap: 10 }}>
-          <Button variant="ghost" label="Odvolat souhlas" height={48} style={{ flex: 1 }} onPress={revoke} disabled={!detail?.agreement || detail.agreement.status === 'revoked'} />
+          <Button
+            variant="ghost"
+            label="Odvolat souhlas"
+            height={48}
+            style={{ flex: 1 }}
+            onPress={() => setConfirmRevoke(true)}
+            disabled={!detail?.agreement || detail.agreement.status === 'revoked'}
+          />
           <Button variant="ghost" label="Ukončit schůzku" height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
         </View>
       </View>
@@ -255,6 +252,16 @@ export default function Meetup() {
           onClose={() => setPinAction(null)}
         />
       </Modal>
+
+      <ConfirmSheet
+        visible={confirmRevoke}
+        title="Odvolat souhlas?"
+        message={`${partnerName} dostane oznámení. Nemusíš nic vysvětlovat. Bezpečnostní režim poběží dál, dokud ho neukončíš.`}
+        confirmLabel="Odvolat souhlas"
+        destructive
+        onConfirm={revoke}
+        onClose={() => setConfirmRevoke(false)}
+      />
 
       <PinPad
         visible={pinAction === 'checkin' || pinAction === 'end'}

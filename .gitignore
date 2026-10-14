@@ -11,3 +11,8 @@ app/ios/
 app/android/
 app/expo-env.d.ts
 *.hbc
+
+# webový prototyp (npm run demo:build -w app)
+app/demo/dist/
+app/demo/.export/
+app/demo/fonts.generated.js

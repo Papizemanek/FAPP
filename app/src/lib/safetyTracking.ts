@@ -1,7 +1,7 @@
 import * as Battery from 'expo-battery';
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
-import { API_URL } from './api';
+import { API_URL } from './config';
 import { storage } from './storage';
 
 // Sdílení polohy během schůzky – běží i se zhasnutým displejem a na pozadí.

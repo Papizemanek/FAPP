@@ -1,6 +1,8 @@
 import type { ACTIVITIES, FEEDBACK_REASONS, GENDERS, REPORT_REASONS, TAGS } from '@fapp/shared';
+import { API_URL } from './config';
+import { transport, type TransportResponse } from './transport';
 
-export const API_URL = (process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:3000').replace(/\/$/, '');
+export { API_URL };
 
 export type Gender = keyof typeof GENDERS;
 export type Tag = keyof typeof TAGS;
@@ -130,31 +132,25 @@ export const setUnauthorizedHandler = (fn: (() => void) | null) => {
 
 export async function api<T = unknown>(method: string, path: string, body?: unknown): Promise<T> {
   await sessionReady;
-  let res: Response;
+  let res: TransportResponse;
   try {
-    res = await fetch(`${API_URL}/api${path}`, {
-      method,
-      headers: {
-        Accept: 'application/json',
-        ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}),
-        ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}),
-      },
-      body: body !== undefined ? JSON.stringify(body) : undefined,
-    });
+    res = await transport(method, path, body, authToken);
   } catch {
     throw new ApiError(0, 'Nepodařilo se spojit se serverem. Zkontroluj připojení.');
   }
   if (res.status === 204) return undefined as T;
-  const json = await res.json().catch(() => null);
-  if (!res.ok) {
+  if (res.status >= 400) {
     if (res.status === 401 && authToken) onUnauthorized?.();
-    throw new ApiError(res.status, json?.error ?? 'Něco se pokazilo.');
+    throw new ApiError(res.status, (res.json as { error?: string } | null)?.error ?? 'Něco se pokazilo.');
   }
-  return json as T;
+  return res.json as T;
 }
 
 /** Zdroj obrázku pro expo-image – fotky se servírují jen přihlášeným. */
-export const imageSource = (url: string | null | undefined) =>
-  url ? { uri: `${API_URL}${url}`, headers: authToken ? { Authorization: `Bearer ${authToken}` } : undefined } : null;
+export const imageSource = (url: string | null | undefined) => {
+  if (!url) return null;
+  if (url.startsWith('data:')) return { uri: url };
+  return { uri: `${API_URL}${url}`, headers: authToken ? { Authorization: `Bearer ${authToken}` } : undefined };
+};
 
 export const errorMessage = (err: unknown) => (err instanceof Error ? err.message : 'Něco se pokazilo.');

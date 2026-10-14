@@ -4,6 +4,7 @@ import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Alert, FlatList, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { AgreementBanner } from '@/components/AgreementBanner';
+import { ActionSheet, ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { Avatar, ErrorText, Header, IconButton, Screen } from '@/components/ui';
 import { api, errorMessage, imageSource, type MatchDetail, type Message } from '@/lib/api';
@@ -21,6 +22,8 @@ export default function Chat() {
   const [error, setError] = useState('');
   const [sending, setSending] = useState(false);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [confirmBlock, setConfirmBlock] = useState(false);
   const lastId = useRef(0);
 
   const loadDetail = useCallback(async () => {
@@ -74,36 +77,15 @@ export default function Chat() {
     if (base64) await send({ jpegBase64: base64 });
   };
 
-  const menu = () => {
+  const block = async () => {
     if (!detail) return;
-    const { partner } = detail;
-    Alert.alert(partner.name, undefined, [
-      { text: 'Nahlásit', onPress: () => router.push(`/report/${partner.id}?name=${encodeURIComponent(partner.name)}`) },
-      {
-        text: 'Zablokovat',
-        style: 'destructive',
-        onPress: () =>
-          Alert.alert('Zablokovat?', `${partner.name} a ty se už navzájem neuvidíte a chat zmizí.`, [
-            { text: 'Zrušit', style: 'cancel' },
-            {
-              text: 'Zablokovat',
-              style: 'destructive',
-              onPress: async () => {
-                await api('POST', `/users/${partner.id}/block`).catch(() => {});
-                router.replace('/matches');
-              },
-            },
-          ]),
-      },
-      {
-        text: 'Zrušit match',
-        onPress: async () => {
-          await api('DELETE', `/matches/${id}`).catch(() => {});
-          router.replace('/matches');
-        },
-      },
-      { text: 'Zpět', style: 'cancel' },
-    ]);
+    await api('POST', `/users/${detail.partner.id}/block`).catch(() => {});
+    router.replace('/matches');
+  };
+
+  const unmatch = async () => {
+    await api('DELETE', `/matches/${id}`).catch(() => {});
+    router.replace('/matches');
   };
 
   const partner = detail?.partner;
@@ -124,7 +106,7 @@ export default function Chat() {
             </View>
           ) : null
         }
-        right={<IconButton name="flag" label="Nahlásit nebo zablokovat" onPress={menu} />}
+        right={<IconButton name="flag" label="Nahlásit nebo zablokovat" onPress={() => setMenuOpen(true)} />}
       />
       <View style={{ paddingHorizontal: 14, paddingTop: 4 }}>{detail ? <AgreementBanner detail={detail} /> : null}</View>
 
@@ -181,6 +163,26 @@ export default function Chat() {
           </Pressable>
         </View>
       </KeyboardAvoidingView>
+
+      <ActionSheet
+        visible={menuOpen}
+        title={partner?.name ?? ''}
+        onClose={() => setMenuOpen(false)}
+        actions={[
+          { label: 'Nahlásit', onPress: () => partner && router.push(`/report/${partner.id}?name=${encodeURIComponent(partner.name)}`) },
+          { label: 'Zablokovat', destructive: true, onPress: () => setConfirmBlock(true) },
+          { label: 'Zrušit match', onPress: unmatch },
+        ]}
+      />
+      <ConfirmSheet
+        visible={confirmBlock}
+        title="Zablokovat?"
+        message={`${partner?.name ?? ''} a ty se už navzájem neuvidíte a chat zmizí.`}
+        confirmLabel="Zablokovat"
+        destructive
+        onConfirm={block}
+        onClose={() => setConfirmBlock(false)}
+      />
     </Screen>
   );
 }

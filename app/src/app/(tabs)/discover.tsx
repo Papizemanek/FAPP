@@ -77,7 +77,7 @@ export default function Discover() {
           if (match) {
             router.push({
               pathname: '/match',
-              params: { matchId: String(match.id), name: match.partner.name, photo: match.partner.photos[0] ?? '' },
+              params: { matchId: String(match.id), name: match.partner.name },
             });
           }
         })
