@@ -42,23 +42,29 @@ export type Me = Profile & {
 
 export type AgreementStatus = 'pending' | 'confirmed' | 'revoked' | 'past' | 'expired';
 
+export type Wish = 'yes' | 'maybe' | 'no';
+
+/** Domluva: vlastní přání vidí jen autor, druhý vidí jen shodu. Potvrzení je bez času. */
 export type Agreement = {
   id: number;
   version: number;
   status: AgreementStatus;
-  proposedByMe: boolean;
   meetAt: string;
   place: string;
-  activities: Activity[];
-  note: string;
   condom: boolean;
   sober: boolean;
+  publicFirst: boolean;
   safeword: string;
-  confirmedByMe: string | null;
-  confirmedByPartner: string | null;
+  myWishes: Partial<Record<Activity, Wish>> | null;
+  myNote: string;
+  partnerNote: string;
+  partnerFilled: boolean;
+  overlap: { yes: Activity[]; maybe: Activity[] } | null;
+  confirmedByMe: boolean;
+  confirmedByPartner: boolean;
   revokedByMe: boolean | null;
   revokedAt: string | null;
-  updatedAt: string;
+  redacted: boolean;
 };
 
 export type SafetySession = {

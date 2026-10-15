@@ -7,9 +7,9 @@ import { api, type AgreementStatus, type MatchSummary } from '@/lib/api';
 import { colors, fonts } from '@/lib/theme';
 
 const statusPill: Partial<Record<AgreementStatus, { label: string; color: string }>> = {
-  pending: { label: 'Dohoda čeká', color: colors.warn },
-  confirmed: { label: 'Dohoda platí', color: colors.safe },
-  revoked: { label: 'Souhlas odvolán', color: colors.alarm },
+  pending: { label: 'Domluva čeká', color: colors.warn },
+  confirmed: { label: 'Domluva hotová', color: colors.safe },
+  revoked: { label: 'Domluva zrušena', color: colors.alarm },
 };
 
 export default function Matches() {

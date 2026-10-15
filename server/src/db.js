@@ -148,6 +148,16 @@ CREATE TABLE IF NOT EXISTS agreements (
 );
 CREATE INDEX IF NOT EXISTS agreements_match ON agreements (match_id, id);
 
+-- Přání každého zvlášť (ano/možná/ne + vlastní hranice), zašifrovaná. Druhý nikdy nevidí cizí „ne“, jen shodu.
+CREATE TABLE IF NOT EXISTS agreement_wishes (
+  agreement_id INTEGER NOT NULL REFERENCES agreements(id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  wishes TEXT NOT NULL,
+  note TEXT NOT NULL DEFAULT '',
+  updated_at TEXT NOT NULL,
+  PRIMARY KEY (agreement_id, user_id)
+);
+
 CREATE TABLE IF NOT EXISTS agreement_confirmations (
   agreement_id INTEGER NOT NULL REFERENCES agreements(id) ON DELETE CASCADE,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -217,11 +227,30 @@ CREATE TABLE IF NOT EXISTS sms_outbox (
 );
 `;
 
+// Sloupce přidané po prvním spuštění – existující databáze je dostanou při startu.
+const MIGRATIONS = [
+  ['agreements', 'public_first', 'INTEGER NOT NULL DEFAULT 0'],
+  ['agreements', 'was_confirmed', 'INTEGER NOT NULL DEFAULT 0'],
+  ['agreements', 'preserved_at', 'TEXT'],
+  ['agreements', 'redacted_at', 'TEXT'],
+  ['safety_sessions', 'partner_id', 'INTEGER'],
+  ['safety_sessions', 'preserved', 'INTEGER NOT NULL DEFAULT 0'],
+  ['flags', 'by_user_id', 'INTEGER'],
+];
+
+function migrate(db) {
+  for (const [table, column, definition] of MIGRATIONS) {
+    const exists = db.prepare(`PRAGMA table_info(${table})`).all().some((c) => c.name === column);
+    if (!exists) db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+  }
+}
+
 export function openDb(file = ':memory:') {
   const db = new DatabaseSync(file);
   db.exec('PRAGMA foreign_keys = ON;');
   if (file !== ':memory:') db.exec('PRAGMA journal_mode = WAL;');
   db.exec(SCHEMA);
+  migrate(db);
   return db;
 }
 

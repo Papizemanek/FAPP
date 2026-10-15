@@ -2,7 +2,9 @@ import { Router } from 'express';
 import { CHECK_IN_OPTIONS, WRONG_PIN_ALARM_THRESHOLD } from '../../../shared/constants.js';
 import {
   activeSafetySession,
+  addFlag,
   agreementStatus,
+  checkPattern,
   currentAgreement,
   getMatchFor,
   getUser,
@@ -53,6 +55,14 @@ export function safetyRoutes({ db, config, alerts }) {
       s.id,
     );
     alerts.enqueue(s, smsText.alarm(nameOf(s), shareUrl(s)));
+    flagPartner(s, reason, 'high');
+  }
+
+  /** Poplach během schůzky je signál o protějšku pro moderátory. Protějšek o tom nic neví. */
+  function flagPartner(s, reason, priority) {
+    if (!s.partner_id) return;
+    addFlag(db, { userId: s.partner_id, byUserId: s.user_id, source: 'safety', reason, priority, refId: s.id });
+    checkPattern(db, s.partner_id);
   }
 
   /** 'ok' | 'duress' | 'wrong'. Opakovaně špatný PIN spustí tichý poplach. */
@@ -74,7 +84,7 @@ export function safetyRoutes({ db, config, alerts }) {
     const { match, other } = getMatchFor(db, req.params.id, req.user.id);
     const agreement = currentAgreement(db, match.id);
     if (!agreement || agreementStatus(db, agreement, match) !== 'confirmed') {
-      throw new HttpError(409, 'Schůzku jde zahájit jen s dohodou, kterou jste potvrdili oba.');
+      throw new HttpError(409, 'Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba.');
     }
     if (!req.user.trusted_phone || !req.user.checkin_pin_hash || !req.user.duress_pin_hash) {
       throw new HttpError(409, 'Nejdřív si nastav důvěryhodnou osobu, PIN a nouzový PIN.');
@@ -90,14 +100,15 @@ export function safetyRoutes({ db, config, alerts }) {
     const now = nowIso();
     const { lastInsertRowid } = db
       .prepare(
-        `INSERT INTO safety_sessions (user_id, match_id, agreement_id, partner_name, partner_age, partner_photo,
+        `INSERT INTO safety_sessions (user_id, match_id, agreement_id, partner_id, partner_name, partner_age, partner_photo,
            meet_at, place, share_token, trusted_name, trusted_phone, check_in_minutes, started_at, last_check_in_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       )
       .run(
         req.user.id,
         match.id,
         agreement.id,
+        other.id,
         other.name,
         ageFrom(other.birthdate),
         photo ?? null,
@@ -158,7 +169,10 @@ export function safetyRoutes({ db, config, alerts }) {
     const s = loadActive(req);
     if (!s.sos_at) {
       db.prepare('UPDATE safety_sessions SET sos_at = ? WHERE id = ?').run(nowIso(), s.id);
-      if (!s.silent_alarm_at) alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+      if (!s.silent_alarm_at) {
+        alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+        flagPartner(s, 'sos', 'high');
+      }
     }
     res.json(view(load(s.id)));
   });
@@ -174,6 +188,7 @@ export function safetyRoutes({ db, config, alerts }) {
         "UPDATE safety_sessions SET sos_at = NULL, silent_alarm_at = COALESCE(silent_alarm_at, ?), silent_alarm_reason = 'duress' WHERE id = ?",
       ).run(nowIso(), s.id);
     } else {
+      // SOS zrušené běžným PINem jako omyl – příznak o protějšku zůstává, ale moderátor uvidí kontext.
       db.prepare('UPDATE safety_sessions SET sos_at = NULL, last_check_in_at = ?, wrong_pin_count = 0 WHERE id = ?').run(
         nowIso(),
         s.id,
@@ -195,7 +210,10 @@ export function safetyRoutes({ db, config, alerts }) {
            silent_alarm_reason = CASE WHEN silent_alarm_at IS NULL THEN 'duress' ELSE silent_alarm_reason END,
            silent_alarm_at = COALESCE(silent_alarm_at, ?) WHERE id = ?`,
       ).run(now, now, s.id);
-      if (!s.silent_alarm_at && !s.sos_at) alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+      if (!s.silent_alarm_at && !s.sos_at) {
+        alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+        flagPartner(s, 'duress', 'high');
+      }
     } else {
       db.prepare(
         `UPDATE safety_sessions SET ended_at = ?, end_kind = 'ok',
@@ -211,6 +229,12 @@ export function safetyRoutes({ db, config, alerts }) {
 
 /** Hlídač běží na serveru: když telefon zmlkne (vybitý, vzatý), upozorní důvěryhodnou osobu sám. */
 export function checkOverdue({ db, config, services, alerts }, now = Date.now()) {
+  const flagPartner = (s) => {
+    if (!s.partner_id) return;
+    // Zmeškaný check-in bývá zapomnění – nízká priorita, k vzorcům se počítá jen s dalšími signály.
+    addFlag(db, { userId: s.partner_id, byUserId: s.user_id, source: 'safety', reason: 'overdue', priority: 'low', refId: s.id });
+    checkPattern(db, s.partner_id);
+  };
   const candidates = db
     .prepare('SELECT * FROM safety_sessions WHERE ended_at IS NULL AND overdue_alerted_at IS NULL')
     .all();
@@ -218,6 +242,7 @@ export function checkOverdue({ db, config, services, alerts }, now = Date.now())
     if (!isOverdue(s, now)) continue;
     db.prepare('UPDATE safety_sessions SET overdue_alerted_at = ? WHERE id = ?').run(new Date(now).toISOString(), s.id);
     if (s.sos_at || s.silent_alarm_at) continue; // poplach už běží
+    flagPartner(s);
     const name = getUser(db, s.user_id)?.name ?? 'Tvůj blízký člověk';
     const due = new Date(nextCheckInDue(s)).toISOString();
     alerts.enqueue(s, smsText.overdue(name, due, `${config.publicUrl}/s/${s.share_token}`));

@@ -1,6 +1,6 @@
 import { nowIso } from '../util.js';
 
-// SMS pro důvěryhodnou osobu. Texty jsou krátké, bez slova „sex“ a bez detailů dohody –
+// SMS pro důvěryhodnou osobu. Texty jsou krátké, bez slova „sex“ a bez detailů domluvy –
 // SMS může vidět kdokoli, kdo má v ruce telefon důvěryhodné osoby.
 
 const time = (iso) =>

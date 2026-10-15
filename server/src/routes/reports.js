@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { FEEDBACK_REASONS, REPORT_REASONS } from '../../../shared/constants.js';
-import { addFlag, getMatchFor, getUser, suspendUser } from '../model.js';
+import { addFlag, checkPattern, getMatchFor, getUser, preserveAgreement, suspendUser } from '../model.js';
 import { HttpError, bool, int, nowIso, oneOf, str } from '../util.js';
 import { requireAuth, requireVerified } from './auth.js';
 
@@ -55,17 +55,23 @@ export function reportRoutes({ db, sealer }) {
       .run(req.user.id, targetId, match?.id ?? null, reason, sealer.seal(details), nowIso());
     addFlag(db, {
       userId: targetId,
+      byUserId: req.user.id,
       source: 'report',
       reason,
       priority: SEVERE_REPORTS.has(reason) ? 'high' : 'normal',
       refId: Number(lastInsertRowid),
     });
+    // Nahlášení zachová domluvy a schůzky s tímhle člověkem pro moderátory (a případně policii).
+    if (match) {
+      for (const a of db.prepare('SELECT id FROM agreements WHERE match_id = ?').all(match.id)) preserveAgreement(db, a.id);
+    }
 
     const reporters = db
       .prepare('SELECT COUNT(DISTINCT reporter_id) AS n FROM reports WHERE reported_id = ?')
       .get(targetId).n;
     if (SEVERE_REPORTS.has(reason)) suspendUser(db, targetId, `Nahlášení: ${REPORT_REASONS[reason]}`);
     else if (reporters >= REPORTS_TO_SUSPEND) suspendUser(db, targetId, 'Opakovaná nahlášení');
+    checkPattern(db, targetId);
 
     blockAndUnmatch(req.user.id, targetId);
     res.status(201).json({ ok: true });
@@ -81,7 +87,7 @@ export function reportRoutes({ db, sealer }) {
          FROM agreements a
          JOIN matches m ON m.id = a.match_id
          JOIN users u ON u.id = CASE WHEN m.user_a = ? THEN m.user_b ELSE m.user_a END
-         WHERE (m.user_a = ? OR m.user_b = ?) AND a.ever_confirmed_at IS NOT NULL
+         WHERE (m.user_a = ? OR m.user_b = ?) AND a.was_confirmed = 1
            AND NOT EXISTS (SELECT 1 FROM feedback f WHERE f.agreement_id = a.id AND f.author_id = ?)`,
       )
       .all(req.user.id, req.user.id, req.user.id, req.user.id)
@@ -94,7 +100,7 @@ export function reportRoutes({ db, sealer }) {
 
   r.post('/feedback/:agreementId', auth, (req, res) => {
     const agreement = db.prepare('SELECT * FROM agreements WHERE id = ?').get(Number(req.params.agreementId));
-    if (!agreement || !agreement.ever_confirmed_at) throw new HttpError(404, 'Dohoda neexistuje.');
+    if (!agreement || !agreement.was_confirmed) throw new HttpError(404, 'Domluva neexistuje.');
     const { otherId } = getMatchFor(db, agreement.match_id, req.user.id, { allowEnded: true });
     const ok = bool(req.body?.ok);
     const reason = ok ? '' : oneOf(req.body?.reason, 'důvod', FEEDBACK_REASONS);
@@ -108,8 +114,11 @@ export function reportRoutes({ db, sealer }) {
     if (inserted.changes === 0) throw new HttpError(409, 'Hodnocení už jsi poslal/a.');
 
     if (!ok) {
+      // Ve výchozím stavu se záznam uchová – rozhoduje ten, kdo hlásí problém.
+      if (req.body?.preserve !== false) preserveAgreement(db, agreement.id);
       addFlag(db, {
         userId: otherId,
+        byUserId: req.user.id,
         source: 'feedback',
         reason,
         priority: SEVERE_FEEDBACK.has(reason) ? 'high' : 'normal',
@@ -120,6 +129,7 @@ export function reportRoutes({ db, sealer }) {
         .get(otherId).n;
       if (SEVERE_FEEDBACK.has(reason)) suspendUser(db, otherId, `Hodnocení po schůzce: ${FEEDBACK_REASONS[reason]}`);
       else if (negatives >= FEEDBACK_TO_SUSPEND) suspendUser(db, otherId, 'Opakovaná negativní hodnocení');
+      checkPattern(db, otherId);
     }
     res.status(201).json({ ok: true });
   });

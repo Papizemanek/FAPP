@@ -39,11 +39,28 @@ const RULES = [
     ],
   },
   {
+    // Tlak typu „v appce jsi souhlasila“ – domluva v aplikaci není souhlas.
+    id: 'consent_pressure',
+    action: 'warn',
+    flag: true,
+    priority: 'high',
+    message:
+      'Pozor: domluva v aplikaci není souhlas. Můžeš ji kdykoli zrušit a na místě cokoli odmítnout – bez vysvětlování.',
+    patterns: [
+      /\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?)\b.{0,40}\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl|dal[ao]? souhlas)/,
+      /\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl)\w*\b.{0,20}\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?)\b/,
+      /\b(uz|prece|stejne) jsi (to )?(souhlasil|potvrdil|odklikl|slibil|odsouhlasil)/,
+      /\b(nemuzes|nesmis|nejde) (to )?(vzit|brat|dat) (zpet|zpatky)\b/,
+      /\bdohoda je dohoda\b/,
+      /\b(mas|mame) to (potvrzene|odsouhlasene|odkliknute)\b/,
+    ],
+  },
+  {
     id: 'contact',
     action: 'warn',
     priority: 'low',
     message:
-      'Protějšek sdílí kontakt mimo aplikaci. Mimo F*app pro vás nefunguje dohoda, bezpečnostní režim ani nahlášení.',
+      'Protějšek sdílí kontakt mimo aplikaci. Mimo F*app pro vás nefunguje domluva, bezpečnostní režim ani nahlášení.',
     patterns: [
       /(\+?420)?\s*\d{3}\s*\d{3}\s*\d{3}\b/,
       /\b(whatsapp|whats app|telegram|instagram|insta|snapchat|snap|messenger|onlyfans)\b/,
@@ -57,6 +74,6 @@ export function moderate(text) {
   const block = hits.find((h) => h.action === 'block');
   if (block) return { action: 'block', rule: block.id, priority: block.priority, message: block.message };
   const warn = hits.find((h) => h.action === 'warn');
-  if (warn) return { action: 'warn', rule: warn.id, priority: warn.priority, message: warn.message };
+  if (warn) return { action: 'warn', rule: warn.id, priority: warn.priority, message: warn.message, flag: !!warn.flag };
   return { action: 'allow' };
 }

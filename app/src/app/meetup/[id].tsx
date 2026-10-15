@@ -1,15 +1,17 @@
-import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS } from '@fapp/shared';
+import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS, DETERRENCE_TEXT } from '@fapp/shared';
 import * as Location from 'expo-location';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, Linking, Modal, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
-import { ConfirmSheet } from '@/components/Sheet';
 import MapView from 'react-native-maps';
+import { FAKE_CALL_DELAY_SECONDS, FakeCall } from '@/components/FakeCall';
+import { ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { PinPad } from '@/components/PinPad';
 import { Banner, Body, Button, Chip, ErrorText, Header, Label, Screen } from '@/components/ui';
 import { api, errorMessage, type MatchDetail, type SafetySession } from '@/lib/api';
-import { cancelCheckInReminder, scheduleCheckInReminder } from '@/lib/notifications';
+import { cancelCheckInReminder, scheduleCheckInReminder, scheduleFakeCallNotification } from '@/lib/notifications';
 import { ensureBackgroundPermission, startSafetyTracking, stopSafetyTracking } from '@/lib/safetyTracking';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
@@ -17,6 +19,7 @@ import { colors, fonts } from '@/lib/theme';
 type PinAction = 'checkin' | 'end' | 'cancelSos' | null;
 
 export default function Meetup() {
+  usePreventScreenCapture();
   const { id, safetyId } = useLocalSearchParams<{ id: string; safetyId?: string }>();
   const { me, refresh } = useSession();
   const [detail, setDetail] = useState<MatchDetail | null>(null);
@@ -30,6 +33,8 @@ export default function Meetup() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [confirmRevoke, setConfirmRevoke] = useState(false);
+  const [fakeCallAt, setFakeCallAt] = useState<number | null>(null);
+  const [fakeCallOpen, setFakeCallOpen] = useState(false);
 
   const load = useCallback(async () => {
     const [d, active] = await Promise.all([
@@ -58,8 +63,24 @@ export default function Meetup() {
 
   useEffect(() => setNow(Date.now()), [session]);
 
+  // Falešný hovor: za chvíli „zazvoní“ telefon. Když je aplikace na pozadí, přijde notifikace.
+  useEffect(() => {
+    if (fakeCallAt === null) return;
+    const t = setTimeout(() => {
+      setFakeCallAt(null);
+      setFakeCallOpen(true);
+    }, Math.max(0, fakeCallAt - Date.now()));
+    return () => clearTimeout(t);
+  }, [fakeCallAt]);
+
+  const scheduleFakeCall = () => {
+    setFakeCallAt(Date.now() + FAKE_CALL_DELAY_SECONDS * 1000);
+    void scheduleFakeCallNotification(FAKE_CALL_DELAY_SECONDS, fakeCaller).catch(() => {});
+  };
+
   const partnerName = session?.partner.name ?? detail?.partner.name ?? '';
   const trustedName = session?.trustedName ?? me?.trustedName ?? '';
+  const fakeCaller = trustedName || 'Mamka';
   const ready = !!me?.trustedPhone && !!me?.hasCheckinPin && !!me?.hasDuressPin;
   const agreementOk = detail?.agreement?.status === 'confirmed';
 
@@ -129,7 +150,7 @@ export default function Meetup() {
         <Header title={`Schůzka · ${partnerName}`} />
         <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }}>
           {!agreementOk ? (
-            <Banner tone="warn" title="Nejdřív potvrzená dohoda" subtitle="Schůzku jde zahájit, až dohodu potvrdíte oba." action="Dohoda" onPress={() => router.replace(`/agreement/${id}`)} />
+            <Banner tone="warn" title="Nejdřív hotová domluva" subtitle="Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba." action="Domluva" onPress={() => router.replace(`/agreement/${id}`)} />
           ) : null}
           {!ready ? (
             <Banner
@@ -144,7 +165,8 @@ export default function Meetup() {
             <Point icon="pin" text={`${trustedName || 'Tvoje důvěryhodná osoba'} dostane SMS s odkazem. Uvidí, kde jsi, s kým a jestli jsi v pořádku.`} />
             <Point icon="check" text="V pravidelném intervalu potvrdíš PINem, že jsi OK. Když se neozveš, pošleme upozornění – i kdyby se ti vybil telefon." />
             <Point icon="lock" text="Nouzový PIN vypadá úplně stejně jako běžný, ale potichu spustí poplach." />
-            <Point icon="shield" text={`${partnerName} uvidí jen, že máš bezpečnostní režim zapnutý. Nic víc.`} />
+            <Point icon="shield" text={`${partnerName} uvidí, že máš zapnutý bezpečnostní režim a že tvoje důvěryhodná osoba ví, kde a s kým jsi. Nic víc – poplach ani polohu ne.`} />
+            <Point icon="user" text={DETERRENCE_TEXT} />
           </View>
           <View style={{ gap: 10 }}>
             <Label>Potvrzovat, že jsem OK, každých</Label>
@@ -210,11 +232,21 @@ export default function Meetup() {
           <Icon name="shield" size={18} color={detail?.safety.partner.active ? colors.safe : colors.faint} />
           <Body muted style={{ flex: 1, fontSize: 14 }}>
             {detail?.safety.partner.active
-              ? `${partnerName} má taky zapnutý bezpečnostní režim.`
+              ? `${partnerName} má taky zapnutý bezpečnostní režim – jeho/její důvěryhodná osoba ví, kde a s kým je.`
               : `${partnerName} bezpečnostní režim zapnutý nemá.`}
           </Body>
         </View>
-        <Button variant="ghost" label="Poslat odkaz znovu" height={44} onPress={() => Share.share({ message: session.shareUrl }).catch(() => {})} />
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          <Button
+            variant="ghost"
+            label={fakeCallAt ? `Hovor za ${Math.max(1, Math.ceil((fakeCallAt - now) / 1000))} s` : 'Falešný hovor'}
+            height={44}
+            style={{ flex: 1 }}
+            onPress={fakeCallAt ? () => setFakeCallAt(null) : scheduleFakeCall}
+          />
+          <Button variant="ghost" label="Poslat odkaz" height={44} style={{ flex: 1 }} onPress={() => Share.share({ message: session.shareUrl }).catch(() => {})} />
+        </View>
+        <Body muted style={{ fontSize: 13 }}>Falešný hovor ti za {FAKE_CALL_DELAY_SECONDS} s zazvoní jako běžný hovor – výmluva, jak odejít.</Body>
       </ScrollView>
 
       <View style={{ paddingHorizontal: 16, paddingBottom: 12, gap: 10 }}>
@@ -223,7 +255,7 @@ export default function Meetup() {
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button
             variant="ghost"
-            label="Odvolat souhlas"
+            label="Zrušit domluvu"
             height={48}
             style={{ flex: 1 }}
             onPress={() => setConfirmRevoke(true)}
@@ -255,13 +287,15 @@ export default function Meetup() {
 
       <ConfirmSheet
         visible={confirmRevoke}
-        title="Odvolat souhlas?"
+        title="Zrušit domluvu?"
         message={`${partnerName} dostane oznámení. Nemusíš nic vysvětlovat. Bezpečnostní režim poběží dál, dokud ho neukončíš.`}
-        confirmLabel="Odvolat souhlas"
+        confirmLabel="Zrušit domluvu"
         destructive
         onConfirm={revoke}
         onClose={() => setConfirmRevoke(false)}
       />
+
+      <FakeCall visible={fakeCallOpen} caller={fakeCaller} onClose={() => setFakeCallOpen(false)} />
 
       <PinPad
         visible={pinAction === 'checkin' || pinAction === 'end'}
@@ -274,7 +308,7 @@ export default function Meetup() {
   );
 }
 
-function Point({ icon, text }: { icon: 'pin' | 'check' | 'lock' | 'shield'; text: string }) {
+function Point({ icon, text }: { icon: 'pin' | 'check' | 'lock' | 'shield' | 'user'; text: string }) {
   return (
     <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
       <View style={s.pointIcon}>

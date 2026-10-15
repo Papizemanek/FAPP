@@ -1,8 +1,8 @@
-import { CHECK_IN_GRACE_MINUTES } from '../../shared/constants.js';
+import { ACTIVITIES, CHECK_IN_GRACE_MINUTES } from '../../shared/constants.js';
 import { imageUrl } from './images.js';
 import { HttpError, ageFrom, distanceKm, nowIso, parseJson } from './util.js';
 
-// Dohoda je „proběhlá“ 12 hodin po plánovaném začátku schůzky.
+// Domluva je „proběhlá“ 12 hodin po plánovaném začátku schůzky.
 const AGREEMENT_PAST_AFTER_MS = 12 * 3600_000;
 
 export const getUser = (db, id) => db.prepare('SELECT * FROM users WHERE id = ?').get(id);
@@ -67,52 +67,89 @@ export function requireActivePartner(other) {
   if (!other || other.status !== 'active') throw new HttpError(410, 'Tenhle profil už není dostupný.');
 }
 
-// --- dohoda (souhlas) ---
+// --- domluva ---
+// Domluva není souhlas. Každý si zvlášť vyplní přání (ano/možná/ne); druhý vidí jen shodu,
+// nikdy cizí „ne“. Společné jsou jen praktické věci (kdy, kde, stopslovo, ochrana).
 
 export const currentAgreement = (db, matchId) =>
   db.prepare('SELECT * FROM agreements WHERE match_id = ? ORDER BY id DESC LIMIT 1').get(matchId);
 
 function confirmationsFor(db, agreement) {
   return db
-    .prepare('SELECT user_id, version, confirmed_at FROM agreement_confirmations WHERE agreement_id = ?')
+    .prepare('SELECT user_id, version FROM agreement_confirmations WHERE agreement_id = ?')
     .all(agreement.id)
     .filter((c) => c.version === agreement.version);
 }
 
+const wishesRows = (db, agreement) =>
+  db.prepare('SELECT user_id, wishes, note FROM agreement_wishes WHERE agreement_id = ?').all(agreement.id);
+
+/** Potvrzená = oba vyplnili svá přání a oba potvrdili aktuální verzi praktických věcí. */
 export function isFullyConfirmed(db, agreement, match) {
   const c = confirmationsFor(db, agreement);
-  return [match.user_a, match.user_b].every((uid) => c.some((x) => x.user_id === uid));
+  const w = wishesRows(db, agreement);
+  return [match.user_a, match.user_b].every((uid) => c.some((x) => x.user_id === uid) && w.some((x) => x.user_id === uid));
 }
 
 export function agreementStatus(db, agreement, match, now = Date.now()) {
   if (agreement.revoked_at) return 'revoked';
-  const confirmed = isFullyConfirmed(db, agreement, match);
+  const confirmed = agreement.redacted_at ? !!agreement.was_confirmed : isFullyConfirmed(db, agreement, match);
   if (Date.parse(agreement.meet_at) + AGREEMENT_PAST_AFTER_MS < now) return confirmed ? 'past' : 'expired';
   return confirmed ? 'confirmed' : 'pending';
+}
+
+/** Shoda: „ano“ jen když chtějí oba, „možná“ když je to pro oba aspoň možná. Ostatní se nezobrazí. */
+export function overlapOf(a, b) {
+  const yes = [];
+  const maybe = [];
+  for (const key of Object.keys(ACTIVITIES)) {
+    const x = a[key] ?? 'no';
+    const y = b[key] ?? 'no';
+    if (x === 'yes' && y === 'yes') yes.push(key);
+    else if (x !== 'no' && y !== 'no') maybe.push(key);
+  }
+  return { yes, maybe };
 }
 
 export function agreementView(db, agreement, match, viewerId, open) {
   if (!agreement) return null;
   const confirmations = confirmationsFor(db, agreement);
   const otherId = match.user_a === viewerId ? match.user_b : match.user_a;
+  const rows = wishesRows(db, agreement);
+  const mine = rows.find((r) => r.user_id === viewerId);
+  const theirs = rows.find((r) => r.user_id === otherId);
+  const myWishes = mine ? parseJson(open(mine.wishes), {}) : null;
+  const theirWishes = theirs ? parseJson(open(theirs.wishes), {}) : null;
   return {
     id: agreement.id,
     version: agreement.version,
     status: agreementStatus(db, agreement, match),
-    proposedByMe: agreement.proposed_by === viewerId,
     meetAt: agreement.meet_at,
     place: agreement.place,
-    activities: parseJson(agreement.activities, []),
-    note: open(agreement.note),
     condom: !!agreement.condom,
     sober: !!agreement.sober,
+    publicFirst: !!agreement.public_first,
     safeword: open(agreement.safeword),
-    confirmedByMe: confirmations.find((c) => c.user_id === viewerId)?.confirmed_at ?? null,
-    confirmedByPartner: confirmations.find((c) => c.user_id === otherId)?.confirmed_at ?? null,
+    myWishes,
+    myNote: mine ? open(mine.note) : '',
+    partnerNote: theirs ? open(theirs.note) : '',
+    partnerFilled: !!theirs,
+    // Cizí přání se nikdy neposílají – jen průnik, a to až když vyplnili oba.
+    overlap: myWishes && theirWishes ? overlapOf(myWishes, theirWishes) : null,
+    // Bez časů: potvrzení není záznam souhlasu.
+    confirmedByMe: confirmations.some((c) => c.user_id === viewerId) && !!mine,
+    confirmedByPartner: confirmations.some((c) => c.user_id === otherId) && !!theirs,
     revokedByMe: agreement.revoked_at ? agreement.revoked_by === viewerId : null,
     revokedAt: agreement.revoked_at,
-    updatedAt: agreement.updated_at,
+    redacted: !!agreement.redacted_at,
   };
+}
+
+/** Uchová domluvu a s ní spojené schůzky – na žádost toho, kdo hlásí problém. */
+export function preserveAgreement(db, agreementId) {
+  if (!agreementId) return;
+  db.prepare('UPDATE agreements SET preserved_at = COALESCE(preserved_at, ?) WHERE id = ?').run(nowIso(), agreementId);
+  db.prepare('UPDATE safety_sessions SET preserved = 1 WHERE agreement_id = ?').run(agreementId);
 }
 
 // --- bezpečnostní režim ---
@@ -168,10 +205,61 @@ export const partnerSafetyView = (s) => ({ active: !!s });
 
 // --- moderace ---
 
-export function addFlag(db, { userId, source, reason, priority = 'normal', refId = null, details = '' }) {
+export function addFlag(db, { userId, byUserId = null, source, reason, priority = 'normal', refId = null, details = '' }) {
+  if (!userId) return;
   db.prepare(
-    'INSERT INTO flags (user_id, source, reason, priority, ref_id, details, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
-  ).run(userId, source, reason, priority, refId, details, nowIso());
+    'INSERT INTO flags (user_id, by_user_id, source, reason, priority, ref_id, details, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+  ).run(userId, byUserId, source, reason, priority, refId, details, nowIso());
+}
+
+const PATTERN_WINDOW_DAYS = 90;
+
+/** Je člověk právě na schůzce (jako ten, kdo má bezpečnostní režim, nebo jako protějšek)? */
+export function inActiveMeetup(db, userId) {
+  return !!db
+    .prepare('SELECT 1 FROM safety_sessions WHERE ended_at IS NULL AND (user_id = ? OR partner_id = ?)')
+    .get(userId, userId);
+}
+
+/**
+ * Vzorce napříč lidmi: jeden varovný signál může být omyl, stejný signál od víc různých lidí už ne.
+ *  - vážné signály (poplach, nouzový PIN, nahlášení, špatné hodnocení) od 2 různých lidí → pozastavit
+ *  - jakékoli signály (včetně zrušení domluvy během schůzky) od 3 různých lidí → ke kontrole
+ * Pozastavení se odloží, dokud dotyčný nedokončí probíhající schůzku – nesmí poznat, že někdo spustil poplach.
+ */
+export function checkPattern(db, userId) {
+  if (!userId) return;
+  const since = new Date(Date.now() - PATTERN_WINDOW_DAYS * 86400_000).toISOString();
+  const count = (sql) => db.prepare(sql).get(userId, since).n;
+  const severe = count(`SELECT COUNT(DISTINCT by_user_id) AS n FROM flags WHERE user_id = ? AND created_at > ?
+      AND by_user_id IS NOT NULL AND source IN ('safety', 'feedback', 'report') AND priority != 'low'`);
+  const any = count(`SELECT COUNT(DISTINCT by_user_id) AS n FROM flags WHERE user_id = ? AND created_at > ?
+      AND by_user_id IS NOT NULL AND source IN ('safety', 'feedback', 'report', 'revocation')`);
+  if (severe < 2 && any < 3) return;
+  const open = db.prepare("SELECT 1 FROM flags WHERE user_id = ? AND reason = 'pattern' AND resolved_at IS NULL").get(userId);
+  if (!open) {
+    addFlag(db, {
+      userId,
+      source: 'pattern',
+      reason: 'pattern',
+      priority: 'high',
+      details: severe >= 2 ? 'Vážné signály od víc lidí – pozastavit' : 'Opakované signály od víc lidí – zkontrolovat',
+    });
+  }
+  if (severe >= 2 && !inActiveMeetup(db, userId)) suspendUser(db, userId, 'Opakované varovné signály od různých lidí');
+}
+
+/** Dokončí pozastavení odložená kvůli probíhající schůzce (volá hlídač). */
+export function applyDeferredSuspensions(db) {
+  const rows = db
+    .prepare(
+      `SELECT DISTINCT f.user_id FROM flags f JOIN users u ON u.id = f.user_id
+       WHERE f.reason = 'pattern' AND f.resolved_at IS NULL AND f.details LIKE '%pozastavit%' AND u.status = 'active'`,
+    )
+    .all();
+  for (const { user_id } of rows) {
+    if (!inActiveMeetup(db, user_id)) suspendUser(db, user_id, 'Opakované varovné signály od různých lidí');
+  }
 }
 
 /** Pozastaví účet do ruční kontroly. Probíhající bezpečnostní režimy NEUKONČUJE. */

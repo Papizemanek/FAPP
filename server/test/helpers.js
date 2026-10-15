@@ -92,25 +92,39 @@ export async function startTestServer() {
 
   const inHours = (h) => new Date(Date.now() + h * 3600_000).toISOString();
 
-  async function confirmedAgreement({ a, b, matchId }, overrides = {}) {
-    const proposal = await call('POST', `/api/matches/${matchId}/agreement`, {
-      token: a.token,
+  // Jeden pevný čas schůzky pro celý běh – v aplikaci druhý z dvojice dostane čas předvyplněný.
+  const defaultMeetAt = new Date(Date.now() + 2 * 3600_000).toISOString();
+
+  /** Uloží domluvu za jednoho z dvojice (vlastní přání + společné praktické věci + obě potvrzovací věty). */
+  function saveAgreement(user, matchId, overrides = {}) {
+    return call('POST', `/api/matches/${matchId}/agreement`, {
+      token: user.token,
       body: {
-        meetAt: inHours(2),
+        meetAt: defaultMeetAt,
         place: 'U Lucie',
-        activities: ['kissing', 'oral'],
         condom: true,
         sober: true,
+        publicFirst: false,
         safeword: 'Ananas',
-        consent: true,
+        wishes: { kissing: 'yes', oral: 'yes' },
+        note: '',
+        intent: true,
+        notice: true,
         ...overrides,
       },
     });
-    const confirm = await call('POST', `/api/agreements/${proposal.body.id}/confirm`, {
-      token: b.token,
-      body: { version: proposal.body.version, consent: true },
-    });
-    return confirm.body;
+  }
+
+  async function confirmedAgreement({ a, b, matchId }, overrides = {}) {
+    await saveAgreement(a, matchId, overrides);
+    return (await saveAgreement(b, matchId, overrides)).body;
+  }
+
+  /** Match mezi dvěma existujícími uživateli. */
+  async function matchUsers(x, y) {
+    await call('POST', '/api/swipes', { token: x.token, body: { targetId: y.id, like: true } });
+    const res = await call('POST', '/api/swipes', { token: y.token, body: { targetId: x.id, like: true } });
+    return res.body.match.id;
   }
 
   return {
@@ -122,7 +136,9 @@ export async function startTestServer() {
     makeUser,
     makeMatch,
     setSafety,
+    saveAgreement,
     confirmedAgreement,
+    matchUsers,
     inHours,
     close: () => new Promise((resolve) => server.close(resolve)),
   };

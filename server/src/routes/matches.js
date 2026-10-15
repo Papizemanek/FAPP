@@ -97,6 +97,10 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
     if (!text && !hasImage) throw new HttpError(400, 'Prázdná zpráva.');
 
     const verdict = moderate(text);
+    if (verdict.flag && verdict.action !== 'block') {
+      // Doručí se (příjemce uvidí upozornění), ale moderátoři to vidí taky – např. „v appce jsi souhlasila“.
+      addFlag(db, { userId: req.user.id, source: 'chat', reason: verdict.rule, priority: verdict.priority, refId: match.id, details: sealer.seal(text) });
+    }
     if (verdict.action === 'block') {
       addFlag(db, {
         userId: req.user.id,

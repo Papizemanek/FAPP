@@ -20,7 +20,7 @@ export const TAGS = {
   kinky: 'Kinky',
 };
 
-// Co je součástí dohody. Cokoli, co tu není zaškrtnuté, dohodnuté není.
+// Aktivity v domluvě. Každý u nich zvlášť zvolí ano / možná / ne.
 export const ACTIVITIES = {
   kissing: 'Líbání a mazlení',
   oral: 'Orální',
@@ -30,10 +30,21 @@ export const ACTIVITIES = {
   overnight: 'Přespání',
 };
 
-// Prohlášení, které každý z dvojice výslovně potvrzuje. Při změně textu zvyš verzi.
-export const CONSENT_TEXT_VERSION = 1;
-export const CONSENT_TEXT =
-  'Je mi 18+, souhlasím dobrovolně a vím, že souhlas můžu kdykoli odvolat – i během schůzky.';
+// Domluva není souhlas. Každý si zvlášť a naslepo vyplní, na co má chuť; druhý uvidí jen shodu.
+export const WISHES = { yes: 'Ano', maybe: 'Možná', no: 'Ne' };
+
+// Texty, které oba při uložení domluvy výslovně potvrzují. Při změně textu zvyš verzi.
+export const CONSENT_TEXT_VERSION = 2;
+export const INTENT_TEXT = 'Takhle si to představuju. Na místě můžu cokoli odmítnout – a totéž platí pro druhého.';
+export const NOTICE_TEXT =
+  'Beru na vědomí: souhlas platí jen teď a tady. „Ne“, „stop“, stopslovo, mlčení, ztuhnutí nebo opilost nejsou souhlas. Domluva v aplikaci nikoho nezbavuje odpovědnosti.';
+export const DETERRENCE_TEXT = 'Všichni na F*app mají ověřenou totožnost. Při podezření z trestného činu ji předáme policii.';
+
+// Po zrušení domluvy může novou otevřít jen ten, kdo ji zrušil – druhý až po této době.
+export const REVOKE_COOLDOWN_DAYS = 7;
+
+// Obsah domluvy (přání, místo, stopslovo) se po schůzce maže, pokud ho někdo z dvojice nepotřebuje uchovat.
+export const AGREEMENT_RETENTION_HOURS = 48;
 
 export const CHECK_IN_OPTIONS = [15, 30, 45, 60, 90, 120];
 
@@ -57,7 +68,7 @@ export const REPORT_REASONS = {
 
 // Důvody negativního hodnocení po schůzce. Protějšek hodnocení nikdy nevidí.
 export const FEEDBACK_REASONS = {
-  consent: 'Nerespektoval/a dohodu nebo „stop“',
+  consent: 'Nerespektoval/a hranice nebo „stop“',
   safety: 'Cítil/a jsem se v ohrožení',
   fake: 'Nevypadal/a jako na fotkách',
   other: 'Něco jiného',

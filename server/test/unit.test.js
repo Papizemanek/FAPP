@@ -16,6 +16,14 @@ test('moderace: nezletilost', () => {
   }
 });
 
+test('moderace: tlak „v appce jsi souhlasila“', () => {
+  for (const text of ['v appce jsi to odsouhlasila', 'Už jsi to potvrdila', 'nemůžeš to vzít zpátky', 'dohoda je dohoda']) {
+    assert.equal(moderate(text).rule, 'consent_pressure', text);
+    assert.equal(moderate(text).flag, true, text);
+  }
+  assert.equal(moderate('potvrdila jsi čas?').action, 'allow');
+});
+
 test('moderace: placený sex a kontakty', () => {
   assert.equal(moderate('2000 Kč za hodinu').rule, 'paid');
   assert.equal(moderate('hledám sponzora').rule, 'paid');

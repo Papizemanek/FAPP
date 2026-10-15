@@ -2,7 +2,7 @@
 // souhlasu a bezpečnostního režimu), jen běží v prohlížeči nad daty v localStorage.
 // Moderace zpráv je převzatá přímo ze serveru. Demo protějšky lajkují zpátky, odpovídají a potvrzují dohody.
 
-import { ACTIVITIES, CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS, MIN_AGE, WRONG_PIN_ALARM_THRESHOLD } from '@fapp/shared';
+import { ACTIVITIES, CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS, MIN_AGE, REVOKE_COOLDOWN_DAYS, WRONG_PIN_ALARM_THRESHOLD } from '@fapp/shared';
 import { moderate } from '../../server/src/services/moderation.js';
 import { overlay } from './overlay';
 
@@ -36,23 +36,22 @@ type User = {
 
 type Match = { id: number; a: number; b: number; createdAt: string; endedAt: string | null; partnerSafety: boolean; script: number };
 type Message = { id: number; matchId: number; senderId: number; text: string; imageUrl: string | null; warning: string; createdAt: string };
+type Wish = 'yes' | 'maybe' | 'no';
 type Agreement = {
   id: number;
   matchId: number;
   version: number;
-  proposedBy: number;
   meetAt: string;
   place: string;
-  activities: string[];
-  note: string;
   condom: boolean;
   sober: boolean;
+  publicFirst: boolean;
   safeword: string;
+  wishes: Record<number, { wishes: Record<string, Wish>; note: string }>;
   confirmations: Record<number, number>;
-  everConfirmedAt: string | null;
+  wasConfirmed: boolean;
   revokedBy: number | null;
   revokedAt: string | null;
-  updatedAt: string;
 };
 type Safety = {
   id: number;
@@ -104,7 +103,7 @@ class HttpError extends Error {
   }
 }
 
-const STORAGE_KEY = 'fapp-demo-db-v1';
+const STORAGE_KEY = 'fapp-demo-db-v2';
 const nowIso = () => new Date().toISOString();
 
 // --- demo data ---
@@ -257,7 +256,7 @@ const currentAgreement = (matchId: number) =>
   db.agreements.filter((a) => a.matchId === matchId).sort((x, y) => y.id - x.id)[0] ?? null;
 
 function fullyConfirmed(a: Agreement, m: Match) {
-  return a.confirmations[m.a] === a.version && a.confirmations[m.b] === a.version;
+  return [m.a, m.b].every((uid) => a.confirmations[uid] === a.version && !!a.wishes[uid]);
 }
 
 function agreementStatus(a: Agreement, m: Match) {
@@ -267,26 +266,44 @@ function agreementStatus(a: Agreement, m: Match) {
   return confirmed ? 'confirmed' : 'pending';
 }
 
+// Stejná pravidla jako server: druhý vidí jen shodu, nikdy cizí „ne“.
+function overlapOf(x: Record<string, Wish>, y: Record<string, Wish>) {
+  const yes: string[] = [];
+  const maybe: string[] = [];
+  for (const key of Object.keys(ACTIVITIES)) {
+    const a = x[key] ?? 'no';
+    const b = y[key] ?? 'no';
+    if (a === 'yes' && b === 'yes') yes.push(key);
+    else if (a !== 'no' && b !== 'no') maybe.push(key);
+  }
+  return { yes, maybe };
+}
+
 function agreementView(a: Agreement | null, m: Match, uid: number) {
   if (!a) return null;
   const other = m.a === uid ? m.b : m.a;
+  const mine = a.wishes[uid];
+  const theirs = a.wishes[other];
   return {
     id: a.id,
     version: a.version,
     status: agreementStatus(a, m),
-    proposedByMe: a.proposedBy === uid,
     meetAt: a.meetAt,
     place: a.place,
-    activities: a.activities,
-    note: a.note,
     condom: a.condom,
     sober: a.sober,
+    publicFirst: a.publicFirst,
     safeword: a.safeword,
-    confirmedByMe: a.confirmations[uid] === a.version ? a.updatedAt : null,
-    confirmedByPartner: a.confirmations[other] === a.version ? a.updatedAt : null,
+    myWishes: mine?.wishes ?? null,
+    myNote: mine?.note ?? '',
+    partnerNote: theirs?.note ?? '',
+    partnerFilled: !!theirs,
+    overlap: mine && theirs ? overlapOf(mine.wishes, theirs.wishes) : null,
+    confirmedByMe: a.confirmations[uid] === a.version && !!mine,
+    confirmedByPartner: a.confirmations[other] === a.version && !!theirs,
     revokedByMe: a.revokedAt ? a.revokedBy === uid : null,
     revokedAt: a.revokedAt,
-    updatedAt: a.updatedAt,
+    redacted: false,
   };
 }
 
@@ -435,14 +452,20 @@ function demoReply(m: Match, partner: User) {
   later(2200, () => demoSay(m, partner.id, text));
 }
 
+// Demo protějšek vyplní svá přání (naslepo) a potvrdí praktické věci.
+const DEMO_WISHES: Record<string, Wish> = { kissing: 'yes', oral: 'yes', vaginal: 'maybe', anal: 'no', toys: 'maybe', overnight: 'no' };
+
 function demoConfirm(m: Match, partner: User, agreementId: number) {
   if (!partner.demo) return;
   later(2500, () => {
     const a = db.agreements.find((x) => x.id === agreementId);
     if (!a || a.revokedAt) return;
+    const first = !a.wishes[partner.id];
+    a.wishes[partner.id] = a.wishes[partner.id] ?? { wishes: DEMO_WISHES, note: 'Bez focení, prosím.' };
+    if (a.confirmations[partner.id] === a.version) return;
     a.confirmations[partner.id] = a.version;
-    if (fullyConfirmed(a, m) && !a.everConfirmedAt) a.everConfirmedAt = nowIso();
-    demoSay(m, partner.id, 'Přečetl/a jsem si dohodu a potvrdil/a ji.');
+    if (fullyConfirmed(a, m)) a.wasConfirmed = true;
+    demoSay(m, partner.id, first ? 'Vyplnil/a jsem svoji část domluvy.' : 'Potvrdil/a jsem nový čas a místo.');
   });
 }
 
@@ -734,57 +757,51 @@ route('POST', '/matches/:id/messages', (c, [mid]) => {
   return { status: 201, json: { id: msg.id, mine: true, text, imageUrl: image, warning: '', createdAt: msg.createdAt } };
 });
 
-// dohoda
+// domluva
 route('POST', '/matches/:id/agreement', (c, [mid]) => {
   const me = requireVerified(c);
   const { m, other } = matchFor(Number(mid), me.id);
   const b = c.body;
-  if (b.consent !== true) throw new HttpError(400, 'Dohodu musíš výslovně potvrdit.');
-  const activities = ((b.activities as string[]) ?? []).filter((x) => x in ACTIVITIES);
-  if (activities.length === 0) throw new HttpError(400, 'V poli co ano vyber aspoň 1 možnost.');
+  if (b.intent !== true || b.notice !== true) throw new HttpError(400, 'Potvrď obě věty – že je to tvoje představa a že domluva není souhlas.');
   if (str(b.place).length < 2) throw new HttpError(400, 'Pole kde je příliš krátké.');
   if (str(b.safeword).length < 2) throw new HttpError(400, 'Pole stopslovo je příliš krátké.');
-  const fields = {
+  const wishes: Record<string, Wish> = {};
+  for (const key of Object.keys(ACTIVITIES)) wishes[key] = ((b.wishes as Record<string, Wish>)?.[key] ?? 'no') as Wish;
+  const logistics = {
     meetAt: new Date(str(b.meetAt)).toISOString(),
     place: str(b.place),
-    activities,
-    note: str(b.note),
     condom: b.condom === true,
     sober: b.sober === true,
+    publicFirst: b.publicFirst === true,
     safeword: str(b.safeword),
   };
   const current = currentAgreement(m.id);
   const editable = current && ['pending', 'confirmed'].includes(agreementStatus(current, m));
+  if (!editable && current?.revokedAt && current.revokedBy !== me.id && Date.now() < Date.parse(current.revokedAt) + REVOKE_COOLDOWN_DAYS * 86400_000) {
+    throw new HttpError(403, `Novou domluvu teď může otevřít jen ${other.name}.`);
+  }
   let a: Agreement;
+  let changed = false;
   if (current && editable) {
-    Object.assign(current, fields, { version: current.version + 1, proposedBy: me.id, updatedAt: nowIso(), confirmations: {} });
+    if (b.baseVersion !== undefined && Number(b.baseVersion) !== current.version) throw new HttpError(409, 'Domluva se mezitím změnila. Přečti si ji znovu.');
+    changed = (Object.keys(logistics) as (keyof typeof logistics)[]).some((k) => current[k] !== logistics[k]);
+    if (changed) Object.assign(current, logistics, { version: current.version + 1, confirmations: {} });
     a = current;
   } else {
-    a = { id: id(), matchId: m.id, version: 1, proposedBy: me.id, ...fields, confirmations: {}, everConfirmedAt: null, revokedBy: null, revokedAt: null, updatedAt: nowIso() };
+    a = { id: id(), matchId: m.id, version: 1, ...logistics, wishes: {}, confirmations: {}, wasConfirmed: false, revokedBy: null, revokedAt: null };
     db.agreements.push(a);
   }
+  a.wishes[me.id] = { wishes, note: str(b.note) };
   a.confirmations[me.id] = a.version;
-  demoConfirm(m, other, a.id);
+  if (fullyConfirmed(a, m)) a.wasConfirmed = true;
+  if (!editable || changed || !a.wishes[other.id] || a.confirmations[other.id] !== a.version) demoConfirm(m, other, a.id);
   return { status: editable ? 200 : 201, json: agreementView(a, m, me.id) };
-});
-
-route('POST', '/agreements/:id/confirm', (c, [aid]) => {
-  const me = requireVerified(c);
-  const a = db.agreements.find((x) => x.id === Number(aid));
-  if (!a) throw new HttpError(404, 'Dohoda neexistuje.');
-  const { m } = matchFor(a.matchId, me.id);
-  if (c.body.consent !== true) throw new HttpError(400, 'Dohodu musíš výslovně potvrdit.');
-  if (Number(c.body.version) !== a.version) throw new HttpError(409, 'Dohoda se mezitím změnila. Přečti si ji znovu.');
-  if (!['pending', 'confirmed'].includes(agreementStatus(a, m))) throw new HttpError(409, 'Tuhle dohodu už nejde potvrdit.');
-  a.confirmations[me.id] = a.version;
-  if (fullyConfirmed(a, m) && !a.everConfirmedAt) a.everConfirmedAt = nowIso();
-  return agreementView(a, m, me.id);
 });
 
 route('POST', '/agreements/:id/revoke', (c, [aid]) => {
   const me = requireUser(c, { allowSuspended: true });
   const a = db.agreements.find((x) => x.id === Number(aid));
-  if (!a) throw new HttpError(404, 'Dohoda neexistuje.');
+  if (!a) throw new HttpError(404, 'Domluva neexistuje.');
   const { m, other } = matchFor(a.matchId, me.id, true);
   if (!a.revokedAt) {
     a.revokedAt = nowIso();
@@ -799,7 +816,7 @@ route('POST', '/matches/:id/safety', (c, [mid]) => {
   const me = requireVerified(c);
   const { m, other } = matchFor(Number(mid), me.id);
   const a = currentAgreement(m.id);
-  if (!a || agreementStatus(a, m) !== 'confirmed') throw new HttpError(409, 'Schůzku jde zahájit jen s dohodou, kterou jste potvrdili oba.');
+  if (!a || agreementStatus(a, m) !== 'confirmed') throw new HttpError(409, 'Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba.');
   if (!me.trustedPhone || !me.checkinPin || !me.duressPin) throw new HttpError(409, 'Nejdřív si nastav důvěryhodnou osobu, PIN a nouzový PIN.');
   const minutes = Number(c.body.checkInMinutes ?? 30);
   if (!CHECK_IN_OPTIONS.includes(minutes)) throw new HttpError(400, 'Neplatný interval check-inu.');
@@ -911,7 +928,7 @@ route('POST', '/safety/:id/end', (c, [sid]) => {
 route('GET', '/feedback/pending', (c) => {
   const me = requireVerified(c);
   return db.agreements
-    .filter((a) => a.everConfirmedAt && !db.feedback.some((f) => f.agreementId === a.id && f.authorId === me.id))
+    .filter((a) => a.wasConfirmed && !db.feedback.some((f) => f.agreementId === a.id && f.authorId === me.id))
     .map((a) => ({ a, m: db.matches.find((m) => m.id === a.matchId) }))
     .filter(({ a, m }) => m && (m.a === me.id || m.b === me.id) && db.safety.some((s) => s.agreementId === a.id && s.endedAt))
     .map(({ a, m }) => ({ agreementId: a.id, matchId: m!.id, partnerName: userById(m!.a === me.id ? m!.b : m!.a)?.name ?? '', meetAt: a.meetAt }));

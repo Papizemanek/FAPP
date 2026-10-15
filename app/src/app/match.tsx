@@ -31,7 +31,7 @@ export default function MatchModal() {
         <View style={{ gap: 10, alignItems: 'center' }}>
           <Text style={{ fontFamily: fonts.display, fontSize: 48, color: colors.accent, letterSpacing: -1.5 }}>Je to match!</Text>
           <Body muted style={{ textAlign: 'center', fontSize: 16 }}>
-            Ty a {name} se chcete.{'\n'}Napiš a domluvte se na dohodě.
+            Ty a {name} se chcete.{'\n'}Napiš a domluvte se, na co máte chuť.
           </Body>
         </View>
       </View>

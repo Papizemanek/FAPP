@@ -55,6 +55,14 @@ export async function scheduleCheckInReminder(sessionId: number, dueIso: string,
   });
 }
 
+/** Falešný hovor, když je aplikace na pozadí – vypadá jako běžné upozornění na hovor. */
+export async function scheduleFakeCallNotification(seconds: number, caller: string) {
+  await Notifications.scheduleNotificationAsync({
+    content: { title: caller, body: 'Příchozí hovor', data: { type: 'fake-call' } },
+    trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: Date.now() + seconds * 1000 },
+  });
+}
+
 export async function cancelCheckInReminder(sessionId: number) {
   await Notifications.cancelScheduledNotificationAsync(reminderId(sessionId)).catch(() => {});
 }

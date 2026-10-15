@@ -145,48 +145,97 @@ describe('chat a moderace', () => {
   });
 });
 
-describe('dohoda (souhlas)', () => {
-  test('platí, až když ji potvrdí oba; změna vyžaduje nové potvrzení obou', async () => {
+describe('domluva', () => {
+  test('každý vidí jen shodu – nikdy cizí „ne“ ani cizí přání', async () => {
     const m = await t.makeMatch();
-    const base = { meetAt: t.inHours(3), place: 'U mě', activities: ['kissing'], condom: true, sober: true, safeword: 'Ananas' };
-
-    assert.equal((await t.call('POST', `/api/matches/${m.matchId}/agreement`, { token: m.a.token, body: base })).status, 400, 'bez souhlasu nejde');
-    const v1 = await t.call('POST', `/api/matches/${m.matchId}/agreement`, { token: m.a.token, body: { ...base, consent: true } });
-    assert.equal(v1.status, 201);
-    assert.equal(v1.body.status, 'pending');
-    assert.ok(v1.body.confirmedByMe);
-
-    const stale = await t.call('POST', `/api/agreements/${v1.body.id}/confirm`, { token: m.b.token, body: { version: 99, consent: true } });
-    assert.equal(stale.status, 409);
-
-    const ok = await t.call('POST', `/api/agreements/${v1.body.id}/confirm`, { token: m.b.token, body: { version: 1, consent: true } });
-    assert.equal(ok.body.status, 'confirmed');
-
-    const v2 = await t.call('POST', `/api/matches/${m.matchId}/agreement`, {
-      token: m.b.token,
-      body: { ...base, activities: ['kissing', 'oral'], consent: true },
-    });
-    assert.equal(v2.body.version, 2);
-    assert.equal(v2.body.status, 'pending');
-    assert.equal(v2.body.confirmedByPartner, null);
+    await t.saveAgreement(m.a, m.matchId, { wishes: { kissing: 'maybe', oral: 'yes', anal: 'no' }, note: 'Bez focení' });
+    const viewB = (await t.saveAgreement(m.b, m.matchId, { wishes: { kissing: 'yes', oral: 'yes', anal: 'yes', toys: 'maybe' } })).body;
+    const viewA = (await t.call('GET', `/api/matches/${m.matchId}`, { token: m.a.token })).body.agreement;
+    for (const v of [viewA, viewB]) {
+      assert.deepEqual(v.overlap, { yes: ['oral'], maybe: ['kissing'] });
+      assert.equal(v.status, 'confirmed');
+    }
+    assert.equal(viewB.partnerNote, 'Bez focení');
+    assert.equal(viewB.myWishes.anal, 'yes');
+    // B se nedozví, že A u análu řekl/a „ne“ – jen že to není ve shodě. Kromě vlastních přání
+    // odpověď neobsahuje žádné hodnocení jednotlivých aktivit.
+    const { myWishes, ...rest } = viewB;
+    assert.equal(JSON.stringify(rest).includes('"no"'), false);
+    assert.equal(JSON.stringify(rest).includes('anal'), false);
+    assert.equal(viewA.myWishes.toys, 'no');
+    assert.equal(JSON.stringify(viewA).includes('toys'), true, 'jen ve vlastních přáních');
+    assert.equal(viewA.overlap.maybe.includes('toys'), false);
   });
 
-  test('odvolat jde kdykoli; schůzku pak nejde zahájit', async () => {
+  test('bez obou potvrzovacích vět to nejde; potvrzení je bez času', async () => {
+    const m = await t.makeMatch();
+    assert.equal((await t.saveAgreement(m.a, m.matchId, { notice: false })).status, 400);
+    assert.equal((await t.saveAgreement(m.a, m.matchId, { intent: false })).status, 400);
+    const first = await t.saveAgreement(m.a, m.matchId);
+    assert.equal(first.status, 201);
+    assert.equal(first.body.status, 'pending');
+    assert.equal(first.body.overlap, null, 'shoda až když vyplní oba');
+    const second = (await t.saveAgreement(m.b, m.matchId)).body;
+    assert.equal(second.confirmedByPartner, true);
+    assert.equal(second.confirmedByMe, true);
+  });
+
+  test('změna času nebo místa vyžaduje nové potvrzení obou; změna vlastních přání ne', async () => {
+    const m = await t.makeMatch();
+    await t.confirmedAgreement(m);
+    const wishesOnly = (await t.saveAgreement(m.b, m.matchId, { wishes: { kissing: 'yes' } })).body;
+    assert.equal(wishesOnly.status, 'confirmed');
+    assert.equal(wishesOnly.version, 1);
+    const moved = (await t.saveAgreement(m.b, m.matchId, { wishes: { kissing: 'yes' }, place: 'Hotel Praha' })).body;
+    assert.equal(moved.version, 2);
+    assert.equal(moved.status, 'pending');
+    const viewA = (await t.call('GET', `/api/matches/${m.matchId}`, { token: m.a.token })).body.agreement;
+    assert.equal(viewA.confirmedByMe, false);
+    const stale = await t.saveAgreement(m.a, m.matchId, { baseVersion: 1, place: 'U Lucie' });
+    assert.equal(stale.status, 409);
+    const again = (await t.saveAgreement(m.a, m.matchId, { baseVersion: 2, place: 'Hotel Praha' })).body;
+    assert.equal(again.status, 'confirmed');
+  });
+
+  test('po zrušení může novou domluvu otevřít jen ten, kdo ji zrušil; schůzku nejde zahájit', async () => {
     const m = await t.makeMatch();
     await t.setSafety(m.a);
     const agreement = await t.confirmedAgreement(m);
     const revoked = await t.call('POST', `/api/agreements/${agreement.id}/revoke`, { token: m.b.token });
     assert.equal(revoked.body.status, 'revoked');
-    const start = await t.call('POST', `/api/matches/${m.matchId}/safety`, { token: m.a.token, body: { checkInMinutes: 30 } });
-    assert.equal(start.status, 409);
+    assert.equal((await t.call('POST', `/api/matches/${m.matchId}/safety`, { token: m.a.token, body: { checkInMinutes: 30 } })).status, 409);
+    const pushy = await t.saveAgreement(m.a, m.matchId);
+    assert.equal(pushy.status, 403);
+    assert.match(pushy.body.error, new RegExp(m.b.name));
+    assert.equal((await t.saveAgreement(m.b, m.matchId)).status, 201);
   });
 
-  test('stopslovo je v DB šifrované', async () => {
+  test('stopslovo a přání jsou v DB šifrované', async () => {
     const m = await t.makeMatch();
-    const agreement = await t.confirmedAgreement(m, { safeword: 'Brokolice' });
+    const agreement = await t.confirmedAgreement(m, { safeword: 'Brokolice', wishes: { anal: 'yes' } });
     assert.equal(agreement.safeword, 'Brokolice');
     const row = t.db.prepare('SELECT safeword FROM agreements WHERE id = ?').get(agreement.id);
     assert.equal(row.safeword.includes('Brokolice'), false);
+    const wish = t.db.prepare('SELECT wishes FROM agreement_wishes WHERE agreement_id = ?').get(agreement.id);
+    assert.equal(wish.wishes.includes('anal'), false);
+  });
+
+  test('obsah domluvy zmizí 48 h po schůzce; uchovaný na žádost oběti zůstane', async () => {
+    const plain = await t.makeMatch();
+    const a1 = await t.confirmedAgreement(plain);
+    const kept = await t.makeMatch();
+    const a2 = await t.confirmedAgreement(kept);
+    t.db.prepare('UPDATE agreements SET meet_at = ? WHERE id IN (?, ?)').run(t.inHours(-3), a1.id, a2.id);
+    await t.call('POST', `/api/feedback/${a2.id}`, { token: kept.a.token, body: { ok: false, reason: 'consent' } });
+    purgeOldData(t.db, Date.now() + 49 * 3600_000);
+    const redacted = t.db.prepare('SELECT * FROM agreements WHERE id = ?').get(a1.id);
+    assert.ok(redacted.redacted_at);
+    assert.equal(redacted.safeword, '');
+    assert.equal(t.db.prepare('SELECT COUNT(*) AS n FROM agreement_wishes WHERE agreement_id = ?').get(a1.id).n, 0);
+    assert.equal(t.db.prepare('SELECT COUNT(*) AS n FROM agreement_confirmations WHERE agreement_id = ?').get(a1.id).n, 0);
+    const preserved = t.db.prepare('SELECT * FROM agreements WHERE id = ?').get(a2.id);
+    assert.equal(preserved.redacted_at, null);
+    assert.equal(t.db.prepare('SELECT COUNT(*) AS n FROM agreement_wishes WHERE agreement_id = ?').get(a2.id).n, 2);
   });
 });
 
@@ -299,7 +348,7 @@ describe('bezpečnostní režim', () => {
     assert.equal(share.location.lat, 50.1);
   });
 
-  test('protějšek nesmí smazat účet během schůzky; odvolání souhlasu režim nevypne', async () => {
+  test('protějšek nesmí smazat účet během schůzky; zrušení domluvy režim nevypne', async () => {
     const m = await startMeetup();
     const del = await t.call('DELETE', '/api/me', { token: m.b.token, body: { password: 'tajne-heslo-123' } });
     assert.equal(del.status, 409);
@@ -315,6 +364,69 @@ describe('bezpečnostní režim', () => {
     assert.equal((await t.call('GET', '/api/discover', { token: m.a.token })).status, 403);
     const res = await t.call('POST', `/api/safety/${m.session.id}/checkin`, { token: m.a.token, body: { pin: '1234' } });
     assert.equal(res.status, 200);
+  });
+});
+
+describe('varovné signály a vzorce', () => {
+  async function meetup(x, y) {
+    const matchId = await t.matchUsers(x, y);
+    await t.setSafety(y);
+    await t.confirmedAgreement({ a: x, b: y, matchId });
+    const s = await t.call('POST', `/api/matches/${matchId}/safety`, { token: y.token, body: { checkInMinutes: 30 } });
+    assert.equal(s.status, 201, JSON.stringify(s.body));
+    return { matchId, session: s.body };
+  }
+  const flagsAbout = (id) => t.db.prepare('SELECT * FROM flags WHERE user_id = ? ORDER BY id').all(id);
+
+  test('SOS označí protějšek pro moderátory – protějšek nic nepozná', async () => {
+    const x = await t.makeUser({ gender: 'man', interestedIn: ['woman'] });
+    const y = await t.makeUser({ gender: 'woman', interestedIn: ['man'] });
+    const { matchId, session } = await meetup(x, y);
+    await t.call('POST', `/api/safety/${session.id}/sos`, { token: y.token });
+    const f = flagsAbout(x.id).find((f) => f.source === 'safety');
+    assert.equal(f.reason, 'sos');
+    assert.equal(f.priority, 'high');
+    assert.equal(f.by_user_id, y.id);
+    const xView = await t.call('GET', `/api/matches/${matchId}`, { token: x.token });
+    assert.deepEqual(xView.body.safety.partner, { active: true });
+    assert.equal((await t.call('GET', '/api/me', { token: x.token })).body.status, 'active');
+  });
+
+  test('poplach od dvou různých lidí = pozastavení, ale až po skončení schůzky', async () => {
+    const x = await t.makeUser({ gender: 'man', interestedIn: ['woman'] });
+    const y1 = await t.makeUser({ gender: 'woman', interestedIn: ['man'] });
+    const y2 = await t.makeUser({ gender: 'woman', interestedIn: ['man'] });
+    const first = await meetup(x, y1);
+    await t.call('POST', `/api/safety/${first.session.id}/sos`, { token: y1.token });
+    await t.call('POST', `/api/safety/${first.session.id}/end`, { token: y1.token, body: { pin: '1234' } });
+    const second = await meetup(x, y2);
+    await t.call('POST', `/api/safety/${second.session.id}/checkin`, { token: y2.token, body: { pin: '9999' } });
+    assert.ok(flagsAbout(x.id).some((f) => f.reason === 'pattern'));
+    await runWatchdog(t.ctx);
+    assert.equal(t.db.prepare('SELECT status FROM users WHERE id = ?').get(x.id).status, 'active', 'během schůzky nic neprozradit');
+    await t.call('POST', `/api/safety/${second.session.id}/end`, { token: y2.token, body: { pin: '1234' } });
+    await runWatchdog(t.ctx);
+    assert.equal(t.db.prepare('SELECT status FROM users WHERE id = ?').get(x.id).status, 'suspended');
+  });
+
+  test('zrušení domluvy během schůzky je signál o druhém z dvojice', async () => {
+    const x = await t.makeUser({ gender: 'man', interestedIn: ['woman'] });
+    const y = await t.makeUser({ gender: 'woman', interestedIn: ['man'] });
+    const { matchId } = await meetup(x, y);
+    const agreement = (await t.call('GET', `/api/matches/${matchId}`, { token: y.token })).body.agreement;
+    await t.call('POST', `/api/agreements/${agreement.id}/revoke`, { token: y.token });
+    const f = flagsAbout(x.id).find((f) => f.source === 'revocation');
+    assert.equal(f.by_user_id, y.id);
+  });
+
+  test('„v appce jsi souhlasila“ – zpráva dojde s upozorněním a moderátoři ji vidí', async () => {
+    const m = await t.makeMatch();
+    await t.call('POST', `/api/matches/${m.matchId}/messages`, { token: m.b.token, body: { text: 'Ale v appce jsi to odsouhlasila' } });
+    const msgs = await t.call('GET', `/api/matches/${m.matchId}/messages`, { token: m.a.token });
+    assert.match(msgs.body[0].warning, /není souhlas/);
+    const f = flagsAbout(m.b.id).find((f) => f.source === 'chat');
+    assert.equal(f.reason, 'consent_pressure');
+    assert.equal(f.priority, 'high');
   });
 });
 
