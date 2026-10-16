@@ -7,6 +7,9 @@ type Hooks = {
   latestSafetyId: () => number | null;
   skipTime: (minutes: number) => void;
   reset: () => void;
+  billingMode: () => 'free' | 'paid';
+  setBillingMode: (mode: 'free' | 'paid') => void;
+  exhaustLikes: () => void;
 };
 
 const C = {
@@ -158,6 +161,40 @@ function openPanel() {
     }),
   );
 
+  // Platby: na startu je F*app zdarma, placený režim ukazuje model po vzoru Tinderu.
+  const mode = h.billingMode();
+  const billingBox = el('div', { background: C.bg, border: `1px solid ${C.line}`, borderRadius: '14px', padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '10px' });
+  billingBox.appendChild(el('div', { fontWeight: '700' }, 'Platby'));
+  billingBox.appendChild(
+    el(
+      'div',
+      { color: C.muted },
+      mode === 'free'
+        ? 'Teď: start zdarma – nic se neprodává a lajky jsou bez limitu. Přepni na placený režim a uvidíš Plus, Gold a Platinum.'
+        : 'Teď: placený režim – 50 lajků zdarma za 12 h, Plus, Gold, Platinum a jednorázové nákupy. Nákupy jsou jen simulované.',
+    ),
+  );
+  const modeRow = el('div', { display: 'flex', flexWrap: 'wrap', gap: '8px' });
+  const pick = (label: string, value: 'free' | 'paid') => {
+    const b = button(label, () => {
+      h.setBillingMode(value);
+      openPanel();
+    }, mode === value ? 'accent' : 'ghost');
+    b.setAttribute('aria-pressed', String(mode === value));
+    return b;
+  };
+  modeRow.appendChild(pick('Start zdarma', 'free'));
+  modeRow.appendChild(pick('Placený režim', 'paid'));
+  if (mode === 'paid') {
+    modeRow.appendChild(
+      button('Vyčerpat lajky zdarma', () => {
+        h.exhaustLikes();
+        closePanel();
+      }),
+    );
+  }
+  billingBox.appendChild(modeRow);
+
   const smsTitle = el('div', { fontWeight: '700', marginTop: '4px' }, sent.length ? 'Odeslané SMS' : 'Zatím žádné SMS');
   const list = el('div', { display: 'flex', flexDirection: 'column', gap: '8px' });
   [...sent].reverse().forEach((m) => list.appendChild(smsBubble(m)));
@@ -165,7 +202,7 @@ function openPanel() {
   panel = el('div', { position: 'absolute', inset: '0' });
   panel.appendChild(backdrop(closePanel));
   const close = button('Zavřít', closePanel);
-  panel.appendChild(card([title, intro, creds, actions, smsTitle, list, close]));
+  panel.appendChild(card([title, intro, creds, actions, billingBox, smsTitle, list, close]));
   root.appendChild(panel);
 }
 

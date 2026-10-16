@@ -34,7 +34,19 @@ export function loadConfig(env = process.env) {
       messagingServiceSid: env.TWILIO_MESSAGING_SERVICE_SID,
     },
     pushProvider: env.PUSH_PROVIDER ?? (dev ? 'console' : 'expo'),
+    // Start je zdarma. Placené úrovně se zapnou BILLING_MODE=paid (aplikace se nemusí měnit).
+    billingMode: env.BILLING_MODE ?? 'free',
+    // 'dev' = nákup tlačítkem bez platby (jen vývoj), 'revenuecat' = App Store a Google Play přes RevenueCat.
+    paymentsProvider: env.PAYMENTS_PROVIDER ?? (dev ? 'dev' : 'revenuecat'),
+    revenuecat: { webhookAuth: env.REVENUECAT_WEBHOOK_AUTH },
   };
+
+  if (!['free', 'paid'].includes(config.billingMode)) throw new Error('BILLING_MODE musí být free nebo paid.');
+  if (!['dev', 'revenuecat'].includes(config.paymentsProvider)) throw new Error('PAYMENTS_PROVIDER musí být dev nebo revenuecat.');
+  if (!dev && config.paymentsProvider === 'dev') throw new Error('Vývojové platby nesmí běžet v produkci.');
+  if (!dev && config.billingMode === 'paid' && !config.revenuecat.webhookAuth) {
+    throw new Error('Chybí proměnná prostředí REVENUECAT_WEBHOOK_AUTH.');
+  }
 
   if (!dev && config.verificationProvider === 'dev') {
     throw new Error('Vývojové ověření totožnosti nesmí běžet v produkci.');

@@ -2,8 +2,10 @@ import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import { HomeBanners } from '@/components/HomeBanners';
+import { Icon } from '@/components/Icon';
 import { Avatar, Body, Screen, Title } from '@/components/ui';
-import { api, type AgreementStatus, type MatchSummary } from '@/lib/api';
+import { api, type AgreementStatus, type Likes, type MatchSummary } from '@/lib/api';
+import { showPaid, useBilling } from '@/lib/billing';
 import { colors, fonts } from '@/lib/theme';
 
 const statusPill: Partial<Record<AgreementStatus, { label: string; color: string }>> = {
@@ -15,11 +17,15 @@ const statusPill: Partial<Record<AgreementStatus, { label: string; color: string
 export default function Matches() {
   const [matches, setMatches] = useState<MatchSummary[]>([]);
   const [refreshing, setRefreshing] = useState(false);
+  const [likes, setLikes] = useState<Likes | null>(null);
+  const billing = useBilling();
+  const paid = showPaid(billing);
 
   const load = useCallback(async () => {
     setRefreshing(true);
     try {
       setMatches(await api<MatchSummary[]>('GET', '/matches'));
+      setLikes(await api<Likes>('GET', '/likes'));
     } catch {
       // ponecháme poslední stav
     } finally {
@@ -39,6 +45,22 @@ export default function Matches() {
         <Title>Zprávy</Title>
       </View>
       <HomeBanners />
+      {paid ? (
+        <Pressable accessibilityRole="button" onPress={() => router.push('/likes')} style={({ pressed }) => [s.likes, pressed && { opacity: 0.85 }]}>
+          <View style={s.likesIcon}>
+            <Icon name="heart" size={22} color={colors.onAccent} fill={colors.onAccent} strokeWidth={1.5} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text style={s.name}>Lajky</Text>
+            <Text style={s.preview}>
+              {likes?.count
+                ? `Lajklo tě ${likes.count} ${likes.count === 1 ? 'člověk' : likes.count < 5 ? 'lidi' : 'lidí'}${billing.features.seeLikes ? '' : ' – uvidíš je s Gold'}`
+                : 'Kdo tě lajkl a koho jsi lajkl/a ty'}
+            </Text>
+          </View>
+          <Icon name="chevron" color={colors.muted} />
+        </Pressable>
+      ) : null}
       <FlatList
         data={matches}
         keyExtractor={(m) => String(m.id)}
@@ -76,6 +98,8 @@ export default function Matches() {
 }
 
 const s = StyleSheet.create({
+  likes: { flexDirection: 'row', alignItems: 'center', gap: 14, marginHorizontal: 14, marginBottom: 6, padding: 10, borderRadius: 16, backgroundColor: colors.surface },
+  likesIcon: { width: 56, height: 56, borderRadius: 28, backgroundColor: colors.accent, alignItems: 'center', justifyContent: 'center' },
   row: { flexDirection: 'row', alignItems: 'center', gap: 14, padding: 10, borderRadius: 16 },
   name: { fontFamily: fonts.bold, fontSize: 16, color: colors.text },
   preview: { fontFamily: fonts.regular, fontSize: 14, color: colors.muted },

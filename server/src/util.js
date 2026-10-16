@@ -1,9 +1,11 @@
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 
 export class HttpError extends Error {
-  constructor(status, message) {
+  /** data = strojově čitelné doplňky odpovědi (např. { code: 'like_limit', resetAt }). */
+  constructor(status, message, data = undefined) {
     super(message);
     this.status = status;
+    this.data = data;
   }
 }
 

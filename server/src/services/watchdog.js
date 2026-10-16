@@ -1,4 +1,5 @@
 import { AGREEMENT_RETENTION_HOURS } from '../../../shared/constants.js';
+import { refreshExpiredPlans } from '../billing.js';
 import { applyDeferredSuspensions } from '../model.js';
 import { checkOverdue } from '../routes/safety.js';
 
@@ -8,6 +9,7 @@ const DAY = 86400_000;
 export async function runWatchdog(ctx, now = Date.now()) {
   checkOverdue(ctx, now);
   applyDeferredSuspensions(ctx.db);
+  refreshExpiredPlans(ctx.db, now);
   await ctx.alerts.flush();
 }
 

@@ -18,6 +18,7 @@ function useNotificationNavigation() {
   const response = Notifications.useLastNotificationResponse();
   useEffect(() => {
     const data = response?.notification.request.content.data as { type?: string; matchId?: number } | undefined;
+    if (data?.type === 'likes') return void router.push('/likes');
     if (!data?.matchId) return;
     if (data.type === 'message' || data.type === 'match') router.push(`/chat/${data.matchId}`);
     if (data.type === 'agreement') router.push(`/agreement/${data.matchId}`);
@@ -31,6 +32,7 @@ function Navigation() {
     <AppLockProvider signedIn={status === 'signedIn'}>
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg }, animation: 'slide_from_right' }}>
         <Stack.Screen name="match" options={{ presentation: 'fullScreenModal', animation: 'fade' }} />
+        <Stack.Screen name="premium" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
       </Stack>
     </AppLockProvider>
   );

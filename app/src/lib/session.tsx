@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { api, setAuthToken, setSessionReady, setUnauthorizedHandler, type Me } from './api';
+import { setBilling } from './billing';
 import { registerPushToken } from './notifications';
 import { storage } from './storage';
 
@@ -22,6 +23,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     setAuthToken(null);
     await storage.setToken(null);
     setMe(null);
+    setBilling(null);
     setStatus('signedOut');
   }, []);
 
@@ -56,6 +58,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const signIn = useCallback(async (token: string, user: Me) => {
     setAuthToken(token);
     await storage.setToken(token);
+    setBilling(null);
     setMe(user);
     setStatus('signedIn');
     void registerPushToken();

@@ -2,7 +2,29 @@
 // souhlasu a bezpečnostního režimu), jen běží v prohlížeči nad daty v localStorage.
 // Moderace zpráv je převzatá přímo ze serveru. Demo protějšky lajkují zpátky, odpovídají a potvrzují dohody.
 
-import { ACTIVITIES, CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS, MIN_AGE, REVOKE_COOLDOWN_DAYS, WRONG_PIN_ALARM_THRESHOLD } from '@fapp/shared';
+import {
+  ACTIVITIES,
+  BOOST_MINUTES,
+  CHECK_IN_GRACE_MINUTES,
+  CHECK_IN_OPTIONS,
+  FEATURES,
+  FREE_LIKES_PER_WINDOW,
+  LIKES_WINDOW_HOURS,
+  MIN_AGE,
+  PLANS,
+  PRODUCTS,
+  REVOKE_COOLDOWN_DAYS,
+  SENT_LIKES_DAYS,
+  TONIGHT_END_HOUR,
+  TRAVEL_CITIES,
+  WEEKLY_SUPER_LIKES,
+  WRONG_PIN_ALARM_THRESHOLD,
+  type BillingMode,
+  type CreditKind,
+  type FeatureId,
+  type PlanId,
+  type TravelCityId,
+} from '@fapp/shared';
 import { moderate } from '../../server/src/services/moderation.js';
 import { overlay } from './overlay';
 
@@ -32,6 +54,13 @@ type User = {
   verificationStatus: 'none' | 'pending' | 'approved' | 'declined';
   status: 'active' | 'suspended' | 'banned';
   demo: boolean;
+  plan: PlanId;
+  planExpiresAt: string | null;
+  incognito: boolean;
+  travelCity: TravelCityId | null;
+  boostUntil: string | null;
+  tonightUntil: string | null;
+  credits: Record<CreditKind, number>;
 };
 
 type Match = { id: number; a: number; b: number; createdAt: string; endedAt: string | null; partnerSafety: boolean; script: number };
@@ -83,7 +112,11 @@ type Db = {
   nextId: number;
   users: User[];
   tokens: Record<string, number>;
-  swipes: { from: number; to: number; like: boolean }[];
+  swipes: { from: number; to: number; like: boolean; super?: boolean; superCredit?: boolean; at?: string }[];
+  boosts: { userId: number; fromPlan: boolean; at: string }[];
+  billingMode: BillingMode;
+  /** Demo: kolik lajků zdarma už je „spotřebovaných“ (tlačítko v demo panelu). */
+  likeOffset: number;
   matches: Match[];
   messages: Message[];
   agreements: Agreement[];
@@ -98,15 +131,26 @@ class HttpError extends Error {
   constructor(
     public status: number,
     message: string,
+    public data: Record<string, unknown> = {},
   ) {
     super(message);
   }
 }
 
-const STORAGE_KEY = 'fapp-demo-db-v2';
+const STORAGE_KEY = 'fapp-demo-db-v3';
 const nowIso = () => new Date().toISOString();
 
 // --- demo data ---
+
+const freeBilling = () => ({
+  plan: 'free' as PlanId,
+  planExpiresAt: null,
+  incognito: false,
+  travelCity: null,
+  boostUntil: null,
+  tonightUntil: null,
+  credits: { boost: 0, superlike: 0, tonight: 0 },
+});
 
 const TONES = ['#3B2A35', '#2B3340', '#3A3328', '#2E3A33', '#33293D', '#283640', '#3D2E2A', '#2F2F3D'];
 
@@ -159,8 +203,31 @@ function seed(): Db {
     verificationStatus: 'approved',
     status: 'active',
     demo: true,
+    ...freeBilling(),
+    // Eva má zapnuté „Dnes večer“ (v demu jen v placeném režimu).
+    tonightUntil: name === 'Eva' ? '2100-01-01T00:00:00.000Z' : null,
   }));
-  return { nextId: 1000, users, tokens: {}, swipes: [], matches: [], messages: [], agreements: [], safety: [], feedback: [], blocks: [] };
+  // Lucii (demo účet) už tři lidé lajkli – Jakub super lajkem.
+  const swipes: Db['swipes'] = [
+    { from: 7, to: 1, like: true, super: true, at: nowIso() },
+    { from: 9, to: 1, like: true, at: nowIso() },
+    { from: 12, to: 1, like: true, at: nowIso() },
+  ];
+  return {
+    nextId: 1000,
+    users,
+    tokens: {},
+    swipes,
+    matches: [],
+    messages: [],
+    agreements: [],
+    safety: [],
+    feedback: [],
+    blocks: [],
+    boosts: [],
+    billingMode: 'free',
+    likeOffset: 0,
+  };
 }
 
 function load(): Db {
@@ -198,7 +265,7 @@ function ageFrom(birthdate: string) {
   return age;
 }
 
-function km(a: User, b: User) {
+function km(a: { lat: number | null; lng: number | null }, b: { lat: number | null; lng: number | null }) {
   if (a.lat == null || b.lat == null || a.lng == null || b.lng == null) return null;
   const r = (x: number) => (x * Math.PI) / 180;
   const h = Math.sin(r(b.lat - a.lat) / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(r(b.lng - a.lng) / 2) ** 2;
@@ -206,10 +273,100 @@ function km(a: User, b: User) {
 }
 
 const userById = (uid: number) => db.users.find((u) => u.id === uid);
+
+// --- předplatné (stejná pravidla jako server/src/billing.js) ---
+
+const DAY = 86400_000;
+const activeUntil = (iso: string | null, now = Date.now()) => !!iso && Date.parse(iso) > now;
+const planOf = (u: User): PlanId => (u.plan !== 'free' && activeUntil(u.planExpiresAt) ? u.plan : 'free');
+const hasFeature = (u: User, f: FeatureId) => PLANS[planOf(u)].rank >= PLANS[FEATURES[f].plan].rank;
+
+function effectiveLocation(u: User) {
+  if (u.travelCity && hasFeature(u, 'travel')) {
+    const c = TRAVEL_CITIES[u.travelCity];
+    return { lat: c.lat, lng: c.lng, traveling: true };
+  }
+  return { lat: u.lat, lng: u.lng, traveling: false };
+}
+
+const paywall = (message: string, data: Record<string, unknown>) => new HttpError(402, message, data);
+function requireFeature(u: User, f: FeatureId) {
+  if (!hasFeature(u, f)) {
+    const plan = FEATURES[f].plan;
+    throw paywall(`${FEATURES[f].name} je součástí F*app ${PLANS[plan].name}.`, { code: 'upgrade', plan });
+  }
+}
+
+function likeQuota(u: User) {
+  if (db.billingMode !== 'paid' || hasFeature(u, 'unlimitedLikes')) return { limit: null, used: 0, remaining: null, resetAt: null };
+  const windowMs = LIKES_WINDOW_HOURS * 3600_000;
+  const since = Date.now() - windowMs;
+  const mine = db.swipes.filter((x) => x.from === u.id && x.like && !x.super && x.at && Date.parse(x.at) > since);
+  const used = mine.length + db.likeOffset;
+  const remaining = Math.max(0, FREE_LIKES_PER_WINDOW - used);
+  const oldest = mine.map((x) => Date.parse(x.at!)).sort((a, b) => a - b)[0] ?? Date.now();
+  return { limit: FREE_LIKES_PER_WINDOW, used, remaining, resetAt: remaining === 0 ? new Date(oldest + windowMs).toISOString() : null };
+}
+
+function weeklySuperLikesLeft(u: User) {
+  if (!hasFeature(u, 'weeklySuperLikes')) return 0;
+  const since = Date.now() - 7 * DAY;
+  const used = db.swipes.filter((x) => x.from === u.id && x.super && !x.superCredit && x.at && Date.parse(x.at) > since).length;
+  return Math.max(0, WEEKLY_SUPER_LIKES - used);
+}
+
+function monthlyBoostLeft(u: User) {
+  if (!hasFeature(u, 'monthlyBoost')) return 0;
+  return db.boosts.some((b) => b.userId === u.id && b.fromPlan && Date.parse(b.at) > Date.now() - 30 * DAY) ? 0 : 1;
+}
+
+function tonightEnd() {
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Prague', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+      .formatToParts(new Date())
+      .map((p) => [p.type, Number(p.value)]),
+  );
+  let left = (TONIGHT_END_HOUR * 60 - (parts.hour * 60 + parts.minute) + 1440) % 1440;
+  if (left === 0) left = 1440;
+  return new Date(Date.now() + left * 60_000).toISOString();
+}
+
+function billingStatus(u: User) {
+  const plan = planOf(u);
+  const features = Object.fromEntries((Object.keys(FEATURES) as FeatureId[]).map((f) => [f, hasFeature(u, f)])) as Record<FeatureId, boolean>;
+  return {
+    mode: db.billingMode,
+    canPurchase: db.billingMode === 'paid',
+    provider: 'dev',
+    plan,
+    planExpiresAt: plan === 'free' ? null : u.planExpiresAt,
+    features,
+    likes: likeQuota(u),
+    superLikes: { weeklyLeft: weeklySuperLikesLeft(u), credits: u.credits.superlike },
+    boost: { activeUntil: activeUntil(u.boostUntil) ? u.boostUntil : null, monthlyLeft: monthlyBoostLeft(u), credits: u.credits.boost },
+    tonight: { activeUntil: activeUntil(u.tonightUntil) ? u.tonightUntil : null, included: features.tonight, credits: u.credits.tonight },
+    incognito: u.incognito && features.incognito,
+    travelCity: features.travel ? u.travelCity : null,
+  };
+}
+
+/** Demo panel: přepnutí mezi startem zdarma a placeným režimem. */
+export const billingMode = () => db.billingMode;
+export function setBillingMode(mode: BillingMode) {
+  db.billingMode = mode;
+  db.likeOffset = 0;
+  save();
+}
+/** Demo panel: nasimuluje 50 vyčerpaných lajků zdarma. */
+export function exhaustLikes() {
+  db.likeOffset = FREE_LIKES_PER_WINDOW;
+  save();
+}
 const blocked = (a: number, b: number) => db.blocks.some((x) => (x.a === a && x.b === b) || (x.a === b && x.b === a));
 
 function publicProfile(u: User, viewer: User | null) {
-  const d = viewer ? km(viewer, u) : null;
+  const d = viewer ? km(effectiveLocation(viewer), effectiveLocation(u)) : null;
+  const here = effectiveLocation(u);
   return {
     id: u.id,
     name: u.name,
@@ -220,6 +377,9 @@ function publicProfile(u: User, viewer: User | null) {
     tags: u.tags,
     verified: u.verificationStatus === 'approved',
     distanceKm: d == null ? null : Math.max(1, Math.round(d)),
+    traveling: here.traveling,
+    // demo profily mají štítky jen v placeném režimu (na startu nikdo nic nekoupil)
+    tonight: activeUntil(u.tonightUntil) && (!u.demo || db.billingMode === 'paid'),
   };
 }
 
@@ -535,8 +695,14 @@ route('POST', '/auth/register', (c) => {
     verificationStatus: 'none',
     status: 'active',
     demo: false,
+    ...freeBilling(),
   };
   db.users.push(user);
+  // Ať je v „Lajkách“ co ukázat: pár demo lidí, kteří o nového člověka stojí, ho rovnou lajkne.
+  db.users
+    .filter((u) => u.demo && u.interestedIn.includes(user.gender) && user.interestedIn.includes(u.gender))
+    .slice(0, 3)
+    .forEach((u, i) => db.swipes.push({ from: u.id, to: user.id, like: true, super: i === 0, at: nowIso() }));
   const t = token();
   db.tokens[t] = user.id;
   return { status: 201, json: { token: t, user: own(user) } };
@@ -635,10 +801,22 @@ route('POST', '/verification/dev-decide', (c) => {
 route('GET', '/discover', (c) => {
   const me = requireVerified(c);
   const myAge = ageFrom(me.birthdate);
+  const here = effectiveLocation(me);
+  const paidWorld = db.billingMode === 'paid';
+  const likedMe = new Map(db.swipes.filter((x) => x.to === me.id && x.like).map((x) => [x.from, !!x.super]));
+  // Pořadí jako na serveru: super lajk → prioritní lajk → boost → Dnes večer → vzdálenost.
+  const tier = (u: User) => {
+    if (likedMe.get(u.id) && (paidWorld || !u.demo)) return 0;
+    if (likedMe.has(u.id) && hasFeature(u, 'priorityLikes')) return 1;
+    if (activeUntil(u.boostUntil)) return 2;
+    if (activeUntil(u.tonightUntil) && (paidWorld || !u.demo)) return 3;
+    return 4;
+  };
   return db.users
     .filter((u) => u.id !== me.id && u.status === 'active' && u.verificationStatus === 'approved')
-    .filter((u) => !db.swipes.some((s) => s.from === me.id && s.to === u.id) && !blocked(me.id, u.id))
-    .map((u) => ({ u, age: ageFrom(u.birthdate), d: km(me, u) ?? 0 }))
+    .filter((u) => !db.swipes.some((x) => x.from === me.id && x.to === u.id) && !blocked(me.id, u.id))
+    .filter((u) => !(u.incognito && hasFeature(u, 'incognito') && !likedMe.has(u.id)))
+    .map((u) => ({ u, age: ageFrom(u.birthdate), d: km(here, effectiveLocation(u)) ?? 0, t: tier(u) }))
     .filter(
       ({ u, age, d }) =>
         me.interestedIn.includes(u.gender) &&
@@ -649,9 +827,9 @@ route('GET', '/discover', (c) => {
         myAge <= u.ageMax &&
         d <= Math.min(me.maxDistanceKm, u.maxDistanceKm),
     )
-    .sort((x, y) => x.d - y.d)
+    .sort((x, y) => x.t - y.t || x.d - y.d)
     .slice(0, 20)
-    .map(({ u }) => publicProfile(u, me));
+    .map(({ u }) => ({ ...publicProfile(u, me), superLike: !!likedMe.get(u.id) && (paidWorld || !u.demo) }));
 });
 
 route('POST', '/swipes', (c) => {
@@ -659,13 +837,26 @@ route('POST', '/swipes', (c) => {
   const target = userById(Number(c.body.targetId));
   if (!target || target.id === me.id) throw new HttpError(404, 'Profil neexistuje.');
   const like = c.body.like === true;
-  db.swipes = db.swipes.filter((s) => !(s.from === me.id && s.to === target.id));
-  db.swipes.push({ from: me.id, to: target.id, like });
-  if (!like) return { match: null };
-  if (target.demo && !db.swipes.some((s) => s.from === target.id && s.to === me.id)) {
-    db.swipes.push({ from: target.id, to: me.id, like: true });
+  const superLike = c.body.super === true;
+  if (superLike && !like) throw new HttpError(400, 'Super lajk je vždycky lajk.');
+  const quota = likeQuota(me);
+  if (like && !superLike && quota.remaining === 0) {
+    throw paywall('Došly ti lajky. Další přibudou za chvíli – nebo swipuj bez limitu s F*app Plus.', { code: 'like_limit', resetAt: quota.resetAt });
   }
-  if (!db.swipes.some((s) => s.from === target.id && s.to === me.id && s.like)) return { match: null };
+  let superCredit = false;
+  if (superLike && weeklySuperLikesLeft(me) === 0) {
+    if (me.credits.superlike <= 0) throw paywall('Nemáš žádný super lajk.', { code: 'no_credit', credit: 'superlike' });
+    me.credits.superlike -= 1;
+    superCredit = true;
+  }
+  db.swipes = db.swipes.filter((x) => !(x.from === me.id && x.to === target.id));
+  db.swipes.push({ from: me.id, to: target.id, like, super: superLike, superCredit, at: nowIso() });
+  const likesLeft = quota.remaining === null ? null : like && !superLike ? quota.remaining - 1 : quota.remaining;
+  if (!like) return { match: null, likesLeft };
+  if (target.demo && !db.swipes.some((x) => x.from === target.id && x.to === me.id)) {
+    db.swipes.push({ from: target.id, to: me.id, like: true, at: nowIso() });
+  }
+  if (!db.swipes.some((x) => x.from === target.id && x.to === me.id && x.like)) return { match: null, likesLeft };
   const [a, b] = [me.id, target.id].sort((x, y) => x - y);
   let m = db.matches.find((x) => x.a === a && x.b === b);
   if (!m) {
@@ -677,8 +868,112 @@ route('POST', '/swipes', (c) => {
       later(4000, () => demoSay(match, target.id, REPLIES[0]));
     }
   }
-  if (m.endedAt) return { match: null };
-  return { match: { id: m.id, partner: publicProfile(target, me) } };
+  if (m.endedAt) return { match: null, likesLeft };
+  return { match: { id: m.id, partner: publicProfile(target, me) }, likesLeft };
+});
+
+route('POST', '/swipes/rewind', (c) => {
+  const me = requireVerified(c);
+  requireFeature(me, 'rewind');
+  const last = [...db.swipes].filter((x) => x.from === me.id).sort((x, y) => (y.at ?? '').localeCompare(x.at ?? ''))[0];
+  if (!last) throw new HttpError(404, 'Není co vracet.');
+  if (last.super) throw new HttpError(409, 'Super lajk vrátit nejde.');
+  const [a, b] = [me.id, last.to].sort((x, y) => x - y);
+  if (db.matches.some((m) => m.a === a && m.b === b)) throw new HttpError(409, 'Z tohohle swipu už je match.');
+  db.swipes = db.swipes.filter((x) => x !== last);
+  const target = userById(last.to);
+  if (!target) throw new HttpError(404, 'Profil už neexistuje.');
+  return { profile: publicProfile(target, me) };
+});
+
+// předplatné
+route('GET', '/billing', (c) => billingStatus(requireVerified(c)));
+route('POST', '/billing/purchase', (c) => {
+  const me = requireVerified(c);
+  if (db.billingMode !== 'paid') throw new HttpError(403, 'Platby zatím nejsou zapnuté – F*app je teď celý zdarma.');
+  const productId = str(c.body.productId);
+  if (!Object.hasOwn(PRODUCTS, productId)) throw new HttpError(400, 'Neznámý produkt.');
+  const product = PRODUCTS[productId as keyof typeof PRODUCTS];
+  if (product.kind === 'plan') {
+    // vyšší úroveň vyhrává; stejná nebo nižší prodlouží
+    const from = activeUntil(me.planExpiresAt) ? Date.parse(me.planExpiresAt!) : Date.now();
+    const d = new Date(from);
+    d.setUTCMonth(d.getUTCMonth() + product.months);
+    if (PLANS[product.plan].rank >= PLANS[planOf(me)].rank) me.plan = product.plan;
+    me.planExpiresAt = d.toISOString();
+  } else {
+    me.credits[product.credit] += product.amount;
+  }
+  return billingStatus(me);
+});
+route('POST', '/billing/boost', (c) => {
+  const me = requireVerified(c);
+  if (activeUntil(me.boostUntil)) throw new HttpError(409, 'Boost už běží.');
+  const fromPlan = monthlyBoostLeft(me) > 0;
+  if (!fromPlan) {
+    if (me.credits.boost <= 0) throw paywall('Nemáš žádný boost.', { code: 'no_credit', credit: 'boost' });
+    me.credits.boost -= 1;
+  }
+  db.boosts.push({ userId: me.id, fromPlan, at: nowIso() });
+  me.boostUntil = new Date(Date.now() + BOOST_MINUTES * 60_000).toISOString();
+  return billingStatus(me);
+});
+route('POST', '/billing/tonight', (c) => {
+  const me = requireVerified(c);
+  if (activeUntil(me.tonightUntil)) throw new HttpError(409, 'Dnes večer už máš zapnuté.');
+  if (!hasFeature(me, 'tonight')) {
+    if (me.credits.tonight <= 0) throw paywall('„Dnes večer“ je v Platinum nebo jednorázově.', { code: 'no_credit', credit: 'tonight' });
+    me.credits.tonight -= 1;
+  }
+  me.tonightUntil = tonightEnd();
+  return billingStatus(me);
+});
+route('DELETE', '/billing/tonight', (c) => {
+  const me = requireVerified(c);
+  me.tonightUntil = null;
+  return billingStatus(me);
+});
+route('PUT', '/billing/settings', (c) => {
+  const me = requireVerified(c);
+  const { incognito, travelCity } = c.body;
+  if (incognito !== undefined) {
+    if (incognito === true) requireFeature(me, 'incognito');
+    me.incognito = incognito === true;
+  }
+  if (travelCity !== undefined) {
+    if (travelCity === null || travelCity === '') me.travelCity = null;
+    else {
+      if (typeof travelCity !== 'string' || !Object.hasOwn(TRAVEL_CITIES, travelCity)) throw new HttpError(400, 'Neznámé město.');
+      requireFeature(me, 'travel');
+      me.travelCity = travelCity as TravelCityId;
+    }
+  }
+  return billingStatus(me);
+});
+route('GET', '/likes', (c) => {
+  const me = requireVerified(c);
+  const paidWorld = db.billingMode === 'paid';
+  const likers = db.swipes
+    .filter((x) => x.to === me.id && x.like && !db.swipes.some((y) => y.from === me.id && y.to === x.from) && !blocked(me.id, x.from))
+    .map((x) => ({ u: userById(x.from), x }))
+    .filter((r): r is { u: User; x: Db['swipes'][number] } => !!r.u && r.u.status === 'active')
+    .sort((p, q) => Number(!!q.x.super) - Number(!!p.x.super));
+  if (!hasFeature(me, 'seeLikes')) return { count: likers.length, profiles: [] };
+  return {
+    count: likers.length,
+    profiles: likers.map(({ u, x }) => ({ ...publicProfile(u, me), superLike: !!x.super && (paidWorld || !u.demo) })),
+  };
+});
+route('GET', '/likes/sent', (c) => {
+  const me = requireVerified(c);
+  requireFeature(me, 'sentLikes');
+  const since = Date.now() - SENT_LIKES_DAYS * DAY;
+  return db.swipes
+    .filter((x) => x.from === me.id && x.like && x.at && Date.parse(x.at) > since)
+    .filter((x) => !db.swipes.some((y) => y.from === x.to && y.to === me.id && y.like))
+    .map((x) => ({ u: userById(x.to), x }))
+    .filter((r) => !!r.u)
+    .map(({ u, x }) => ({ ...publicProfile(u!, me), superLike: !!x.super }));
 });
 
 // matche a chat
@@ -970,7 +1265,7 @@ export function handle(method: string, fullPath: string, body: unknown, authToke
       if (typeof out === 'object' && 'status' in out && 'json' in out && Object.keys(out).length === 2) return out as Res;
       return { status: 200, json: out };
     } catch (err) {
-      if (err instanceof HttpError) return { status: err.status, json: { error: err.message } };
+      if (err instanceof HttpError) return { status: err.status, json: { ...err.data, error: err.message } };
       console.error(err);
       return { status: 500, json: { error: 'Něco se pokazilo. Zkus to znovu.' } };
     }

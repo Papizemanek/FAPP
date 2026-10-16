@@ -1,4 +1,15 @@
-import type { ACTIVITIES, FEEDBACK_REASONS, GENDERS, REPORT_REASONS, TAGS } from '@fapp/shared';
+import type {
+  ACTIVITIES,
+  BillingMode,
+  CreditKind,
+  FeatureId,
+  FEEDBACK_REASONS,
+  GENDERS,
+  PlanId,
+  REPORT_REASONS,
+  TAGS,
+  TravelCityId,
+} from '@fapp/shared';
 import { API_URL } from './config';
 import { transport, type TransportResponse } from './transport';
 
@@ -20,6 +31,12 @@ export type Profile = {
   tags: Tag[];
   verified: boolean;
   distanceKm: number | null;
+  /** „Na cestách“ – swipuje v jiném městě. */
+  traveling?: boolean;
+  /** „Dnes večer“ – má čas ještě dnes. */
+  tonight?: boolean;
+  /** Dal/a ti super lajk (jen v balíčku a v lajcích). */
+  superLike?: boolean;
 };
 
 export type Me = Profile & {
@@ -108,12 +125,34 @@ export type Message = {
   createdAt: string;
 };
 
+/** Předplatné a placené funkce. Ve free režimu (start) se nic neprodává a lajky jsou bez limitu. */
+export type Billing = {
+  mode: BillingMode;
+  canPurchase: boolean;
+  provider: 'dev' | 'revenuecat';
+  plan: PlanId;
+  planExpiresAt: string | null;
+  features: Record<FeatureId, boolean>;
+  likes: { limit: number | null; used: number; remaining: number | null; resetAt: string | null };
+  superLikes: { weeklyLeft: number; credits: number };
+  boost: { activeUntil: string | null; monthlyLeft: number; credits: number };
+  tonight: { activeUntil: string | null; included: boolean; credits: number };
+  incognito: boolean;
+  travelCity: TravelCityId | null;
+};
+
+export type Likes = { count: number; profiles: Profile[] };
+
+/** Strojově čitelné doplňky chyby (402 = placená funkce). */
+export type ApiErrorData = { code?: 'like_limit' | 'no_credit' | 'upgrade'; resetAt?: string; plan?: PlanId; credit?: CreditKind };
+
 export type PendingFeedback = { agreementId: number; matchId: number; partnerName: string; meetAt: string };
 
 export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
+    public data: ApiErrorData = {},
   ) {
     super(message);
   }
@@ -147,7 +186,8 @@ export async function api<T = unknown>(method: string, path: string, body?: unkn
   if (res.status === 204) return undefined as T;
   if (res.status >= 400) {
     if (res.status === 401 && authToken) onUnauthorized?.();
-    throw new ApiError(res.status, (res.json as { error?: string } | null)?.error ?? 'Něco se pokazilo.');
+    const { error, ...data } = (res.json as ({ error?: string } & ApiErrorData) | null) ?? {};
+    throw new ApiError(res.status, error ?? 'Něco se pokazilo.', data);
   }
   return res.json as T;
 }

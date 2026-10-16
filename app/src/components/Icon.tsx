@@ -21,6 +21,13 @@ const paths = {
   lock: ['M6 11h12v10H6z', 'M8 11V8a4 4 0 0 1 8 0v3'],
   check: ['M5 12l5 5 9-10'],
   chevron: ['M9 6l6 6-6 6'],
+  bolt: ['M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z'],
+  star: ['M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8-4.3-4.1 5.9-.9L12 3.5z'],
+  undo: ['M9 14L4 9l5-5', 'M4 9h10.5a5.5 5.5 0 0 1 0 11H11'],
+  moon: ['M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z'],
+  globe: ['M3 12h18', 'M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18'],
+  eyeOff: ['M3 3l18 18', 'M10.6 6.1A9.6 9.6 0 0 1 12 6c5.5 0 9 6 9 6a16.6 16.6 0 0 1-2.9 3.5', 'M6.6 7.6C4.3 9.1 3 12 3 12s3.5 6 9 6a8.7 8.7 0 0 0 4-.9'],
+  crown: ['M3.5 8l4.5 4 4-7 4 7 4.5-4-2 11h-13l-2-11z'],
 } as const;
 
 const circles: Partial<Record<keyof typeof paths, [number, number, number][]>> = {
@@ -31,6 +38,7 @@ const circles: Partial<Record<keyof typeof paths, [number, number, number][]>> =
     [10, 17, 2],
   ],
   image: [[9, 9, 1.5]],
+  globe: [[12, 12, 9]],
 };
 
 export type IconName = keyof typeof paths;

@@ -1,12 +1,13 @@
-import { GENDERS, MAX_PROFILE_PHOTOS, TAGS } from '@fapp/shared';
+import { GENDERS, MAX_PROFILE_PHOTOS, PLANS, TAGS, TRAVEL_CITIES, type TravelCityId } from '@fapp/shared';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
-import { Banner, Button, Chip, ErrorText, Field, Label, Screen, Stepper, Title } from '@/components/ui';
-import { api, errorMessage, imageSource, type Gender, type Me, type Tag } from '@/lib/api';
+import { Banner, Button, Chip, ErrorText, Field, Label, Screen, Stepper, Title, Toggle } from '@/components/ui';
+import { api, errorMessage, imageSource, type Billing, type Gender, type Me, type Tag } from '@/lib/api';
+import { openPaywall, setBilling, showPaid, useBilling } from '@/lib/billing';
 import { pickPhotoBase64 } from '@/lib/photos';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
@@ -14,6 +15,8 @@ import { colors, fonts } from '@/lib/theme';
 const tagKeys = Object.keys(TAGS) as Tag[];
 const genderKeys = Object.keys(GENDERS) as Gender[];
 const plural: Record<Gender, string> = { man: 'Muže', woman: 'Ženy', nonbinary: 'Nebinární' };
+const cityKeys = Object.keys(TRAVEL_CITIES) as TravelCityId[];
+const day = (iso: string) => new Date(iso).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric' });
 
 export default function ProfileScreen() {
   const { me, setMe, signOut } = useSession();
@@ -24,6 +27,7 @@ export default function ProfileScreen() {
   const [deletePassword, setDeletePassword] = useState('');
   const [showDelete, setShowDelete] = useState(false);
   const [photoToRemove, setPhotoToRemove] = useState<string | null>(null);
+  const billing = useBilling();
 
   // Formulář se přenačte jen při změně účtu – přidání fotky nesmaže rozepsané úpravy.
   useEffect(() => setForm(toForm(me)), [me?.id]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -77,6 +81,16 @@ export default function ProfileScreen() {
 
   const safetyReady = me.trustedPhone && me.hasCheckinPin && me.hasDuressPin;
 
+  // Inkognito a „Na cestách“ (Plus). Bez předplatného otevře nabídku.
+  const updateBilling = async (body: { incognito?: boolean; travelCity?: TravelCityId | null }) => {
+    setError('');
+    try {
+      setBilling(await api<Billing>('PUT', '/billing/settings', body));
+    } catch (err) {
+      if (!openPaywall(err)) setError(errorMessage(err));
+    }
+  };
+
   return (
     <Screen edges={['top']}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
@@ -127,6 +141,41 @@ export default function ProfileScreen() {
             action="Upravit"
             onPress={() => router.push('/safety-settings')}
           />
+
+          {showPaid(billing) ? (
+            <View style={{ gap: 12 }}>
+              <Banner
+                tone={billing.plan === 'free' ? 'neutral' : 'safe'}
+                icon="crown"
+                title={billing.plan === 'free' ? 'F*app Plus, Gold a Platinum' : `F*app ${PLANS[billing.plan].name}`}
+                subtitle={
+                  billing.plan === 'free'
+                    ? 'Neomezené lajky, kdo tě lajkl, boost a další.'
+                    : billing.planExpiresAt
+                      ? `Platí do ${day(billing.planExpiresAt)}.`
+                      : undefined
+                }
+                action={billing.plan === 'free' ? 'Vylepšit' : 'Spravovat'}
+                onPress={() => router.push('/premium')}
+              />
+              <Toggle
+                label="Inkognito"
+                hint="Uvidí tě jen ti, koho lajkneš. (Plus)"
+                value={billing.incognito}
+                onChange={(incognito) => updateBilling({ incognito })}
+              />
+              <View style={{ gap: 10 }}>
+                <Label>Na cestách (Plus)</Label>
+                <View style={s.wrap}>
+                  <Chip label="Doma" selected={!billing.travelCity} onPress={() => updateBilling({ travelCity: null })} />
+                  {cityKeys.map((c) => (
+                    <Chip key={c} label={TRAVEL_CITIES[c].name} selected={billing.travelCity === c} onPress={() => updateBilling({ travelCity: c })} />
+                  ))}
+                </View>
+                <Text style={s.hint2}>Swipuješ v jiném městě ještě před cestou a lidé tam tě uvidí se štítkem „Na cestách“.</Text>
+              </View>
+            </View>
+          ) : null}
 
           <View style={{ gap: 10 }}>
             <Label>Koho mi ukazovat</Label>
@@ -185,5 +234,6 @@ const s = StyleSheet.create({
   photo: { flex: 1, height: 150, borderRadius: 14, overflow: 'hidden', backgroundColor: colors.surface2 },
   photoEmpty: { borderWidth: 1.5, borderStyle: 'dashed', borderColor: '#5A5160', backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },
   hint: { fontFamily: fonts.regular, fontSize: 13, color: colors.muted, marginTop: -10 },
+  hint2: { fontFamily: fonts.regular, fontSize: 13, color: colors.muted },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
 });

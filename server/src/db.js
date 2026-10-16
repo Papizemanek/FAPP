@@ -214,6 +214,49 @@ CREATE TABLE IF NOT EXISTS safety_sessions (
 );
 CREATE INDEX IF NOT EXISTS safety_active ON safety_sessions (ended_at);
 
+-- Předplatné. Zdroj pravdy jsou obchody (přes RevenueCat), 'dev' a 'admin' jsou pro vývoj a testery.
+-- Aktuální úroveň je kvůli rychlému swipování zkopírovaná i v users.plan / users.plan_expires_at.
+CREATE TABLE IF NOT EXISTS subscriptions (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  plan TEXT NOT NULL,
+  product_id TEXT NOT NULL,
+  source TEXT NOT NULL,
+  original_transaction_id TEXT,
+  expires_at TEXT NOT NULL,
+  cancelled_at TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS subscriptions_tx ON subscriptions (original_transaction_id)
+  WHERE original_transaction_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS subscriptions_user ON subscriptions (user_id, expires_at);
+
+-- Jednorázové nákupy (boost, super lajky, Dnes večer). transaction_id hlídá, ať se nic nepřipíše dvakrát.
+CREATE TABLE IF NOT EXISTS purchases (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  product_id TEXT NOT NULL,
+  source TEXT NOT NULL,
+  transaction_id TEXT UNIQUE,
+  created_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS credits (
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL,
+  balance INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (user_id, kind)
+);
+
+-- Spuštěné boosty – kvůli měsíčnímu boostu v Gold a Platinum.
+CREATE TABLE IF NOT EXISTS boosts (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  from_plan INTEGER NOT NULL,
+  started_at TEXT NOT NULL
+);
+
 -- Fronta SMS pro důvěryhodné osoby. Hlídač ji opakovaně odesílá, dokud zprávy neprojdou.
 CREATE TABLE IF NOT EXISTS sms_outbox (
   id INTEGER PRIMARY KEY,
@@ -236,6 +279,15 @@ const MIGRATIONS = [
   ['safety_sessions', 'partner_id', 'INTEGER'],
   ['safety_sessions', 'preserved', 'INTEGER NOT NULL DEFAULT 0'],
   ['flags', 'by_user_id', 'INTEGER'],
+  ['users', 'plan', "TEXT NOT NULL DEFAULT 'free'"],
+  ['users', 'plan_expires_at', 'TEXT'],
+  ['users', 'incognito', 'INTEGER NOT NULL DEFAULT 0'],
+  ['users', 'travel_city', 'TEXT'],
+  ['users', 'boost_until', 'TEXT'],
+  ['users', 'tonight_until', 'TEXT'],
+  // super = 1 u super lajku; super_credit = 1, když se zaplatil kreditem (ne týdenní dávkou z předplatného)
+  ['swipes', 'super', 'INTEGER NOT NULL DEFAULT 0'],
+  ['swipes', 'super_credit', 'INTEGER NOT NULL DEFAULT 0'],
 ];
 
 function migrate(db) {

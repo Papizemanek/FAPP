@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import { timingSafeEqual } from 'node:crypto';
+import { PLANS } from '../../../shared/constants.js';
+import { refreshPlan } from '../billing.js';
 import { getUser, ownProfile } from '../model.js';
 import { HttpError, int, nowIso, str } from '../util.js';
 
@@ -83,6 +85,27 @@ export function adminRoutes({ db, config, sealer }) {
   r.post('/users/:id/suspend', setStatus('suspended'));
   r.post('/users/:id/ban', setStatus('banned'));
   r.post('/users/:id/reinstate', setStatus('active'));
+
+  // Předplatné zdarma pro testery a partnery: { plan: 'gold', days: 30 }. plan 'free' ukončí všechna taková darovaná.
+  r.post('/users/:id/plan', (req, res) => {
+    const user = getUser(db, userId(req));
+    if (!user) throw new HttpError(404, 'Uživatel neexistuje.');
+    const plan = String(req.body?.plan ?? '');
+    if (!Object.hasOwn(PLANS, plan)) throw new HttpError(400, 'Neznámá úroveň.');
+    const now = nowIso();
+    if (plan === 'free') {
+      db.prepare("UPDATE subscriptions SET expires_at = ?, updated_at = ? WHERE user_id = ? AND source = 'admin' AND expires_at > ?").run(now, now, user.id, now);
+    } else {
+      const days = int(req.body?.days, 'počet dní', { min: 1, max: 3660 });
+      db.prepare(
+        `INSERT INTO subscriptions (user_id, plan, product_id, source, expires_at, created_at, updated_at)
+         VALUES (?, ?, 'admin', 'admin', ?, ?, ?)`,
+      ).run(user.id, plan, new Date(Date.now() + days * 86400_000).toISOString(), now, now);
+    }
+    refreshPlan(db, user.id);
+    const fresh = getUser(db, user.id);
+    res.json({ id: user.id, plan: fresh.plan, planExpiresAt: fresh.plan_expires_at });
+  });
 
   return r;
 }

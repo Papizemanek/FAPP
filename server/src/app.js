@@ -5,6 +5,7 @@ import { createSealer } from './crypto.js';
 import { adminRoutes } from './routes/admin.js';
 import { agreementRoutes } from './routes/agreements.js';
 import { authRoutes } from './routes/auth.js';
+import { billingRoutes } from './routes/billing.js';
 import { discoverRoutes } from './routes/discover.js';
 import { imageRoutes } from './routes/images.js';
 import { matchRoutes } from './routes/matches.js';
@@ -51,6 +52,7 @@ export function createApp({ db, config, services, rateLimit = true }) {
   app.use('/api/verification', verificationRoutes(ctx));
   app.use('/api/images', imageRoutes(ctx));
   app.use('/api', discoverRoutes(ctx));
+  app.use('/api', billingRoutes(ctx));
   app.use('/api', agreementRoutes(ctx));
   app.use('/api', safetyRoutes(ctx));
   app.use('/api', reportRoutes(ctx));
@@ -63,7 +65,7 @@ export function createApp({ db, config, services, rateLimit = true }) {
   app.use((err, _req, res, _next) => {
     if (err.type === 'entity.too.large') return res.status(413).json({ error: 'Požadavek je příliš velký.' });
     if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'Neplatný JSON.' });
-    if (err.status && err.status < 500) return res.status(err.status).json({ error: err.message });
+    if (err.status && err.status < 500) return res.status(err.status).json({ ...err.data, error: err.message });
     console.error(err);
     res.status(err.status ?? 500).json({ error: err.status ? err.message : 'Něco se pokazilo. Zkus to znovu.' });
   });

@@ -1,4 +1,5 @@
 import { ACTIVITIES, CHECK_IN_GRACE_MINUTES } from '../../shared/constants.js';
+import { effectiveLocation, isActiveUntil } from './billing.js';
 import { imageUrl } from './images.js';
 import { HttpError, ageFrom, distanceKm, nowIso, parseJson } from './util.js';
 
@@ -9,8 +10,10 @@ export const getUser = (db, id) => db.prepare('SELECT * FROM users WHERE id = ?'
 
 export function publicProfile(user, viewer) {
   let distance = null;
-  if (viewer && viewer.lat != null && user.lat != null) {
-    distance = Math.max(1, Math.round(distanceKm(viewer.lat, viewer.lng, user.lat, user.lng)));
+  const here = effectiveLocation(user);
+  if (viewer && viewer.lat != null && here.lat != null) {
+    const from = effectiveLocation(viewer);
+    distance = Math.max(1, Math.round(distanceKm(from.lat, from.lng, here.lat, here.lng)));
   }
   return {
     id: user.id,
@@ -22,6 +25,8 @@ export function publicProfile(user, viewer) {
     tags: parseJson(user.tags, []),
     verified: user.verification_status === 'approved',
     distanceKm: distance,
+    traveling: here.traveling,
+    tonight: isActiveUntil(user.tonight_until),
   };
 }
 
