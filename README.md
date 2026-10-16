@@ -59,7 +59,11 @@ app/      nativní aplikace (Expo SDK 57 / React Native, expo-router)
      zmeškaný check-in (nízká), zrušení domluvy během probíhající schůzky,
    - **vzorce chování** (90 dní): vážné signály od 2 různých lidí → pozastavení (pokud právě probíhá schůzka, až po jejím konci, aby se
      druhému nevypnula ochrana), jakékoli signály od 3 lidí → příznak pro moderátora.
-8. **Soukromí v telefonu:** zámek aplikace (Face ID / otisk / kód telefonu, i na zamčené obrazovce jde spustit SOS),
+8. **Předplatné po vzoru Tinderu – na startu vypnuté.** `BILLING_MODE=free` (výchozí): nic se neprodává, lajky bez limitu.
+   `BILLING_MODE=paid`: 50 lajků zdarma za 12 h, Plus (neomezené lajky, vrácení swipu, na cestách, inkognito), Gold (+ kdo tě lajkl,
+   5 super lajků týdně, 1 boost měsíčně), Platinum (+ prioritní lajky, odeslané lajky, Dnes večer) a jednorázové nákupy.
+   Bezpečnost je vždy zdarma; účet s vážným příznakem si nekoupí viditelnost. Návrh: https://claude.ai/artifact/8XpLLyU5RCE13CK1piPckA
+9. **Soukromí v telefonu:** zámek aplikace (Face ID / otisk / kód telefonu, i na zamčené obrazovce jde spustit SOS),
    diskrétní režim (neutrální ikona „poznámky“ a notifikace bez obsahu), fotky bez EXIF/GPS (aplikace i server).
 
 ## Spuštění pro vývoj
@@ -106,6 +110,7 @@ Demo panel (štítek DEMO u pravého okraje) ukazuje „odeslané“ SMS, pohled
 | SMS | `SMS_PROVIDER=twilio`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM` nebo `TWILIO_MESSAGING_SERVICE_SID` | Bezpečnostně kritické – zprávy jdou přes frontu s opakováním. |
 | Push notifikace | `PUSH_PROVIDER=expo`, v aplikaci `EAS_PROJECT_ID` | |
 | Mapy na Androidu | `GOOGLE_MAPS_API_KEY` (při buildu aplikace) | |
+| Předplatné | `BILLING_MODE` (`free`/`paid`), `PAYMENTS_PROVIDER=revenuecat`, `REVENUECAT_WEBHOOK_AUTH` | Na startu `free`. Webhook: `POST {PUBLIC_URL}/api/billing/webhook/revenuecat`. Před zapnutím `paid` přidat do aplikace SDK `react-native-purchases` (funkce `purchase` v `app/src/lib/billing.ts`) a založit produkty v obchodech (ID v `shared/constants.js` → `PRODUCTS`). Testerům jde dát předplatné přes `POST /api/admin/users/:id/plan`. |
 | Moderátoři | `ADMIN_TOKEN` | API pod `/api/admin` (fronta příznaků, detail uživatele, nahlášené konverzace, suspend/ban/reinstate). Zatím bez UI. |
 | Ostatní | `PUBLIC_URL`, `PORT`, `DB_FILE`, `TRUST_PROXY`, `NODE_ENV=production` | HTTPS je nutnost. |
 
