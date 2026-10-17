@@ -10,8 +10,18 @@ import { useSession } from '@/lib/session';
 const genderKeys = Object.keys(GENDERS) as Gender[];
 
 /** „31. 12. 1995“ nebo „31.12.1995“ → „1995-12-31“ */
+// Číslice z klávesnic jiných písem (arabské, dévanágarí, bengálské, gurmukhí, gudžarátí, urijské, tamilské, telugské,
+// kannadské, malajálamské, thajské, plné šířky) → ASCII.
+const DIGIT_ZEROS = [0x660, 0x6f0, 0x966, 0x9e6, 0xa66, 0xae6, 0xb66, 0xbe6, 0xc66, 0xce6, 0xd66, 0xe50, 0xff10];
+const asciiDigits = (s: string) =>
+  s.replace(/[^\x00-\x7f]/g, (ch) => {
+    const code = ch.charCodeAt(0);
+    const zero = DIGIT_ZEROS.find((z) => code >= z && code <= z + 9);
+    return zero === undefined ? ch : String(code - zero);
+  });
+
 function parseBirthdate(input: string) {
-  const m = input.trim().match(/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/);
+  const m = asciiDigits(input.trim()).match(/^(\d{1,2})\s*[./-]\s*(\d{1,2})\s*[./-]?\s*(\d{4})$/);
   if (!m) return null;
   return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
 }
