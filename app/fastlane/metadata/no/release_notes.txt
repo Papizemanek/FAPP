@@ -1,0 +1,1 @@
+Den første versjonen av F*app. Verifisering, blind avtale og sikkerhetsmodus.

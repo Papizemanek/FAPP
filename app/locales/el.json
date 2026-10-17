@@ -1,10 +1,10 @@
 {
   "ios": {
     "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "During a meetup, F*app shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
-    "NSFaceIDUsageDescription": "F*app uses Face ID to unlock, so no one else can look inside.",
-    "NSPhotoLibraryUsageDescription": "Choose photos for your profile.",
-    "NSCameraUsageDescription": "Take a photo of yourself for your profile."
+    "NSLocationWhenInUseUsageDescription": "Το F*app χρειάζεται την τοποθεσία σου για να σου δείχνει άτομα κοντά σου και, κατά τη διάρκεια ενός ραντεβού, να τη μοιράζεται με το έμπιστο πρόσωπό σου.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Κατά τη διάρκεια ενός ραντεβού, το F*app μοιράζεται την τοποθεσία σου με το έμπιστο πρόσωπό σου, ακόμα κι όταν η οθόνη είναι σβηστή. Εκτός ραντεβού, δεν χρησιμοποιεί την τοποθεσία σου στο παρασκήνιο.",
+    "NSFaceIDUsageDescription": "Το F*app χρησιμοποιεί το Face ID για ξεκλείδωμα, ώστε να μη μπορεί να δει κανείς άλλος μέσα.",
+    "NSPhotoLibraryUsageDescription": "Διάλεξε φωτογραφίες για το προφίλ σου.",
+    "NSCameraUsageDescription": "Βγάλε μια φωτογραφία σου για το προφίλ σου."
   }
 }

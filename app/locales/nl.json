@@ -1,10 +1,10 @@
 {
   "ios": {
     "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "During a meetup, F*app shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
-    "NSFaceIDUsageDescription": "F*app uses Face ID to unlock, so no one else can look inside.",
-    "NSPhotoLibraryUsageDescription": "Choose photos for your profile.",
-    "NSCameraUsageDescription": "Take a photo of yourself for your profile."
+    "NSLocationWhenInUseUsageDescription": "F*app heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Tijdens een date deelt F*app je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
+    "NSFaceIDUsageDescription": "F*app gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
+    "NSPhotoLibraryUsageDescription": "Kies foto’s voor je profiel.",
+    "NSCameraUsageDescription": "Maak een foto van jezelf voor je profiel."
   }
 }

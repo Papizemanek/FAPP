@@ -13,7 +13,7 @@ web/      webová stránka s čekací listinou (statické HTML, vícejazyčné)
 marketing/ šablony bannerů a videí kampaně (render přes Playwright + ffmpeg)
 ```
 
-Web (náhled): https://claude.ai/artifact/RAgJWj3Zy8etTDAiafSAgQ
+Web (náhled): https://claude.ai/artifact/RAgJWj3Zy8etTDAiafSAgQ · Bannery a videa: https://claude.ai/artifact/6eVJn2rwiUdE4fMKy1Pjh1 · Kampaň: https://claude.ai/artifact/Vx3u8SRUwzL2gbJKR3bFSH
 
 ## Jak to funguje
 

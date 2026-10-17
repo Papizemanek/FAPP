@@ -1,0 +1,22 @@
+F*app, rahat buluşmalar arayan ve bunların anlaşmalı ve güvenli olmasını isteyen yetişkinler için bir tanışma uygulamasıdır.
+
+DOĞRULANMIŞ İNSANLAR
+Herkes kimlik belgesi ve selfie ile doğrulanır. Herkes olduğunu söylediği kişidir ve yasak yalnızca hesaba değil, kişiye uygulanır. Kimliğini saklamıyoruz.
+
+KÖR ANLAŞMA
+Her biriniz neye var olduğunu ayrı ayrı işaretler: evet, belki ya da hayır. İkiniz de yalnızca ortak noktalarınızı görürsünüz – kimse karşısındakinin “hayır”ını görmez. Yer, prezervatif, ayıklık ve güvenli kelime de önceden kararlaştırılır. Rıza yalnızca burada ve şimdi geçerlidir ve orada her şeye hayır diyebilirsin.
+
+GÜVENLİK MODU
+• Güvendiğin kişi, konumunu ve buluşmanın durumunu gösteren bir bağlantı alır.
+• PIN ile check-in – check-in yapmazsan sunucumuz, telefonunun şarjı bitmiş olsa bile SMS gönderir.
+• Düğmeyi basılı tutarak SOS.
+• Normal PIN'inle tamamen aynı görünen ama sessizce alarm veren bir acil durum PIN'i.
+• Ayrılmak için bahane olarak sahte arama.
+
+GİZLİLİK
+Göze batmayan simge, içeriksiz bildirimler, yüz veya parmak izi kilidi, konum bilgisi olmayan fotoğraflar. Mesajlar şifrelenir ve anlaşmanın ayrıntıları buluşmadan sonra silinir.
+
+BULUŞMADAN SONRA
+Nasıl geçtiğine dair özel bir soru – karşındaki kişi cevabını asla görmez. Sınırı aşan dışarıda.
+
+Yalnızca 18+.
