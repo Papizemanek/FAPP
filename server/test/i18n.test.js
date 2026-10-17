@@ -29,7 +29,7 @@ describe('jazyk chyb', () => {
 
   test('neznámý jazyk → angličtina, bez hlavičky (nebo jen „*“) → čeština', async () => {
     assert.equal((await register({ 'Accept-Language': 'xx-YY' })).body.error, "You must confirm you're 18 or older.");
-    assert.equal((await register({ 'Accept-Language': 'de-AT' })).body.error, "You must confirm you're 18 or older.", 'nepřeložený jazyk');
+    assert.notEqual((await register({ 'Accept-Language': 'de-AT' })).body.error, "You must confirm you're 18 or older.", 'regionální varianta → přeložená němčina');
     assert.equal((await register({})).body.error, 'Musíš potvrdit, že je ti 18 let nebo víc.');
     assert.equal((await register({ 'Accept-Language': '*' })).body.error, 'Musíš potvrdit, že je ti 18 let nebo víc.');
     assert.equal((await register({ 'Accept-Language': 'cs-CZ' })).body.error, 'Musíš potvrdit, že je ti 18 let nebo víc.');
@@ -171,10 +171,12 @@ describe('stránka pro důvěryhodnou osobu', () => {
     assert.equal(res.body.emergency, '112');
     assert.equal(res.body.messages.okTitle, '{name} is OK');
     assert.deepEqual(res.body.messages.locationAgo, { one: 'Location {count} min ago', other: 'Location {count} min ago' });
-    // Seznam jazyků prohlížeče; nepřeložený jazyk dostane anglické texty.
+    // Seznam jazyků prohlížeče; neznámý jazyk dostane anglické texty.
     const de = await t.call('GET', `/api/share/i18n/${encodeURIComponent('de-AT,en')}`);
     assert.equal(de.body.locale, 'de');
-    assert.equal(de.body.messages.okTitle, '{name} is OK');
+    assert.notEqual(de.body.messages.okTitle, '{name} is OK');
+    const xx = await t.call('GET', `/api/share/i18n/${encodeURIComponent('xx-YY')}`);
+    assert.equal(xx.body.messages.okTitle, '{name} is OK');
     assert.equal((await t.call('GET', '/api/share/i18n/ar')).body.dir, 'rtl');
     assert.equal((await t.call('GET', '/api/share/i18n/cs')).body.messages.header, 'Bezpečnostní odkaz');
   });
@@ -204,9 +206,9 @@ describe('stránka pro důvěryhodnou osobu', () => {
 });
 
 test('tr: záloha en → cs, množné číslo podle jazyka', () => {
-  assert.equal(tr('de', 'sms.alarm', { name: 'Eva', url: 'u' }), 'ALERT: Eva needs help. Location and details: u');
+  assert.equal(tr('xx', 'sms.alarm', { name: 'Eva', url: 'u' }), 'ALERT: Eva needs help. Location and details: u');
   assert.equal(tr(undefined, 'chat.photo'), 'Fotka');
-  assert.equal(tr('pt-PT', 'chat.photo'), 'Photo');
+  assert.equal(tr('pt-PT', 'chat.photo'), 'Foto');
   assert.equal(tr('cs', 'profile.maxPhotos', { count: 3 }), 'Maximálně 3 fotky.');
   assert.equal(tr('cs', 'profile.maxPhotos', { count: 5 }), 'Maximálně 5 fotek.');
   assert.equal(tr('en', 'profile.maxPhotos', { count: 1 }), 'You can have up to 1 photo.');

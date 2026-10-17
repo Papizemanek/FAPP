@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Bulunamadı.",
+    "tooLarge": "İstek çok büyük.",
+    "invalidJson": "Geçersiz JSON.",
+    "internal": "Bir şeyler ters gitti. Tekrar dene.",
+    "rateLimited": "Aynı anda çok fazla deneme. Birazdan tekrar dene.",
+    "unauthorized": "Yetkisiz.",
+    "invalidSignature": "Geçersiz imza.",
+    "linkExpired": "Bu bağlantı artık geçerli değil."
+  },
+  "validation": {
+    "required": "“{field}” alanı eksik.",
+    "notText": "“{field}” alanı metin olmalı.",
+    "tooShort": "“{field}” alanı çok kısa.",
+    "tooLong": "“{field}” alanı çok uzun.",
+    "integer": "“{field}” alanı {min} ile {max} arasında bir tam sayı olmalı.",
+    "invalidValue": "“{field}” alanı için geçersiz değer.",
+    "notList": "“{field}” alanı bir liste olmalı.",
+    "minOptions": {
+      "one": "“{field}” alanı için en az {count} seçenek seç.",
+      "other": "“{field}” alanı için en az {count} seçenek seç."
+    },
+    "date": "“{field}” alanı YYYY-AA-GG biçiminde bir tarih olmalı.",
+    "dateTime": "“{field}” alanı bir tarih ve saat olmalı.",
+    "email": "Geçersiz e-posta.",
+    "phone": "Geçersiz telefon numarası ({field}).",
+    "pin": "{field} 4–6 haneli olmalı."
+  },
+  "fields": {
+    "email": "e-posta",
+    "password": "şifre",
+    "name": "ad",
+    "birthdate": "doğum tarihi",
+    "gender": "cinsiyet",
+    "interestedIn": "kimi arıyorsun",
+    "pushToken": "push token",
+    "ageMin": "en düşük yaş",
+    "ageMax": "en yüksek yaş",
+    "bio": "hakkımda",
+    "tags": "aradığım",
+    "maxDistance": "mesafe",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "güvendiğin kişinin adı",
+    "trustedPhone": "güvendiğin kişinin telefonu",
+    "pin": "PIN",
+    "duressPin": "Acil durum PIN'i",
+    "meetAt": "ne zaman",
+    "place": "nerede",
+    "safeword": "güvenli kelime",
+    "note": "sınırlarım",
+    "version": "sürüm",
+    "message": "mesaj",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "check-in aralığı",
+    "accuracy": "doğruluk",
+    "battery": "pil",
+    "user": "kullanıcı",
+    "reason": "neden",
+    "details": "ayrıntılar",
+    "resolution": "çözüm",
+    "days": "gün sayısı"
+  },
+  "auth": {
+    "confirmAdult": "18 yaşında veya daha büyük olduğunu onaylaman gerekiyor.",
+    "acceptRules": "Kuralları ve verilerinin işlenmesini kabul etmen gerekiyor.",
+    "underage": "F*app yalnızca 18 yaş ve üzeri içindir.",
+    "invalidBirthdate": "Geçersiz doğum tarihi.",
+    "emailTaken": "Bu e-posta ile zaten bir hesap var.",
+    "wrongCredentials": "E-posta veya şifre yanlış.",
+    "banned": "Bu hesap kuralları çiğnediği için yasaklandı.",
+    "notLoggedIn": "Giriş yapmadın.",
+    "suspended": "Hesabın bir moderatör inceleyene kadar askıya alındı.",
+    "verifyFirst": "Önce kimliğini doğrula."
+  },
+  "profile": {
+    "wrongPassword": "Yanlış şifre.",
+    "ageRange": "En düşük yaş, en yüksek yaştan büyük olamaz.",
+    "maxPhotos": {
+      "one": "En fazla {count} fotoğrafın olabilir.",
+      "other": "En fazla {count} fotoğrafın olabilir."
+    },
+    "pinsMustDiffer": "Acil durum PIN'in normal PIN'inden farklı olmalı.",
+    "deleteDuringMeetup": "Hesabını şu an silemezsin – bir buluşma devam ediyor. Bittiğinde tekrar dene."
+  },
+  "photo": {
+    "notJpeg": "Fotoğraf JPEG olmalı.",
+    "corrupt": "Fotoğraf bozuk.",
+    "notBase64": "Fotoğraf base64 ile kodlanmış bir JPEG olmalı.",
+    "tooLarge": "Fotoğraf çok büyük (en fazla 2 MB).",
+    "notFound": "Fotoğraf bulunamadı.",
+    "unavailable": "Fotoğraf kullanılamıyor."
+  },
+  "users": {
+    "notFound": "Kullanıcı bulunamadı."
+  },
+  "match": {
+    "notFound": "Eşleşme bulunamadı.",
+    "ended": "Bu eşleşme sona erdi.",
+    "profileUnavailable": "Bu profil artık kullanılamıyor."
+  },
+  "discover": {
+    "locationRequired": "Yakındaki kişileri gösterebilmemiz için önce konumu aç.",
+    "photoRequired": "En az bir fotoğraf ekle.",
+    "superLikeIsLike": "Super Like her zaman bir beğenidir.",
+    "profileNotFound": "Profil bulunamadı.",
+    "profileGone": "Bu profil artık mevcut değil.",
+    "nothingToRewind": "Geri alınacak bir şey yok.",
+    "cantRewindSuperLike": "Super Like geri alınamaz.",
+    "cantRewindMatch": "Bu kaydırma zaten bir eşleşme."
+  },
+  "billing": {
+    "likeLimit": "Beğeni hakkın bitti. Yakında yenileri gelecek – ya da F*app Plus ile sınırsız kaydır.",
+    "noSuperLike": "Hiç Super Like hakkın yok.",
+    "noBoost": "Hiç Boost hakkın yok.",
+    "tonightPaid": "“Bu gece” Platinum'a dahildir veya tek seferlik satın alınabilir.",
+    "featureInPlan": "{feature}, F*app {plan} paketine dahildir.",
+    "paymentsOff": "Ödemeler henüz açık değil – F*app şimdilik tamamen ücretsiz.",
+    "unknownProduct": "Bilinmeyen ürün.",
+    "cantBuy": "Bunu şu an satın alamazsın.",
+    "cantBoost": "Şu an Boost başlatamazsın.",
+    "boostRunning": "Zaten bir Boost çalışıyor.",
+    "cantTonight": "Bunu şu an açamazsın.",
+    "tonightOn": "“Bu gece” zaten açık.",
+    "unknownCity": "Bilinmeyen şehir."
+  },
+  "features": {
+    "unlimitedLikes": "Sınırsız beğeni",
+    "rewind": "Geri al",
+    "travel": "Seyahat modu",
+    "incognito": "Gizli mod",
+    "seeLikes": "Seni kimler beğendi",
+    "weeklySuperLikes": "Haftada 5 Super Like",
+    "monthlyBoost": "Ayda 1 Boost",
+    "priorityLikes": "Öncelikli beğeniler",
+    "sentLikes": "Gönderilen beğeniler",
+    "tonight": "Bu gece, her zaman"
+  },
+  "agreement": {
+    "wishesRequired": "Neye var olduğunu doldur.",
+    "invalidWish": "İsteklerinde geçersiz seçim.",
+    "notFound": "Anlaşma bulunamadı.",
+    "confirmBoth": "İki ifadeyi de onayla – aklındakinin bu olduğunu ve anlaşmanın rıza olmadığını.",
+    "meetWithin": {
+      "one": "Buluşma önümüzdeki {count} gün içinde olmalı.",
+      "other": "Buluşma önümüzdeki {count} gün içinde olmalı."
+    },
+    "cooldown": "Şu an yeni bir anlaşmayı yalnızca {name} başlatabilir.",
+    "changed": "Anlaşma bu arada değişti. Tekrar oku."
+  },
+  "chat": {
+    "empty": "Boş mesaj.",
+    "notSent": "Mesaj gönderilmedi. {reason}",
+    "photo": "Fotoğraf"
+  },
+  "moderation": {
+    "minor": "Bu mesaj, birinizin 18 yaşından küçük olabileceğini gösteriyor. F*app yalnızca 18+ içindir.",
+    "paid": "F*app'te ücretli seks teklif etmek veya istemek yasaktır.",
+    "consentPressure": "Dikkat: uygulamadaki bir anlaşma rıza değildir. İstediğin zaman iptal edebilir ve yüz yüzeyken her şeye hayır diyebilirsin – açıklama gerekmez.",
+    "contact": "Eşleştiğin kişi uygulama dışı iletişim bilgisi paylaşıyor. F*app dışında anlaşma, güvenlik modu ve şikâyet senin için çalışmaz."
+  },
+  "safety": {
+    "notFound": "Buluşma bulunamadı.",
+    "ended": "Buluşma zaten bitti.",
+    "wrongPin": "Yanlış PIN.",
+    "agreementRequired": "Anlaşmayı ikiniz de doldurup onayladığınızda buluşmayı başlatabilirsin.",
+    "setupRequired": "Önce güvendiğin bir kişi, bir PIN ve bir acil durum PIN'i ayarla.",
+    "invalidInterval": "Geçersiz check-in aralığı."
+  },
+  "reports": {
+    "feedbackSent": "Geri bildirimini zaten gönderdin."
+  },
+  "verification": {
+    "unknown": "Bilinmeyen doğrulama.",
+    "alreadyVerified": "Kimliğin zaten doğrulandı.",
+    "startFirst": "Önce doğrulamayı başlat.",
+    "noWebhook": "Geliştirme sağlayıcısının webhook'u yok.",
+    "unavailable": "Doğrulama hizmeti yanıt vermiyor. Birazdan tekrar dene.",
+    "declined": {
+      "underage": "Doğrulama henüz 18 yaşında olmadığını gösterdi. F*app yalnızca yetişkinler içindir.",
+      "banned": "Bu kişi kuralları çiğnediği için F*app'ten yasaklandı.",
+      "duplicate": "Bu kişinin zaten bir F*app hesabı var. Herkesin yalnızca bir hesabı olabilir.",
+      "incomplete": "Belgeden doğum tarihini okuyamadık. Tekrar dene.",
+      "default": "Doğrulama başarısız oldu. Tekrar dene."
+    }
+  },
+  "admin": {
+    "notReported": "Bu konuşma şikâyet edilmedi.",
+    "unknownPlan": "Bilinmeyen paket."
+  },
+  "push": {
+    "discreet": "Yeni bildirim",
+    "match": {
+      "title": "Eşleştiniz!",
+      "body": "Sen ve {name} birbirinizi istiyorsunuz."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Biri senden gerçekten hoşlanıyor."
+    },
+    "message": {
+      "photo": "Bir fotoğraf gönderdi"
+    },
+    "agreementComplete": {
+      "title": "Anlaşma tamam",
+      "body": "İkiniz de onayladınız. Buluştuğunuzda yine de fikrinizi değiştirebilirsiniz."
+    },
+    "agreementNew": {
+      "title": "Yeni anlaşma",
+      "body": "{name} bir anlaşma başlattı. Şimdi neye var olduğunu doldur."
+    },
+    "agreementChanged": {
+      "title": "Anlaşma değişti",
+      "body": "{name} saati, yeri veya kuralları değiştirdi. Bunları yeniden onayla."
+    },
+    "agreementUpdated": {
+      "title": "Anlaşma güncellendi",
+      "body": "{name} isteklerini güncelledi."
+    },
+    "agreementRevoked": {
+      "title": "Anlaşma iptal edildi",
+      "body": "{name} anlaşmayı iptal etti. Buluşma iptal – ve buna saygı gösterilmeli."
+    },
+    "checkInOverdue": {
+      "title": "Check-in'ini kaçırdın",
+      "body": "{name} uyarıldı. İyi olduğunu onayla."
+    }
+  },
+  "sms": {
+    "started": "{name} biriyle buluşuyor ve seni güvendiği kişi olarak seçti. Nerede olduğunu ve iyi olup olmadığını gör: {url}",
+    "alarm": "ALARM: {name} yardıma ihtiyaç duyuyor. Konum ve ayrıntılar: {url}",
+    "overdue": "{name} check-in yapmadı - saat {time} itibarıyla iyi olduğunu onaylaması gerekiyordu. Aramayı dene. Konum: {url}",
+    "backOk": "{name} check-in yaptı ve iyi olduğunu onayladı.",
+    "sosCancelled": "{name} alarmı iptal etti - yanlışlıktı, iyi.",
+    "endedOk": "{name} buluşmayı bitirdi ve iyi. Yanında olduğun için teşekkürler.",
+    "someone": "Yakının olan biri"
+  },
+  "share": {
+    "pageTitle": "F*app – güvenlik bağlantısı",
+    "header": "Güvenlik bağlantısı",
+    "loading": "Yükleniyor…",
+    "call": "{number} ara",
+    "mapLabel": "Bilinen son konumu gösteren harita",
+    "openMaps": "Haritalar'da aç",
+    "partnerPhotoAlt": "Buluştuğu kişinin fotoğrafı",
+    "partnerLead": "Buluştuğu kişi:",
+    "okTitle": "{name} iyi",
+    "okDetail": "Son check-in: {last}. Sonraki en geç: {next}.",
+    "overdueTitle": "{name} check-in yapmadı",
+    "overdueDetail": "Check-in için son saat: {due}. Aramayı dene. Açmazsa {number} numarasını ara ve haritadaki adresi ver.",
+    "alarmTitle": "{name} yardıma ihtiyaç duyuyor",
+    "alarmDetail": "Alarm saati: {time}. {number} numarasını ara; haritadaki konumu ve aşağıdaki buluşma yerini ver.",
+    "endedTitle": "Buluşma bitti",
+    "endedDetail": "{name} iyi olduğunu onayladı.",
+    "endedDetailAlarm": "{name} iyi olduğunu onayladı. Buluşma sırasında bir alarm verildi – her şeyin yolunda olup olmadığını sor.",
+    "footer": "{name} buluşmayı bitirdiğinde konum artık görünmez.",
+    "locationJustNow": "Konum: az önce",
+    "locationAgo": {
+      "one": "Konum: {count} dk önce",
+      "other": "Konum: {count} dk önce"
+    },
+    "battery": "pil {percent}",
+    "linkExpired": "Bu bağlantı artık geçerli değil",
+    "loadFailed": "Durum yüklenemedi. Yeniden deneniyor…"
+  }
+}

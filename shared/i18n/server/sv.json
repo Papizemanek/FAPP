@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Hittades inte.",
+    "tooLarge": "Förfrågan är för stor.",
+    "invalidJson": "Ogiltig JSON.",
+    "internal": "Något gick fel. Försök igen.",
+    "rateLimited": "För många försök på en gång. Försök igen om en stund.",
+    "unauthorized": "Obehörig.",
+    "invalidSignature": "Ogiltig signatur.",
+    "linkExpired": "Länken är inte längre giltig."
+  },
+  "validation": {
+    "required": "”{field}” saknas.",
+    "notText": "”{field}” måste vara text.",
+    "tooShort": "”{field}” är för kort.",
+    "tooLong": "”{field}” är för långt.",
+    "integer": "”{field}” måste vara ett heltal från {min} till {max}.",
+    "invalidValue": "Ogiltigt värde för ”{field}”.",
+    "notList": "”{field}” måste vara en lista.",
+    "minOptions": {
+      "one": "Välj minst {count} alternativ under ”{field}”.",
+      "other": "Välj minst {count} alternativ under ”{field}”."
+    },
+    "date": "”{field}” måste vara ett datum i formatet ÅÅÅÅ-MM-DD.",
+    "dateTime": "”{field}” måste vara ett datum och en tid.",
+    "email": "Ogiltig e-postadress.",
+    "phone": "Ogiltigt telefonnummer ({field}).",
+    "pin": "{field} måste vara 4–6 siffror."
+  },
+  "fields": {
+    "email": "e-post",
+    "password": "lösenord",
+    "name": "namn",
+    "birthdate": "födelsedatum",
+    "gender": "kön",
+    "interestedIn": "vem du söker",
+    "pushToken": "push-token",
+    "ageMin": "ålder från",
+    "ageMax": "ålder till",
+    "bio": "om mig",
+    "tags": "vad jag söker",
+    "maxDistance": "avstånd",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "trygghetspersonens namn",
+    "trustedPhone": "trygghetspersonens telefon",
+    "pin": "Pinkod",
+    "duressPin": "Nödpinkod",
+    "meetAt": "när",
+    "place": "var",
+    "safeword": "stoppord",
+    "note": "mina gränser",
+    "version": "version",
+    "message": "meddelande",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "incheckningsintervall",
+    "accuracy": "noggrannhet",
+    "battery": "batteri",
+    "user": "användare",
+    "reason": "anledning",
+    "details": "detaljer",
+    "resolution": "beslut",
+    "days": "antal dagar"
+  },
+  "auth": {
+    "confirmAdult": "Du måste bekräfta att du är 18 år eller äldre.",
+    "acceptRules": "Du måste godkänna reglerna och behandlingen av dina uppgifter.",
+    "underage": "F*app är bara för personer som är 18 år eller äldre.",
+    "invalidBirthdate": "Ogiltigt födelsedatum.",
+    "emailTaken": "Det finns redan ett konto med den här e-postadressen.",
+    "wrongCredentials": "Fel e-post eller lösenord.",
+    "banned": "Kontot har stängts av för brott mot reglerna.",
+    "notLoggedIn": "Du är inte inloggad.",
+    "suspended": "Ditt konto är avstängt tills en moderator har granskat det.",
+    "verifyFirst": "Verifiera din identitet först."
+  },
+  "profile": {
+    "wrongPassword": "Fel lösenord.",
+    "ageRange": "Ålder från kan inte vara högre än ålder till.",
+    "maxPhotos": {
+      "one": "Du kan ha högst {count} bild.",
+      "other": "Du kan ha högst {count} bilder."
+    },
+    "pinsMustDiffer": "Din nödpinkod måste vara en annan än din vanliga pinkod.",
+    "deleteDuringMeetup": "Du kan inte radera ditt konto just nu – en träff pågår. Försök igen när den är slut."
+  },
+  "photo": {
+    "notJpeg": "Bilden måste vara en JPEG.",
+    "corrupt": "Bilden är skadad.",
+    "notBase64": "Bilden måste vara en base64-kodad JPEG.",
+    "tooLarge": "Bilden är för stor (max 2 MB).",
+    "notFound": "Bilden hittades inte.",
+    "unavailable": "Bilden är inte tillgänglig."
+  },
+  "users": {
+    "notFound": "Användaren hittades inte."
+  },
+  "match": {
+    "notFound": "Matchen hittades inte.",
+    "ended": "Den här matchen har avslutats.",
+    "profileUnavailable": "Den här profilen är inte längre tillgänglig."
+  },
+  "discover": {
+    "locationRequired": "Slå på platstjänster först så att vi kan visa dig folk i närheten.",
+    "photoRequired": "Lägg till minst en bild.",
+    "superLikeIsLike": "En Super Like är alltid också en like.",
+    "profileNotFound": "Profilen hittades inte.",
+    "profileGone": "Den här profilen finns inte längre.",
+    "nothingToRewind": "Det finns inget att ångra.",
+    "cantRewindSuperLike": "Du kan inte ångra en Super Like.",
+    "cantRewindMatch": "Den här swipen har redan blivit en match."
+  },
+  "billing": {
+    "likeLimit": "Dina likes är slut. Fler kommer snart – eller swipea utan gräns med F*app Plus.",
+    "noSuperLike": "Du har inga Super Likes.",
+    "noBoost": "Du har inga Boosts.",
+    "tonightPaid": "”I kväll” ingår i Platinum eller finns som engångsköp.",
+    "featureInPlan": "{feature} ingår i F*app {plan}.",
+    "paymentsOff": "Betalningar är inte aktiverade än – F*app är helt gratis tills vidare.",
+    "unknownProduct": "Okänd produkt.",
+    "cantBuy": "Du kan inte köpa det här just nu.",
+    "cantBoost": "Du kan inte starta en Boost just nu.",
+    "boostRunning": "En Boost är redan igång.",
+    "cantTonight": "Du kan inte slå på det här just nu.",
+    "tonightOn": "I kväll är redan på.",
+    "unknownCity": "Okänd stad."
+  },
+  "features": {
+    "unlimitedLikes": "Obegränsat med likes",
+    "rewind": "Ångra swipe",
+    "travel": "Reseläge",
+    "incognito": "Inkognito",
+    "seeLikes": "Se vem som gillar dig",
+    "weeklySuperLikes": "5 Super Likes i veckan",
+    "monthlyBoost": "1 Boost i månaden",
+    "priorityLikes": "Prioriterade likes",
+    "sentLikes": "Skickade likes",
+    "tonight": "I kväll – när som helst"
+  },
+  "agreement": {
+    "wishesRequired": "Fyll i vad du är sugen på.",
+    "invalidWish": "Ogiltigt val bland dina önskemål.",
+    "notFound": "Överenskommelsen hittades inte.",
+    "confirmBoth": "Bekräfta båda påståendena – att det här är vad du tänker dig och att en överenskommelse inte är samtycke.",
+    "meetWithin": {
+      "one": "Träffen måste ske inom det närmaste {count} dygnet.",
+      "other": "Träffen måste ske inom de närmaste {count} dagarna."
+    },
+    "cooldown": "Bara {name} kan starta en ny överenskommelse just nu.",
+    "changed": "Överenskommelsen har ändrats under tiden. Läs den igen."
+  },
+  "chat": {
+    "empty": "Tomt meddelande.",
+    "notSent": "Meddelandet skickades inte. {reason}",
+    "photo": "Bild"
+  },
+  "moderation": {
+    "minor": "Det här meddelandet tyder på att någon av er kan vara under 18. F*app är bara för 18+.",
+    "paid": "Att erbjuda eller efterfråga sex mot betalning är inte tillåtet på F*app.",
+    "consentPressure": "Tänk på: en överenskommelse i appen är inte samtycke. Du kan avbryta den när som helst och säga nej till vad som helst på plats – utan att förklara dig.",
+    "contact": "Din match delar kontaktuppgifter utanför appen. Utanför F*app fungerar inte överenskommelsen, säkerhetsläget eller rapportering för er."
+  },
+  "safety": {
+    "notFound": "Träffen hittades inte.",
+    "ended": "Träffen har redan avslutats.",
+    "wrongPin": "Fel pinkod.",
+    "agreementRequired": "Du kan starta träffen när ni båda har fyllt i och bekräftat överenskommelsen.",
+    "setupRequired": "Ställ först in en trygghetsperson, en pinkod och en nödpinkod.",
+    "invalidInterval": "Ogiltigt incheckningsintervall."
+  },
+  "reports": {
+    "feedbackSent": "Du har redan skickat din feedback."
+  },
+  "verification": {
+    "unknown": "Okänd verifiering.",
+    "alreadyVerified": "Din identitet är redan verifierad.",
+    "startFirst": "Starta verifieringen först.",
+    "noWebhook": "Utvecklingsleverantören har ingen webhook.",
+    "unavailable": "Verifieringstjänsten svarar inte. Försök igen om en stund.",
+    "declined": {
+      "underage": "Verifieringen visade att du inte har fyllt 18 än. F*app är bara för vuxna.",
+      "banned": "Den här personen har stängts av från F*app för brott mot reglerna.",
+      "duplicate": "Den här personen har redan ett F*app-konto. Alla kan bara ha ett.",
+      "incomplete": "Vi kunde inte läsa födelsedatumet i dokumentet. Försök igen.",
+      "default": "Verifieringen misslyckades. Försök igen."
+    }
+  },
+  "admin": {
+    "notReported": "Den här konversationen har inte rapporterats.",
+    "unknownPlan": "Okänd nivå."
+  },
+  "push": {
+    "discreet": "Ny avisering",
+    "match": {
+      "title": "Det är en match!",
+      "body": "Du och {name} vill ha varandra."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Någon är verkligen intresserad av dig."
+    },
+    "message": {
+      "photo": "Skickade en bild"
+    },
+    "agreementComplete": {
+      "title": "Överenskommelsen är klar",
+      "body": "Ni har båda bekräftat den. På plats kan ni ändå alltid ändra er."
+    },
+    "agreementNew": {
+      "title": "Ny överenskommelse",
+      "body": "{name} har startat en överenskommelse. Fyll nu i vad du är sugen på."
+    },
+    "agreementChanged": {
+      "title": "Överenskommelsen har ändrats",
+      "body": "{name} har ändrat tid, plats eller regler. Bekräfta dem igen."
+    },
+    "agreementUpdated": {
+      "title": "Överenskommelsen har uppdaterats",
+      "body": "{name} har uppdaterat sina önskemål."
+    },
+    "agreementRevoked": {
+      "title": "Överenskommelsen avbruten",
+      "body": "{name} har avbrutit överenskommelsen. Träffen blir inte av – och det måste respekteras."
+    },
+    "checkInOverdue": {
+      "title": "Du missade din incheckning",
+      "body": "{name} har fått en varning. Bekräfta att du är okej."
+    }
+  },
+  "sms": {
+    "started": "{name} ska träffa någon och har valt dig som trygghetsperson. Här ser du platsen och om allt är okej: {url}",
+    "alarm": "LARM: {name} behöver hjälp. Plats och detaljer: {url}",
+    "overdue": "{name} har inte checkat in - bekräftelsen att allt är okej skulle ha kommit senast {time}. Försök ringa. Plats: {url}",
+    "backOk": "{name} har checkat in och bekräftat att allt är okej.",
+    "sosCancelled": "{name} har avbrutit larmet - det var ett misstag, allt är okej.",
+    "endedOk": "{name} har avslutat träffen och allt är okej. Tack för att du fanns där.",
+    "someone": "En person som står dig nära"
+  },
+  "share": {
+    "pageTitle": "F*app – trygghetslänk",
+    "header": "Trygghetslänk",
+    "loading": "Läser in…",
+    "call": "Ring {number}",
+    "mapLabel": "Karta med senast kända plats",
+    "openMaps": "Öppna i Kartor",
+    "partnerPhotoAlt": "Bild på personen som träffas",
+    "partnerLead": "Träffar:",
+    "okTitle": "{name} är okej",
+    "okDetail": "Senaste incheckning kl. {last}. Nästa väntas senast kl. {next}.",
+    "overdueTitle": "{name} har inte checkat in",
+    "overdueDetail": "Incheckningen skulle ha skett senast kl. {due}. Försök ringa. Om ingen svarar, ring {number} och uppge adressen från kartan.",
+    "alarmTitle": "{name} behöver hjälp",
+    "alarmDetail": "Larm kl. {time}. Ring {number} och uppge platsen från kartan och mötesplatsen nedan.",
+    "endedTitle": "Träffen är slut",
+    "endedDetail": "{name} har bekräftat att allt är okej.",
+    "endedDetailAlarm": "{name} har bekräftat att allt är okej. Ett larm utlöstes under träffen – fråga om allt verkligen är bra.",
+    "footer": "Platsen slutar synas när {name} avslutar träffen.",
+    "locationJustNow": "Plats just nu",
+    "locationAgo": {
+      "one": "Plats för {count} min sedan",
+      "other": "Plats för {count} min sedan"
+    },
+    "battery": "batteri {percent}",
+    "linkExpired": "Länken är inte längre giltig",
+    "loadFailed": "Statusen kunde inte läsas in. Försöker igen…"
+  }
+}
