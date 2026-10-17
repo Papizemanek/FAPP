@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Ikke funnet.",
+    "tooLarge": "Forespørselen er for stor.",
+    "invalidJson": "Ugyldig JSON.",
+    "internal": "Noe gikk galt. Prøv igjen.",
+    "rateLimited": "For mange forsøk på en gang. Prøv igjen om litt.",
+    "unauthorized": "Ikke autorisert.",
+    "invalidSignature": "Ugyldig signatur.",
+    "linkExpired": "Lenken er ikke lenger gyldig."
+  },
+  "validation": {
+    "required": "«{field}» mangler.",
+    "notText": "«{field}» må være tekst.",
+    "tooShort": "«{field}» er for kort.",
+    "tooLong": "«{field}» er for langt.",
+    "integer": "«{field}» må være et heltall fra {min} til {max}.",
+    "invalidValue": "Ugyldig verdi for «{field}».",
+    "notList": "«{field}» må være en liste.",
+    "minOptions": {
+      "one": "Velg minst {count} alternativ under «{field}».",
+      "other": "Velg minst {count} alternativer under «{field}»."
+    },
+    "date": "«{field}» må være en dato i formatet ÅÅÅÅ-MM-DD.",
+    "dateTime": "«{field}» må være en dato og et klokkeslett.",
+    "email": "Ugyldig e-postadresse.",
+    "phone": "Ugyldig telefonnummer ({field}).",
+    "pin": "{field} må være 4–6 sifre."
+  },
+  "fields": {
+    "email": "e-post",
+    "password": "passord",
+    "name": "navn",
+    "birthdate": "fødselsdato",
+    "gender": "kjønn",
+    "interestedIn": "hvem du ser etter",
+    "pushToken": "push-token",
+    "ageMin": "alder fra",
+    "ageMax": "alder til",
+    "bio": "om meg",
+    "tags": "hva jeg ser etter",
+    "maxDistance": "avstand",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "tillitspersonens navn",
+    "trustedPhone": "tillitspersonens telefon",
+    "pin": "Pinkode",
+    "duressPin": "Nødpinkode",
+    "meetAt": "når",
+    "place": "hvor",
+    "safeword": "stoppord",
+    "note": "mine grenser",
+    "version": "versjon",
+    "message": "melding",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "innsjekkingsintervall",
+    "accuracy": "nøyaktighet",
+    "battery": "batteri",
+    "user": "bruker",
+    "reason": "årsak",
+    "details": "detaljer",
+    "resolution": "avgjørelse",
+    "days": "antall dager"
+  },
+  "auth": {
+    "confirmAdult": "Du må bekrefte at du er 18 år eller eldre.",
+    "acceptRules": "Du må godta reglene og behandlingen av opplysningene dine.",
+    "underage": "F*app er bare for personer som er 18 år eller eldre.",
+    "invalidBirthdate": "Ugyldig fødselsdato.",
+    "emailTaken": "Det finnes allerede en konto med denne e-postadressen.",
+    "wrongCredentials": "Feil e-post eller passord.",
+    "banned": "Kontoen er utestengt for brudd på reglene.",
+    "notLoggedIn": "Du er ikke logget inn.",
+    "suspended": "Kontoen din er suspendert til en moderator har gått gjennom den.",
+    "verifyFirst": "Verifiser identiteten din først."
+  },
+  "profile": {
+    "wrongPassword": "Feil passord.",
+    "ageRange": "Alder fra kan ikke være høyere enn alder til.",
+    "maxPhotos": {
+      "one": "Du kan ha maks {count} bilde.",
+      "other": "Du kan ha maks {count} bilder."
+    },
+    "pinsMustDiffer": "Nødpinkoden må være en annen enn den vanlige pinkoden.",
+    "deleteDuringMeetup": "Du kan ikke slette kontoen akkurat nå – en date pågår. Prøv igjen når den er over."
+  },
+  "photo": {
+    "notJpeg": "Bildet må være en JPEG.",
+    "corrupt": "Bildet er skadet.",
+    "notBase64": "Bildet må være en base64-kodet JPEG.",
+    "tooLarge": "Bildet er for stort (maks 2 MB).",
+    "notFound": "Fant ikke bildet.",
+    "unavailable": "Bildet er ikke tilgjengelig."
+  },
+  "users": {
+    "notFound": "Fant ikke brukeren."
+  },
+  "match": {
+    "notFound": "Fant ikke matchen.",
+    "ended": "Denne matchen er avsluttet.",
+    "profileUnavailable": "Denne profilen er ikke lenger tilgjengelig."
+  },
+  "discover": {
+    "locationRequired": "Slå på posisjon først, så vi kan vise deg folk i nærheten.",
+    "photoRequired": "Legg til minst ett bilde.",
+    "superLikeIsLike": "En Super Like er alltid også en like.",
+    "profileNotFound": "Fant ikke profilen.",
+    "profileGone": "Denne profilen finnes ikke lenger.",
+    "nothingToRewind": "Det er ingenting å angre.",
+    "cantRewindSuperLike": "Du kan ikke angre en Super Like.",
+    "cantRewindMatch": "Dette sveipet har allerede blitt en match."
+  },
+  "billing": {
+    "likeLimit": "Du er tom for likes. Flere kommer snart – eller sveip uten grenser med F*app Plus.",
+    "noSuperLike": "Du har ingen Super Likes.",
+    "noBoost": "Du har ingen Boosts.",
+    "tonightPaid": "«I kveld» følger med Platinum eller fås som enkeltkjøp.",
+    "featureInPlan": "{feature} er en del av F*app {plan}.",
+    "paymentsOff": "Betaling er ikke slått på ennå – F*app er helt gratis inntil videre.",
+    "unknownProduct": "Ukjent produkt.",
+    "cantBuy": "Du kan ikke kjøpe dette akkurat nå.",
+    "cantBoost": "Du kan ikke starte en Boost akkurat nå.",
+    "boostRunning": "En Boost er allerede aktiv.",
+    "cantTonight": "Du kan ikke slå på dette akkurat nå.",
+    "tonightOn": "I kveld er allerede på.",
+    "unknownCity": "Ukjent by."
+  },
+  "features": {
+    "unlimitedLikes": "Ubegrensede likes",
+    "rewind": "Angre sveip",
+    "travel": "Reisemodus",
+    "incognito": "Inkognito",
+    "seeLikes": "Se hvem som liker deg",
+    "weeklySuperLikes": "5 Super Likes i uka",
+    "monthlyBoost": "1 Boost i måneden",
+    "priorityLikes": "Prioriterte likes",
+    "sentLikes": "Sendte likes",
+    "tonight": "I kveld – når som helst"
+  },
+  "agreement": {
+    "wishesRequired": "Fyll ut hva du har lyst på.",
+    "invalidWish": "Ugyldig valg i ønskene dine.",
+    "notFound": "Fant ikke avtalen.",
+    "confirmBoth": "Bekreft begge utsagnene – at dette er det du ser for deg, og at en avtale ikke er samtykke.",
+    "meetWithin": {
+      "one": "Daten må være innen det neste {count} døgnet.",
+      "other": "Daten må være innen de neste {count} dagene."
+    },
+    "cooldown": "Bare {name} kan starte en ny avtale akkurat nå.",
+    "changed": "Avtalen er endret i mellomtiden. Les den på nytt."
+  },
+  "chat": {
+    "empty": "Tom melding.",
+    "notSent": "Meldingen ble ikke sendt. {reason}",
+    "photo": "Bilde"
+  },
+  "moderation": {
+    "minor": "Denne meldingen tyder på at en av dere kan være under 18. F*app er bare for 18+.",
+    "paid": "Det er ikke tillatt å tilby eller be om sex mot betaling på F*app.",
+    "consentPressure": "Husk: En avtale i appen er ikke samtykke. Du kan avbryte den når som helst og si nei til hva som helst når dere møtes – uten å forklare deg.",
+    "contact": "Matchen din deler kontaktinformasjon utenfor appen. Utenfor F*app fungerer ikke avtalen, sikkerhetsmodus eller rapportering for dere."
+  },
+  "safety": {
+    "notFound": "Fant ikke daten.",
+    "ended": "Daten er allerede avsluttet.",
+    "wrongPin": "Feil pinkode.",
+    "agreementRequired": "Du kan starte daten når dere begge har fylt ut og bekreftet avtalen.",
+    "setupRequired": "Sett først opp en tillitsperson, en pinkode og en nødpinkode.",
+    "invalidInterval": "Ugyldig innsjekkingsintervall."
+  },
+  "reports": {
+    "feedbackSent": "Du har allerede sendt tilbakemeldingen din."
+  },
+  "verification": {
+    "unknown": "Ukjent verifisering.",
+    "alreadyVerified": "Identiteten din er allerede verifisert.",
+    "startFirst": "Start verifiseringen først.",
+    "noWebhook": "Utviklingsleverandøren har ingen webhook.",
+    "unavailable": "Verifiseringstjenesten svarer ikke. Prøv igjen om litt.",
+    "declined": {
+      "underage": "Verifiseringen viste at du ikke har fylt 18 ennå. F*app er bare for voksne.",
+      "banned": "Denne personen er utestengt fra F*app for brudd på reglene.",
+      "duplicate": "Denne personen har allerede en F*app-konto. Alle kan bare ha én.",
+      "incomplete": "Vi klarte ikke å lese fødselsdatoen i dokumentet. Prøv igjen.",
+      "default": "Verifiseringen mislyktes. Prøv igjen."
+    }
+  },
+  "admin": {
+    "notReported": "Denne samtalen er ikke rapportert.",
+    "unknownPlan": "Ukjent abonnement."
+  },
+  "push": {
+    "discreet": "Nytt varsel",
+    "match": {
+      "title": "Det er en match!",
+      "body": "Du og {name} vil ha hverandre."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Noen er virkelig interessert i deg."
+    },
+    "message": {
+      "photo": "Sendte et bilde"
+    },
+    "agreementComplete": {
+      "title": "Avtalen er klar",
+      "body": "Dere har begge bekreftet den. Når dere møtes, kan dere likevel alltid ombestemme dere."
+    },
+    "agreementNew": {
+      "title": "Ny avtale",
+      "body": "{name} har startet en avtale. Fyll nå ut hva du har lyst på."
+    },
+    "agreementChanged": {
+      "title": "Avtalen er endret",
+      "body": "{name} har endret tid, sted eller regler. Bekreft dem på nytt."
+    },
+    "agreementUpdated": {
+      "title": "Avtalen er oppdatert",
+      "body": "{name} har oppdatert ønskene sine."
+    },
+    "agreementRevoked": {
+      "title": "Avtalen er avbrutt",
+      "body": "{name} har avbrutt avtalen. Daten blir ikke noe av – og det må respekteres."
+    },
+    "checkInOverdue": {
+      "title": "Du gikk glipp av innsjekkingen",
+      "body": "{name} har fått et varsel. Bekreft at du er ok."
+    }
+  },
+  "sms": {
+    "started": "{name} skal møte noen og har valgt deg som tillitsperson. Her ser du posisjonen og om alt er i orden: {url}",
+    "alarm": "ALARM: {name} trenger hjelp. Posisjon og detaljer: {url}",
+    "overdue": "{name} har ikke sjekket inn - bekreftelsen på at alt er i orden skulle kommet innen {time}. Prøv å ringe. Posisjon: {url}",
+    "backOk": "{name} har sjekket inn og bekreftet at alt er i orden.",
+    "sosCancelled": "{name} har avbrutt alarmen - det var en feil, alt er i orden.",
+    "endedOk": "{name} har avsluttet møtet, og alt er i orden. Takk for at du var der.",
+    "someone": "En som står deg nær"
+  },
+  "share": {
+    "pageTitle": "F*app – sikkerhetslenke",
+    "header": "Sikkerhetslenke",
+    "loading": "Laster inn…",
+    "call": "Ring {number}",
+    "mapLabel": "Kart med siste kjente posisjon",
+    "openMaps": "Åpne i Kart",
+    "partnerPhotoAlt": "Bilde av den andre personen",
+    "partnerLead": "Møter:",
+    "okTitle": "{name} er ok",
+    "okDetail": "Siste innsjekking kl. {last}. Neste ventes innen kl. {next}.",
+    "overdueTitle": "{name} har ikke sjekket inn",
+    "overdueDetail": "Innsjekkingen skulle skjedd innen kl. {due}. Prøv å ringe. Hvis ingen svarer, ring {number} og oppgi adressen fra kartet.",
+    "alarmTitle": "{name} trenger hjelp",
+    "alarmDetail": "Alarm kl. {time}. Ring {number} og oppgi posisjonen fra kartet og møtestedet nedenfor.",
+    "endedTitle": "Møtet er over",
+    "endedDetail": "{name} har bekreftet at alt er i orden.",
+    "endedDetailAlarm": "{name} har bekreftet at alt er i orden. Det ble utløst en alarm under møtet – spør om alt virkelig er bra.",
+    "footer": "Posisjonen slutter å vises når {name} avslutter møtet.",
+    "locationJustNow": "Posisjon akkurat nå",
+    "locationAgo": {
+      "one": "Posisjon for {count} min siden",
+      "other": "Posisjon for {count} min siden"
+    },
+    "battery": "batteri {percent}",
+    "linkExpired": "Lenken er ikke lenger gyldig",
+    "loadFailed": "Kunne ikke laste inn statusen. Prøver igjen…"
+  }
+}

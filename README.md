@@ -9,7 +9,11 @@ Prototyp (skutečná aplikace v prohlížeči s ukázkovými daty): https://clau
 shared/   číselníky sdílené serverem a aplikací (aktivity, texty domluvy, důvody nahlášení…)
 server/   API (Node.js 22, Express 5, vestavěné SQLite), hlídač check-inů, stránka pro důvěryhodnou osobu
 app/      nativní aplikace (Expo SDK 57 / React Native, expo-router)
+web/      webová stránka s čekací listinou (statické HTML, vícejazyčné)
+marketing/ šablony bannerů a videí kampaně (render přes Playwright + ffmpeg)
 ```
+
+Web (náhled): https://claude.ai/artifact/RAgJWj3Zy8etTDAiafSAgQ
 
 ## Jak to funguje
 
@@ -101,6 +105,36 @@ PINů a hlídání check-inů, moderace převzatá ze serveru) a nativní moduly
 Přepínání řeší `app/metro.config.js` jen při `FAPP_DEMO=1` – běžné sestavení aplikace se nemění.
 Demo panel (štítek DEMO u pravého okraje) ukazuje „odeslané“ SMS, pohled důvěryhodné osoby a umí posunout čas.
 
+### Jazyky
+
+Aplikace, server, web i texty obchodů jsou ve všech 45 jazycích App Storu (arabština, hebrejština a urdština zprava doleva).
+Slovníky jsou v `shared/i18n/{app,server,web,store}/<kód>.json`, zdrojem je čeština, záloha angličtina; pravidla v `shared/i18n/README.md`.
+Překlady jsou strojové – **texty souhlasu, bezpečí a pomoci musí před spuštěním v dané zemi zkontrolovat rodilý mluvčí** (souhlas i právník).
+
+```bash
+node shared/i18n/check.mjs          # shoda klíčů, parametry, množná čísla, limity délky pro obchody
+node shared/i18n/store-export.mjs   # texty pro App Store / Google Play → app/fastlane/metadata (fastlane deliver / supply)
+```
+
+Aplikace bere jazyk telefonu, v profilu jde přepnout. Server odpovídá podle hlavičky `X-App-Locale` / `Accept-Language`
+a SMS i push posílá v jazyce příjemce.
+
+### Web a kampaň
+
+```bash
+node web/build.mjs                  # web/dist – statický web pro všechny přeložené jazyky (hreflang, sitemap)
+node marketing/render.mjs           # bannery (cs, en plná sada; ostatní jazyky základní), videa cs+en → marketing/out
+node marketing/render.mjs --videos --langs de   # videa v dalším jazyce
+node marketing/gallery.mjs          # náhledová galerie marketing/out/index.html
+```
+
+Když existuje `web/dist`, server ho sám servíruje; formulář čekací listiny posílá na `POST /api/waitlist`
+(e-maily šifrované, export přes `GET /api/admin/waitlist`). Web na jiné doméně: `WEB_ORIGINS` (CORS).
+
+Pozor na pravidla reklamy: Meta, TikTok a Reddit reklamy na seznamky pro sex nepouštějí, Google jen s certifikací,
+Sklik erotiku jen 22–06 h. Kreativy „soft“ jsou bez slova sex. Jméno „F*app“ může narazit při review v App Storu
+a Google Play (vulgarismus) – zvážit neutrální název do obchodů.
+
 ## Produkce – co je potřeba zařídit
 
 | Co | Proměnné | Poznámka |
@@ -112,6 +146,7 @@ Demo panel (štítek DEMO u pravého okraje) ukazuje „odeslané“ SMS, pohled
 | Mapy na Androidu | `GOOGLE_MAPS_API_KEY` (při buildu aplikace) | |
 | Předplatné | `BILLING_MODE` (`free`/`paid`), `PAYMENTS_PROVIDER=revenuecat`, `REVENUECAT_WEBHOOK_AUTH` | Na startu `free`. Webhook: `POST {PUBLIC_URL}/api/billing/webhook/revenuecat`. Před zapnutím `paid` přidat do aplikace SDK `react-native-purchases` (funkce `purchase` v `app/src/lib/billing.ts`) a založit produkty v obchodech (ID v `shared/constants.js` → `PRODUCTS`). Testerům jde dát předplatné přes `POST /api/admin/users/:id/plan`. |
 | Moderátoři | `ADMIN_TOKEN` | API pod `/api/admin` (fronta příznaků, detail uživatele, nahlášené konverzace, suspend/ban/reinstate). Zatím bez UI. |
+| Web | `WEB_ORIGINS` (čárkami), `WEB_DIR` | Povolené domény webu pro čekací listinu; složka statického webu (výchozí `web/dist`). |
 | Ostatní | `PUBLIC_URL`, `PORT`, `DB_FILE`, `TRUST_PROXY`, `NODE_ENV=production` | HTTPS je nutnost. |
 
 ## Co ještě zbývá

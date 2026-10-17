@@ -1,1 +1,276 @@
-{}
+{
+  "errors": {
+    "notFound": "Ni najdeno.",
+    "tooLarge": "Zahteva je prevelika.",
+    "invalidJson": "Neveljaven JSON.",
+    "internal": "Nekaj je šlo narobe. Poskusi znova.",
+    "rateLimited": "Preveč poskusov naenkrat. Poskusi čez trenutek.",
+    "unauthorized": "Ni pooblastila.",
+    "invalidSignature": "Neveljaven podpis.",
+    "linkExpired": "Povezava ni več veljavna."
+  },
+  "validation": {
+    "required": "Manjka polje „{field}“.",
+    "notText": "Polje „{field}“ mora biti besedilo.",
+    "tooShort": "Polje „{field}“ je prekratko.",
+    "tooLong": "Polje „{field}“ je predolgo.",
+    "integer": "Polje „{field}“ mora biti celo število od {min} do {max}.",
+    "invalidValue": "Neveljavna vrednost polja „{field}“.",
+    "notList": "Polje „{field}“ mora biti seznam.",
+    "minOptions": {
+      "one": "V polju „{field}“ izberi vsaj {count} možnost.",
+      "two": "V polju „{field}“ izberi vsaj {count} možnosti.",
+      "few": "V polju „{field}“ izberi vsaj {count} možnosti.",
+      "other": "V polju „{field}“ izberi vsaj {count} možnosti."
+    },
+    "date": "Polje „{field}“ mora biti datum v obliki LLLL-MM-DD.",
+    "dateTime": "Polje „{field}“ mora biti datum in čas.",
+    "email": "Neveljaven e-naslov.",
+    "phone": "Neveljavna telefonska številka ({field}).",
+    "pin": "{field} mora imeti 4–6 števk."
+  },
+  "fields": {
+    "email": "e-naslov",
+    "password": "geslo",
+    "name": "ime",
+    "birthdate": "datum rojstva",
+    "gender": "spol",
+    "interestedIn": "koga iščeš",
+    "pushToken": "žeton push",
+    "ageMin": "starost od",
+    "ageMax": "starost do",
+    "bio": "o meni",
+    "tags": "kaj iščem",
+    "maxDistance": "razdalja",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "ime zaupne osebe",
+    "trustedPhone": "telefon zaupne osebe",
+    "pin": "PIN",
+    "duressPin": "PIN v sili",
+    "meetAt": "kdaj",
+    "place": "kje",
+    "safeword": "varnostna beseda",
+    "note": "moje meje",
+    "version": "različica",
+    "message": "sporočilo",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "interval javljanja",
+    "accuracy": "natančnost",
+    "battery": "baterija",
+    "user": "uporabnik",
+    "reason": "razlog",
+    "details": "podrobnosti",
+    "resolution": "rešitev",
+    "days": "število dni"
+  },
+  "auth": {
+    "confirmAdult": "Potrditi moraš, da imaš 18 let ali več.",
+    "acceptRules": "Strinjati se moraš s pravili in z obdelavo podatkov.",
+    "underage": "F*app je samo za osebe, starejše od 18 let.",
+    "invalidBirthdate": "Neveljaven datum rojstva.",
+    "emailTaken": "Račun s tem e-naslovom že obstaja.",
+    "wrongCredentials": "Napačen e-naslov ali geslo.",
+    "banned": "Račun je bil blokiran zaradi kršitve pravil.",
+    "notLoggedIn": "Nisi prijavljen/a.",
+    "suspended": "Račun je začasno ustavljen do pregleda moderatorja.",
+    "verifyFirst": "Najprej preveri identiteto."
+  },
+  "profile": {
+    "wrongPassword": "Napačno geslo.",
+    "ageRange": "Starost od ne sme biti višja od starosti do.",
+    "maxPhotos": {
+      "one": "Največ {count} fotografija.",
+      "two": "Največ {count} fotografiji.",
+      "few": "Največ {count} fotografije.",
+      "other": "Največ {count} fotografij."
+    },
+    "pinsMustDiffer": "PIN v sili mora biti drugačen od običajnega PIN-a.",
+    "deleteDuringMeetup": "Računa zdaj ni mogoče izbrisati – zmenek poteka. Poskusi znova, ko se konča."
+  },
+  "photo": {
+    "notJpeg": "Fotografija mora biti v obliki JPEG.",
+    "corrupt": "Fotografija je poškodovana.",
+    "notBase64": "Fotografija mora biti JPEG v base64.",
+    "tooLarge": "Fotografija je prevelika (največ 2 MB).",
+    "notFound": "Fotografija ne obstaja.",
+    "unavailable": "Fotografija ni na voljo."
+  },
+  "users": {
+    "notFound": "Uporabnik ne obstaja."
+  },
+  "match": {
+    "notFound": "Ujemanje ne obstaja.",
+    "ended": "To ujemanje se je končalo.",
+    "profileUnavailable": "Ta profil ni več na voljo."
+  },
+  "discover": {
+    "locationRequired": "Najprej dovoli lokacijo, da ti lahko pokažemo ljudi v bližini.",
+    "photoRequired": "Dodaj vsaj eno fotografijo.",
+    "superLikeIsLike": "Super všeček je vedno všeček.",
+    "profileNotFound": "Profil ne obstaja.",
+    "profileGone": "Profil ne obstaja več.",
+    "nothingToRewind": "Ni česa vrniti.",
+    "cantRewindSuperLike": "Super všečka ni mogoče vrniti.",
+    "cantRewindMatch": "Iz tega potega je že ujemanje."
+  },
+  "billing": {
+    "likeLimit": "Zmanjkalo ti je všečkov. Novi pridejo kmalu – ali pa drsaj brez omejitev s F*app Plus.",
+    "noSuperLike": "Nimaš nobenega super všečka.",
+    "noBoost": "Nimaš nobenega boosta.",
+    "tonightPaid": "„Nocoj“ je v paketu Platinum ali kot enkraten nakup.",
+    "featureInPlan": "{feature} je del F*app {plan}.",
+    "paymentsOff": "Plačila še niso vklopljena – F*app je zdaj povsem brezplačen.",
+    "unknownProduct": "Neznan izdelek.",
+    "cantBuy": "Tega zdaj ni mogoče kupiti.",
+    "cantBoost": "Boosta zdaj ni mogoče vklopiti.",
+    "boostRunning": "Boost že teče.",
+    "cantTonight": "Tega zdaj ni mogoče vklopiti.",
+    "tonightOn": "„Nocoj“ je že vklopljeno.",
+    "unknownCity": "Neznano mesto."
+  },
+  "features": {
+    "unlimitedLikes": "Neomejeni všečki",
+    "rewind": "Vrnitev",
+    "travel": "Na potovanju",
+    "incognito": "Inkognito",
+    "seeLikes": "Kdo te je všečkal",
+    "weeklySuperLikes": "5 super všečkov na teden",
+    "monthlyBoost": "1 boost na mesec",
+    "priorityLikes": "Prednostni všečki",
+    "sentLikes": "Poslani všečki",
+    "tonight": "Nocoj, kadar koli"
+  },
+  "agreement": {
+    "wishesRequired": "Izpolni, česa si želiš.",
+    "invalidWish": "Neveljavna izbira pri željah.",
+    "notFound": "Dogovor ne obstaja.",
+    "confirmBoth": "Potrdi obe izjavi – da si to tako predstavljaš in da dogovor ni privolitev.",
+    "meetWithin": {
+      "one": "Zmenek mora biti v naslednjem {count} dnevu.",
+      "two": "Zmenek mora biti v naslednjih {count} dneh.",
+      "few": "Zmenek mora biti v naslednjih {count} dneh.",
+      "other": "Zmenek mora biti v naslednjih {count} dneh."
+    },
+    "cooldown": "Nov dogovor lahko zdaj začne le {name}.",
+    "changed": "Dogovor se je medtem spremenil. Preberi ga znova."
+  },
+  "chat": {
+    "empty": "Prazno sporočilo.",
+    "notSent": "Sporočilo ni bilo poslano. {reason}",
+    "photo": "Fotografija"
+  },
+  "moderation": {
+    "minor": "Sporočilo nakazuje, da je lahko kdo od vaju mladoleten. F*app je samo za 18+.",
+    "paid": "Ponujanje ali iskanje plačanega seksa je na F*app prepovedano.",
+    "consentPressure": "Pozor: dogovor v aplikaciji ni privolitev. Kadar koli ga lahko prekličeš in na kraju samem karkoli zavrneš – brez pojasnjevanja.",
+    "contact": "Druga oseba deli kontakt zunaj aplikacije. Zunaj F*app za vaju ne delujejo dogovor, varnostni način in prijave."
+  },
+  "safety": {
+    "notFound": "Zmenek ne obstaja.",
+    "ended": "Zmenek se je že končal.",
+    "wrongPin": "Napačen PIN.",
+    "agreementRequired": "Zmenek lahko začneš, ko dogovor izpolnita in potrdita oba.",
+    "setupRequired": "Najprej nastavi zaupno osebo, PIN in PIN v sili.",
+    "invalidInterval": "Neveljaven interval javljanja."
+  },
+  "reports": {
+    "feedbackSent": "Oceno si že poslal/a."
+  },
+  "verification": {
+    "unknown": "Neznano preverjanje.",
+    "alreadyVerified": "Tvoja identiteta je že preverjena.",
+    "startFirst": "Najprej začni preverjanje.",
+    "noWebhook": "Razvojni ponudnik nima webhooka.",
+    "unavailable": "Storitev za preverjanje se ne odziva. Poskusi čez trenutek.",
+    "declined": {
+      "underage": "Preverjanje je pokazalo, da še nimaš 18 let. F*app je samo za odrasle.",
+      "banned": "Ta oseba je bila na F*app blokirana zaradi kršitve pravil.",
+      "duplicate": "Ta oseba že ima račun na F*app. Vsak ima lahko le enega.",
+      "incomplete": "Datuma rojstva iz dokumenta ni bilo mogoče prebrati. Poskusi znova.",
+      "default": "Preverjanje ni uspelo. Poskusi znova."
+    }
+  },
+  "admin": {
+    "notReported": "Pogovor ni bil prijavljen.",
+    "unknownPlan": "Neznan paket."
+  },
+  "push": {
+    "discreet": "Novo obvestilo",
+    "match": {
+      "title": "Ujemata se!",
+      "body": "Ti in {name} se želita."
+    },
+    "superLike": {
+      "title": "Super všeček",
+      "body": "Nekomu je zate res mar."
+    },
+    "message": {
+      "photo": "Poslana fotografija"
+    },
+    "agreementComplete": {
+      "title": "Dogovor je končan",
+      "body": "Oba sta ga potrdila. Na kraju samem se še vedno lahko premislita."
+    },
+    "agreementNew": {
+      "title": "Nov dogovor",
+      "body": "{name} je začel/a dogovor. Izpolni, česa si želiš."
+    },
+    "agreementChanged": {
+      "title": "Dogovor spremenjen",
+      "body": "{name} je spremenil/a čas, kraj ali pravila. Znova jih potrdi."
+    },
+    "agreementUpdated": {
+      "title": "Dogovor posodobljen",
+      "body": "{name} je posodobil/a svoje želje."
+    },
+    "agreementRevoked": {
+      "title": "Dogovor preklican",
+      "body": "{name} je preklical/a dogovor. Zmenka ne bo – in to je treba spoštovati."
+    },
+    "checkInOverdue": {
+      "title": "Zamudil/a si javljanje",
+      "body": "{name} je dobil/a opozorilo. Potrdi, da si v redu."
+    }
+  },
+  "sms": {
+    "started": "{name} ima zmenek in te je izbral/a za zaupno osebo. Tukaj vidiš, kje je in ali je v redu: {url}",
+    "alarm": "ALARM: {name} potrebuje pomoč. Lokacija in podrobnosti: {url}",
+    "overdue": "{name} se ni javil/a - potrditev, da je v redu, bi morala priti do {time}. Poskusi poklicati. Lokacija: {url}",
+    "backOk": "{name} se je javil/a in potrdil/a, da je v redu.",
+    "sosCancelled": "{name} je preklical/a alarm - bila je pomota, je v redu.",
+    "endedOk": "{name} je končal/a zmenek in je v redu. Hvala za podporo.",
+    "someone": "Tebi bližnja oseba"
+  },
+  "share": {
+    "pageTitle": "F*app – varnostna povezava",
+    "header": "Varnostna povezava",
+    "loading": "Nalagam…",
+    "call": "Pokliči {number}",
+    "mapLabel": "Zemljevid z zadnjo znano lokacijo",
+    "openMaps": "Odpri v zemljevidih",
+    "partnerPhotoAlt": "Fotografija osebe na zmenku",
+    "partnerLead": "Na zmenku z:",
+    "okTitle": "{name} je v redu",
+    "okDetail": "Zadnja potrditev ob {last}. Naslednjo pričakujemo do {next}.",
+    "overdueTitle": "{name} se ni javil/a",
+    "overdueDetail": "Potrditev bi morala priti do {due}. Poskusi poklicati. Če se nihče ne oglasi, pokliči {number} in sporoči naslov z zemljevida.",
+    "alarmTitle": "{name} potrebuje pomoč",
+    "alarmDetail": "Alarm ob {time}. Pokliči {number} in sporoči lokacijo z zemljevida in kraj zmenka spodaj.",
+    "endedTitle": "Zmenek se je končal",
+    "endedDetail": "{name} je potrdil/a, da je v redu.",
+    "endedDetailAlarm": "{name} je potrdil/a, da je v redu. Med zmenkom je bil sprožen alarm – vprašaj, ali je res vse v redu.",
+    "footer": "Lokacija ne bo več vidna, ko {name} konča zmenek.",
+    "locationJustNow": "Lokacija pravkar",
+    "locationAgo": {
+      "one": "Lokacija pred {count} min",
+      "two": "Lokacija pred {count} min",
+      "few": "Lokacija pred {count} min",
+      "other": "Lokacija pred {count} min"
+    },
+    "battery": "baterija {percent}",
+    "linkExpired": "Povezava ni več veljavna",
+    "loadFailed": "Stanja ni bilo mogoče naložiti. Poskušam znova…"
+  }
+}
