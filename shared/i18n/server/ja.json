@@ -1,0 +1,264 @@
+{
+  "errors": {
+    "notFound": "見つかりません。",
+    "tooLarge": "リクエストが大きすぎます。",
+    "invalidJson": "無効なJSONです。",
+    "internal": "問題が発生しました。もう一度お試しください。",
+    "rateLimited": "短時間に試行が多すぎます。少し経ってからもう一度お試しください。",
+    "unauthorized": "認証されていません。",
+    "invalidSignature": "署名が無効です。",
+    "linkExpired": "このリンクはすでに無効です。"
+  },
+  "validation": {
+    "required": "「{field}」が入力されていません。",
+    "notText": "「{field}」はテキストで入力してください。",
+    "tooShort": "「{field}」が短すぎます。",
+    "tooLong": "「{field}」が長すぎます。",
+    "integer": "「{field}」は{min}～{max}の整数で入力してください。",
+    "invalidValue": "「{field}」の値が無効です。",
+    "notList": "「{field}」はリストで指定してください。",
+    "minOptions": {
+      "other": "「{field}」で{count}つ以上選んでください。"
+    },
+    "date": "「{field}」はYYYY-MM-DD形式の日付で入力してください。",
+    "dateTime": "「{field}」は日時で入力してください。",
+    "email": "メールアドレスが無効です。",
+    "phone": "電話番号が無効です（{field}）。",
+    "pin": "{field}は4～6桁の数字にしてください。"
+  },
+  "fields": {
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "name": "名前",
+    "birthdate": "生年月日",
+    "gender": "性別",
+    "interestedIn": "探している相手",
+    "pushToken": "プッシュトークン",
+    "ageMin": "年齢（下限）",
+    "ageMax": "年齢（上限）",
+    "bio": "自己紹介",
+    "tags": "探しているもの",
+    "maxDistance": "距離",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "信頼できる人の名前",
+    "trustedPhone": "信頼できる人の電話番号",
+    "pin": "PIN",
+    "duressPin": "緊急PIN",
+    "meetAt": "日時",
+    "place": "場所",
+    "safeword": "セーフワード",
+    "note": "私の境界線",
+    "version": "バージョン",
+    "message": "メッセージ",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "チェックインの間隔",
+    "accuracy": "精度",
+    "battery": "バッテリー",
+    "user": "ユーザー",
+    "reason": "理由",
+    "details": "詳細",
+    "resolution": "対応",
+    "days": "日数"
+  },
+  "auth": {
+    "confirmAdult": "18歳以上であることを確認してください。",
+    "acceptRules": "ルールとデータの処理に同意する必要があります。",
+    "underage": "F*appは18歳以上の方のみ利用できます。",
+    "invalidBirthdate": "生年月日が無効です。",
+    "emailTaken": "このメールアドレスのアカウントはすでに存在します。",
+    "wrongCredentials": "メールアドレスまたはパスワードが違います。",
+    "banned": "このアカウントはルール違反により利用禁止になりました。",
+    "notLoggedIn": "ログインしていません。",
+    "suspended": "モデレーターが確認するまで、アカウントは停止されています。",
+    "verifyFirst": "まず本人確認をしてください。"
+  },
+  "profile": {
+    "wrongPassword": "パスワードが違います。",
+    "ageRange": "年齢の下限は上限より大きくできません。",
+    "maxPhotos": {
+      "other": "写真は最大{count}枚までです。"
+    },
+    "pinsMustDiffer": "緊急PINは通常のPINと別の番号にしてください。",
+    "deleteDuringMeetup": "デート中のため、今はアカウントを削除できません。デートが終わってからもう一度お試しください。"
+  },
+  "photo": {
+    "notJpeg": "写真はJPEG形式にしてください。",
+    "corrupt": "写真が破損しています。",
+    "notBase64": "写真はbase64でエンコードしたJPEGにしてください。",
+    "tooLarge": "写真が大きすぎます（最大2 MB）。",
+    "notFound": "写真が見つかりません。",
+    "unavailable": "写真を利用できません。"
+  },
+  "users": {
+    "notFound": "ユーザーが見つかりません。"
+  },
+  "match": {
+    "notFound": "マッチが見つかりません。",
+    "ended": "このマッチは終了しました。",
+    "profileUnavailable": "このプロフィールは利用できなくなりました。"
+  },
+  "discover": {
+    "locationRequired": "近くの人を表示するため、まず位置情報をオンにしてください。",
+    "photoRequired": "写真を1枚以上追加してください。",
+    "superLikeIsLike": "スーパーいいねは常にいいねでもあります。",
+    "profileNotFound": "プロフィールが見つかりません。",
+    "profileGone": "このプロフィールは存在しません。",
+    "nothingToRewind": "取り消せるスワイプはありません。",
+    "cantRewindSuperLike": "スーパーいいねは取り消せません。",
+    "cantRewindMatch": "このスワイプはすでにマッチしています。"
+  },
+  "billing": {
+    "likeLimit": "いいねを使い切りました。まもなく補充されます。F*app Plusなら無制限にスワイプできます。",
+    "noSuperLike": "スーパーいいねがありません。",
+    "noBoost": "ブーストがありません。",
+    "tonightPaid": "「今夜」はPlatinumまたは単品購入で利用できます。",
+    "featureInPlan": "{feature}はF*app {plan}の機能です。",
+    "paymentsOff": "決済はまだ有効になっていません。F*appは現在すべて無料です。",
+    "unknownProduct": "不明な商品です。",
+    "cantBuy": "今は購入できません。",
+    "cantBoost": "今はブーストを開始できません。",
+    "boostRunning": "ブーストはすでに実行中です。",
+    "cantTonight": "今はオンにできません。",
+    "tonightOn": "「今夜」はすでにオンです。",
+    "unknownCity": "不明な都市です。"
+  },
+  "features": {
+    "unlimitedLikes": "いいね無制限",
+    "rewind": "巻き戻し",
+    "travel": "トラベルモード",
+    "incognito": "シークレット",
+    "seeLikes": "いいねした人を見る",
+    "weeklySuperLikes": "週5回のスーパーいいね",
+    "monthlyBoost": "月1回のブースト",
+    "priorityLikes": "優先いいね",
+    "sentLikes": "送ったいいね",
+    "tonight": "いつでも「今夜」"
+  },
+  "agreement": {
+    "wishesRequired": "したいことを入力してください。",
+    "invalidWish": "希望の選択が無効です。",
+    "notFound": "合意が見つかりません。",
+    "confirmBoth": "両方の文を確認してください。これがあなたの希望であること、そして合意は同意ではないことです。",
+    "meetWithin": {
+      "other": "デートは{count}日以内に設定してください。"
+    },
+    "cooldown": "今は{name}さんだけが新しい合意を始められます。",
+    "changed": "合意がその間に変更されました。もう一度確認してください。"
+  },
+  "chat": {
+    "empty": "メッセージが空です。",
+    "notSent": "メッセージは送信されませんでした。{reason}",
+    "photo": "写真"
+  },
+  "moderation": {
+    "minor": "このメッセージから、どちらかが18歳未満の可能性があります。F*appは18歳以上限定です。",
+    "paid": "F*appでは、有償の性行為の勧誘や依頼は禁止されています。",
+    "consentPressure": "注意：アプリでの合意は同意ではありません。いつでもキャンセルでき、会ったときに何でも断れます。説明は必要ありません。",
+    "contact": "相手がアプリ外の連絡先を共有しています。F*appの外では、合意、セーフティモード、通報は機能しません。"
+  },
+  "safety": {
+    "notFound": "デートが見つかりません。",
+    "ended": "デートはすでに終了しています。",
+    "wrongPin": "PINが違います。",
+    "agreementRequired": "ふたりとも合意を入力して確定すると、デートを開始できます。",
+    "setupRequired": "まず信頼できる人、PIN、緊急PINを設定してください。",
+    "invalidInterval": "チェックインの間隔が無効です。"
+  },
+  "reports": {
+    "feedbackSent": "フィードバックはすでに送信済みです。"
+  },
+  "verification": {
+    "unknown": "不明な本人確認です。",
+    "alreadyVerified": "本人確認はすでに完了しています。",
+    "startFirst": "まず本人確認を開始してください。",
+    "noWebhook": "開発用プロバイダーにはwebhookがありません。",
+    "unavailable": "本人確認サービスが応答していません。少し経ってからもう一度お試しください。",
+    "declined": {
+      "underage": "本人確認の結果、まだ18歳未満であることが分かりました。F*appは大人専用です。",
+      "banned": "この人はルール違反によりF*appの利用を禁止されています。",
+      "duplicate": "この人はすでにF*appのアカウントを持っています。アカウントは1人1つまでです。",
+      "incomplete": "書類から生年月日を読み取れませんでした。もう一度お試しください。",
+      "default": "本人確認に失敗しました。もう一度お試しください。"
+    }
+  },
+  "admin": {
+    "notReported": "この会話は通報されていません。",
+    "unknownPlan": "不明なプランです。"
+  },
+  "push": {
+    "discreet": "新しい通知",
+    "match": {
+      "title": "マッチしました！",
+      "body": "あなたと{name}さんはお互いに惹かれ合っています。"
+    },
+    "superLike": {
+      "title": "スーパーいいね",
+      "body": "あなたに本気で興味がある人がいます。"
+    },
+    "message": {
+      "photo": "写真を送信しました"
+    },
+    "agreementComplete": {
+      "title": "合意が完了しました",
+      "body": "ふたりとも確定しました。会ったときも、気持ちはいつでも変えられます。"
+    },
+    "agreementNew": {
+      "title": "新しい合意",
+      "body": "{name}さんが合意を始めました。あなたのしたいことを入力してください。"
+    },
+    "agreementChanged": {
+      "title": "合意が変更されました",
+      "body": "{name}さんが時間・場所・ルールを変更しました。もう一度確認してください。"
+    },
+    "agreementUpdated": {
+      "title": "合意が更新されました",
+      "body": "{name}さんが希望を更新しました。"
+    },
+    "agreementRevoked": {
+      "title": "合意がキャンセルされました",
+      "body": "{name}さんが合意をキャンセルしました。デートは中止です。その判断は尊重されなければなりません。"
+    },
+    "checkInOverdue": {
+      "title": "チェックインを逃しました",
+      "body": "{name}さんに通知が届きました。無事であることを知らせてください。"
+    }
+  },
+  "sms": {
+    "started": "{name}が人と会う予定で、あなたを信頼できる人に選びました。居場所と無事かどうかはこちら：{url}",
+    "alarm": "アラーム：{name}が助けを求めています。位置情報と詳細：{url}",
+    "overdue": "{name}から連絡がありません。{time}までに無事を知らせる予定でした。電話してみてください。位置情報：{url}",
+    "backOk": "{name}から連絡があり、無事が確認されました。",
+    "sosCancelled": "{name}がアラームを取り消しました。間違いで、無事です。",
+    "endedOk": "{name}は予定を終え、無事です。見守ってくれてありがとうございました。",
+    "someone": "あなたの身近な人"
+  },
+  "share": {
+    "pageTitle": "F*app – 安全確認リンク",
+    "header": "安全確認リンク",
+    "loading": "読み込み中…",
+    "call": "{number}に電話",
+    "mapLabel": "最後に確認された位置の地図",
+    "openMaps": "地図アプリで開く",
+    "partnerPhotoAlt": "会っている相手の写真",
+    "partnerLead": "会っている相手：",
+    "okTitle": "{name}は無事です",
+    "okDetail": "最後のチェックイン：{last}。次は{next}までの予定です。",
+    "overdueTitle": "{name}からチェックインがありません",
+    "overdueDetail": "チェックインは{due}までの予定でした。電話してみてください。出ない場合は{number}に電話し、地図の住所を伝えてください。",
+    "alarmTitle": "{name}が助けを求めています",
+    "alarmDetail": "{time}にアラーム。{number}に電話し、地図の位置と下の待ち合わせ場所を伝えてください。",
+    "endedTitle": "デートは終了しました",
+    "endedDetail": "{name}は無事を確認しました。",
+    "endedDetailAlarm": "{name}は無事を確認しました。デート中にアラームが発信されました。大丈夫かどうか聞いてみてください。",
+    "footer": "{name}がデートを終了すると、位置情報は表示されなくなります。",
+    "locationJustNow": "位置情報：たった今",
+    "locationAgo": {
+      "other": "位置情報：{count}分前"
+    },
+    "battery": "バッテリー {percent}",
+    "linkExpired": "このリンクはすでに無効です",
+    "loadFailed": "状況を読み込めませんでした。再試行しています…"
+  }
+}

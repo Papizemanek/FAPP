@@ -8,6 +8,7 @@ const KEYS = {
   token: 'fapp.token',
   activeSafety: 'fapp.activeSafety',
   appLock: 'fapp.appLock',
+  language: 'fapp.language',
 } as const;
 
 export const storage = {
@@ -26,4 +27,8 @@ export const storage = {
 
   getAppLock: async () => (await SecureStore.getItemAsync(KEYS.appLock, options)) === '1',
   setAppLock: (on: boolean) => SecureStore.setItemAsync(KEYS.appLock, on ? '1' : '0', options),
+
+  getLanguage: () => SecureStore.getItemAsync(KEYS.language, options),
+  setLanguage: (code: string | null) =>
+    code ? SecureStore.setItemAsync(KEYS.language, code, options) : SecureStore.deleteItemAsync(KEYS.language, options),
 };

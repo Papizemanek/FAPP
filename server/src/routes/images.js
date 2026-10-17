@@ -11,7 +11,7 @@ export function imageRoutes({ db }) {
 
   r.get('/:id', (req, res) => {
     const img = db.prepare('SELECT * FROM images WHERE id = ?').get(req.params.id);
-    if (!img) throw new HttpError(404, 'Fotka neexistuje.');
+    if (!img) throw new HttpError(404, 'photo.notFound');
     const viewer = req.user.id;
     let allowed = img.owner_id === viewer;
     if (!allowed && img.kind === 'profile') allowed = !isBlocked(db, viewer, img.owner_id);
@@ -20,7 +20,7 @@ export function imageRoutes({ db }) {
         .prepare('SELECT 1 FROM matches WHERE id = ? AND (user_a = ? OR user_b = ?)')
         .get(img.match_id, viewer, viewer);
     }
-    if (!allowed) throw new HttpError(404, 'Fotka neexistuje.');
+    if (!allowed) throw new HttpError(404, 'photo.notFound');
     res.set('Content-Type', 'image/jpeg');
     res.set('Cache-Control', 'private, max-age=86400');
     res.send(Buffer.from(img.data));

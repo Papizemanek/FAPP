@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { Button, ErrorText, Field, Header, Screen, Title } from '@/components/ui';
 import { api, errorMessage, type Me } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 
 export default function Login() {
+  const t = useT();
   const { signIn } = useSession();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,11 +33,11 @@ export default function Login() {
       <Header />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }} keyboardShouldPersistTaps="handled">
-          <Title>Přihlášení</Title>
-          <Field label="E-mail" value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" autoComplete="email" />
-          <Field label="Heslo" value={password} onChangeText={setPassword} secureTextEntry autoComplete="password" />
+          <Title>{t('login.title')}</Title>
+          <Field label={t('login.email')} value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" autoComplete="email" />
+          <Field label={t('login.password')} value={password} onChangeText={setPassword} secureTextEntry autoComplete="password" />
           <ErrorText>{error}</ErrorText>
-          <Button label="Přihlásit se" onPress={submit} loading={busy} disabled={!email || !password} />
+          <Button label={t('login.submit')} onPress={submit} loading={busy} disabled={!email || !password} />
         </ScrollView>
       </KeyboardAvoidingView>
     </Screen>

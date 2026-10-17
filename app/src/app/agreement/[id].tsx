@@ -1,4 +1,4 @@
-import { ACTIVITIES, DETERRENCE_TEXT, INTENT_TEXT, NOTICE_TEXT, REVOKE_COOLDOWN_DAYS, WISHES } from '@fapp/shared';
+import { ACTIVITIES, REVOKE_COOLDOWN_DAYS, WISHES } from '@fapp/shared';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useMemo, useState } from 'react';
@@ -6,12 +6,14 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text
 import { ConfirmSheet } from '@/components/Sheet';
 import { Banner, Body, Button, Checkbox, Chip, ErrorText, Field, Header, Label, Screen, Toggle } from '@/components/ui';
 import { api, errorMessage, type Activity, type Agreement, type MatchDetail, type Wish } from '@/lib/api';
+import { formatDate } from '@/lib/format';
+import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 
 const activityKeys = Object.keys(ACTIVITIES) as Activity[];
 const wishKeys = Object.keys(WISHES) as Wish[];
 const DAYS = 7;
-const weekday = (d: Date) => d.toLocaleDateString('cs-CZ', { weekday: 'short', day: 'numeric', month: 'numeric' });
+const weekday = (d: Date) => formatDate(d, { weekday: 'short', day: 'numeric', month: 'numeric' });
 
 function startOfDay(d: Date) {
   const x = new Date(d);
@@ -56,6 +58,7 @@ function formFrom(a: Agreement | null): Form {
  */
 export default function AgreementScreen() {
   usePreventScreenCapture();
+  const t = useT();
   const { id } = useLocalSearchParams<{ id: string }>();
   const [detail, setDetail] = useState<MatchDetail | null>(null);
   const [form, setForm] = useState<Form>(formFrom(null));
@@ -134,7 +137,7 @@ export default function AgreementScreen() {
 
   const save = () =>
     run(async () => {
-      if (!meetAt) throw new Error('Čas zadej jako HH:MM, třeba 21:00.');
+      if (!meetAt) throw new Error(t('agreement.timeFormatError'));
       // Neměněný čas pošleme přesně tak, jak ho uložil server – jinak by vypadal jako změna.
       const sameTime = editable && agreement && !logisticsDirty;
       await api('POST', `/matches/${id}/agreement`, {
@@ -157,25 +160,35 @@ export default function AgreementScreen() {
   const status = (() => {
     if (agreement?.status === 'revoked') {
       return blockedByCooldown ? (
-        <Banner tone="alarm" title={`${partnerName} domluvu zrušil/a`} subtitle={`Novou domluvu teď může otevřít jen ${partnerName}.`} />
+        <Banner
+          tone="alarm"
+          title={t('agreement.revokedByPartnerTitle', { name: partnerName })}
+          subtitle={t('agreement.revokedByPartnerSubtitle', { name: partnerName })}
+        />
       ) : (
-        <Banner tone="alarm" title="Domluva byla zrušena" subtitle="Můžeš otevřít novou." />
+        <Banner tone="alarm" title={t('agreement.revokedTitle')} subtitle={t('agreement.revokedSubtitle')} />
       );
     }
-    if (!editable) return <Banner tone="warn" title="Nová domluva" subtitle="Každý vyplní svou část zvlášť. Uvidíte jen, na čem se shodnete." />;
-    if (logisticsDirty) return <Banner tone="warn" title="Měníš čas, místo nebo pravidla" subtitle={`${partnerName} je bude muset potvrdit znovu.`} />;
-    if (agreement?.status === 'confirmed' && !dirty) {
-      return <Banner tone="safe" icon="shieldCheck" title="Domluvu jste vyplnili oba" subtitle="Na místě se můžete kdykoli rozhodnout jinak." />;
+    if (!editable) return <Banner tone="warn" title={t('agreement.newTitle')} subtitle={t('agreement.newSubtitle')} />;
+    if (logisticsDirty) {
+      return <Banner tone="warn" title={t('agreement.logisticsChangedTitle')} subtitle={t('agreement.logisticsChangedSubtitle', { name: partnerName })} />;
     }
-    if (agreement?.confirmedByMe) return <Banner tone="warn" title="Tvoje část je hotová" subtitle={`${partnerName} ještě nevyplnil/a nebo nepotvrdil/a.`} />;
-    if (agreement?.partnerFilled) return <Banner tone="warn" title={`${partnerName} svou část vyplnil/a`} subtitle="Vyplň tu svoji – uvidíte jen shodu." />;
-    return <Banner tone="warn" title="Vyplň svou část" subtitle="Uvidíte jen, na čem se shodnete." />;
+    if (agreement?.status === 'confirmed' && !dirty) {
+      return <Banner tone="safe" icon="shieldCheck" title={t('agreement.confirmedTitle')} subtitle={t('agreement.confirmedSubtitle')} />;
+    }
+    if (agreement?.confirmedByMe) {
+      return <Banner tone="warn" title={t('agreement.myPartDoneTitle')} subtitle={t('agreement.myPartDoneSubtitle', { name: partnerName })} />;
+    }
+    if (agreement?.partnerFilled) {
+      return <Banner tone="warn" title={t('agreement.partnerFilledTitle', { name: partnerName })} subtitle={t('agreement.partnerFilledSubtitle')} />;
+    }
+    return <Banner tone="warn" title={t('agreement.fillTitle')} subtitle={t('agreement.fillSubtitle')} />;
   })();
 
   if (blockedByCooldown) {
     return (
       <Screen>
-        <Header title={partnerName ? `Domluva · ${partnerName}` : 'Domluva'} />
+        <Header title={partnerName ? t('agreement.titleWithName', { name: partnerName }) : t('agreement.title')} />
         <View style={{ padding: 20, gap: 18 }}>{status}</View>
       </Screen>
     );
@@ -183,24 +196,24 @@ export default function AgreementScreen() {
 
   return (
     <Screen>
-      <Header title={partnerName ? `Domluva · ${partnerName}` : 'Domluva'} />
+      <Header title={partnerName ? t('agreement.titleWithName', { name: partnerName }) : t('agreement.title')} />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
           {status}
 
           {editable && agreement?.overlap ? (
             <View style={s.card}>
-              <Text style={s.cardTitle}>Na čem se shodnete</Text>
+              <Text style={s.cardTitle}>{t('agreement.overlapTitle')}</Text>
               {agreement.overlap.yes.length + agreement.overlap.maybe.length === 0 ? (
-                <Body muted style={{ fontSize: 14 }}>Zatím žádná shoda.</Body>
+                <Body muted style={{ fontSize: 14 }}>{t('agreement.overlapNone')}</Body>
               ) : null}
               {agreement.overlap.yes.length ? (
                 <View style={{ gap: 8 }}>
-                  <Label>Chcete oba</Label>
+                  <Label>{t('agreement.overlapYes')}</Label>
                   <View style={s.wrap}>
                     {agreement.overlap.yes.map((a) => (
                       <Text key={a} style={[s.pill, s.pillYes]}>
-                        {ACTIVITIES[a]}
+                        {t(`labels.activities.${a}`)}
                       </Text>
                     ))}
                   </View>
@@ -208,28 +221,28 @@ export default function AgreementScreen() {
               ) : null}
               {agreement.overlap.maybe.length ? (
                 <View style={{ gap: 8 }}>
-                  <Label>Možná – domluvíte se na místě</Label>
+                  <Label>{t('agreement.overlapMaybe')}</Label>
                   <View style={s.wrap}>
                     {agreement.overlap.maybe.map((a) => (
                       <Text key={a} style={s.pill}>
-                        {ACTIVITIES[a]}
+                        {t(`labels.activities.${a}`)}
                       </Text>
                     ))}
                   </View>
                 </View>
               ) : null}
-              {agreement.partnerNote ? <Body style={{ fontSize: 14 }}>{`${partnerName}: „${agreement.partnerNote}“`}</Body> : null}
-              <Text style={s.hint}>Co jeden z vás nechce, neuvidí nikdo – ani to, kdo to nechtěl.</Text>
+              {agreement.partnerNote ? <Body style={{ fontSize: 14 }}>{t('agreement.partnerNote', { name: partnerName, note: agreement.partnerNote })}</Body> : null}
+              <Text style={s.hint}>{t('agreement.overlapHint')}</Text>
             </View>
           ) : null}
 
           <View style={{ gap: 10 }}>
-            <Label>Na co mám chuť</Label>
-            <Text style={s.hint}>{partnerName ? `${partnerName} uvidí jen shodu. Tvoje „ne“ neuvidí nikdo.` : 'Druhý uvidí jen shodu.'}</Text>
+            <Label>{t('agreement.wishesLabel')}</Label>
+            <Text style={s.hint}>{partnerName ? t('agreement.wishesHint', { name: partnerName }) : t('agreement.wishesHintNoName')}</Text>
             {activityKeys.map((a) => (
               <View key={a} style={s.wishRow}>
-                <Text style={s.wishLabel}>{ACTIVITIES[a]}</Text>
-                <View style={s.segment} accessibilityRole="radiogroup" accessibilityLabel={ACTIVITIES[a]}>
+                <Text style={s.wishLabel}>{t(`labels.activities.${a}`)}</Text>
+                <View style={s.segment} accessibilityRole="radiogroup" accessibilityLabel={t(`labels.activities.${a}`)}>
                   {wishKeys.map((w) => {
                     const on = form.wishes[a] === w;
                     return (
@@ -237,11 +250,11 @@ export default function AgreementScreen() {
                         key={w}
                         accessibilityRole="radio"
                         accessibilityState={{ checked: on }}
-                        accessibilityLabel={`${ACTIVITIES[a]}: ${WISHES[w]}`}
+                        accessibilityLabel={t('agreement.wishA11y', { activity: t(`labels.activities.${a}`), wish: t(`labels.wishes.${w}`) })}
                         onPress={() => setWish(a, w)}
                         style={[s.segmentItem, on && (w === 'yes' ? s.segYes : w === 'maybe' ? s.segMaybe : s.segNo)]}
                       >
-                        <Text style={[s.segmentText, on && { color: w === 'no' ? colors.text : colors.onAccent }]}>{WISHES[w]}</Text>
+                        <Text style={[s.segmentText, on && { color: w === 'no' ? colors.text : colors.onAccent }]}>{t(`labels.wishes.${w}`)}</Text>
                       </Pressable>
                     );
                   })}
@@ -250,38 +263,43 @@ export default function AgreementScreen() {
             ))}
           </View>
           <Field
-            label="Moje hranice (uvidí je i druhý)"
+            label={t('agreement.noteLabel')}
             value={form.note}
             onChangeText={(note) => update({ note })}
             multiline
-            placeholder="Např. žádné focení, nejdřív se chci poznat."
+            placeholder={t('agreement.notePlaceholder')}
           />
 
           <View style={{ gap: 12 }}>
-            <Label>Praktické věci – platí pro oba</Label>
+            <Label>{t('agreement.logisticsLabel')}</Label>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
               {Array.from({ length: DAYS }, (_, i) => {
                 const d = new Date();
                 d.setDate(d.getDate() + i);
                 return (
-                  <Chip key={i} label={i === 0 ? 'Dnes' : i === 1 ? 'Zítra' : weekday(d)} selected={form.dayOffset === i} onPress={() => update({ dayOffset: i }, true)} />
+                  <Chip key={i} label={i === 0 ? t('agreement.today') : i === 1 ? t('agreement.tomorrow') : weekday(d)} selected={form.dayOffset === i} onPress={() => update({ dayOffset: i }, true)} />
                 );
               })}
             </ScrollView>
             <View style={{ flexDirection: 'row', gap: 10 }}>
               <View style={{ width: 110 }}>
-                <Field label="Čas" value={form.time} onChangeText={(time) => update({ time }, true)} keyboardType="numbers-and-punctuation" placeholder="21:00" />
+                <Field label={t('agreement.timeLabel')} value={form.time} onChangeText={(time) => update({ time }, true)} keyboardType="numbers-and-punctuation" placeholder="21:00" />
               </View>
               <View style={{ flex: 1 }}>
-                <Field label="Kde" value={form.place} onChangeText={(place) => update({ place }, true)} placeholder="Např. u mě, Vinohrady" />
+                <Field label={t('agreement.placeLabel')} value={form.place} onChangeText={(place) => update({ place }, true)} placeholder={t('agreement.placePlaceholder')} />
               </View>
             </View>
-            <Field label="Stopslovo" value={form.safeword} onChangeText={(safeword) => update({ safeword }, true)} placeholder="Slovo, které všechno zastaví" />
-            <Toggle label="Vždy kondom" value={form.condom} onChange={(condom) => update({ condom }, true)} />
-            <Toggle label="Střízliví" hint="Opilost není souhlas." value={form.sober} onChange={(sober) => update({ sober }, true)} />
+            <Field
+              label={t('agreement.safewordLabel')}
+              value={form.safeword}
+              onChangeText={(safeword) => update({ safeword }, true)}
+              placeholder={t('agreement.safewordPlaceholder')}
+            />
+            <Toggle label={t('agreement.condom')} value={form.condom} onChange={(condom) => update({ condom }, true)} />
+            <Toggle label={t('agreement.sober')} hint={t('agreement.soberHint')} value={form.sober} onChange={(sober) => update({ sober }, true)} />
             <Toggle
-              label="Nejdřív se potkáme na veřejném místě"
-              hint="Kavárna nebo bar – jestli pokračovat, rozhodnete osobně."
+              label={t('agreement.publicFirst')}
+              hint={t('agreement.publicFirstHint')}
               value={form.publicFirst}
               onChange={(publicFirst) => update({ publicFirst }, true)}
             />
@@ -290,38 +308,38 @@ export default function AgreementScreen() {
           {needsSave ? (
             <View style={{ gap: 10 }}>
               <Checkbox checked={intent} onToggle={() => setIntent(!intent)}>
-                {INTENT_TEXT}
+                {t('consent.intent')}
               </Checkbox>
               <Checkbox checked={notice} onToggle={() => setNotice(!notice)}>
-                {NOTICE_TEXT}
+                {t('consent.notice')}
               </Checkbox>
             </View>
           ) : null}
           <Body muted style={{ fontSize: 13 }}>
-            {DETERRENCE_TEXT} {partnerName} může během schůzky sdílet tvoje jméno, fotku a místo schůzky se svou důvěryhodnou osobou.
+            {t('consent.deterrence')} {t('agreement.partnerMayShare', { name: partnerName })}
           </Body>
           <ErrorText>{error}</ErrorText>
 
           <View style={{ gap: 10, paddingBottom: 12 }}>
             {needsSave ? (
               <Button
-                label="Uložit a potvrdit"
+                label={t('agreement.saveAndConfirm')}
                 onPress={save}
                 loading={busy}
                 disabled={!intent || !notice || !form.place || form.safeword.length < 2 || !meetAt}
               />
             ) : agreement?.status === 'confirmed' ? (
-              <Button variant="safe" label="Zahájit schůzku" onPress={() => router.push(`/meetup/${id}`)} />
+              <Button variant="safe" label={t('agreement.startMeetup')} onPress={() => router.push(`/meetup/${id}`)} />
             ) : null}
-            {editable && !dirty ? <Button variant="danger" label="Zrušit domluvu" onPress={() => setConfirmRevoke(true)} height={48} /> : null}
+            {editable && !dirty ? <Button variant="danger" label={t('agreement.revoke')} onPress={() => setConfirmRevoke(true)} height={48} /> : null}
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
       <ConfirmSheet
         visible={confirmRevoke}
-        title="Zrušit domluvu?"
-        message={`Schůzka se nekoná. Nemusíš nic vysvětlovat – ${partnerName} dostane jen oznámení.`}
-        confirmLabel="Zrušit domluvu"
+        title={t('agreement.revokeConfirmTitle')}
+        message={t('agreement.revokeConfirmMessage', { name: partnerName })}
+        confirmLabel={t('agreement.revoke')}
         destructive
         onConfirm={revoke}
         onClose={() => setConfirmRevoke(false)}

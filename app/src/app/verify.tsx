@@ -5,12 +5,14 @@ import { ScrollView, View } from 'react-native';
 import { Icon } from '@/components/Icon';
 import { Banner, Body, Button, ErrorText, Screen, Title } from '@/components/ui';
 import { api, errorMessage } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 import { colors } from '@/lib/theme';
 
 type VerificationState = { status: 'none' | 'pending' | 'approved' | 'declined'; message: string };
 
 export default function Verify() {
+  const t = useT();
   const { refresh, signOut } = useSession();
   const [state, setState] = useState<VerificationState | null>(null);
   const [devMode, setDevMode] = useState(false);
@@ -71,26 +73,22 @@ export default function Verify() {
       <ScrollView contentContainerStyle={{ padding: 24, gap: 20, flexGrow: 1 }}>
         <View style={{ flex: 1, justifyContent: 'center', gap: 16 }}>
           <Icon name="shieldCheck" size={48} color={colors.safe} />
-          <Title style={{ fontSize: 32 }}>Ověř, že jsi to ty</Title>
-          <Body muted>
-            Každý na F*app má ověřenou totožnost a věk. Vyfotíš doklad a selfie – zabere to asi dvě minuty.
-          </Body>
-          <Body muted>
-            Doklad ani fotky si neukládáme. Uchováme jen výsledek ověření a datum narození. Kdo poruší pravidla, nemůže se vrátit s novým účtem.
-          </Body>
+          <Title style={{ fontSize: 32 }}>{t('verify.title')}</Title>
+          <Body muted>{t('verify.intro')}</Body>
+          <Body muted>{t('verify.privacy')}</Body>
           {state?.status === 'pending' ? (
-            <Banner tone="warn" title="Čekáme na výsledek ověření" subtitle="Obvykle to trvá pár minut." action="Obnovit" onPress={load} />
+            <Banner tone="warn" title={t('verify.pending.title')} subtitle={t('verify.pending.subtitle')} action={t('verify.pending.refresh')} onPress={load} />
           ) : null}
-          {state?.status === 'declined' ? <Banner tone="alarm" title="Ověření se nepovedlo" subtitle={state.message} /> : null}
+          {state?.status === 'declined' ? <Banner tone="alarm" title={t('verify.declined')} subtitle={state.message} /> : null}
           <ErrorText>{error}</ErrorText>
         </View>
         <View style={{ gap: 12 }}>
           {devMode ? (
-            <Button variant="safe" label="Simulovat úspěšné ověření (testovací režim)" onPress={devDecide} loading={busy} />
+            <Button variant="safe" label={t('verify.devApprove')} onPress={devDecide} loading={busy} />
           ) : (
-            <Button label={state?.status === 'declined' ? 'Zkusit znovu' : 'Ověřit totožnost'} onPress={start} loading={busy} />
+            <Button label={state?.status === 'declined' ? t('verify.retry') : t('verify.start')} onPress={start} loading={busy} />
           )}
-          <Button variant="ghost" label="Odhlásit se" onPress={async () => { await signOut(); router.replace('/welcome'); }} />
+          <Button variant="ghost" label={t('verify.signOut')} onPress={async () => { await signOut(); router.replace('/welcome'); }} />
         </View>
       </ScrollView>
     </Screen>

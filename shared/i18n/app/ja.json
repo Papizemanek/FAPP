@@ -1,0 +1,666 @@
+{
+  "labels": {
+    "genders": {
+      "man": "男性",
+      "woman": "女性",
+      "nonbinary": "ノンバイナリー"
+    },
+    "gendersPlural": {
+      "man": "男性",
+      "woman": "女性",
+      "nonbinary": "ノンバイナリーの人"
+    },
+    "tags": {
+      "oneoff": "一回きり",
+      "repeat": "何度でも",
+      "myplace": "自分の家で",
+      "yourplace": "相手の家で",
+      "vanilla": "ノーマル",
+      "kinky": "アブノーマル"
+    },
+    "activities": {
+      "kissing": "キス・いちゃいちゃ",
+      "oral": "オーラル",
+      "vaginal": "膣挿入",
+      "anal": "アナル",
+      "toys": "おもちゃ",
+      "overnight": "お泊まり"
+    },
+    "wishes": {
+      "yes": "OK",
+      "maybe": "たぶん",
+      "no": "NG"
+    },
+    "reportReasons": {
+      "consent": "同意や境界線を無視した",
+      "violence": "暴力・脅迫",
+      "minor": "未成年の疑い",
+      "harassment": "嫌がらせ",
+      "fake": "偽プロフィール",
+      "paid": "有料サービスの提供",
+      "other": "その他"
+    },
+    "feedbackReasons": {
+      "consent": "境界線や「やめて」を尊重しなかった",
+      "safety": "身の危険を感じた",
+      "fake": "写真と違った",
+      "other": "その他"
+    },
+    "plans": {
+      "free": "無料",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "いいね無制限",
+        "detail": "好きなだけスワイプできます。"
+      },
+      "rewind": {
+        "name": "巻き戻し",
+        "detail": "間違えてスキップしたプロフィールを戻せます。"
+      },
+      "travel": {
+        "name": "トラベルモード",
+        "detail": "旅行前に別の都市でスワイプできます。"
+      },
+      "incognito": {
+        "name": "シークレット",
+        "detail": "あなたがいいねした人にだけ表示されます。"
+      },
+      "seeLikes": {
+        "name": "いいねした人を見る",
+        "detail": "あなたにいいねした人を全員確認できます。"
+      },
+      "weeklySuperLikes": {
+        "name": "週5回のスーパーいいね",
+        "detail": "本気で気になっていることを伝えられます。"
+      },
+      "monthlyBoost": {
+        "name": "月1回のブースト",
+        "detail": "30分間、近くの人の画面で上位に表示。"
+      },
+      "priorityLikes": {
+        "name": "優先いいね",
+        "detail": "あなたのいいねが他の人より先に表示されます。"
+      },
+      "sentLikes": {
+        "name": "送ったいいね",
+        "detail": "過去7日間にいいねした相手。"
+      },
+      "tonight": {
+        "name": "いつでも「今夜」",
+        "detail": "今夜会えることをアピールできます。"
+      }
+    },
+    "credits": {
+      "boost": "ブースト",
+      "superlike": "スーパーいいね",
+      "tonight": "今夜"
+    },
+    "cities": {
+      "praha": "プラハ",
+      "brno": "ブルノ",
+      "ostrava": "オストラヴァ",
+      "plzen": "プルゼニ",
+      "liberec": "リベレツ",
+      "olomouc": "オロモウツ",
+      "budejovice": "チェスケー・ブジェヨヴィツェ",
+      "hradec": "フラデツ・クラーロヴェー",
+      "bratislava": "ブラチスラヴァ",
+      "viden": "ウィーン",
+      "berlin": "ベルリン"
+    }
+  },
+  "consent": {
+    "intent": "これが私の希望です。その場では何でも断れます。相手も同じです。",
+    "notice": "理解しています：同意は「今、ここで」のものだけが有効です。「いや」「やめて」、セーフワード、沈黙、体が固まってしまうこと、酔っていることは同意ではありません。アプリでの合意によって、誰かの責任がなくなることはありません。",
+    "deterrence": "F*appの全員が本人確認済みです。犯罪の疑いがある場合は、その身元情報を警察に提供します。"
+  },
+  "welcome": {
+    "tagline": "駆け引きなしのセックス。",
+    "taglineStrong": "ふたりともOKのときだけ。",
+    "createAccount": "アカウント作成",
+    "signIn": "ログイン",
+    "adultsOnly": "18歳以上限定。全員が本人確認済みです。"
+  },
+  "agreement": {
+    "title": "合意",
+    "titleWithName": "合意 · {name}",
+    "timeFormatError": "時刻はHH:MMの形式で入力してください（例：21:00）。",
+    "revokedByPartnerTitle": "{name}さんが合意をキャンセルしました",
+    "revokedByPartnerSubtitle": "新しい合意を始められるのは、今は{name}さんだけです。",
+    "revokedTitle": "合意はキャンセルされました",
+    "revokedSubtitle": "新しい合意を始められます。",
+    "newTitle": "新しい合意",
+    "newSubtitle": "それぞれが自分の分を別々に入力します。見えるのは、ふたりが一致した内容だけです。",
+    "logisticsChangedTitle": "時間・場所・ルールを変更しています",
+    "logisticsChangedSubtitle": "{name}さんにもう一度確認してもらう必要があります。",
+    "confirmedTitle": "ふたりとも合意を入力しました",
+    "confirmedSubtitle": "その場で、どちらもいつでも気持ちを変えられます。",
+    "myPartDoneTitle": "あなたの入力は完了です",
+    "myPartDoneSubtitle": "{name}さんはまだ入力または確認をしていません。",
+    "partnerFilledTitle": "{name}さんが入力しました",
+    "partnerFilledSubtitle": "あなたも入力してください。見えるのは、ふたりが一致した内容だけです。",
+    "fillTitle": "あなたの分を入力",
+    "fillSubtitle": "見えるのは、ふたりが一致した内容だけです。",
+    "overlapTitle": "ふたりが一致したこと",
+    "overlapNone": "まだ一致したものはありません。",
+    "overlapYes": "ふたりともしたい",
+    "overlapMaybe": "たぶん――その場で話し合いましょう",
+    "partnerNote": "{name}さん：「{note}」",
+    "overlapHint": "どちらかが望まないことは誰にも見えません。誰が望まなかったのかも分かりません。",
+    "wishesLabel": "したいこと",
+    "wishesHint": "{name}さんに見えるのは、ふたりが一致した内容だけです。あなたの「NG」は誰にも見えません。",
+    "wishesHintNoName": "相手に見えるのは、ふたりが一致した内容だけです。",
+    "wishA11y": "{activity}：{wish}",
+    "noteLabel": "私の境界線（相手にも表示されます）",
+    "notePlaceholder": "例：写真撮影はNG、まずはお互いを知りたい。",
+    "logisticsLabel": "具体的なこと（ふたりに共通）",
+    "today": "今日",
+    "tomorrow": "明日",
+    "timeLabel": "時間",
+    "placeLabel": "場所",
+    "placePlaceholder": "例：自宅、渋谷",
+    "safewordLabel": "セーフワード",
+    "safewordPlaceholder": "すべてを止める合図の言葉",
+    "condom": "必ずコンドームを使う",
+    "sober": "しらふで",
+    "soberHint": "酔っている状態は同意ではありません。",
+    "publicFirst": "まずは公共の場所で会う",
+    "publicFirstHint": "カフェやバーで。続けるかどうかは会ってから決めます。",
+    "partnerMayShare": "デート中、{name}さんはあなたの名前・写真・待ち合わせ場所を、自分の信頼できる人に共有できます。",
+    "saveAndConfirm": "保存して確定",
+    "startMeetup": "デートを開始",
+    "revoke": "合意をキャンセル",
+    "revokeConfirmTitle": "合意をキャンセルしますか？",
+    "revokeConfirmMessage": "デートは中止になります。理由を説明する必要はありません。{name}さんには通知が届くだけです。"
+  },
+  "meetup": {
+    "title": "デート · {name}",
+    "fakeCallerDefault": "お母さん",
+    "endedTitle": "デート終了",
+    "endedMessage": "{name}さんに、あなたが無事だというメッセージが届きました。",
+    "sosFailed": "アラームを送信できませんでした：{error} もう一度試すか、{name}さんに電話してください。",
+    "needAgreementTitle": "まず合意を完了させてください",
+    "needAgreementSubtitle": "ふたりとも合意を入力して確定すると、デートを開始できます。",
+    "needAgreementAction": "合意",
+    "setupTitle": "安全設定をしましょう",
+    "setupSubtitle": "信頼できる人、PIN、緊急PIN。",
+    "setupAction": "設定する",
+    "pointTrusted": "{name}さんにリンク付きのSMSが届きます。あなたの居場所、誰と一緒か、無事かどうかが分かります。",
+    "pointTrustedNoName": "信頼できる人にリンク付きのSMSが届きます。あなたの居場所、誰と一緒か、無事かどうかが分かります。",
+    "pointCheckIn": "一定の間隔で、PINを入力して無事を知らせます。チェックインがない場合は、スマホの電池が切れていても通知を送ります。",
+    "pointDuress": "緊急PINは通常のPINとまったく同じように見えますが、ひそかにアラームを発信します。",
+    "pointPartner": "{name}さんに見えるのは、あなたがセーフティモードをオンにしていることと、信頼できる人があなたの居場所と一緒にいる相手を把握していることだけです。アラームも位置情報も見えません。",
+    "intervalLabel": "無事を知らせる間隔",
+    "minutes": "{count}分",
+    "start": "デートを開始",
+    "locationVisibleTo": "{name}さんが位置情報を見られます",
+    "bgLocationTitle": "位置情報はアプリを開いている間のみ",
+    "bgLocationSubtitle": "画面がオフでも見えるように、位置情報へのアクセスを「常に」に設定してください。",
+    "bgLocationAction": "設定",
+    "nextCheckIn": "次のチェックインまで",
+    "checkIn": "チェックイン",
+    "now": "今",
+    "imOk": "無事です",
+    "overdueHint": "{name}さんに通知が送られました。PINを入力して無事を知らせてください。",
+    "graceHint": {
+      "other": "予定時刻から{count}分以内にチェックインしないと、{name}さんにあなたの位置情報付きの通知が届きます。"
+    },
+    "partnerSafetyOn": "{name}さんもセーフティモードをオンにしています。{name}さんの信頼できる人が、居場所と一緒にいる相手を把握しています。",
+    "partnerSafetyOff": "{name}さんはセーフティモードをオンにしていません。",
+    "fakeCall": "フェイク電話",
+    "fakeCallIn": "{count}秒後に着信",
+    "fakeCallHint": "{count}秒後に、本物の電話と同じようにフェイク電話が鳴ります。その場を離れる口実にどうぞ。",
+    "shareLink": "リンクを送る",
+    "sos": "SOS – 長押し",
+    "revoke": "合意をキャンセル",
+    "end": "デートを終了",
+    "sosSentTitle": "アラームを送信しました",
+    "sosSentBody": "{trusted}さんに、あなたの正確な位置情報と一緒にいる相手が伝えられました。{partner}さんには何も表示されません。",
+    "sosMistake": "間違いでした――無事です",
+    "sosHide": "隠す（アラームは継続）",
+    "pinTitle": "PINで確認",
+    "pinSubtitleOk": "無事であることを知らせます。",
+    "pinSubtitleEnd": "デートが終わり、無事であることを知らせます。",
+    "revokeConfirmTitle": "合意をキャンセルしますか？",
+    "revokeConfirmMessage": "{name}さんに通知が届きます。理由を説明する必要はありません。セーフティモードは、あなたが終了するまで続きます。"
+  },
+  "feedback": {
+    "title": "デートはどうでしたか？",
+    "privacy": "回答を見るのは運営チームだけで、{name}さんが見ることはありません。境界線を尊重する人のための場所であり続けるために役立てます。",
+    "privacyNoName": "回答を見るのは運営チームだけで、相手が見ることはありません。境界線を尊重する人のための場所であり続けるために役立てます。",
+    "allGood": "問題なかった",
+    "somethingWrong": "何か問題があった",
+    "detailsLabel": "何がありましたか？（任意）",
+    "preserve": "警察に相談する場合に備えて、デートの記録を保存する。保存しない場合、合意は48時間後に削除されます。",
+    "suspendNotice": "誰かがあなたを尊重しなかった場合や、あなたが危険な状況にある場合は、すぐに相手のアカウントを停止して調査します。",
+    "send": "送信",
+    "helpTitle": "つらかったですね",
+    "helpIntro": "私たちが調査します。確認が終わるまで、相手のアカウントは停止しました。次にどうするか、今すぐ決める必要はありません。そして、これはどれもあなたのせいではありません。",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "犯罪被害者支援ライン – Bílý kruh bezpečí",
+        "detail": "24時間対応・無料・匿名で相談できます。"
+      },
+      "police": {
+        "name": "チェコ警察",
+        "detail": "被害を届け出たい場合に。後からでも可能です。"
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "性暴力を経験した人のための支援。"
+      }
+    },
+    "helpLocal": {
+      "name": "相談できる場所",
+      "detail": "地元の警察、または犯罪被害者・性暴力被害者のための地域の相談窓口に連絡してください。"
+    },
+    "medical": "意に反することが起きた場合は、できるだけ早く医療機関を受診してください。妊娠や感染症を防ぐためでもあり、72時間以内にしか効かない薬もあります。まだシャワーを浴びておらず、服を保管していれば、証拠を採取できます。ただし、どれも必須ではありません。届け出は後からでもできます。",
+    "preserved": "警察に必要な場合に備えて、デートの記録（合意、メッセージ、アラーム）を保存しました。",
+    "backToApp": "アプリに戻る"
+  },
+  "report": {
+    "title": "通報",
+    "intro": "通報は匿名です。同時に相手をブロックするので、今後お互いが表示されることはありません。",
+    "introWithName": "{name}さんを通報します。通報は匿名です。同時に相手をブロックするので、今後お互いが表示されることはありません。",
+    "detailsLabel": "詳細（任意）",
+    "submit": "通報する",
+    "thanksTitle": "ありがとうございました",
+    "thanksMessage": "通報を受け付けました。今後お互いが表示されることはありません。"
+  },
+  "chat": {
+    "unavailable": "チャットは利用できません",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} kmの距離",
+    "reportOrBlock": "通報またはブロック",
+    "photo": "写真",
+    "photoBlurred": "ぼかし写真。タップで表示",
+    "tapToReveal": "タップで表示",
+    "sendPhoto": "写真を送る",
+    "message": "メッセージ",
+    "messagePlaceholder": "メッセージを入力…",
+    "send": "送信",
+    "report": "通報",
+    "block": "ブロック",
+    "unmatch": "マッチ解除",
+    "blockConfirmTitle": "ブロックしますか？",
+    "blockConfirmMessage": "あなたと{name}さんはお互いに表示されなくなり、チャットも消えます。"
+  },
+  "safetySettings": {
+    "title": "安全とプライバシー",
+    "trustedLabel": "信頼できる人",
+    "trustedHint": "デートを開始すると、その人にあなたの位置情報へのリンクをSMSで送ります。あなたがチェックインしなかったときや、アラームを発信したときは、その人に通知します。",
+    "nameLabel": "名前",
+    "namePlaceholder": "例：ゆき",
+    "phoneLabel": "電話番号",
+    "phonePlaceholder": "+81 90 1234 5678",
+    "pinsLabel": "PINと緊急PIN",
+    "pinsHint": "デート中は、PINで無事を知らせます。緊急PINは見た目はまったく同じですが、ひそかにアラームを送信します。「大丈夫」とアプリに伝えるよう誰かに強要されたときに使ってください。",
+    "checkinPinLabel": "PIN（4～6桁）",
+    "duressPinLabel": "緊急PIN（PINとは別の番号）",
+    "passwordLabel": "アカウントのパスワード（PIN変更用）",
+    "pinsSet": "PINは設定済みです",
+    "change": "変更",
+    "privacyLabel": "プライバシー",
+    "appLock": "アプリのロック",
+    "appLockHint": "アプリを開くたびに、Face ID、指紋、またはスマホのパスコードが必要になります。",
+    "discreet": "目立たないモード",
+    "discreetHint": "目立たないアイコンと内容を表示しない通知で、何のアプリか誰にも分かりません。",
+    "save": "保存"
+  },
+  "tabs": {
+    "discover": "さがす",
+    "matches": "メッセージ",
+    "profile": "プロフィール"
+  },
+  "discover": {
+    "likesLeft": {
+      "other": "残りのいいね：{count}回"
+    },
+    "boostRunningUntil": "{time}までブースト中です。",
+    "tonight": "今夜",
+    "tonightOn": "今夜 – オン",
+    "boost": "ブースト",
+    "boostOn": "ブースト中",
+    "searchSettings": "検索設定",
+    "traveling": "トラベル中",
+    "travelingIn": "トラベル中 · {city}",
+    "change": "変更",
+    "enableLocation": "位置情報を許可",
+    "addPhoto": "写真を追加",
+    "retry": "再試行",
+    "empty": "今は近くに他の人がいません。後でもう一度試すか、検索範囲を広げてください。",
+    "refresh": "更新",
+    "nextPhoto": "次の写真",
+    "stampLike": "アリ",
+    "stampNope": "ナシ",
+    "superLikedYou": "あなたにスーパーいいね",
+    "distance": "{km} kmの距離",
+    "rewind": "最後のスワイプを取り消す",
+    "pass": "スキップ",
+    "superLike": "スーパーいいね",
+    "like": "いいね",
+    "boostSheet": {
+      "title": "ブーストを開始しますか？",
+      "messageMonthly": "30分間、近くの人の画面で上位に表示されます。サブスクリプションの月1回のブーストを使用します。",
+      "messageCredits": "30分間、近くの人の画面で上位に表示されます。残りは{count}回です。",
+      "confirm": "ブーストを開始",
+      "done": "ブースト中――30分間、上位に表示されます。"
+    },
+    "tonightSheet": {
+      "title": "「今夜」をオンにしますか？",
+      "message": "朝6時まで、近くの人の画面で上位に表示され、「今夜」ラベルが付きます。いつでもオフにできます。",
+      "messageCredits": "朝6時まで、近くの人の画面で上位に表示され、「今夜」ラベルが付きます。いつでもオフにできます。残りは{count}回です。",
+      "confirm": "オンにする",
+      "done": "「今夜」は朝6時までオンです。"
+    },
+    "tonightOffSheet": {
+      "title": "「今夜」はオンです",
+      "message": "{time}まで有効です。",
+      "confirm": "オフにする",
+      "done": "「今夜」をオフにしました。"
+    }
+  },
+  "matches": {
+    "title": "メッセージ",
+    "agreement": {
+      "pending": "合意待ち",
+      "confirmed": "合意済み",
+      "revoked": "合意キャンセル"
+    },
+    "likes": "いいね",
+    "likedBy": {
+      "other": "{count}人があなたにいいねしました"
+    },
+    "likedByLocked": {
+      "other": "{count}人があなたにいいねしました – Goldで相手を確認"
+    },
+    "likesHint": "あなたにいいねした人と、あなたがいいねした人",
+    "empty": "まだマッチはありません。スワイプを続けましょう。お互いにいいねすると、ここに表示されます。",
+    "lastMessageMine": "あなた：{text}",
+    "newMatch": "新しいマッチ――最初のメッセージを送りましょう。"
+  },
+  "profile": {
+    "title": "プロフィール",
+    "saving": "保存中…",
+    "saved": "保存しました",
+    "done": "完了",
+    "suspended": {
+      "title": "アカウントは停止中です",
+      "subtitle": "通報内容を確認しています。セーフティモードは引き続き使えます。"
+    },
+    "photoA11y": "写真 – 長押しで削除",
+    "addPhoto": "写真を追加",
+    "photoHint": "ヌードは禁止です。写真はアプリストアの規約に従う必要があります。写真を長押しすると削除できます。",
+    "name": "名前",
+    "bio": "自己紹介",
+    "bioPlaceholder": "自分について少し書いてみましょう。",
+    "lookingFor": "探しているもの",
+    "safety": {
+      "title": "安全とプライバシー",
+      "trusted": "信頼できる人：{name}",
+      "setup": "信頼できる人とPINを設定してください。",
+      "edit": "編集"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus、Gold、Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "いいね無制限、いいねした人の確認、ブーストなど。",
+      "validUntil": "{date}まで有効。",
+      "upgrade": "アップグレード",
+      "manage": "管理"
+    },
+    "incognito": {
+      "label": "シークレット",
+      "hint": "あなたがいいねした人にだけ表示されます。（Plus）"
+    },
+    "travel": {
+      "label": "トラベルモード（Plus）",
+      "home": "ホーム",
+      "hint": "旅行前に別の都市でスワイプできます。現地の人には「トラベル中」ラベル付きで表示されます。"
+    },
+    "showMe": "表示する相手",
+    "ageFrom": "年齢（下限）",
+    "ageTo": "年齢（上限）",
+    "distance": "距離",
+    "distanceSuffix": " km",
+    "save": "プロフィールを保存",
+    "language": {
+      "title": "言語",
+      "device": "端末の設定に合わせる",
+      "rtlHint": "右から左に書く言語では、アプリを再起動するとレイアウトが反転します。"
+    },
+    "signOut": "ログアウト",
+    "deletePassword": "アカウント削除用のパスワード",
+    "deleteForever": "アカウントを完全に削除",
+    "deleteAccount": "アカウントを削除",
+    "removePhoto": {
+      "title": "写真を削除しますか？",
+      "confirm": "削除"
+    }
+  },
+  "premium": {
+    "title": "サブスクリプション",
+    "free": {
+      "title": "F*appは現在無料です",
+      "body": "有料機能は後日提供します。安全機能（本人確認、合意、セーフティモード、SOS）はずっと無料です。"
+    },
+    "back": "戻る",
+    "done": "完了",
+    "continue": "続ける",
+    "reason": {
+      "likeLimitAt": "いいねを使い切りました。{time}に補充されます。",
+      "likeLimit": "いいねを使い切りました。まもなく補充されます。",
+      "noCredit": "{credit}は単品購入またはサブスクリプションで利用できます。",
+      "upgrade": "これはF*app {plan}の機能です。"
+    },
+    "oneOff": "単品購入",
+    "owned": "所持：{count}",
+    "creditDetail": {
+      "boost": "30分間、近くの人の画面で上位に表示。",
+      "superlike": "本気で気になっていることが相手に伝わります。",
+      "tonight": "朝6時まで上位に表示され、「今夜」ラベルが付きます。"
+    },
+    "buyCredit": "{credit}×{amount}を{price}で購入",
+    "creditBought": {
+      "boost": {
+        "other": "ブーストが{count}回追加されました。"
+      },
+      "superlike": {
+        "other": "スーパーいいねが{count}回追加されました。"
+      },
+      "tonight": {
+        "other": "「今夜」が{count}回追加されました。"
+      }
+    },
+    "currentPlan": "F*app {plan}を利用中",
+    "validUntil": "{date}まで有効。",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "無制限にスワイプでき、間違えてスキップしたプロフィールも戻せます。",
+      "gold": "いいねしてくれた人が分かり、ワンタップでマッチできます。",
+      "platinum": "あなたのいいねが最初に表示されます。さらに「今夜」がいつでも使えます。"
+    },
+    "featureIncluded": "{feature}：含まれる",
+    "featureNotIncluded": "{feature}：含まれない",
+    "months": {
+      "other": "{count}か月"
+    },
+    "perMonth": "1か月あたり",
+    "perMonthSave": "1か月あたり · −{percent}%",
+    "continueWithPrice": "続ける · {price}",
+    "planBought": {
+      "other": "F*app {plan}を{count}か月利用できます。"
+    },
+    "renewal": "サブスクリプションは自動更新されます。App StoreまたはGoogle Playの設定からいつでも解約できます。料金は全員同じです。",
+    "renewalUpfront": "{total}を一括で前払いします（1か月あたり{monthly}）。サブスクリプションは自動更新されます。App StoreまたはGoogle Playの設定からいつでも解約できます。料金は全員同じです。",
+    "safetyFree": {
+      "title": "安全機能はずっと無料",
+      "subtitle": "本人確認、合意、セーフティモード、SOS、通報。"
+    },
+    "devNote": "プロトタイプ：料金は発生せず、購入はシミュレーションのみです。"
+  },
+  "likes": {
+    "title": "いいね",
+    "received": "あなたにいいね",
+    "receivedCount": "あなたにいいね · {count}",
+    "sent": "送信済み",
+    "emptyReceived": "新しいいいねはまだありません。",
+    "superLike": "スーパーいいね",
+    "distance": "{km} km",
+    "likedBy": {
+      "other": "{count}人があなたにいいねしました"
+    },
+    "lockedEmpty": "あなたへのいいねはここに表示されます",
+    "goldText": "F*app Goldなら、相手が誰か分かり、ワンタップでマッチできます。",
+    "goldCta": "Goldで見る",
+    "emptySent": "過去7日間に、マッチしていないいいねはありません。",
+    "superLikePending": "スーパーいいね · 返事待ち",
+    "pending": "返事待ち",
+    "sentTitle": "あなたがいいねした人",
+    "platinumText": "F*app Platinumなら、過去7日間に送ったいいねを確認できます。",
+    "platinumCta": "Platinumで見る",
+    "likeBack": "いいねを返す",
+    "pass": "スキップ"
+  },
+  "match": {
+    "title": "マッチしました！",
+    "body": "あなたと{name}さんはお互いを求めています。\nあいさつして、何をしたいか話し合いましょう。",
+    "sendMessage": "メッセージを送る",
+    "keepDiscovering": "さがし続ける"
+  },
+  "login": {
+    "title": "ログイン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "submit": "ログイン"
+  },
+  "register": {
+    "title": "アカウント作成",
+    "name": "名前（他の人に表示されます）",
+    "email": "メールアドレス",
+    "password": "パスワード（10文字以上）",
+    "birthdate": "生年月日",
+    "birthdatePlaceholder": "DD. MM. YYYY",
+    "birthdateInvalid": "生年月日は「日. 月. 年」の順に、DD. MM. YYYYの形式で入力してください。",
+    "iAm": "自分の性別",
+    "showMe": "表示する相手",
+    "confirmAdult": "18歳以上です。",
+    "acceptRules": "コミュニティルールに同意し、F*appを利用するために、性生活に関する情報を含む私のデータが処理されることに同意します。",
+    "verifyNote": "この後すぐ、本人確認と年齢確認（身分証明書とセルフィー）を行います。身分証明書は保存しません。",
+    "continue": "続ける"
+  },
+  "verify": {
+    "title": "本人確認をしてください",
+    "intro": "F*appでは全員が本人確認と年齢確認を済ませています。身分証明書とセルフィーを撮影します。所要時間は約2分です。",
+    "privacy": "身分証明書や写真は保存しません。保存するのは確認結果と生年月日だけです。ルールに違反した人は、新しいアカウントで戻ってくることはできません。",
+    "pending": {
+      "title": "確認結果を待っています",
+      "subtitle": "通常は数分で完了します。",
+      "refresh": "更新"
+    },
+    "declined": "本人確認に失敗しました",
+    "devApprove": "確認成功をシミュレート（テストモード）",
+    "retry": "再試行",
+    "start": "本人確認を始める",
+    "signOut": "ログアウト"
+  },
+  "common": {
+    "back": "戻る",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "save": "保存",
+    "retry": "再試行",
+    "continue": "続ける",
+    "done": "完了",
+    "send": "送信",
+    "delete": "削除",
+    "edit": "編集",
+    "open": "開く",
+    "show": "表示",
+    "confirm": "確認",
+    "errorGeneric": "問題が発生しました。"
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name}さんはセーフティモードをオンにしています",
+    "partnerSafetySubtitle": "相手の信頼できる人が、どこで誰と一緒かを把握しています。",
+    "meetupTitle": "デート中",
+    "meetupSubtitle": "セーフティモードはオンです。",
+    "missingTitle": "まだ合意がありません",
+    "missingSubtitle": "それぞれがしたいことを入力します。見えるのは一致した部分だけです。",
+    "fill": "入力する",
+    "revokedByMeTitle": "あなたが合意をキャンセルしました",
+    "revokedByPartnerTitle": "{name}さんが合意をキャンセルしました",
+    "revokedSubtitle": "デートは中止になりました。",
+    "revokedCooldownSubtitle": "デートは中止になりました。新しい合意を始められるのは{name}さんだけです。",
+    "newAgreement": "新しい合意",
+    "confirmedTitle": "合意が完了しました",
+    "confirmedSubtitle": "その場で、どちらもいつでも気持ちを変えられます。",
+    "partnerFilledTitle": "{name}さんが合意を入力しました",
+    "waitingForYouTitle": "合意があなたの入力を待っています",
+    "fillYoursSubtitle": "あなたのしたいことを入力してください。見えるのは一致した部分だけです。",
+    "partnerPendingTitle": "{name}さんはまだ入力していません",
+    "partnerPendingSubtitle": "ふたりとも入力すると、合意が完了します。"
+  },
+  "fakeCall": {
+    "incoming": "携帯電話…",
+    "hangUp": "終了",
+    "decline": "拒否",
+    "accept": "応答"
+  },
+  "homeBanners": {
+    "meetupTitle": "デート中 · {name}",
+    "missedCheckIn": "チェックインを逃しました！",
+    "safetyOn": "セーフティモードはオンです。",
+    "feedbackTitle": "デートはどうでしたか？",
+    "feedbackSubtitle": "{name}さん – 回答を見るのは運営チームだけです。",
+    "feedbackAction": "回答する"
+  },
+  "pinPad": {
+    "entered": {
+      "other": "{count}桁入力済み"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}、減らす",
+    "stepperIncrease": "{label}、増やす"
+  },
+  "api": {
+    "offline": "サーバーに接続できませんでした。接続を確認してください。"
+  },
+  "billing": {
+    "storeNotConnected": "App StoreとGoogle Playでの購入はまだ設定されていません。"
+  },
+  "notifications": {
+    "channelName": "通知",
+    "reminderDiscreet": "リマインダー",
+    "checkInTitle": "チェックインの時間です",
+    "checkInBody": "PINを入力して無事を知らせてください。",
+    "fakeCallBody": "着信"
+  },
+  "safetyTracking": {
+    "notificationTitle": "位置情報の共有がオンです",
+    "notificationBody": "アプリで停止できます。"
+  },
+  "appLock": {
+    "prompt": "F*appのロックを解除",
+    "lockedTitle": "アプリはロックされています",
+    "lockedBody": "Face ID、指紋、またはスマホのパスコードでロックを解除してください。",
+    "sosHold": "SOS – 長押し",
+    "unlock": "ロック解除",
+    "sosSentTitle": "アラームを送信しました",
+    "sosSentBody": "{name}さんに、あなたの位置情報付きの通知が届きました。",
+    "sosSentBodyNoName": "信頼できる人に、あなたの位置情報付きの通知が届きました。",
+    "sosFailedTitle": "送信できませんでした"
+  },
+  "native": {
+    "locationWhenInUse": "F*appは、近くの人を表示するため、またデート中に信頼できる人と位置情報を共有するために、位置情報を使用します。",
+    "locationAlways": "デート中、F*appは画面がオフのときでも、信頼できる人とあなたの位置情報を共有します。デート以外では、バックグラウンドで位置情報を使用しません。",
+    "faceId": "F*appはロック解除にFace IDを使用し、他の人に中を見られないようにします。",
+    "photos": "プロフィール用の写真を選択してください。",
+    "camera": "プロフィール用に自分の写真を撮影してください。"
+  }
+}

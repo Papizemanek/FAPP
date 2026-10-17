@@ -257,6 +257,16 @@ CREATE TABLE IF NOT EXISTS boosts (
   started_at TEXT NOT NULL
 );
 
+-- Čekací listina z webu. E-mail zašifrovaný, duplicity podle HMAC otisku.
+CREATE TABLE IF NOT EXISTS waitlist (
+  id INTEGER PRIMARY KEY,
+  email_hash TEXT NOT NULL UNIQUE,
+  email TEXT NOT NULL,
+  city TEXT NOT NULL DEFAULT 'other',
+  locale TEXT NOT NULL DEFAULT 'cs',
+  created_at TEXT NOT NULL
+);
+
 -- Fronta SMS pro důvěryhodné osoby. Hlídač ji opakovaně odesílá, dokud zprávy neprojdou.
 CREATE TABLE IF NOT EXISTS sms_outbox (
   id INTEGER PRIMARY KEY,
@@ -288,6 +298,11 @@ const MIGRATIONS = [
   // super = 1 u super lajku; super_credit = 1, když se zaplatil kreditem (ne týdenní dávkou z předplatného)
   ['swipes', 'super', 'INTEGER NOT NULL DEFAULT 0'],
   ['swipes', 'super_credit', 'INTEGER NOT NULL DEFAULT 0'],
+  // Jazyk SMS pro důvěryhodnou osobu a push notifikací (kód z shared/i18n LOCALES).
+  ['users', 'locale', "TEXT NOT NULL DEFAULT 'cs'"],
+  // Jazyk SMS jedné schůzky – zafixuje se při startu, ať všechny SMS k jedné schůzce chodí stejně.
+  // Starší schůzky (NULL) používají jazyk uživatele.
+  ['safety_sessions', 'locale', 'TEXT'],
 ];
 
 function migrate(db) {

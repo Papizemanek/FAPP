@@ -1,0 +1,276 @@
+{
+  "errors": {
+    "notFound": "Nenalezeno.",
+    "tooLarge": "Požadavek je příliš velký.",
+    "invalidJson": "Neplatný JSON.",
+    "internal": "Něco se pokazilo. Zkus to znovu.",
+    "rateLimited": "Moc pokusů najednou. Zkus to za chvíli.",
+    "unauthorized": "Neautorizováno.",
+    "invalidSignature": "Neplatný podpis.",
+    "linkExpired": "Odkaz už neplatí."
+  },
+  "validation": {
+    "required": "Chybí pole {field}.",
+    "notText": "Pole {field} musí být text.",
+    "tooShort": "Pole {field} je příliš krátké.",
+    "tooLong": "Pole {field} je příliš dlouhé.",
+    "integer": "Pole {field} musí být celé číslo {min}–{max}.",
+    "invalidValue": "Neplatná hodnota pole {field}.",
+    "notList": "Pole {field} musí být seznam.",
+    "minOptions": {
+      "one": "V poli {field} vyber aspoň {count} možnost.",
+      "few": "V poli {field} vyber aspoň {count} možnosti.",
+      "many": "V poli {field} vyber aspoň {count} možnosti.",
+      "other": "V poli {field} vyber aspoň {count} možností."
+    },
+    "date": "Pole {field} musí být datum ve formátu RRRR-MM-DD.",
+    "dateTime": "Pole {field} musí být datum a čas.",
+    "email": "Neplatný e-mail.",
+    "phone": "Neplatné telefonní číslo ({field}).",
+    "pin": "{field} musí mít 4–6 číslic."
+  },
+  "fields": {
+    "email": "e-mail",
+    "password": "heslo",
+    "name": "jméno",
+    "birthdate": "datum narození",
+    "gender": "pohlaví",
+    "interestedIn": "koho hledáš",
+    "pushToken": "push token",
+    "ageMin": "věk od",
+    "ageMax": "věk do",
+    "bio": "o mně",
+    "tags": "co hledám",
+    "maxDistance": "vzdálenost",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "jméno důvěryhodné osoby",
+    "trustedPhone": "telefon důvěryhodné osoby",
+    "pin": "PIN",
+    "duressPin": "Nouzový PIN",
+    "meetAt": "kdy",
+    "place": "kde",
+    "safeword": "stopslovo",
+    "note": "moje hranice",
+    "version": "verze",
+    "message": "zpráva",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "interval check-inu",
+    "accuracy": "přesnost",
+    "battery": "baterie",
+    "user": "uživatel",
+    "reason": "důvod",
+    "details": "podrobnosti",
+    "resolution": "řešení",
+    "days": "počet dní"
+  },
+  "auth": {
+    "confirmAdult": "Musíš potvrdit, že je ti 18 let nebo víc.",
+    "acceptRules": "Musíš souhlasit s pravidly a se zpracováním údajů.",
+    "underage": "F*app je jen pro lidi starší 18 let.",
+    "invalidBirthdate": "Neplatné datum narození.",
+    "emailTaken": "Účet s tímhle e-mailem už existuje.",
+    "wrongCredentials": "Špatný e-mail nebo heslo.",
+    "banned": "Účet byl zablokován za porušení pravidel.",
+    "notLoggedIn": "Nejsi přihlášený/á.",
+    "suspended": "Účet je pozastavený do kontroly moderátorem.",
+    "verifyFirst": "Nejdřív si ověř totožnost."
+  },
+  "profile": {
+    "wrongPassword": "Špatné heslo.",
+    "ageRange": "Věk od musí být menší než věk do.",
+    "maxPhotos": {
+      "one": "Maximálně {count} fotka.",
+      "few": "Maximálně {count} fotky.",
+      "many": "Maximálně {count} fotky.",
+      "other": "Maximálně {count} fotek."
+    },
+    "pinsMustDiffer": "Nouzový PIN musí být jiný než běžný PIN.",
+    "deleteDuringMeetup": "Účet teď nejde smazat – probíhá schůzka. Zkus to po jejím skončení."
+  },
+  "photo": {
+    "notJpeg": "Fotka musí být ve formátu JPEG.",
+    "corrupt": "Fotka je poškozená.",
+    "notBase64": "Fotka musí být JPEG v base64.",
+    "tooLarge": "Fotka je příliš velká (max. 2 MB).",
+    "notFound": "Fotka neexistuje.",
+    "unavailable": "Fotka není k dispozici."
+  },
+  "users": {
+    "notFound": "Uživatel neexistuje."
+  },
+  "match": {
+    "notFound": "Match neexistuje.",
+    "ended": "Tenhle match už skončil.",
+    "profileUnavailable": "Tenhle profil už není dostupný."
+  },
+  "discover": {
+    "locationRequired": "Nejdřív povol polohu, ať ti můžeme ukázat lidi v okolí.",
+    "photoRequired": "Přidej si aspoň jednu fotku.",
+    "superLikeIsLike": "Super lajk je vždycky lajk.",
+    "profileNotFound": "Profil neexistuje.",
+    "profileGone": "Profil už neexistuje.",
+    "nothingToRewind": "Není co vracet.",
+    "cantRewindSuperLike": "Super lajk vrátit nejde.",
+    "cantRewindMatch": "Z tohohle swipu už je match."
+  },
+  "billing": {
+    "likeLimit": "Došly ti lajky. Další přibudou za chvíli – nebo swipuj bez limitu s F*app Plus.",
+    "noSuperLike": "Nemáš žádný super lajk.",
+    "noBoost": "Nemáš žádný boost.",
+    "tonightPaid": "„Dnes večer“ je v Platinum nebo jednorázově.",
+    "featureInPlan": "{feature} je součástí F*app {plan}.",
+    "paymentsOff": "Platby zatím nejsou zapnuté – F*app je teď celý zdarma.",
+    "unknownProduct": "Neznámý produkt.",
+    "cantBuy": "Tohle teď koupit nejde.",
+    "cantBoost": "Boost teď spustit nejde.",
+    "boostRunning": "Boost už běží.",
+    "cantTonight": "Tohle teď zapnout nejde.",
+    "tonightOn": "Dnes večer už máš zapnuté.",
+    "unknownCity": "Neznámé město."
+  },
+  "features": {
+    "unlimitedLikes": "Neomezené lajky",
+    "rewind": "Vrácení swipu",
+    "travel": "Na cestách",
+    "incognito": "Inkognito",
+    "seeLikes": "Kdo tě lajkl",
+    "weeklySuperLikes": "5 super lajků týdně",
+    "monthlyBoost": "1 boost měsíčně",
+    "priorityLikes": "Prioritní lajky",
+    "sentLikes": "Odeslané lajky",
+    "tonight": "Dnes večer kdykoli"
+  },
+  "agreement": {
+    "wishesRequired": "Vyplň, na co máš chuť.",
+    "invalidWish": "Neplatná volba u přání.",
+    "notFound": "Domluva neexistuje.",
+    "confirmBoth": "Potvrď obě věty – že je to tvoje představa a že domluva není souhlas.",
+    "meetWithin": {
+      "one": "Schůzka musí být v příštím {count} dni.",
+      "few": "Schůzka musí být v příštích {count} dnech.",
+      "many": "Schůzka musí být v příštích {count} dne.",
+      "other": "Schůzka musí být v příštích {count} dnech."
+    },
+    "cooldown": "Novou domluvu teď může otevřít jen {name}.",
+    "changed": "Domluva se mezitím změnila. Přečti si ji znovu."
+  },
+  "chat": {
+    "empty": "Prázdná zpráva.",
+    "notSent": "Zpráva nebyla odeslána. {reason}",
+    "photo": "Fotka"
+  },
+  "moderation": {
+    "minor": "Zpráva naznačuje, že někdo z vás může být nezletilý. F*app je jen pro 18+.",
+    "paid": "Nabízení nebo poptávání placeného sexu je na F*app zakázané.",
+    "consentPressure": "Pozor: domluva v aplikaci není souhlas. Můžeš ji kdykoli zrušit a na místě cokoli odmítnout – bez vysvětlování.",
+    "contact": "Protějšek sdílí kontakt mimo aplikaci. Mimo F*app pro vás nefunguje domluva, bezpečnostní režim ani nahlášení."
+  },
+  "safety": {
+    "notFound": "Schůzka neexistuje.",
+    "ended": "Schůzka už skončila.",
+    "wrongPin": "Špatný PIN.",
+    "agreementRequired": "Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba.",
+    "setupRequired": "Nejdřív si nastav důvěryhodnou osobu, PIN a nouzový PIN.",
+    "invalidInterval": "Neplatný interval check-inu."
+  },
+  "reports": {
+    "feedbackSent": "Hodnocení už jsi poslal/a."
+  },
+  "verification": {
+    "unknown": "Neznámé ověření.",
+    "alreadyVerified": "Totožnost už máš ověřenou.",
+    "startFirst": "Nejdřív spusť ověření.",
+    "noWebhook": "Vývojový poskytovatel nemá webhook.",
+    "unavailable": "Ověřovací služba teď neodpovídá. Zkus to za chvíli.",
+    "declined": {
+      "underage": "Ověření ukázalo, že ti ještě není 18. F*app je jen pro dospělé.",
+      "banned": "Tahle osoba byla na F*app zablokovaná za porušení pravidel.",
+      "duplicate": "Tahle osoba už na F*app účet má. Každý může mít jen jeden.",
+      "incomplete": "Z dokladu se nepodařilo přečíst datum narození. Zkus to znovu.",
+      "default": "Ověření se nepovedlo. Zkus to znovu."
+    }
+  },
+  "admin": {
+    "notReported": "Konverzace nebyla nahlášena.",
+    "unknownPlan": "Neznámá úroveň."
+  },
+  "push": {
+    "discreet": "Nová notifikace",
+    "match": {
+      "title": "Je to match!",
+      "body": "Ty a {name} se chcete."
+    },
+    "superLike": {
+      "title": "Super lajk",
+      "body": "Někdo o tebe opravdu stojí."
+    },
+    "message": {
+      "photo": "Poslal/a fotku"
+    },
+    "agreementComplete": {
+      "title": "Domluva je hotová",
+      "body": "Oba jste ji potvrdili. Na místě se ale vždycky můžete rozhodnout jinak."
+    },
+    "agreementNew": {
+      "title": "Nová domluva",
+      "body": "{name} otevřel/a domluvu. Vyplň, na co máš chuť ty."
+    },
+    "agreementChanged": {
+      "title": "Domluva se změnila",
+      "body": "{name} změnil/a čas, místo nebo pravidla. Potvrď je znovu."
+    },
+    "agreementUpdated": {
+      "title": "Domluva se upravila",
+      "body": "{name} upravil/a svá přání."
+    },
+    "agreementRevoked": {
+      "title": "Domluva zrušena",
+      "body": "{name} domluvu zrušil/a. Schůzka se nekoná – a to je potřeba respektovat."
+    },
+    "checkInOverdue": {
+      "title": "Zapomněl/a jsi na check-in",
+      "body": "{name} dostal/a upozornění. Potvrď, že jsi v pořádku."
+    }
+  },
+  "sms": {
+    "started": "{name} má schůzku a vybral/a si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: {url}",
+    "alarm": "POPLACH: {name} potřebuje pomoc. Poloha a podrobnosti: {url}",
+    "overdue": "{name} se neozval/a – potvrzení, že je v pořádku, mělo přijít do {time}. Zkus zavolat. Poloha: {url}",
+    "backOk": "{name} se ozval/a a potvrdil/a, že je v pořádku.",
+    "sosCancelled": "{name} zrušil/a poplach – byl to omyl, je v pořádku.",
+    "endedOk": "{name} ukončil/a schůzku a je v pořádku. Díky, že jsi byl/a k dispozici.",
+    "someone": "Tvůj blízký člověk"
+  },
+  "share": {
+    "pageTitle": "F*app – bezpečnostní odkaz",
+    "header": "Bezpečnostní odkaz",
+    "loading": "Načítám…",
+    "call": "Zavolat {number}",
+    "mapLabel": "Mapa s poslední polohou",
+    "openMaps": "Otevřít v mapách",
+    "partnerPhotoAlt": "Fotka protějšku",
+    "partnerLead": "Na schůzce s:",
+    "okTitle": "{name} je v pořádku",
+    "okDetail": "Poslední potvrzení v {last}. Další čekáme do {next}.",
+    "overdueTitle": "{name} se neozval/a",
+    "overdueDetail": "Potvrzení mělo přijít do {due}. Zkus zavolat. Když to nebude brát, volej {number} a nadiktuj adresu z mapy.",
+    "alarmTitle": "{name} potřebuje pomoc",
+    "alarmDetail": "Poplach v {time}. Zavolej {number} a nadiktuj polohu z mapy a místo schůzky níže.",
+    "endedTitle": "Schůzka skončila",
+    "endedDetail": "{name} potvrdil/a, že je v pořádku.",
+    "endedDetailAlarm": "{name} potvrdil/a, že je v pořádku. Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.",
+    "footer": "Poloha přestane být vidět, jakmile {name} schůzku ukončí.",
+    "locationJustNow": "Poloha právě teď",
+    "locationAgo": {
+      "one": "Poloha před {count} min",
+      "few": "Poloha před {count} min",
+      "many": "Poloha před {count} min",
+      "other": "Poloha před {count} min"
+    },
+    "battery": "baterie {percent}",
+    "linkExpired": "Odkaz už neplatí",
+    "loadFailed": "Nepodařilo se načíst stav. Zkouším znovu…"
+  }
+}

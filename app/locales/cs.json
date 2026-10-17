@@ -1,0 +1,10 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "F*app",
+    "NSLocationWhenInUseUsageDescription": "F*app potřebuje polohu, aby ti ukázal lidi v okolí a během schůzky ji mohl sdílet s tvou důvěryhodnou osobou.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Během schůzky sdílí F*app tvoji polohu s důvěryhodnou osobou i se zhasnutým displejem. Mimo schůzku polohu na pozadí nepoužívá.",
+    "NSFaceIDUsageDescription": "F*app se odemyká Face ID, aby se do něj nikdo nepodíval.",
+    "NSPhotoLibraryUsageDescription": "Vyber si fotky do profilu.",
+    "NSCameraUsageDescription": "Vyfoť se do profilu."
+  }
+}

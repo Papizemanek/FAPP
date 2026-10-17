@@ -1,4 +1,3 @@
-import { TAGS, TRAVEL_CITIES } from '@fapp/shared';
 import * as Haptics from 'expo-haptics';
 import { Image } from 'expo-image';
 import * as Location from 'expo-location';
@@ -11,6 +10,8 @@ import { ConfirmSheet } from '@/components/Sheet';
 import { Body, Button, IconButton, Logo, Screen } from '@/components/ui';
 import { api, ApiError, errorMessage, imageSource, type Billing, type Profile } from '@/lib/api';
 import { openPaywall, refreshBilling, setBilling, setLikesLeft, showPaid, useBilling } from '@/lib/billing';
+import { formatTime } from '@/lib/format';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 import { avatarTones, colors, fonts } from '@/lib/theme';
 
@@ -21,10 +22,10 @@ type Problem = { kind: 'location' | 'photo' | 'other'; message: string } | null;
 type SwipeResult = { match: { id: number; partner: Profile } | null; likesLeft?: number | null };
 type Sheet = 'boost' | 'tonight' | 'tonightOff' | null;
 
-const clock = (iso: string) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
 const premium = (params: Record<string, string>) => router.push({ pathname: '/premium', params });
 
 export default function Discover() {
+  const t = useT();
   const { setMe } = useSession();
   const [deck, setDeck] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,7 +63,8 @@ export default function Discover() {
       void refreshBilling();
     } catch (err) {
       const message = errorMessage(err);
-      const kind = err instanceof ApiError && err.status === 409 ? (/poloh/i.test(message) ? 'location' : 'photo') : 'other';
+      const code = err instanceof ApiError ? err.data.code : undefined;
+      const kind = code === 'no_location' ? 'location' : code === 'no_photo' ? 'photo' : 'other';
       setProblem({ kind, message });
     } finally {
       setLoading(false);
@@ -106,7 +108,7 @@ export default function Discover() {
         .then(({ match, likesLeft }) => {
           setLikesLeft(likesLeft);
           if (superLike) void refreshBilling();
-          if (likesLeft != null && likesLeft > 0 && likesLeft <= 10) say(`Zbývá ${likesLeft} lajků.`);
+          if (likesLeft != null && likesLeft > 0 && likesLeft <= 10) say(t('discover.likesLeft', { count: likesLeft }));
           if (match) {
             router.push({
               pathname: '/match',
@@ -122,7 +124,7 @@ export default function Discover() {
           }
         });
     },
-    [top, position, billing, say],
+    [top, position, billing, say, t],
   );
 
   const rewind = async () => {
@@ -139,7 +141,7 @@ export default function Discover() {
 
   const onBoost = () => {
     if (!billing) return;
-    if (billing.boost.activeUntil) return say(`Boost běží do ${clock(billing.boost.activeUntil)}.`);
+    if (billing.boost.activeUntil) return say(t('discover.boostRunningUntil', { time: formatTime(billing.boost.activeUntil) }));
     if (billing.boost.monthlyLeft > 0 || billing.boost.credits > 0) return setSheet('boost');
     premium({ reason: 'no_credit', credit: 'boost' });
   };
@@ -188,26 +190,26 @@ export default function Discover() {
             <>
               <IconButton
                 name="moon"
-                label={billing.tonight.activeUntil ? 'Dnes večer – zapnuto' : 'Dnes večer'}
+                label={billing.tonight.activeUntil ? t('discover.tonightOn') : t('discover.tonight')}
                 color={billing.tonight.activeUntil ? colors.warn : undefined}
                 onPress={onTonight}
               />
               <IconButton
                 name="bolt"
-                label={billing.boost.activeUntil ? 'Boost běží' : 'Boost'}
+                label={billing.boost.activeUntil ? t('discover.boostOn') : t('discover.boost')}
                 color={billing.boost.activeUntil ? colors.accent : undefined}
                 onPress={onBoost}
               />
             </>
           ) : null}
-          <IconButton name="sliders" label="Nastavení hledání" onPress={() => router.push('/profile')} />
+          <IconButton name="sliders" label={t('discover.searchSettings')} onPress={() => router.push('/profile')} />
         </View>
       </View>
       {paid && billing.travelCity ? (
         <Pressable accessibilityRole="button" onPress={() => router.push('/profile')} style={s.travel}>
           <Icon name="globe" size={16} color={colors.accent} />
-          <Text style={s.travelText}>{`Na cestách · ${TRAVEL_CITIES[billing.travelCity].name}`}</Text>
-          <Text style={[s.travelText, { color: colors.muted }]}>Změnit</Text>
+          <Text style={s.travelText}>{t('discover.travelingIn', { city: t(`labels.cities.${billing.travelCity}`) })}</Text>
+          <Text style={[s.travelText, { color: colors.muted }]}>{t('discover.change')}</Text>
         </Pressable>
       ) : null}
       <HomeBanners />
@@ -218,14 +220,14 @@ export default function Discover() {
         ) : problem ? (
           <View style={s.empty}>
             <Body muted style={{ textAlign: 'center' }}>{problem.message}</Body>
-            {problem.kind === 'location' ? <Button label="Povolit polohu" onPress={enableLocation} /> : null}
-            {problem.kind === 'photo' ? <Button label="Přidat fotku" onPress={() => router.push('/profile')} /> : null}
-            {problem.kind === 'other' ? <Button variant="ghost" label="Zkusit znovu" onPress={load} /> : null}
+            {problem.kind === 'location' ? <Button label={t('discover.enableLocation')} onPress={enableLocation} /> : null}
+            {problem.kind === 'photo' ? <Button label={t('discover.addPhoto')} onPress={() => router.push('/profile')} /> : null}
+            {problem.kind === 'other' ? <Button variant="ghost" label={t('discover.retry')} onPress={load} /> : null}
           </View>
         ) : !top ? (
           <View style={s.empty}>
-            <Body muted style={{ textAlign: 'center' }}>Teď tu poblíž nikdo další není. Zkus to později nebo si rozšiř hledání.</Body>
-            <Button variant="ghost" label="Obnovit" onPress={load} />
+            <Body muted style={{ textAlign: 'center' }}>{t('discover.empty')}</Body>
+            <Button variant="ghost" label={t('discover.refresh')} onPress={load} />
           </View>
         ) : (
           <Animated.View
@@ -234,7 +236,7 @@ export default function Discover() {
           >
             <Pressable
               style={StyleSheet.absoluteFill}
-              accessibilityLabel="Další fotka"
+              accessibilityLabel={t('discover.nextPhoto')}
               onPress={() => setPhotoIndex((i) => (top.photos.length ? (i + 1) % top.photos.length : 0))}
             >
               {top.photos.length ? (
@@ -250,14 +252,14 @@ export default function Discover() {
                 ))}
               </View>
             ) : null}
-            <Animated.Text style={[s.stamp, s.stampLike, { opacity: likeOpacity }]}>CHCI</Animated.Text>
-            <Animated.Text style={[s.stamp, s.stampNope, { opacity: nopeOpacity }]}>NE</Animated.Text>
+            <Animated.Text style={[s.stamp, s.stampLike, { opacity: likeOpacity }]}>{t('discover.stampLike')}</Animated.Text>
+            <Animated.Text style={[s.stamp, s.stampNope, { opacity: nopeOpacity }]}>{t('discover.stampNope')}</Animated.Text>
             <View style={s.info} pointerEvents="none">
               {top.superLike || top.tonight || top.traveling ? (
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-                  {top.superLike ? <Badge icon="star" label="Dal/a ti super lajk" color={colors.warn} /> : null}
-                  {top.tonight ? <Badge icon="moon" label="Dnes večer" color={colors.accent} /> : null}
-                  {top.traveling ? <Badge icon="globe" label="Na cestách" color={colors.muted} /> : null}
+                  {top.superLike ? <Badge icon="star" label={t('discover.superLikedYou')} color={colors.warn} /> : null}
+                  {top.tonight ? <Badge icon="moon" label={t('discover.tonight')} color={colors.accent} /> : null}
+                  {top.traveling ? <Badge icon="globe" label={t('discover.traveling')} color={colors.muted} /> : null}
                 </View>
               ) : null}
               <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 10 }}>
@@ -268,14 +270,14 @@ export default function Discover() {
               {top.distanceKm != null ? (
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
                   <Icon name="pin" size={16} color="#D9CFDC" />
-                  <Text style={s.meta}>{top.distanceKm} km od tebe</Text>
+                  <Text style={s.meta}>{t('discover.distance', { km: top.distanceKm })}</Text>
                 </View>
               ) : null}
               {top.bio ? <Text style={s.bio}>{top.bio}</Text> : null}
               <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-                {top.tags.map((t) => (
-                  <Text key={t} style={s.tag}>
-                    {TAGS[t]}
+                {top.tags.map((tag) => (
+                  <Text key={tag} style={s.tag}>
+                    {t(`labels.tags.${tag}`)}
                   </Text>
                 ))}
               </View>
@@ -287,50 +289,54 @@ export default function Discover() {
       {notice ? <Text style={s.notice}>{notice}</Text> : null}
       <View style={s.actions}>
         {paid ? (
-          <Pressable accessibilityRole="button" accessibilityLabel="Vrátit poslední swipe" onPress={rewind} style={s.small}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t('discover.rewind')} onPress={rewind} style={s.small}>
             <Icon name="undo" size={22} color={colors.warn} strokeWidth={2.2} />
           </Pressable>
         ) : null}
-        <Pressable accessibilityRole="button" accessibilityLabel="Přeskočit" disabled={!top} onPress={() => swipe(false)} style={s.nope}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t('discover.pass')} disabled={!top} onPress={() => swipe(false)} style={s.nope}>
           <Icon name="close" size={28} strokeWidth={2.4} />
         </Pressable>
         {paid ? (
-          <Pressable accessibilityRole="button" accessibilityLabel="Super lajk" disabled={!top} onPress={() => swipe(true, true)} style={s.small}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t('discover.superLike')} disabled={!top} onPress={() => swipe(true, true)} style={s.small}>
             <Icon name="star" size={22} color={colors.warn} fill={colors.warn} strokeWidth={1.5} />
           </Pressable>
         ) : null}
-        <Pressable accessibilityRole="button" accessibilityLabel="Líbí se mi" disabled={!top} onPress={() => swipe(true)} style={s.like}>
+        <Pressable accessibilityRole="button" accessibilityLabel={t('discover.like')} disabled={!top} onPress={() => swipe(true)} style={s.like}>
           <Icon name="heart" size={32} color={colors.onAccent} fill={colors.onAccent} strokeWidth={1.5} />
         </Pressable>
       </View>
 
       <ConfirmSheet
         visible={sheet === 'boost'}
-        title="Spustit boost?"
-        message={`30 minut budeš nahoře u lidí v okolí. ${
-          billing?.boost.monthlyLeft ? 'Použije se měsíční boost z předplatného.' : `Zbývá ti ${billing?.boost.credits ?? 0}×.`
-        }`}
-        confirmLabel="Spustit boost"
-        onConfirm={() => billingCall('POST', '/billing/boost', 'Boost běží – 30 minut jsi nahoře.')}
+        title={t('discover.boostSheet.title')}
+        message={
+          billing?.boost.monthlyLeft
+            ? t('discover.boostSheet.messageMonthly')
+            : t('discover.boostSheet.messageCredits', { count: billing?.boost.credits ?? 0 })
+        }
+        confirmLabel={t('discover.boostSheet.confirm')}
+        onConfirm={() => billingCall('POST', '/billing/boost', t('discover.boostSheet.done'))}
         onClose={() => setSheet(null)}
       />
       <ConfirmSheet
         visible={sheet === 'tonight'}
-        title="Zapnout „Dnes večer“?"
-        message={`Do 6:00 ráno budeš u lidí v okolí výš a se štítkem „Dnes večer“. Vypnout to jde kdykoli.${
-          billing?.tonight.included ? '' : ` Zbývá ti ${billing?.tonight.credits ?? 0}×.`
-        }`}
-        confirmLabel="Zapnout"
-        onConfirm={() => billingCall('POST', '/billing/tonight', 'Dnes večer je zapnuté do 6:00.')}
+        title={t('discover.tonightSheet.title')}
+        message={
+          billing?.tonight.included
+            ? t('discover.tonightSheet.message')
+            : t('discover.tonightSheet.messageCredits', { count: billing?.tonight.credits ?? 0 })
+        }
+        confirmLabel={t('discover.tonightSheet.confirm')}
+        onConfirm={() => billingCall('POST', '/billing/tonight', t('discover.tonightSheet.done'))}
         onClose={() => setSheet(null)}
       />
       <ConfirmSheet
         visible={sheet === 'tonightOff'}
-        title="„Dnes večer“ je zapnuté"
-        message={billing?.tonight.activeUntil ? `Platí do ${clock(billing.tonight.activeUntil)}.` : undefined}
-        confirmLabel="Vypnout"
+        title={t('discover.tonightOffSheet.title')}
+        message={billing?.tonight.activeUntil ? t('discover.tonightOffSheet.message', { time: formatTime(billing.tonight.activeUntil) }) : undefined}
+        confirmLabel={t('discover.tonightOffSheet.confirm')}
         destructive
-        onConfirm={() => billingCall('DELETE', '/billing/tonight', 'Dnes večer je vypnuté.')}
+        onConfirm={() => billingCall('DELETE', '/billing/tonight', t('discover.tonightOffSheet.done'))}
         onClose={() => setSheet(null)}
       />
     </Screen>

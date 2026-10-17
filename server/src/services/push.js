@@ -1,4 +1,5 @@
 // Push notifikace přes Expo Push API. V diskrétním režimu nenesou žádný obsah.
+import { render, tr } from '../i18n.js';
 
 export function createPush(config) {
   if (config.pushProvider === 'expo') return expoPush();
@@ -32,9 +33,12 @@ function expoPush() {
   };
 }
 
-/** Pošle notifikaci na všechna zařízení uživatele. Chyby jen zaloguje – push není kritický. */
+/**
+ * Pošle notifikaci na všechna zařízení uživatele. Chyby jen zaloguje – push není kritický.
+ * title a body jsou msg('push.…', params) – přeloží se do jazyka příjemce – nebo hotový text (jméno, zpráva).
+ */
 export function notify(db, push, userId, { title, body, data = {} }) {
-  const user = db.prepare('SELECT discreet FROM users WHERE id = ?').get(userId);
+  const user = db.prepare('SELECT discreet, locale FROM users WHERE id = ?').get(userId);
   if (!user) return;
   const tokens = db
     .prepare('SELECT DISTINCT push_token FROM sessions WHERE user_id = ? AND push_token IS NOT NULL')
@@ -44,8 +48,8 @@ export function notify(db, push, userId, { title, body, data = {} }) {
   const discreet = !!user.discreet;
   const messages = tokens.map((to) => ({
     to,
-    title: discreet ? 'Nová notifikace' : title,
-    body: discreet ? '' : body,
+    title: discreet ? tr(user.locale, 'push.discreet') : render(user.locale, title),
+    body: discreet ? '' : render(user.locale, body),
     data,
     sound: 'default',
   }));

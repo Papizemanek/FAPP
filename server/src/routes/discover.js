@@ -11,6 +11,7 @@ import {
   weeklySuperLikesLeft,
 } from '../billing.js';
 import { tx } from '../db.js';
+import { msg } from '../i18n.js';
 import { getUser, isBlocked, publicProfile } from '../model.js';
 import { notify } from '../services/push.js';
 import { HttpError, ageFrom, bool, distanceKm, int, nowIso, parseJson } from '../util.js';
@@ -24,8 +25,8 @@ export function discoverRoutes({ db, config, services, limiter }) {
 
   r.get('/discover', ...guard, (req, res) => {
     const me = req.user;
-    if (me.lat == null) throw new HttpError(409, 'Nejdřív povol polohu, ať ti můžeme ukázat lidi v okolí.');
-    if (parseJson(me.photos, []).length === 0) throw new HttpError(409, 'Přidej si aspoň jednu fotku.');
+    if (me.lat == null) throw new HttpError(409, 'discover.locationRequired', { code: 'no_location' });
+    if (parseJson(me.photos, []).length === 0) throw new HttpError(409, 'discover.photoRequired', { code: 'no_photo' });
 
     const now = Date.now();
     const myAge = ageFrom(me.birthdate);
@@ -82,19 +83,19 @@ export function discoverRoutes({ db, config, services, limiter }) {
   });
 
   r.post('/swipes', ...guard, limiter('swipe', 120), (req, res) => {
-    const targetId = int(req.body?.targetId, 'targetId', { min: 1, max: Number.MAX_SAFE_INTEGER });
+    const targetId = int(req.body?.targetId, 'fields.targetId', { min: 1, max: Number.MAX_SAFE_INTEGER });
     const like = bool(req.body?.like);
     const superLike = bool(req.body?.super);
-    if (superLike && !like) throw new HttpError(400, 'Super lajk je vždycky lajk.');
+    if (superLike && !like) throw new HttpError(400, 'discover.superLikeIsLike');
     const target = getUser(db, targetId);
     if (!target || target.id === req.user.id || target.status !== 'active' || target.verification_status !== 'approved') {
-      throw new HttpError(404, 'Profil neexistuje.');
+      throw new HttpError(404, 'discover.profileNotFound');
     }
-    if (isBlocked(db, req.user.id, targetId)) throw new HttpError(404, 'Profil neexistuje.');
+    if (isBlocked(db, req.user.id, targetId)) throw new HttpError(404, 'discover.profileNotFound');
 
     const quota = likeQuota(db, config, req.user);
     if (like && !superLike && quota.remaining === 0) {
-      throw paywall('Došly ti lajky. Další přibudou za chvíli – nebo swipuj bez limitu s F*app Plus.', {
+      throw paywall('billing.likeLimit', {
         code: 'like_limit',
         resetAt: quota.resetAt,
       });
@@ -104,7 +105,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
       // Super lajk: nejdřív týdenní dávka z předplatného, pak koupené kredity.
       let superCredit = 0;
       if (superLike && weeklySuperLikesLeft(db, req.user) === 0) {
-        if (!useCredit(db, req.user.id, 'superlike')) throw paywall('Nemáš žádný super lajk.', { code: 'no_credit', credit: 'superlike' });
+        if (!useCredit(db, req.user.id, 'superlike')) throw paywall('billing.noSuperLike', { code: 'no_credit', credit: 'superlike' });
         superCredit = 1;
       }
       db.prepare(
@@ -115,7 +116,11 @@ export function discoverRoutes({ db, config, services, limiter }) {
     if (!like) return res.json({ match: null, likesLeft });
     if (superLike) {
       // Neutrální text – notifikace může být vidět na zamčené obrazovce.
-      notify(db, services.push, targetId, { title: 'Super lajk', body: 'Někdo o tebe opravdu stojí.', data: { type: 'likes' } });
+      notify(db, services.push, targetId, {
+        title: msg('push.superLike.title'),
+        body: msg('push.superLike.body'),
+        data: { type: 'likes' },
+      });
     }
 
     // Jen pro vývoj: demo profily (seed) lajkují zpátky, ať jde hned vyzkoušet match.
@@ -141,8 +146,8 @@ export function discoverRoutes({ db, config, services, limiter }) {
     if (match.ended_at) return res.json({ match: null, likesLeft });
     if (inserted.changes > 0) {
       notify(db, services.push, targetId, {
-        title: 'Je to match!',
-        body: `Ty a ${req.user.name} se chcete.`,
+        title: msg('push.match.title'),
+        body: msg('push.match.body', { name: req.user.name }),
         data: { type: 'match', matchId: match.id },
       });
     }
@@ -153,15 +158,15 @@ export function discoverRoutes({ db, config, services, limiter }) {
   r.post('/swipes/rewind', ...guard, (req, res) => {
     requireFeature(req.user, 'rewind');
     const last = db.prepare('SELECT * FROM swipes WHERE swiper_id = ? ORDER BY created_at DESC LIMIT 1').get(req.user.id);
-    if (!last) throw new HttpError(404, 'Není co vracet.');
-    if (last.super) throw new HttpError(409, 'Super lajk vrátit nejde.');
+    if (!last) throw new HttpError(404, 'discover.nothingToRewind');
+    if (last.super) throw new HttpError(409, 'discover.cantRewindSuperLike');
     const [a, b] = [req.user.id, last.target_id].sort((x, y) => x - y);
     if (db.prepare('SELECT 1 FROM matches WHERE user_a = ? AND user_b = ?').get(a, b)) {
-      throw new HttpError(409, 'Z tohohle swipu už je match.');
+      throw new HttpError(409, 'discover.cantRewindMatch');
     }
     db.prepare('DELETE FROM swipes WHERE swiper_id = ? AND target_id = ?').run(req.user.id, last.target_id);
     const target = getUser(db, last.target_id);
-    if (!target || target.status !== 'active' || isBlocked(db, req.user.id, target.id)) throw new HttpError(404, 'Profil už neexistuje.');
+    if (!target || target.status !== 'active' || isBlocked(db, req.user.id, target.id)) throw new HttpError(404, 'discover.profileGone');
     res.json({ profile: publicProfile(target, req.user) });
   });
 

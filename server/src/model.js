@@ -61,15 +61,15 @@ export function isBlocked(db, a, b) {
 export function getMatchFor(db, matchId, userId, { allowEnded = false } = {}) {
   const match = db.prepare('SELECT * FROM matches WHERE id = ?').get(Number(matchId));
   if (!match || (match.user_a !== userId && match.user_b !== userId)) {
-    throw new HttpError(404, 'Match neexistuje.');
+    throw new HttpError(404, 'match.notFound');
   }
-  if (match.ended_at && !allowEnded) throw new HttpError(410, 'Tenhle match už skončil.');
+  if (match.ended_at && !allowEnded) throw new HttpError(410, 'match.ended');
   const otherId = match.user_a === userId ? match.user_b : match.user_a;
   return { match, otherId, other: getUser(db, otherId) };
 }
 
 export function requireActivePartner(other) {
-  if (!other || other.status !== 'active') throw new HttpError(410, 'Tenhle profil už není dostupný.');
+  if (!other || other.status !== 'active') throw new HttpError(410, 'match.profileUnavailable');
 }
 
 // --- domluva ---

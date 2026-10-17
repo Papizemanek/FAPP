@@ -1,0 +1,688 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Muškarac",
+      "woman": "Žena",
+      "nonbinary": "Nebinarna osoba"
+    },
+    "gendersPlural": {
+      "man": "Muškarci",
+      "woman": "Žene",
+      "nonbinary": "Nebinarne osobe"
+    },
+    "tags": {
+      "oneoff": "Jednokratno",
+      "repeat": "Opet i opet",
+      "myplace": "Kod mene",
+      "yourplace": "Kod tebe",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Ljubljenje i maženje",
+      "oral": "Oralno",
+      "vaginal": "Vaginalno",
+      "anal": "Analno",
+      "toys": "Igračke",
+      "overnight": "Prespavanje"
+    },
+    "wishes": {
+      "yes": "Da",
+      "maybe": "Možda",
+      "no": "Ne"
+    },
+    "reportReasons": {
+      "consent": "Kršenje pristanka ili granica",
+      "violence": "Nasilje ili prijetnja",
+      "minor": "Sumnja na maloljetnu osobu",
+      "harassment": "Uznemiravanje",
+      "fake": "Lažni profil",
+      "paid": "Nuđenje plaćenih usluga",
+      "other": "Ostalo"
+    },
+    "feedbackReasons": {
+      "consent": "Nije poštovao/la granice ili „stop“",
+      "safety": "Nisam se osjećao/la sigurno",
+      "fake": "Nije izgledao/la kao na fotografijama",
+      "other": "Nešto drugo"
+    },
+    "plans": {
+      "free": "Besplatno",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Neograničeni lajkovi",
+        "detail": "Swajpaj koliko želiš."
+      },
+      "rewind": {
+        "name": "Vraćanje",
+        "detail": "Vrati greškom preskočen profil."
+      },
+      "travel": {
+        "name": "Na putu",
+        "detail": "Swajpaj u drugom gradu i prije putovanja."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Vide te samo oni koje lajkaš."
+      },
+      "seeLikes": {
+        "name": "Tko te lajkao",
+        "detail": "Vidi sve koji su te lajkali."
+      },
+      "weeklySuperLikes": {
+        "name": "5 super lajkova tjedno",
+        "detail": "Pokaži nekome da ti se stvarno sviđa."
+      },
+      "monthlyBoost": {
+        "name": "1 boost mjesečno",
+        "detail": "30 minuta na vrhu kod ljudi u blizini."
+      },
+      "priorityLikes": {
+        "name": "Prioritetni lajkovi",
+        "detail": "Tvoj lajk vide prije ostalih."
+      },
+      "sentLikes": {
+        "name": "Poslani lajkovi",
+        "detail": "Koga si lajkao/la u zadnjih 7 dana."
+      },
+      "tonight": {
+        "name": "Večeras, bilo kad",
+        "detail": "Pokaži da imaš vremena još večeras."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super lajk",
+      "tonight": "Večeras"
+    },
+    "cities": {
+      "praha": "Prag",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Beč",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Ovo je ono što imam na umu. Na licu mjesta mogu bilo što odbiti – a isto vrijedi i za drugu osobu.",
+    "notice": "Razumijem: pristanak vrijedi samo ovdje i sada. „Ne“, „stop“, sigurnosna riječ, šutnja, ukočenost ili pijanstvo nisu pristanak. Dogovor u aplikaciji nikoga ne oslobađa odgovornosti.",
+    "deterrence": "Svi u aplikaciji F*app imaju provjeren identitet. Ako posumnjamo na kazneno djelo, predat ćemo ga policiji."
+  },
+  "welcome": {
+    "tagline": "Seks bez komplikacija.",
+    "taglineStrong": "Samo kad oboje kažete da.",
+    "createAccount": "Izradi račun",
+    "signIn": "Prijavi se",
+    "adultsOnly": "Samo za 18+. Svatko ovdje ima provjeren identitet."
+  },
+  "agreement": {
+    "title": "Dogovor",
+    "titleWithName": "Dogovor · {name}",
+    "timeFormatError": "Unesi vrijeme kao HH:MM, npr. 21:00.",
+    "revokedByPartnerTitle": "{name} je otkazao/la dogovor",
+    "revokedByPartnerSubtitle": "Novi dogovor sada može započeti samo {name}.",
+    "revokedTitle": "Dogovor je otkazan",
+    "revokedSubtitle": "Možeš započeti novi.",
+    "newTitle": "Novi dogovor",
+    "newSubtitle": "Svatko ispunjava svoj dio zasebno. Vidjet ćete samo ono oko čega se slažete.",
+    "logisticsChangedTitle": "Mijenjaš vrijeme, mjesto ili pravila",
+    "logisticsChangedSubtitle": "{name} će ih morati ponovno potvrditi.",
+    "confirmedTitle": "Oboje ste ispunili dogovor",
+    "confirmedSubtitle": "Na licu mjesta svatko od vas može se bilo kada predomisliti.",
+    "myPartDoneTitle": "Tvoj dio je gotov",
+    "myPartDoneSubtitle": "{name} još nije ispunio/la ili potvrdio/la svoj dio.",
+    "partnerFilledTitle": "{name} je ispunio/la svoj dio",
+    "partnerFilledSubtitle": "Ispuni svoj – vidjet ćete samo ono oko čega se slažete.",
+    "fillTitle": "Ispuni svoj dio",
+    "fillSubtitle": "Vidjet ćete samo ono oko čega se slažete.",
+    "overlapTitle": "Oko čega se slažete",
+    "overlapNone": "Zasad nema ništa zajedničko.",
+    "overlapYes": "Oboje želite",
+    "overlapMaybe": "Možda – dogovorit ćete se na licu mjesta",
+    "partnerNote": "{name}: „{note}“",
+    "overlapHint": "Ono što jedno od vas ne želi, nitko ne vidi – čak ni tko to nije želio.",
+    "wishesLabel": "Za što sam",
+    "wishesHint": "{name} će vidjeti samo ono oko čega se slažete. Tvoje „ne“ nitko neće vidjeti.",
+    "wishesHintNoName": "Druga osoba vidjet će samo ono oko čega se slažete.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Moje granice (vidi ih i druga osoba)",
+    "notePlaceholder": "Npr. bez fotografiranja, prvo se želim upoznati.",
+    "logisticsLabel": "Praktične stvari – vrijede za oboje",
+    "today": "Danas",
+    "tomorrow": "Sutra",
+    "timeLabel": "Vrijeme",
+    "placeLabel": "Gdje",
+    "placePlaceholder": "Npr. kod mene, Vinohrady",
+    "safewordLabel": "Sigurnosna riječ",
+    "safewordPlaceholder": "Riječ koja sve zaustavlja",
+    "condom": "Uvijek kondom",
+    "sober": "Trijezni",
+    "soberHint": "Pijanstvo nije pristanak.",
+    "publicFirst": "Prvo se nalazimo na javnom mjestu",
+    "publicFirstHint": "Kafić ili bar – hoćete li nastaviti, odlučujete uživo.",
+    "partnerMayShare": "Tijekom susreta {name} može tvoje ime, fotografiju i mjesto susreta podijeliti sa svojom osobom od povjerenja.",
+    "saveAndConfirm": "Spremi i potvrdi",
+    "startMeetup": "Započni susret",
+    "revoke": "Otkaži dogovor",
+    "revokeConfirmTitle": "Otkazati dogovor?",
+    "revokeConfirmMessage": "Susret otpada. Ne moraš ništa objašnjavati – {name} dobiva samo obavijest."
+  },
+  "meetup": {
+    "title": "Susret · {name}",
+    "fakeCallerDefault": "Mama",
+    "endedTitle": "Susret je završen",
+    "endedMessage": "{name} je dobio/la poruku da si dobro.",
+    "sosFailed": "Uzbunu nije bilo moguće poslati: {error} Pokušaj ponovno ili nazovi: {name}.",
+    "needAgreementTitle": "Prvo dovršite dogovor",
+    "needAgreementSubtitle": "Susret možeš započeti kad oboje ispunite i potvrdite dogovor.",
+    "needAgreementAction": "Dogovor",
+    "setupTitle": "Postavi svoju sigurnost",
+    "setupSubtitle": "Osobu od povjerenja, PIN i hitni PIN.",
+    "setupAction": "Postavi",
+    "pointTrusted": "{name} dobiva SMS s poveznicom. Vidjet će gdje si, s kim i jesi li dobro.",
+    "pointTrustedNoName": "Tvoja osoba od povjerenja dobiva SMS s poveznicom. Vidjet će gdje si, s kim i jesi li dobro.",
+    "pointCheckIn": "U redovitim razmacima PIN-om potvrđuješ da si dobro. Ako se ne javiš, šaljemo upozorenje – čak i ako ti se isprazni mobitel.",
+    "pointDuress": "Hitni PIN izgleda potpuno isto kao tvoj obični, ali tiho pokreće uzbunu.",
+    "pointPartner": "{name} će vidjeti da imaš uključen sigurnosni način i da tvoja osoba od povjerenja zna gdje si i s kim. Ništa više – ni uzbunu ni tvoju lokaciju.",
+    "intervalLabel": "Potvrda da sam dobro svakih",
+    "minutes": "{count} min",
+    "start": "Započni susret",
+    "locationVisibleTo": "Tvoju lokaciju vidi {name}",
+    "bgLocationTitle": "Lokacija samo dok je aplikacija otvorena",
+    "bgLocationSubtitle": "Postavi pristup lokaciji na „Uvijek“ da je vidi i kad ti je zaslon isključen.",
+    "bgLocationAction": "Postavke",
+    "nextCheckIn": "Sljedeće javljanje za",
+    "checkIn": "Javljanje",
+    "now": "sada",
+    "imOk": "Dobro sam",
+    "overdueHint": "{name} je dobio/la upozorenje. Potvrdi PIN-om da si dobro.",
+    "graceHint": {
+      "one": "Ako se ne javiš u roku od {count} minute nakon dogovorenog vremena, {name} dobiva upozorenje s tvojom lokacijom.",
+      "few": "Ako se ne javiš u roku od {count} minute nakon dogovorenog vremena, {name} dobiva upozorenje s tvojom lokacijom.",
+      "other": "Ako se ne javiš u roku od {count} minuta nakon dogovorenog vremena, {name} dobiva upozorenje s tvojom lokacijom."
+    },
+    "partnerSafetyOn": "{name} također ima uključen sigurnosni način – osoba od povjerenja zna gdje je i s kim.",
+    "partnerSafetyOff": "{name} nema uključen sigurnosni način.",
+    "fakeCall": "Lažni poziv",
+    "fakeCallIn": "Poziv za {count} s",
+    "fakeCallHint": "Za {count} s lažni poziv zazvonit će kao pravi – tvoj izgovor da odeš.",
+    "shareLink": "Pošalji poveznicu",
+    "sos": "SOS – drži",
+    "revoke": "Otkaži dogovor",
+    "end": "Završi susret",
+    "sosSentTitle": "Uzbuna je poslana",
+    "sosSentBody": "{trusted} je dobio/la tvoju točnu lokaciju i informaciju s kim si. {partner} neće ništa vidjeti.",
+    "sosMistake": "Bila je greška – dobro sam",
+    "sosHide": "Sakrij (uzbuna ostaje uključena)",
+    "pinTitle": "Potvrdi PIN-om",
+    "pinSubtitleOk": "Da si dobro.",
+    "pinSubtitleEnd": "Da je susret gotov i da si dobro.",
+    "revokeConfirmTitle": "Otkazati dogovor?",
+    "revokeConfirmMessage": "{name} će dobiti obavijest. Ne moraš ništa objašnjavati. Sigurnosni način radi dalje dok ga ne završiš."
+  },
+  "feedback": {
+    "title": "Kako je prošao susret?",
+    "privacy": "Tvoj odgovor vidi samo naš tim – {name} ga nikad neće vidjeti. Pomaže nam da ovo ostane mjesto za ljude koji poštuju granice.",
+    "privacyNoName": "Tvoj odgovor vidi samo naš tim – druga osoba ga nikad neće vidjeti. Pomaže nam da ovo ostane mjesto za ljude koji poštuju granice.",
+    "allGood": "Sve je bilo u redu",
+    "somethingWrong": "Nešto nije bilo u redu",
+    "detailsLabel": "Što se dogodilo? (neobavezno)",
+    "preserve": "Sačuvaj zapis o susretu za slučaj da trebaš ići na policiju. Inače se dogovor briše nakon 48 sati.",
+    "suspendNotice": "Ako te netko nije poštovao ili si u opasnosti, odmah ćemo suspendirati taj račun i provjeriti što se dogodilo.",
+    "send": "Pošalji",
+    "helpTitle": "Žao nam je",
+    "helpIntro": "Provjerit ćemo to, a račun druge osobe suspendirali smo dok traje provjera. Ne moraš odmah odlučiti što dalje – i ništa od ovoga nije tvoja krivnja.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Linija pomoći žrtvama kaznenih djela – Bílý kruh bezpečí",
+        "detail": "Non-stop, besplatno, a možeš se javiti anonimno."
+      },
+      "police": {
+        "name": "Češka policija",
+        "detail": "Ako to želiš prijaviti – i kasnije."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Podrška osobama koje su doživjele seksualno nasilje."
+      }
+    },
+    "helpLocal": {
+      "name": "Gdje potražiti pomoć",
+      "detail": "Obrati se lokalnoj policiji ili lokalnoj liniji podrške za žrtve kaznenih djela i seksualnog nasilja."
+    },
+    "medical": "Ako se dogodilo nešto protiv tvoje volje, potraži liječničku pomoć što prije – i zbog sprečavanja trudnoće i infekcija, jer neki lijekovi djeluju samo unutar 72 sata. Tragovi se još mogu prikupiti ako se još ne tuširaš i sačuvaš odjeću. No ništa od toga nije uvjet – prijaviti možeš i kasnije.",
+    "preserved": "Sačuvali smo zapis o susretu (dogovor, poruke, uzbune) za slučaj da ti zatreba za policiju.",
+    "backToApp": "Natrag u aplikaciju"
+  },
+  "report": {
+    "title": "Prijavi",
+    "intro": "Prijava je anonimna. Usto ćemo tu osobu blokirati, pa se više nećete vidjeti.",
+    "introWithName": "{name}. Prijava je anonimna. Usto ćemo tu osobu blokirati, pa se više nećete vidjeti.",
+    "detailsLabel": "Detalji (neobavezno)",
+    "submit": "Prijavi",
+    "thanksTitle": "Hvala",
+    "thanksMessage": "Primili smo tvoju prijavu. Više se nećete vidjeti."
+  },
+  "chat": {
+    "unavailable": "Chat nije dostupan",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km od tebe",
+    "reportOrBlock": "Prijavi ili blokiraj",
+    "photo": "Fotografija",
+    "photoBlurred": "Zamućena fotografija, dodirni za prikaz",
+    "tapToReveal": "Dodirni za prikaz",
+    "sendPhoto": "Pošalji fotografiju",
+    "message": "Poruka",
+    "messagePlaceholder": "Napiši poruku…",
+    "send": "Pošalji",
+    "report": "Prijavi",
+    "block": "Blokiraj",
+    "unmatch": "Poništi match",
+    "blockConfirmTitle": "Blokirati?",
+    "blockConfirmMessage": "Ti i {name} više se nećete vidjeti, a chat će nestati."
+  },
+  "safetySettings": {
+    "title": "Sigurnost i privatnost",
+    "trustedLabel": "Osoba od povjerenja",
+    "trustedHint": "Kad započneš susret, poslat ćemo joj SMS s poveznicom na tvoju lokaciju. Upozorit ćemo je ako se ne javiš ili pokreneš uzbunu.",
+    "nameLabel": "Ime",
+    "namePlaceholder": "Npr. Saša",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+385 91 123 4567",
+    "pinsLabel": "PIN i hitni PIN",
+    "pinsHint": "Tijekom susreta PIN-om potvrđuješ da si dobro. Hitni PIN izgleda potpuno isto, ali tiho šalje uzbunu – upotrijebi ga ako te netko prisiljava da aplikaciji kažeš da je sve u redu.",
+    "checkinPinLabel": "PIN (4–6 znamenki)",
+    "duressPinLabel": "Hitni PIN (različit od PIN-a)",
+    "passwordLabel": "Lozinka računa (za promjenu PIN-ova)",
+    "pinsSet": "PIN-ovi su postavljeni",
+    "change": "Promijeni",
+    "privacyLabel": "Privatnost",
+    "appLock": "Zaključavanje aplikacije",
+    "appLockHint": "Face ID, otisak prsta ili šifra mobitela svaki put kad otvoriš aplikaciju.",
+    "discreet": "Diskretni način",
+    "discreetHint": "Neutralna ikona i obavijesti bez sadržaja – nitko ne može prepoznati o kojoj je aplikaciji riječ.",
+    "save": "Spremi"
+  },
+  "tabs": {
+    "discover": "Otkrivaj",
+    "matches": "Poruke",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Još {count} lajk.",
+      "few": "Još {count} lajka.",
+      "other": "Još {count} lajkova."
+    },
+    "boostRunningUntil": "Boost traje do {time}.",
+    "tonight": "Večeras",
+    "tonightOn": "Večeras – uključeno",
+    "boost": "Boost",
+    "boostOn": "Boost je uključen",
+    "searchSettings": "Postavke pretraživanja",
+    "traveling": "Na putu",
+    "travelingIn": "Na putu · {city}",
+    "change": "Promijeni",
+    "enableLocation": "Dopusti lokaciju",
+    "addPhoto": "Dodaj fotografiju",
+    "retry": "Pokušaj ponovno",
+    "empty": "Trenutno nema nikoga drugog u blizini. Pokušaj kasnije ili proširi pretragu.",
+    "refresh": "Osvježi",
+    "nextPhoto": "Sljedeća fotografija",
+    "stampLike": "DA",
+    "stampNope": "NE",
+    "superLikedYou": "Super lajk za tebe",
+    "distance": "{km} km od tebe",
+    "rewind": "Vrati zadnji swajp",
+    "pass": "Preskoči",
+    "superLike": "Super lajk",
+    "like": "Sviđa mi se",
+    "boostSheet": {
+      "title": "Pokrenuti boost?",
+      "messageMonthly": "30 minuta bit ćeš na vrhu kod ljudi u blizini. Koristi se mjesečni boost iz tvoje pretplate.",
+      "messageCredits": "30 minuta bit ćeš na vrhu kod ljudi u blizini. Preostalo ti je {count}×.",
+      "confirm": "Pokreni boost",
+      "done": "Boost je uključen – 30 minuta si na vrhu."
+    },
+    "tonightSheet": {
+      "title": "Uključiti „Večeras“?",
+      "message": "Do 6:00 ujutro pojavljivat ćeš se više kod ljudi u blizini, s oznakom „Večeras“. Možeš to isključiti bilo kad.",
+      "messageCredits": "Do 6:00 ujutro pojavljivat ćeš se više kod ljudi u blizini, s oznakom „Večeras“. Možeš to isključiti bilo kad. Preostalo ti je {count}×.",
+      "confirm": "Uključi",
+      "done": "„Večeras“ je uključeno do 6:00."
+    },
+    "tonightOffSheet": {
+      "title": "„Večeras“ je uključeno",
+      "message": "Aktivno do {time}.",
+      "confirm": "Isključi",
+      "done": "„Večeras“ je isključeno."
+    }
+  },
+  "matches": {
+    "title": "Poruke",
+    "agreement": {
+      "pending": "Dogovor na čekanju",
+      "confirmed": "Dogovor potvrđen",
+      "revoked": "Dogovor otkazan"
+    },
+    "likes": "Lajkovi",
+    "likedBy": {
+      "one": "{count} osoba te lajkala",
+      "few": "{count} osobe su te lajkale",
+      "other": "{count} osoba te lajkalo"
+    },
+    "likedByLocked": {
+      "one": "{count} osoba te lajkala – uz Gold vidiš tko",
+      "few": "{count} osobe su te lajkale – uz Gold vidiš tko",
+      "other": "{count} osoba te lajkalo – uz Gold vidiš tko"
+    },
+    "likesHint": "Tko je lajkao tebe, a koga ti",
+    "empty": "Još nema matcheva. Swajpaj dalje – kad se svidite jedno drugom, pojavit će se ovdje.",
+    "lastMessageMine": "Ti: {text}",
+    "newMatch": "Novi match – pošalji prvu poruku."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Spremanje…",
+    "saved": "Spremljeno",
+    "done": "Gotovo",
+    "suspended": {
+      "title": "Tvoj račun je suspendiran",
+      "subtitle": "Provjeravamo prijavu. Sigurnosni način i dalje ti radi."
+    },
+    "photoA11y": "Fotografija – drži za brisanje",
+    "addPhoto": "Dodaj fotografiju",
+    "photoHint": "Bez golotinje – fotografije moraju poštovati pravila trgovina aplikacija. Drži fotografiju da je izbrišeš.",
+    "name": "Ime",
+    "bio": "O meni",
+    "bioPlaceholder": "Par rečenica o sebi.",
+    "lookingFor": "Tražim",
+    "safety": {
+      "title": "Sigurnost i privatnost",
+      "trusted": "Osoba od povjerenja: {name}",
+      "setup": "Postavi osobu od povjerenja i PIN.",
+      "edit": "Uredi"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold i Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Neograničeni lajkovi, tko te lajkao, boost i više.",
+      "validUntil": "Vrijedi do {date}.",
+      "upgrade": "Nadogradi",
+      "manage": "Upravljaj"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Vide te samo oni koje lajkaš. (Plus)"
+    },
+    "travel": {
+      "label": "Na putu (Plus)",
+      "home": "Kod kuće",
+      "hint": "Swajpaj u drugom gradu i prije putovanja – ljudi ondje vidjet će te s oznakom „Na putu“."
+    },
+    "showMe": "Prikaži mi",
+    "ageFrom": "Dob od",
+    "ageTo": "Dob do",
+    "distance": "Udaljenost",
+    "distanceSuffix": " km",
+    "save": "Spremi profil",
+    "language": {
+      "title": "Jezik",
+      "device": "Kao na mobitelu",
+      "rtlHint": "Kod jezika koji se pišu zdesna nalijevo raspored se okreće tek nakon ponovnog pokretanja aplikacije."
+    },
+    "signOut": "Odjavi se",
+    "deletePassword": "Lozinka za brisanje računa",
+    "deleteForever": "Trajno izbriši račun",
+    "deleteAccount": "Izbriši račun",
+    "removePhoto": {
+      "title": "Izbrisati fotografiju?",
+      "confirm": "Izbriši"
+    }
+  },
+  "premium": {
+    "title": "Pretplata",
+    "free": {
+      "title": "F*app je zasad besplatan",
+      "body": "Plaćene značajke uključit ćemo kasnije. Sigurnost – provjera identiteta, dogovori, sigurnosni način i SOS – uvijek će ostati besplatna."
+    },
+    "back": "Natrag",
+    "done": "Gotovo",
+    "continue": "Nastavi",
+    "reason": {
+      "likeLimitAt": "Ponestalo ti je lajkova. Novi stižu u {time}.",
+      "likeLimit": "Ponestalo ti je lajkova. Novi stižu uskoro.",
+      "noCredit": "{credit} možeš dobiti jednokratno ili uz pretplatu.",
+      "upgrade": "Ovo je dio paketa F*app {plan}."
+    },
+    "oneOff": "Jednokratno",
+    "owned": "imaš {count}",
+    "creditDetail": {
+      "boost": "30 minuta na vrhu kod ljudi u blizini.",
+      "superlike": "Vidjet će da ti se stvarno sviđa.",
+      "tonight": "Više kod ljudi u blizini do 6:00 ujutro, s oznakom „Večeras“."
+    },
+    "buyCredit": "Kupi {amount}× {credit} za {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Imaš {count} dodatni boost.",
+        "few": "Imaš {count} dodatna boosta.",
+        "other": "Imaš {count} dodatnih boostova."
+      },
+      "superlike": {
+        "one": "Imaš {count} dodatni super lajk.",
+        "few": "Imaš {count} dodatna super lajka.",
+        "other": "Imaš {count} dodatnih super lajkova."
+      },
+      "tonight": {
+        "one": "Imaš {count}× dodatno „Večeras“.",
+        "few": "Imaš {count}× dodatno „Večeras“.",
+        "other": "Imaš {count}× dodatno „Večeras“."
+      }
+    },
+    "currentPlan": "Imaš F*app {plan}",
+    "validUntil": "Vrijedi do {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swajpaj bez ograničenja i vrati greškom preskočene profile.",
+      "gold": "Vidi tko te lajkao – i spoji se jednim dodirom.",
+      "platinum": "Tvoj lajk vide prvi. I „Večeras“ bilo kad."
+    },
+    "featureIncluded": "{feature}: uključeno",
+    "featureNotIncluded": "{feature}: nije uključeno",
+    "months": {
+      "one": "{count} mjesec",
+      "few": "{count} mjeseca",
+      "other": "{count} mjeseci"
+    },
+    "perMonth": "mjesečno",
+    "perMonthSave": "mjesečno · −{percent} %",
+    "continueWithPrice": "Nastavi · {price}",
+    "planBought": {
+      "one": "Imaš F*app {plan} na {count} mjesec.",
+      "few": "Imaš F*app {plan} na {count} mjeseca.",
+      "other": "Imaš F*app {plan} na {count} mjeseci."
+    },
+    "renewal": "Pretplata se automatski obnavlja. Možeš je otkazati bilo kad u postavkama App Storea ili Google Playa. Cijena je ista za sve.",
+    "renewalUpfront": "Plaćaš {total} unaprijed ({monthly} mjesečno). Pretplata se automatski obnavlja. Možeš je otkazati bilo kad u postavkama App Storea ili Google Playa. Cijena je ista za sve.",
+    "safetyFree": {
+      "title": "Sigurnost je uvijek besplatna",
+      "subtitle": "Provjera identiteta, dogovori, sigurnosni način, SOS i prijave."
+    },
+    "devNote": "Prototip: ništa se ne naplaćuje, kupnja je samo simulirana."
+  },
+  "likes": {
+    "title": "Lajkovi",
+    "received": "Lajkali su te",
+    "receivedCount": "Lajkali su te · {count}",
+    "sent": "Poslani",
+    "emptyReceived": "Još nema novih lajkova.",
+    "superLike": "Super lajk",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} osoba te lajkala",
+      "few": "{count} osobe su te lajkale",
+      "other": "{count} osoba te lajkalo"
+    },
+    "lockedEmpty": "Ovdje će se pojaviti tvoji lajkovi",
+    "goldText": "Uz F*app Gold vidjet ćeš tko su i spojiti se jednim dodirom.",
+    "goldCta": "Vidi ih uz Gold",
+    "emptySent": "U zadnjih 7 dana nema lajkova bez matcha.",
+    "superLikePending": "Super lajk · čeka",
+    "pending": "Čeka odgovor",
+    "sentTitle": "Koga si lajkao/la",
+    "platinumText": "Uz F*app Platinum vidjet ćeš svoje lajkove iz zadnjih 7 dana.",
+    "platinumCta": "Vidi ih uz Platinum",
+    "likeBack": "Uzvrati lajk",
+    "pass": "Preskoči"
+  },
+  "match": {
+    "title": "Imate match!",
+    "body": "Ti i {name} želite jedno drugo.\nJavi se i dogovorite za što ste.",
+    "sendMessage": "Pošalji poruku",
+    "keepDiscovering": "Nastavi otkrivati"
+  },
+  "login": {
+    "title": "Prijava",
+    "email": "E-mail",
+    "password": "Lozinka",
+    "submit": "Prijavi se"
+  },
+  "register": {
+    "title": "Izradi račun",
+    "name": "Ime (vide ga drugi)",
+    "email": "E-mail",
+    "password": "Lozinka (najmanje 10 znakova)",
+    "birthdate": "Datum rođenja",
+    "birthdatePlaceholder": "DD. MM. GGGG",
+    "birthdateInvalid": "Unesi datum rođenja kao DD. MM. GGGG.",
+    "iAm": "Ja sam",
+    "showMe": "Prikaži mi",
+    "confirmAdult": "Imam 18 ili više godina.",
+    "acceptRules": "Prihvaćam pravila zajednice i obradu svojih podataka, uključujući podatke o spolnom životu, kako bi F*app mogao raditi.",
+    "verifyNote": "Odmah nakon toga provjerit ćemo tvoj identitet i dob (osobni dokument i selfie). Tvoj dokument ne pohranjujemo.",
+    "continue": "Nastavi"
+  },
+  "verify": {
+    "title": "Potvrdi da si to ti",
+    "intro": "Svatko u aplikaciji F*app ima provjeren identitet i dob. Fotografirat ćeš osobni dokument i snimiti selfie – traje otprilike dvije minute.",
+    "privacy": "Ne pohranjujemo tvoj dokument ni fotografije. Čuvamo samo rezultat provjere i datum rođenja. Tko prekrši pravila, ne može se vratiti s novim računom.",
+    "pending": {
+      "title": "Čekamo rezultat provjere",
+      "subtitle": "Obično traje nekoliko minuta.",
+      "refresh": "Osvježi"
+    },
+    "declined": "Provjera nije uspjela",
+    "devApprove": "Simuliraj uspješnu provjeru (testni način)",
+    "retry": "Pokušaj ponovno",
+    "start": "Provjeri identitet",
+    "signOut": "Odjavi se"
+  },
+  "common": {
+    "back": "Natrag",
+    "cancel": "Odustani",
+    "close": "Zatvori",
+    "save": "Spremi",
+    "retry": "Pokušaj ponovno",
+    "continue": "Nastavi",
+    "done": "Gotovo",
+    "send": "Pošalji",
+    "delete": "Izbriši",
+    "edit": "Uredi",
+    "open": "Otvori",
+    "show": "Prikaži",
+    "confirm": "Potvrdi",
+    "errorGeneric": "Nešto je pošlo po zlu."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} ima uključen sigurnosni način",
+    "partnerSafetySubtitle": "Osoba od povjerenja zna gdje je i s kim.",
+    "meetupTitle": "Susret je u tijeku",
+    "meetupSubtitle": "Sigurnosni način je uključen.",
+    "missingTitle": "Još nema dogovora",
+    "missingSubtitle": "Svatko ispuni za što je – vidjet ćete samo gdje se podudarate.",
+    "fill": "Ispuni",
+    "revokedByMeTitle": "Otkazao/la si dogovor",
+    "revokedByPartnerTitle": "{name} je otkazao/la dogovor",
+    "revokedSubtitle": "Susret otpada.",
+    "revokedCooldownSubtitle": "Susret otpada. Novi dogovor može započeti samo {name}.",
+    "newAgreement": "Novi dogovor",
+    "confirmedTitle": "Dogovor je gotov",
+    "confirmedSubtitle": "Na licu mjesta svatko od vas može se bilo kada predomisliti.",
+    "partnerFilledTitle": "{name} je ispunio/la dogovor",
+    "waitingForYouTitle": "Dogovor čeka tebe",
+    "fillYoursSubtitle": "Ispuni za što si ti – vidjet ćete samo gdje se podudarate.",
+    "partnerPendingTitle": "{name} još nije ispunio/la",
+    "partnerPendingSubtitle": "Dogovor je gotov kad ga oboje ispunite."
+  },
+  "fakeCall": {
+    "incoming": "mobitel…",
+    "hangUp": "Prekini",
+    "decline": "Odbij",
+    "accept": "Prihvati"
+  },
+  "homeBanners": {
+    "meetupTitle": "Susret u tijeku · {name}",
+    "missedCheckIn": "Javljanje je propušteno!",
+    "safetyOn": "Sigurnosni način je uključen.",
+    "feedbackTitle": "Kako je prošao susret?",
+    "feedbackSubtitle": "{name} – tvoj odgovor vidi samo naš tim.",
+    "feedbackAction": "Odgovori"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "Unesena {count} znamenka",
+      "few": "Unesene {count} znamenke",
+      "other": "Uneseno {count} znamenki"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, manje",
+    "stepperIncrease": "{label}, više"
+  },
+  "api": {
+    "offline": "Nije moguće spojiti se s poslužiteljem. Provjeri vezu."
+  },
+  "billing": {
+    "storeNotConnected": "Kupnje putem App Storea i Google Playa još nisu postavljene."
+  },
+  "notifications": {
+    "channelName": "Obavijesti",
+    "reminderDiscreet": "Podsjetnik",
+    "checkInTitle": "Vrijeme je za javljanje",
+    "checkInBody": "Potvrdi PIN-om da si dobro.",
+    "fakeCallBody": "Dolazni poziv"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Dijeljenje lokacije je uključeno",
+    "notificationBody": "Možeš ga zaustaviti u aplikaciji."
+  },
+  "appLock": {
+    "prompt": "Otključaj F*app",
+    "lockedTitle": "Aplikacija je zaključana",
+    "lockedBody": "Otključaj je Face ID-jem, otiskom prsta ili šifrom mobitela.",
+    "sosHold": "SOS – pritisni i drži",
+    "unlock": "Otključaj",
+    "sosSentTitle": "Uzbuna je poslana",
+    "sosSentBody": "{name} je dobio/la upozorenje s tvojom lokacijom.",
+    "sosSentBodyNoName": "Tvoja osoba od povjerenja dobila je upozorenje s tvojom lokacijom.",
+    "sosFailedTitle": "Slanje nije uspjelo"
+  },
+  "native": {
+    "locationWhenInUse": "F*app treba tvoju lokaciju kako bi ti prikazao ljude u blizini i, tijekom susreta, podijelio je s tvojom osobom od povjerenja.",
+    "locationAlways": "Tijekom susreta F*app dijeli tvoju lokaciju s osobom od povjerenja, čak i kad je zaslon isključen. Izvan susreta ne koristi tvoju lokaciju u pozadini.",
+    "faceId": "F*app koristi Face ID za otključavanje, da nitko drugi ne može zaviriti unutra.",
+    "photos": "Odaberi fotografije za svoj profil.",
+    "camera": "Fotografiraj se za svoj profil."
+  }
+}

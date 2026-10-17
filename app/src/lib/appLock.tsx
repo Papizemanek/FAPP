@@ -3,6 +3,7 @@ import * as ScreenCapture from 'expo-screen-capture';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Alert, AppState, StyleSheet, View } from 'react-native';
 import { Body, Button, Logo, Title } from '@/components/ui';
+import { i18n, useT } from '@/lib/i18n';
 import { api, errorMessage, type SafetySession } from './api';
 import { storage } from './storage';
 import { colors } from './theme';
@@ -20,7 +21,7 @@ async function authenticate() {
   const hasHardware = await LocalAuthentication.hasHardwareAsync();
   const enrolled = hasHardware && (await LocalAuthentication.isEnrolledAsync());
   if (!enrolled) return true; // bez zabezpečení telefonu nemá zámek čím ověřit – nezamykat natrvalo
-  const result = await LocalAuthentication.authenticateAsync({ promptMessage: 'Odemknout F*app', cancelLabel: 'Zrušit' });
+  const result = await LocalAuthentication.authenticateAsync({ promptMessage: i18n.t('appLock.prompt'), cancelLabel: i18n.t('common.cancel') });
   return result.success;
 }
 
@@ -65,6 +66,7 @@ export function AppLockProvider({ children, signedIn }: { children: ReactNode; s
 }
 
 function LockScreen({ onUnlock, signedIn }: { onUnlock: () => void; signedIn: boolean }) {
+  const t = useT();
   const [active, setActive] = useState<SafetySession[]>([]);
 
   const unlock = useCallback(async () => {
@@ -79,9 +81,10 @@ function LockScreen({ onUnlock, signedIn }: { onUnlock: () => void; signedIn: bo
   const sos = async () => {
     try {
       await Promise.all(active.map((s) => api('POST', `/safety/${s.id}/sos`)));
-      Alert.alert('Poplach odeslán', `${active[0]?.trustedName ?? 'Důvěryhodná osoba'} dostal/a upozornění s tvou polohou.`);
+      const name = active[0]?.trustedName;
+      Alert.alert(t('appLock.sosSentTitle'), name ? t('appLock.sosSentBody', { name }) : t('appLock.sosSentBodyNoName'));
     } catch (err) {
-      Alert.alert('Nepodařilo se odeslat', errorMessage(err));
+      Alert.alert(t('appLock.sosFailedTitle'), errorMessage(err));
     }
   };
 
@@ -89,12 +92,12 @@ function LockScreen({ onUnlock, signedIn }: { onUnlock: () => void; signedIn: bo
     <View style={[StyleSheet.absoluteFill, s.wrap]}>
       <View style={s.center}>
         <Logo size={56} />
-        <Title style={{ fontSize: 22 }}>Aplikace je zamčená</Title>
-        <Body muted>Odemkni ji Face ID, otiskem nebo kódem telefonu.</Body>
+        <Title style={{ fontSize: 22 }}>{t('appLock.lockedTitle')}</Title>
+        <Body muted>{t('appLock.lockedBody')}</Body>
       </View>
       <View style={{ gap: 12 }}>
-        {active.length > 0 ? <Button variant="sos" label="SOS – podrž" onLongPress={sos} height={64} /> : null}
-        <Button label="Odemknout" onPress={unlock} />
+        {active.length > 0 ? <Button variant="sos" label={t('appLock.sosHold')} onLongPress={sos} height={64} /> : null}
+        <Button label={t('appLock.unlock')} onPress={unlock} />
       </View>
     </View>
   );

@@ -1,0 +1,677 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Man",
+      "woman": "Vrouw",
+      "nonbinary": "Non-binair"
+    },
+    "gendersPlural": {
+      "man": "Mannen",
+      "woman": "Vrouwen",
+      "nonbinary": "Non-binaire personen"
+    },
+    "tags": {
+      "oneoff": "Eenmalig",
+      "repeat": "Steeds weer",
+      "myplace": "Bij mij",
+      "yourplace": "Bij jou",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Zoenen en knuffelen",
+      "oral": "Oraal",
+      "vaginal": "Vaginaal",
+      "anal": "Anaal",
+      "toys": "Speeltjes",
+      "overnight": "Blijven slapen"
+    },
+    "wishes": {
+      "yes": "Ja",
+      "maybe": "Misschien",
+      "no": "Nee"
+    },
+    "reportReasons": {
+      "consent": "Schond toestemming of grenzen",
+      "violence": "Geweld of bedreiging",
+      "minor": "Vermoedelijk minderjarig",
+      "harassment": "Intimidatie",
+      "fake": "Nepprofiel",
+      "paid": "Biedt betaalde diensten aan",
+      "other": "Anders"
+    },
+    "feedbackReasons": {
+      "consent": "Respecteerde grenzen of ‘stop’ niet",
+      "safety": "Ik voelde me bedreigd",
+      "fake": "Zag er anders uit dan op de foto’s",
+      "other": "Iets anders"
+    },
+    "plans": {
+      "free": "Gratis",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Onbeperkt liken",
+        "detail": "Swipe zoveel je wilt."
+      },
+      "rewind": {
+        "name": "Terugdraaien",
+        "detail": "Haal een per ongeluk afgewezen profiel terug."
+      },
+      "travel": {
+        "name": "Reismodus",
+        "detail": "Swipe al in een andere stad vóór je reis."
+      },
+      "incognito": {
+        "name": "Incognito",
+        "detail": "Alleen wie jij liket, ziet jou."
+      },
+      "seeLikes": {
+        "name": "Zie wie jou liket",
+        "detail": "Zie iedereen die jou heeft geliket."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes per week",
+        "detail": "Laat iemand zien dat je echt interesse hebt."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost per maand",
+        "detail": "30 minuten bovenaan bij mensen in de buurt."
+      },
+      "priorityLikes": {
+        "name": "Voorrangslikes",
+        "detail": "Jouw like wordt eerder gezien dan die van anderen."
+      },
+      "sentLikes": {
+        "name": "Verstuurde likes",
+        "detail": "Wie jij de afgelopen 7 dagen hebt geliket."
+      },
+      "tonight": {
+        "name": "Vanavond, wanneer je wilt",
+        "detail": "Laat zien dat je vanavond nog tijd hebt."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Vanavond"
+    },
+    "cities": {
+      "praha": "Praag",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Pilsen",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Wenen",
+      "berlin": "Berlijn"
+    }
+  },
+  "consent": {
+    "intent": "Zo zie ik het voor me. Ter plekke kan ik overal nee tegen zeggen – en de ander ook.",
+    "notice": "Ik begrijp het: toestemming geldt alleen hier en nu. ‘Nee’, ‘stop’, het stopwoord, stilte, verstijven of dronken zijn is geen toestemming. Een afspraak in de app ontslaat niemand van verantwoordelijkheid.",
+    "deterrence": "Iedereen op F*app heeft een geverifieerde identiteit. Bij een vermoeden van een misdrijf geven we die door aan de politie."
+  },
+  "welcome": {
+    "tagline": "Seks zonder gedoe.",
+    "taglineStrong": "Alleen als jullie allebei ja zeggen.",
+    "createAccount": "Account maken",
+    "signIn": "Inloggen",
+    "adultsOnly": "Alleen voor 18+. Iedereen hier heeft een geverifieerde identiteit."
+  },
+  "agreement": {
+    "title": "Afspraak",
+    "titleWithName": "Afspraak · {name}",
+    "timeFormatError": "Vul de tijd in als UU:MM, bijv. 21:00.",
+    "revokedByPartnerTitle": "{name} heeft de afspraak ingetrokken",
+    "revokedByPartnerSubtitle": "Alleen {name} kan nu een nieuwe afspraak starten.",
+    "revokedTitle": "De afspraak is ingetrokken",
+    "revokedSubtitle": "Je kunt een nieuwe starten.",
+    "newTitle": "Nieuwe afspraak",
+    "newSubtitle": "Jullie vullen elk apart je eigen deel in. Je ziet alleen waar jullie het over eens zijn.",
+    "logisticsChangedTitle": "Je wijzigt de tijd, plek of regels",
+    "logisticsChangedSubtitle": "{name} moet ze opnieuw bevestigen.",
+    "confirmedTitle": "Jullie hebben de afspraak allebei ingevuld",
+    "confirmedSubtitle": "Ter plekke kunnen jullie op elk moment van gedachten veranderen.",
+    "myPartDoneTitle": "Jouw deel is klaar",
+    "myPartDoneSubtitle": "{name} heeft nog niet ingevuld of bevestigd.",
+    "partnerFilledTitle": "Het deel van {name} is ingevuld",
+    "partnerFilledSubtitle": "Vul het jouwe in – je ziet alleen waar jullie het over eens zijn.",
+    "fillTitle": "Vul jouw deel in",
+    "fillSubtitle": "Je ziet alleen waar jullie het over eens zijn.",
+    "overlapTitle": "Waar jullie het over eens zijn",
+    "overlapNone": "Nog geen overeenkomsten.",
+    "overlapYes": "Jullie willen allebei",
+    "overlapMaybe": "Misschien – bespreek het ter plekke",
+    "partnerNote": "{name}: ‘{note}’",
+    "overlapHint": "Wat een van jullie niet wil, ziet niemand – zelfs niet wie het was.",
+    "wishesLabel": "Waar ik zin in heb",
+    "wishesHint": "{name} ziet alleen waar jullie het over eens zijn. Jouw ‘nee’ ziet niemand.",
+    "wishesHintNoName": "De ander ziet alleen waar jullie het over eens zijn.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Mijn grenzen (de ander ziet ze ook)",
+    "notePlaceholder": "Bijv. geen foto’s, ik wil je eerst leren kennen.",
+    "logisticsLabel": "Praktische zaken – geldt voor jullie allebei",
+    "today": "Vandaag",
+    "tomorrow": "Morgen",
+    "timeLabel": "Tijd",
+    "placeLabel": "Waar",
+    "placePlaceholder": "Bijv. bij mij, Vinohrady",
+    "safewordLabel": "Stopwoord",
+    "safewordPlaceholder": "Een woord dat alles stopt",
+    "condom": "Altijd met condoom",
+    "sober": "Nuchter",
+    "soberHint": "Dronken zijn is geen toestemming.",
+    "publicFirst": "We zien elkaar eerst op een openbare plek",
+    "publicFirstHint": "Een café of bar – of jullie verdergaan, beslissen jullie daar samen.",
+    "partnerMayShare": "Tijdens de date kan {name} je naam, foto en de ontmoetingsplek delen met een eigen vertrouwenspersoon.",
+    "saveAndConfirm": "Opslaan en bevestigen",
+    "startMeetup": "Date starten",
+    "revoke": "Afspraak intrekken",
+    "revokeConfirmTitle": "Afspraak intrekken?",
+    "revokeConfirmMessage": "De date gaat niet door. Je hoeft niets uit te leggen – {name} krijgt alleen een melding."
+  },
+  "meetup": {
+    "title": "Date · {name}",
+    "fakeCallerDefault": "Mama",
+    "endedTitle": "Date beëindigd",
+    "endedMessage": "{name} heeft een bericht gekregen dat alles goed met je is.",
+    "sosFailed": "Het alarm kon niet worden verstuurd: {error} Probeer het opnieuw of bel {name}.",
+    "needAgreementTitle": "Rond eerst de afspraak af",
+    "needAgreementSubtitle": "Je kunt de date starten zodra jullie de afspraak allebei hebben ingevuld en bevestigd.",
+    "needAgreementAction": "Afspraak",
+    "setupTitle": "Stel je veiligheid in",
+    "setupSubtitle": "Een vertrouwenspersoon, een pincode en een noodpincode.",
+    "setupAction": "Instellen",
+    "pointTrusted": "{name} krijgt een sms met een link en ziet waar je bent, met wie en of alles goed met je is.",
+    "pointTrustedNoName": "Je vertrouwenspersoon krijgt een sms met een link en ziet waar je bent, met wie en of alles goed met je is.",
+    "pointCheckIn": "Met vaste tussenpozen bevestig je met je pincode dat alles oké is. Check je niet in, dan sturen we een waarschuwing – ook als je telefoon leeg is.",
+    "pointDuress": "De noodpincode lijkt precies op je gewone pincode, maar slaat ongemerkt alarm.",
+    "pointPartner": "{name} ziet dat je de veiligheidsmodus aan hebt en dat je vertrouwenspersoon weet waar en met wie je bent. Meer niet – geen alarm en geen locatie.",
+    "intervalLabel": "Bevestigen dat ik oké ben, elke",
+    "minutes": "{count} min",
+    "start": "Date starten",
+    "locationVisibleTo": "{name} ziet je locatie",
+    "bgLocationTitle": "Locatie alleen als de app open is",
+    "bgLocationSubtitle": "Zet locatietoegang op ‘Altijd’, zodat je locatie ook zichtbaar is als je scherm uit staat.",
+    "bgLocationAction": "Instellingen",
+    "nextCheckIn": "Volgende check-in over",
+    "checkIn": "Check-in",
+    "now": "nu",
+    "imOk": "Ik ben oké",
+    "overdueHint": "{name} is gewaarschuwd. Bevestig met je pincode dat alles goed met je is.",
+    "graceHint": {
+      "one": "Check je niet binnen {count} minuut na het afgesproken tijdstip in, dan krijgt {name} een waarschuwing met je locatie.",
+      "other": "Check je niet binnen {count} minuten na het afgesproken tijdstip in, dan krijgt {name} een waarschuwing met je locatie."
+    },
+    "partnerSafetyOn": "{name} heeft de veiligheidsmodus ook aan – een vertrouwenspersoon weet waar de date is en met wie.",
+    "partnerSafetyOff": "{name} heeft de veiligheidsmodus niet aan.",
+    "fakeCall": "Nepoproep",
+    "fakeCallIn": "Oproep over {count} s",
+    "fakeCallHint": "Over {count} s gaat de nepoproep over als een echt gesprek – jouw smoesje om weg te gaan.",
+    "shareLink": "Link sturen",
+    "sos": "SOS – vasthouden",
+    "revoke": "Afspraak intrekken",
+    "end": "Date beëindigen",
+    "sosSentTitle": "Alarm verstuurd",
+    "sosSentBody": "{trusted} heeft je exacte locatie gekregen en weet met wie je bent. {partner} ziet niets.",
+    "sosMistake": "Het was een vergissing – ik ben oké",
+    "sosHide": "Verbergen (alarm blijft actief)",
+    "pinTitle": "Bevestig met je pincode",
+    "pinSubtitleOk": "Dat alles goed met je is.",
+    "pinSubtitleEnd": "Dat de date voorbij is en alles goed met je is.",
+    "revokeConfirmTitle": "Afspraak intrekken?",
+    "revokeConfirmMessage": "{name} krijgt een melding. Je hoeft niets uit te leggen. De veiligheidsmodus blijft aan tot je hem beëindigt."
+  },
+  "feedback": {
+    "title": "Hoe ging de date?",
+    "privacy": "Alleen ons team ziet je antwoord – {name} nooit. Zo houden we dit een plek voor mensen die grenzen respecteren.",
+    "privacyNoName": "Alleen ons team ziet je antwoord – de ander nooit. Zo houden we dit een plek voor mensen die grenzen respecteren.",
+    "allGood": "Alles was in orde",
+    "somethingWrong": "Er was iets niet in orde",
+    "detailsLabel": "Wat is er gebeurd? (optioneel)",
+    "preserve": "Gegevens van de date bewaren voor het geval je naar de politie moet. Anders wordt de afspraak na 48 uur verwijderd.",
+    "suspendNotice": "Als iemand je niet respecteerde of je in gevaar bent, schorten we het account meteen op en zoeken we het uit.",
+    "send": "Versturen",
+    "helpTitle": "Het spijt ons",
+    "helpIntro": "We zoeken het uit en hebben het account van de ander tijdens het onderzoek opgeschort. Je hoeft nu nog niet te beslissen wat je verder doet – en niets hiervan is jouw schuld.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Hulplijn voor slachtoffers van misdrijven – Bílý kruh bezpečí",
+        "detail": "24/7, gratis, en je kunt anoniem blijven."
+      },
+      "police": {
+        "name": "Tsjechische politie",
+        "detail": "Als je aangifte wilt doen – ook later."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Steun voor mensen die seksueel geweld hebben meegemaakt."
+      }
+    },
+    "helpLocal": {
+      "name": "Waar je hulp vindt",
+      "detail": "Neem contact op met de lokale politie of een lokale hulplijn voor slachtoffers van misdrijven en seksueel geweld."
+    },
+    "medical": "Als er iets tegen je wil is gebeurd, zoek dan zo snel mogelijk medische hulp – ook om zwangerschap en infecties te voorkomen, want sommige medicijnen werken alleen binnen 72 uur. Sporen kunnen nog worden veiliggesteld als je nog niet hebt gedoucht en je kleding bewaart. Maar niets hiervan is verplicht – je kunt ook later nog aangifte doen.",
+    "preserved": "We hebben de gegevens van de date (afspraak, berichten, alarmen) bewaard, voor het geval je ze nodig hebt voor de politie.",
+    "backToApp": "Terug naar de app"
+  },
+  "report": {
+    "title": "Melden",
+    "intro": "Je melding is anoniem. We blokkeren die persoon ook voor je, zodat jullie elkaar niet meer zien.",
+    "introWithName": "{name}. Je melding is anoniem. We blokkeren die persoon ook voor je, zodat jullie elkaar niet meer zien.",
+    "detailsLabel": "Details (optioneel)",
+    "submit": "Melden",
+    "thanksTitle": "Bedankt",
+    "thanksMessage": "We hebben je melding ontvangen. Jullie zien elkaar niet meer."
+  },
+  "chat": {
+    "unavailable": "Chat niet beschikbaar",
+    "nameAge": "{name}, {age}",
+    "distance": "Op {km} km afstand",
+    "reportOrBlock": "Melden of blokkeren",
+    "photo": "Foto",
+    "photoBlurred": "Wazige foto, tik om te tonen",
+    "tapToReveal": "Tik om te tonen",
+    "sendPhoto": "Foto sturen",
+    "message": "Bericht",
+    "messagePlaceholder": "Schrijf een bericht…",
+    "send": "Versturen",
+    "report": "Melden",
+    "block": "Blokkeren",
+    "unmatch": "Match opheffen",
+    "blockConfirmTitle": "Blokkeren?",
+    "blockConfirmMessage": "Jij en {name} zien elkaar niet meer en de chat verdwijnt."
+  },
+  "safetySettings": {
+    "title": "Veiligheid en privacy",
+    "trustedLabel": "Vertrouwenspersoon",
+    "trustedHint": "Als je een date start, sturen we die persoon een sms met een link naar je locatie. We waarschuwen die persoon als je niet incheckt of alarm slaat.",
+    "nameLabel": "Naam",
+    "namePlaceholder": "Bijv. Alex",
+    "phoneLabel": "Telefoon",
+    "phonePlaceholder": "+31 6 12345678",
+    "pinsLabel": "Pincode en noodpincode",
+    "pinsHint": "Tijdens een date bevestig je met je pincode dat alles goed met je is. De noodpincode ziet er precies hetzelfde uit, maar stuurt ongemerkt een alarm – gebruik hem als iemand je dwingt de app te laten weten dat alles goed is.",
+    "checkinPinLabel": "Pincode (4–6 cijfers)",
+    "duressPinLabel": "Noodpincode (anders dan je pincode)",
+    "passwordLabel": "Accountwachtwoord (om pincodes te wijzigen)",
+    "pinsSet": "Pincodes zijn ingesteld",
+    "change": "Wijzigen",
+    "privacyLabel": "Privacy",
+    "appLock": "App-vergrendeling",
+    "appLockHint": "Face ID, vingerafdruk of de toegangscode van je telefoon, telkens als je de app opent.",
+    "discreet": "Discrete modus",
+    "discreetHint": "Een neutraal icoon en meldingen zonder inhoud – niemand ziet welke app het is.",
+    "save": "Opslaan"
+  },
+  "tabs": {
+    "discover": "Ontdekken",
+    "matches": "Berichten",
+    "profile": "Profiel"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Nog {count} like over.",
+      "other": "Nog {count} likes over."
+    },
+    "boostRunningUntil": "Boost loopt tot {time}.",
+    "tonight": "Vanavond",
+    "tonightOn": "Vanavond – aan",
+    "boost": "Boost",
+    "boostOn": "Boost loopt",
+    "searchSettings": "Zoekinstellingen",
+    "traveling": "Op reis",
+    "travelingIn": "Op reis · {city}",
+    "change": "Wijzigen",
+    "enableLocation": "Locatie toestaan",
+    "addPhoto": "Foto toevoegen",
+    "retry": "Opnieuw proberen",
+    "empty": "Er is nu niemand anders in de buurt. Probeer het later opnieuw of vergroot je zoekgebied.",
+    "refresh": "Vernieuwen",
+    "nextPhoto": "Volgende foto",
+    "stampLike": "JA",
+    "stampNope": "NEE",
+    "superLikedYou": "Gaf je een Super Like",
+    "distance": "Op {km} km afstand",
+    "rewind": "Laatste swipe ongedaan maken",
+    "pass": "Overslaan",
+    "superLike": "Super Like",
+    "like": "Like",
+    "boostSheet": {
+      "title": "Boost starten?",
+      "messageMonthly": "Je staat 30 minuten bovenaan bij mensen in de buurt. Hiervoor gebruik je de maandelijkse Boost uit je abonnement.",
+      "messageCredits": "Je staat 30 minuten bovenaan bij mensen in de buurt. Je hebt nog {count}×.",
+      "confirm": "Boost starten",
+      "done": "Boost loopt – je staat 30 minuten bovenaan."
+    },
+    "tonightSheet": {
+      "title": "‘Vanavond’ aanzetten?",
+      "message": "Tot 6:00 uur ’s ochtends sta je hoger bij mensen in de buurt, met het label ‘Vanavond’. Je kunt het altijd weer uitzetten.",
+      "messageCredits": "Tot 6:00 uur ’s ochtends sta je hoger bij mensen in de buurt, met het label ‘Vanavond’. Je kunt het altijd weer uitzetten. Je hebt nog {count}×.",
+      "confirm": "Aanzetten",
+      "done": "Vanavond staat aan tot 6:00 uur."
+    },
+    "tonightOffSheet": {
+      "title": "‘Vanavond’ staat aan",
+      "message": "Actief tot {time}.",
+      "confirm": "Uitzetten",
+      "done": "Vanavond staat uit."
+    }
+  },
+  "matches": {
+    "title": "Berichten",
+    "agreement": {
+      "pending": "Afspraak open",
+      "confirmed": "Afspraak bevestigd",
+      "revoked": "Afspraak ingetrokken"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} persoon heeft je geliket",
+      "other": "{count} mensen hebben je geliket"
+    },
+    "likedByLocked": {
+      "one": "{count} persoon heeft je geliket – zie wie met Gold",
+      "other": "{count} mensen hebben je geliket – zie wie met Gold"
+    },
+    "likesHint": "Wie jou heeft geliket en wie jij hebt geliket",
+    "empty": "Nog geen matches. Blijf swipen – zodra jullie elkaar allebei liken, verschijnen ze hier.",
+    "lastMessageMine": "Jij: {text}",
+    "newMatch": "Nieuwe match – stuur het eerste bericht."
+  },
+  "profile": {
+    "title": "Profiel",
+    "saving": "Opslaan…",
+    "saved": "Opgeslagen",
+    "done": "Klaar",
+    "suspended": {
+      "title": "Je account is opgeschort",
+      "subtitle": "We onderzoeken een melding. De veiligheidsmodus werkt gewoon voor je."
+    },
+    "photoA11y": "Foto – vasthouden om te verwijderen",
+    "addPhoto": "Foto toevoegen",
+    "photoHint": "Geen naaktheid – foto’s moeten voldoen aan de regels van de appstores. Houd een foto vast om hem te verwijderen.",
+    "name": "Naam",
+    "bio": "Over mij",
+    "bioPlaceholder": "Een paar regels over jezelf.",
+    "lookingFor": "Op zoek naar",
+    "safety": {
+      "title": "Veiligheid en privacy",
+      "trusted": "Vertrouwenspersoon: {name}",
+      "setup": "Stel een vertrouwenspersoon en een pincode in.",
+      "edit": "Bewerken"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold en Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Onbeperkt liken, zien wie je heeft geliket, Boost en meer.",
+      "validUntil": "Geldig tot {date}.",
+      "upgrade": "Upgraden",
+      "manage": "Beheren"
+    },
+    "incognito": {
+      "label": "Incognito",
+      "hint": "Alleen wie jij liket, ziet jou. (Plus)"
+    },
+    "travel": {
+      "label": "Reismodus (Plus)",
+      "home": "Thuis",
+      "hint": "Swipe al in een andere stad vóór je reis – mensen daar zien je met het label ‘Op reis’."
+    },
+    "showMe": "Laat me zien",
+    "ageFrom": "Leeftijd vanaf",
+    "ageTo": "Leeftijd tot",
+    "distance": "Afstand",
+    "distanceSuffix": " km",
+    "save": "Profiel opslaan",
+    "language": {
+      "title": "Taal",
+      "device": "Zelfde als telefoon",
+      "rtlHint": "Bij talen die van rechts naar links worden geschreven, draait de lay-out pas om nadat je de app opnieuw hebt gestart."
+    },
+    "signOut": "Uitloggen",
+    "deletePassword": "Wachtwoord om je account te verwijderen",
+    "deleteForever": "Account definitief verwijderen",
+    "deleteAccount": "Account verwijderen",
+    "removePhoto": {
+      "title": "Foto verwijderen?",
+      "confirm": "Verwijderen"
+    }
+  },
+  "premium": {
+    "title": "Abonnement",
+    "free": {
+      "title": "F*app is voorlopig gratis",
+      "body": "Betaalde functies zetten we later aan. Veiligheid – verificatie, afspraken, veiligheidsmodus en SOS – blijft altijd gratis."
+    },
+    "back": "Terug",
+    "done": "Klaar",
+    "continue": "Doorgaan",
+    "reason": {
+      "likeLimitAt": "Je likes zijn op. Om {time} krijg je nieuwe.",
+      "likeLimit": "Je likes zijn op. Binnenkort krijg je nieuwe.",
+      "noCredit": "{credit} is los verkrijgbaar of met een abonnement.",
+      "upgrade": "Dit hoort bij F*app {plan}."
+    },
+    "oneOff": "Los",
+    "owned": "je hebt er {count}",
+    "creditDetail": {
+      "boost": "30 minuten bovenaan bij mensen in de buurt.",
+      "superlike": "Die persoon ziet dat je echt interesse hebt.",
+      "tonight": "Tot 6:00 uur ’s ochtends hoger, met het label ‘Vanavond’."
+    },
+    "buyCredit": "{amount}× {credit} kopen voor {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Je hebt een extra Boost.",
+        "other": "Je hebt {count} extra Boosts."
+      },
+      "superlike": {
+        "one": "Je hebt een extra Super Like.",
+        "other": "Je hebt {count} extra Super Likes."
+      },
+      "tonight": {
+        "one": "Je hebt een extra Vanavond.",
+        "other": "Je hebt {count}× extra Vanavond."
+      }
+    },
+    "currentPlan": "Je hebt F*app {plan}",
+    "validUntil": "Geldig tot {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipe zonder limiet en haal per ongeluk afgewezen profielen terug.",
+      "gold": "Zie wie je heeft geliket – en match met één tik.",
+      "platinum": "Jouw like wordt als eerste gezien. En ‘Vanavond’ wanneer je wilt."
+    },
+    "featureIncluded": "{feature}: inbegrepen",
+    "featureNotIncluded": "{feature}: niet inbegrepen",
+    "months": {
+      "one": "{count} maand",
+      "other": "{count} maanden"
+    },
+    "perMonth": "per maand",
+    "perMonthSave": "per maand · −{percent}%",
+    "continueWithPrice": "Doorgaan · {price}",
+    "planBought": {
+      "one": "Je hebt nu F*app {plan}.",
+      "other": "Je hebt nu F*app {plan} voor {count} maanden."
+    },
+    "renewal": "Je abonnement wordt automatisch verlengd. Je kunt het altijd opzeggen in de instellingen van de App Store of Google Play. De prijs is voor iedereen gelijk.",
+    "renewalUpfront": "Je betaalt {total} vooraf ({monthly} per maand). Je abonnement wordt automatisch verlengd. Je kunt het altijd opzeggen in de instellingen van de App Store of Google Play. De prijs is voor iedereen gelijk.",
+    "safetyFree": {
+      "title": "Veiligheid is altijd gratis",
+      "subtitle": "Verificatie, afspraken, veiligheidsmodus, SOS en melden."
+    },
+    "devNote": "Prototype: er wordt niets afgerekend, de aankoop wordt alleen gesimuleerd."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "Hebben je geliket",
+    "receivedCount": "Hebben je geliket · {count}",
+    "sent": "Verstuurd",
+    "emptyReceived": "Nog geen nieuwe likes.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} persoon heeft je geliket",
+      "other": "{count} mensen hebben je geliket"
+    },
+    "lockedEmpty": "Hier verschijnen je likes",
+    "goldText": "Met F*app Gold zie je wie het zijn en match je met één tik.",
+    "goldCta": "Bekijk ze met Gold",
+    "emptySent": "Geen likes zonder match in de afgelopen 7 dagen.",
+    "superLikePending": "Super Like · wacht",
+    "pending": "Wacht op reactie",
+    "sentTitle": "Wie jij hebt geliket",
+    "platinumText": "Met F*app Platinum zie je je likes van de afgelopen 7 dagen.",
+    "platinumCta": "Bekijk ze met Platinum",
+    "likeBack": "Terug liken",
+    "pass": "Overslaan"
+  },
+  "match": {
+    "title": "Het is een match!",
+    "body": "Jij en {name} willen elkaar.\nZeg hoi en spreek af waar jullie zin in hebben.",
+    "sendMessage": "Stuur een bericht",
+    "keepDiscovering": "Verder ontdekken"
+  },
+  "login": {
+    "title": "Inloggen",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "submit": "Inloggen"
+  },
+  "register": {
+    "title": "Account maken",
+    "name": "Naam (anderen zien die)",
+    "email": "E-mail",
+    "password": "Wachtwoord (minstens 10 tekens)",
+    "birthdate": "Geboortedatum",
+    "birthdatePlaceholder": "DD. MM. JJJJ",
+    "birthdateInvalid": "Vul je geboortedatum in als DD. MM. JJJJ.",
+    "iAm": "Ik ben",
+    "showMe": "Laat me zien",
+    "confirmAdult": "Ik ben 18 jaar of ouder.",
+    "acceptRules": "Ik ga akkoord met de communityregels en met de verwerking van mijn gegevens, inclusief gegevens over mijn seksleven, zodat F*app kan werken.",
+    "verifyNote": "Direct hierna verifiëren we je identiteit en leeftijd (ID-bewijs en selfie). We bewaren je ID-bewijs niet.",
+    "continue": "Doorgaan"
+  },
+  "verify": {
+    "title": "Bevestig dat jij het bent",
+    "intro": "Iedereen op F*app heeft een geverifieerde identiteit en leeftijd. Je maakt een foto van je ID-bewijs en een selfie – dat duurt ongeveer twee minuten.",
+    "privacy": "We bewaren je ID-bewijs en foto’s niet. We houden alleen de uitkomst van de verificatie en je geboortedatum bij. Wie de regels overtreedt, kan niet terugkomen met een nieuw account.",
+    "pending": {
+      "title": "We wachten op de uitkomst van je verificatie",
+      "subtitle": "Meestal duurt dat een paar minuten.",
+      "refresh": "Vernieuwen"
+    },
+    "declined": "Verificatie mislukt",
+    "devApprove": "Geslaagde verificatie simuleren (testmodus)",
+    "retry": "Opnieuw proberen",
+    "start": "Identiteit verifiëren",
+    "signOut": "Uitloggen"
+  },
+  "common": {
+    "back": "Terug",
+    "cancel": "Annuleren",
+    "close": "Sluiten",
+    "save": "Opslaan",
+    "retry": "Opnieuw proberen",
+    "continue": "Doorgaan",
+    "done": "Klaar",
+    "send": "Versturen",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "open": "Openen",
+    "show": "Bekijken",
+    "confirm": "Bevestigen",
+    "errorGeneric": "Er ging iets mis."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} heeft de veiligheidsmodus aan",
+    "partnerSafetySubtitle": "Een vertrouwenspersoon weet waar de date is en met wie.",
+    "meetupTitle": "Date bezig",
+    "meetupSubtitle": "De veiligheidsmodus staat aan.",
+    "missingTitle": "Nog geen afspraak",
+    "missingSubtitle": "Jullie vullen elk in waar je zin in hebt – je ziet alleen waar jullie matchen.",
+    "fill": "Invullen",
+    "revokedByMeTitle": "Je hebt de afspraak ingetrokken",
+    "revokedByPartnerTitle": "{name} heeft de afspraak ingetrokken",
+    "revokedSubtitle": "De date gaat niet door.",
+    "revokedCooldownSubtitle": "De date gaat niet door. Alleen {name} kan een nieuwe afspraak starten.",
+    "newAgreement": "Nieuwe afspraak",
+    "confirmedTitle": "De afspraak is rond",
+    "confirmedSubtitle": "Ter plekke kunnen jullie op elk moment van gedachten veranderen.",
+    "partnerFilledTitle": "{name} heeft de afspraak ingevuld",
+    "waitingForYouTitle": "De afspraak wacht op jou",
+    "fillYoursSubtitle": "Vul in waar jij zin in hebt – je ziet alleen waar jullie matchen.",
+    "partnerPendingTitle": "{name} heeft nog niet ingevuld",
+    "partnerPendingSubtitle": "De afspraak is rond zodra jullie hem allebei hebben ingevuld."
+  },
+  "fakeCall": {
+    "incoming": "mobiel…",
+    "hangUp": "Ophangen",
+    "decline": "Weigeren",
+    "accept": "Opnemen"
+  },
+  "homeBanners": {
+    "meetupTitle": "Date bezig · {name}",
+    "missedCheckIn": "Je hebt een check-in gemist!",
+    "safetyOn": "De veiligheidsmodus staat aan.",
+    "feedbackTitle": "Hoe ging de date?",
+    "feedbackSubtitle": "{name} – alleen ons team ziet je antwoord.",
+    "feedbackAction": "Antwoorden"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} cijfer ingevoerd",
+      "other": "{count} cijfers ingevoerd"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, minder",
+    "stepperIncrease": "{label}, meer"
+  },
+  "api": {
+    "offline": "Kan geen verbinding maken met de server. Controleer je verbinding."
+  },
+  "billing": {
+    "storeNotConnected": "Aankopen via de App Store en Google Play zijn nog niet ingesteld."
+  },
+  "notifications": {
+    "channelName": "Meldingen",
+    "reminderDiscreet": "Herinnering",
+    "checkInTitle": "Tijd om in te checken",
+    "checkInBody": "Bevestig met je pincode dat alles goed met je is.",
+    "fakeCallBody": "Inkomende oproep"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Locatie delen staat aan",
+    "notificationBody": "Je kunt het stoppen in de app."
+  },
+  "appLock": {
+    "prompt": "F*app ontgrendelen",
+    "lockedTitle": "De app is vergrendeld",
+    "lockedBody": "Ontgrendel met Face ID, je vingerafdruk of de toegangscode van je telefoon.",
+    "sosHold": "SOS – ingedrukt houden",
+    "unlock": "Ontgrendelen",
+    "sosSentTitle": "Alarm verstuurd",
+    "sosSentBody": "{name} heeft een waarschuwing met je locatie gekregen.",
+    "sosSentBodyNoName": "Je vertrouwenspersoon heeft een waarschuwing met je locatie gekregen.",
+    "sosFailedTitle": "Versturen mislukt"
+  },
+  "native": {
+    "locationWhenInUse": "F*app heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
+    "locationAlways": "Tijdens een date deelt F*app je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
+    "faceId": "F*app gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
+    "photos": "Kies foto’s voor je profiel.",
+    "camera": "Maak een foto van jezelf voor je profiel."
+  }
+}

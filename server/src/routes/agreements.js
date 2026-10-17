@@ -10,6 +10,7 @@ import {
   isFullyConfirmed,
   requireActivePartner,
 } from '../model.js';
+import { msg } from '../i18n.js';
 import { notify } from '../services/push.js';
 import { HttpError, bool, dateTime, int, nowIso, str } from '../util.js';
 import { requireAuth, requireVerified } from './auth.js';
@@ -20,11 +21,11 @@ const MAX_DAYS_AHEAD = 30;
 // Potvrzuje se záměr a poučení, že domluva není souhlas – ne souhlas sám.
 
 function parseWishes(value) {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new HttpError(400, 'Vyplň, na co máš chuť.');
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new HttpError(400, 'agreement.wishesRequired');
   const wishes = {};
   for (const key of Object.keys(ACTIVITIES)) {
     const v = value[key] ?? 'no';
-    if (!Object.hasOwn(WISHES, v)) throw new HttpError(400, 'Neplatná volba u přání.');
+    if (!Object.hasOwn(WISHES, v)) throw new HttpError(400, 'agreement.invalidWish');
     wishes[key] = v;
   }
   return wishes;
@@ -35,7 +36,7 @@ export function agreementRoutes({ db, services, sealer }) {
 
   const loadForUser = (agreementId, userId) => {
     const agreement = db.prepare('SELECT * FROM agreements WHERE id = ?').get(Number(agreementId));
-    if (!agreement) throw new HttpError(404, 'Domluva neexistuje.');
+    if (!agreement) throw new HttpError(404, 'agreement.notFound');
     const { match, other } = getMatchFor(db, agreement.match_id, userId, { allowEnded: true });
     return { agreement, match, other };
   };
@@ -45,24 +46,24 @@ export function agreementRoutes({ db, services, sealer }) {
     requireActivePartner(other);
     const b = req.body ?? {};
     if (!bool(b.intent) || !bool(b.notice)) {
-      throw new HttpError(400, 'Potvrď obě věty – že je to tvoje představa a že domluva není souhlas.');
+      throw new HttpError(400, 'agreement.confirmBoth');
     }
 
-    const meetAt = dateTime(b.meetAt, 'kdy');
+    const meetAt = dateTime(b.meetAt, 'fields.meetAt');
     const t = Date.parse(meetAt);
     if (t < Date.now() - 3600_000 || t > Date.now() + MAX_DAYS_AHEAD * 86400_000) {
-      throw new HttpError(400, `Schůzka musí být v příštích ${MAX_DAYS_AHEAD} dnech.`);
+      throw new HttpError(400, 'agreement.meetWithin', { params: { count: MAX_DAYS_AHEAD } });
     }
     const logistics = {
       meet_at: meetAt,
-      place: str(b.place, 'kde', { min: 2, max: 120 }),
+      place: str(b.place, 'fields.place', { min: 2, max: 120 }),
       condom: bool(b.condom) ? 1 : 0,
       sober: bool(b.sober) ? 1 : 0,
       public_first: bool(b.publicFirst) ? 1 : 0,
-      safeword: str(b.safeword, 'stopslovo', { min: 2, max: 40 }),
+      safeword: str(b.safeword, 'fields.safeword', { min: 2, max: 40 }),
     };
     const wishes = parseWishes(b.wishes);
-    const note = str(b.note, 'moje hranice', { max: 500, optional: true });
+    const note = str(b.note, 'fields.note', { max: 500, optional: true });
 
     const current = currentAgreement(db, match.id);
     const editable = current && ['pending', 'confirmed'].includes(agreementStatus(db, current, match));
@@ -70,15 +71,15 @@ export function agreementRoutes({ db, services, sealer }) {
     // Kdo byl odmítnut, nemůže hned tlačit novou domluvou. Znovu ji může otevřít jen ten, kdo zrušil.
     if (!editable && current?.revoked_at && current.revoked_by !== req.user.id) {
       const until = Date.parse(current.revoked_at) + REVOKE_COOLDOWN_DAYS * 86400_000;
-      if (Date.now() < until) throw new HttpError(403, `Novou domluvu teď může otevřít jen ${other.name}.`);
+      if (Date.now() < until) throw new HttpError(403, 'agreement.cooldown', { params: { name: other.name } });
     }
 
     const now = nowIso();
     let agreement;
     let logisticsChanged = false;
     if (editable) {
-      if (b.baseVersion !== undefined && int(b.baseVersion, 'verze', { min: 1, max: 100000 }) !== current.version) {
-        throw new HttpError(409, 'Domluva se mezitím změnila. Přečti si ji znovu.');
+      if (b.baseVersion !== undefined && int(b.baseVersion, 'fields.version', { min: 1, max: 100000 }) !== current.version) {
+        throw new HttpError(409, 'agreement.changed');
       }
       logisticsChanged =
         current.meet_at !== logistics.meet_at ||
@@ -137,15 +138,10 @@ export function agreementRoutes({ db, services, sealer }) {
     const complete = isFullyConfirmed(db, agreement, match);
     if (complete) db.prepare('UPDATE agreements SET was_confirmed = 1 WHERE id = ?').run(agreement.id);
 
+    const kind = complete ? 'agreementComplete' : !editable ? 'agreementNew' : logisticsChanged ? 'agreementChanged' : 'agreementUpdated';
     notify(db, services.push, other.id, {
-      title: complete ? 'Domluva je hotová' : !editable ? 'Nová domluva' : logisticsChanged ? 'Domluva se změnila' : 'Domluva se upravila',
-      body: complete
-        ? 'Oba jste ji potvrdili. Na místě se ale vždycky můžete rozhodnout jinak.'
-        : !editable
-          ? `${req.user.name} otevřel/a domluvu. Vyplň, na co máš chuť ty.`
-          : logisticsChanged
-            ? `${req.user.name} změnil/a čas, místo nebo pravidla. Potvrď je znovu.`
-            : `${req.user.name} upravil/a svá přání.`,
+      title: msg(`push.${kind}.title`),
+      body: msg(`push.${kind}.body`, { name: req.user.name }),
       data: { type: 'agreement', matchId: match.id },
     });
     res.status(editable ? 200 : 201).json(agreementView(db, agreement, match, req.user.id, sealer.open));
@@ -165,8 +161,8 @@ export function agreementRoutes({ db, services, sealer }) {
         checkPattern(db, other.id);
       }
       notify(db, services.push, other.id, {
-        title: 'Domluva zrušena',
-        body: `${req.user.name} domluvu zrušil/a. Schůzka se nekoná – a to je potřeba respektovat.`,
+        title: msg('push.agreementRevoked.title'),
+        body: msg('push.agreementRevoked.body', { name: req.user.name }),
         data: { type: 'agreement', matchId: match.id },
       });
     }

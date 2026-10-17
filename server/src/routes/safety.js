@@ -12,6 +12,7 @@ import {
   nextCheckInDue,
   ownSafetyView,
 } from '../model.js';
+import { DEFAULT_LOCALE, msg, tr } from '../i18n.js';
 import { smsText } from '../services/alerts.js';
 import { notify } from '../services/push.js';
 import { HttpError, ageFrom, int, nowIso, num, parseJson, token, verifySecret } from '../util.js';
@@ -25,7 +26,13 @@ export function safetyRoutes({ db, config, alerts }) {
   const r = Router();
   const shareUrl = (s) => `${config.publicUrl}/s/${s.share_token}`;
   const load = (id) => db.prepare('SELECT * FROM safety_sessions WHERE id = ?').get(Number(id));
-  const nameOf = (s) => getUser(db, s.user_id)?.name ?? 'Tvůj blízký člověk';
+  // Jméno a jazyk pro SMS důvěryhodné osobě. Jazyk se zafixuje při startu schůzky,
+  // starší schůzky (bez uloženého jazyka) používají aktuální jazyk uživatele.
+  const smsFor = (s) => {
+    const user = getUser(db, s.user_id);
+    const locale = s.locale ?? user?.locale ?? DEFAULT_LOCALE;
+    return { locale, name: user?.name ?? tr(locale, 'sms.someone') };
+  };
 
   const view = (s) => ({
     ...ownSafetyView(s, config.publicUrl),
@@ -37,12 +44,12 @@ export function safetyRoutes({ db, config, alerts }) {
 
   const loadOwn = (req) => {
     const s = load(req.params.id);
-    if (!s || s.user_id !== req.user.id) throw new HttpError(404, 'Schůzka neexistuje.');
+    if (!s || s.user_id !== req.user.id) throw new HttpError(404, 'safety.notFound');
     return s;
   };
   const loadActive = (req) => {
     const s = loadOwn(req);
-    if (s.ended_at) throw new HttpError(409, 'Schůzka už skončila.');
+    if (s.ended_at) throw new HttpError(409, 'safety.ended');
     return s;
   };
 
@@ -54,7 +61,8 @@ export function safetyRoutes({ db, config, alerts }) {
       reason,
       s.id,
     );
-    alerts.enqueue(s, smsText.alarm(nameOf(s), shareUrl(s)));
+    const { locale, name } = smsFor(s);
+    alerts.enqueue(s, smsText.alarm(locale, name, shareUrl(s)));
     flagPartner(s, reason, 'high');
   }
 
@@ -76,7 +84,7 @@ export function safetyRoutes({ db, config, alerts }) {
     return 'wrong';
   }
 
-  const wrongPin = () => new HttpError(403, 'Špatný PIN.');
+  const wrongPin = () => new HttpError(403, 'safety.wrongPin');
 
   // --- start ---
 
@@ -84,13 +92,13 @@ export function safetyRoutes({ db, config, alerts }) {
     const { match, other } = getMatchFor(db, req.params.id, req.user.id);
     const agreement = currentAgreement(db, match.id);
     if (!agreement || agreementStatus(db, agreement, match) !== 'confirmed') {
-      throw new HttpError(409, 'Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba.');
+      throw new HttpError(409, 'safety.agreementRequired');
     }
     if (!req.user.trusted_phone || !req.user.checkin_pin_hash || !req.user.duress_pin_hash) {
-      throw new HttpError(409, 'Nejdřív si nastav důvěryhodnou osobu, PIN a nouzový PIN.');
+      throw new HttpError(409, 'safety.setupRequired');
     }
-    const minutes = int(req.body?.checkInMinutes ?? 30, 'interval check-inu', { min: 1, max: 600 });
-    if (!CHECK_IN_OPTIONS.includes(minutes)) throw new HttpError(400, 'Neplatný interval check-inu.');
+    const minutes = int(req.body?.checkInMinutes ?? 30, 'fields.checkInMinutes', { min: 1, max: 600 });
+    if (!CHECK_IN_OPTIONS.includes(minutes)) throw new HttpError(400, 'safety.invalidInterval');
 
     const existing = activeSafetySession(db, req.user.id, match.id);
     if (existing) return res.json(view(existing));
@@ -101,8 +109,8 @@ export function safetyRoutes({ db, config, alerts }) {
     const { lastInsertRowid } = db
       .prepare(
         `INSERT INTO safety_sessions (user_id, match_id, agreement_id, partner_id, partner_name, partner_age, partner_photo,
-           meet_at, place, share_token, trusted_name, trusted_phone, check_in_minutes, started_at, last_check_in_at)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+           meet_at, place, share_token, trusted_name, trusted_phone, check_in_minutes, started_at, last_check_in_at, locale)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       )
       .run(
         req.user.id,
@@ -120,9 +128,10 @@ export function safetyRoutes({ db, config, alerts }) {
         minutes,
         now,
         now,
+        req.user.locale ?? DEFAULT_LOCALE,
       );
     const s = load(lastInsertRowid);
-    alerts.enqueue(s, smsText.started(req.user.name, shareUrl(s)));
+    alerts.enqueue(s, smsText.started(smsFor(s).locale, req.user.name, shareUrl(s)));
     res.status(201).json(view(s));
   });
 
@@ -143,10 +152,10 @@ export function safetyRoutes({ db, config, alerts }) {
     const s = loadActive(req);
     const b = req.body ?? {};
     db.prepare('UPDATE safety_sessions SET lat = ?, lng = ?, accuracy = ?, battery = ?, location_at = ? WHERE id = ?').run(
-      num(b.lat, 'lat', { min: -90, max: 90 }),
-      num(b.lng, 'lng', { min: -180, max: 180 }),
-      b.accuracy == null ? null : num(b.accuracy, 'přesnost', { min: 0, max: 100000 }),
-      b.battery == null ? null : num(b.battery, 'baterie', { min: 0, max: 1 }),
+      num(b.lat, 'fields.lat', { min: -90, max: 90 }),
+      num(b.lng, 'fields.lng', { min: -180, max: 180 }),
+      b.accuracy == null ? null : num(b.accuracy, 'fields.accuracy', { min: 0, max: 100000 }),
+      b.battery == null ? null : num(b.battery, 'fields.battery', { min: 0, max: 1 }),
       nowIso(),
       s.id,
     );
@@ -161,7 +170,7 @@ export function safetyRoutes({ db, config, alerts }) {
       'UPDATE safety_sessions SET last_check_in_at = ?, overdue_alerted_at = NULL, wrong_pin_count = 0 WHERE id = ?',
     ).run(nowIso(), s.id);
     if (result === 'duress') raiseSilentAlarm(s.id, 'duress');
-    else if (s.overdue_alerted_at && !s.silent_alarm_at && !s.sos_at) alerts.enqueue(s, smsText.backOk(req.user.name));
+    else if (s.overdue_alerted_at && !s.silent_alarm_at && !s.sos_at) alerts.enqueue(s, smsText.backOk(smsFor(s).locale, req.user.name));
     res.json(view(load(s.id)));
   });
 
@@ -170,7 +179,7 @@ export function safetyRoutes({ db, config, alerts }) {
     if (!s.sos_at) {
       db.prepare('UPDATE safety_sessions SET sos_at = ? WHERE id = ?').run(nowIso(), s.id);
       if (!s.silent_alarm_at) {
-        alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+        alerts.enqueue(s, smsText.alarm(smsFor(s).locale, req.user.name, shareUrl(s)));
         flagPartner(s, 'sos', 'high');
       }
     }
@@ -193,7 +202,7 @@ export function safetyRoutes({ db, config, alerts }) {
         nowIso(),
         s.id,
       );
-      if (!s.silent_alarm_at) alerts.enqueue(s, smsText.sosCancelled(req.user.name));
+      if (!s.silent_alarm_at) alerts.enqueue(s, smsText.sosCancelled(smsFor(s).locale, req.user.name));
     }
     res.json(view(load(s.id)));
   });
@@ -211,7 +220,7 @@ export function safetyRoutes({ db, config, alerts }) {
            silent_alarm_at = COALESCE(silent_alarm_at, ?) WHERE id = ?`,
       ).run(now, now, s.id);
       if (!s.silent_alarm_at && !s.sos_at) {
-        alerts.enqueue(s, smsText.alarm(req.user.name, shareUrl(s)));
+        alerts.enqueue(s, smsText.alarm(smsFor(s).locale, req.user.name, shareUrl(s)));
         flagPartner(s, 'duress', 'high');
       }
     } else {
@@ -219,7 +228,7 @@ export function safetyRoutes({ db, config, alerts }) {
         `UPDATE safety_sessions SET ended_at = ?, end_kind = 'ok',
            lat = NULL, lng = NULL, accuracy = NULL, battery = NULL, location_at = NULL WHERE id = ?`,
       ).run(now, s.id);
-      alerts.enqueue(s, smsText.endedOk(req.user.name));
+      alerts.enqueue(s, smsText.endedOk(smsFor(s).locale, req.user.name));
     }
     res.json(view(load(s.id)));
   });
@@ -243,12 +252,14 @@ export function checkOverdue({ db, config, services, alerts }, now = Date.now())
     db.prepare('UPDATE safety_sessions SET overdue_alerted_at = ? WHERE id = ?').run(new Date(now).toISOString(), s.id);
     if (s.sos_at || s.silent_alarm_at) continue; // poplach už běží
     flagPartner(s);
-    const name = getUser(db, s.user_id)?.name ?? 'Tvůj blízký člověk';
+    const user = getUser(db, s.user_id);
+    const locale = s.locale ?? user?.locale ?? DEFAULT_LOCALE;
+    const name = user?.name ?? tr(locale, 'sms.someone');
     const due = new Date(nextCheckInDue(s)).toISOString();
-    alerts.enqueue(s, smsText.overdue(name, due, `${config.publicUrl}/s/${s.share_token}`));
+    alerts.enqueue(s, smsText.overdue(locale, name, due, `${config.publicUrl}/s/${s.share_token}`));
     notify(db, services.push, s.user_id, {
-      title: 'Zapomněl/a jsi na check-in',
-      body: `${s.trusted_name} dostal/a upozornění. Potvrď, že jsi v pořádku.`,
+      title: msg('push.checkInOverdue.title'),
+      body: msg('push.checkInOverdue.body', { name: s.trusted_name }),
       data: { type: 'safety', safetyId: s.id },
     });
   }

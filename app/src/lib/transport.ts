@@ -1,4 +1,5 @@
 import { API_URL } from './config';
+import { i18n } from './i18n';
 
 export type TransportResponse = { status: number; json: unknown };
 
@@ -11,6 +12,10 @@ export async function transport(method: string, path: string, body: unknown, tok
     method,
     headers: {
       Accept: 'application/json',
+      // Jazyk chyb, SMS pro důvěryhodnou osobu a notifikací.
+      'Accept-Language': i18n.locale,
+      // Jazyk zvolený v aplikaci – server podle něj posílá SMS důvěryhodné osobě a notifikace.
+      'X-App-Locale': i18n.locale,
       ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },

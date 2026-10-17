@@ -1,0 +1,666 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Lelaki",
+      "woman": "Perempuan",
+      "nonbinary": "Bukan binari"
+    },
+    "gendersPlural": {
+      "man": "Lelaki",
+      "woman": "Perempuan",
+      "nonbinary": "Individu bukan binari"
+    },
+    "tags": {
+      "oneoff": "Sekali sahaja",
+      "repeat": "Berulang kali",
+      "myplace": "Tempat saya",
+      "yourplace": "Tempat anda",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Bercium dan berpelukan",
+      "oral": "Oral",
+      "vaginal": "Vagina",
+      "anal": "Anal",
+      "toys": "Mainan",
+      "overnight": "Bermalam"
+    },
+    "wishes": {
+      "yes": "Ya",
+      "maybe": "Mungkin",
+      "no": "Tidak"
+    },
+    "reportReasons": {
+      "consent": "Melanggar kerelaan atau batasan",
+      "violence": "Keganasan atau ugutan",
+      "minor": "Disyaki bawah umur",
+      "harassment": "Gangguan",
+      "fake": "Profil palsu",
+      "paid": "Menawarkan perkhidmatan berbayar",
+      "other": "Lain-lain"
+    },
+    "feedbackReasons": {
+      "consent": "Tidak menghormati batasan atau “berhenti”",
+      "safety": "Saya rasa tidak selamat",
+      "fake": "Tidak serupa dengan fotonya",
+      "other": "Perkara lain"
+    },
+    "plans": {
+      "free": "Percuma",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Suka tanpa had",
+        "detail": "Leret sebanyak yang anda mahu."
+      },
+      "rewind": {
+        "name": "Undur",
+        "detail": "Kembalikan profil yang anda langkau secara tidak sengaja."
+      },
+      "travel": {
+        "name": "Mod perjalanan",
+        "detail": "Leret di bandar lain sebelum perjalanan anda."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Hanya orang yang anda suka boleh melihat anda."
+      },
+      "seeLikes": {
+        "name": "Lihat siapa suka anda",
+        "detail": "Lihat semua orang yang suka anda."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Like seminggu",
+        "detail": "Tunjukkan anda betul-betul berminat dengan seseorang."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost sebulan",
+        "detail": "30 minit di kedudukan teratas untuk orang berdekatan."
+      },
+      "priorityLikes": {
+        "name": "Suka keutamaan",
+        "detail": "Suka anda dilihat lebih awal daripada yang lain."
+      },
+      "sentLikes": {
+        "name": "Suka dihantar",
+        "detail": "Siapa yang anda suka dalam 7 hari lepas."
+      },
+      "tonight": {
+        "name": "Malam ini, bila-bila masa",
+        "detail": "Tunjukkan anda ada masa malam ini."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Malam ini"
+    },
+    "cities": {
+      "praha": "Prague",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Vienna",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Inilah yang saya bayangkan. Apabila bertemu nanti, saya boleh menolak apa-apa sahaja – begitu juga dia.",
+    "notice": "Saya faham: kerelaan hanya sah di sini dan pada saat ini. “Tidak”, “berhenti”, kata henti, diam, terkaku atau mabuk bukan kerelaan. Persetujuan dalam aplikasi tidak melepaskan sesiapa daripada tanggungjawab.",
+    "deterrence": "Semua orang di F*app mempunyai identiti yang disahkan. Jika kami mengesyaki jenayah, kami akan menyerahkan identiti itu kepada polis."
+  },
+  "welcome": {
+    "tagline": "Seks, tanpa leceh.",
+    "taglineStrong": "Hanya jika anda berdua kata ya.",
+    "createAccount": "Cipta akaun",
+    "signIn": "Log masuk",
+    "adultsOnly": "Untuk 18+ sahaja. Semua orang di sini mempunyai identiti yang disahkan."
+  },
+  "agreement": {
+    "title": "Persetujuan",
+    "titleWithName": "Persetujuan · {name}",
+    "timeFormatError": "Masukkan masa dalam format JJ:MM, cth. 21:00.",
+    "revokedByPartnerTitle": "{name} membatalkan persetujuan",
+    "revokedByPartnerSubtitle": "Kini hanya {name} boleh memulakan persetujuan baharu.",
+    "revokedTitle": "Persetujuan telah dibatalkan",
+    "revokedSubtitle": "Anda boleh memulakan yang baharu.",
+    "newTitle": "Persetujuan baharu",
+    "newSubtitle": "Anda masing-masing mengisi bahagian sendiri. Anda hanya akan melihat perkara yang anda berdua setujui.",
+    "logisticsChangedTitle": "Anda menukar masa, tempat atau peraturan",
+    "logisticsChangedSubtitle": "{name} perlu mengesahkannya semula.",
+    "confirmedTitle": "Anda berdua sudah mengisi persetujuan",
+    "confirmedSubtitle": "Apabila bertemu, anda berdua boleh berubah fikiran pada bila-bila masa.",
+    "myPartDoneTitle": "Bahagian anda sudah selesai",
+    "myPartDoneSubtitle": "{name} belum mengisi atau mengesahkan bahagiannya.",
+    "partnerFilledTitle": "{name} sudah mengisi bahagiannya",
+    "partnerFilledSubtitle": "Isi bahagian anda – anda hanya akan melihat perkara yang anda berdua setujui.",
+    "fillTitle": "Isi bahagian anda",
+    "fillSubtitle": "Anda hanya akan melihat perkara yang anda berdua setujui.",
+    "overlapTitle": "Perkara yang anda setujui",
+    "overlapNone": "Belum ada persamaan.",
+    "overlapYes": "Anda berdua mahu",
+    "overlapMaybe": "Mungkin – bincang apabila bertemu",
+    "partnerNote": "{name}: “{note}”",
+    "overlapHint": "Tiada siapa melihat perkara yang tidak dimahukan oleh salah seorang daripada anda – malah siapa yang tidak mahukannya pun tidak.",
+    "wishesLabel": "Apa yang saya mahu",
+    "wishesHint": "{name} hanya akan melihat perkara yang anda berdua setujui. Tiada siapa akan melihat “tidak” anda.",
+    "wishesHintNoName": "Dia hanya akan melihat perkara yang anda berdua setujui.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Batasan saya (dia juga boleh melihatnya)",
+    "notePlaceholder": "Cth. tiada gambar, saya mahu berkenalan dulu.",
+    "logisticsLabel": "Hal praktikal – terpakai untuk anda berdua",
+    "today": "Hari ini",
+    "tomorrow": "Esok",
+    "timeLabel": "Masa",
+    "placeLabel": "Di mana",
+    "placePlaceholder": "Cth. tempat saya, Vinohrady",
+    "safewordLabel": "Kata henti",
+    "safewordPlaceholder": "Perkataan yang menghentikan segalanya",
+    "condom": "Sentiasa guna kondom",
+    "sober": "Tidak mabuk",
+    "soberHint": "Mabuk bukan kerelaan.",
+    "publicFirst": "Kita jumpa di tempat awam dulu",
+    "publicFirstHint": "Kafe atau bar – anda putuskan secara bersemuka sama ada mahu teruskan.",
+    "partnerMayShare": "Semasa pertemuan, {name} boleh berkongsi nama, foto anda dan tempat pertemuan dengan kenalan dipercayainya.",
+    "saveAndConfirm": "Simpan dan sahkan",
+    "startMeetup": "Mulakan pertemuan",
+    "revoke": "Batalkan persetujuan",
+    "revokeConfirmTitle": "Batalkan persetujuan?",
+    "revokeConfirmMessage": "Pertemuan dibatalkan. Anda tidak perlu menjelaskan apa-apa – {name} hanya menerima pemberitahuan."
+  },
+  "meetup": {
+    "title": "Pertemuan · {name}",
+    "fakeCallerDefault": "Mak",
+    "endedTitle": "Pertemuan tamat",
+    "endedMessage": "{name} telah menerima mesej bahawa anda selamat.",
+    "sosFailed": "Penggera tidak dapat dihantar: {error} Cuba lagi atau hubungi {name}.",
+    "needAgreementTitle": "Lengkapkan persetujuan dulu",
+    "needAgreementSubtitle": "Anda boleh memulakan pertemuan selepas anda berdua mengisi dan mengesahkan persetujuan.",
+    "needAgreementAction": "Persetujuan",
+    "setupTitle": "Tetapkan keselamatan anda",
+    "setupSubtitle": "Kenalan dipercayai, PIN dan PIN kecemasan.",
+    "setupAction": "Tetapkan",
+    "pointTrusted": "{name} akan menerima SMS dengan pautan. Dia akan melihat di mana anda berada, dengan siapa dan sama ada anda selamat.",
+    "pointTrustedNoName": "Kenalan dipercayai anda akan menerima SMS dengan pautan. Dia akan melihat di mana anda berada, dengan siapa dan sama ada anda selamat.",
+    "pointCheckIn": "Pada selang masa tetap, anda mengesahkan dengan PIN bahawa anda selamat. Jika anda tidak check-in, kami akan menghantar amaran – walaupun telefon anda kehabisan bateri.",
+    "pointDuress": "PIN kecemasan kelihatan sama seperti PIN biasa anda, tetapi mencetuskan penggera secara senyap.",
+    "pointPartner": "{name} akan melihat bahawa mod keselamatan anda aktif dan kenalan dipercayai anda tahu di mana anda berada dan dengan siapa. Itu sahaja – bukan penggera, bukan lokasi anda.",
+    "intervalLabel": "Sahkan saya selamat setiap",
+    "minutes": "{count} min",
+    "start": "Mulakan pertemuan",
+    "locationVisibleTo": "{name} boleh melihat lokasi anda",
+    "bgLocationTitle": "Lokasi hanya semasa aplikasi dibuka",
+    "bgLocationSubtitle": "Tetapkan akses lokasi kepada “Sentiasa” supaya dia dapat melihatnya walaupun skrin anda mati.",
+    "bgLocationAction": "Tetapan",
+    "nextCheckIn": "Check-in seterusnya dalam",
+    "checkIn": "Check-in",
+    "now": "sekarang",
+    "imOk": "Saya selamat",
+    "overdueHint": "{name} telah dimaklumkan. Sahkan dengan PIN bahawa anda selamat.",
+    "graceHint": {
+      "other": "Jika anda tidak check-in dalam masa {count} minit selepas masa yang ditetapkan, {name} akan menerima amaran bersama lokasi anda."
+    },
+    "partnerSafetyOn": "{name} juga mengaktifkan mod keselamatan – kenalan dipercayainya tahu di mana dia berada dan dengan siapa.",
+    "partnerSafetyOff": "{name} tidak mengaktifkan mod keselamatan.",
+    "fakeCall": "Panggilan palsu",
+    "fakeCallIn": "Panggilan dalam {count} saat",
+    "fakeCallHint": "Dalam {count} saat, panggilan palsu akan berdering seperti panggilan sebenar – alasan anda untuk pergi.",
+    "shareLink": "Hantar pautan",
+    "sos": "SOS – tahan",
+    "revoke": "Batalkan persetujuan",
+    "end": "Tamatkan pertemuan",
+    "sosSentTitle": "Penggera dihantar",
+    "sosSentBody": "{trusted} telah menerima lokasi tepat anda dan dengan siapa anda berada. {partner} tidak akan melihat apa-apa.",
+    "sosMistake": "Tersilap – saya selamat",
+    "sosHide": "Sembunyikan (penggera kekal aktif)",
+    "pinTitle": "Sahkan dengan PIN",
+    "pinSubtitleOk": "Bahawa anda selamat.",
+    "pinSubtitleEnd": "Bahawa pertemuan sudah tamat dan anda selamat.",
+    "revokeConfirmTitle": "Batalkan persetujuan?",
+    "revokeConfirmMessage": "{name} akan menerima pemberitahuan. Anda tidak perlu menjelaskan apa-apa. Mod keselamatan terus berjalan sehingga anda menamatkannya."
+  },
+  "feedback": {
+    "title": "Bagaimana pertemuan tadi?",
+    "privacy": "Hanya pasukan kami melihat jawapan anda – {name} tidak akan sekali-kali melihatnya. Ini membantu kami mengekalkan tempat ini untuk orang yang menghormati batasan.",
+    "privacyNoName": "Hanya pasukan kami melihat jawapan anda – orang itu tidak akan sekali-kali melihatnya. Ini membantu kami mengekalkan tempat ini untuk orang yang menghormati batasan.",
+    "allGood": "Semuanya baik",
+    "somethingWrong": "Ada sesuatu yang tidak kena",
+    "detailsLabel": "Apa yang berlaku? (pilihan)",
+    "preserve": "Simpan rekod pertemuan sekiranya anda perlu ke polis. Jika tidak, persetujuan akan dipadam selepas 48 jam.",
+    "suspendNotice": "Jika seseorang tidak menghormati anda atau anda dalam bahaya, kami akan menggantung akaunnya serta-merta dan menyiasatnya.",
+    "send": "Hantar",
+    "helpTitle": "Kami amat kesal",
+    "helpIntro": "Kami akan menyiasatnya, dan kami telah menggantung akaun orang itu semasa semakan. Anda tidak perlu memutuskan sekarang langkah seterusnya – dan semua ini bukan salah anda.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Talian bantuan untuk mangsa jenayah – Bílý kruh bezpečí",
+        "detail": "24/7, percuma, dan anda boleh kekal tanpa nama."
+      },
+      "police": {
+        "name": "Polis Czech",
+        "detail": "Jika anda mahu membuat laporan – walaupun kemudian."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Sokongan untuk mereka yang pernah mengalami keganasan seksual."
+      }
+    },
+    "helpLocal": {
+      "name": "Tempat mendapatkan bantuan",
+      "detail": "Hubungi polis tempatan atau talian sokongan tempatan untuk mangsa jenayah dan keganasan seksual."
+    },
+    "medical": "Jika sesuatu berlaku di luar kehendak anda, dapatkan bantuan perubatan secepat mungkin – juga untuk mencegah kehamilan dan jangkitan, kerana sesetengah ubat hanya berkesan dalam tempoh 72 jam. Bukti masih boleh dikumpul jika anda belum mandi dan menyimpan pakaian anda. Namun semua ini bukan syarat – anda juga boleh membuat laporan kemudian.",
+    "preserved": "Kami telah menyimpan rekod pertemuan (persetujuan, mesej, penggera) sekiranya anda memerlukannya untuk polis.",
+    "backToApp": "Kembali ke aplikasi"
+  },
+  "report": {
+    "title": "Laporkan",
+    "intro": "Laporan anda tanpa nama. Kami juga akan menyekatnya untuk anda, jadi anda tidak akan melihat satu sama lain lagi.",
+    "introWithName": "{name}. Laporan anda tanpa nama. Kami juga akan menyekatnya untuk anda, jadi anda tidak akan melihat satu sama lain lagi.",
+    "detailsLabel": "Butiran (pilihan)",
+    "submit": "Laporkan",
+    "thanksTitle": "Terima kasih",
+    "thanksMessage": "Kami telah menerima laporan anda. Anda tidak akan melihat satu sama lain lagi."
+  },
+  "chat": {
+    "unavailable": "Sembang tidak tersedia",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km dari anda",
+    "reportOrBlock": "Laporkan atau sekat",
+    "photo": "Foto",
+    "photoBlurred": "Foto dikaburkan, ketik untuk melihat",
+    "tapToReveal": "Ketik untuk melihat",
+    "sendPhoto": "Hantar foto",
+    "message": "Mesej",
+    "messagePlaceholder": "Tulis mesej…",
+    "send": "Hantar",
+    "report": "Laporkan",
+    "block": "Sekat",
+    "unmatch": "Batalkan padanan",
+    "blockConfirmTitle": "Sekat?",
+    "blockConfirmMessage": "Anda dan {name} tidak akan melihat satu sama lain lagi, dan sembang akan hilang."
+  },
+  "safetySettings": {
+    "title": "Keselamatan dan privasi",
+    "trustedLabel": "Kenalan dipercayai",
+    "trustedHint": "Apabila anda memulakan pertemuan, kami akan menghantar SMS kepadanya dengan pautan ke lokasi anda. Kami akan memberinya amaran jika anda tidak check-in atau jika anda mencetuskan penggera.",
+    "nameLabel": "Nama",
+    "namePlaceholder": "Cth. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+60 12 345 6789",
+    "pinsLabel": "PIN dan PIN kecemasan",
+    "pinsHint": "Semasa pertemuan, anda menggunakan PIN untuk mengesahkan bahawa anda selamat. PIN kecemasan kelihatan sama, tetapi menghantar penggera secara senyap – gunakannya jika seseorang memaksa anda memberitahu aplikasi bahawa semuanya baik.",
+    "checkinPinLabel": "PIN (4–6 digit)",
+    "duressPinLabel": "PIN kecemasan (berbeza daripada PIN anda)",
+    "passwordLabel": "Kata laluan akaun (untuk menukar PIN)",
+    "pinsSet": "PIN telah ditetapkan",
+    "change": "Tukar",
+    "privacyLabel": "Privasi",
+    "appLock": "Kunci aplikasi",
+    "appLockHint": "Face ID, cap jari atau kod laluan telefon anda setiap kali anda membuka aplikasi.",
+    "discreet": "Mod diskret",
+    "discreetHint": "Ikon neutral dan pemberitahuan tanpa kandungan – tiada siapa tahu aplikasi apa ini.",
+    "save": "Simpan"
+  },
+  "tabs": {
+    "discover": "Teroka",
+    "matches": "Mesej",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "other": "Tinggal {count} suka."
+    },
+    "boostRunningUntil": "Boost aktif sehingga {time}.",
+    "tonight": "Malam ini",
+    "tonightOn": "Malam ini – aktif",
+    "boost": "Boost",
+    "boostOn": "Boost aktif",
+    "searchSettings": "Tetapan carian",
+    "traveling": "Dalam perjalanan",
+    "travelingIn": "Dalam perjalanan · {city}",
+    "change": "Tukar",
+    "enableLocation": "Benarkan lokasi",
+    "addPhoto": "Tambah foto",
+    "retry": "Cuba lagi",
+    "empty": "Tiada orang lain berdekatan buat masa ini. Cuba lagi nanti atau luaskan carian anda.",
+    "refresh": "Muat semula",
+    "nextPhoto": "Foto seterusnya",
+    "stampLike": "MAHU",
+    "stampNope": "TIDAK",
+    "superLikedYou": "Memberi anda Super Like",
+    "distance": "{km} km dari anda",
+    "rewind": "Undur leretan terakhir",
+    "pass": "Langkau",
+    "superLike": "Super Like",
+    "like": "Suka",
+    "boostSheet": {
+      "title": "Mulakan Boost?",
+      "messageMonthly": "Anda akan berada di kedudukan teratas untuk orang berdekatan selama 30 minit. Ini menggunakan Boost bulanan daripada langganan anda.",
+      "messageCredits": "Anda akan berada di kedudukan teratas untuk orang berdekatan selama 30 minit. Baki anda {count}×.",
+      "confirm": "Mulakan Boost",
+      "done": "Boost aktif – anda di kedudukan teratas selama 30 minit."
+    },
+    "tonightSheet": {
+      "title": "Hidupkan “Malam ini”?",
+      "message": "Sehingga 6:00 pagi anda akan berada lebih tinggi untuk orang berdekatan dengan label “Malam ini”. Anda boleh mematikannya bila-bila masa.",
+      "messageCredits": "Sehingga 6:00 pagi anda akan berada lebih tinggi untuk orang berdekatan dengan label “Malam ini”. Anda boleh mematikannya bila-bila masa. Baki anda {count}×.",
+      "confirm": "Hidupkan",
+      "done": "Malam ini aktif sehingga 6:00 pagi."
+    },
+    "tonightOffSheet": {
+      "title": "“Malam ini” aktif",
+      "message": "Aktif sehingga {time}.",
+      "confirm": "Matikan",
+      "done": "Malam ini dimatikan."
+    }
+  },
+  "matches": {
+    "title": "Mesej",
+    "agreement": {
+      "pending": "Persetujuan belum selesai",
+      "confirmed": "Persetujuan disahkan",
+      "revoked": "Persetujuan dibatalkan"
+    },
+    "likes": "Suka",
+    "likedBy": {
+      "other": "{count} orang suka anda"
+    },
+    "likedByLocked": {
+      "other": "{count} orang suka anda – lihat siapa dengan Gold"
+    },
+    "likesHint": "Siapa suka anda dan siapa yang anda suka",
+    "empty": "Belum ada padanan. Teruskan meleret – sebaik sahaja anda saling suka, dia akan muncul di sini.",
+    "lastMessageMine": "Anda: {text}",
+    "newMatch": "Padanan baharu – hantar mesej pertama."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Menyimpan…",
+    "saved": "Disimpan",
+    "done": "Selesai",
+    "suspended": {
+      "title": "Akaun anda digantung",
+      "subtitle": "Kami sedang menyiasat satu laporan. Mod keselamatan masih berfungsi untuk anda."
+    },
+    "photoA11y": "Foto – tahan untuk padam",
+    "addPhoto": "Tambah foto",
+    "photoHint": "Tiada bogel – foto mesti mematuhi peraturan gedung aplikasi. Tahan foto untuk memadamnya.",
+    "name": "Nama",
+    "bio": "Tentang saya",
+    "bioPlaceholder": "Beberapa baris tentang diri anda.",
+    "lookingFor": "Mencari",
+    "safety": {
+      "title": "Keselamatan dan privasi",
+      "trusted": "Kenalan dipercayai: {name}",
+      "setup": "Tetapkan kenalan dipercayai dan PIN.",
+      "edit": "Edit"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold dan Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Suka tanpa had, lihat siapa suka anda, Boost dan banyak lagi.",
+      "validUntil": "Sah sehingga {date}.",
+      "upgrade": "Naik taraf",
+      "manage": "Urus"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Hanya orang yang anda suka boleh melihat anda. (Plus)"
+    },
+    "travel": {
+      "label": "Mod perjalanan (Plus)",
+      "home": "Di rumah",
+      "hint": "Leret di bandar lain sebelum perjalanan anda – orang di sana akan melihat anda dengan label “Dalam perjalanan”."
+    },
+    "showMe": "Tunjukkan",
+    "ageFrom": "Umur dari",
+    "ageTo": "Umur hingga",
+    "distance": "Jarak",
+    "distanceSuffix": " km",
+    "save": "Simpan profil",
+    "language": {
+      "title": "Bahasa",
+      "device": "Sama seperti telefon",
+      "rtlHint": "Untuk bahasa yang ditulis dari kanan ke kiri, susun atur akan terbalik selepas anda memulakan semula aplikasi."
+    },
+    "signOut": "Log keluar",
+    "deletePassword": "Kata laluan untuk memadam akaun anda",
+    "deleteForever": "Padam akaun secara kekal",
+    "deleteAccount": "Padam akaun",
+    "removePhoto": {
+      "title": "Padam foto?",
+      "confirm": "Padam"
+    }
+  },
+  "premium": {
+    "title": "Langganan",
+    "free": {
+      "title": "F*app percuma buat masa ini",
+      "body": "Kami akan mengaktifkan ciri berbayar kemudian. Keselamatan – pengesahan, persetujuan, mod keselamatan dan SOS – akan sentiasa percuma."
+    },
+    "back": "Kembali",
+    "done": "Selesai",
+    "continue": "Teruskan",
+    "reason": {
+      "likeLimitAt": "Suka anda sudah habis. Lagi akan tiba pada {time}.",
+      "likeLimit": "Suka anda sudah habis. Lagi akan tiba tidak lama lagi.",
+      "noCredit": "{credit} boleh didapati secara sekali beli atau dengan langganan.",
+      "upgrade": "Ini sebahagian daripada F*app {plan}."
+    },
+    "oneOff": "Sekali beli",
+    "owned": "anda ada {count}",
+    "creditDetail": {
+      "boost": "30 minit di kedudukan teratas untuk orang berdekatan.",
+      "superlike": "Dia akan tahu anda betul-betul berminat.",
+      "tonight": "Kedudukan lebih tinggi sehingga 6:00 pagi, dengan label “Malam ini”."
+    },
+    "buyCredit": "Beli {amount}× {credit} dengan harga {price}",
+    "creditBought": {
+      "boost": {
+        "other": "Anda mendapat {count}× Boost tambahan."
+      },
+      "superlike": {
+        "other": "Anda mendapat {count}× Super Like tambahan."
+      },
+      "tonight": {
+        "other": "Anda mendapat {count}× “Malam ini” tambahan."
+      }
+    },
+    "currentPlan": "Anda mempunyai F*app {plan}",
+    "validUntil": "Sah sehingga {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Leret tanpa had dan kembalikan profil yang anda langkau secara tidak sengaja.",
+      "gold": "Lihat siapa suka anda – dan berpadanan dengan satu ketikan.",
+      "platinum": "Suka anda dilihat dahulu. Dan “Malam ini” bila-bila masa."
+    },
+    "featureIncluded": "{feature}: termasuk",
+    "featureNotIncluded": "{feature}: tidak termasuk",
+    "months": {
+      "other": "{count} bulan"
+    },
+    "perMonth": "sebulan",
+    "perMonthSave": "sebulan · −{percent}%",
+    "continueWithPrice": "Teruskan · {price}",
+    "planBought": {
+      "other": "Anda mendapat F*app {plan} selama {count} bulan."
+    },
+    "renewal": "Langganan anda diperbaharui secara automatik. Anda boleh membatalkannya bila-bila masa dalam tetapan App Store atau Google Play. Harganya sama untuk semua orang.",
+    "renewalUpfront": "Anda membayar {total} secara pendahuluan ({monthly} sebulan). Langganan anda diperbaharui secara automatik. Anda boleh membatalkannya bila-bila masa dalam tetapan App Store atau Google Play. Harganya sama untuk semua orang.",
+    "safetyFree": {
+      "title": "Keselamatan sentiasa percuma",
+      "subtitle": "Pengesahan, persetujuan, mod keselamatan, SOS dan pelaporan."
+    },
+    "devNote": "Prototaip: tiada caj dikenakan, pembelian hanya disimulasikan."
+  },
+  "likes": {
+    "title": "Suka",
+    "received": "Suka anda",
+    "receivedCount": "Suka anda · {count}",
+    "sent": "Dihantar",
+    "emptyReceived": "Belum ada suka baharu.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "other": "{count} orang suka anda"
+    },
+    "lockedEmpty": "Suka untuk anda akan muncul di sini",
+    "goldText": "Dengan F*app Gold anda akan melihat siapa mereka dan berpadanan dengan satu ketikan.",
+    "goldCta": "Lihat dengan Gold",
+    "emptySent": "Tiada suka tanpa padanan dalam 7 hari lepas.",
+    "superLikePending": "Super Like · menunggu",
+    "pending": "Menunggu respons",
+    "sentTitle": "Siapa yang anda suka",
+    "platinumText": "Dengan F*app Platinum anda akan melihat suka anda dari 7 hari lepas.",
+    "platinumCta": "Lihat dengan Platinum",
+    "likeBack": "Suka kembali",
+    "pass": "Langkau"
+  },
+  "match": {
+    "title": "Anda berpadanan!",
+    "body": "Anda dan {name} saling mahu.\nSapa dia dan setujui apa yang anda berdua mahu.",
+    "sendMessage": "Hantar mesej",
+    "keepDiscovering": "Teruskan meneroka"
+  },
+  "login": {
+    "title": "Log masuk",
+    "email": "E-mel",
+    "password": "Kata laluan",
+    "submit": "Log masuk"
+  },
+  "register": {
+    "title": "Cipta akaun",
+    "name": "Nama (orang lain akan melihatnya)",
+    "email": "E-mel",
+    "password": "Kata laluan (sekurang-kurangnya 10 aksara)",
+    "birthdate": "Tarikh lahir",
+    "birthdatePlaceholder": "HH. BB. TTTT",
+    "birthdateInvalid": "Masukkan tarikh lahir anda sebagai HH. BB. TTTT.",
+    "iAm": "Saya",
+    "showMe": "Tunjukkan",
+    "confirmAdult": "Saya berumur 18 tahun atau lebih.",
+    "acceptRules": "Saya bersetuju dengan peraturan komuniti dan pemprosesan data saya, termasuk data tentang kehidupan seks saya, supaya F*app dapat berfungsi.",
+    "verifyNote": "Sejurus selepas ini, kami akan mengesahkan identiti dan umur anda (dokumen pengenalan dan swafoto). Kami tidak menyimpan dokumen pengenalan anda.",
+    "continue": "Teruskan"
+  },
+  "verify": {
+    "title": "Sahkan bahawa ini anda",
+    "intro": "Semua orang di F*app mempunyai identiti dan umur yang disahkan. Anda akan mengambil gambar dokumen pengenalan dan swafoto – ia mengambil masa kira-kira dua minit.",
+    "privacy": "Kami tidak menyimpan dokumen pengenalan atau foto anda. Kami hanya menyimpan keputusan pengesahan dan tarikh lahir anda. Sesiapa yang melanggar peraturan tidak boleh kembali dengan akaun baharu.",
+    "pending": {
+      "title": "Menunggu keputusan pengesahan anda",
+      "subtitle": "Biasanya ia mengambil masa beberapa minit.",
+      "refresh": "Muat semula"
+    },
+    "declined": "Pengesahan gagal",
+    "devApprove": "Simulasikan pengesahan berjaya (mod ujian)",
+    "retry": "Cuba lagi",
+    "start": "Sahkan identiti",
+    "signOut": "Log keluar"
+  },
+  "common": {
+    "back": "Kembali",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "save": "Simpan",
+    "retry": "Cuba lagi",
+    "continue": "Teruskan",
+    "done": "Selesai",
+    "send": "Hantar",
+    "delete": "Padam",
+    "edit": "Edit",
+    "open": "Buka",
+    "show": "Lihat",
+    "confirm": "Sahkan",
+    "errorGeneric": "Berlaku ralat."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} mengaktifkan mod keselamatan",
+    "partnerSafetySubtitle": "Kenalan dipercayainya tahu di mana dia berada dan dengan siapa.",
+    "meetupTitle": "Pertemuan sedang berlangsung",
+    "meetupSubtitle": "Mod keselamatan aktif.",
+    "missingTitle": "Belum ada persetujuan",
+    "missingSubtitle": "Anda masing-masing mengisi apa yang anda mahu – anda hanya akan melihat persamaannya.",
+    "fill": "Isi",
+    "revokedByMeTitle": "Anda membatalkan persetujuan",
+    "revokedByPartnerTitle": "{name} membatalkan persetujuan",
+    "revokedSubtitle": "Pertemuan dibatalkan.",
+    "revokedCooldownSubtitle": "Pertemuan dibatalkan. Hanya {name} boleh memulakan persetujuan baharu.",
+    "newAgreement": "Persetujuan baharu",
+    "confirmedTitle": "Persetujuan lengkap",
+    "confirmedSubtitle": "Apabila bertemu, anda berdua boleh berubah fikiran pada bila-bila masa.",
+    "partnerFilledTitle": "{name} sudah mengisi persetujuan",
+    "waitingForYouTitle": "Persetujuan menunggu anda",
+    "fillYoursSubtitle": "Isi apa yang anda mahu – anda hanya akan melihat persamaannya.",
+    "partnerPendingTitle": "{name} belum mengisinya",
+    "partnerPendingSubtitle": "Persetujuan lengkap apabila anda berdua sudah mengisinya."
+  },
+  "fakeCall": {
+    "incoming": "mudah alih…",
+    "hangUp": "Tamat",
+    "decline": "Tolak",
+    "accept": "Terima"
+  },
+  "homeBanners": {
+    "meetupTitle": "Pertemuan berlangsung · {name}",
+    "missedCheckIn": "Anda terlepas check-in!",
+    "safetyOn": "Mod keselamatan aktif.",
+    "feedbackTitle": "Bagaimana pertemuan tadi?",
+    "feedbackSubtitle": "{name} – hanya pasukan kami akan melihat jawapan anda.",
+    "feedbackAction": "Jawab"
+  },
+  "pinPad": {
+    "entered": {
+      "other": "{count} digit dimasukkan"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, kurang",
+    "stepperIncrease": "{label}, lebih"
+  },
+  "api": {
+    "offline": "Tidak dapat menyambung ke pelayan. Semak sambungan anda."
+  },
+  "billing": {
+    "storeNotConnected": "Pembelian melalui App Store dan Google Play belum disediakan."
+  },
+  "notifications": {
+    "channelName": "Pemberitahuan",
+    "reminderDiscreet": "Peringatan",
+    "checkInTitle": "Masa untuk check-in",
+    "checkInBody": "Sahkan dengan PIN bahawa anda selamat.",
+    "fakeCallBody": "Panggilan masuk"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Perkongsian lokasi aktif",
+    "notificationBody": "Anda boleh menghentikannya dalam aplikasi."
+  },
+  "appLock": {
+    "prompt": "Buka kunci F*app",
+    "lockedTitle": "Aplikasi dikunci",
+    "lockedBody": "Buka kuncinya dengan Face ID, cap jari atau kod laluan telefon anda.",
+    "sosHold": "SOS – tekan dan tahan",
+    "unlock": "Buka kunci",
+    "sosSentTitle": "Penggera dihantar",
+    "sosSentBody": "{name} telah menerima amaran bersama lokasi anda.",
+    "sosSentBodyNoName": "Kenalan dipercayai anda telah menerima amaran bersama lokasi anda.",
+    "sosFailedTitle": "Tidak dapat dihantar"
+  },
+  "native": {
+    "locationWhenInUse": "F*app memerlukan lokasi anda untuk menunjukkan orang berdekatan dan, semasa pertemuan, untuk berkongsinya dengan kenalan dipercayai anda.",
+    "locationAlways": "Semasa pertemuan, F*app berkongsi lokasi anda dengan kenalan dipercayai anda, walaupun skrin anda mati. Di luar pertemuan, F*app tidak menggunakan lokasi anda di latar belakang.",
+    "faceId": "F*app menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
+    "photos": "Pilih foto untuk profil anda.",
+    "camera": "Ambil gambar diri anda untuk profil."
+  }
+}

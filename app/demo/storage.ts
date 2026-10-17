@@ -22,4 +22,6 @@ export const storage = {
   setActiveSafetyIds: async (_ids: number[]) => {},
   getAppLock: async () => false,
   setAppLock: async (_on: boolean) => {},
+  getLanguage: async () => get('fapp.language'),
+  setLanguage: async (code: string | null) => set('fapp.language', code),
 };

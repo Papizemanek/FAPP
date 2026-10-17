@@ -2,6 +2,7 @@ import Constants from 'expo-constants';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
+import { t } from '@/lib/i18n';
 import { api } from './api';
 
 Notifications.setNotificationHandler({
@@ -16,7 +17,7 @@ Notifications.setNotificationHandler({
 export async function setupNotifications() {
   if (Platform.OS === 'android') {
     await Notifications.setNotificationChannelAsync('default', {
-      name: 'Upozornění',
+      name: t('notifications.channelName'),
       importance: Notifications.AndroidImportance.HIGH,
     });
   }
@@ -47,8 +48,8 @@ export async function scheduleCheckInReminder(sessionId: number, dueIso: string,
   await Notifications.scheduleNotificationAsync({
     identifier: reminderId(sessionId),
     content: {
-      title: discreet ? 'Připomínka' : 'Čas na check-in',
-      body: discreet ? '' : 'Potvrď PINem, že jsi v pořádku.',
+      title: discreet ? t('notifications.reminderDiscreet') : t('notifications.checkInTitle'),
+      body: discreet ? '' : t('notifications.checkInBody'),
       data: { type: 'safety', safetyId: sessionId },
     },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: at },
@@ -58,7 +59,7 @@ export async function scheduleCheckInReminder(sessionId: number, dueIso: string,
 /** Falešný hovor, když je aplikace na pozadí – vypadá jako běžné upozornění na hovor. */
 export async function scheduleFakeCallNotification(seconds: number, caller: string) {
   await Notifications.scheduleNotificationAsync({
-    content: { title: caller, body: 'Příchozí hovor', data: { type: 'fake-call' } },
+    content: { title: caller, body: t('notifications.fakeCallBody'), data: { type: 'fake-call' } },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: Date.now() + seconds * 1000 },
   });
 }

@@ -1,11 +1,19 @@
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
+import { DEFAULT_LOCALE, msg, tr } from './i18n.js';
 
 export class HttpError extends Error {
-  /** data = strojově čitelné doplňky odpovědi (např. { code: 'like_limit', resetAt }). */
-  constructor(status, message, data = undefined) {
-    super(message);
+  /**
+   * key = překladový klíč ze shared/i18n/server (přeloží ho obsluha chyb v app.js podle jazyka požadavku).
+   * data = { params, ...strojově čitelné doplňky odpovědi (např. { code: 'like_limit', resetAt }) }.
+   * params jsou jen pro překlad a do odpovědi se neposílají.
+   */
+  constructor(status, key, data = undefined) {
+    const { params, ...extra } = data ?? {};
+    super(tr(DEFAULT_LOCALE, key, params));
     this.status = status;
-    this.data = data;
+    this.key = key;
+    this.params = params;
+    this.data = data ? extra : undefined;
   }
 }
 
@@ -55,23 +63,26 @@ export const parseJson = (text, fallback) => {
 };
 
 // --- validace vstupů ---
+// field = překladový klíč názvu pole (např. 'fields.password'), do chyby se vloží přeložený.
+
+const invalid = (key, field, params = {}) => new HttpError(400, key, { params: { field: msg(field), ...params } });
 
 export function str(value, field, { min = 0, max = 500, optional = false } = {}) {
   if (value === undefined || value === null) {
     if (optional) return '';
-    throw new HttpError(400, `Chybí pole ${field}.`);
+    throw invalid('validation.required', field);
   }
-  if (typeof value !== 'string') throw new HttpError(400, `Pole ${field} musí být text.`);
+  if (typeof value !== 'string') throw invalid('validation.notText', field);
   const trimmed = value.trim();
-  if (trimmed.length < min) throw new HttpError(400, `Pole ${field} je příliš krátké.`);
-  if (trimmed.length > max) throw new HttpError(400, `Pole ${field} je příliš dlouhé.`);
+  if (trimmed.length < min) throw invalid('validation.tooShort', field);
+  if (trimmed.length > max) throw invalid('validation.tooLong', field);
   return trimmed;
 }
 
 export function int(value, field, { min, max }) {
   const n = Number(value);
   if (!Number.isInteger(n) || n < min || n > max) {
-    throw new HttpError(400, `Pole ${field} musí být celé číslo ${min}–${max}.`);
+    throw invalid('validation.integer', field, { min, max });
   }
   return n;
 }
@@ -79,23 +90,23 @@ export function int(value, field, { min, max }) {
 export function num(value, field, { min, max }) {
   const n = Number(value);
   if (value === null || value === undefined || !Number.isFinite(n) || n < min || n > max) {
-    throw new HttpError(400, `Neplatná hodnota pole ${field}.`);
+    throw invalid('validation.invalidValue', field);
   }
   return n;
 }
 
 export function oneOf(value, field, allowed) {
   if (typeof value !== 'string' || !Object.hasOwn(allowed, value)) {
-    throw new HttpError(400, `Neplatná hodnota pole ${field}.`);
+    throw invalid('validation.invalidValue', field);
   }
   return value;
 }
 
 export function listOf(value, field, allowed, { min = 0 } = {}) {
-  if (!Array.isArray(value)) throw new HttpError(400, `Pole ${field} musí být seznam.`);
+  if (!Array.isArray(value)) throw invalid('validation.notList', field);
   const unique = [...new Set(value)];
   for (const item of unique) oneOf(item, field, allowed);
-  if (unique.length < min) throw new HttpError(400, `V poli ${field} vyber aspoň ${min} možnost.`);
+  if (unique.length < min) throw invalid('validation.minOptions', field, { count: min });
   return unique;
 }
 
@@ -104,7 +115,7 @@ export const bool = (value) => value === true;
 export function date(value, field) {
   const s = str(value, field, { max: 10 });
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s) || Number.isNaN(Date.parse(`${s}T00:00:00Z`))) {
-    throw new HttpError(400, `Pole ${field} musí být datum ve formátu RRRR-MM-DD.`);
+    throw invalid('validation.date', field);
   }
   return s;
 }
@@ -112,13 +123,13 @@ export function date(value, field) {
 export function dateTime(value, field) {
   const s = str(value, field, { max: 40 });
   const t = Date.parse(s);
-  if (Number.isNaN(t)) throw new HttpError(400, `Pole ${field} musí být datum a čas.`);
+  if (Number.isNaN(t)) throw invalid('validation.dateTime', field);
   return new Date(t).toISOString();
 }
 
 export function email(value) {
-  const s = str(value, 'e-mail', { max: 200 }).toLowerCase();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)) throw new HttpError(400, 'Neplatný e-mail.');
+  const s = str(value, 'fields.email', { max: 200 }).toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)) throw new HttpError(400, 'validation.email');
   return s;
 }
 
@@ -126,13 +137,13 @@ export function email(value) {
 export function phone(value, field) {
   const raw = str(value, field, { max: 30 }).replace(/[\s()-]/g, '');
   const normalized = raw.startsWith('+') ? raw : raw.startsWith('00') ? `+${raw.slice(2)}` : `+420${raw}`;
-  if (!/^\+[1-9]\d{7,14}$/.test(normalized)) throw new HttpError(400, `Neplatné telefonní číslo (${field}).`);
+  if (!/^\+[1-9]\d{7,14}$/.test(normalized)) throw invalid('validation.phone', field);
   return normalized;
 }
 
 export function pin(value, field) {
   if (typeof value !== 'string' || !/^\d{4,6}$/.test(value)) {
-    throw new HttpError(400, `${field} musí mít 4–6 číslic.`);
+    throw invalid('validation.pin', field);
   }
   return value;
 }

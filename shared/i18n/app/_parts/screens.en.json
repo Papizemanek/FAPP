@@ -1,0 +1,268 @@
+{
+  "tabs": {
+    "discover": "Discover",
+    "matches": "Messages",
+    "profile": "Profile"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "{count} like left.",
+      "other": "{count} likes left."
+    },
+    "boostRunningUntil": "Boost is on until {time}.",
+    "tonight": "Tonight",
+    "tonightOn": "Tonight – on",
+    "boost": "Boost",
+    "boostOn": "Boost is on",
+    "searchSettings": "Search settings",
+    "traveling": "Traveling",
+    "travelingIn": "Traveling · {city}",
+    "change": "Change",
+    "enableLocation": "Allow location",
+    "addPhoto": "Add a photo",
+    "retry": "Try again",
+    "empty": "Nobody else is nearby right now. Try again later or widen your search.",
+    "refresh": "Refresh",
+    "nextPhoto": "Next photo",
+    "stampLike": "YES",
+    "stampNope": "NO",
+    "superLikedYou": "Super Liked you",
+    "distance": "{km} km away",
+    "rewind": "Undo last swipe",
+    "pass": "Pass",
+    "superLike": "Super Like",
+    "like": "Like",
+    "boostSheet": {
+      "title": "Start a Boost?",
+      "messageMonthly": "You'll be at the top for people nearby for 30 minutes. This uses the monthly Boost from your subscription.",
+      "messageCredits": "You'll be at the top for people nearby for 30 minutes. You have {count}× left.",
+      "confirm": "Start Boost",
+      "done": "Boost is on – you're at the top for 30 minutes."
+    },
+    "tonightSheet": {
+      "title": "Turn on “Tonight”?",
+      "message": "Until 6:00 a.m. you'll rank higher for people nearby and show a “Tonight” label. You can turn it off anytime.",
+      "messageCredits": "Until 6:00 a.m. you'll rank higher for people nearby and show a “Tonight” label. You can turn it off anytime. You have {count}× left.",
+      "confirm": "Turn on",
+      "done": "Tonight is on until 6:00 a.m."
+    },
+    "tonightOffSheet": {
+      "title": "“Tonight” is on",
+      "message": "Active until {time}.",
+      "confirm": "Turn off",
+      "done": "Tonight is off."
+    }
+  },
+  "matches": {
+    "title": "Messages",
+    "agreement": {
+      "pending": "Agreement pending",
+      "confirmed": "Agreement confirmed",
+      "revoked": "Agreement cancelled"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} person liked you",
+      "other": "{count} people liked you"
+    },
+    "likedByLocked": {
+      "one": "{count} person liked you – see who with Gold",
+      "other": "{count} people liked you – see who with Gold"
+    },
+    "likesHint": "Who liked you and who you liked",
+    "empty": "No matches yet. Keep swiping – once you both like each other, they'll show up here.",
+    "lastMessageMine": "You: {text}",
+    "newMatch": "New match – send the first message."
+  },
+  "profile": {
+    "title": "Profile",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "done": "Done",
+    "suspended": {
+      "title": "Your account is suspended",
+      "subtitle": "We're looking into a report. Safety mode still works for you."
+    },
+    "photoA11y": "Photo – hold to delete",
+    "addPhoto": "Add a photo",
+    "photoHint": "No nudity – photos have to follow the app stores' rules. Hold a photo to delete it.",
+    "name": "Name",
+    "bio": "About me",
+    "bioPlaceholder": "A few lines about yourself.",
+    "lookingFor": "Looking for",
+    "safety": {
+      "title": "Safety and privacy",
+      "trusted": "Trusted contact: {name}",
+      "setup": "Set up a trusted contact and a PIN.",
+      "edit": "Edit"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold and Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Unlimited likes, see who liked you, Boost and more.",
+      "validUntil": "Valid until {date}.",
+      "upgrade": "Upgrade",
+      "manage": "Manage"
+    },
+    "incognito": {
+      "label": "Incognito",
+      "hint": "Only people you like can see you. (Plus)"
+    },
+    "travel": {
+      "label": "Travel mode (Plus)",
+      "home": "Home",
+      "hint": "Swipe in another city before your trip – people there will see you with a “Traveling” label."
+    },
+    "showMe": "Show me",
+    "ageFrom": "Age from",
+    "ageTo": "Age to",
+    "distance": "Distance",
+    "distanceSuffix": " km",
+    "save": "Save profile",
+    "language": {
+      "title": "Language",
+      "device": "Same as phone",
+      "rtlHint": "For right-to-left languages, the layout flips after you restart the app."
+    },
+    "signOut": "Sign out",
+    "deletePassword": "Password to delete your account",
+    "deleteForever": "Delete account permanently",
+    "deleteAccount": "Delete account",
+    "removePhoto": {
+      "title": "Delete photo?",
+      "confirm": "Delete"
+    }
+  },
+  "premium": {
+    "title": "Subscription",
+    "free": {
+      "title": "F*app is free for now",
+      "body": "We'll turn on paid features later. Safety – verification, agreements, safety mode and SOS – will always stay free."
+    },
+    "back": "Back",
+    "done": "Done",
+    "continue": "Continue",
+    "reason": {
+      "likeLimitAt": "You're out of likes. More arrive at {time}.",
+      "likeLimit": "You're out of likes. More are coming soon.",
+      "noCredit": "{credit} is available as a one-off or with a subscription.",
+      "upgrade": "This is part of F*app {plan}."
+    },
+    "oneOff": "One-off",
+    "owned": "you have {count}",
+    "creditDetail": {
+      "boost": "30 minutes at the top for people nearby.",
+      "superlike": "They'll see you're really into them.",
+      "tonight": "Rank higher until 6:00 a.m., with a “Tonight” label."
+    },
+    "buyCredit": "Buy {amount}× {credit} for {price}",
+    "creditBought": {
+      "boost": {
+        "one": "You've got an extra Boost.",
+        "other": "You've got {count} extra Boosts."
+      },
+      "superlike": {
+        "one": "You've got an extra Super Like.",
+        "other": "You've got {count} extra Super Likes."
+      },
+      "tonight": {
+        "one": "You've got an extra Tonight.",
+        "other": "You've got {count} extra Tonights."
+      }
+    },
+    "currentPlan": "You have F*app {plan}",
+    "validUntil": "Valid until {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipe without limits and bring back profiles you passed by mistake.",
+      "gold": "See who liked you – and match with one tap.",
+      "platinum": "Your like gets seen first. And “Tonight” anytime."
+    },
+    "featureIncluded": "{feature}: included",
+    "featureNotIncluded": "{feature}: not included",
+    "months": {
+      "one": "{count} month",
+      "other": "{count} months"
+    },
+    "perMonth": "per month",
+    "perMonthSave": "per month · −{percent}%",
+    "continueWithPrice": "Continue · {price}",
+    "planBought": {
+      "one": "You've got F*app {plan}.",
+      "other": "You've got F*app {plan} for {count} months."
+    },
+    "renewal": "Your subscription renews automatically. You can cancel anytime in App Store or Google Play settings. The price is the same for everyone.",
+    "renewalUpfront": "You pay {total} up front ({monthly} a month). Your subscription renews automatically. You can cancel anytime in App Store or Google Play settings. The price is the same for everyone.",
+    "safetyFree": {
+      "title": "Safety is always free",
+      "subtitle": "Verification, agreements, safety mode, SOS and reporting."
+    },
+    "devNote": "Prototype: nothing is charged, the purchase is only simulated."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "Liked you",
+    "receivedCount": "Liked you · {count}",
+    "sent": "Sent",
+    "emptyReceived": "No new likes yet.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} person liked you",
+      "other": "{count} people liked you"
+    },
+    "lockedEmpty": "Your likes will show up here",
+    "goldText": "With F*app Gold you'll see who they are and match with one tap.",
+    "goldCta": "See them with Gold",
+    "emptySent": "No likes without a match in the last 7 days.",
+    "superLikePending": "Super Like · waiting",
+    "pending": "Waiting for a response",
+    "sentTitle": "Who you liked",
+    "platinumText": "With F*app Platinum you'll see your likes from the last 7 days.",
+    "platinumCta": "See them with Platinum",
+    "likeBack": "Like back",
+    "pass": "Pass"
+  },
+  "match": {
+    "title": "It's a match!",
+    "body": "You and {name} want each other.\nSay hi and agree on what you're into.",
+    "sendMessage": "Send a message",
+    "keepDiscovering": "Keep discovering"
+  },
+  "login": {
+    "title": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in"
+  },
+  "register": {
+    "title": "Create account",
+    "name": "Name (others will see it)",
+    "email": "Email",
+    "password": "Password (at least 10 characters)",
+    "birthdate": "Date of birth",
+    "birthdatePlaceholder": "DD. MM. YYYY",
+    "birthdateInvalid": "Enter your date of birth as DD. MM. YYYY.",
+    "iAm": "I am",
+    "showMe": "Show me",
+    "confirmAdult": "I'm 18 or older.",
+    "acceptRules": "I agree to the community rules and to the processing of my data, including data about my sex life, so that F*app can work.",
+    "verifyNote": "Right after this, we'll verify your identity and age (ID and selfie). We don't store your ID.",
+    "continue": "Continue"
+  },
+  "verify": {
+    "title": "Verify it's you",
+    "intro": "Everyone on F*app has a verified identity and age. You'll take a photo of your ID and a selfie – it takes about two minutes.",
+    "privacy": "We don't store your ID or photos. We only keep the verification result and your date of birth. Anyone who breaks the rules can't come back with a new account.",
+    "pending": {
+      "title": "Waiting for your verification result",
+      "subtitle": "It usually takes a few minutes.",
+      "refresh": "Refresh"
+    },
+    "declined": "Verification failed",
+    "devApprove": "Simulate successful verification (test mode)",
+    "retry": "Try again",
+    "start": "Verify identity",
+    "signOut": "Sign out"
+  }
+}

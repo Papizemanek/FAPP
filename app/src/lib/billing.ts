@@ -1,6 +1,7 @@
 import type { ProductId } from '@fapp/shared';
 import { router } from 'expo-router';
 import { useEffect, useSyncExternalStore } from 'react';
+import { t } from '@/lib/i18n';
 import { api, ApiError, type Billing } from './api';
 
 // Stav předplatného sdílený mezi obrazovkami. Placené prvky se ukazují jen v placeném režimu
@@ -46,7 +47,7 @@ export function setLikesLeft(left: number | null | undefined) {
 /** Nákup. Ve vývoji a v prototypu bez platby, v obchodech přes RevenueCat (viz README). */
 export async function purchase(productId: ProductId) {
   if (current?.provider === 'revenuecat') {
-    throw new ApiError(0, 'Nákupy přes App Store a Google Play zatím nejsou napojené.');
+    throw new ApiError(0, t('billing.storeNotConnected'));
   }
   setBilling(await api<Billing>('POST', '/billing/purchase', { productId }));
 }

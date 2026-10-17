@@ -1,0 +1,677 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Mann",
+      "woman": "Frau",
+      "nonbinary": "Nicht-binär"
+    },
+    "gendersPlural": {
+      "man": "Männer",
+      "woman": "Frauen",
+      "nonbinary": "Nicht-binäre Personen"
+    },
+    "tags": {
+      "oneoff": "Einmalig",
+      "repeat": "Immer wieder",
+      "myplace": "Bei mir",
+      "yourplace": "Bei dir",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Küssen und Kuscheln",
+      "oral": "Oral",
+      "vaginal": "Vaginal",
+      "anal": "Anal",
+      "toys": "Toys",
+      "overnight": "Übernachten"
+    },
+    "wishes": {
+      "yes": "Ja",
+      "maybe": "Vielleicht",
+      "no": "Nein"
+    },
+    "reportReasons": {
+      "consent": "Hat Zustimmung oder Grenzen missachtet",
+      "violence": "Gewalt oder Bedrohung",
+      "minor": "Verdacht auf minderjährige Person",
+      "harassment": "Belästigung",
+      "fake": "Fake-Profil",
+      "paid": "Bietet bezahlte Dienste an",
+      "other": "Sonstiges"
+    },
+    "feedbackReasons": {
+      "consent": "Hat Grenzen oder „Stopp“ nicht respektiert",
+      "safety": "Ich habe mich bedroht gefühlt",
+      "fake": "Sah nicht aus wie auf den Fotos",
+      "other": "Etwas anderes"
+    },
+    "plans": {
+      "free": "Gratis",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Unbegrenzte Likes",
+        "detail": "Swipe, so viel du willst."
+      },
+      "rewind": {
+        "name": "Swipe zurück",
+        "detail": "Hol ein versehentlich abgelehntes Profil zurück."
+      },
+      "travel": {
+        "name": "Reisemodus",
+        "detail": "Swipe schon vor der Reise in einer anderen Stadt."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Nur wen du likest, sieht dich."
+      },
+      "seeLikes": {
+        "name": "Sieh, wer dich mag",
+        "detail": "Du siehst alle, die dich geliked haben."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes pro Woche",
+        "detail": "Zeig jemandem, dass du richtig Interesse hast."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost pro Monat",
+        "detail": "30 Minuten ganz oben bei Leuten in der Nähe."
+      },
+      "priorityLikes": {
+        "name": "Prioritäts-Likes",
+        "detail": "Dein Like wird vor anderen gesehen."
+      },
+      "sentLikes": {
+        "name": "Gesendete Likes",
+        "detail": "Wen du in den letzten 7 Tagen geliked hast."
+      },
+      "tonight": {
+        "name": "Heute Abend – jederzeit",
+        "detail": "Zeig, dass du heute Abend Zeit hast."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Heute Abend"
+    },
+    "cities": {
+      "praha": "Prag",
+      "brno": "Brünn",
+      "ostrava": "Ostrava",
+      "plzen": "Pilsen",
+      "liberec": "Liberec",
+      "olomouc": "Olmütz",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Wien",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "So stelle ich es mir vor. Vor Ort kann ich alles ablehnen – und die andere Person auch.",
+    "notice": "Mir ist klar: Zustimmung gilt nur hier und jetzt. „Nein“, „Stopp“, das Safeword, Schweigen, Erstarren oder Betrunkensein sind keine Zustimmung. Eine Absprache in der App nimmt niemandem die Verantwortung ab.",
+    "deterrence": "Alle auf F*app haben eine verifizierte Identität. Bei Verdacht auf eine Straftat geben wir sie an die Polizei weiter."
+  },
+  "welcome": {
+    "tagline": "Sex ohne Umschweife.",
+    "taglineStrong": "Nur wenn ihr beide Ja sagt.",
+    "createAccount": "Konto erstellen",
+    "signIn": "Anmelden",
+    "adultsOnly": "Nur ab 18. Alle hier haben eine verifizierte Identität."
+  },
+  "agreement": {
+    "title": "Absprache",
+    "titleWithName": "Absprache · {name}",
+    "timeFormatError": "Gib die Uhrzeit als HH:MM ein, z. B. 21:00.",
+    "revokedByPartnerTitle": "{name} hat die Absprache zurückgezogen",
+    "revokedByPartnerSubtitle": "Nur {name} kann jetzt eine neue Absprache starten.",
+    "revokedTitle": "Die Absprache wurde zurückgezogen",
+    "revokedSubtitle": "Du kannst eine neue starten.",
+    "newTitle": "Neue Absprache",
+    "newSubtitle": "Ihr füllt euren Teil jeweils getrennt aus. Ihr seht nur, worin ihr übereinstimmt.",
+    "logisticsChangedTitle": "Du änderst Zeit, Ort oder Regeln",
+    "logisticsChangedSubtitle": "{name} muss sie noch einmal bestätigen.",
+    "confirmedTitle": "Ihr habt die Absprache beide ausgefüllt",
+    "confirmedSubtitle": "Vor Ort könnt ihr es euch jederzeit anders überlegen.",
+    "myPartDoneTitle": "Dein Teil ist fertig",
+    "myPartDoneSubtitle": "{name} hat noch nicht ausgefüllt oder bestätigt.",
+    "partnerFilledTitle": "Der Teil von {name} ist ausgefüllt",
+    "partnerFilledSubtitle": "Füll deinen aus – ihr seht nur, worin ihr übereinstimmt.",
+    "fillTitle": "Füll deinen Teil aus",
+    "fillSubtitle": "Ihr seht nur, worin ihr übereinstimmt.",
+    "overlapTitle": "Worin ihr übereinstimmt",
+    "overlapNone": "Noch keine Übereinstimmung.",
+    "overlapYes": "Ihr wollt beide",
+    "overlapMaybe": "Vielleicht – das besprecht ihr vor Ort",
+    "partnerNote": "{name}: „{note}“",
+    "overlapHint": "Was jemand von euch nicht will, sieht niemand – nicht einmal, wer es war.",
+    "wishesLabel": "Worauf ich Lust habe",
+    "wishesHint": "{name} sieht nur, worin ihr übereinstimmt. Dein „Nein“ sieht niemand.",
+    "wishesHintNoName": "Die andere Person sieht nur, worin ihr übereinstimmt.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Meine Grenzen (die andere Person sieht sie auch)",
+    "notePlaceholder": "Z. B. keine Fotos, ich will dich erst kennenlernen.",
+    "logisticsLabel": "Praktisches – gilt für euch beide",
+    "today": "Heute",
+    "tomorrow": "Morgen",
+    "timeLabel": "Uhrzeit",
+    "placeLabel": "Wo",
+    "placePlaceholder": "Z. B. bei mir, Vinohrady",
+    "safewordLabel": "Safeword",
+    "safewordPlaceholder": "Ein Wort, das alles stoppt",
+    "condom": "Immer mit Kondom",
+    "sober": "Nüchtern",
+    "soberHint": "Betrunkensein ist keine Zustimmung.",
+    "publicFirst": "Wir treffen uns zuerst an einem öffentlichen Ort",
+    "publicFirstHint": "Café oder Bar – ob ihr weitermacht, entscheidet ihr persönlich.",
+    "partnerMayShare": "Während des Treffens kann {name} deinen Namen, dein Foto und den Treffpunkt mit der eigenen Vertrauensperson teilen.",
+    "saveAndConfirm": "Speichern und bestätigen",
+    "startMeetup": "Treffen starten",
+    "revoke": "Absprache zurückziehen",
+    "revokeConfirmTitle": "Absprache zurückziehen?",
+    "revokeConfirmMessage": "Das Treffen findet nicht statt. Du musst nichts erklären – {name} bekommt nur eine Benachrichtigung."
+  },
+  "meetup": {
+    "title": "Treffen · {name}",
+    "fakeCallerDefault": "Mama",
+    "endedTitle": "Treffen beendet",
+    "endedMessage": "{name} hat eine Nachricht bekommen, dass es dir gut geht.",
+    "sosFailed": "Der Alarm konnte nicht gesendet werden: {error} Versuch es noch mal oder ruf {name} an.",
+    "needAgreementTitle": "Erst die Absprache abschließen",
+    "needAgreementSubtitle": "Du kannst das Treffen starten, sobald ihr beide die Absprache ausgefüllt und bestätigt habt.",
+    "needAgreementAction": "Absprache",
+    "setupTitle": "Richte deine Sicherheit ein",
+    "setupSubtitle": "Eine Vertrauensperson, eine PIN und eine Notfall-PIN.",
+    "setupAction": "Einrichten",
+    "pointTrusted": "{name} bekommt eine SMS mit einem Link und sieht, wo du bist, mit wem und ob es dir gut geht.",
+    "pointTrustedNoName": "Deine Vertrauensperson bekommt eine SMS mit einem Link und sieht, wo du bist, mit wem und ob es dir gut geht.",
+    "pointCheckIn": "In regelmäßigen Abständen bestätigst du mit deiner PIN, dass es dir gut geht. Meldest du dich nicht, schicken wir eine Warnung – auch wenn dein Akku leer ist.",
+    "pointDuress": "Die Notfall-PIN sieht genauso aus wie deine normale, löst aber still einen Alarm aus.",
+    "pointPartner": "{name} sieht, dass du den Sicherheitsmodus an hast und deine Vertrauensperson weiß, wo und mit wem du bist. Mehr nicht – weder den Alarm noch deinen Standort.",
+    "intervalLabel": "Bestätigen, dass es mir gut geht, alle",
+    "minutes": "{count} Min.",
+    "start": "Treffen starten",
+    "locationVisibleTo": "{name} sieht deinen Standort",
+    "bgLocationTitle": "Standort nur bei geöffneter App",
+    "bgLocationSubtitle": "Stell den Standortzugriff auf „Immer“, damit er auch bei ausgeschaltetem Bildschirm sichtbar ist.",
+    "bgLocationAction": "Einstellungen",
+    "nextCheckIn": "Nächster Check-in in",
+    "checkIn": "Check-in",
+    "now": "jetzt",
+    "imOk": "Mir geht’s gut",
+    "overdueHint": "{name} wurde gewarnt. Bestätige mit deiner PIN, dass es dir gut geht.",
+    "graceHint": {
+      "one": "Meldest du dich nicht innerhalb von {count} Minute nach dem Termin, bekommt {name} eine Warnung mit deinem Standort.",
+      "other": "Meldest du dich nicht innerhalb von {count} Minuten nach dem Termin, bekommt {name} eine Warnung mit deinem Standort."
+    },
+    "partnerSafetyOn": "{name} hat auch den Sicherheitsmodus an – eine Vertrauensperson weiß, wo das Treffen ist und mit wem.",
+    "partnerSafetyOff": "{name} hat den Sicherheitsmodus nicht an.",
+    "fakeCall": "Fake-Anruf",
+    "fakeCallIn": "Anruf in {count} s",
+    "fakeCallHint": "In {count} s klingelt der Fake-Anruf wie ein echter Anruf – deine Ausrede, um zu gehen.",
+    "shareLink": "Link senden",
+    "sos": "SOS – halten",
+    "revoke": "Absprache zurückziehen",
+    "end": "Treffen beenden",
+    "sosSentTitle": "Alarm gesendet",
+    "sosSentBody": "{trusted} hat deinen genauen Standort bekommen und weiß, mit wem du bist. {partner} sieht nichts davon.",
+    "sosMistake": "War ein Versehen – mir geht’s gut",
+    "sosHide": "Ausblenden (Alarm bleibt aktiv)",
+    "pinTitle": "Mit PIN bestätigen",
+    "pinSubtitleOk": "Dass es dir gut geht.",
+    "pinSubtitleEnd": "Dass das Treffen vorbei ist und es dir gut geht.",
+    "revokeConfirmTitle": "Absprache zurückziehen?",
+    "revokeConfirmMessage": "{name} bekommt eine Benachrichtigung. Du musst nichts erklären. Der Sicherheitsmodus läuft weiter, bis du ihn beendest."
+  },
+  "feedback": {
+    "title": "Wie war das Treffen?",
+    "privacy": "Deine Antwort sieht nur unser Team – {name} nie. So bleibt das hier ein Ort für Menschen, die Grenzen respektieren.",
+    "privacyNoName": "Deine Antwort sieht nur unser Team – die andere Person nie. So bleibt das hier ein Ort für Menschen, die Grenzen respektieren.",
+    "allGood": "Alles war in Ordnung",
+    "somethingWrong": "Etwas war nicht in Ordnung",
+    "detailsLabel": "Was ist passiert? (optional)",
+    "preserve": "Daten des Treffens aufbewahren, falls du zur Polizei gehen musst. Sonst wird die Absprache nach 48 Stunden gelöscht.",
+    "suspendNotice": "Wenn dich jemand nicht respektiert hat oder du in Gefahr bist, sperren wir das Konto sofort vorläufig und prüfen den Fall.",
+    "send": "Senden",
+    "helpTitle": "Das tut uns leid",
+    "helpIntro": "Wir prüfen das und haben das Konto der anderen Person bis zur Prüfung gesperrt. Du musst nicht jetzt entscheiden, wie es weitergeht – und nichts davon ist deine Schuld.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Hilfetelefon für Opfer von Straftaten – Bílý kruh bezpečí",
+        "detail": "Rund um die Uhr, kostenlos, auf Wunsch anonym."
+      },
+      "police": {
+        "name": "Tschechische Polizei",
+        "detail": "Wenn du es anzeigen willst – auch später."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Unterstützung für Menschen, die sexuelle Gewalt erlebt haben."
+      }
+    },
+    "helpLocal": {
+      "name": "Wo du Hilfe bekommst",
+      "detail": "Wende dich an die örtliche Polizei oder an ein örtliches Hilfetelefon für Opfer von Straftaten und sexueller Gewalt."
+    },
+    "medical": "Wenn etwas gegen deinen Willen passiert ist, hol dir so schnell wie möglich medizinische Hilfe – auch, um einer Schwangerschaft und Infektionen vorzubeugen, denn manche Medikamente wirken nur innerhalb von 72 Stunden. Spuren können noch gesichert werden, wenn du noch nicht geduscht hast und deine Kleidung aufbewahrst. Aber nichts davon ist Pflicht – du kannst es auch später anzeigen.",
+    "preserved": "Wir haben die Daten des Treffens (Absprache, Nachrichten, Alarme) aufbewahrt, falls du sie für die Polizei brauchst.",
+    "backToApp": "Zurück zur App"
+  },
+  "report": {
+    "title": "Melden",
+    "intro": "Deine Meldung ist anonym. Wir blockieren die Person auch für dich, damit ihr euch nicht mehr seht.",
+    "introWithName": "{name}. Deine Meldung ist anonym. Wir blockieren die Person auch für dich, damit ihr euch nicht mehr seht.",
+    "detailsLabel": "Details (optional)",
+    "submit": "Melden",
+    "thanksTitle": "Danke",
+    "thanksMessage": "Wir haben deine Meldung erhalten. Ihr seht euch nicht mehr."
+  },
+  "chat": {
+    "unavailable": "Chat nicht verfügbar",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km entfernt",
+    "reportOrBlock": "Melden oder blockieren",
+    "photo": "Foto",
+    "photoBlurred": "Unscharfes Foto, zum Anzeigen tippen",
+    "tapToReveal": "Zum Anzeigen tippen",
+    "sendPhoto": "Foto senden",
+    "message": "Nachricht",
+    "messagePlaceholder": "Schreib eine Nachricht…",
+    "send": "Senden",
+    "report": "Melden",
+    "block": "Blockieren",
+    "unmatch": "Match auflösen",
+    "blockConfirmTitle": "Blockieren?",
+    "blockConfirmMessage": "Du und {name} seht euch nicht mehr, und der Chat verschwindet."
+  },
+  "safetySettings": {
+    "title": "Sicherheit und Privatsphäre",
+    "trustedLabel": "Vertrauensperson",
+    "trustedHint": "Wenn du ein Treffen startest, schicken wir ihr per SMS einen Link zu deinem Standort. Wir warnen sie, wenn du dich nicht meldest oder Alarm auslöst.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Z. B. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+49 151 23456789",
+    "pinsLabel": "PIN und Notfall-PIN",
+    "pinsHint": "Während eines Treffens bestätigst du mit deiner PIN, dass es dir gut geht. Die Notfall-PIN sieht genauso aus, sendet aber still einen Alarm – nutz sie, wenn dich jemand zwingt, der App zu sagen, dass alles okay ist.",
+    "checkinPinLabel": "PIN (4–6 Ziffern)",
+    "duressPinLabel": "Notfall-PIN (anders als deine PIN)",
+    "passwordLabel": "Kontopasswort (zum Ändern der PINs)",
+    "pinsSet": "PINs sind eingerichtet",
+    "change": "Ändern",
+    "privacyLabel": "Privatsphäre",
+    "appLock": "App-Sperre",
+    "appLockHint": "Face ID, Fingerabdruck oder der Code deines Handys bei jedem Öffnen.",
+    "discreet": "Diskreter Modus",
+    "discreetHint": "Ein neutrales Icon und Benachrichtigungen ohne Inhalt – niemand erkennt, um welche App es geht.",
+    "save": "Speichern"
+  },
+  "tabs": {
+    "discover": "Entdecken",
+    "matches": "Nachrichten",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Noch {count} Like übrig.",
+      "other": "Noch {count} Likes übrig."
+    },
+    "boostRunningUntil": "Boost läuft bis {time}.",
+    "tonight": "Heute Abend",
+    "tonightOn": "Heute Abend – an",
+    "boost": "Boost",
+    "boostOn": "Boost läuft",
+    "searchSettings": "Sucheinstellungen",
+    "traveling": "Unterwegs",
+    "travelingIn": "Unterwegs · {city}",
+    "change": "Ändern",
+    "enableLocation": "Standort erlauben",
+    "addPhoto": "Foto hinzufügen",
+    "retry": "Erneut versuchen",
+    "empty": "Gerade ist niemand sonst in der Nähe. Versuch es später noch mal oder erweitere deine Suche.",
+    "refresh": "Aktualisieren",
+    "nextPhoto": "Nächstes Foto",
+    "stampLike": "JA",
+    "stampNope": "NEIN",
+    "superLikedYou": "Hat dir einen Super Like gegeben",
+    "distance": "{km} km entfernt",
+    "rewind": "Letzten Swipe rückgängig machen",
+    "pass": "Weiter",
+    "superLike": "Super Like",
+    "like": "Like",
+    "boostSheet": {
+      "title": "Boost starten?",
+      "messageMonthly": "Du bist 30 Minuten lang ganz oben bei Leuten in der Nähe. Dafür wird der monatliche Boost aus deinem Abo verwendet.",
+      "messageCredits": "Du bist 30 Minuten lang ganz oben bei Leuten in der Nähe. Du hast noch {count}×.",
+      "confirm": "Boost starten",
+      "done": "Boost läuft – du bist 30 Minuten ganz oben."
+    },
+    "tonightSheet": {
+      "title": "„Heute Abend“ einschalten?",
+      "message": "Bis 6:00 Uhr morgens wirst du Leuten in der Nähe weiter oben angezeigt, mit dem Label „Heute Abend“. Du kannst es jederzeit ausschalten.",
+      "messageCredits": "Bis 6:00 Uhr morgens wirst du Leuten in der Nähe weiter oben angezeigt, mit dem Label „Heute Abend“. Du kannst es jederzeit ausschalten. Du hast noch {count}×.",
+      "confirm": "Einschalten",
+      "done": "Heute Abend ist bis 6:00 Uhr an."
+    },
+    "tonightOffSheet": {
+      "title": "„Heute Abend“ ist an",
+      "message": "Aktiv bis {time}.",
+      "confirm": "Ausschalten",
+      "done": "Heute Abend ist aus."
+    }
+  },
+  "matches": {
+    "title": "Nachrichten",
+    "agreement": {
+      "pending": "Absprache offen",
+      "confirmed": "Absprache bestätigt",
+      "revoked": "Absprache zurückgezogen"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} Person hat dich geliked",
+      "other": "{count} Personen haben dich geliked"
+    },
+    "likedByLocked": {
+      "one": "{count} Person hat dich geliked – mit Gold siehst du, wer",
+      "other": "{count} Personen haben dich geliked – mit Gold siehst du, wer"
+    },
+    "likesHint": "Wer dich geliked hat und wen du geliked hast",
+    "empty": "Noch keine Matches. Swipe weiter – sobald ihr euch gegenseitig gefallt, taucht das Match hier auf.",
+    "lastMessageMine": "Du: {text}",
+    "newMatch": "Neues Match – schreib die erste Nachricht."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Wird gespeichert…",
+    "saved": "Gespeichert",
+    "done": "Fertig",
+    "suspended": {
+      "title": "Dein Konto ist vorläufig gesperrt",
+      "subtitle": "Wir prüfen eine Meldung. Der Sicherheitsmodus funktioniert für dich weiterhin."
+    },
+    "photoA11y": "Foto – zum Löschen gedrückt halten",
+    "addPhoto": "Foto hinzufügen",
+    "photoHint": "Keine Nacktheit – Fotos müssen den Regeln der App-Stores entsprechen. Halte ein Foto gedrückt, um es zu löschen.",
+    "name": "Name",
+    "bio": "Über mich",
+    "bioPlaceholder": "Ein paar Zeilen über dich.",
+    "lookingFor": "Ich suche",
+    "safety": {
+      "title": "Sicherheit und Privatsphäre",
+      "trusted": "Vertrauensperson: {name}",
+      "setup": "Richte eine Vertrauensperson und eine PIN ein.",
+      "edit": "Bearbeiten"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold und Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Unbegrenzte Likes, sehen, wer dich geliked hat, Boost und mehr.",
+      "validUntil": "Gültig bis {date}.",
+      "upgrade": "Upgraden",
+      "manage": "Verwalten"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Nur wen du likest, sieht dich. (Plus)"
+    },
+    "travel": {
+      "label": "Reisemodus (Plus)",
+      "home": "Zuhause",
+      "hint": "Swipe schon vor der Reise in einer anderen Stadt – die Leute dort sehen dich mit dem Label „Unterwegs“."
+    },
+    "showMe": "Zeig mir",
+    "ageFrom": "Alter von",
+    "ageTo": "Alter bis",
+    "distance": "Entfernung",
+    "distanceSuffix": " km",
+    "save": "Profil speichern",
+    "language": {
+      "title": "Sprache",
+      "device": "Wie auf dem Handy",
+      "rtlHint": "Bei Sprachen, die von rechts nach links geschrieben werden, dreht sich das Layout erst nach einem Neustart der App."
+    },
+    "signOut": "Abmelden",
+    "deletePassword": "Passwort zum Löschen deines Kontos",
+    "deleteForever": "Konto endgültig löschen",
+    "deleteAccount": "Konto löschen",
+    "removePhoto": {
+      "title": "Foto löschen?",
+      "confirm": "Löschen"
+    }
+  },
+  "premium": {
+    "title": "Abo",
+    "free": {
+      "title": "F*app ist vorerst kostenlos",
+      "body": "Bezahlfunktionen schalten wir später frei. Sicherheit – Verifizierung, Absprachen, Sicherheitsmodus und SOS – bleibt immer kostenlos."
+    },
+    "back": "Zurück",
+    "done": "Fertig",
+    "continue": "Weiter",
+    "reason": {
+      "likeLimitAt": "Deine Likes sind aufgebraucht. Neue gibt es um {time}.",
+      "likeLimit": "Deine Likes sind aufgebraucht. Bald gibt es neue.",
+      "noCredit": "{credit} gibt es einzeln oder im Abo.",
+      "upgrade": "Das ist Teil von F*app {plan}."
+    },
+    "oneOff": "Einzeln",
+    "owned": "du hast {count}",
+    "creditDetail": {
+      "boost": "30 Minuten ganz oben bei Leuten in der Nähe.",
+      "superlike": "Die Person sieht, dass du richtig Interesse hast.",
+      "tonight": "Bis 6:00 Uhr morgens weiter oben, mit dem Label „Heute Abend“."
+    },
+    "buyCredit": "{amount}× {credit} für {price} kaufen",
+    "creditBought": {
+      "boost": {
+        "one": "Du hast einen Boost extra.",
+        "other": "Du hast {count} Boosts extra."
+      },
+      "superlike": {
+        "one": "Du hast einen Super Like extra.",
+        "other": "Du hast {count} Super Likes extra."
+      },
+      "tonight": {
+        "one": "Du hast einmal „Heute Abend“ extra.",
+        "other": "Du hast {count}× „Heute Abend“ extra."
+      }
+    },
+    "currentPlan": "Du hast F*app {plan}",
+    "validUntil": "Gültig bis {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipe ohne Limit und hol versehentlich abgelehnte Profile zurück.",
+      "gold": "Sieh, wer dich geliked hat – und matche mit einem Tipp.",
+      "platinum": "Dein Like wird zuerst gesehen. Und „Heute Abend“ jederzeit."
+    },
+    "featureIncluded": "{feature}: inklusive",
+    "featureNotIncluded": "{feature}: nicht inklusive",
+    "months": {
+      "one": "{count} Monat",
+      "other": "{count} Monate"
+    },
+    "perMonth": "pro Monat",
+    "perMonthSave": "pro Monat · −{percent} %",
+    "continueWithPrice": "Weiter · {price}",
+    "planBought": {
+      "one": "Du hast jetzt F*app {plan}.",
+      "other": "Du hast jetzt F*app {plan} für {count} Monate."
+    },
+    "renewal": "Dein Abo verlängert sich automatisch. Du kannst es jederzeit in den Einstellungen von App Store oder Google Play kündigen. Der Preis ist für alle gleich.",
+    "renewalUpfront": "Du zahlst {total} im Voraus ({monthly} pro Monat). Dein Abo verlängert sich automatisch. Du kannst es jederzeit in den Einstellungen von App Store oder Google Play kündigen. Der Preis ist für alle gleich.",
+    "safetyFree": {
+      "title": "Sicherheit ist immer kostenlos",
+      "subtitle": "Verifizierung, Absprachen, Sicherheitsmodus, SOS und Melden."
+    },
+    "devNote": "Prototyp: Es wird nichts berechnet, der Kauf wird nur simuliert."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "Haben dich geliked",
+    "receivedCount": "Haben dich geliked · {count}",
+    "sent": "Gesendet",
+    "emptyReceived": "Noch keine neuen Likes.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} Person hat dich geliked",
+      "other": "{count} Personen haben dich geliked"
+    },
+    "lockedEmpty": "Hier erscheinen deine Likes",
+    "goldText": "Mit F*app Gold siehst du, wer es ist, und matchst mit einem Tipp.",
+    "goldCta": "Mit Gold ansehen",
+    "emptySent": "In den letzten 7 Tagen keine Likes ohne Match.",
+    "superLikePending": "Super Like · wartet",
+    "pending": "Wartet auf Antwort",
+    "sentTitle": "Wen du geliked hast",
+    "platinumText": "Mit F*app Platinum siehst du deine Likes der letzten 7 Tage.",
+    "platinumCta": "Mit Platinum ansehen",
+    "likeBack": "Zurückliken",
+    "pass": "Weiter"
+  },
+  "match": {
+    "title": "Es ist ein Match!",
+    "body": "Du und {name} wollt einander.\nSchreibt euch und klärt, worauf ihr Lust habt.",
+    "sendMessage": "Nachricht schreiben",
+    "keepDiscovering": "Weiter entdecken"
+  },
+  "login": {
+    "title": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden"
+  },
+  "register": {
+    "title": "Konto erstellen",
+    "name": "Name (für andere sichtbar)",
+    "email": "E-Mail",
+    "password": "Passwort (mindestens 10 Zeichen)",
+    "birthdate": "Geburtsdatum",
+    "birthdatePlaceholder": "TT. MM. JJJJ",
+    "birthdateInvalid": "Gib dein Geburtsdatum als TT. MM. JJJJ ein.",
+    "iAm": "Ich bin",
+    "showMe": "Zeig mir",
+    "confirmAdult": "Ich bin 18 oder älter.",
+    "acceptRules": "Ich stimme den Community-Regeln und der Verarbeitung meiner Daten zu, einschließlich Daten zu meinem Sexualleben, damit F*app funktionieren kann.",
+    "verifyNote": "Gleich danach verifizieren wir deine Identität und dein Alter (Ausweis und Selfie). Deinen Ausweis speichern wir nicht.",
+    "continue": "Weiter"
+  },
+  "verify": {
+    "title": "Bestätige, dass du es bist",
+    "intro": "Alle auf F*app haben eine verifizierte Identität und ein verifiziertes Alter. Du fotografierst deinen Ausweis und machst ein Selfie – das dauert etwa zwei Minuten.",
+    "privacy": "Wir speichern weder deinen Ausweis noch deine Fotos. Wir behalten nur das Ergebnis der Verifizierung und dein Geburtsdatum. Wer gegen die Regeln verstößt, kann nicht mit einem neuen Konto zurückkommen.",
+    "pending": {
+      "title": "Wir warten auf das Ergebnis deiner Verifizierung",
+      "subtitle": "Das dauert meist nur ein paar Minuten.",
+      "refresh": "Aktualisieren"
+    },
+    "declined": "Verifizierung fehlgeschlagen",
+    "devApprove": "Erfolgreiche Verifizierung simulieren (Testmodus)",
+    "retry": "Erneut versuchen",
+    "start": "Identität verifizieren",
+    "signOut": "Abmelden"
+  },
+  "common": {
+    "back": "Zurück",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "save": "Speichern",
+    "retry": "Erneut versuchen",
+    "continue": "Weiter",
+    "done": "Fertig",
+    "send": "Senden",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "open": "Öffnen",
+    "show": "Ansehen",
+    "confirm": "Bestätigen",
+    "errorGeneric": "Etwas ist schiefgelaufen."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} hat den Sicherheitsmodus an",
+    "partnerSafetySubtitle": "Eine Vertrauensperson weiß, wo das Treffen ist und mit wem.",
+    "meetupTitle": "Treffen läuft",
+    "meetupSubtitle": "Der Sicherheitsmodus ist an.",
+    "missingTitle": "Noch keine Absprache",
+    "missingSubtitle": "Ihr tragt beide ein, worauf ihr Lust habt – ihr seht nur, wo ihr übereinstimmt.",
+    "fill": "Ausfüllen",
+    "revokedByMeTitle": "Du hast die Absprache zurückgezogen",
+    "revokedByPartnerTitle": "{name} hat die Absprache zurückgezogen",
+    "revokedSubtitle": "Das Treffen findet nicht statt.",
+    "revokedCooldownSubtitle": "Das Treffen findet nicht statt. Nur {name} kann eine neue Absprache starten.",
+    "newAgreement": "Neue Absprache",
+    "confirmedTitle": "Die Absprache steht",
+    "confirmedSubtitle": "Vor Ort könnt ihr es euch jederzeit anders überlegen.",
+    "partnerFilledTitle": "{name} hat die Absprache ausgefüllt",
+    "waitingForYouTitle": "Die Absprache wartet auf dich",
+    "fillYoursSubtitle": "Trag ein, worauf du Lust hast – ihr seht nur, wo ihr übereinstimmt.",
+    "partnerPendingTitle": "{name} hat noch nicht ausgefüllt",
+    "partnerPendingSubtitle": "Die Absprache steht, sobald ihr beide ausgefüllt habt."
+  },
+  "fakeCall": {
+    "incoming": "Mobil…",
+    "hangUp": "Auflegen",
+    "decline": "Ablehnen",
+    "accept": "Annehmen"
+  },
+  "homeBanners": {
+    "meetupTitle": "Treffen läuft · {name}",
+    "missedCheckIn": "Du hast einen Check-in verpasst!",
+    "safetyOn": "Der Sicherheitsmodus ist an.",
+    "feedbackTitle": "Wie war das Treffen?",
+    "feedbackSubtitle": "{name} – nur unser Team sieht deine Antwort.",
+    "feedbackAction": "Antworten"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} Ziffer eingegeben",
+      "other": "{count} Ziffern eingegeben"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, weniger",
+    "stepperIncrease": "{label}, mehr"
+  },
+  "api": {
+    "offline": "Keine Verbindung zum Server. Prüf deine Internetverbindung."
+  },
+  "billing": {
+    "storeNotConnected": "Käufe über App Store und Google Play sind noch nicht eingerichtet."
+  },
+  "notifications": {
+    "channelName": "Benachrichtigungen",
+    "reminderDiscreet": "Erinnerung",
+    "checkInTitle": "Zeit für deinen Check-in",
+    "checkInBody": "Bestätige mit deiner PIN, dass es dir gut geht.",
+    "fakeCallBody": "Eingehender Anruf"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Standortfreigabe ist an",
+    "notificationBody": "Du kannst sie in der App beenden."
+  },
+  "appLock": {
+    "prompt": "F*app entsperren",
+    "lockedTitle": "Die App ist gesperrt",
+    "lockedBody": "Entsperre sie mit Face ID, deinem Fingerabdruck oder dem Code deines Handys.",
+    "sosHold": "SOS – gedrückt halten",
+    "unlock": "Entsperren",
+    "sosSentTitle": "Alarm gesendet",
+    "sosSentBody": "{name} hat eine Warnung mit deinem Standort bekommen.",
+    "sosSentBodyNoName": "Deine Vertrauensperson hat eine Warnung mit deinem Standort bekommen.",
+    "sosFailedTitle": "Senden fehlgeschlagen"
+  },
+  "native": {
+    "locationWhenInUse": "F*app braucht deinen Standort, um dir Leute in der Nähe zu zeigen und ihn während eines Treffens mit deiner Vertrauensperson zu teilen.",
+    "locationAlways": "Während eines Treffens teilt F*app deinen Standort mit deiner Vertrauensperson, auch bei ausgeschaltetem Bildschirm. Außerhalb von Treffen nutzt die App deinen Standort nicht im Hintergrund.",
+    "faceId": "F*app nutzt Face ID zum Entsperren, damit niemand sonst hineinschauen kann.",
+    "photos": "Wähle Fotos für dein Profil aus.",
+    "camera": "Mach ein Foto von dir für dein Profil."
+  }
+}

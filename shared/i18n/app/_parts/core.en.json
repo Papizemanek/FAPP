@@ -1,0 +1,77 @@
+{
+  "labels": {
+    "genders": { "man": "Man", "woman": "Woman", "nonbinary": "Non-binary" },
+    "gendersPlural": { "man": "Men", "woman": "Women", "nonbinary": "Non-binary people" },
+    "tags": {
+      "oneoff": "One-off",
+      "repeat": "Again and again",
+      "myplace": "My place",
+      "yourplace": "Your place",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Kissing and cuddling",
+      "oral": "Oral",
+      "vaginal": "Vaginal",
+      "anal": "Anal",
+      "toys": "Toys",
+      "overnight": "Staying the night"
+    },
+    "wishes": { "yes": "Yes", "maybe": "Maybe", "no": "No" },
+    "reportReasons": {
+      "consent": "Broke consent or boundaries",
+      "violence": "Violence or threat",
+      "minor": "Suspected minor",
+      "harassment": "Harassment",
+      "fake": "Fake profile",
+      "paid": "Offering paid services",
+      "other": "Other"
+    },
+    "feedbackReasons": {
+      "consent": "Didn't respect boundaries or \"stop\"",
+      "safety": "I felt unsafe",
+      "fake": "Didn't look like their photos",
+      "other": "Something else"
+    },
+    "plans": { "free": "Free", "plus": "Plus", "gold": "Gold", "platinum": "Platinum" },
+    "features": {
+      "unlimitedLikes": { "name": "Unlimited likes", "detail": "Swipe as much as you want." },
+      "rewind": { "name": "Rewind", "detail": "Bring back a profile you passed by mistake." },
+      "travel": { "name": "Travel mode", "detail": "Swipe in another city before your trip." },
+      "incognito": { "name": "Incognito", "detail": "Only people you like can see you." },
+      "seeLikes": { "name": "See who likes you", "detail": "See everyone who liked you." },
+      "weeklySuperLikes": { "name": "5 Super Likes a week", "detail": "Show someone you're really into them." },
+      "monthlyBoost": { "name": "1 Boost a month", "detail": "30 minutes at the top for people nearby." },
+      "priorityLikes": { "name": "Priority Likes", "detail": "Your like gets seen before others." },
+      "sentLikes": { "name": "Sent likes", "detail": "Who you liked in the last 7 days." },
+      "tonight": { "name": "Tonight, anytime", "detail": "Show you're free tonight." }
+    },
+    "credits": { "boost": "Boost", "superlike": "Super Like", "tonight": "Tonight" },
+    "cities": {
+      "praha": "Prague",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Pilsen",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Vienna",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "This is what I have in mind. I can say no to anything once we're there – and so can they.",
+    "notice": "I understand: consent only counts here and now. \"No\", \"stop\", the safe word, silence, freezing up or being drunk are not consent. An agreement in the app doesn't take responsibility away from anyone.",
+    "deterrence": "Everyone on F*app has a verified identity. If we suspect a crime, we hand it to the police."
+  },
+  "welcome": {
+    "tagline": "Sex, no fuss.",
+    "taglineStrong": "Only when you both say yes.",
+    "createAccount": "Create account",
+    "signIn": "Sign in",
+    "adultsOnly": "18+ only. Everyone here has a verified identity."
+  }
+}

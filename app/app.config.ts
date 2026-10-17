@@ -1,9 +1,28 @@
+/// <reference types="node" />
+import cs from '@fapp/shared/i18n/app/cs.json';
 import type { ExpoConfig } from 'expo/config';
+import fs from 'node:fs';
+import path from 'node:path';
 
 // Proměnné prostředí:
 //   EXPO_PUBLIC_API_URL      – adresa serveru (výchozí http://localhost:3000)
 //   GOOGLE_MAPS_API_KEY      – klíč pro mapy na Androidu
 //   EAS_PROJECT_ID           – pro push notifikace (Expo Push)
+
+// Systémové texty (žádosti o oprávnění) jsou ve slovníku aplikace, jmenný prostor `native`.
+// V Info.plist je výchozí čeština, ostatní jazyky dostane iOS z ./locales/<jazyk>.json
+// (InfoPlist.strings). Ty generuje `node scripts/native-locales.mjs` – po změně textů ho spusť znovu.
+const native = cs.native;
+const localesDir = path.join(__dirname, 'locales');
+const locales = fs.existsSync(localesDir)
+  ? Object.fromEntries(
+      fs
+        .readdirSync(localesDir)
+        .filter((file) => file.endsWith('.json'))
+        .sort()
+        .map((file) => [path.basename(file, '.json'), `./locales/${file}`]),
+    )
+  : {};
 
 const config: ExpoConfig = {
   name: 'F*app',
@@ -19,6 +38,7 @@ const config: ExpoConfig = {
     supportsTablet: false,
     infoPlist: {
       UIBackgroundModes: ['location', 'remote-notification'],
+      CFBundleAllowMixedLocalizations: true,
     },
   },
   android: {
@@ -30,28 +50,29 @@ const config: ExpoConfig = {
     predictiveBackGestureEnabled: false,
     permissions: ['ACCESS_FINE_LOCATION', 'ACCESS_BACKGROUND_LOCATION', 'FOREGROUND_SERVICE', 'FOREGROUND_SERVICE_LOCATION'],
   },
+  locales: Object.keys(locales).length > 0 ? locales : undefined,
   plugins: [
     'expo-router',
     'expo-secure-store',
     'expo-font',
+    ['expo-localization', { supportsRTL: true }],
     [
       'expo-location',
       {
-        locationWhenInUsePermission: 'F*app potřebuje polohu, aby ti ukázal lidi v okolí a během schůzky ji mohl sdílet s tvou důvěryhodnou osobou.',
-        locationAlwaysAndWhenInUsePermission:
-          'Během schůzky sdílí F*app tvoji polohu s důvěryhodnou osobou i se zhasnutým displejem. Mimo schůzku polohu na pozadí nepoužívá.',
+        locationWhenInUsePermission: native.locationWhenInUse,
+        locationAlwaysAndWhenInUsePermission: native.locationAlways,
         isIosBackgroundLocationEnabled: true,
         isAndroidBackgroundLocationEnabled: true,
         isAndroidForegroundServiceEnabled: true,
       },
     ],
     ['expo-notifications', { color: '#FF6B8B' }],
-    ['expo-local-authentication', { faceIDPermission: 'F*app se odemyká Face ID, aby se do něj nikdo nepodíval.' }],
+    ['expo-local-authentication', { faceIDPermission: native.faceId }],
     [
       'expo-image-picker',
       {
-        photosPermission: 'Vyber si fotky do profilu.',
-        cameraPermission: 'Vyfoť se do profilu.',
+        photosPermission: native.photos,
+        cameraPermission: native.camera,
         microphonePermission: false,
       },
     ],

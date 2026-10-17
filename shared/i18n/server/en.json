@@ -1,0 +1,268 @@
+{
+  "errors": {
+    "notFound": "Not found.",
+    "tooLarge": "The request is too large.",
+    "invalidJson": "Invalid JSON.",
+    "internal": "Something went wrong. Try again.",
+    "rateLimited": "Too many attempts at once. Try again in a moment.",
+    "unauthorized": "Unauthorized.",
+    "invalidSignature": "Invalid signature.",
+    "linkExpired": "This link is no longer valid."
+  },
+  "validation": {
+    "required": "“{field}” is missing.",
+    "notText": "“{field}” must be text.",
+    "tooShort": "“{field}” is too short.",
+    "tooLong": "“{field}” is too long.",
+    "integer": "“{field}” must be a whole number from {min} to {max}.",
+    "invalidValue": "Invalid value for “{field}”.",
+    "notList": "“{field}” must be a list.",
+    "minOptions": {
+      "one": "Pick at least {count} option for “{field}”.",
+      "other": "Pick at least {count} options for “{field}”."
+    },
+    "date": "“{field}” must be a date in YYYY-MM-DD format.",
+    "dateTime": "“{field}” must be a date and time.",
+    "email": "Invalid email.",
+    "phone": "Invalid phone number ({field}).",
+    "pin": "{field} must be 4–6 digits."
+  },
+  "fields": {
+    "email": "email",
+    "password": "password",
+    "name": "name",
+    "birthdate": "date of birth",
+    "gender": "gender",
+    "interestedIn": "who you're looking for",
+    "pushToken": "push token",
+    "ageMin": "min age",
+    "ageMax": "max age",
+    "bio": "about me",
+    "tags": "what I'm looking for",
+    "maxDistance": "distance",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "trusted contact's name",
+    "trustedPhone": "trusted contact's phone",
+    "pin": "PIN",
+    "duressPin": "Duress PIN",
+    "meetAt": "when",
+    "place": "where",
+    "safeword": "safe word",
+    "note": "my boundaries",
+    "version": "version",
+    "message": "message",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "check-in interval",
+    "accuracy": "accuracy",
+    "battery": "battery",
+    "user": "user",
+    "reason": "reason",
+    "details": "details",
+    "resolution": "resolution",
+    "days": "number of days"
+  },
+  "auth": {
+    "confirmAdult": "You must confirm you're 18 or older.",
+    "acceptRules": "You must agree to the rules and to the processing of your data.",
+    "underage": "F*app is only for people 18 and over.",
+    "invalidBirthdate": "Invalid date of birth.",
+    "emailTaken": "An account with this email already exists.",
+    "wrongCredentials": "Wrong email or password.",
+    "banned": "This account was banned for breaking the rules.",
+    "notLoggedIn": "You're not signed in.",
+    "suspended": "Your account is suspended until a moderator reviews it.",
+    "verifyFirst": "Verify your identity first."
+  },
+  "profile": {
+    "wrongPassword": "Wrong password.",
+    "ageRange": "Min age can't be higher than max age.",
+    "maxPhotos": {
+      "one": "You can have up to {count} photo.",
+      "other": "You can have up to {count} photos."
+    },
+    "pinsMustDiffer": "Your duress PIN must be different from your regular PIN.",
+    "deleteDuringMeetup": "You can't delete your account right now – a meetup is in progress. Try again once it's over."
+  },
+  "photo": {
+    "notJpeg": "The photo must be a JPEG.",
+    "corrupt": "The photo is corrupted.",
+    "notBase64": "The photo must be a base64-encoded JPEG.",
+    "tooLarge": "The photo is too large (max 2 MB).",
+    "notFound": "Photo not found.",
+    "unavailable": "Photo not available."
+  },
+  "users": {
+    "notFound": "User not found."
+  },
+  "match": {
+    "notFound": "Match not found.",
+    "ended": "This match has ended.",
+    "profileUnavailable": "This profile is no longer available."
+  },
+  "discover": {
+    "locationRequired": "Turn on location first so we can show you people nearby.",
+    "photoRequired": "Add at least one photo.",
+    "superLikeIsLike": "A Super Like is always a like.",
+    "profileNotFound": "Profile not found.",
+    "profileGone": "This profile no longer exists.",
+    "nothingToRewind": "Nothing to rewind.",
+    "cantRewindSuperLike": "You can't rewind a Super Like.",
+    "cantRewindMatch": "This swipe is already a match."
+  },
+  "billing": {
+    "likeLimit": "You're out of likes. More are coming soon – or swipe without limits with F*app Plus.",
+    "noSuperLike": "You don't have any Super Likes.",
+    "noBoost": "You don't have any Boosts.",
+    "tonightPaid": "“Tonight” comes with Platinum or as a one-time purchase.",
+    "featureInPlan": "{feature} is part of F*app {plan}.",
+    "paymentsOff": "Payments aren't on yet – F*app is completely free for now.",
+    "unknownProduct": "Unknown product.",
+    "cantBuy": "You can't buy this right now.",
+    "cantBoost": "You can't start a Boost right now.",
+    "boostRunning": "A Boost is already running.",
+    "cantTonight": "You can't turn this on right now.",
+    "tonightOn": "Tonight is already on.",
+    "unknownCity": "Unknown city."
+  },
+  "features": {
+    "unlimitedLikes": "Unlimited likes",
+    "rewind": "Rewind",
+    "travel": "Travel mode",
+    "incognito": "Incognito",
+    "seeLikes": "See who likes you",
+    "weeklySuperLikes": "5 Super Likes a week",
+    "monthlyBoost": "1 Boost a month",
+    "priorityLikes": "Priority Likes",
+    "sentLikes": "Sent likes",
+    "tonight": "Tonight, anytime"
+  },
+  "agreement": {
+    "wishesRequired": "Fill in what you're up for.",
+    "invalidWish": "Invalid choice in your wishes.",
+    "notFound": "Agreement not found.",
+    "confirmBoth": "Confirm both statements – that this is what you have in mind and that an agreement isn't consent.",
+    "meetWithin": {
+      "one": "The meetup must be within the next {count} day.",
+      "other": "The meetup must be within the next {count} days."
+    },
+    "cooldown": "Only {name} can start a new agreement right now.",
+    "changed": "The agreement changed in the meantime. Read it again."
+  },
+  "chat": {
+    "empty": "Empty message.",
+    "notSent": "Message not sent. {reason}",
+    "photo": "Photo"
+  },
+  "moderation": {
+    "minor": "This message suggests one of you may be under 18. F*app is 18+ only.",
+    "paid": "Offering or asking for paid sex is not allowed on F*app.",
+    "consentPressure": "Heads up: an agreement in the app isn't consent. You can cancel it anytime and say no to anything in person – no explanation needed.",
+    "contact": "Your match is sharing contact details outside the app. Outside F*app, the agreement, safety mode and reporting don't work for you."
+  },
+  "safety": {
+    "notFound": "Meetup not found.",
+    "ended": "The meetup has already ended.",
+    "wrongPin": "Wrong PIN.",
+    "agreementRequired": "You can start the meetup once you've both filled in and confirmed the agreement.",
+    "setupRequired": "First set up a trusted contact, a PIN and a duress PIN.",
+    "invalidInterval": "Invalid check-in interval."
+  },
+  "reports": {
+    "feedbackSent": "You've already sent your feedback."
+  },
+  "verification": {
+    "unknown": "Unknown verification.",
+    "alreadyVerified": "Your identity is already verified.",
+    "startFirst": "Start the verification first.",
+    "noWebhook": "The development provider has no webhook.",
+    "unavailable": "The verification service isn't responding. Try again in a moment.",
+    "declined": {
+      "underage": "Verification showed you're not 18 yet. F*app is for adults only.",
+      "banned": "This person was banned from F*app for breaking the rules.",
+      "duplicate": "This person already has an F*app account. Everyone can have only one.",
+      "incomplete": "We couldn't read the date of birth from the document. Try again.",
+      "default": "Verification failed. Try again."
+    }
+  },
+  "admin": {
+    "notReported": "This conversation hasn't been reported.",
+    "unknownPlan": "Unknown plan."
+  },
+  "push": {
+    "discreet": "New notification",
+    "match": {
+      "title": "It's a match!",
+      "body": "You and {name} want each other."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Someone's really into you."
+    },
+    "message": {
+      "photo": "Sent a photo"
+    },
+    "agreementComplete": {
+      "title": "Agreement complete",
+      "body": "You've both confirmed it. You can still change your minds when you meet."
+    },
+    "agreementNew": {
+      "title": "New agreement",
+      "body": "{name} started an agreement. Now fill in what you're up for."
+    },
+    "agreementChanged": {
+      "title": "Agreement changed",
+      "body": "{name} changed the time, place or rules. Confirm them again."
+    },
+    "agreementUpdated": {
+      "title": "Agreement updated",
+      "body": "{name} updated their wishes."
+    },
+    "agreementRevoked": {
+      "title": "Agreement cancelled",
+      "body": "{name} cancelled the agreement. The meetup is off – and that has to be respected."
+    },
+    "checkInOverdue": {
+      "title": "You missed your check-in",
+      "body": "{name} has been alerted. Confirm you're OK."
+    }
+  },
+  "sms": {
+    "started": "{name} is meeting someone and chose you as their trusted contact. See where they are and if they're OK: {url}",
+    "alarm": "ALERT: {name} needs help. Location and details: {url}",
+    "overdue": "{name} hasn't checked in - they were due to confirm they're OK by {time}. Try calling. Location: {url}",
+    "backOk": "{name} checked in and confirmed they're OK.",
+    "sosCancelled": "{name} cancelled the alert - it was a mistake, they're OK.",
+    "endedOk": "{name} ended the meetup and is OK. Thanks for being there.",
+    "someone": "Someone close to you"
+  },
+  "share": {
+    "pageTitle": "F*app – safety link",
+    "header": "Safety link",
+    "loading": "Loading…",
+    "call": "Call {number}",
+    "mapLabel": "Map with last known location",
+    "openMaps": "Open in Maps",
+    "partnerPhotoAlt": "Photo of the person they're meeting",
+    "partnerLead": "Meeting:",
+    "okTitle": "{name} is OK",
+    "okDetail": "Last check-in at {last}. Next one expected by {next}.",
+    "overdueTitle": "{name} hasn't checked in",
+    "overdueDetail": "The check-in was due by {due}. Try calling. If they don't pick up, call {number} and give them the address from the map.",
+    "alarmTitle": "{name} needs help",
+    "alarmDetail": "Alert at {time}. Call {number} and give them the location from the map and the meeting place below.",
+    "endedTitle": "The meetup is over",
+    "endedDetail": "{name} confirmed they're OK.",
+    "endedDetailAlarm": "{name} confirmed they're OK. An alert went off during the meetup – ask if everything is all right.",
+    "footer": "The location stops being visible once {name} ends the meetup.",
+    "locationJustNow": "Location just now",
+    "locationAgo": {
+      "one": "Location {count} min ago",
+      "other": "Location {count} min ago"
+    },
+    "battery": "battery {percent}",
+    "linkExpired": "This link is no longer valid",
+    "loadFailed": "Couldn't load the status. Retrying…"
+  }
+}

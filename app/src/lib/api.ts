@@ -10,6 +10,7 @@ import type {
   TAGS,
   TravelCityId,
 } from '@fapp/shared';
+import { t } from '@/lib/i18n';
 import { API_URL } from './config';
 import { transport, type TransportResponse } from './transport';
 
@@ -144,7 +145,7 @@ export type Billing = {
 export type Likes = { count: number; profiles: Profile[] };
 
 /** Strojově čitelné doplňky chyby (402 = placená funkce). */
-export type ApiErrorData = { code?: 'like_limit' | 'no_credit' | 'upgrade'; resetAt?: string; plan?: PlanId; credit?: CreditKind };
+export type ApiErrorData = { code?: 'like_limit' | 'no_credit' | 'upgrade' | 'no_location' | 'no_photo'; resetAt?: string; plan?: PlanId; credit?: CreditKind };
 
 export type PendingFeedback = { agreementId: number; matchId: number; partnerName: string; meetAt: string };
 
@@ -181,13 +182,13 @@ export async function api<T = unknown>(method: string, path: string, body?: unkn
   try {
     res = await transport(method, path, body, authToken);
   } catch {
-    throw new ApiError(0, 'Nepodařilo se spojit se serverem. Zkontroluj připojení.');
+    throw new ApiError(0, t('api.offline'));
   }
   if (res.status === 204) return undefined as T;
   if (res.status >= 400) {
     if (res.status === 401 && authToken) onUnauthorized?.();
     const { error, ...data } = (res.json as ({ error?: string } & ApiErrorData) | null) ?? {};
-    throw new ApiError(res.status, error ?? 'Něco se pokazilo.', data);
+    throw new ApiError(res.status, error ?? t('common.errorGeneric'), data);
   }
   return res.json as T;
 }
@@ -199,4 +200,4 @@ export const imageSource = (url: string | null | undefined) => {
   return { uri: `${API_URL}${url}`, headers: authToken ? { Authorization: `Bearer ${authToken}` } : undefined };
 };
 
-export const errorMessage = (err: unknown) => (err instanceof Error ? err.message : 'Něco se pokazilo.');
+export const errorMessage = (err: unknown) => (err instanceof Error ? err.message : t('common.errorGeneric'));

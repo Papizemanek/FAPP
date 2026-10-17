@@ -5,9 +5,11 @@ import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 import { Banner, Body, Button, ErrorText, Field, Header, Label, Screen, Toggle } from '@/components/ui';
 import { api, errorMessage, type Me } from '@/lib/api';
 import { useAppLock } from '@/lib/appLock';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 
 export default function SafetySettings() {
+  const t = useT();
   const { me, setMe } = useSession();
   const lock = useAppLock();
   const [trustedName, setTrustedName] = useState(me?.trustedName ?? '');
@@ -52,53 +54,58 @@ export default function SafetySettings() {
 
   return (
     <Screen>
-      <Header title="Bezpečnost a soukromí" />
+      <Header title={t('safetySettings.title')} />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
           <View style={{ gap: 12 }}>
-            <Label>Důvěryhodná osoba</Label>
+            <Label>{t('safetySettings.trustedLabel')}</Label>
             <Body muted style={{ fontSize: 14 }}>
-              Když zahájíš schůzku, pošleme jí SMS s odkazem na tvoji polohu. Upozorníme ji, když se neozveš nebo spustíš poplach.
+              {t('safetySettings.trustedHint')}
             </Body>
-            <Field label="Jméno" value={trustedName} onChangeText={setTrustedName} placeholder="Např. Petra" />
-            <Field label="Telefon" value={trustedPhone} onChangeText={setTrustedPhone} keyboardType="phone-pad" placeholder="777 123 456" />
+            <Field label={t('safetySettings.nameLabel')} value={trustedName} onChangeText={setTrustedName} placeholder={t('safetySettings.namePlaceholder')} />
+            <Field
+              label={t('safetySettings.phoneLabel')}
+              value={trustedPhone}
+              onChangeText={setTrustedPhone}
+              keyboardType="phone-pad"
+              placeholder={t('safetySettings.phonePlaceholder')}
+            />
           </View>
 
           <View style={{ gap: 12 }}>
-            <Label>PIN a nouzový PIN</Label>
+            <Label>{t('safetySettings.pinsLabel')}</Label>
             <Body muted style={{ fontSize: 14 }}>
-              PINem během schůzky potvrzuješ, že jsi v pořádku. Nouzový PIN vypadá úplně stejně, ale potichu pošle poplach – použij ho, když tě
-              někdo nutí aplikaci „uklidnit“.
+              {t('safetySettings.pinsHint')}
             </Body>
             {changePins ? (
               <>
-                <Field label="PIN (4–6 číslic)" value={checkinPin} onChangeText={setCheckinPin} keyboardType="number-pad" secureTextEntry maxLength={6} />
-                <Field label="Nouzový PIN (jiný než PIN)" value={duressPin} onChangeText={setDuressPin} keyboardType="number-pad" secureTextEntry maxLength={6} />
-                {me?.hasCheckinPin ? <Field label="Heslo k účtu (pro změnu PINů)" value={password} onChangeText={setPassword} secureTextEntry /> : null}
+                <Field label={t('safetySettings.checkinPinLabel')} value={checkinPin} onChangeText={setCheckinPin} keyboardType="number-pad" secureTextEntry maxLength={6} />
+                <Field label={t('safetySettings.duressPinLabel')} value={duressPin} onChangeText={setDuressPin} keyboardType="number-pad" secureTextEntry maxLength={6} />
+                {me?.hasCheckinPin ? <Field label={t('safetySettings.passwordLabel')} value={password} onChangeText={setPassword} secureTextEntry /> : null}
               </>
             ) : (
-              <Banner tone="safe" icon="lock" title="PINy jsou nastavené" action="Změnit" onPress={() => setChangePins(true)} />
+              <Banner tone="safe" icon="lock" title={t('safetySettings.pinsSet')} action={t('safetySettings.change')} onPress={() => setChangePins(true)} />
             )}
           </View>
 
           <View style={{ gap: 12 }}>
-            <Label>Soukromí</Label>
+            <Label>{t('safetySettings.privacyLabel')}</Label>
             <Toggle
-              label="Zámek aplikace"
-              hint="Face ID, otisk nebo kód telefonu při každém otevření."
+              label={t('safetySettings.appLock')}
+              hint={t('safetySettings.appLockHint')}
               value={lock.enabled}
               onChange={(on) => void lock.setEnabled(on)}
             />
             <Toggle
-              label="Diskrétní režim"
-              hint="Neutrální ikona a notifikace bez obsahu – nikdo nepozná, o jakou aplikaci jde."
+              label={t('safetySettings.discreet')}
+              hint={t('safetySettings.discreetHint')}
               value={discreet}
               onChange={setDiscreet}
             />
           </View>
 
           <ErrorText>{error}</ErrorText>
-          <Button label="Uložit" onPress={save} loading={busy} disabled={!trustedName || !trustedPhone || !pinsValid} />
+          <Button label={t('safetySettings.save')} onPress={save} loading={busy} disabled={!trustedName || !trustedPhone || !pinsValid} />
         </ScrollView>
       </KeyboardAvoidingView>
     </Screen>

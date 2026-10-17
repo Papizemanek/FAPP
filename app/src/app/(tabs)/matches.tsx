@@ -6,15 +6,17 @@ import { Icon } from '@/components/Icon';
 import { Avatar, Body, Screen, Title } from '@/components/ui';
 import { api, type AgreementStatus, type Likes, type MatchSummary } from '@/lib/api';
 import { showPaid, useBilling } from '@/lib/billing';
+import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 
-const statusPill: Partial<Record<AgreementStatus, { label: string; color: string }>> = {
-  pending: { label: 'Domluva čeká', color: colors.warn },
-  confirmed: { label: 'Domluva hotová', color: colors.safe },
-  revoked: { label: 'Domluva zrušena', color: colors.alarm },
+const statusPill: Partial<Record<AgreementStatus, { labelKey: string; color: string }>> = {
+  pending: { labelKey: 'matches.agreement.pending', color: colors.warn },
+  confirmed: { labelKey: 'matches.agreement.confirmed', color: colors.safe },
+  revoked: { labelKey: 'matches.agreement.revoked', color: colors.alarm },
 };
 
 export default function Matches() {
+  const t = useT();
   const [matches, setMatches] = useState<MatchSummary[]>([]);
   const [refreshing, setRefreshing] = useState(false);
   const [likes, setLikes] = useState<Likes | null>(null);
@@ -42,7 +44,7 @@ export default function Matches() {
   return (
     <Screen edges={['top']}>
       <View style={{ height: 64, paddingHorizontal: 20, justifyContent: 'center' }}>
-        <Title>Zprávy</Title>
+        <Title>{t('matches.title')}</Title>
       </View>
       <HomeBanners />
       {paid ? (
@@ -51,11 +53,11 @@ export default function Matches() {
             <Icon name="heart" size={22} color={colors.onAccent} fill={colors.onAccent} strokeWidth={1.5} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={s.name}>Lajky</Text>
+            <Text style={s.name}>{t('matches.likes')}</Text>
             <Text style={s.preview}>
               {likes?.count
-                ? `Lajklo tě ${likes.count} ${likes.count === 1 ? 'člověk' : likes.count < 5 ? 'lidi' : 'lidí'}${billing.features.seeLikes ? '' : ' – uvidíš je s Gold'}`
-                : 'Kdo tě lajkl a koho jsi lajkl/a ty'}
+                ? t(billing.features.seeLikes ? 'matches.likedBy' : 'matches.likedByLocked', { count: likes.count })
+                : t('matches.likesHint')}
             </Text>
           </View>
           <Icon name="chevron" color={colors.muted} />
@@ -69,7 +71,7 @@ export default function Matches() {
         ListEmptyComponent={
           refreshing ? null : (
             <Body muted style={{ textAlign: 'center', marginTop: 48, paddingHorizontal: 24 }}>
-              Zatím žádný match. Swipuj dál – jakmile se líbíte oba, objeví se tady.
+              {t('matches.empty')}
             </Body>
           )
         }
@@ -83,10 +85,14 @@ export default function Matches() {
                   <Text style={s.name}>
                     {item.partner.name}, {item.partner.age}
                   </Text>
-                  {pill ? <Text style={[s.pill, { color: pill.color, borderColor: pill.color }]}>{pill.label}</Text> : null}
+                  {pill ? <Text style={[s.pill, { color: pill.color, borderColor: pill.color }]}>{t(pill.labelKey)}</Text> : null}
                 </View>
                 <Text style={s.preview} numberOfLines={1}>
-                  {item.lastMessage ? `${item.lastMessage.mine ? 'Ty: ' : ''}${item.lastMessage.text}` : 'Nový match – napiš první.'}
+                  {item.lastMessage
+                    ? item.lastMessage.mine
+                      ? t('matches.lastMessageMine', { text: item.lastMessage.text })
+                      : item.lastMessage.text
+                    : t('matches.newMatch')}
                 </Text>
               </View>
             </Pressable>

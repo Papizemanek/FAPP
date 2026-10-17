@@ -2,10 +2,12 @@ import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { View } from 'react-native';
 import { api, type PendingFeedback, type SafetySession } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { Banner } from './ui';
 
 /** Upozornění nahoře na hlavních obrazovkách: probíhající schůzka a hodnocení po schůzce. */
 export function HomeBanners() {
+  const t = useT();
   const [active, setActive] = useState<SafetySession[]>([]);
   const [feedback, setFeedback] = useState<PendingFeedback[]>([]);
 
@@ -24,9 +26,9 @@ export function HomeBanners() {
           key={s.id}
           tone={s.status === 'ok' ? 'safe' : 'warn'}
           icon="shieldCheck"
-          title={`Probíhá schůzka · ${s.partner.name}`}
-          subtitle={s.status === 'overdue' ? 'Zmeškal/a jsi check-in!' : 'Bezpečnostní režim je zapnutý.'}
-          action="Otevřít"
+          title={t('homeBanners.meetupTitle', { name: s.partner.name })}
+          subtitle={s.status === 'overdue' ? t('homeBanners.missedCheckIn') : t('homeBanners.safetyOn')}
+          action={t('common.open')}
           onPress={() => router.push(`/meetup/${s.matchId ?? 0}?safetyId=${s.id}`)}
         />
       ))}
@@ -34,9 +36,9 @@ export function HomeBanners() {
         <Banner
           key={f.agreementId}
           icon="shield"
-          title="Jak proběhla schůzka?"
-          subtitle={`${f.partnerName} – odpověď uvidí jen náš tým.`}
-          action="Odpovědět"
+          title={t('homeBanners.feedbackTitle')}
+          subtitle={t('homeBanners.feedbackSubtitle', { name: f.partnerName })}
+          action={t('homeBanners.feedbackAction')}
           onPress={() => router.push(`/feedback/${f.agreementId}?name=${encodeURIComponent(f.partnerName)}`)}
         />
       ))}

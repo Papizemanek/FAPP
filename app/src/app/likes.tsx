@@ -6,12 +6,14 @@ import { ActionSheet } from '@/components/Sheet';
 import { Avatar, Body, Button, ErrorText, Header, Screen } from '@/components/ui';
 import { api, errorMessage, type Likes, type Profile } from '@/lib/api';
 import { openPaywall, setLikesLeft, useBilling } from '@/lib/billing';
+import { useT } from '@/lib/i18n';
 import { avatarTones, colors, fonts } from '@/lib/theme';
 
 type Tab = 'received' | 'sent';
 
 /** Kdo tě lajkl (Gold) a koho jsi lajkl/a ty (Platinum). Bez předplatného jen počet – fotky se vůbec neposílají. */
 export default function LikesScreen() {
+  const t = useT();
   const billing = useBilling();
   const [tab, setTab] = useState<Tab>('received');
   const [likes, setLikes] = useState<Likes | null>(null);
@@ -61,10 +63,10 @@ export default function LikesScreen() {
 
   return (
     <Screen>
-      <Header title="Lajky" />
+      <Header title={t('likes.title')} />
       <View style={s.tabs}>
-        <TabButton label={`Lajkli tě${count ? ` · ${count}` : ''}`} active={tab === 'received'} onPress={() => setTab('received')} />
-        <TabButton label="Odeslané" active={tab === 'sent'} onPress={openSent} />
+        <TabButton label={count ? t('likes.receivedCount', { count }) : t('likes.received')} active={tab === 'received'} onPress={() => setTab('received')} />
+        <TabButton label={t('likes.sent')} active={tab === 'sent'} onPress={openSent} />
       </View>
       <ErrorText>{error}</ErrorText>
 
@@ -76,7 +78,7 @@ export default function LikesScreen() {
             numColumns={2}
             columnWrapperStyle={{ gap: 12 }}
             contentContainerStyle={{ padding: 20, gap: 12 }}
-            ListEmptyComponent={<Body muted style={{ textAlign: 'center', marginTop: 40 }}>Zatím tě nikdo nový nelajkl.</Body>}
+            ListEmptyComponent={<Body muted style={{ textAlign: 'center', marginTop: 40 }}>{t('likes.emptyReceived')}</Body>}
             renderItem={({ item, index }) => (
               <Pressable
                 accessibilityRole="button"
@@ -91,19 +93,19 @@ export default function LikesScreen() {
                 {item.superLike ? (
                   <View style={s.badge}>
                     <Icon name="star" size={12} color={colors.onAccent} fill={colors.onAccent} strokeWidth={1.5} />
-                    <Text style={s.badgeText}>Super lajk</Text>
+                    <Text style={s.badgeText}>{t('likes.superLike')}</Text>
                   </View>
                 ) : item.distanceKm != null ? (
-                  <Text style={s.tileMeta}>{item.distanceKm} km</Text>
+                  <Text style={s.tileMeta}>{t('likes.distance', { km: item.distanceKm })}</Text>
                 ) : null}
               </Pressable>
             )}
           />
         ) : (
           <Locked
-            title={count ? `Lajklo tě ${count} ${count === 1 ? 'člověk' : count < 5 ? 'lidi' : 'lidí'}` : 'Lajky uvidíš tady'}
-            text="S F*app Gold uvidíš, kdo to je, a matchneš jedním klepnutím."
-            cta="Zobrazit s Gold"
+            title={count ? t('likes.likedBy', { count }) : t('likes.lockedEmpty')}
+            text={t('likes.goldText')}
+            cta={t('likes.goldCta')}
             plan="gold"
             tiles={Math.min(Math.max(count, 2), 6)}
           />
@@ -113,7 +115,7 @@ export default function LikesScreen() {
           data={sent ?? []}
           keyExtractor={(p) => String(p.id)}
           contentContainerStyle={{ padding: 20, gap: 8 }}
-          ListEmptyComponent={<Body muted style={{ textAlign: 'center', marginTop: 40 }}>Za posledních 7 dní žádné lajky bez matche.</Body>}
+          ListEmptyComponent={<Body muted style={{ textAlign: 'center', marginTop: 40 }}>{t('likes.emptySent')}</Body>}
           renderItem={({ item, index }) => (
             <View style={s.row}>
               <Avatar name={item.name} photo={item.photos[0]} size={52} index={index} />
@@ -121,16 +123,16 @@ export default function LikesScreen() {
                 <Text style={s.rowName}>
                   {item.name}, {item.age}
                 </Text>
-                <Text style={s.tileMeta}>{item.superLike ? 'Super lajk · čeká' : 'Čeká na odpověď'}</Text>
+                <Text style={s.tileMeta}>{item.superLike ? t('likes.superLikePending') : t('likes.pending')}</Text>
               </View>
             </View>
           )}
         />
       ) : (
         <Locked
-          title="Koho jsi lajkl/a"
-          text="S F*app Platinum uvidíš svoje lajky za posledních 7 dní."
-          cta="Zobrazit s Platinum"
+          title={t('likes.sentTitle')}
+          text={t('likes.platinumText')}
+          cta={t('likes.platinumCta')}
           plan="platinum"
           tiles={2}
         />
@@ -142,8 +144,8 @@ export default function LikesScreen() {
         actions={
           picked
             ? [
-                { label: 'Lajknout zpátky', onPress: () => answer(picked, true) },
-                { label: 'Přeskočit', onPress: () => answer(picked, false) },
+                { label: t('likes.likeBack'), onPress: () => answer(picked, true) },
+                { label: t('likes.pass'), onPress: () => answer(picked, false) },
               ]
             : []
         }

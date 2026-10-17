@@ -6,6 +6,7 @@ import { getUser, ownProfile } from '../model.js';
 import { HttpError, int, nowIso, str } from '../util.js';
 
 // Moderátorské API (zatím bez UI). Autorizace: Authorization: Bearer <ADMIN_TOKEN>.
+// Chyby jsou překladové klíče jako všude jinde (admin.* má zatím jen čeština a angličtina).
 // Moderátor smí číst jen konverzace, které někdo nahlásil nebo které zachytila moderace.
 export function adminRoutes({ db, config, sealer }) {
   const r = Router();
@@ -13,11 +14,11 @@ export function adminRoutes({ db, config, sealer }) {
   r.use((req, _res, next) => {
     const given = Buffer.from((req.get('authorization') ?? '').replace(/^Bearer /, ''));
     const expected = Buffer.from(config.adminToken);
-    if (given.length !== expected.length || !timingSafeEqual(given, expected)) throw new HttpError(401, 'Neautorizováno.');
+    if (given.length !== expected.length || !timingSafeEqual(given, expected)) throw new HttpError(401, 'errors.unauthorized');
     next();
   });
 
-  const userId = (req) => int(req.params.id, 'uživatel', { min: 1, max: Number.MAX_SAFE_INTEGER });
+  const userId = (req) => int(req.params.id, 'fields.user', { min: 1, max: Number.MAX_SAFE_INTEGER });
 
   r.get('/flags', (req, res) => {
     const rows = db
@@ -33,7 +34,7 @@ export function adminRoutes({ db, config, sealer }) {
   r.post('/flags/:id/resolve', (req, res) => {
     db.prepare('UPDATE flags SET resolved_at = ?, resolution = ? WHERE id = ?').run(
       nowIso(),
-      str(req.body?.resolution, 'řešení', { max: 500, optional: true }),
+      str(req.body?.resolution, 'fields.resolution', { max: 500, optional: true }),
       Number(req.params.id),
     );
     res.status(204).end();
@@ -41,7 +42,7 @@ export function adminRoutes({ db, config, sealer }) {
 
   r.get('/users/:id', (req, res) => {
     const user = getUser(db, userId(req));
-    if (!user) throw new HttpError(404, 'Uživatel neexistuje.');
+    if (!user) throw new HttpError(404, 'users.notFound');
     res.json({
       profile: { ...ownProfile(user), statusReason: user.status_reason },
       reports: db
@@ -61,15 +62,15 @@ export function adminRoutes({ db, config, sealer }) {
     const reported =
       db.prepare('SELECT 1 FROM reports WHERE match_id = ?').get(matchId) ||
       db.prepare("SELECT 1 FROM flags WHERE source = 'chat' AND ref_id = ?").get(matchId);
-    if (!reported) throw new HttpError(403, 'Konverzace nebyla nahlášena.');
+    if (!reported) throw new HttpError(403, 'admin.notReported');
     const rows = db.prepare('SELECT * FROM messages WHERE match_id = ? ORDER BY id').all(matchId);
     res.json(rows.map((m) => ({ id: m.id, senderId: m.sender_id, text: sealer.open(m.body), imageId: m.image_id, createdAt: m.created_at })));
   });
 
   const setStatus = (status) => (req, res) => {
     const user = getUser(db, userId(req));
-    if (!user) throw new HttpError(404, 'Uživatel neexistuje.');
-    const reason = str(req.body?.reason, 'důvod', { max: 500, optional: true });
+    if (!user) throw new HttpError(404, 'users.notFound');
+    const reason = str(req.body?.reason, 'fields.reason', { max: 500, optional: true });
     db.prepare('UPDATE users SET status = ?, status_reason = ? WHERE id = ?').run(status, reason, user.id);
     if (status === 'banned') {
       const ban = db.prepare('INSERT OR IGNORE INTO banned_identities (hash, reason, created_at) VALUES (?, ?, ?)');
@@ -86,17 +87,23 @@ export function adminRoutes({ db, config, sealer }) {
   r.post('/users/:id/ban', setStatus('banned'));
   r.post('/users/:id/reinstate', setStatus('active'));
 
+  // Čekací listina pro rozeslání pozvánek (jen moderátoři/správci).
+  r.get('/waitlist', (req, res) => {
+    const rows = db.prepare('SELECT id, email, city, locale, created_at FROM waitlist ORDER BY id').all();
+    res.json(rows.map((w) => ({ ...w, email: sealer.open(w.email) })));
+  });
+
   // Předplatné zdarma pro testery a partnery: { plan: 'gold', days: 30 }. plan 'free' ukončí všechna taková darovaná.
   r.post('/users/:id/plan', (req, res) => {
     const user = getUser(db, userId(req));
-    if (!user) throw new HttpError(404, 'Uživatel neexistuje.');
+    if (!user) throw new HttpError(404, 'users.notFound');
     const plan = String(req.body?.plan ?? '');
-    if (!Object.hasOwn(PLANS, plan)) throw new HttpError(400, 'Neznámá úroveň.');
+    if (!Object.hasOwn(PLANS, plan)) throw new HttpError(400, 'admin.unknownPlan');
     const now = nowIso();
     if (plan === 'free') {
       db.prepare("UPDATE subscriptions SET expires_at = ?, updated_at = ? WHERE user_id = ? AND source = 'admin' AND expires_at > ?").run(now, now, user.id, now);
     } else {
-      const days = int(req.body?.days, 'počet dní', { min: 1, max: 3660 });
+      const days = int(req.body?.days, 'fields.days', { min: 1, max: 3660 });
       db.prepare(
         `INSERT INTO subscriptions (user_id, plan, product_id, source, expires_at, created_at, updated_at)
          VALUES (?, ?, 'admin', 'admin', ?, ?, ?)`,

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, Vibration, View } from 'react-native';
+import { useT } from '@/lib/i18n';
 import { fonts } from '@/lib/theme';
 
 /**
@@ -7,6 +8,7 @@ import { fonts } from '@/lib/theme';
  * Vypadá jako obyčejný hovor, nic na něm neprozrazuje F*app.
  */
 export function FakeCall({ visible, caller, onClose }: { visible: boolean; caller: string; onClose: () => void }) {
+  const t = useT();
   const [answeredAt, setAnsweredAt] = useState<number | null>(null);
   const [now, setNow] = useState(Date.now());
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -51,21 +53,21 @@ export function FakeCall({ visible, caller, onClose }: { visible: boolean; calle
             <Text style={s.avatarText}>{caller.slice(0, 1).toUpperCase()}</Text>
           </View>
           <Text style={s.name}>{caller}</Text>
-          <Text style={s.state}>{answeredAt ? duration : 'mobil volá…'}</Text>
+          <Text style={s.state}>{answeredAt ? duration : t('fakeCall.incoming')}</Text>
         </View>
         {answeredAt ? (
           <View style={s.actions}>
-            <Pressable accessibilityRole="button" accessibilityLabel="Zavěsit" onPress={hangUp} style={[s.round, { backgroundColor: '#E5484D' }]}>
-              <Text style={s.roundText}>Zavěsit</Text>
+            <Pressable accessibilityRole="button" accessibilityLabel={t('fakeCall.hangUp')} onPress={hangUp} style={[s.round, { backgroundColor: '#E5484D' }]}>
+              <Text style={s.roundText}>{t('fakeCall.hangUp')}</Text>
             </Pressable>
           </View>
         ) : (
           <View style={s.actions}>
-            <Pressable accessibilityRole="button" accessibilityLabel="Odmítnout" onPress={hangUp} style={[s.round, { backgroundColor: '#E5484D' }]}>
-              <Text style={s.roundText}>Odmítnout</Text>
+            <Pressable accessibilityRole="button" accessibilityLabel={t('fakeCall.decline')} onPress={hangUp} style={[s.round, { backgroundColor: '#E5484D' }]}>
+              <Text style={s.roundText}>{t('fakeCall.decline')}</Text>
             </Pressable>
-            <Pressable accessibilityRole="button" accessibilityLabel="Přijmout" onPress={answer} style={[s.round, { backgroundColor: '#30A46C' }]}>
-              <Text style={s.roundText}>Přijmout</Text>
+            <Pressable accessibilityRole="button" accessibilityLabel={t('fakeCall.accept')} onPress={answer} style={[s.round, { backgroundColor: '#30A46C' }]}>
+              <Text style={s.roundText}>{t('fakeCall.accept')}</Text>
             </Pressable>
           </View>
         )}

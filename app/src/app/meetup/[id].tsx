@@ -1,4 +1,4 @@
-import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS, DETERRENCE_TEXT } from '@fapp/shared';
+import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS } from '@fapp/shared';
 import * as Location from 'expo-location';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
@@ -11,6 +11,7 @@ import { Icon } from '@/components/Icon';
 import { PinPad } from '@/components/PinPad';
 import { Banner, Body, Button, Chip, ErrorText, Header, Label, Screen } from '@/components/ui';
 import { api, errorMessage, type MatchDetail, type SafetySession } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { cancelCheckInReminder, scheduleCheckInReminder, scheduleFakeCallNotification } from '@/lib/notifications';
 import { ensureBackgroundPermission, startSafetyTracking, stopSafetyTracking } from '@/lib/safetyTracking';
 import { useSession } from '@/lib/session';
@@ -20,6 +21,7 @@ type PinAction = 'checkin' | 'end' | 'cancelSos' | null;
 
 export default function Meetup() {
   usePreventScreenCapture();
+  const t = useT();
   const { id, safetyId } = useLocalSearchParams<{ id: string; safetyId?: string }>();
   const { me, refresh } = useSession();
   const [detail, setDetail] = useState<MatchDetail | null>(null);
@@ -57,8 +59,8 @@ export default function Meetup() {
   );
 
   useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), 15_000);
-    return () => clearInterval(t);
+    const timer = setInterval(() => setNow(Date.now()), 15_000);
+    return () => clearInterval(timer);
   }, []);
 
   useEffect(() => setNow(Date.now()), [session]);
@@ -66,11 +68,11 @@ export default function Meetup() {
   // Falešný hovor: za chvíli „zazvoní“ telefon. Když je aplikace na pozadí, přijde notifikace.
   useEffect(() => {
     if (fakeCallAt === null) return;
-    const t = setTimeout(() => {
+    const timer = setTimeout(() => {
       setFakeCallAt(null);
       setFakeCallOpen(true);
     }, Math.max(0, fakeCallAt - Date.now()));
-    return () => clearTimeout(t);
+    return () => clearTimeout(timer);
   }, [fakeCallAt]);
 
   const scheduleFakeCall = () => {
@@ -80,7 +82,7 @@ export default function Meetup() {
 
   const partnerName = session?.partner.name ?? detail?.partner.name ?? '';
   const trustedName = session?.trustedName ?? me?.trustedName ?? '';
-  const fakeCaller = trustedName || 'Mamka';
+  const fakeCaller = trustedName || t('meetup.fakeCallerDefault');
   const ready = !!me?.trustedPhone && !!me?.hasCheckinPin && !!me?.hasDuressPin;
   const agreementOk = detail?.agreement?.status === 'confirmed';
 
@@ -115,7 +117,7 @@ export default function Meetup() {
       await stopSafetyTracking(session.id);
       await cancelCheckInReminder(session.id);
       setPinAction(null);
-      Alert.alert('Schůzka ukončena', `${trustedName} dostal/a zprávu, že jsi v pořádku.`);
+      Alert.alert(t('meetup.endedTitle'), t('meetup.endedMessage', { name: trustedName }));
       router.back();
       return;
     }
@@ -130,7 +132,7 @@ export default function Meetup() {
       setSession(await api<SafetySession>('POST', `/safety/${session.id}/sos`));
     } catch (err) {
       setSosOpen(false);
-      setError(`Poplach se nepodařilo odeslat: ${errorMessage(err)} Zkus to znovu nebo zavolej ${trustedName}.`);
+      setError(t('meetup.sosFailed', { error: errorMessage(err), name: trustedName }));
     }
   };
 
@@ -147,37 +149,43 @@ export default function Meetup() {
   if (!session) {
     return (
       <Screen>
-        <Header title={`Schůzka · ${partnerName}`} />
+        <Header title={t('meetup.title', { name: partnerName })} />
         <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }}>
           {!agreementOk ? (
-            <Banner tone="warn" title="Nejdřív hotová domluva" subtitle="Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba." action="Domluva" onPress={() => router.replace(`/agreement/${id}`)} />
+            <Banner
+              tone="warn"
+              title={t('meetup.needAgreementTitle')}
+              subtitle={t('meetup.needAgreementSubtitle')}
+              action={t('meetup.needAgreementAction')}
+              onPress={() => router.replace(`/agreement/${id}`)}
+            />
           ) : null}
           {!ready ? (
             <Banner
               tone="warn"
-              title="Nastav si bezpečnost"
-              subtitle="Důvěryhodnou osobu, PIN a nouzový PIN."
-              action="Nastavit"
+              title={t('meetup.setupTitle')}
+              subtitle={t('meetup.setupSubtitle')}
+              action={t('meetup.setupAction')}
               onPress={() => router.push('/safety-settings')}
             />
           ) : null}
           <View style={{ gap: 12 }}>
-            <Point icon="pin" text={`${trustedName || 'Tvoje důvěryhodná osoba'} dostane SMS s odkazem. Uvidí, kde jsi, s kým a jestli jsi v pořádku.`} />
-            <Point icon="check" text="V pravidelném intervalu potvrdíš PINem, že jsi OK. Když se neozveš, pošleme upozornění – i kdyby se ti vybil telefon." />
-            <Point icon="lock" text="Nouzový PIN vypadá úplně stejně jako běžný, ale potichu spustí poplach." />
-            <Point icon="shield" text={`${partnerName} uvidí, že máš zapnutý bezpečnostní režim a že tvoje důvěryhodná osoba ví, kde a s kým jsi. Nic víc – poplach ani polohu ne.`} />
-            <Point icon="user" text={DETERRENCE_TEXT} />
+            <Point icon="pin" text={trustedName ? t('meetup.pointTrusted', { name: trustedName }) : t('meetup.pointTrustedNoName')} />
+            <Point icon="check" text={t('meetup.pointCheckIn')} />
+            <Point icon="lock" text={t('meetup.pointDuress')} />
+            <Point icon="shield" text={t('meetup.pointPartner', { name: partnerName })} />
+            <Point icon="user" text={t('consent.deterrence')} />
           </View>
           <View style={{ gap: 10 }}>
-            <Label>Potvrzovat, že jsem OK, každých</Label>
+            <Label>{t('meetup.intervalLabel')}</Label>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
               {CHECK_IN_OPTIONS.map((m) => (
-                <Chip key={m} tone="safe" label={`${m} min`} selected={minutes === m} onPress={() => setMinutes(m)} />
+                <Chip key={m} tone="safe" label={t('meetup.minutes', { count: m })} selected={minutes === m} onPress={() => setMinutes(m)} />
               ))}
             </View>
           </View>
           <ErrorText>{error}</ErrorText>
-          <Button variant="safe" label="Zahájit schůzku" onPress={start} loading={busy} disabled={!ready || !agreementOk} />
+          <Button variant="safe" label={t('meetup.start')} onPress={start} loading={busy} disabled={!ready || !agreementOk} />
         </ScrollView>
       </Screen>
     );
@@ -190,7 +198,7 @@ export default function Meetup() {
 
   return (
     <Screen>
-      <Header title={`Schůzka · ${partnerName}`} />
+      <Header title={t('meetup.title', { name: partnerName })} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 16, gap: 14, paddingBottom: 12 }}>
         <View style={s.map}>
           <MapView
@@ -202,29 +210,29 @@ export default function Meetup() {
           />
           <View style={s.mapPill}>
             <View style={s.dot} />
-            <Text style={s.mapPillText}>Polohu vidí {trustedName}</Text>
+            <Text style={s.mapPillText}>{t('meetup.locationVisibleTo', { name: trustedName })}</Text>
           </View>
         </View>
         {!bgGranted ? (
           <Banner
             tone="warn"
-            title="Poloha jen s otevřenou aplikací"
-            subtitle="Povol polohu „Vždy“, ať ji vidí i se zhasnutým displejem."
-            action="Nastavení"
+            title={t('meetup.bgLocationTitle')}
+            subtitle={t('meetup.bgLocationSubtitle')}
+            action={t('meetup.bgLocationAction')}
             onPress={() => Linking.openSettings()}
           />
         ) : null}
 
         <View style={s.card}>
           <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' }}>
-            <Text style={s.cardLabel}>{left > 0 ? 'Další check-in za' : 'Check-in'}</Text>
-            <Text style={[s.countdown, left <= 0 && { color: overdue ? colors.alarm : colors.warn }]}>{left > 0 ? `${left} min` : 'teď'}</Text>
+            <Text style={s.cardLabel}>{left > 0 ? t('meetup.nextCheckIn') : t('meetup.checkIn')}</Text>
+            <Text style={[s.countdown, left <= 0 && { color: overdue ? colors.alarm : colors.warn }]}>{left > 0 ? t('meetup.minutes', { count: left }) : t('meetup.now')}</Text>
           </View>
-          <Button variant="safe" label="Jsem v pořádku" onPress={() => setPinAction('checkin')} />
+          <Button variant="safe" label={t('meetup.imOk')} onPress={() => setPinAction('checkin')} />
           <Text style={s.cardHint}>
             {overdue
-              ? `${trustedName} dostal/a upozornění. Potvrď PINem, že jsi v pořádku.`
-              : `Když se do ${CHECK_IN_GRACE_MINUTES} minut po termínu neozveš, ${trustedName} dostane upozornění s tvou polohou.`}
+              ? t('meetup.overdueHint', { name: trustedName })
+              : t('meetup.graceHint', { count: CHECK_IN_GRACE_MINUTES, name: trustedName })}
           </Text>
         </View>
 
@@ -232,54 +240,52 @@ export default function Meetup() {
           <Icon name="shield" size={18} color={detail?.safety.partner.active ? colors.safe : colors.faint} />
           <Body muted style={{ flex: 1, fontSize: 14 }}>
             {detail?.safety.partner.active
-              ? `${partnerName} má taky zapnutý bezpečnostní režim – jeho/její důvěryhodná osoba ví, kde a s kým je.`
-              : `${partnerName} bezpečnostní režim zapnutý nemá.`}
+              ? t('meetup.partnerSafetyOn', { name: partnerName })
+              : t('meetup.partnerSafetyOff', { name: partnerName })}
           </Body>
         </View>
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button
             variant="ghost"
-            label={fakeCallAt ? `Hovor za ${Math.max(1, Math.ceil((fakeCallAt - now) / 1000))} s` : 'Falešný hovor'}
+            label={fakeCallAt ? t('meetup.fakeCallIn', { count: Math.max(1, Math.ceil((fakeCallAt - now) / 1000)) }) : t('meetup.fakeCall')}
             height={44}
             style={{ flex: 1 }}
             onPress={fakeCallAt ? () => setFakeCallAt(null) : scheduleFakeCall}
           />
-          <Button variant="ghost" label="Poslat odkaz" height={44} style={{ flex: 1 }} onPress={() => Share.share({ message: session.shareUrl }).catch(() => {})} />
+          <Button variant="ghost" label={t('meetup.shareLink')} height={44} style={{ flex: 1 }} onPress={() => Share.share({ message: session.shareUrl }).catch(() => {})} />
         </View>
-        <Body muted style={{ fontSize: 13 }}>Falešný hovor ti za {FAKE_CALL_DELAY_SECONDS} s zazvoní jako běžný hovor – výmluva, jak odejít.</Body>
+        <Body muted style={{ fontSize: 13 }}>{t('meetup.fakeCallHint', { count: FAKE_CALL_DELAY_SECONDS })}</Body>
       </ScrollView>
 
       <View style={{ paddingHorizontal: 16, paddingBottom: 12, gap: 10 }}>
         <ErrorText>{error}</ErrorText>
-        <Button variant="sos" label="SOS – podrž" onLongPress={sos} height={64} />
+        <Button variant="sos" label={t('meetup.sos')} onLongPress={sos} height={64} />
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button
             variant="ghost"
-            label="Zrušit domluvu"
+            label={t('meetup.revoke')}
             height={48}
             style={{ flex: 1 }}
             onPress={() => setConfirmRevoke(true)}
             disabled={!detail?.agreement || detail.agreement.status === 'revoked'}
           />
-          <Button variant="ghost" label="Ukončit schůzku" height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
+          <Button variant="ghost" label={t('meetup.end')} height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
         </View>
       </View>
 
       <Modal visible={sosOpen} transparent animationType="slide" onRequestClose={() => {}}>
         <View style={s.sheetBackdrop}>
           <View style={s.sheet}>
-            <Text style={s.sheetTitle}>Poplach odeslán</Text>
-            <Body>
-              {trustedName} dostal/a tvoji přesnou polohu a informaci, s kým jsi. {partnerName} nic neuvidí.
-            </Body>
-            <Button variant="ghost" label="Byl to omyl – jsem OK" onPress={() => setPinAction('cancelSos')} />
-            <Button variant="ghost" label="Skrýt (poplach trvá dál)" height={44} onPress={() => setSosOpen(false)} />
+            <Text style={s.sheetTitle}>{t('meetup.sosSentTitle')}</Text>
+            <Body>{t('meetup.sosSentBody', { trusted: trustedName, partner: partnerName })}</Body>
+            <Button variant="ghost" label={t('meetup.sosMistake')} onPress={() => setPinAction('cancelSos')} />
+            <Button variant="ghost" label={t('meetup.sosHide')} height={44} onPress={() => setSosOpen(false)} />
           </View>
         </View>
         <PinPad
           visible={pinAction === 'cancelSos'}
-          title="Potvrď PINem"
-          subtitle="Že jsi v pořádku."
+          title={t('meetup.pinTitle')}
+          subtitle={t('meetup.pinSubtitleOk')}
           onSubmit={submitPin}
           onClose={() => setPinAction(null)}
         />
@@ -287,9 +293,9 @@ export default function Meetup() {
 
       <ConfirmSheet
         visible={confirmRevoke}
-        title="Zrušit domluvu?"
-        message={`${partnerName} dostane oznámení. Nemusíš nic vysvětlovat. Bezpečnostní režim poběží dál, dokud ho neukončíš.`}
-        confirmLabel="Zrušit domluvu"
+        title={t('meetup.revokeConfirmTitle')}
+        message={t('meetup.revokeConfirmMessage', { name: partnerName })}
+        confirmLabel={t('meetup.revoke')}
         destructive
         onConfirm={revoke}
         onClose={() => setConfirmRevoke(false)}
@@ -299,8 +305,8 @@ export default function Meetup() {
 
       <PinPad
         visible={pinAction === 'checkin' || pinAction === 'end'}
-        title="Potvrď PINem"
-        subtitle={pinAction === 'end' ? 'Že je schůzka u konce a jsi v pořádku.' : 'Že jsi v pořádku.'}
+        title={t('meetup.pinTitle')}
+        subtitle={pinAction === 'end' ? t('meetup.pinSubtitleEnd') : t('meetup.pinSubtitleOk')}
         onSubmit={submitPin}
         onClose={() => setPinAction(null)}
       />

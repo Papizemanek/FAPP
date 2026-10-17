@@ -32,8 +32,8 @@ export function reportRoutes({ db, sealer }) {
   }
 
   const targetOf = (req) => {
-    const id = int(req.params.id, 'uživatel', { min: 1, max: Number.MAX_SAFE_INTEGER });
-    if (id === req.user.id || !getUser(db, id)) throw new HttpError(404, 'Uživatel neexistuje.');
+    const id = int(req.params.id, 'fields.user', { min: 1, max: Number.MAX_SAFE_INTEGER });
+    if (id === req.user.id || !getUser(db, id)) throw new HttpError(404, 'users.notFound');
     return id;
   };
 
@@ -45,8 +45,8 @@ export function reportRoutes({ db, sealer }) {
   // Nahlášení zároveň zablokuje – nahlášeného už nikdy neuvidíš.
   r.post('/users/:id/report', auth, (req, res) => {
     const targetId = targetOf(req);
-    const reason = oneOf(req.body?.reason, 'důvod', REPORT_REASONS);
-    const details = str(req.body?.details, 'podrobnosti', { max: 2000, optional: true });
+    const reason = oneOf(req.body?.reason, 'fields.reason', REPORT_REASONS);
+    const details = str(req.body?.details, 'fields.details', { max: 2000, optional: true });
     const [a, b] = [req.user.id, targetId].sort((x, y) => x - y);
     const match = db.prepare('SELECT id FROM matches WHERE user_a = ? AND user_b = ?').get(a, b);
 
@@ -100,18 +100,18 @@ export function reportRoutes({ db, sealer }) {
 
   r.post('/feedback/:agreementId', auth, (req, res) => {
     const agreement = db.prepare('SELECT * FROM agreements WHERE id = ?').get(Number(req.params.agreementId));
-    if (!agreement || !agreement.was_confirmed) throw new HttpError(404, 'Domluva neexistuje.');
+    if (!agreement || !agreement.was_confirmed) throw new HttpError(404, 'agreement.notFound');
     const { otherId } = getMatchFor(db, agreement.match_id, req.user.id, { allowEnded: true });
     const ok = bool(req.body?.ok);
-    const reason = ok ? '' : oneOf(req.body?.reason, 'důvod', FEEDBACK_REASONS);
-    const details = str(req.body?.details, 'podrobnosti', { max: 2000, optional: true });
+    const reason = ok ? '' : oneOf(req.body?.reason, 'fields.reason', FEEDBACK_REASONS);
+    const details = str(req.body?.details, 'fields.details', { max: 2000, optional: true });
 
     const inserted = db
       .prepare(
         'INSERT OR IGNORE INTO feedback (agreement_id, author_id, about_id, ok, reason, details, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
       )
       .run(agreement.id, req.user.id, otherId, ok ? 1 : 0, reason, sealer.seal(details), nowIso());
-    if (inserted.changes === 0) throw new HttpError(409, 'Hodnocení už jsi poslal/a.');
+    if (inserted.changes === 0) throw new HttpError(409, 'reports.feedbackSent');
 
     if (!ok) {
       // Ve výchozím stavu se záznam uchová – rozhoduje ten, kdo hlásí problém.

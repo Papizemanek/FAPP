@@ -1,0 +1,286 @@
+{
+  "tabs": {
+    "discover": "Objevuj",
+    "matches": "Zprávy",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Zbývá {count} lajk.",
+      "few": "Zbývají {count} lajky.",
+      "many": "Zbývá {count} lajku.",
+      "other": "Zbývá {count} lajků."
+    },
+    "boostRunningUntil": "Boost běží do {time}.",
+    "tonight": "Dnes večer",
+    "tonightOn": "Dnes večer – zapnuto",
+    "boost": "Boost",
+    "boostOn": "Boost běží",
+    "searchSettings": "Nastavení hledání",
+    "traveling": "Na cestách",
+    "travelingIn": "Na cestách · {city}",
+    "change": "Změnit",
+    "enableLocation": "Povolit polohu",
+    "addPhoto": "Přidat fotku",
+    "retry": "Zkusit znovu",
+    "empty": "Teď tu poblíž nikdo další není. Zkus to později nebo si rozšiř hledání.",
+    "refresh": "Obnovit",
+    "nextPhoto": "Další fotka",
+    "stampLike": "CHCI",
+    "stampNope": "NE",
+    "superLikedYou": "Dal/a ti super lajk",
+    "distance": "{km} km od tebe",
+    "rewind": "Vrátit poslední swipe",
+    "pass": "Přeskočit",
+    "superLike": "Super lajk",
+    "like": "Líbí se mi",
+    "boostSheet": {
+      "title": "Spustit boost?",
+      "messageMonthly": "30 minut budeš nahoře u lidí v okolí. Použije se měsíční boost z předplatného.",
+      "messageCredits": "30 minut budeš nahoře u lidí v okolí. Zbývá ti {count}×.",
+      "confirm": "Spustit boost",
+      "done": "Boost běží – 30 minut jsi nahoře."
+    },
+    "tonightSheet": {
+      "title": "Zapnout „Dnes večer“?",
+      "message": "Do 6:00 ráno budeš u lidí v okolí výš a se štítkem „Dnes večer“. Vypnout to jde kdykoli.",
+      "messageCredits": "Do 6:00 ráno budeš u lidí v okolí výš a se štítkem „Dnes večer“. Vypnout to jde kdykoli. Zbývá ti {count}×.",
+      "confirm": "Zapnout",
+      "done": "Dnes večer je zapnuté do 6:00."
+    },
+    "tonightOffSheet": {
+      "title": "„Dnes večer“ je zapnuté",
+      "message": "Platí do {time}.",
+      "confirm": "Vypnout",
+      "done": "Dnes večer je vypnuté."
+    }
+  },
+  "matches": {
+    "title": "Zprávy",
+    "agreement": {
+      "pending": "Domluva čeká",
+      "confirmed": "Domluva hotová",
+      "revoked": "Domluva zrušena"
+    },
+    "likes": "Lajky",
+    "likedBy": {
+      "one": "Lajklo tě {count} člověk",
+      "few": "Lajklo tě {count} lidi",
+      "many": "Lajklo tě {count} člověka",
+      "other": "Lajklo tě {count} lidí"
+    },
+    "likedByLocked": {
+      "one": "Lajklo tě {count} člověk – uvidíš je s Gold",
+      "few": "Lajklo tě {count} lidi – uvidíš je s Gold",
+      "many": "Lajklo tě {count} člověka – uvidíš je s Gold",
+      "other": "Lajklo tě {count} lidí – uvidíš je s Gold"
+    },
+    "likesHint": "Kdo tě lajkl a koho jsi lajkl/a ty",
+    "empty": "Zatím žádný match. Swipuj dál – jakmile se líbíte oba, objeví se tady.",
+    "lastMessageMine": "Ty: {text}",
+    "newMatch": "Nový match – napiš první."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Ukládám…",
+    "saved": "Uloženo",
+    "done": "Hotovo",
+    "suspended": {
+      "title": "Účet je pozastavený",
+      "subtitle": "Prověřujeme nahlášení. Bezpečnostní režim ti funguje dál."
+    },
+    "photoA11y": "Fotka – podrž pro smazání",
+    "addPhoto": "Přidat fotku",
+    "photoHint": "Bez nahoty – fotky musí projít pravidly obchodů s aplikacemi. Podrž fotku pro smazání.",
+    "name": "Jméno",
+    "bio": "O mně",
+    "bioPlaceholder": "Pár vět o sobě.",
+    "lookingFor": "Co hledám",
+    "safety": {
+      "title": "Bezpečnost a soukromí",
+      "trusted": "Důvěryhodná osoba: {name}",
+      "setup": "Nastav důvěryhodnou osobu a PIN.",
+      "edit": "Upravit"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold a Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Neomezené lajky, kdo tě lajkl, boost a další.",
+      "validUntil": "Platí do {date}.",
+      "upgrade": "Vylepšit",
+      "manage": "Spravovat"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Uvidí tě jen ti, koho lajkneš. (Plus)"
+    },
+    "travel": {
+      "label": "Na cestách (Plus)",
+      "home": "Doma",
+      "hint": "Swipuješ v jiném městě ještě před cestou a lidé tam tě uvidí se štítkem „Na cestách“."
+    },
+    "showMe": "Koho mi ukazovat",
+    "ageFrom": "Věk od",
+    "ageTo": "Věk do",
+    "distance": "Vzdálenost",
+    "distanceSuffix": " km",
+    "save": "Uložit profil",
+    "language": {
+      "title": "Jazyk",
+      "device": "Podle telefonu",
+      "rtlHint": "U jazyků psaných zprava doleva se rozložení otočí až po restartu aplikace."
+    },
+    "signOut": "Odhlásit se",
+    "deletePassword": "Heslo pro smazání účtu",
+    "deleteForever": "Smazat účet natrvalo",
+    "deleteAccount": "Smazat účet",
+    "removePhoto": {
+      "title": "Smazat fotku?",
+      "confirm": "Smazat"
+    }
+  },
+  "premium": {
+    "title": "Předplatné",
+    "free": {
+      "title": "F*app je teď zdarma",
+      "body": "Placené funkce zapneme později. Bezpečnost – ověření, domluva, bezpečnostní režim i SOS – zůstane zdarma vždycky."
+    },
+    "back": "Zpět",
+    "done": "Hotovo",
+    "continue": "Pokračovat",
+    "reason": {
+      "likeLimitAt": "Došly ti lajky. Další přibudou v {time}.",
+      "likeLimit": "Došly ti lajky. Další přibudou za chvíli.",
+      "noCredit": "{credit} je jednorázově, nebo v předplatném.",
+      "upgrade": "Tohle je součástí F*app {plan}."
+    },
+    "oneOff": "Jednorázově",
+    "owned": "máš {count}",
+    "creditDetail": {
+      "boost": "30 minut nahoře u lidí v okolí.",
+      "superlike": "Uvidí, že o něj/ni opravdu stojíš.",
+      "tonight": "Do 6:00 ráno výš a se štítkem „Dnes večer“."
+    },
+    "buyCredit": "Koupit {amount}× {credit} za {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Máš boost navíc.",
+        "few": "Máš {count}× boost navíc.",
+        "many": "Máš {count}× boost navíc.",
+        "other": "Máš {count}× boost navíc."
+      },
+      "superlike": {
+        "one": "Máš super lajk navíc.",
+        "few": "Máš {count}× super lajk navíc.",
+        "many": "Máš {count}× super lajk navíc.",
+        "other": "Máš {count}× super lajk navíc."
+      },
+      "tonight": {
+        "one": "Máš dnes večer navíc.",
+        "few": "Máš {count}× dnes večer navíc.",
+        "many": "Máš {count}× dnes večer navíc.",
+        "other": "Máš {count}× dnes večer navíc."
+      }
+    },
+    "currentPlan": "Máš F*app {plan}",
+    "validUntil": "Platí do {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipuj bez limitu a vrať omylem odmítnutý profil.",
+      "gold": "Uvidíš, kdo tě lajkl – a matchneš jedním klepnutím.",
+      "platinum": "Tvůj lajk uvidí jako první. A „Dnes večer“ kdykoli."
+    },
+    "featureIncluded": "{feature}: v ceně",
+    "featureNotIncluded": "{feature}: není v ceně",
+    "months": {
+      "one": "{count} měsíc",
+      "few": "{count} měsíce",
+      "many": "{count} měsíce",
+      "other": "{count} měsíců"
+    },
+    "perMonth": "za měsíc",
+    "perMonthSave": "za měsíc · −{percent} %",
+    "continueWithPrice": "Pokračovat · {price}",
+    "planBought": {
+      "one": "Máš F*app {plan}.",
+      "few": "Máš F*app {plan} na {count} měsíce.",
+      "many": "Máš F*app {plan} na {count} měsíce.",
+      "other": "Máš F*app {plan} na {count} měsíců."
+    },
+    "renewal": "Předplatné se obnovuje automaticky, zrušit ho jde kdykoli v nastavení App Store nebo Google Play. Cena je pro všechny stejná.",
+    "renewalUpfront": "Zaplatíš {total} najednou ({monthly} měsíčně). Předplatné se obnovuje automaticky, zrušit ho jde kdykoli v nastavení App Store nebo Google Play. Cena je pro všechny stejná.",
+    "safetyFree": {
+      "title": "Bezpečnost je vždy zdarma",
+      "subtitle": "Ověření, domluva, bezpečnostní režim, SOS i nahlašování."
+    },
+    "devNote": "Prototyp: nic se nezaplatí, nákup se jen nasimuluje."
+  },
+  "likes": {
+    "title": "Lajky",
+    "received": "Lajkli tě",
+    "receivedCount": "Lajkli tě · {count}",
+    "sent": "Odeslané",
+    "emptyReceived": "Zatím tě nikdo nový nelajkl.",
+    "superLike": "Super lajk",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "Lajklo tě {count} člověk",
+      "few": "Lajklo tě {count} lidi",
+      "many": "Lajklo tě {count} člověka",
+      "other": "Lajklo tě {count} lidí"
+    },
+    "lockedEmpty": "Lajky uvidíš tady",
+    "goldText": "S F*app Gold uvidíš, kdo to je, a matchneš jedním klepnutím.",
+    "goldCta": "Zobrazit s Gold",
+    "emptySent": "Za posledních 7 dní žádné lajky bez matche.",
+    "superLikePending": "Super lajk · čeká",
+    "pending": "Čeká na odpověď",
+    "sentTitle": "Koho jsi lajkl/a",
+    "platinumText": "S F*app Platinum uvidíš svoje lajky za posledních 7 dní.",
+    "platinumCta": "Zobrazit s Platinum",
+    "likeBack": "Lajknout zpátky",
+    "pass": "Přeskočit"
+  },
+  "match": {
+    "title": "Je to match!",
+    "body": "Ty a {name} se chcete.\nNapiš a domluvte se, na co máte chuť.",
+    "sendMessage": "Napsat zprávu",
+    "keepDiscovering": "Pokračovat v objevování"
+  },
+  "login": {
+    "title": "Přihlášení",
+    "email": "E-mail",
+    "password": "Heslo",
+    "submit": "Přihlásit se"
+  },
+  "register": {
+    "title": "Vytvořit účet",
+    "name": "Jméno (uvidí ho ostatní)",
+    "email": "E-mail",
+    "password": "Heslo (aspoň 10 znaků)",
+    "birthdate": "Datum narození",
+    "birthdatePlaceholder": "DD. MM. RRRR",
+    "birthdateInvalid": "Datum narození zadej jako DD. MM. RRRR.",
+    "iAm": "Jsem",
+    "showMe": "Koho mi ukazovat",
+    "confirmAdult": "Je mi 18 let nebo víc.",
+    "acceptRules": "Souhlasím s pravidly komunity a se zpracováním svých údajů, včetně údajů o sexuálním životě, pro fungování F*app.",
+    "verifyNote": "Hned potom ověříme tvou totožnost a věk (doklad a selfie). Doklad si neukládáme.",
+    "continue": "Pokračovat"
+  },
+  "verify": {
+    "title": "Ověř, že jsi to ty",
+    "intro": "Každý na F*app má ověřenou totožnost a věk. Vyfotíš doklad a selfie – zabere to asi dvě minuty.",
+    "privacy": "Doklad ani fotky si neukládáme. Uchováme jen výsledek ověření a datum narození. Kdo poruší pravidla, nemůže se vrátit s novým účtem.",
+    "pending": {
+      "title": "Čekáme na výsledek ověření",
+      "subtitle": "Obvykle to trvá pár minut.",
+      "refresh": "Obnovit"
+    },
+    "declined": "Ověření se nepovedlo",
+    "devApprove": "Simulovat úspěšné ověření (testovací režim)",
+    "retry": "Zkusit znovu",
+    "start": "Ověřit totožnost",
+    "signOut": "Odhlásit se"
+  }
+}

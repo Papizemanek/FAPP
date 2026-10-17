@@ -13,7 +13,7 @@ export function createLimiter({ enabled = true } = {}) {
     }
     const key = `${name}:${req.user?.id ?? req.ip}`;
     const recent = (hits.get(key) ?? []).filter((t) => now - t < 60_000);
-    if (recent.length >= perMinute) throw new HttpError(429, 'Moc pokusů najednou. Zkus to za chvíli.');
+    if (recent.length >= perMinute) throw new HttpError(429, 'errors.rateLimited');
     recent.push(now);
     hits.set(key, recent);
     next();

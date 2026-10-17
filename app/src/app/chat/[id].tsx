@@ -8,6 +8,7 @@ import { ActionSheet, ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { Avatar, ErrorText, Header, IconButton, Screen } from '@/components/ui';
 import { api, errorMessage, imageSource, type MatchDetail, type Message } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { pickPhotoBase64 } from '@/lib/photos';
 import { colors, fonts } from '@/lib/theme';
 
@@ -15,6 +16,7 @@ const POLL_MS = 4000;
 
 export default function Chat() {
   usePreventScreenCapture();
+  const t = useT();
   const { id } = useLocalSearchParams<{ id: string }>();
   const [detail, setDetail] = useState<MatchDetail | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -30,7 +32,7 @@ export default function Chat() {
     try {
       setDetail(await api<MatchDetail>('GET', `/matches/${id}`));
     } catch (err) {
-      Alert.alert('Chat není dostupný', errorMessage(err));
+      Alert.alert(t('chat.unavailable'), errorMessage(err));
       router.back();
     }
   }, [id]);
@@ -53,8 +55,8 @@ export default function Chat() {
     lastId.current = 0;
     setMessages([]);
     void poll();
-    const t = setInterval(poll, POLL_MS);
-    return () => clearInterval(t);
+    const timer = setInterval(poll, POLL_MS);
+    return () => clearInterval(timer);
   }, [poll]);
 
   const send = async (body: { text?: string; jpegBase64?: string }) => {
@@ -98,15 +100,13 @@ export default function Chat() {
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
               <Avatar name={partner.name} photo={partner.photos[0]} size={40} />
               <View>
-                <Text style={s.headerName}>
-                  {partner.name}, {partner.age}
-                </Text>
-                {partner.distanceKm != null ? <Text style={s.headerMeta}>{partner.distanceKm} km od tebe</Text> : null}
+                <Text style={s.headerName}>{t('chat.nameAge', { name: partner.name, age: partner.age })}</Text>
+                {partner.distanceKm != null ? <Text style={s.headerMeta}>{t('chat.distance', { km: partner.distanceKm })}</Text> : null}
               </View>
             </View>
           ) : null
         }
-        right={<IconButton name="flag" label="Nahlásit nebo zablokovat" onPress={() => setMenuOpen(true)} />}
+        right={<IconButton name="flag" label={t('chat.reportOrBlock')} onPress={() => setMenuOpen(true)} />}
       />
       <View style={{ paddingHorizontal: 14, paddingTop: 4 }}>{detail ? <AgreementBanner detail={detail} /> : null}</View>
 
@@ -126,13 +126,13 @@ export default function Chat() {
               ) : null}
               {item.imageUrl ? (
                 <Pressable
-                  accessibilityLabel={revealed.has(item.id) ? 'Fotka' : 'Rozmazaná fotka, klepni pro zobrazení'}
+                  accessibilityLabel={revealed.has(item.id) ? t('chat.photo') : t('chat.photoBlurred')}
                   onPress={() => setRevealed((r) => new Set(r).add(item.id))}
                   style={s.photoWrap}
                 >
                   {/* Fotky v chatu jsou rozmazané, dokud je příjemce sám neodkryje. */}
                   <Image source={imageSource(item.imageUrl)} style={s.photo} contentFit="cover" blurRadius={revealed.has(item.id) || item.mine ? 0 : 40} />
-                  {!revealed.has(item.id) && !item.mine ? <Text style={s.photoHint}>Klepni pro zobrazení</Text> : null}
+                  {!revealed.has(item.id) && !item.mine ? <Text style={s.photoHint}>{t('chat.tapToReveal')}</Text> : null}
                 </Pressable>
               ) : null}
               {item.text ? <Text style={[s.bubble, item.mine ? s.mine : s.theirs]}>{item.text}</Text> : null}
@@ -141,20 +141,20 @@ export default function Chat() {
         />
         <ErrorText>{error ? `  ${error}` : ''}</ErrorText>
         <View style={s.composer}>
-          <Pressable accessibilityLabel="Poslat fotku" onPress={sendPhoto} style={s.attach}>
+          <Pressable accessibilityLabel={t('chat.sendPhoto')} onPress={sendPhoto} style={s.attach}>
             <Icon name="image" color={colors.muted} />
           </Pressable>
           <TextInput
-            accessibilityLabel="Zpráva"
+            accessibilityLabel={t('chat.message')}
             value={draft}
             onChangeText={setDraft}
-            placeholder="Napiš zprávu…"
+            placeholder={t('chat.messagePlaceholder')}
             placeholderTextColor={colors.faint}
             style={s.input}
             multiline
           />
           <Pressable
-            accessibilityLabel="Odeslat"
+            accessibilityLabel={t('chat.send')}
             disabled={!draft.trim() || sending}
             onPress={() => send({ text: draft.trim() })}
             style={[s.send, !draft.trim() && { opacity: 0.4 }]}
@@ -169,16 +169,16 @@ export default function Chat() {
         title={partner?.name ?? ''}
         onClose={() => setMenuOpen(false)}
         actions={[
-          { label: 'Nahlásit', onPress: () => partner && router.push(`/report/${partner.id}?name=${encodeURIComponent(partner.name)}`) },
-          { label: 'Zablokovat', destructive: true, onPress: () => setConfirmBlock(true) },
-          { label: 'Zrušit match', onPress: unmatch },
+          { label: t('chat.report'), onPress: () => partner && router.push(`/report/${partner.id}?name=${encodeURIComponent(partner.name)}`) },
+          { label: t('chat.block'), destructive: true, onPress: () => setConfirmBlock(true) },
+          { label: t('chat.unmatch'), onPress: unmatch },
         ]}
       />
       <ConfirmSheet
         visible={confirmBlock}
-        title="Zablokovat?"
-        message={`${partner?.name ?? ''} a ty se už navzájem neuvidíte a chat zmizí.`}
-        confirmLabel="Zablokovat"
+        title={t('chat.blockConfirmTitle')}
+        message={t('chat.blockConfirmMessage', { name: partner?.name ?? '' })}
+        confirmLabel={t('chat.block')}
         destructive
         onConfirm={block}
         onClose={() => setConfirmBlock(false)}

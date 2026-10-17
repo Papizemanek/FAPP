@@ -1,0 +1,677 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Férfi",
+      "woman": "Nő",
+      "nonbinary": "Nem bináris"
+    },
+    "gendersPlural": {
+      "man": "Férfiak",
+      "woman": "Nők",
+      "nonbinary": "Nem bináris emberek"
+    },
+    "tags": {
+      "oneoff": "Egyszeri",
+      "repeat": "Újra meg újra",
+      "myplace": "Nálam",
+      "yourplace": "Nálad",
+      "vanilla": "Vanília",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Csók és összebújás",
+      "oral": "Orális",
+      "vaginal": "Vaginális",
+      "anal": "Anális",
+      "toys": "Szexjátékok",
+      "overnight": "Ottalvás"
+    },
+    "wishes": {
+      "yes": "Igen",
+      "maybe": "Talán",
+      "no": "Nem"
+    },
+    "reportReasons": {
+      "consent": "Megsértette a beleegyezést vagy a határokat",
+      "violence": "Erőszak vagy fenyegetés",
+      "minor": "Kiskorúság gyanúja",
+      "harassment": "Zaklatás",
+      "fake": "Hamis profil",
+      "paid": "Fizetős szolgáltatást kínál",
+      "other": "Egyéb"
+    },
+    "feedbackReasons": {
+      "consent": "Nem tartotta tiszteletben a határokat vagy a „stop”-ot",
+      "safety": "Nem éreztem magam biztonságban",
+      "fake": "Nem úgy nézett ki, mint a fotóin",
+      "other": "Valami más"
+    },
+    "plans": {
+      "free": "Ingyenes",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Korlátlan lájk",
+        "detail": "Swipe-olj, amennyit csak akarsz."
+      },
+      "rewind": {
+        "name": "Visszavonás",
+        "detail": "Hozd vissza a véletlenül átugrott profilt."
+      },
+      "travel": {
+        "name": "Utazó mód",
+        "detail": "Swipe-olj egy másik városban már az utazás előtt."
+      },
+      "incognito": {
+        "name": "Inkognitó",
+        "detail": "Csak azok látnak, akiket lájkolsz."
+      },
+      "seeLikes": {
+        "name": "Ki lájkolt",
+        "detail": "Látod mindenkit, aki lájkolt."
+      },
+      "weeklySuperLikes": {
+        "name": "Heti 5 szuperlájk",
+        "detail": "Mutasd meg valakinek, hogy nagyon bejön."
+      },
+      "monthlyBoost": {
+        "name": "Havi 1 boost",
+        "detail": "30 perc a lista tetején a közeli embereknél."
+      },
+      "priorityLikes": {
+        "name": "Elsőbbségi lájkok",
+        "detail": "A lájkodat előbb látják, mint a többit."
+      },
+      "sentLikes": {
+        "name": "Elküldött lájkok",
+        "detail": "Kiket lájkoltál az elmúlt 7 napban."
+      },
+      "tonight": {
+        "name": "Ma este, bármikor",
+        "detail": "Mutasd meg, hogy ma este ráérsz."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Szuperlájk",
+      "tonight": "Ma este"
+    },
+    "cities": {
+      "praha": "Prága",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Pozsony",
+      "viden": "Bécs",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Ezt képzelem el. A helyszínen bármire nemet mondhatok – és ő is.",
+    "notice": "Tudomásul veszem: a beleegyezés csak itt és most érvényes. A „nem”, a „stop”, a biztonsági szó, a hallgatás, a lefagyás vagy az ittasság nem beleegyezés. Az alkalmazásban kötött megállapodás senkit sem ment fel a felelősség alól.",
+    "deterrence": "Az F*app minden felhasználójának ellenőrzött a személyazonossága. Bűncselekmény gyanúja esetén átadjuk a rendőrségnek."
+  },
+  "welcome": {
+    "tagline": "Szex, felhajtás nélkül.",
+    "taglineStrong": "Csak ha mindketten igent mondotok.",
+    "createAccount": "Fiók létrehozása",
+    "signIn": "Bejelentkezés",
+    "adultsOnly": "Csak 18+. Itt mindenkinek ellenőrzött a személyazonossága."
+  },
+  "agreement": {
+    "title": "Megállapodás",
+    "titleWithName": "Megállapodás · {name}",
+    "timeFormatError": "Az időt ÓÓ:PP formában add meg, pl. 21:00.",
+    "revokedByPartnerTitle": "{name} visszavonta a megállapodást",
+    "revokedByPartnerSubtitle": "Most csak {name} kezdeményezhet új megállapodást.",
+    "revokedTitle": "A megállapodást visszavonták",
+    "revokedSubtitle": "Kezdeményezhetsz újat.",
+    "newTitle": "Új megállapodás",
+    "newSubtitle": "Mindketten külön töltitek ki a részeteket. Csak azt látjátok, amiben egyetértetek.",
+    "logisticsChangedTitle": "Megváltoztatod az időpontot, a helyet vagy a szabályokat",
+    "logisticsChangedSubtitle": "{name} megerősítésére újra szükség lesz.",
+    "confirmedTitle": "Mindketten kitöltöttétek a megállapodást",
+    "confirmedSubtitle": "A helyszínen bármelyikőtök bármikor meggondolhatja magát.",
+    "myPartDoneTitle": "A te részed kész",
+    "myPartDoneSubtitle": "{name} még nem töltötte ki vagy nem erősítette meg a sajátját.",
+    "partnerFilledTitle": "{name} kitöltötte a részét",
+    "partnerFilledSubtitle": "Töltsd ki a tiédet – csak azt látjátok, amiben egyetértetek.",
+    "fillTitle": "Töltsd ki a részed",
+    "fillSubtitle": "Csak azt látjátok, amiben egyetértetek.",
+    "overlapTitle": "Amiben egyetértetek",
+    "overlapNone": "Még nincs közös pont.",
+    "overlapYes": "Mindketten szeretnétek",
+    "overlapMaybe": "Talán – a helyszínen megbeszélitek",
+    "partnerNote": "{name}: „{note}”",
+    "overlapHint": "Amit egyikőtök nem akar, azt senki sem látja – azt sem, ki nem akarta.",
+    "wishesLabel": "Amire kapható vagyok",
+    "wishesHint": "{name} csak azt látja, amiben egyetértetek. A „nem”-edet senki sem látja.",
+    "wishesHintNoName": "A másik csak azt látja, amiben egyetértetek.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "A határaim (a másik is látja)",
+    "notePlaceholder": "Pl. semmi fotózás, előbb meg akarlak ismerni.",
+    "logisticsLabel": "Gyakorlati dolgok – mindkettőtökre vonatkoznak",
+    "today": "Ma",
+    "tomorrow": "Holnap",
+    "timeLabel": "Időpont",
+    "placeLabel": "Hol",
+    "placePlaceholder": "Pl. nálam, Vinohrady",
+    "safewordLabel": "Biztonsági szó",
+    "safewordPlaceholder": "Egy szó, ami mindent leállít",
+    "condom": "Mindig óvszerrel",
+    "sober": "Józanul",
+    "soberHint": "Az ittasság nem beleegyezés.",
+    "publicFirst": "Először nyilvános helyen találkozunk",
+    "publicFirstHint": "Kávézó vagy bár – személyesen döntitek el, folytatjátok-e.",
+    "partnerMayShare": "A randi alatt {name} megoszthatja a nevedet, a fotódat és a találkozó helyét a saját megbízható személyével.",
+    "saveAndConfirm": "Mentés és megerősítés",
+    "startMeetup": "Randi indítása",
+    "revoke": "Megállapodás visszavonása",
+    "revokeConfirmTitle": "Visszavonod a megállapodást?",
+    "revokeConfirmMessage": "A randi elmarad. Nem kell semmit megmagyaráznod – {name} csak értesítést kap."
+  },
+  "meetup": {
+    "title": "Randi · {name}",
+    "fakeCallerDefault": "Anya",
+    "endedTitle": "A randi véget ért",
+    "endedMessage": "{name} üzenetet kapott, hogy jól vagy.",
+    "sosFailed": "Nem sikerült elküldeni a riasztást: {error} Próbáld újra, vagy hívd fel: {name}.",
+    "needAgreementTitle": "Előbb fejezzétek be a megállapodást",
+    "needAgreementSubtitle": "A randit akkor indíthatod el, ha mindketten kitöltöttétek és megerősítettétek a megállapodást.",
+    "needAgreementAction": "Megállapodás",
+    "setupTitle": "Állítsd be a biztonságodat",
+    "setupSubtitle": "Megbízható személy, PIN és vész-PIN.",
+    "setupAction": "Beállítás",
+    "pointTrusted": "{name} SMS-t kap egy linkkel. Látni fogja, hol vagy, kivel vagy, és hogy jól vagy-e.",
+    "pointTrustedNoName": "A megbízható személyed SMS-t kap egy linkkel. Látni fogja, hol vagy, kivel vagy, és hogy jól vagy-e.",
+    "pointCheckIn": "Rendszeres időközönként a PIN-nel megerősíted, hogy jól vagy. Ha nem jelentkezel, riasztást küldünk – akkor is, ha lemerül a telefonod.",
+    "pointDuress": "A vész-PIN pontosan úgy néz ki, mint a szokásos, de csendben riasztást indít.",
+    "pointPartner": "{name} látni fogja, hogy be van kapcsolva a biztonsági módod, és hogy a megbízható személyed tudja, hol és kivel vagy. Semmi többet – sem a riasztást, sem azt, hol vagy.",
+    "intervalLabel": "Check-in gyakorisága",
+    "minutes": "{count} perc",
+    "start": "Randi indítása",
+    "locationVisibleTo": "{name} látja, hol vagy",
+    "bgLocationTitle": "Helyadat csak nyitott alkalmazással",
+    "bgLocationSubtitle": "Állítsd a helyhozzáférést „Mindig” értékre, hogy kikapcsolt képernyőnél is lássa.",
+    "bgLocationAction": "Beállítások",
+    "nextCheckIn": "Következő check-in:",
+    "checkIn": "Check-in",
+    "now": "most",
+    "imOk": "Jól vagyok",
+    "overdueHint": "{name} riasztást kapott. Erősítsd meg a PIN-nel, hogy jól vagy.",
+    "graceHint": {
+      "one": "Ha a határidő után {count} percen belül nem jelentkezel, {name} riasztást kap a tartózkodási helyeddel.",
+      "other": "Ha a határidő után {count} percen belül nem jelentkezel, {name} riasztást kap a tartózkodási helyeddel."
+    },
+    "partnerSafetyOn": "{name} is bekapcsolta a biztonsági módot – a megbízható személye tudja, hol és kivel van.",
+    "partnerSafetyOff": "{name} nem kapcsolta be a biztonsági módot.",
+    "fakeCall": "Álhívás",
+    "fakeCallIn": "Hívás {count} mp múlva",
+    "fakeCallHint": "{count} mp múlva az álhívás pont úgy csörög, mint egy igazi – ez a kifogásod, hogy elmehess.",
+    "shareLink": "Link küldése",
+    "sos": "SOS – tartsd nyomva",
+    "revoke": "Megállapodás visszavonása",
+    "end": "Randi befejezése",
+    "sosSentTitle": "Riasztás elküldve",
+    "sosSentBody": "{trusted} megkapta a pontos tartózkodási helyedet, és hogy kivel vagy. {partner} semmit sem lát.",
+    "sosMistake": "Tévedés volt – jól vagyok",
+    "sosHide": "Elrejtés (a riasztás aktív marad)",
+    "pinTitle": "Erősítsd meg a PIN-nel",
+    "pinSubtitleOk": "Hogy jól vagy.",
+    "pinSubtitleEnd": "Hogy a randinak vége, és jól vagy.",
+    "revokeConfirmTitle": "Visszavonod a megállapodást?",
+    "revokeConfirmMessage": "{name} értesítést kap. Nem kell semmit megmagyaráznod. A biztonsági mód addig fut, amíg be nem fejezed."
+  },
+  "feedback": {
+    "title": "Milyen volt a randi?",
+    "privacy": "A válaszodat csak a csapatunk látja – {name} soha. Segít abban, hogy ez a hely azoké maradjon, akik tiszteletben tartják a határokat.",
+    "privacyNoName": "A válaszodat csak a csapatunk látja – a másik fél soha. Segít abban, hogy ez a hely azoké maradjon, akik tiszteletben tartják a határokat.",
+    "allGood": "Minden rendben volt",
+    "somethingWrong": "Valami nem volt rendben",
+    "detailsLabel": "Mi történt? (nem kötelező)",
+    "preserve": "Őrizd meg a randi adatait arra az esetre, ha a rendőrséghez kell fordulnod. Különben a megállapodás 48 óra után törlődik.",
+    "suspendNotice": "Ha valaki nem tisztelt téged, vagy veszélyben vagy, azonnal felfüggesztjük a fiókját, és kivizsgáljuk az ügyet.",
+    "send": "Küldés",
+    "helpTitle": "Sajnáljuk",
+    "helpIntro": "Kivizsgáljuk, és a vizsgálat idejére felfüggesztettük a másik fél fiókját. Nem kell most eldöntened, mi legyen a következő lépés – és ebből semmi sem a te hibád.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Segélyvonal bűncselekmények áldozatainak – Bílý kruh bezpečí",
+        "detail": "Éjjel-nappal, ingyenes, és névtelen maradhatsz."
+      },
+      "police": {
+        "name": "Cseh Rendőrség",
+        "detail": "Ha fel akarsz jelentést tenni – akár később is."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Támogatás szexuális erőszakot átélt embereknek."
+      }
+    },
+    "helpLocal": {
+      "name": "Hol kaphatsz segítséget",
+      "detail": "Fordulj a helyi rendőrséghez vagy egy helyi segélyvonalhoz, amely bűncselekmények és szexuális erőszak áldozatainak segít."
+    },
+    "medical": "Ha valami az akaratod ellenére történt, minél előbb fordulj orvoshoz – a terhesség és a fertőzések megelőzése miatt is, mert egyes gyógyszerek csak 72 órán belül hatnak. A nyomok még rögzíthetők, ha még nem zuhanyoztál, és megőrzöd a ruháidat. De ezek egyike sem feltétel – később is tehetsz bejelentést.",
+    "preserved": "Megőriztük a randi adatait (megállapodás, üzenetek, riasztások) arra az esetre, ha szükséged lenne rájuk a rendőrségen.",
+    "backToApp": "Vissza az alkalmazásba"
+  },
+  "report": {
+    "title": "Jelentés",
+    "intro": "A jelentésed névtelen. Le is tiltjuk helyetted, így többé nem látjátok egymást.",
+    "introWithName": "{name}. A jelentésed névtelen. Le is tiltjuk helyetted, így többé nem látjátok egymást.",
+    "detailsLabel": "Részletek (nem kötelező)",
+    "submit": "Jelentés",
+    "thanksTitle": "Köszönjük",
+    "thanksMessage": "Megkaptuk a jelentésedet. Többé nem látjátok egymást."
+  },
+  "chat": {
+    "unavailable": "A csevegés nem érhető el",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km-re",
+    "reportOrBlock": "Jelentés vagy letiltás",
+    "photo": "Fotó",
+    "photoBlurred": "Elmosott fotó, koppints a megtekintéshez",
+    "tapToReveal": "Koppints a megtekintéshez",
+    "sendPhoto": "Fotó küldése",
+    "message": "Üzenet",
+    "messagePlaceholder": "Írj üzenetet…",
+    "send": "Küldés",
+    "report": "Jelentés",
+    "block": "Letiltás",
+    "unmatch": "Match törlése",
+    "blockConfirmTitle": "Letiltod?",
+    "blockConfirmMessage": "Te és {name} többé nem látjátok egymást, és a csevegés eltűnik."
+  },
+  "safetySettings": {
+    "title": "Biztonság és adatvédelem",
+    "trustedLabel": "Megbízható személy",
+    "trustedHint": "Amikor elindítasz egy randit, SMS-ben elküldjük neki a tartózkodási helyedre mutató linket. Riasztjuk, ha nem jelentkezel, vagy ha riasztást indítasz.",
+    "nameLabel": "Név",
+    "namePlaceholder": "Pl. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+36 30 123 4567",
+    "pinsLabel": "PIN és vész-PIN",
+    "pinsHint": "A randi alatt a PIN-nel erősíted meg, hogy jól vagy. A vész-PIN pontosan ugyanígy néz ki, de csendben riasztást küld – használd, ha valaki arra kényszerít, hogy az alkalmazásnak azt mondd, minden rendben.",
+    "checkinPinLabel": "PIN (4–6 számjegy)",
+    "duressPinLabel": "Vész-PIN (eltér a PIN-től)",
+    "passwordLabel": "Fiókjelszó (a PIN-ek módosításához)",
+    "pinsSet": "A PIN-ek be vannak állítva",
+    "change": "Módosítás",
+    "privacyLabel": "Adatvédelem",
+    "appLock": "Alkalmazászár",
+    "appLockHint": "Face ID, ujjlenyomat vagy a telefonod kódja minden megnyitáskor.",
+    "discreet": "Diszkrét mód",
+    "discreetHint": "Semleges ikon és tartalom nélküli értesítések – senki sem tudja meg, milyen alkalmazásról van szó.",
+    "save": "Mentés"
+  },
+  "tabs": {
+    "discover": "Felfedezés",
+    "matches": "Üzenetek",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Még {count} lájkod maradt.",
+      "other": "Még {count} lájkod maradt."
+    },
+    "boostRunningUntil": "A boost aktív, eddig: {time}.",
+    "tonight": "Ma este",
+    "tonightOn": "Ma este – bekapcsolva",
+    "boost": "Boost",
+    "boostOn": "A boost aktív",
+    "searchSettings": "Keresési beállítások",
+    "traveling": "Úton",
+    "travelingIn": "Úton · {city}",
+    "change": "Módosítás",
+    "enableLocation": "Helyadatok engedélyezése",
+    "addPhoto": "Fotó hozzáadása",
+    "retry": "Újra",
+    "empty": "Most senki más nincs a közelben. Próbáld később, vagy bővítsd a keresést.",
+    "refresh": "Frissítés",
+    "nextPhoto": "Következő fotó",
+    "stampLike": "IGEN",
+    "stampNope": "NEM",
+    "superLikedYou": "Szuperlájkolt téged",
+    "distance": "{km} km-re",
+    "rewind": "Utolsó swipe visszavonása",
+    "pass": "Kihagyom",
+    "superLike": "Szuperlájk",
+    "like": "Tetszik",
+    "boostSheet": {
+      "title": "Indítasz egy boostot?",
+      "messageMonthly": "30 percig a lista tetején leszel a közeli embereknél. Ehhez az előfizetésed havi boostját használjuk.",
+      "messageCredits": "30 percig a lista tetején leszel a közeli embereknél. Még {count}× van belőle.",
+      "confirm": "Boost indítása",
+      "done": "A boost aktív – 30 percig a lista tetején vagy."
+    },
+    "tonightSheet": {
+      "title": "Bekapcsolod a „Ma este” funkciót?",
+      "message": "Reggel 6:00-ig előrébb kerülsz a közeli embereknél, és „Ma este” címkét kapsz. Bármikor kikapcsolhatod.",
+      "messageCredits": "Reggel 6:00-ig előrébb kerülsz a közeli embereknél, és „Ma este” címkét kapsz. Bármikor kikapcsolhatod. Még {count}× van belőle.",
+      "confirm": "Bekapcsolás",
+      "done": "A „Ma este” reggel 6:00-ig be van kapcsolva."
+    },
+    "tonightOffSheet": {
+      "title": "A „Ma este” be van kapcsolva",
+      "message": "Aktív eddig: {time}.",
+      "confirm": "Kikapcsolás",
+      "done": "A „Ma este” kikapcsolva."
+    }
+  },
+  "matches": {
+    "title": "Üzenetek",
+    "agreement": {
+      "pending": "Megállapodás folyamatban",
+      "confirmed": "Megállapodás megerősítve",
+      "revoked": "Megállapodás visszavonva"
+    },
+    "likes": "Lájkok",
+    "likedBy": {
+      "one": "{count} ember lájkolt",
+      "other": "{count} ember lájkolt"
+    },
+    "likedByLocked": {
+      "one": "{count} ember lájkolt – a Golddal megnézheted, ki",
+      "other": "{count} ember lájkolt – a Golddal megnézheted, kik"
+    },
+    "likesHint": "Kik lájkoltak téged, és kiket lájkoltál",
+    "empty": "Még nincs egy matched sem. Swipe-olj tovább – ha mindketten lájkoljátok egymást, itt jelennek meg.",
+    "lastMessageMine": "Te: {text}",
+    "newMatch": "Új match – küldd el az első üzenetet."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Mentés…",
+    "saved": "Mentve",
+    "done": "Kész",
+    "suspended": {
+      "title": "A fiókod fel van függesztve",
+      "subtitle": "Egy jelentést vizsgálunk. A biztonsági mód továbbra is működik."
+    },
+    "photoA11y": "Fotó – a törléshez tartsd nyomva",
+    "addPhoto": "Fotó hozzáadása",
+    "photoHint": "Meztelenség nélkül – a fotóknak meg kell felelniük az alkalmazásboltok szabályainak. A törléshez tartsd nyomva a fotót.",
+    "name": "Név",
+    "bio": "Rólam",
+    "bioPlaceholder": "Pár sor magadról.",
+    "lookingFor": "Amit keresek",
+    "safety": {
+      "title": "Biztonság és adatvédelem",
+      "trusted": "Megbízható személy: {name}",
+      "setup": "Állíts be megbízható személyt és PIN-t.",
+      "edit": "Szerkesztés"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold és Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Korlátlan lájk, látod, ki lájkolt, boost és még több.",
+      "validUntil": "Érvényes eddig: {date}.",
+      "upgrade": "Váltás",
+      "manage": "Kezelés"
+    },
+    "incognito": {
+      "label": "Inkognitó",
+      "hint": "Csak azok látnak, akiket lájkolsz. (Plus)"
+    },
+    "travel": {
+      "label": "Utazó mód (Plus)",
+      "home": "Otthon",
+      "hint": "Swipe-olj egy másik városban már az utazás előtt – az ottaniak „Úton” címkével látnak."
+    },
+    "showMe": "Kiket mutassunk",
+    "ageFrom": "Életkor ettől",
+    "ageTo": "Életkor eddig",
+    "distance": "Távolság",
+    "distanceSuffix": " km",
+    "save": "Profil mentése",
+    "language": {
+      "title": "Nyelv",
+      "device": "A telefon nyelve",
+      "rtlHint": "Jobbról balra író nyelveknél az elrendezés csak az alkalmazás újraindítása után fordul meg."
+    },
+    "signOut": "Kijelentkezés",
+    "deletePassword": "Jelszó a fiók törléséhez",
+    "deleteForever": "Fiók végleges törlése",
+    "deleteAccount": "Fiók törlése",
+    "removePhoto": {
+      "title": "Törlöd a fotót?",
+      "confirm": "Törlés"
+    }
+  },
+  "premium": {
+    "title": "Előfizetés",
+    "free": {
+      "title": "Az F*app egyelőre ingyenes",
+      "body": "A fizetős funkciókat később kapcsoljuk be. A biztonság – ellenőrzés, megállapodások, biztonsági mód és SOS – mindig ingyenes marad."
+    },
+    "back": "Vissza",
+    "done": "Kész",
+    "continue": "Tovább",
+    "reason": {
+      "likeLimitAt": "Elfogytak a lájkjaid. Újak ekkor érkeznek: {time}.",
+      "likeLimit": "Elfogytak a lájkjaid. Hamarosan érkeznek újak.",
+      "noCredit": "{credit} egyszeri vásárlással vagy előfizetéssel érhető el.",
+      "upgrade": "Ez az F*app {plan} része."
+    },
+    "oneOff": "Egyszeri",
+    "owned": "{count} van belőle",
+    "creditDetail": {
+      "boost": "30 perc a lista tetején a közeli embereknél.",
+      "superlike": "Látni fogja, hogy nagyon bejön neked.",
+      "tonight": "Reggel 6:00-ig előrébb kerülsz, „Ma este” címkével."
+    },
+    "buyCredit": "{amount}× {credit} vásárlása {price} áron",
+    "creditBought": {
+      "boost": {
+        "one": "Van egy extra boostod.",
+        "other": "Van {count} extra boostod."
+      },
+      "superlike": {
+        "one": "Van egy extra szuperlájkod.",
+        "other": "Van {count} extra szuperlájkod."
+      },
+      "tonight": {
+        "one": "Van egy extra „Ma este” lehetőséged.",
+        "other": "Van {count} extra „Ma este” lehetőséged."
+      }
+    },
+    "currentPlan": "F*app {plan} előfizetésed van",
+    "validUntil": "Érvényes eddig: {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipe-olj korlátlanul, és hozd vissza a véletlenül átugrott profilokat.",
+      "gold": "Lásd, ki lájkolt – és matchelj egy koppintással.",
+      "platinum": "A lájkodat elsőként látják. És „Ma este” bármikor."
+    },
+    "featureIncluded": "{feature}: benne van",
+    "featureNotIncluded": "{feature}: nincs benne",
+    "months": {
+      "one": "{count} hónap",
+      "other": "{count} hónap"
+    },
+    "perMonth": "havonta",
+    "perMonthSave": "havonta · −{percent}%",
+    "continueWithPrice": "Tovább · {price}",
+    "planBought": {
+      "one": "Megvan az F*app {plan}.",
+      "other": "Megvan az F*app {plan} {count} hónapra."
+    },
+    "renewal": "Az előfizetés automatikusan megújul. Bármikor lemondhatod az App Store vagy a Google Play beállításaiban. Az ár mindenkinek ugyanannyi.",
+    "renewalUpfront": "Előre fizetsz: {total} (havonta {monthly}). Az előfizetés automatikusan megújul. Bármikor lemondhatod az App Store vagy a Google Play beállításaiban. Az ár mindenkinek ugyanannyi.",
+    "safetyFree": {
+      "title": "A biztonság mindig ingyenes",
+      "subtitle": "Ellenőrzés, megállapodások, biztonsági mód, SOS és jelentés."
+    },
+    "devNote": "Prototípus: semmit sem terhelünk, a vásárlás csak szimuláció."
+  },
+  "likes": {
+    "title": "Lájkok",
+    "received": "Lájkoltak",
+    "receivedCount": "Lájkoltak · {count}",
+    "sent": "Elküldött",
+    "emptyReceived": "Még nincs új lájk.",
+    "superLike": "Szuperlájk",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} ember lájkolt",
+      "other": "{count} ember lájkolt"
+    },
+    "lockedEmpty": "Itt jelennek meg a lájkjaid",
+    "goldText": "Az F*app Golddal látod, kik ők, és egy koppintással matchelhetsz.",
+    "goldCta": "Nézd meg a Golddal",
+    "emptySent": "Az elmúlt 7 napban nincs match nélküli lájk.",
+    "superLikePending": "Szuperlájk · válaszra vár",
+    "pending": "Válaszra vár",
+    "sentTitle": "Kiket lájkoltál",
+    "platinumText": "Az F*app Platinummal látod az elmúlt 7 nap lájkjaidat.",
+    "platinumCta": "Nézd meg a Platinummal",
+    "likeBack": "Visszalájkolás",
+    "pass": "Kihagyom"
+  },
+  "match": {
+    "title": "Ez egy match!",
+    "body": "Te és {name} kívánjátok egymást.\nKöszönj, és beszéljétek meg, mire vagytok kaphatók.",
+    "sendMessage": "Üzenet küldése",
+    "keepDiscovering": "Felfedezés folytatása"
+  },
+  "login": {
+    "title": "Bejelentkezés",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "submit": "Bejelentkezés"
+  },
+  "register": {
+    "title": "Fiók létrehozása",
+    "name": "Név (mások is látják)",
+    "email": "E-mail",
+    "password": "Jelszó (legalább 10 karakter)",
+    "birthdate": "Születési dátum",
+    "birthdatePlaceholder": "NN. HH. ÉÉÉÉ",
+    "birthdateInvalid": "A születési dátumot NN. HH. ÉÉÉÉ formában add meg.",
+    "iAm": "Nemem",
+    "showMe": "Kiket mutassunk",
+    "confirmAdult": "Elmúltam 18 éves.",
+    "acceptRules": "Elfogadom a közösségi szabályokat és az adataim kezelését – beleértve a szexuális életemre vonatkozó adatokat is –, hogy az F*app működni tudjon.",
+    "verifyNote": "Ezután rögtön ellenőrizzük a személyazonosságodat és az életkorodat (igazolvány és szelfi). Az igazolványodat nem tároljuk.",
+    "continue": "Tovább"
+  },
+  "verify": {
+    "title": "Igazold, hogy te vagy az",
+    "intro": "Az F*app-on mindenkinek ellenőrzött a személyazonossága és az életkora. Lefotózod az igazolványodat és készítesz egy szelfit – kb. két percet vesz igénybe.",
+    "privacy": "Az igazolványodat és a fotóidat nem tároljuk. Csak az ellenőrzés eredményét és a születési dátumodat őrizzük meg. Aki megszegi a szabályokat, nem térhet vissza új fiókkal.",
+    "pending": {
+      "title": "Várjuk az ellenőrzés eredményét",
+      "subtitle": "Általában néhány percig tart.",
+      "refresh": "Frissítés"
+    },
+    "declined": "Az ellenőrzés nem sikerült",
+    "devApprove": "Sikeres ellenőrzés szimulálása (tesztmód)",
+    "retry": "Újra",
+    "start": "Személyazonosság ellenőrzése",
+    "signOut": "Kijelentkezés"
+  },
+  "common": {
+    "back": "Vissza",
+    "cancel": "Mégse",
+    "close": "Bezárás",
+    "save": "Mentés",
+    "retry": "Újra",
+    "continue": "Tovább",
+    "done": "Kész",
+    "send": "Küldés",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "open": "Megnyitás",
+    "show": "Megtekintés",
+    "confirm": "Megerősítés",
+    "errorGeneric": "Hiba történt."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} bekapcsolta a biztonsági módot",
+    "partnerSafetySubtitle": "A megbízható személye tudja, hol és kivel van.",
+    "meetupTitle": "Randi folyamatban",
+    "meetupSubtitle": "A biztonsági mód be van kapcsolva.",
+    "missingTitle": "Még nincs megállapodás",
+    "missingSubtitle": "Mindketten kitöltitek, mire vagytok kaphatók – csak az egyezést látjátok.",
+    "fill": "Kitöltés",
+    "revokedByMeTitle": "Visszavontad a megállapodást",
+    "revokedByPartnerTitle": "{name} visszavonta a megállapodást",
+    "revokedSubtitle": "A randi elmarad.",
+    "revokedCooldownSubtitle": "A randi elmarad. Új megállapodást csak {name} kezdeményezhet.",
+    "newAgreement": "Új megállapodás",
+    "confirmedTitle": "A megállapodás kész",
+    "confirmedSubtitle": "A helyszínen bármelyikőtök bármikor meggondolhatja magát.",
+    "partnerFilledTitle": "{name} kitöltötte a megállapodást",
+    "waitingForYouTitle": "A megállapodás rád vár",
+    "fillYoursSubtitle": "Töltsd ki, mire vagy kapható – csak az egyezést látjátok.",
+    "partnerPendingTitle": "{name} még nem töltötte ki",
+    "partnerPendingSubtitle": "A megállapodás akkor kész, ha mindketten kitöltöttétek."
+  },
+  "fakeCall": {
+    "incoming": "mobil…",
+    "hangUp": "Bontás",
+    "decline": "Elutasítás",
+    "accept": "Fogadás"
+  },
+  "homeBanners": {
+    "meetupTitle": "Randi folyamatban · {name}",
+    "missedCheckIn": "Kihagytál egy check-int!",
+    "safetyOn": "A biztonsági mód be van kapcsolva.",
+    "feedbackTitle": "Milyen volt a randi?",
+    "feedbackSubtitle": "{name} – a válaszodat csak a csapatunk látja.",
+    "feedbackAction": "Válaszolok"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} számjegy megadva",
+      "other": "{count} számjegy megadva"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, kevesebb",
+    "stepperIncrease": "{label}, több"
+  },
+  "api": {
+    "offline": "Nem sikerült csatlakozni a szerverhez. Ellenőrizd a kapcsolatot."
+  },
+  "billing": {
+    "storeNotConnected": "Az App Store-os és Google Play-es vásárlás még nincs beállítva."
+  },
+  "notifications": {
+    "channelName": "Értesítések",
+    "reminderDiscreet": "Emlékeztető",
+    "checkInTitle": "Itt a check-in ideje",
+    "checkInBody": "Erősítsd meg a PIN-nel, hogy jól vagy.",
+    "fakeCallBody": "Bejövő hívás"
+  },
+  "safetyTracking": {
+    "notificationTitle": "A helymegosztás be van kapcsolva",
+    "notificationBody": "Az alkalmazásban leállíthatod."
+  },
+  "appLock": {
+    "prompt": "F*app feloldása",
+    "lockedTitle": "Az alkalmazás zárolva van",
+    "lockedBody": "Oldd fel Face ID-val, ujjlenyomattal vagy a telefonod kódjával.",
+    "sosHold": "SOS – nyomd és tartsd",
+    "unlock": "Feloldás",
+    "sosSentTitle": "Riasztás elküldve",
+    "sosSentBody": "{name} riasztást kapott a tartózkodási helyeddel.",
+    "sosSentBodyNoName": "A megbízható személyed riasztást kapott a tartózkodási helyeddel.",
+    "sosFailedTitle": "Nem sikerült elküldeni"
+  },
+  "native": {
+    "locationWhenInUse": "Az F*app a helyadataid alapján mutatja meg a közelben lévő embereket, randi közben pedig megosztja őket a megbízható személyeddel.",
+    "locationAlways": "Randi közben az F*app akkor is megosztja a tartózkodási helyedet a megbízható személyeddel, ha ki van kapcsolva a képernyő. Randin kívül nem használja a helyadataidat a háttérben.",
+    "faceId": "Az F*app Face ID-val oldható fel, így más nem nézhet bele.",
+    "photos": "Válassz fotókat a profilodhoz.",
+    "camera": "Készíts magadról fotót a profilodhoz."
+  }
+}

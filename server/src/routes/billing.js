@@ -45,11 +45,11 @@ export function billingRoutes({ db, config }) {
   // Nákup bez platby – jen pro vývoj a webový prototyp. V produkci kupuje aplikace přes obchod a server
   // se o nákupu dozví z webhooku RevenueCatu.
   r.post('/billing/purchase', ...guard, (req, res) => {
-    if (config.paymentsProvider !== 'dev') throw new HttpError(404, 'Nenalezeno.');
-    if (config.billingMode !== 'paid') throw new HttpError(403, 'Platby zatím nejsou zapnuté – F*app je teď celý zdarma.');
+    if (config.paymentsProvider !== 'dev') throw new HttpError(404, 'errors.notFound');
+    if (config.billingMode !== 'paid') throw new HttpError(403, 'billing.paymentsOff');
     const productId = String(req.body?.productId ?? '');
-    if (!Object.hasOwn(PRODUCTS, productId)) throw new HttpError(400, 'Neznámý produkt.');
-    if (PRODUCTS[productId].kind === 'credit' && isRestricted(db, req.user)) throw new HttpError(403, 'Tohle teď koupit nejde.');
+    if (!Object.hasOwn(PRODUCTS, productId)) throw new HttpError(400, 'billing.unknownProduct');
+    if (PRODUCTS[productId].kind === 'credit' && isRestricted(db, req.user)) throw new HttpError(403, 'billing.cantBuy');
     grantProduct(db, req.user.id, productId, { source: 'dev' });
     res.json(status(req.user.id));
   });
@@ -57,7 +57,7 @@ export function billingRoutes({ db, config }) {
   // Webhook RevenueCatu (App Store + Google Play). app_user_id = naše ID uživatele (aplikace volá Purchases.logIn).
   r.post('/billing/webhook/revenuecat', (req, res) => {
     const expected = config.revenuecat.webhookAuth;
-    if (!expected || !safeEqual(req.get('authorization') ?? '', expected)) throw new HttpError(401, 'Neautorizováno.');
+    if (!expected || !safeEqual(req.get('authorization') ?? '', expected)) throw new HttpError(401, 'errors.unauthorized');
     const e = req.body?.event ?? {};
     const userId = Number(e.app_user_id);
     const user = Number.isSafeInteger(userId) && userId > 0 ? getUser(db, userId) : null;
@@ -91,11 +91,11 @@ export function billingRoutes({ db, config }) {
   // Boost: 30 minut nahoře u lidí v okolí. Gold a Platinum mají 1 měsíčně, jinak z koupených kreditů.
   r.post('/billing/boost', ...guard, (req, res) => {
     const me = req.user;
-    if (isRestricted(db, me)) throw new HttpError(403, 'Boost teď spustit nejde.');
-    if (isActiveUntil(me.boost_until)) throw new HttpError(409, 'Boost už běží.');
+    if (isRestricted(db, me)) throw new HttpError(403, 'billing.cantBoost');
+    if (isActiveUntil(me.boost_until)) throw new HttpError(409, 'billing.boostRunning');
     tx(db, () => {
       const fromPlan = monthlyBoostLeft(db, me) > 0;
-      if (!fromPlan && !useCredit(db, me.id, 'boost')) throw paywall('Nemáš žádný boost.', { code: 'no_credit', credit: 'boost' });
+      if (!fromPlan && !useCredit(db, me.id, 'boost')) throw paywall('billing.noBoost', { code: 'no_credit', credit: 'boost' });
       db.prepare('INSERT INTO boosts (user_id, from_plan, started_at) VALUES (?, ?, ?)').run(me.id, fromPlan ? 1 : 0, nowIso());
       db.prepare('UPDATE users SET boost_until = ? WHERE id = ?').run(boostEnd(), me.id);
     });
@@ -105,11 +105,11 @@ export function billingRoutes({ db, config }) {
   // „Dnes večer“: do 6:00 ráno jsi u lidí v okolí výš a se štítkem. V Platinum kdykoli, jinak za kredit.
   r.post('/billing/tonight', ...guard, (req, res) => {
     const me = req.user;
-    if (isRestricted(db, me)) throw new HttpError(403, 'Tohle teď zapnout nejde.');
-    if (isActiveUntil(me.tonight_until)) throw new HttpError(409, 'Dnes večer už máš zapnuté.');
+    if (isRestricted(db, me)) throw new HttpError(403, 'billing.cantTonight');
+    if (isActiveUntil(me.tonight_until)) throw new HttpError(409, 'billing.tonightOn');
     tx(db, () => {
       if (!hasFeature(me, 'tonight') && !useCredit(db, me.id, 'tonight')) {
-        throw paywall('„Dnes večer“ je v Platinum nebo jednorázově.', { code: 'no_credit', credit: 'tonight' });
+        throw paywall('billing.tonightPaid', { code: 'no_credit', credit: 'tonight' });
       }
       db.prepare('UPDATE users SET tonight_until = ? WHERE id = ?').run(tonightEnd(), me.id);
     });
@@ -133,7 +133,7 @@ export function billingRoutes({ db, config }) {
       if (travelCity === null || travelCity === '') {
         db.prepare('UPDATE users SET travel_city = NULL WHERE id = ?').run(me.id);
       } else {
-        if (typeof travelCity !== 'string' || !Object.hasOwn(TRAVEL_CITIES, travelCity)) throw new HttpError(400, 'Neznámé město.');
+        if (typeof travelCity !== 'string' || !Object.hasOwn(TRAVEL_CITIES, travelCity)) throw new HttpError(400, 'billing.unknownCity');
         requireFeature(me, 'travel');
         db.prepare('UPDATE users SET travel_city = ? WHERE id = ?').run(travelCity, me.id);
       }

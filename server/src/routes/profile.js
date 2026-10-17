@@ -27,29 +27,29 @@ export function profileRoutes({ db }) {
 
   const me = (req) => getUser(db, req.user.id);
   const requirePassword = (req) => {
-    if (!verifySecret(req.body?.password, req.user.password_hash)) throw new HttpError(403, 'Špatné heslo.');
+    if (!verifySecret(req.body?.password, req.user.password_hash)) throw new HttpError(403, 'profile.wrongPassword');
   };
 
   r.get('/', (req, res) => res.json(ownProfile(req.user)));
 
   r.put('/', (req, res) => {
     const b = req.body ?? {};
-    const ageMin = int(b.ageMin, 'věk od', { min: MIN_AGE, max: 99 });
-    const ageMax = int(b.ageMax, 'věk do', { min: MIN_AGE, max: 99 });
-    if (ageMin > ageMax) throw new HttpError(400, 'Věk od musí být menší než věk do.');
-    const bio = str(b.bio, 'o mně', { max: 500, optional: true });
+    const ageMin = int(b.ageMin, 'fields.ageMin', { min: MIN_AGE, max: 99 });
+    const ageMax = int(b.ageMax, 'fields.ageMax', { min: MIN_AGE, max: 99 });
+    if (ageMin > ageMax) throw new HttpError(400, 'profile.ageRange');
+    const bio = str(b.bio, 'fields.bio', { max: 500, optional: true });
     const verdict = moderate(bio);
-    if (verdict.action === 'block') throw new HttpError(400, verdict.message);
+    if (verdict.action === 'block') throw new HttpError(400, verdict.messageKey);
 
     const fields = {
-      name: str(b.name, 'jméno', { min: 2, max: 40 }),
+      name: str(b.name, 'fields.name', { min: 2, max: 40 }),
       bio,
-      gender: oneOf(b.gender, 'pohlaví', GENDERS),
-      interested_in: JSON.stringify(listOf(b.interestedIn, 'koho hledáš', GENDERS, { min: 1 })),
-      tags: JSON.stringify(listOf(b.tags ?? [], 'co hledám', TAGS)),
+      gender: oneOf(b.gender, 'fields.gender', GENDERS),
+      interested_in: JSON.stringify(listOf(b.interestedIn, 'fields.interestedIn', GENDERS, { min: 1 })),
+      tags: JSON.stringify(listOf(b.tags ?? [], 'fields.tags', TAGS)),
       age_min: ageMin,
       age_max: ageMax,
-      max_distance_km: int(b.maxDistanceKm, 'vzdálenost', { min: 1, max: 300 }),
+      max_distance_km: int(b.maxDistanceKm, 'fields.maxDistance', { min: 1, max: 300 }),
     };
     const columns = Object.keys(fields);
     db.prepare(`UPDATE users SET ${columns.map((c) => `${c} = ?`).join(', ')} WHERE id = ?`).run(
@@ -61,15 +61,15 @@ export function profileRoutes({ db }) {
 
   // Poloha pro hledání v okolí – jen zaokrouhlená na mřížku ~1 km.
   r.put('/location', (req, res) => {
-    const lat = snapToGrid(num(req.body?.lat, 'lat', { min: -90, max: 90 }));
-    const lng = snapToGrid(num(req.body?.lng, 'lng', { min: -180, max: 180 }));
+    const lat = snapToGrid(num(req.body?.lat, 'fields.lat', { min: -90, max: 90 }));
+    const lng = snapToGrid(num(req.body?.lng, 'fields.lng', { min: -180, max: 180 }));
     db.prepare('UPDATE users SET lat = ?, lng = ? WHERE id = ?').run(lat, lng, req.user.id);
     res.json(ownProfile(me(req)));
   });
 
   r.post('/photos', (req, res) => {
     const photos = parseJson(req.user.photos, []);
-    if (photos.length >= MAX_PROFILE_PHOTOS) throw new HttpError(400, `Maximálně ${MAX_PROFILE_PHOTOS} fotky.`);
+    if (photos.length >= MAX_PROFILE_PHOTOS) throw new HttpError(400, 'profile.maxPhotos', { params: { count: MAX_PROFILE_PHOTOS } });
     const id = saveImage(db, { ownerId: req.user.id, kind: 'profile', base64: req.body?.jpegBase64 });
     db.prepare('UPDATE users SET photos = ? WHERE id = ?').run(JSON.stringify([...photos, id]), req.user.id);
     res.status(201).json(ownProfile(me(req)));
@@ -87,15 +87,15 @@ export function profileRoutes({ db }) {
   r.put('/safety', (req, res) => {
     const b = req.body ?? {};
     const updates = {
-      trusted_name: str(b.trustedName, 'jméno důvěryhodné osoby', { min: 2, max: 40 }),
-      trusted_phone: phone(b.trustedPhone, 'telefon důvěryhodné osoby'),
+      trusted_name: str(b.trustedName, 'fields.trustedName', { min: 2, max: 40 }),
+      trusted_phone: phone(b.trustedPhone, 'fields.trustedPhone'),
       discreet: bool(b.discreet) ? 1 : 0,
     };
     if (b.checkinPin !== undefined || b.duressPin !== undefined) {
       if (req.user.checkin_pin_hash) requirePassword(req);
-      const checkin = pin(b.checkinPin, 'PIN');
-      const duress = pin(b.duressPin, 'Nouzový PIN');
-      if (checkin === duress) throw new HttpError(400, 'Nouzový PIN musí být jiný než běžný PIN.');
+      const checkin = pin(b.checkinPin, 'fields.pin');
+      const duress = pin(b.duressPin, 'fields.duressPin');
+      if (checkin === duress) throw new HttpError(400, 'profile.pinsMustDiffer');
       updates.checkin_pin_hash = hashSecret(checkin);
       updates.duress_pin_hash = hashSecret(duress);
     }
@@ -116,7 +116,7 @@ export function profileRoutes({ db }) {
          WHERE s.ended_at IS NULL AND (s.user_id = ? OR m.user_a = ? OR m.user_b = ?)`,
       )
       .get(req.user.id, req.user.id, req.user.id);
-    if (active) throw new HttpError(409, 'Účet teď nejde smazat – probíhá schůzka. Zkus to po jejím skončení.');
+    if (active) throw new HttpError(409, 'profile.deleteDuringMeetup');
     // Smazáním pozastaveného účtu se nejde vyhnout kontrole – osoba se nemůže znovu zaregistrovat.
     if (req.user.status !== 'active') {
       const ban = db.prepare('INSERT OR IGNORE INTO banned_identities (hash, reason, created_at) VALUES (?, ?, ?)');

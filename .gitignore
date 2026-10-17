@@ -16,3 +16,9 @@ app/expo-env.d.ts
 app/demo/dist/
 app/demo/.export/
 app/demo/fonts.generated.js
+
+# sestavený web (node web/build.mjs)
+web/dist/
+web/preview/
+# vyrenderované kreativy se commitují zvlášť, až jsou hotové
+marketing/out/

@@ -1,22 +1,18 @@
 import { Router } from 'express';
 import { MIN_AGE } from '../../../shared/constants.js';
 import { identityHash } from '../crypto.js';
+import { DEFAULT_LOCALE, tr } from '../i18n.js';
 import { getUser } from '../model.js';
 import { HttpError, ageFrom, nowIso } from '../util.js';
 import { requireAuth } from './auth.js';
 
-const DECLINE_MESSAGES = {
-  underage: 'Ověření ukázalo, že ti ještě není 18. F*app je jen pro dospělé.',
-  banned: 'Tahle osoba byla na F*app zablokovaná za porušení pravidel.',
-  duplicate: 'Tahle osoba už na F*app účet má. Každý může mít jen jeden.',
-  incomplete: 'Z dokladu se nepodařilo přečíst datum narození. Zkus to znovu.',
-};
+// Důvody zamítnutí s vlastním vysvětlením (verification.declined.<důvod>), ostatní mají obecné.
+const DECLINE_REASONS = new Set(['underage', 'banned', 'duplicate', 'incomplete']);
 
-export function verificationStatusView(user, lastSession) {
-  return {
-    status: user.verification_status,
-    message: user.verification_status === 'declined' ? (DECLINE_MESSAGES[lastSession?.reason] ?? 'Ověření se nepovedlo. Zkus to znovu.') : '',
-  };
+export function verificationStatusView(user, lastSession, locale = DEFAULT_LOCALE) {
+  if (user.verification_status !== 'declined') return { status: user.verification_status, message: '' };
+  const reason = DECLINE_REASONS.has(lastSession?.reason) ? lastSession.reason : 'default';
+  return { status: user.verification_status, message: tr(locale, `verification.declined.${reason}`) };
 }
 
 /**
@@ -25,7 +21,7 @@ export function verificationStatusView(user, lastSession) {
  */
 export function applyDecision(db, config, decision) {
   const session = db.prepare('SELECT * FROM verification_sessions WHERE provider_id = ?').get(decision.providerId);
-  if (!session) throw new HttpError(404, 'Neznámé ověření.');
+  if (!session) throw new HttpError(404, 'verification.unknown');
   const user = getUser(db, session.user_id);
   if (!user) return;
 
@@ -90,11 +86,11 @@ export function verificationRoutes({ db, config, services }) {
     db.prepare('SELECT * FROM verification_sessions WHERE user_id = ? ORDER BY id DESC LIMIT 1').get(userId);
 
   r.get('/', requireAuth(db), (req, res) => {
-    res.json(verificationStatusView(req.user, lastSession(req.user.id)));
+    res.json(verificationStatusView(req.user, lastSession(req.user.id), req.locale));
   });
 
   r.post('/start', requireAuth(db), async (req, res) => {
-    if (req.user.verification_status === 'approved') throw new HttpError(409, 'Totožnost už máš ověřenou.');
+    if (req.user.verification_status === 'approved') throw new HttpError(409, 'verification.alreadyVerified');
     const { providerId, url } = await provider.start({
       userId: req.user.id,
       callbackUrl: `${config.publicUrl}/verification/done`,
@@ -118,9 +114,9 @@ export function verificationRoutes({ db, config, services }) {
 
   // Jen pro vývoj: simuluje rozhodnutí poskytovatele.
   r.post('/dev-decide', requireAuth(db), (req, res) => {
-    if (provider.name !== 'dev') throw new HttpError(404, 'Nenalezeno.');
+    if (provider.name !== 'dev') throw new HttpError(404, 'errors.notFound');
     const session = lastSession(req.user.id);
-    if (!session) throw new HttpError(400, 'Nejdřív spusť ověření.');
+    if (!session) throw new HttpError(400, 'verification.startFirst');
     const b = req.body ?? {};
     applyDecision(db, config, {
       providerId: session.provider_id,
@@ -131,7 +127,7 @@ export function verificationRoutes({ db, config, services }) {
       document: { country: 'CZ', number: b.documentNumber ?? '' },
     });
     const user = getUser(db, req.user.id);
-    res.json(verificationStatusView(user, lastSession(user.id)));
+    res.json(verificationStatusView(user, lastSession(user.id), req.locale));
   });
 
   return r;

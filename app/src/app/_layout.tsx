@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppLockProvider } from '@/lib/appLock';
+import { i18n } from '@/lib/i18n';
 import { SessionProvider, useSession } from '@/lib/session';
 import { colors } from '@/lib/theme';
 
@@ -46,6 +47,10 @@ export default function RootLayout() {
     Manrope_600SemiBold,
     Manrope_700Bold,
   });
+  // Jazyk zvolený v profilu (jinak podle telefonu).
+  useEffect(() => {
+    void i18n.restore();
+  }, []);
   if (!fontsLoaded) return <View style={{ flex: 1, backgroundColor: colors.bg }} />;
   return (
     <SafeAreaProvider>

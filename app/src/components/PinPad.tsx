@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { errorMessage } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', '⌫'];
@@ -22,6 +23,7 @@ export function PinPad({
   onSubmit: (pin: string) => Promise<void>;
   onClose: () => void;
 }) {
+  const t = useT();
   const [pin, setPin] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -58,7 +60,7 @@ export function PinPad({
         <View style={s.sheet}>
           <Text style={s.title}>{title}</Text>
           {subtitle ? <Text style={s.subtitle}>{subtitle}</Text> : null}
-          <View style={s.dots} accessibilityLabel={`Zadáno ${pin.length} číslic`}>
+          <View style={s.dots} accessibilityLabel={t('pinPad.entered', { count: pin.length })}>
             {Array.from({ length: Math.max(4, pin.length) }, (_, i) => (
               <View key={i} style={[s.dot, i < pin.length && s.dotOn]} />
             ))}
@@ -69,7 +71,7 @@ export function PinPad({
               <Pressable
                 key={i}
                 disabled={!key}
-                accessibilityLabel={key === '⌫' ? 'Smazat' : key}
+                accessibilityLabel={key === '⌫' ? t('common.delete') : key}
                 onPress={() => press(key)}
                 style={({ pressed }) => [s.key, !key && { opacity: 0 }, pressed && { backgroundColor: colors.surface2 }]}
               >
@@ -79,7 +81,7 @@ export function PinPad({
           </View>
           <View style={s.actions}>
             <Pressable onPress={onClose} style={[s.action, s.ghost]} accessibilityRole="button">
-              <Text style={s.actionText}>Zpět</Text>
+              <Text style={s.actionText}>{t('common.back')}</Text>
             </Pressable>
             <Pressable
               onPress={submit}
@@ -87,7 +89,7 @@ export function PinPad({
               style={[s.action, { backgroundColor: pin.length >= 4 ? colors.safe : colors.lineSoft }]}
               accessibilityRole="button"
             >
-              <Text style={[s.actionText, { color: pin.length >= 4 ? colors.onAccent : colors.faint }]}>Potvrdit</Text>
+              <Text style={[s.actionText, { color: pin.length >= 4 ? colors.onAccent : colors.faint }]}>{t('common.confirm')}</Text>
             </Pressable>
           </View>
         </View>

@@ -1,22 +1,26 @@
+import { normalizeLocale, tr } from '../i18n.js';
 import { nowIso } from '../util.js';
 
-// SMS pro důvěryhodnou osobu. Texty jsou krátké, bez slova „sex“ a bez detailů domluvy –
-// SMS může vidět kdokoli, kdo má v ruce telefon důvěryhodné osoby.
+// SMS pro důvěryhodnou osobu (texty v shared/i18n/server, „sms.*“). Texty jsou krátké, bez slova „sex“
+// a bez detailů domluvy – SMS může vidět kdokoli, kdo má v ruce telefon důvěryhodné osoby.
+// Jazyk = jazyk uživatele, který má bezpečnostní režim zapnutý (zafixovaný při startu schůzky).
 
-const time = (iso) =>
-  new Intl.DateTimeFormat('cs-CZ', { timeZone: 'Europe/Prague', hour: '2-digit', minute: '2-digit' }).format(
-    new Date(iso),
-  );
+const time = (locale, iso) => {
+  const code = normalizeLocale(locale);
+  return new Intl.DateTimeFormat(code === 'cs' ? 'cs-CZ' : code, {
+    timeZone: 'Europe/Prague',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(new Date(iso));
+};
 
 export const smsText = {
-  started: (name, url) =>
-    `${name} má schůzku a vybral/a si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: ${url}`,
-  alarm: (name, url) => `POPLACH: ${name} potřebuje pomoc. Poloha a podrobnosti: ${url}`,
-  overdue: (name, dueIso, url) =>
-    `${name} se neozval/a – potvrzení, že je v pořádku, mělo přijít do ${time(dueIso)}. Zkus zavolat. Poloha: ${url}`,
-  backOk: (name) => `${name} se ozval/a a potvrdil/a, že je v pořádku.`,
-  sosCancelled: (name) => `${name} zrušil/a poplach – byl to omyl, je v pořádku.`,
-  endedOk: (name) => `${name} ukončil/a schůzku a je v pořádku. Díky, že jsi byl/a k dispozici.`,
+  started: (locale, name, url) => tr(locale, 'sms.started', { name, url }),
+  alarm: (locale, name, url) => tr(locale, 'sms.alarm', { name, url }),
+  overdue: (locale, name, dueIso, url) => tr(locale, 'sms.overdue', { name, time: time(locale, dueIso), url }),
+  backOk: (locale, name) => tr(locale, 'sms.backOk', { name }),
+  sosCancelled: (locale, name) => tr(locale, 'sms.sosCancelled', { name }),
+  endedOk: (locale, name) => tr(locale, 'sms.endedOk', { name }),
 };
 
 export function createAlerts({ db, sms }) {

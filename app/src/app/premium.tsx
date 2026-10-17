@@ -6,6 +6,8 @@ import { Icon } from '@/components/Icon';
 import { Banner, Body, Button, ErrorText, Header, Screen, Title } from '@/components/ui';
 import { errorMessage } from '@/lib/api';
 import { purchase, useBilling } from '@/lib/billing';
+import { formatDate, formatPrice, formatTime } from '@/lib/format';
+import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 
 type PaidPlan = Exclude<PlanId, 'free'>;
@@ -13,26 +15,18 @@ const paidPlans: PaidPlan[] = ['plus', 'gold', 'platinum'];
 const featureIds = Object.keys(FEATURES) as FeatureId[];
 const durations = [1, 6, 12] as const;
 
-const tagline: Record<PaidPlan, string> = {
-  plus: 'Swipuj bez limitu a vrať omylem odmítnutý profil.',
-  gold: 'Uvidíš, kdo tě lajkl – a matchneš jedním klepnutím.',
-  platinum: 'Tvůj lajk uvidí jako první. A „Dnes večer“ kdykoli.',
-};
-
-const credits: { kind: CreditKind; detail: string; products: ProductId[] }[] = [
-  { kind: 'boost', detail: '30 minut nahoře u lidí v okolí.', products: ['boost_1', 'boost_5'] },
-  { kind: 'superlike', detail: 'Uvidí, že o něj/ni opravdu stojíš.', products: ['superlike_1', 'superlike_5'] },
-  { kind: 'tonight', detail: 'Do 6:00 ráno výš a se štítkem „Dnes večer“.', products: ['tonight_1'] },
+const credits: { kind: CreditKind; products: ProductId[] }[] = [
+  { kind: 'boost', products: ['boost_1', 'boost_5'] },
+  { kind: 'superlike', products: ['superlike_1', 'superlike_5'] },
+  { kind: 'tonight', products: ['tonight_1'] },
 ];
 
 const productFor = (plan: PaidPlan, months: number) => `${plan}_${months}m` as ProductId;
 const priceOf = (id: ProductId) => PRODUCTS[id].priceCzk;
-const kc = (n: number) => `${n.toLocaleString('cs-CZ')} Kč`;
-const day = (iso: string) => new Date(iso).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric' });
-const clock = (iso: string) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
 
 /** Nabídka předplatného po vzoru Tinderu. Bezpečnost je vždy zdarma – tady se prodává jen pohodlí a viditelnost. */
 export default function Premium() {
+  const t = useT();
   const params = useLocalSearchParams<{ reason?: string; plan?: string; credit?: string; resetAt?: string }>();
   const billing = useBilling();
   const initial = paidPlans.includes(params.plan as PaidPlan) ? (params.plan as PaidPlan) : params.reason === 'like_limit' ? 'plus' : 'gold';
@@ -60,9 +54,9 @@ export default function Premium() {
       <Screen>
         <Header />
         <View style={{ padding: 20, gap: 14 }}>
-          <Title>F*app je teď zdarma</Title>
-          <Body muted>Placené funkce zapneme později. Bezpečnost – ověření, domluva, bezpečnostní režim i SOS – zůstane zdarma vždycky.</Body>
-          <Button label="Zpět" onPress={() => router.back()} />
+          <Title>{t('premium.free.title')}</Title>
+          <Body muted>{t('premium.free.body')}</Body>
+          <Button label={t('premium.back')} onPress={() => router.back()} />
         </View>
       </Screen>
     );
@@ -75,9 +69,9 @@ export default function Premium() {
           <View style={s.doneIcon}>
             <Icon name="check" size={36} color={colors.onAccent} strokeWidth={3} />
           </View>
-          <Title style={{ textAlign: 'center' }}>Hotovo</Title>
+          <Title style={{ textAlign: 'center' }}>{t('premium.done')}</Title>
           <Body muted style={{ textAlign: 'center' }}>{done}</Body>
-          <Button label="Pokračovat" onPress={() => router.back()} style={{ alignSelf: 'stretch' }} />
+          <Button label={t('premium.continue')} onPress={() => router.back()} style={{ alignSelf: 'stretch' }} />
         </View>
       </Screen>
     );
@@ -89,24 +83,28 @@ export default function Premium() {
   const creditFirst = params.reason === 'no_credit';
   const reason =
     params.reason === 'like_limit'
-      ? `Došly ti lajky. ${params.resetAt ? `Další přibudou v ${clock(params.resetAt)}.` : 'Další přibudou za chvíli.'}`
+      ? params.resetAt
+        ? t('premium.reason.likeLimitAt', { time: formatTime(params.resetAt) })
+        : t('premium.reason.likeLimit')
       : params.reason === 'no_credit' && params.credit && params.credit in CREDITS
-        ? `${CREDITS[params.credit as CreditKind]} je jednorázově, nebo v předplatném.`
+        ? t('premium.reason.noCredit', { credit: t(`labels.credits.${params.credit}`) })
         : params.reason === 'upgrade'
-          ? `Tohle je součástí F*app ${PLANS[initial].name}.`
+          ? t('premium.reason.upgrade', { plan: t(`labels.plans.${initial}`) })
           : null;
 
   const creditSection = (
     <View style={{ gap: 10 }}>
-      <Text style={s.section}>Jednorázově</Text>
+      <Text style={s.section}>{t('premium.oneOff')}</Text>
       {credits.map((c) => (
         <View key={c.kind} style={[s.creditRow, params.credit === c.kind && { borderColor: colors.accent }]}>
           <View style={{ flex: 1, gap: 2 }}>
             <Text style={s.featureName}>
-              {CREDITS[c.kind]}
-              {billing && creditBalance(billing, c.kind) > 0 ? <Text style={s.owned}>{`  · máš ${creditBalance(billing, c.kind)}`}</Text> : null}
+              {t(`labels.credits.${c.kind}`)}
+              {billing && creditBalance(billing, c.kind) > 0 ? (
+                <Text style={s.owned}>{`  · ${t('premium.owned', { count: creditBalance(billing, c.kind) })}`}</Text>
+              ) : null}
             </Text>
-            <Text style={s.featureDetail}>{c.detail}</Text>
+            <Text style={s.featureDetail}>{t(`premium.creditDetail.${c.kind}`)}</Text>
           </View>
           {c.products.map((id) => {
             const p = PRODUCTS[id];
@@ -115,13 +113,13 @@ export default function Premium() {
               <Pressable
                 key={id}
                 accessibilityRole="button"
-                accessibilityLabel={`Koupit ${amount}× ${CREDITS[c.kind]} za ${kc(p.priceCzk)}`}
+                accessibilityLabel={t('premium.buyCredit', { amount, credit: t(`labels.credits.${c.kind}`), price: formatPrice(p.priceCzk) })}
                 disabled={!!busy}
-                onPress={() => buy(id, amount > 1 ? `Máš ${amount}× ${CREDITS[c.kind].toLowerCase()} navíc.` : `Máš ${CREDITS[c.kind].toLowerCase()} navíc.`)}
+                onPress={() => buy(id, t(`premium.creditBought.${c.kind}`, { count: amount }))}
                 style={({ pressed }) => [s.priceChip, pressed && { opacity: 0.8 }]}
               >
                 <Text style={s.priceChipTop}>{amount}×</Text>
-                <Text style={s.priceChipBottom}>{kc(p.priceCzk)}</Text>
+                <Text style={s.priceChipBottom}>{formatPrice(p.priceCzk)}</Text>
               </Pressable>
             );
           })}
@@ -132,11 +130,16 @@ export default function Premium() {
 
   return (
     <Screen>
-      <Header title="Předplatné" />
+      <Header title={t('premium.title')} />
       <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 18 }}>
         {reason ? <Banner tone="warn" icon="heart" title={reason} /> : null}
         {billing && billing.plan !== 'free' ? (
-          <Banner tone="safe" icon="crown" title={`Máš F*app ${PLANS[billing.plan].name}`} subtitle={billing.planExpiresAt ? `Platí do ${day(billing.planExpiresAt)}.` : undefined} />
+          <Banner
+            tone="safe"
+            icon="crown"
+            title={t('premium.currentPlan', { plan: t(`labels.plans.${billing.plan}`) })}
+            subtitle={billing.planExpiresAt ? t('premium.validUntil', { date: formatDate(billing.planExpiresAt) }) : undefined}
+          />
         ) : null}
 
         {creditFirst ? creditSection : null}
@@ -150,25 +153,25 @@ export default function Premium() {
               onPress={() => setPlan(p)}
               style={[s.segmentItem, plan === p && s.segmentOn]}
             >
-              <Text style={[s.segmentText, plan === p && { color: colors.onAccent }]}>{PLANS[p].name}</Text>
+              <Text style={[s.segmentText, plan === p && { color: colors.onAccent }]}>{t(`labels.plans.${p}`)}</Text>
             </Pressable>
           ))}
         </View>
 
         <View style={{ gap: 6 }}>
-          <Title style={{ fontSize: 30 }}>{`F*app ${PLANS[plan].name}`}</Title>
-          <Body muted>{tagline[plan]}</Body>
+          <Title style={{ fontSize: 30 }}>{t('premium.planTitle', { plan: t(`labels.plans.${plan}`) })}</Title>
+          <Body muted>{t(`premium.tagline.${plan}`)}</Body>
         </View>
 
         <View style={{ gap: 12 }}>
           {featureIds.map((f) => {
             const included = PLANS[FEATURES[f].plan].rank <= rank;
             return (
-              <View key={f} style={[s.feature, !included && { opacity: 0.4 }]} accessibilityLabel={`${FEATURES[f].name}: ${included ? 'v ceně' : 'není v ceně'}`}>
+              <View key={f} style={[s.feature, !included && { opacity: 0.4 }]} accessibilityLabel={t(included ? 'premium.featureIncluded' : 'premium.featureNotIncluded', { feature: t(`labels.features.${f}.name`) })}>
                 <Icon name={included ? 'check' : 'close'} size={18} color={included ? colors.accent : colors.faint} strokeWidth={2.6} />
                 <View style={{ flex: 1, gap: 1 }}>
-                  <Text style={s.featureName}>{FEATURES[f].name}</Text>
-                  <Text style={s.featureDetail}>{FEATURES[f].detail}</Text>
+                  <Text style={s.featureName}>{t(`labels.features.${f}.name`)}</Text>
+                  <Text style={s.featureDetail}>{t(`labels.features.${f}.detail`)}</Text>
                 </View>
               </View>
             );
@@ -188,31 +191,31 @@ export default function Premium() {
                 onPress={() => setMonths(m)}
                 style={[s.duration, months === m && s.durationOn]}
               >
-                <Text style={s.durationMonths}>{m === 1 ? '1 měsíc' : `${m} měsíců`}</Text>
-                <Text style={s.durationPrice}>{kc(perMonth)}</Text>
-                <Text style={s.durationNote}>{save > 0 ? `za měsíc · −${save}\u00a0%` : 'za měsíc'}</Text>
+                <Text style={s.durationMonths}>{t('premium.months', { count: m })}</Text>
+                <Text style={s.durationPrice}>{formatPrice(perMonth)}</Text>
+                <Text style={s.durationNote}>{save > 0 ? t('premium.perMonthSave', { percent: save }) : t('premium.perMonth')}</Text>
               </Pressable>
             );
           })}
         </View>
 
         <Button
-          label={`Pokračovat · ${kc(priceOf(selected))}`}
+          label={t('premium.continueWithPrice', { price: formatPrice(priceOf(selected)) })}
           loading={busy === selected}
           disabled={!!busy && busy !== selected}
-          onPress={() => buy(selected, `Máš F*app ${PLANS[plan].name}${months > 1 ? ` na ${months} měsíců` : ''}.`)}
+          onPress={() => buy(selected, t('premium.planBought', { plan: t(`labels.plans.${plan}`), count: months }))}
         />
         <ErrorText>{error}</ErrorText>
         <Text style={s.fine}>
-          {months > 1 ? `Zaplatíš ${kc(priceOf(selected))} najednou (${kc(monthly)} měsíčně). ` : ''}
-          Předplatné se obnovuje automaticky, zrušit ho jde kdykoli v nastavení App Store nebo Google Play. Cena je pro všechny
-          stejná.
+          {months > 1
+            ? t('premium.renewalUpfront', { total: formatPrice(priceOf(selected)), monthly: formatPrice(monthly) })
+            : t('premium.renewal')}
         </Text>
 
         {creditFirst ? null : creditSection}
 
-        <Banner tone="safe" icon="shieldCheck" title="Bezpečnost je vždy zdarma" subtitle="Ověření, domluva, bezpečnostní režim, SOS i nahlašování." />
-        {billing?.provider === 'dev' ? <Text style={s.fine}>Prototyp: nic se nezaplatí, nákup se jen nasimuluje.</Text> : null}
+        <Banner tone="safe" icon="shieldCheck" title={t('premium.safetyFree.title')} subtitle={t('premium.safetyFree.subtitle')} />
+        {billing?.provider === 'dev' ? <Text style={s.fine}>{t('premium.devNote')}</Text> : null}
       </ScrollView>
     </Screen>
   );

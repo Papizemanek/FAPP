@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
 import { Body, Button, Checkbox, Chip, ErrorText, Field, Header, Label, Screen, Title } from '@/components/ui';
 import { api, errorMessage, type Gender, type Me } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 
 const genderKeys = Object.keys(GENDERS) as Gender[];
-const plural: Record<Gender, string> = { man: 'Muže', woman: 'Ženy', nonbinary: 'Nebinární' };
 
 /** „31. 12. 1995“ nebo „31.12.1995“ → „1995-12-31“ */
 function parseBirthdate(input: string) {
@@ -17,6 +17,7 @@ function parseBirthdate(input: string) {
 }
 
 export default function Register() {
+  const t = useT();
   const { signIn } = useSession();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -33,7 +34,7 @@ export default function Register() {
 
   const submit = async () => {
     const iso = parseBirthdate(birthdate);
-    if (!iso) return setError('Datum narození zadej jako DD. MM. RRRR.');
+    if (!iso) return setError(t('register.birthdateInvalid'));
     setBusy(true);
     setError('');
     try {
@@ -63,40 +64,40 @@ export default function Register() {
       <Header />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 0, gap: 18 }} keyboardShouldPersistTaps="handled">
-          <Title>Vytvořit účet</Title>
-          <Field label="Jméno (uvidí ho ostatní)" value={name} onChangeText={setName} autoComplete="given-name" />
-          <Field label="E-mail" value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" autoComplete="email" />
-          <Field label="Heslo (aspoň 10 znaků)" value={password} onChangeText={setPassword} secureTextEntry autoComplete="new-password" />
-          <Field label="Datum narození" placeholder="DD. MM. RRRR" value={birthdate} onChangeText={setBirthdate} keyboardType="numbers-and-punctuation" />
+          <Title>{t('register.title')}</Title>
+          <Field label={t('register.name')} value={name} onChangeText={setName} autoComplete="given-name" />
+          <Field label={t('register.email')} value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" autoComplete="email" />
+          <Field label={t('register.password')} value={password} onChangeText={setPassword} secureTextEntry autoComplete="new-password" />
+          <Field label={t('register.birthdate')} placeholder={t('register.birthdatePlaceholder')} value={birthdate} onChangeText={setBirthdate} keyboardType="numbers-and-punctuation" />
 
           <View style={{ gap: 10 }}>
-            <Label>Jsem</Label>
+            <Label>{t('register.iAm')}</Label>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
               {genderKeys.map((g) => (
-                <Chip key={g} label={GENDERS[g]} selected={gender === g} onPress={() => setGender(g)} />
+                <Chip key={g} label={t(`labels.genders.${g}`)} selected={gender === g} onPress={() => setGender(g)} />
               ))}
             </View>
           </View>
           <View style={{ gap: 10 }}>
-            <Label>Koho mi ukazovat</Label>
+            <Label>{t('register.showMe')}</Label>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
               {genderKeys.map((g) => (
-                <Chip key={g} label={plural[g]} selected={interestedIn.includes(g)} onPress={() => toggleInterest(g)} />
+                <Chip key={g} label={t(`labels.gendersPlural.${g}`)} selected={interestedIn.includes(g)} onPress={() => toggleInterest(g)} />
               ))}
             </View>
           </View>
 
           <Checkbox checked={adult} onToggle={() => setAdult(!adult)} tone="accent">
-            Je mi 18 let nebo víc.
+            {t('register.confirmAdult')}
           </Checkbox>
           <Checkbox checked={rules} onToggle={() => setRules(!rules)} tone="accent">
-            Souhlasím s pravidly komunity a se zpracováním svých údajů, včetně údajů o sexuálním životě, pro fungování F*app.
+            {t('register.acceptRules')}
           </Checkbox>
           <Body muted style={{ fontSize: 13 }}>
-            Hned potom ověříme tvou totožnost a věk (doklad a selfie). Doklad si neukládáme.
+            {t('register.verifyNote')}
           </Body>
           <ErrorText>{error}</ErrorText>
-          <Button label="Pokračovat" onPress={submit} loading={busy} disabled={!ready} />
+          <Button label={t('register.continue')} onPress={submit} loading={busy} disabled={!ready} />
         </ScrollView>
       </KeyboardAvoidingView>
     </Screen>

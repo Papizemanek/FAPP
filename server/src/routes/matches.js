@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { msg, tr } from '../i18n.js';
 import { saveImage } from '../images.js';
 import {
   activeSafetySession,
@@ -13,6 +14,7 @@ import {
   requireActivePartner,
 } from '../model.js';
 import { moderate } from '../services/moderation.js';
+import { warningText } from '../services/moderationText.js';
 import { notify } from '../services/push.js';
 import { HttpError, int, nowIso, str } from '../util.js';
 import { requireAuth, requireVerified } from './auth.js';
@@ -21,13 +23,13 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
   const r = Router();
   r.use(requireAuth(db), requireVerified);
 
-  const messageView = (m, viewerId) => ({
+  const messageView = (m, viewerId, locale) => ({
     id: m.id,
     mine: m.sender_id === viewerId,
     text: sealer.open(m.body),
     imageUrl: m.image_id ? `/api/images/${m.image_id}` : null,
-    // Bezpečnostní upozornění vidí jen příjemce zprávy.
-    warning: m.sender_id === viewerId ? '' : m.warning,
+    // Bezpečnostní upozornění vidí jen příjemce zprávy – v jeho jazyce.
+    warning: m.sender_id === viewerId ? '' : warningText(m.warning, locale),
     createdAt: m.created_at,
   });
 
@@ -52,7 +54,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
           matchedAt: row.matched_at,
           partner: publicProfile(row, req.user),
           lastMessage: last
-            ? { text: last.image_id && !last.body ? 'Fotka' : sealer.open(last.body), mine: last.sender_id === req.user.id, at: last.created_at }
+            ? { text: last.image_id && !last.body ? tr(req.locale, 'chat.photo') : sealer.open(last.body), mine: last.sender_id === req.user.id, at: last.created_at }
             : null,
           agreementStatus: agreement ? agreementStatus(db, agreement, match) : null,
         };
@@ -82,19 +84,19 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
 
   r.get('/:id/messages', (req, res) => {
     const { match } = getMatchFor(db, req.params.id, req.user.id);
-    const after = req.query.after ? int(req.query.after, 'after', { min: 0, max: Number.MAX_SAFE_INTEGER }) : 0;
+    const after = req.query.after ? int(req.query.after, 'fields.after', { min: 0, max: Number.MAX_SAFE_INTEGER }) : 0;
     const rows = db
       .prepare('SELECT * FROM messages WHERE match_id = ? AND id > ? ORDER BY id ASC LIMIT 200')
       .all(match.id, after);
-    res.json(rows.map((m) => messageView(m, req.user.id)));
+    res.json(rows.map((m) => messageView(m, req.user.id, req.locale)));
   });
 
   r.post('/:id/messages', limiter('message', 30), (req, res) => {
     const { match, other } = getMatchFor(db, req.params.id, req.user.id);
     requireActivePartner(other);
-    const text = str(req.body?.text, 'zpráva', { max: 2000, optional: true });
+    const text = str(req.body?.text, 'fields.message', { max: 2000, optional: true });
     const hasImage = typeof req.body?.jpegBase64 === 'string';
-    if (!text && !hasImage) throw new HttpError(400, 'Prázdná zpráva.');
+    if (!text && !hasImage) throw new HttpError(400, 'chat.empty');
 
     const verdict = moderate(text);
     if (verdict.flag && verdict.action !== 'block') {
@@ -110,7 +112,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
         refId: match.id,
         details: sealer.seal(text),
       });
-      throw new HttpError(422, `Zpráva nebyla odeslána. ${verdict.message}`);
+      throw new HttpError(422, 'chat.notSent', { params: { reason: msg(verdict.messageKey) } });
     }
 
     const imageId = hasImage
@@ -118,15 +120,15 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
       : null;
     const { lastInsertRowid } = db
       .prepare('INSERT INTO messages (match_id, sender_id, body, image_id, warning, created_at) VALUES (?, ?, ?, ?, ?, ?)')
-      .run(match.id, req.user.id, sealer.seal(text), imageId, verdict.action === 'warn' ? verdict.message : '', nowIso());
+      .run(match.id, req.user.id, sealer.seal(text), imageId, verdict.action === 'warn' ? verdict.messageKey : '', nowIso());
 
     notify(db, services.push, other.id, {
       title: req.user.name,
-      body: imageId ? 'Poslal/a fotku' : text.slice(0, 120),
+      body: imageId ? msg('push.message.photo') : text.slice(0, 120),
       data: { type: 'message', matchId: match.id },
     });
     const row = db.prepare('SELECT * FROM messages WHERE id = ?').get(lastInsertRowid);
-    res.status(201).json(messageView(row, req.user.id));
+    res.status(201).json(messageView(row, req.user.id, req.locale));
   });
 
   return r;

@@ -9,6 +9,7 @@ import {
   TRAVEL_CITIES,
   WEEKLY_SUPER_LIKES,
 } from '../../shared/constants.js';
+import { msg } from './i18n.js';
 import { HttpError } from './util.js';
 
 // Předplatné a jednorázové nákupy. Bezpečnost se nikdy neprodává – tady jsou jen pohodlí a viditelnost.
@@ -36,15 +37,20 @@ export function effectiveLocation(user, now = Date.now()) {
   return { lat: user.lat, lng: user.lng, traveling: false };
 }
 
-/** Chyba „tohle je placené“ – aplikace na ni otevře nabídku předplatného. */
-export function paywall(message, data) {
-  return new HttpError(402, message, data);
+/** Chyba „tohle je placené“ – aplikace na ni otevře nabídku předplatného. key = překladový klíč. */
+export function paywall(key, data) {
+  return new HttpError(402, key, data);
 }
 
 export function requireFeature(user, feature) {
   if (!hasFeature(user, feature)) {
     const plan = FEATURES[feature].plan;
-    throw paywall(`${FEATURES[feature].name} je součástí F*app ${PLANS[plan].name}.`, { code: 'upgrade', plan });
+    // Název úrovně (Plus, Gold, Platinum) je obchodní značka a nepřekládá se.
+    throw paywall('billing.featureInPlan', {
+      code: 'upgrade',
+      plan,
+      params: { feature: msg(`features.${feature}`), plan: PLANS[plan].name },
+    });
   }
 }
 

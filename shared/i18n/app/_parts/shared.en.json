@@ -1,0 +1,98 @@
+{
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "retry": "Try again",
+    "continue": "Continue",
+    "done": "Done",
+    "send": "Send",
+    "delete": "Delete",
+    "edit": "Edit",
+    "open": "Open",
+    "show": "View",
+    "confirm": "Confirm",
+    "errorGeneric": "Something went wrong."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} has safety mode on",
+    "partnerSafetySubtitle": "Their trusted contact knows where they are and who they're with.",
+    "meetupTitle": "Meetup in progress",
+    "meetupSubtitle": "Safety mode is on.",
+    "missingTitle": "No agreement yet",
+    "missingSubtitle": "You each fill in what you're up for – you'll only see where you match.",
+    "fill": "Fill in",
+    "revokedByMeTitle": "You canceled the agreement",
+    "revokedByPartnerTitle": "{name} canceled the agreement",
+    "revokedSubtitle": "The meetup is off.",
+    "revokedCooldownSubtitle": "The meetup is off. Only {name} can start a new agreement.",
+    "newAgreement": "New agreement",
+    "confirmedTitle": "Agreement complete",
+    "confirmedSubtitle": "Once you're there, either of you can change your mind at any time.",
+    "partnerFilledTitle": "{name} filled in the agreement",
+    "waitingForYouTitle": "The agreement is waiting for you",
+    "fillYoursSubtitle": "Fill in what you're up for – you'll only see where you match.",
+    "partnerPendingTitle": "{name} hasn't filled it in yet",
+    "partnerPendingSubtitle": "The agreement is complete once you've both filled it in."
+  },
+  "fakeCall": {
+    "incoming": "mobile…",
+    "hangUp": "End",
+    "decline": "Decline",
+    "accept": "Accept"
+  },
+  "homeBanners": {
+    "meetupTitle": "Meetup in progress · {name}",
+    "missedCheckIn": "You missed a check-in!",
+    "safetyOn": "Safety mode is on.",
+    "feedbackTitle": "How did the meetup go?",
+    "feedbackSubtitle": "{name} – only our team will see your answer.",
+    "feedbackAction": "Answer"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} digit entered",
+      "other": "{count} digits entered"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, less",
+    "stepperIncrease": "{label}, more"
+  },
+  "api": {
+    "offline": "Couldn't connect to the server. Check your connection."
+  },
+  "billing": {
+    "storeNotConnected": "Purchases through the App Store and Google Play aren't set up yet."
+  },
+  "notifications": {
+    "channelName": "Notifications",
+    "reminderDiscreet": "Reminder",
+    "checkInTitle": "Time to check in",
+    "checkInBody": "Confirm with your PIN that you're OK.",
+    "fakeCallBody": "Incoming call"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Location sharing is on",
+    "notificationBody": "You can stop it in the app."
+  },
+  "appLock": {
+    "prompt": "Unlock F*app",
+    "lockedTitle": "The app is locked",
+    "lockedBody": "Unlock it with Face ID, your fingerprint or your phone passcode.",
+    "sosHold": "SOS – press and hold",
+    "unlock": "Unlock",
+    "sosSentTitle": "Alarm sent",
+    "sosSentBody": "{name} got an alert with your location.",
+    "sosSentBodyNoName": "Your trusted contact got an alert with your location.",
+    "sosFailedTitle": "Couldn't send"
+  },
+  "native": {
+    "locationWhenInUse": "F*app needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
+    "locationAlways": "During a meetup, F*app shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
+    "faceId": "F*app uses Face ID to unlock, so no one else can look inside.",
+    "photos": "Choose photos for your profile.",
+    "camera": "Take a photo of yourself for your profile."
+  }
+}

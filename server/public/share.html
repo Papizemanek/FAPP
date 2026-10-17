@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="cs">
+<html lang="__LANG__" dir="__DIR__">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>F*app – bezpečnostní odkaz</title>
+<title>{{pageTitle}}</title>
 <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
 <style>
   :root {
@@ -39,26 +39,26 @@
 <main>
   <header>
     <div class="logo">F<span>*</span>app</div>
-    <div class="muted">Bezpečnostní odkaz</div>
+    <div class="muted" data-i18n="header">{{header}}</div>
   </header>
 
   <section id="status" class="card status" aria-live="polite">
-    <h1 id="title">Načítám…</h1>
+    <h1 id="title">{{loading}}</h1>
     <p id="detail"></p>
   </section>
 
-  <a id="call112" class="button sos" href="tel:112" hidden>Zavolat 112</a>
+  <a id="call112" class="button sos" href="tel:112" data-i18n="call" hidden>{{call}}</a>
 
   <div id="mapWrap" hidden>
-    <div id="map" role="img" aria-label="Mapa s poslední polohou"></div>
+    <div id="map" role="img" data-i18n-aria="mapLabel" aria-label="{{mapLabel}}"></div>
     <div class="row" style="margin-top: 8px">
       <span id="locInfo" class="muted"></span>
-      <a id="openMaps" class="button ghost" target="_blank" rel="noopener noreferrer">Otevřít v mapách</a>
+      <a id="openMaps" class="button ghost" target="_blank" rel="noopener noreferrer" data-i18n="openMaps">{{openMaps}}</a>
     </div>
   </div>
 
   <section id="partner" class="card partner" hidden>
-    <img id="partnerPhoto" alt="Fotka protějšku" hidden>
+    <img id="partnerPhoto" data-i18n-alt="partnerPhotoAlt" alt="{{partnerPhotoAlt}}" hidden>
     <div>
       <div class="muted" id="partnerLead"></div>
       <div style="font-weight: 700; font-size: 17px" id="partnerName"></div>
@@ -70,34 +70,68 @@
 </main>
 
 <script src="/vendor/leaflet/leaflet.js"></script>
+<!-- Texty stránky (jmenný prostor „share“ ze shared/i18n/server) vkládá server podle ?lang= nebo jazyka prohlížeče. -->
+<script id="i18n" type="application/json">__I18N__</script>
 <script>
   const token = location.pathname.split('/').pop();
   const $ = (id) => document.getElementById(id);
-  const time = (iso) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
-  const dateTime = (iso) => new Date(iso).toLocaleString('cs-CZ', { weekday: 'short', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
+  let I18N = JSON.parse($('i18n').textContent);
+
+  function t(key, params = {}) {
+    let value = I18N.messages[key];
+    if (value && typeof value === 'object') {
+      let category = 'other';
+      try {
+        category = new Intl.PluralRules(I18N.locale).select(Number(params.count ?? 0));
+      } catch {
+        category = params.count === 1 ? 'one' : 'other';
+      }
+      value = value[category] ?? value.other;
+    }
+    if (typeof value !== 'string') return key;
+    return value.replace(/\{(\w+)\}/g, (m, name) => (params[name] === undefined ? m : String(params[name])));
+  }
+
+  const intl = () => I18N.locale;
+  const time = (iso) => new Date(iso).toLocaleTimeString(intl(), { hour: '2-digit', minute: '2-digit' });
+  const dateTime = (iso) => new Date(iso).toLocaleString(intl(), { weekday: 'short', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const percent = (x) => new Intl.NumberFormat(intl(), { style: 'percent', maximumFractionDigits: 0 }).format(x);
   const ago = (iso) => {
     const min = Math.round((Date.now() - Date.parse(iso)) / 60000);
-    return min < 1 ? 'právě teď' : `před ${min} min`;
+    return min < 1 ? t('locationJustNow') : t('locationAgo', { count: min });
   };
-  let map, marker, circle;
+  let map, marker, circle, last;
+
+  function applyStatic() {
+    const number = I18N.emergency;
+    document.documentElement.lang = I18N.locale;
+    document.documentElement.dir = I18N.dir;
+    document.title = t('pageTitle');
+    for (const el of document.querySelectorAll('[data-i18n]')) el.textContent = t(el.dataset.i18n, { number });
+    for (const el of document.querySelectorAll('[data-i18n-aria]')) el.setAttribute('aria-label', t(el.dataset.i18nAria));
+    for (const el of document.querySelectorAll('[data-i18n-alt]')) el.alt = t(el.dataset.i18nAlt);
+    $('call112').href = `tel:${number}`;
+  }
 
   function render(d) {
+    last = d;
+    const number = I18N.emergency;
     const texts = {
-      ok: [`${d.name} je v pořádku`, `Poslední potvrzení v ${d.lastCheckInAt && time(d.lastCheckInAt)}. Další čekáme do ${d.nextCheckInDue && time(d.nextCheckInDue)}.`],
-      overdue: [`${d.name} se neozval/a`, `Potvrzení mělo přijít do ${d.nextCheckInDue && time(d.nextCheckInDue)}. Zkus zavolat. Když to nebude brát, volej 112 a nadiktuj adresu z mapy.`],
-      alarm: [`${d.name} potřebuje pomoc`, `Poplach v ${d.alarmAt && time(d.alarmAt)}. Zavolej 112 a nadiktuj polohu z mapy a místo schůzky níže.`],
-      ended: ['Schůzka skončila', `${d.name} potvrdil/a, že je v pořádku.${d.hadAlarm ? ' Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.' : ''}`],
+      ok: [t('okTitle', { name: d.name }), t('okDetail', { last: d.lastCheckInAt && time(d.lastCheckInAt), next: d.nextCheckInDue && time(d.nextCheckInDue) })],
+      overdue: [t('overdueTitle', { name: d.name }), t('overdueDetail', { due: d.nextCheckInDue && time(d.nextCheckInDue), number })],
+      alarm: [t('alarmTitle', { name: d.name }), t('alarmDetail', { time: d.alarmAt && time(d.alarmAt), number })],
+      ended: [t('endedTitle'), t(d.hadAlarm ? 'endedDetailAlarm' : 'endedDetail', { name: d.name })],
     };
     const [title, detail] = texts[d.status];
     $('status').className = `card status ${d.status}`;
     $('title').textContent = title;
     $('detail').textContent = detail;
     $('call112').hidden = !(d.status === 'alarm' || d.status === 'overdue');
-    $('footer').textContent = d.status === 'ended' ? '' : `Poloha přestane být vidět, jakmile ${d.name} schůzku ukončí.`;
+    $('footer').textContent = d.status === 'ended' ? '' : t('footer', { name: d.name });
 
     $('partner').hidden = !d.partner;
     if (d.partner) {
-      $('partnerLead').textContent = 'Na schůzce s:';
+      $('partnerLead').textContent = t('partnerLead');
       $('partnerName').textContent = `${d.partner.name}, ${d.partner.age}`;
       $('meetInfo').textContent = `${dateTime(d.meetAt)} · ${d.place}`;
       $('partnerPhoto').hidden = !d.partner.hasPhoto;
@@ -107,7 +141,7 @@
     $('mapWrap').hidden = !d.location;
     if (d.location) {
       const { lat, lng, accuracy, battery, at } = d.location;
-      $('locInfo').textContent = `Poloha ${ago(at)}${battery != null ? ` · baterie ${Math.round(battery * 100)} %` : ''}`;
+      $('locInfo').textContent = [ago(at), battery != null ? t('battery', { percent: percent(battery) }) : null].filter(Boolean).join(' · ');
       $('openMaps').href = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
       if (window.L) {
         if (!map) {
@@ -127,16 +161,37 @@
     try {
       const res = await fetch(`/api/share/${token}`, { cache: 'no-store' });
       if (res.status === 404) {
-        $('title').textContent = 'Odkaz už neplatí';
+        last = null;
+        $('title').textContent = t('linkExpired');
         $('detail').textContent = '';
         return;
       }
       render(await res.json());
     } catch {
-      $('detail').textContent = 'Nepodařilo se načíst stav. Zkouším znovu…';
+      $('detail').textContent = t('loadFailed');
     }
   }
+
+  // Server neměl podle čeho jazyk vybrat (bez ?lang= a bez Accept-Language) → zkusit jazyky zařízení.
+  // Když se slovník nenačte, zůstane vložený – stránka musí fungovat vždycky.
+  async function refineLocale() {
+    const tags = navigator.languages?.length ? navigator.languages : navigator.language ? [navigator.language] : [];
+    if (I18N.explicit || tags.length === 0) return;
+    try {
+      const res = await fetch(`/api/share/i18n/${encodeURIComponent(tags.join(','))}`);
+      if (!res.ok) return;
+      const next = await res.json();
+      if (!next?.messages || next.locale === I18N.locale) return;
+      I18N = { ...next, explicit: true };
+      applyStatic();
+      if (last) render(last);
+    } catch {
+      // necháme vložený jazyk
+    }
+  }
+
   refresh();
+  refineLocale();
   setInterval(refresh, 15000);
 </script>
 </body>

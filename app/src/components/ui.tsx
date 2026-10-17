@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 import { imageSource } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { avatarTones, colors, fonts } from '@/lib/theme';
 import { Icon, type IconName } from './Icon';
 
@@ -47,11 +48,12 @@ export function Label({ children }: { children: ReactNode }) {
 }
 
 export function Header({ title, right, onBack }: { title?: ReactNode; right?: ReactNode; onBack?: () => void }) {
+  const t = useT();
   return (
     <View style={styles.header}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Zpět"
+        accessibilityLabel={t('common.back')}
         onPress={onBack ?? (() => (router.canGoBack() ? router.back() : router.replace('/')))}
         style={styles.iconButton}
       >
@@ -263,17 +265,18 @@ export function Stepper({
   step?: number;
   suffix?: string;
 }) {
+  const t = useT();
   return (
     <View style={styles.toggleRow}>
       <Text style={[styles.toggleLabel, { flex: 1 }]}>{label}</Text>
-      <Pressable accessibilityLabel={`${label} méně`} onPress={() => onChange(Math.max(min, value - step))} style={styles.stepBtn}>
+      <Pressable accessibilityLabel={t('ui.stepperDecrease', { label })} onPress={() => onChange(Math.max(min, value - step))} style={styles.stepBtn}>
         <Text style={styles.stepBtnText}>−</Text>
       </Pressable>
       <Text style={[styles.toggleLabel, { minWidth: 64, textAlign: 'center' }]}>
         {value}
         {suffix}
       </Text>
-      <Pressable accessibilityLabel={`${label} více`} onPress={() => onChange(Math.min(max, value + step))} style={styles.stepBtn}>
+      <Pressable accessibilityLabel={t('ui.stepperIncrease', { label })} onPress={() => onChange(Math.min(max, value + step))} style={styles.stepBtn}>
         <Text style={styles.stepBtnText}>+</Text>
       </Pressable>
     </View>

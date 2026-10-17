@@ -1,0 +1,128 @@
+{
+  "labels": {
+    "genders": {
+      "man": "Muž",
+      "woman": "Žena",
+      "nonbinary": "Nebinární"
+    },
+    "gendersPlural": {
+      "man": "Muže",
+      "woman": "Ženy",
+      "nonbinary": "Nebinární"
+    },
+    "tags": {
+      "oneoff": "Jednorázovka",
+      "repeat": "Opakovaně",
+      "myplace": "U mě",
+      "yourplace": "U tebe",
+      "vanilla": "Vanilka",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Líbání a mazlení",
+      "oral": "Orální",
+      "vaginal": "Vaginální",
+      "anal": "Anální",
+      "toys": "Hračky",
+      "overnight": "Přespání"
+    },
+    "wishes": {
+      "yes": "Ano",
+      "maybe": "Možná",
+      "no": "Ne"
+    },
+    "reportReasons": {
+      "consent": "Porušení souhlasu nebo hranic",
+      "violence": "Násilí nebo ohrožení",
+      "minor": "Podezření na nezletilou osobu",
+      "harassment": "Obtěžování",
+      "fake": "Falešný profil",
+      "paid": "Nabízení placených služeb",
+      "other": "Jiné"
+    },
+    "feedbackReasons": {
+      "consent": "Nerespektoval/a hranice nebo „stop“",
+      "safety": "Cítil/a jsem se v ohrožení",
+      "fake": "Nevypadal/a jako na fotkách",
+      "other": "Něco jiného"
+    },
+    "plans": {
+      "free": "Zdarma",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Neomezené lajky",
+        "detail": "Swipuj, kolik chceš."
+      },
+      "rewind": {
+        "name": "Vrácení swipu",
+        "detail": "Vrať omylem odmítnutý profil."
+      },
+      "travel": {
+        "name": "Na cestách",
+        "detail": "Swipuj v jiném městě ještě před cestou."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Uvidí tě jen ti, koho lajkneš."
+      },
+      "seeLikes": {
+        "name": "Kdo tě lajkl",
+        "detail": "Uvidíš všechny, kdo tě lajkli."
+      },
+      "weeklySuperLikes": {
+        "name": "5 super lajků týdně",
+        "detail": "Dej najevo, že o někoho opravdu stojíš."
+      },
+      "monthlyBoost": {
+        "name": "1 boost měsíčně",
+        "detail": "30 minut nahoře u lidí v okolí."
+      },
+      "priorityLikes": {
+        "name": "Prioritní lajky",
+        "detail": "Tvůj lajk uvidí dřív než ostatní."
+      },
+      "sentLikes": {
+        "name": "Odeslané lajky",
+        "detail": "Koho jsi lajkl/a za posledních 7 dní."
+      },
+      "tonight": {
+        "name": "Dnes večer kdykoli",
+        "detail": "Ukaž, že máš čas ještě dnes."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super lajk",
+      "tonight": "Dnes večer"
+    },
+    "cities": {
+      "praha": "Praha",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Vídeň",
+      "berlin": "Berlín"
+    }
+  },
+  "consent": {
+    "intent": "Takhle si to představuju. Na místě můžu cokoli odmítnout – a totéž platí pro druhého.",
+    "notice": "Beru na vědomí: souhlas platí jen teď a tady. „Ne“, „stop“, stopslovo, mlčení, ztuhnutí nebo opilost nejsou souhlas. Domluva v aplikaci nikoho nezbavuje odpovědnosti.",
+    "deterrence": "Všichni na F*app mají ověřenou totožnost. Při podezření z trestného činu ji předáme policii."
+  },
+  "welcome": {
+    "tagline": "Sex bez okolků.",
+    "taglineStrong": "Jen se souhlasem obou.",
+    "createAccount": "Vytvořit účet",
+    "signIn": "Přihlásit se",
+    "adultsOnly": "Jen pro 18+. Každý tu má ověřenou totožnost."
+  }
+}

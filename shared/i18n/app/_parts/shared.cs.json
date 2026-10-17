@@ -1,0 +1,100 @@
+{
+  "common": {
+    "back": "Zpět",
+    "cancel": "Zrušit",
+    "close": "Zavřít",
+    "save": "Uložit",
+    "retry": "Zkusit znovu",
+    "continue": "Pokračovat",
+    "done": "Hotovo",
+    "send": "Odeslat",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "open": "Otevřít",
+    "show": "Zobrazit",
+    "confirm": "Potvrdit",
+    "errorGeneric": "Něco se pokazilo."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} má zapnutý bezpečnostní režim",
+    "partnerSafetySubtitle": "Důvěryhodná osoba ví, kde a s kým je.",
+    "meetupTitle": "Schůzka probíhá",
+    "meetupSubtitle": "Bezpečnostní režim je zapnutý.",
+    "missingTitle": "Domluva zatím chybí",
+    "missingSubtitle": "Každý vyplní, na co má chuť – uvidíte jen shodu.",
+    "fill": "Vyplnit",
+    "revokedByMeTitle": "Zrušil/a jsi domluvu",
+    "revokedByPartnerTitle": "{name} zrušil/a domluvu",
+    "revokedSubtitle": "Schůzka se nekoná.",
+    "revokedCooldownSubtitle": "Schůzka se nekoná. Novou domluvu může otevřít jen {name}.",
+    "newAgreement": "Nová domluva",
+    "confirmedTitle": "Domluva je hotová",
+    "confirmedSubtitle": "Na místě se můžete kdykoli rozhodnout jinak.",
+    "partnerFilledTitle": "{name} vyplnil/a domluvu",
+    "waitingForYouTitle": "Domluva čeká na tebe",
+    "fillYoursSubtitle": "Vyplň, na co máš chuť ty – uvidíte jen shodu.",
+    "partnerPendingTitle": "{name} ještě nevyplnil/a",
+    "partnerPendingSubtitle": "Domluva je hotová, až ji vyplníte oba."
+  },
+  "fakeCall": {
+    "incoming": "mobil volá…",
+    "hangUp": "Zavěsit",
+    "decline": "Odmítnout",
+    "accept": "Přijmout"
+  },
+  "homeBanners": {
+    "meetupTitle": "Probíhá schůzka · {name}",
+    "missedCheckIn": "Zmeškal/a jsi check-in!",
+    "safetyOn": "Bezpečnostní režim je zapnutý.",
+    "feedbackTitle": "Jak proběhla schůzka?",
+    "feedbackSubtitle": "{name} – odpověď uvidí jen náš tým.",
+    "feedbackAction": "Odpovědět"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "Zadána {count} číslice",
+      "few": "Zadány {count} číslice",
+      "many": "Zadáno {count} číslice",
+      "other": "Zadáno {count} číslic"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label} méně",
+    "stepperIncrease": "{label} více"
+  },
+  "api": {
+    "offline": "Nepodařilo se spojit se serverem. Zkontroluj připojení."
+  },
+  "billing": {
+    "storeNotConnected": "Nákupy přes App Store a Google Play zatím nejsou napojené."
+  },
+  "notifications": {
+    "channelName": "Upozornění",
+    "reminderDiscreet": "Připomínka",
+    "checkInTitle": "Čas na check-in",
+    "checkInBody": "Potvrď PINem, že jsi v pořádku.",
+    "fakeCallBody": "Příchozí hovor"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Sdílení polohy je zapnuté",
+    "notificationBody": "Ukončíš ho v aplikaci."
+  },
+  "appLock": {
+    "prompt": "Odemknout F*app",
+    "lockedTitle": "Aplikace je zamčená",
+    "lockedBody": "Odemkni ji Face ID, otiskem nebo kódem telefonu.",
+    "sosHold": "SOS – podrž",
+    "unlock": "Odemknout",
+    "sosSentTitle": "Poplach odeslán",
+    "sosSentBody": "{name} dostal/a upozornění s tvou polohou.",
+    "sosSentBodyNoName": "Důvěryhodná osoba dostala upozornění s tvou polohou.",
+    "sosFailedTitle": "Nepodařilo se odeslat"
+  },
+  "native": {
+    "locationWhenInUse": "F*app potřebuje polohu, aby ti ukázal lidi v okolí a během schůzky ji mohl sdílet s tvou důvěryhodnou osobou.",
+    "locationAlways": "Během schůzky sdílí F*app tvoji polohu s důvěryhodnou osobou i se zhasnutým displejem. Mimo schůzku polohu na pozadí nepoužívá.",
+    "faceId": "F*app se odemyká Face ID, aby se do něj nikdo nepodíval.",
+    "photos": "Vyber si fotky do profilu.",
+    "camera": "Vyfoť se do profilu."
+  }
+}

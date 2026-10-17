@@ -21,7 +21,7 @@ export function devVerification() {
       return { providerId: `dev-${token(9)}`, url: null };
     },
     parseWebhook() {
-      throw new HttpError(404, 'Vývojový poskytovatel nemá webhook.');
+      throw new HttpError(404, 'verification.noWebhook');
     },
   };
 }
@@ -37,7 +37,7 @@ function veriff({ baseUrl, apiKey, sharedSecret }) {
         headers: { 'Content-Type': 'application/json', 'X-AUTH-CLIENT': apiKey },
         body: JSON.stringify({ verification: { callback: callbackUrl, vendorData: String(userId) } }),
       });
-      if (!res.ok) throw new HttpError(502, 'Ověřovací služba teď neodpovídá. Zkus to za chvíli.');
+      if (!res.ok) throw new HttpError(502, 'verification.unavailable');
       const json = await res.json();
       return { providerId: json.verification.id, url: json.verification.url };
     },
@@ -46,7 +46,7 @@ function veriff({ baseUrl, apiKey, sharedSecret }) {
       const expected = createHmac('sha256', sharedSecret).update(rawBody).digest('hex');
       const valid =
         signature.length === expected.length && timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
-      if (!valid) throw new HttpError(401, 'Neplatný podpis.');
+      if (!valid) throw new HttpError(401, 'errors.invalidSignature');
       const v = JSON.parse(rawBody.toString('utf8')).verification ?? {};
       return {
         providerId: v.id,

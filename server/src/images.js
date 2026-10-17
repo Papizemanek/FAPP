@@ -11,8 +11,8 @@ const KEEP_APP = new Set([0xe0, 0xee]);
  * Aplikace posílá fotku už otočenou správně (expo-image-manipulator), takže EXIF orientace není potřeba.
  */
 export function stripJpegMetadata(buf) {
-  if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) throw new HttpError(400, 'Fotka musí být ve formátu JPEG.');
-  const bad = () => new HttpError(400, 'Fotka je poškozená.');
+  if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) throw new HttpError(400, 'photo.notJpeg');
+  const bad = () => new HttpError(400, 'photo.corrupt');
   const out = [buf.subarray(0, 2)];
   let i = 2;
   while (i < buf.length) {
@@ -47,10 +47,10 @@ export function stripJpegMetadata(buf) {
 
 export function saveImage(db, { ownerId, kind, matchId = null, base64 }) {
   if (typeof base64 !== 'string' || !/^[A-Za-z0-9+/=]+$/.test(base64)) {
-    throw new HttpError(400, 'Fotka musí být JPEG v base64.');
+    throw new HttpError(400, 'photo.notBase64');
   }
   const raw = Buffer.from(base64, 'base64');
-  if (raw.length > MAX_IMAGE_BYTES) throw new HttpError(413, 'Fotka je příliš velká (max. 2 MB).');
+  if (raw.length > MAX_IMAGE_BYTES) throw new HttpError(413, 'photo.tooLarge');
   const clean = stripJpegMetadata(raw);
   const id = token(16);
   db.prepare('INSERT INTO images (id, owner_id, kind, match_id, data, created_at) VALUES (?, ?, ?, ?, ?, ?)').run(

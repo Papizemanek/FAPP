@@ -27,6 +27,7 @@ import {
 } from '@fapp/shared';
 import { moderate } from '../../server/src/services/moderation.js';
 import { overlay } from './overlay';
+import { srv, translateError } from './serverText';
 
 type Gender = 'man' | 'woman' | 'nonbinary';
 
@@ -543,8 +544,8 @@ function sms(s: Safety, text: string) {
   overlay.sms({ to: s.trustedName, phone: s.trustedPhone, text, sessionId: s.id });
 }
 
-const userName = (s: Safety) => userById(s.userId)?.name ?? 'Tvůj blízký člověk';
-const time = (iso: string) => new Date(iso).toLocaleTimeString('cs-CZ', { hour: '2-digit', minute: '2-digit' });
+const userName = (s: Safety) => userById(s.userId)?.name ?? srv('sms.someone');
+const time = (iso: string) => new Date(iso).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 
 // Hlídač check-inů – na serveru běží každých 30 s, tady při každém požadavku a každých 5 s.
 function watchdog() {
@@ -554,7 +555,7 @@ function watchdog() {
     s.overdueAlertedAt = nowIso();
     changed = true;
     if (s.sosAt || s.silentAlarmAt) continue;
-    sms(s, `${userName(s)} se neozval/a – potvrzení, že je v pořádku, mělo přijít do ${time(new Date(due(s)).toISOString())}. Zkus zavolat. Poloha: ${shareUrl(s)}`);
+    sms(s, srv('sms.overdue', { name: userName(s), time: time(new Date(due(s)).toISOString()), url: shareUrl(s) }));
   }
   // simulovaná poloha telefonu během schůzky
   for (const s of db.safety) {
@@ -572,7 +573,7 @@ setInterval(watchdog, 5000);
 function raiseSilentAlarm(s: Safety) {
   if (s.silentAlarmAt || s.sosAt) return;
   s.silentAlarmAt = nowIso();
-  sms(s, `POPLACH: ${userName(s)} potřebuje pomoc. Poloha a podrobnosti: ${shareUrl(s)}`);
+  sms(s, srv('sms.alarm', { name: userName(s), url: shareUrl(s) }));
 }
 
 function checkPin(user: User, s: Safety, pin: unknown): 'ok' | 'duress' | 'wrong' {
@@ -727,7 +728,7 @@ route('PUT', '/me', (c) => {
   const u = requireUser(c, { allowSuspended: true });
   const b = c.body;
   const verdict = moderate(str(b.bio));
-  if (verdict.action === 'block') throw new HttpError(400, verdict.message ?? 'Text porušuje pravidla.');
+  if (verdict.action === 'block') throw new HttpError(400, srv(verdict.messageKey ?? 'errors.generic'));
   if (Number(b.ageMin) > Number(b.ageMax)) throw new HttpError(400, 'Věk od musí být menší než věk do.');
   Object.assign(u, {
     name: str(b.name) || u.name,
@@ -1025,7 +1026,7 @@ route('GET', '/matches/:id/messages', (c, [mid]) => {
       mine: x.senderId === me.id,
       text: x.text,
       imageUrl: x.imageUrl,
-      warning: x.senderId === me.id ? '' : x.warning,
+      warning: x.senderId === me.id || !x.warning ? '' : x.warning.startsWith('moderation.') ? srv(x.warning) : x.warning,
       createdAt: x.createdAt,
     }));
 });
@@ -1037,14 +1038,15 @@ route('POST', '/matches/:id/messages', (c, [mid]) => {
   const image = typeof c.body.jpegBase64 === 'string' ? `data:image/jpeg;base64,${c.body.jpegBase64}` : null;
   if (!text && !image) throw new HttpError(400, 'Prázdná zpráva.');
   const verdict = moderate(text);
-  if (verdict.action === 'block') throw new HttpError(422, `Zpráva nebyla odeslána. ${verdict.message}`);
+  if (verdict.action === 'block') throw new HttpError(422, srv('chat.notSent', { reason: srv(verdict.messageKey ?? 'errors.generic') }));
   const msg: Message = {
     id: id(),
     matchId: m.id,
     senderId: me.id,
     text,
     imageUrl: image,
-    warning: verdict.action === 'warn' ? (verdict.message ?? '') : '',
+    // jako na serveru: ukládá se klíč, přeloží se až pro toho, kdo zprávu čte
+    warning: verdict.action === 'warn' ? (verdict.messageKey ?? '') : '',
     createdAt: nowIso(),
   };
   db.messages.push(msg);
@@ -1144,7 +1146,7 @@ route('POST', '/matches/:id/safety', (c, [mid]) => {
   };
   db.safety.push(s);
   if (other.demo) later(2500, () => (m.partnerSafety = true));
-  sms(s, `${me.name} má schůzku a vybral/a si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: ${shareUrl(s)}`);
+  sms(s, srv('sms.started', { name: me.name, url: shareUrl(s) }));
   return { status: 201, json: safetyView(s) };
 });
 
@@ -1174,14 +1176,14 @@ route('POST', '/safety/:id/checkin', (c, [sid]) => {
   s.overdueAlertedAt = null;
   s.wrongPins = 0;
   if (r === 'duress') raiseSilentAlarm(s);
-  else if (wasAlerted && !s.silentAlarmAt && !s.sosAt) sms(s, `${me.name} se ozval/a a potvrdil/a, že je v pořádku.`);
+  else if (wasAlerted && !s.silentAlarmAt && !s.sosAt) sms(s, srv('sms.backOk', { name: me.name }));
   return safetyView(s);
 });
 route('POST', '/safety/:id/sos', (c, [sid]) => {
   const { me, s } = ownSafety(c, sid);
   if (!s.sosAt) {
     s.sosAt = nowIso();
-    if (!s.silentAlarmAt) sms(s, `POPLACH: ${me.name} potřebuje pomoc. Poloha a podrobnosti: ${shareUrl(s)}`);
+    if (!s.silentAlarmAt) sms(s, srv('sms.alarm', { name: me.name, url: shareUrl(s) }));
   }
   return safetyView(s);
 });
@@ -1196,7 +1198,7 @@ route('POST', '/safety/:id/sos/cancel', (c, [sid]) => {
   } else {
     s.sosAt = null;
     s.lastCheckInAt = nowIso();
-    if (!s.silentAlarmAt) sms(s, `${me.name} zrušil/a poplach – byl to omyl, je v pořádku.`);
+    if (!s.silentAlarmAt) sms(s, srv('sms.sosCancelled', { name: me.name }));
   }
   return safetyView(s);
 });
@@ -1209,12 +1211,12 @@ route('POST', '/safety/:id/end', (c, [sid]) => {
     s.endKind = 'duress';
     const hadAlarm = !!(s.silentAlarmAt || s.sosAt);
     s.silentAlarmAt = s.silentAlarmAt ?? nowIso();
-    if (!hadAlarm) sms(s, `POPLACH: ${me.name} potřebuje pomoc. Poloha a podrobnosti: ${shareUrl(s)}`);
+    if (!hadAlarm) sms(s, srv('sms.alarm', { name: me.name, url: shareUrl(s) }));
   } else {
     s.endKind = 'ok';
     s.lat = s.lng = s.battery = null;
     s.locationAt = null;
-    sms(s, `${me.name} ukončil/a schůzku a je v pořádku. Díky, že jsi byl/a k dispozici.`);
+    sms(s, srv('sms.endedOk', { name: me.name }));
   }
   return safetyView(s);
 });
@@ -1265,7 +1267,7 @@ export function handle(method: string, fullPath: string, body: unknown, authToke
       if (typeof out === 'object' && 'status' in out && 'json' in out && Object.keys(out).length === 2) return out as Res;
       return { status: 200, json: out };
     } catch (err) {
-      if (err instanceof HttpError) return { status: err.status, json: { ...err.data, error: err.message } };
+      if (err instanceof HttpError) return { status: err.status, json: { ...err.data, error: translateError(err.message) } };
       console.error(err);
       return { status: 500, json: { error: 'Něco se pokazilo. Zkus to znovu.' } };
     }

@@ -1,7 +1,9 @@
 import express from 'express';
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
 import path from 'node:path';
 import { createSealer } from './crypto.js';
+import { localeFromRequest, tr } from './i18n.js';
 import { adminRoutes } from './routes/admin.js';
 import { agreementRoutes } from './routes/agreements.js';
 import { authRoutes } from './routes/auth.js';
@@ -14,8 +16,10 @@ import { reportRoutes } from './routes/reports.js';
 import { safetyRoutes } from './routes/safety.js';
 import { shareRoutes } from './routes/share.js';
 import { verificationRoutes } from './routes/verification.js';
+import { waitlistRoutes } from './routes/waitlist.js';
 import { createAlerts } from './services/alerts.js';
 import { createLimiter } from './services/ratelimit.js';
+import { HttpError } from './util.js';
 
 const require = createRequire(import.meta.url);
 const leafletDir = path.dirname(require.resolve('leaflet/dist/leaflet.js'));
@@ -30,6 +34,11 @@ export function createApp({ db, config, services, rateLimit = true }) {
     res.set('X-Frame-Options', 'DENY');
     res.set('Referrer-Policy', 'no-referrer');
     if (!config.dev) res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    next();
+  });
+  // Jazyk odpovědi (chyby). requireAuth ho upřesní podle uloženého jazyka uživatele.
+  app.use((req, _res, next) => {
+    req.locale = localeFromRequest(req);
     next();
   });
   // rawBody je potřeba pro ověření podpisu webhooku ověřovací služby.
@@ -58,16 +67,28 @@ export function createApp({ db, config, services, rateLimit = true }) {
   app.use('/api', reportRoutes(ctx));
   app.use('/api/matches', matchRoutes(ctx));
   app.use('/api/admin', adminRoutes(ctx));
+  app.use('/api', waitlistRoutes(ctx));
 
-  app.use('/api', (_req, res) => res.status(404).json({ error: 'Nenalezeno.' }));
+  app.use('/api', (req, res) => res.status(404).json({ error: tr(req.locale, 'errors.notFound') }));
 
+  // Sestavený web (npm run build -w web) – pokud existuje, server ho rovnou servíruje na /.
+  if (config.webDir && fs.existsSync(path.join(config.webDir, 'index.html'))) {
+    app.use(express.static(config.webDir, { maxAge: '1h', extensions: ['html'] }));
+  }
+
+  // Chyby se překládají až tady, podle jazyka požadavku. params slouží jen k překladu a do odpovědi nejdou.
   // eslint-disable-next-line no-unused-vars
-  app.use((err, _req, res, _next) => {
-    if (err.type === 'entity.too.large') return res.status(413).json({ error: 'Požadavek je příliš velký.' });
-    if (err.type === 'entity.parse.failed') return res.status(400).json({ error: 'Neplatný JSON.' });
-    if (err.status && err.status < 500) return res.status(err.status).json({ ...err.data, error: err.message });
+  app.use((err, req, res, _next) => {
+    const locale = req.locale ?? localeFromRequest(req);
+    if (err.type === 'entity.too.large') return res.status(413).json({ error: tr(locale, 'errors.tooLarge') });
+    if (err.type === 'entity.parse.failed') return res.status(400).json({ error: tr(locale, 'errors.invalidJson') });
+    if (err instanceof HttpError) {
+      if (err.status >= 500) console.error(err);
+      return res.status(err.status).json({ ...err.data, error: tr(locale, err.key, err.params) });
+    }
+    if (err.status && err.status < 500) return res.status(err.status).json({ error: err.message });
     console.error(err);
-    res.status(err.status ?? 500).json({ error: err.status ? err.message : 'Něco se pokazilo. Zkus to znovu.' });
+    res.status(err.status ?? 500).json({ error: tr(locale, 'errors.internal') });
   });
 
   return { app, ctx };

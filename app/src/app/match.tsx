@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Avatar, Body, Button, Screen } from '@/components/ui';
 import { api, type MatchDetail } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
 
 export default function MatchModal() {
+  const t = useT();
   const { matchId, name } = useLocalSearchParams<{ matchId: string; name: string }>();
   const { me } = useSession();
   const [partnerPhoto, setPartnerPhoto] = useState<string | null>(null);
@@ -29,15 +31,15 @@ export default function MatchModal() {
           </View>
         </View>
         <View style={{ gap: 10, alignItems: 'center' }}>
-          <Text style={{ fontFamily: fonts.display, fontSize: 48, color: colors.accent, letterSpacing: -1.5 }}>Je to match!</Text>
+          <Text style={{ fontFamily: fonts.display, fontSize: 48, color: colors.accent, letterSpacing: -1.5 }}>{t('match.title')}</Text>
           <Body muted style={{ textAlign: 'center', fontSize: 16 }}>
-            Ty a {name} se chcete.{'\n'}Napiš a domluvte se, na co máte chuť.
+            {t('match.body', { name: name ?? '' })}
           </Body>
         </View>
       </View>
       <View style={{ gap: 12 }}>
-        <Button label="Napsat zprávu" onPress={() => router.replace(`/chat/${matchId}`)} />
-        <Button variant="ghost" label="Pokračovat v objevování" onPress={() => router.back()} />
+        <Button label={t('match.sendMessage')} onPress={() => router.replace(`/chat/${matchId}`)} />
+        <Button variant="ghost" label={t('match.keepDiscovering')} onPress={() => router.back()} />
       </View>
     </Screen>
   );

@@ -1,14 +1,16 @@
 import type { ReactNode } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 import { Button } from './ui';
 
 // Vysouvací panely místo systémových dialogů – vypadají stejně na iOS, Androidu i na webu.
 
 function SheetFrame({ visible, onClose, children }: { visible: boolean; onClose: () => void; children: ReactNode }) {
+  const t = useT();
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={s.backdrop} onPress={onClose} accessibilityLabel="Zavřít">
+      <Pressable style={s.backdrop} onPress={onClose} accessibilityLabel={t('common.close')}>
         <Pressable style={s.sheet} onPress={() => {}}>
           {children}
         </Pressable>
@@ -34,6 +36,7 @@ export function ConfirmSheet({
   onConfirm: () => void;
   onClose: () => void;
 }) {
+  const t = useT();
   return (
     <SheetFrame visible={visible} onClose={onClose}>
       <Text style={s.title}>{title}</Text>
@@ -47,7 +50,7 @@ export function ConfirmSheet({
             onConfirm();
           }}
         />
-        <Button label="Zpět" variant="ghost" height={48} onPress={onClose} />
+        <Button label={t('common.back')} variant="ghost" height={48} onPress={onClose} />
       </View>
     </SheetFrame>
   );
@@ -56,6 +59,7 @@ export function ConfirmSheet({
 export type SheetAction = { label: string; destructive?: boolean; onPress: () => void };
 
 export function ActionSheet({ visible, title, actions, onClose }: { visible: boolean; title: string; actions: SheetAction[]; onClose: () => void }) {
+  const t = useT();
   return (
     <SheetFrame visible={visible} onClose={onClose}>
       <Text style={s.title}>{title}</Text>
@@ -74,7 +78,7 @@ export function ActionSheet({ visible, title, actions, onClose }: { visible: boo
           </Pressable>
         ))}
       </View>
-      <Button label="Zpět" variant="ghost" height={48} onPress={onClose} style={{ marginTop: 8 }} />
+      <Button label={t('common.back')} variant="ghost" height={48} onPress={onClose} style={{ marginTop: 8 }} />
     </SheetFrame>
   );
 }

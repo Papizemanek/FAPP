@@ -1,6 +1,7 @@
 import * as Battery from 'expo-battery';
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
+import { t } from '@/lib/i18n';
 import { API_URL } from './config';
 import { storage } from './storage';
 
@@ -74,8 +75,8 @@ export async function startSafetyTracking(sessionId: number) {
     showsBackgroundLocationIndicator: true,
     foregroundService: {
       // Neutrální text – notifikace je vidět na zamčené obrazovce.
-      notificationTitle: 'Sdílení polohy je zapnuté',
-      notificationBody: 'Ukončíš ho v aplikaci.',
+      notificationTitle: t('safetyTracking.notificationTitle'),
+      notificationBody: t('safetyTracking.notificationBody'),
       notificationColor: '#62E0B5',
       killServiceOnDestroy: false,
     },

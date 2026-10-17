@@ -48,7 +48,7 @@ export async function startTestServer() {
   }
 
   let counter = 0;
-  /** Registruje, ověří, nahraje fotku a nastaví polohu – uživatel připravený na swipe. */
+  /** Registruje, ověří, nahraje fotku a nastaví polohu – uživatel připravený na swipe. headers jen pro registraci (jazyk). */
   async function makeUser({
     name = `User${++counter}`,
     gender = 'woman',
@@ -58,9 +58,11 @@ export async function startTestServer() {
     lastName = `Prijmeni${counter}`,
     lat = 50.08,
     lng = 14.42,
+    headers = {},
   } = {}) {
     const email = `${name.toLowerCase()}${counter}@test.cz`;
     const reg = await call('POST', '/api/auth/register', {
+      headers,
       body: { email, password: 'tajne-heslo-123', name, birthdate, gender, interestedIn, confirmAdult: true, acceptRules: true },
     });
     if (reg.status !== 201) throw new Error(`register ${reg.status} ${JSON.stringify(reg.body)}`);

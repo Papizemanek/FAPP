@@ -39,6 +39,9 @@ export function loadConfig(env = process.env) {
     // 'dev' = nákup tlačítkem bez platby (jen vývoj), 'revenuecat' = App Store a Google Play přes RevenueCat.
     paymentsProvider: env.PAYMENTS_PROVIDER ?? (dev ? 'dev' : 'revenuecat'),
     revenuecat: { webhookAuth: env.REVENUECAT_WEBHOOK_AUTH },
+    // Web s čekací listinou: adresy, ze kterých smí posílat formulář (CORS), a složka se sestaveným webem.
+    webOrigins: (env.WEB_ORIGINS ?? '').split(',').map((s) => s.trim()).filter(Boolean),
+    webDir: env.WEB_DIR ?? new URL('../../web/dist/', import.meta.url).pathname,
   };
 
   if (!['free', 'paid'].includes(config.billingMode)) throw new Error('BILLING_MODE musí být free nebo paid.');
