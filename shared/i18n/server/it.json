@@ -1,1 +1,272 @@
-{}
+{
+  "errors": {
+    "notFound": "Non trovato.",
+    "tooLarge": "La richiesta è troppo grande.",
+    "invalidJson": "JSON non valido.",
+    "internal": "Qualcosa è andato storto. Riprova.",
+    "rateLimited": "Troppi tentativi in poco tempo. Riprova tra un attimo.",
+    "unauthorized": "Non autorizzato.",
+    "invalidSignature": "Firma non valida.",
+    "linkExpired": "Questo link non è più valido."
+  },
+  "validation": {
+    "required": "Manca il campo «{field}».",
+    "notText": "Il campo «{field}» deve essere un testo.",
+    "tooShort": "Il campo «{field}» è troppo corto.",
+    "tooLong": "Il campo «{field}» è troppo lungo.",
+    "integer": "Il campo «{field}» deve essere un numero intero da {min} a {max}.",
+    "invalidValue": "Valore non valido per il campo «{field}».",
+    "notList": "Il campo «{field}» deve essere un elenco.",
+    "minOptions": {
+      "one": "Scegli almeno {count} opzione per «{field}».",
+      "many": "Scegli almeno {count} opzioni per «{field}».",
+      "other": "Scegli almeno {count} opzioni per «{field}»."
+    },
+    "date": "Il campo «{field}» deve essere una data nel formato AAAA-MM-GG.",
+    "dateTime": "Il campo «{field}» deve essere una data e un'ora.",
+    "email": "Email non valida.",
+    "phone": "Numero di telefono non valido ({field}).",
+    "pin": "Il {field} deve avere da 4 a 6 cifre."
+  },
+  "fields": {
+    "email": "email",
+    "password": "password",
+    "name": "nome",
+    "birthdate": "data di nascita",
+    "gender": "genere",
+    "interestedIn": "chi cerchi",
+    "pushToken": "token push",
+    "ageMin": "età minima",
+    "ageMax": "età massima",
+    "bio": "su di me",
+    "tags": "cosa cerco",
+    "maxDistance": "distanza",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "nome della persona di fiducia",
+    "trustedPhone": "telefono della persona di fiducia",
+    "pin": "PIN",
+    "duressPin": "PIN di emergenza",
+    "meetAt": "quando",
+    "place": "dove",
+    "safeword": "parola di sicurezza",
+    "note": "i miei limiti",
+    "version": "versione",
+    "message": "messaggio",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "intervallo di check-in",
+    "accuracy": "precisione",
+    "battery": "batteria",
+    "user": "utente",
+    "reason": "motivo",
+    "details": "dettagli",
+    "resolution": "risoluzione",
+    "days": "numero di giorni"
+  },
+  "auth": {
+    "confirmAdult": "Devi confermare di avere 18 anni o più.",
+    "acceptRules": "Devi accettare le regole e il trattamento dei tuoi dati.",
+    "underage": "F*app è solo per persone dai 18 anni in su.",
+    "invalidBirthdate": "Data di nascita non valida.",
+    "emailTaken": "Esiste già un account con questa email.",
+    "wrongCredentials": "Email o password errate.",
+    "banned": "Questo account è stato bannato per violazione delle regole.",
+    "notLoggedIn": "Non hai effettuato l'accesso.",
+    "suspended": "Il tuo account è sospeso finché non verrà esaminato dalla moderazione.",
+    "verifyFirst": "Prima verifica la tua identità."
+  },
+  "profile": {
+    "wrongPassword": "Password errata.",
+    "ageRange": "L'età minima non può essere superiore a quella massima.",
+    "maxPhotos": {
+      "one": "Puoi avere al massimo {count} foto.",
+      "many": "Puoi avere al massimo {count} foto.",
+      "other": "Puoi avere al massimo {count} foto."
+    },
+    "pinsMustDiffer": "Il PIN di emergenza deve essere diverso dal PIN normale.",
+    "deleteDuringMeetup": "Al momento non puoi eliminare l'account – c'è un incontro in corso. Riprova quando sarà finito."
+  },
+  "photo": {
+    "notJpeg": "La foto deve essere in formato JPEG.",
+    "corrupt": "La foto è danneggiata.",
+    "notBase64": "La foto deve essere un JPEG codificato in base64.",
+    "tooLarge": "La foto è troppo grande (max 2 MB).",
+    "notFound": "Foto non trovata.",
+    "unavailable": "Foto non disponibile."
+  },
+  "users": {
+    "notFound": "Utente non trovato."
+  },
+  "match": {
+    "notFound": "Match non trovato.",
+    "ended": "Questo match è terminato.",
+    "profileUnavailable": "Questo profilo non è più disponibile."
+  },
+  "discover": {
+    "locationRequired": "Prima attiva la posizione, così possiamo mostrarti le persone nei dintorni.",
+    "photoRequired": "Aggiungi almeno una foto.",
+    "superLikeIsLike": "Un Super Like è sempre un like.",
+    "profileNotFound": "Profilo non trovato.",
+    "profileGone": "Questo profilo non esiste più.",
+    "nothingToRewind": "Niente da annullare.",
+    "cantRewindSuperLike": "Non puoi annullare un Super Like.",
+    "cantRewindMatch": "Questo swipe è già un match."
+  },
+  "billing": {
+    "likeLimit": "Hai finito i like. Ne arriveranno altri a breve – oppure fai swipe senza limiti con F*app Plus.",
+    "noSuperLike": "Non hai Super Like.",
+    "noBoost": "Non hai Boost.",
+    "tonightPaid": "«Stasera» è incluso in Platinum o disponibile come acquisto singolo.",
+    "featureInPlan": "{feature} fa parte di F*app {plan}.",
+    "paymentsOff": "I pagamenti non sono ancora attivi – per ora F*app è completamente gratis.",
+    "unknownProduct": "Prodotto sconosciuto.",
+    "cantBuy": "Al momento non puoi acquistarlo.",
+    "cantBoost": "Al momento non puoi avviare un Boost.",
+    "boostRunning": "Un Boost è già attivo.",
+    "cantTonight": "Al momento non puoi attivarlo.",
+    "tonightOn": "«Stasera» è già attivo.",
+    "unknownCity": "Città sconosciuta."
+  },
+  "features": {
+    "unlimitedLikes": "Like illimitati",
+    "rewind": "Torna indietro",
+    "travel": "Modalità viaggio",
+    "incognito": "Incognito",
+    "seeLikes": "Chi ti ha messo like",
+    "weeklySuperLikes": "5 Super Like a settimana",
+    "monthlyBoost": "1 Boost al mese",
+    "priorityLikes": "Like prioritari",
+    "sentLikes": "Like inviati",
+    "tonight": "Stasera, quando vuoi"
+  },
+  "agreement": {
+    "wishesRequired": "Indica cosa ti va.",
+    "invalidWish": "Scelta non valida nei tuoi desideri.",
+    "notFound": "Accordo non trovato.",
+    "confirmBoth": "Conferma entrambe le frasi – che è ciò che hai in mente e che un accordo non è consenso.",
+    "meetWithin": {
+      "one": "L'incontro deve avvenire entro {count} giorno.",
+      "many": "L'incontro deve avvenire entro {count} giorni.",
+      "other": "L'incontro deve avvenire entro {count} giorni."
+    },
+    "cooldown": "Al momento solo {name} può avviare un nuovo accordo.",
+    "changed": "Nel frattempo l'accordo è cambiato. Rileggilo."
+  },
+  "chat": {
+    "empty": "Messaggio vuoto.",
+    "notSent": "Messaggio non inviato. {reason}",
+    "photo": "Foto"
+  },
+  "moderation": {
+    "minor": "Questo messaggio fa pensare che uno di voi possa avere meno di 18 anni. F*app è solo per maggiorenni.",
+    "paid": "Su F*app è vietato offrire o chiedere sesso a pagamento.",
+    "consentPressure": "Attenzione: un accordo nell'app non è consenso. Puoi annullarlo in qualsiasi momento e dire di no a qualsiasi cosa di persona – senza dare spiegazioni.",
+    "contact": "Il tuo match sta condividendo contatti fuori dall'app. Fuori da F*app, l'accordo, la modalità sicurezza e le segnalazioni non funzionano per te."
+  },
+  "safety": {
+    "notFound": "Incontro non trovato.",
+    "ended": "L'incontro è già terminato.",
+    "wrongPin": "PIN errato.",
+    "agreementRequired": "Potrai avviare l'incontro quando l'accordo sarà compilato e confermato da entrambe le parti.",
+    "setupRequired": "Prima imposta una persona di fiducia, un PIN e un PIN di emergenza.",
+    "invalidInterval": "Intervallo di check-in non valido."
+  },
+  "reports": {
+    "feedbackSent": "Hai già inviato il tuo feedback."
+  },
+  "verification": {
+    "unknown": "Verifica sconosciuta.",
+    "alreadyVerified": "La tua identità è già verificata.",
+    "startFirst": "Prima avvia la verifica.",
+    "noWebhook": "Il provider di sviluppo non ha un webhook.",
+    "unavailable": "Il servizio di verifica non risponde. Riprova tra un attimo.",
+    "declined": {
+      "underage": "Dalla verifica risulta che non hai ancora 18 anni. F*app è solo per persone adulte.",
+      "banned": "Questa persona è stata bannata da F*app per violazione delle regole.",
+      "duplicate": "Questa persona ha già un account F*app. Ognuno può averne solo uno.",
+      "incomplete": "Non siamo riusciti a leggere la data di nascita dal documento. Riprova.",
+      "default": "Verifica non riuscita. Riprova."
+    }
+  },
+  "admin": {
+    "notReported": "Questa conversazione non è stata segnalata.",
+    "unknownPlan": "Piano sconosciuto."
+  },
+  "push": {
+    "discreet": "Nuova notifica",
+    "match": {
+      "title": "È un match!",
+      "body": "Tu e {name} vi piacete."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Interessi davvero a qualcuno."
+    },
+    "message": {
+      "photo": "Ha inviato una foto"
+    },
+    "agreementComplete": {
+      "title": "Accordo completo",
+      "body": "L'avete confermato entrambi. Di persona potete comunque sempre cambiare idea."
+    },
+    "agreementNew": {
+      "title": "Nuovo accordo",
+      "body": "{name} ha avviato un accordo. Ora indica cosa ti va."
+    },
+    "agreementChanged": {
+      "title": "Accordo modificato",
+      "body": "{name} ha cambiato l'ora, il luogo o le regole. Confermali di nuovo."
+    },
+    "agreementUpdated": {
+      "title": "Accordo aggiornato",
+      "body": "{name} ha aggiornato i suoi desideri."
+    },
+    "agreementRevoked": {
+      "title": "Accordo annullato",
+      "body": "{name} ha annullato l'accordo. L'incontro salta – e va rispettato."
+    },
+    "checkInOverdue": {
+      "title": "Hai saltato il check-in",
+      "body": "{name} ha ricevuto un avviso. Conferma che stai bene."
+    }
+  },
+  "sms": {
+    "started": "{name} ha un incontro e ha indicato te come persona di fiducia. Qui vedi dove si trova e se sta bene: {url}",
+    "alarm": "ALLARME: {name} ha bisogno di aiuto. Posizione e dettagli: {url}",
+    "overdue": "{name} non ha fatto il check-in - doveva confermare di stare bene entro le {time}. Prova a chiamare. Posizione: {url}",
+    "backOk": "{name} ha fatto il check-in e ha confermato di stare bene.",
+    "sosCancelled": "{name} ha annullato l'allarme - era un errore, sta bene.",
+    "endedOk": "{name} ha terminato l'incontro e sta bene. Grazie per il tuo supporto.",
+    "someone": "Una persona a te vicina"
+  },
+  "share": {
+    "pageTitle": "F*app – link di sicurezza",
+    "header": "Link di sicurezza",
+    "loading": "Caricamento…",
+    "call": "Chiama il {number}",
+    "mapLabel": "Mappa con l'ultima posizione nota",
+    "openMaps": "Apri in Mappe",
+    "partnerPhotoAlt": "Foto della persona che sta incontrando",
+    "partnerLead": "Incontro con:",
+    "okTitle": "{name} sta bene",
+    "okDetail": "Ultimo check-in alle {last}. Il prossimo è atteso entro le {next}.",
+    "overdueTitle": "{name} non ha fatto il check-in",
+    "overdueDetail": "Il check-in era previsto entro le {due}. Prova a chiamare. Se non risponde, chiama il {number} e comunica l'indirizzo indicato sulla mappa.",
+    "alarmTitle": "{name} ha bisogno di aiuto",
+    "alarmDetail": "Allarme alle {time}. Chiama il {number} e comunica la posizione indicata sulla mappa e il luogo dell'incontro qui sotto.",
+    "endedTitle": "L'incontro è terminato",
+    "endedDetail": "{name} ha confermato di stare bene.",
+    "endedDetailAlarm": "{name} ha confermato di stare bene. Durante l'incontro è scattato un allarme – chiedi se va tutto bene.",
+    "footer": "La posizione non sarà più visibile appena {name} terminerà l'incontro.",
+    "locationJustNow": "Posizione in questo momento",
+    "locationAgo": {
+      "one": "Posizione di {count} min fa",
+      "many": "Posizione di {count} min fa",
+      "other": "Posizione di {count} min fa"
+    },
+    "battery": "batteria {percent}",
+    "linkExpired": "Questo link non è più valido",
+    "loadFailed": "Impossibile caricare lo stato. Nuovo tentativo…"
+  }
+}

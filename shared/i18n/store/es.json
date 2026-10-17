@@ -1,1 +1,13 @@
-{}
+{
+  "name": "F*app",
+  "subtitle": "Acuerdo a ciegas y seguridad",
+  "promotionalText": "Citas casuales para personas adultas verificadas. Acuerdo a ciegas, persona de confianza, check-ins y SOS. La seguridad siempre es gratis.",
+  "description": "F*app es una app de citas para personas adultas que buscan encuentros casuales y quieren que sean acordados y seguros.\n\nPERSONAS VERIFICADAS\nCada persona se verifica con un documento de identidad y un selfie. Es quien dice ser, y una expulsión se aplica a la persona, no solo a la cuenta. No guardamos tu documento.\n\nACUERDO A CIEGAS\nCada persona marca por separado lo que quiere: sí, quizás o no. Solo se ven las coincidencias: nadie ve el «no» de la otra persona. El lugar, el condón, la sobriedad y una palabra de seguridad también se acuerdan de antemano. El consentimiento solo vale aquí y ahora, y una vez allí puedes decir que no a cualquier cosa.\n\nMODO SEGURIDAD\n• Una persona de confianza recibe un enlace con tu ubicación y el estado de tu cita.\n• Check-ins con PIN: si no haces check-in, nuestro servidor envía un SMS aunque tu teléfono se haya quedado sin batería.\n• SOS manteniendo presionado un botón.\n• Un PIN de emergencia que se ve exactamente igual que el normal, pero activa la alarma en silencio.\n• Una llamada falsa como excusa para irte.\n\nPRIVACIDAD\nIcono discreto, notificaciones sin contenido, bloqueo con cara o huella, fotos sin ubicación. Los mensajes están cifrados y el contenido del acuerdo se borra después de la cita.\n\nDESPUÉS DE LA CITA\nUna pregunta privada sobre cómo fue: la otra persona nunca ve tu respuesta. Quien cruza un límite, queda fuera.\n\nSolo para mayores de 18 años.",
+  "keywords": "citas,cita,verificado,seguridad,consentimiento,casual,match,adultos,discreto,conocer gente",
+  "whatsNew": "La primera versión de F*app. Verificación, acuerdo a ciegas y modo seguridad.",
+  "screenshot1": "Personas verificadas cerca de ti",
+  "screenshot2": "Solo ves las coincidencias",
+  "screenshot3": "Alguien sabe dónde estás",
+  "screenshot4": "Un PIN de emergencia que parece normal",
+  "screenshot5": "La seguridad siempre es gratis"
+}

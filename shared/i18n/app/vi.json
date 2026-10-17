@@ -1,1 +1,666 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Nam",
+      "woman": "Nữ",
+      "nonbinary": "Phi nhị nguyên"
+    },
+    "gendersPlural": {
+      "man": "Nam",
+      "woman": "Nữ",
+      "nonbinary": "Người phi nhị nguyên"
+    },
+    "tags": {
+      "oneoff": "Một lần",
+      "repeat": "Nhiều lần",
+      "myplace": "Chỗ mình",
+      "yourplace": "Chỗ bạn",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Hôn và âu yếm",
+      "oral": "Bằng miệng",
+      "vaginal": "Âm đạo",
+      "anal": "Hậu môn",
+      "toys": "Đồ chơi",
+      "overnight": "Ngủ lại qua đêm"
+    },
+    "wishes": {
+      "yes": "Có",
+      "maybe": "Có thể",
+      "no": "Không"
+    },
+    "reportReasons": {
+      "consent": "Vi phạm sự đồng thuận hoặc giới hạn",
+      "violence": "Bạo lực hoặc đe dọa",
+      "minor": "Nghi là người chưa thành niên",
+      "harassment": "Quấy rối",
+      "fake": "Hồ sơ giả",
+      "paid": "Chào mời dịch vụ trả phí",
+      "other": "Khác"
+    },
+    "feedbackReasons": {
+      "consent": "Không tôn trọng giới hạn hoặc lời “dừng lại”",
+      "safety": "Mình thấy không an toàn",
+      "fake": "Không giống trong ảnh",
+      "other": "Chuyện khác"
+    },
+    "plans": {
+      "free": "Miễn phí",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Thích không giới hạn",
+        "detail": "Quẹt thoải mái."
+      },
+      "rewind": {
+        "name": "Quay lại",
+        "detail": "Lấy lại hồ sơ bạn lỡ bỏ qua."
+      },
+      "travel": {
+        "name": "Chế độ du lịch",
+        "detail": "Quẹt ở thành phố khác trước chuyến đi."
+      },
+      "incognito": {
+        "name": "Ẩn danh",
+        "detail": "Chỉ những người bạn thích mới thấy bạn."
+      },
+      "seeLikes": {
+        "name": "Xem ai thích bạn",
+        "detail": "Xem tất cả những người đã thích bạn."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Like mỗi tuần",
+        "detail": "Cho ai đó biết bạn thật sự thích họ."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost mỗi tháng",
+        "detail": "30 phút ở vị trí đầu với những người gần bạn."
+      },
+      "priorityLikes": {
+        "name": "Lượt thích ưu tiên",
+        "detail": "Lượt thích của bạn được thấy trước những người khác."
+      },
+      "sentLikes": {
+        "name": "Lượt thích đã gửi",
+        "detail": "Những người bạn đã thích trong 7 ngày qua."
+      },
+      "tonight": {
+        "name": "Tối nay, bất cứ lúc nào",
+        "detail": "Cho thấy bạn rảnh tối nay."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Tối nay"
+    },
+    "cities": {
+      "praha": "Praha",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Viên",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Đây là điều mình nghĩ tới. Khi gặp nhau, mình có thể từ chối bất cứ điều gì – người kia cũng vậy.",
+    "notice": "Mình hiểu: sự đồng thuận chỉ có giá trị ở đây và lúc này. “Không”, “dừng lại”, từ an toàn, im lặng, đờ người hay say xỉn đều không phải là đồng thuận. Thỏa thuận trong ứng dụng không miễn trách nhiệm cho bất kỳ ai.",
+    "deterrence": "Mọi người trên F*app đều đã xác minh danh tính. Nếu nghi ngờ có tội phạm, chúng tôi sẽ cung cấp danh tính đó cho cảnh sát."
+  },
+  "welcome": {
+    "tagline": "Sex, không rườm rà.",
+    "taglineStrong": "Chỉ khi cả hai cùng đồng ý.",
+    "createAccount": "Tạo tài khoản",
+    "signIn": "Đăng nhập",
+    "adultsOnly": "Chỉ dành cho 18+. Mọi người ở đây đều đã xác minh danh tính."
+  },
+  "agreement": {
+    "title": "Thỏa thuận",
+    "titleWithName": "Thỏa thuận · {name}",
+    "timeFormatError": "Nhập giờ theo dạng HH:MM, ví dụ 21:00.",
+    "revokedByPartnerTitle": "{name} đã hủy thỏa thuận",
+    "revokedByPartnerSubtitle": "Giờ chỉ {name} mới có thể bắt đầu thỏa thuận mới.",
+    "revokedTitle": "Thỏa thuận đã bị hủy",
+    "revokedSubtitle": "Bạn có thể bắt đầu thỏa thuận mới.",
+    "newTitle": "Thỏa thuận mới",
+    "newSubtitle": "Mỗi người tự điền phần của mình. Hai bạn chỉ thấy những gì cả hai cùng đồng ý.",
+    "logisticsChangedTitle": "Bạn đang thay đổi thời gian, địa điểm hoặc quy tắc",
+    "logisticsChangedSubtitle": "{name} sẽ phải xác nhận lại.",
+    "confirmedTitle": "Cả hai đã điền thỏa thuận",
+    "confirmedSubtitle": "Khi đã gặp nhau, mỗi người vẫn có thể đổi ý bất cứ lúc nào.",
+    "myPartDoneTitle": "Bạn đã xong phần của mình",
+    "myPartDoneSubtitle": "{name} chưa điền hoặc chưa xác nhận phần của họ.",
+    "partnerFilledTitle": "{name} đã điền phần của họ",
+    "partnerFilledSubtitle": "Điền phần của bạn – hai bạn chỉ thấy những gì cả hai cùng đồng ý.",
+    "fillTitle": "Điền phần của bạn",
+    "fillSubtitle": "Hai bạn chỉ thấy những gì cả hai cùng đồng ý.",
+    "overlapTitle": "Điểm chung của hai bạn",
+    "overlapNone": "Chưa có điểm chung nào.",
+    "overlapYes": "Cả hai đều muốn",
+    "overlapMaybe": "Có thể – nói chuyện khi gặp nhau",
+    "partnerNote": "{name}: “{note}”",
+    "overlapHint": "Không ai thấy điều mà một trong hai người không muốn – kể cả đó là ai.",
+    "wishesLabel": "Điều mình muốn",
+    "wishesHint": "{name} chỉ thấy những gì cả hai cùng đồng ý. Không ai thấy lựa chọn “không” của bạn.",
+    "wishesHintNoName": "Người kia chỉ thấy những gì cả hai cùng đồng ý.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Giới hạn của mình (người kia cũng thấy)",
+    "notePlaceholder": "Ví dụ: không chụp ảnh, mình muốn làm quen trước.",
+    "logisticsLabel": "Chuyện thực tế – áp dụng cho cả hai",
+    "today": "Hôm nay",
+    "tomorrow": "Ngày mai",
+    "timeLabel": "Thời gian",
+    "placeLabel": "Ở đâu",
+    "placePlaceholder": "Ví dụ: chỗ mình, Vinohrady",
+    "safewordLabel": "Từ an toàn",
+    "safewordPlaceholder": "Một từ để dừng mọi thứ",
+    "condom": "Luôn dùng bao cao su",
+    "sober": "Tỉnh táo",
+    "soberHint": "Say xỉn không phải là đồng thuận.",
+    "publicFirst": "Gặp nhau ở nơi công cộng trước",
+    "publicFirstHint": "Quán cà phê hoặc quán bar – gặp trực tiếp rồi mới quyết định có tiếp tục không.",
+    "partnerMayShare": "Trong buổi hẹn, {name} có thể chia sẻ tên, ảnh của bạn và địa điểm gặp với người tin cậy của họ.",
+    "saveAndConfirm": "Lưu và xác nhận",
+    "startMeetup": "Bắt đầu buổi hẹn",
+    "revoke": "Hủy thỏa thuận",
+    "revokeConfirmTitle": "Hủy thỏa thuận?",
+    "revokeConfirmMessage": "Buổi hẹn sẽ bị hủy. Bạn không cần giải thích gì cả – {name} chỉ nhận được một thông báo."
+  },
+  "meetup": {
+    "title": "Buổi hẹn · {name}",
+    "fakeCallerDefault": "Mẹ",
+    "endedTitle": "Buổi hẹn đã kết thúc",
+    "endedMessage": "{name} đã nhận được tin nhắn rằng bạn ổn.",
+    "sosFailed": "Không gửi được báo động: {error} Hãy thử lại hoặc gọi cho {name}.",
+    "needAgreementTitle": "Hãy hoàn tất thỏa thuận trước",
+    "needAgreementSubtitle": "Bạn có thể bắt đầu buổi hẹn khi cả hai đã điền và xác nhận thỏa thuận.",
+    "needAgreementAction": "Thỏa thuận",
+    "setupTitle": "Thiết lập an toàn",
+    "setupSubtitle": "Người tin cậy, mã PIN và PIN khẩn cấp.",
+    "setupAction": "Thiết lập",
+    "pointTrusted": "{name} sẽ nhận được SMS kèm đường link. Họ sẽ thấy bạn đang ở đâu, với ai và bạn có ổn không.",
+    "pointTrustedNoName": "Người tin cậy của bạn sẽ nhận được SMS kèm đường link. Họ sẽ thấy bạn đang ở đâu, với ai và bạn có ổn không.",
+    "pointCheckIn": "Theo định kỳ, bạn xác nhận bằng mã PIN rằng mình ổn. Nếu bạn không check-in, chúng tôi sẽ gửi cảnh báo – kể cả khi điện thoại của bạn hết pin.",
+    "pointDuress": "PIN khẩn cấp trông giống hệt PIN thường của bạn, nhưng âm thầm phát báo động.",
+    "pointPartner": "{name} sẽ thấy bạn đang bật chế độ an toàn và người tin cậy của bạn biết bạn đang ở đâu, với ai. Chỉ vậy thôi – không thấy báo động, không thấy vị trí của bạn.",
+    "intervalLabel": "Xác nhận mình ổn mỗi",
+    "minutes": "{count} phút",
+    "start": "Bắt đầu buổi hẹn",
+    "locationVisibleTo": "{name} có thể thấy vị trí của bạn",
+    "bgLocationTitle": "Chỉ chia sẻ vị trí khi ứng dụng đang mở",
+    "bgLocationSubtitle": "Đặt quyền truy cập vị trí thành “Luôn luôn” để họ vẫn thấy vị trí ngay cả khi màn hình tắt.",
+    "bgLocationAction": "Cài đặt",
+    "nextCheckIn": "Lần check-in tiếp theo sau",
+    "checkIn": "Check-in",
+    "now": "bây giờ",
+    "imOk": "Mình ổn",
+    "overdueHint": "{name} đã nhận được cảnh báo. Hãy xác nhận bằng mã PIN rằng bạn ổn.",
+    "graceHint": {
+      "other": "Nếu bạn không check-in trong vòng {count} phút sau thời hạn, {name} sẽ nhận được cảnh báo kèm vị trí của bạn."
+    },
+    "partnerSafetyOn": "{name} cũng đang bật chế độ an toàn – người tin cậy của họ biết họ đang ở đâu và với ai.",
+    "partnerSafetyOff": "{name} không bật chế độ an toàn.",
+    "fakeCall": "Cuộc gọi giả",
+    "fakeCallIn": "Gọi sau {count} giây",
+    "fakeCallHint": "Sau {count} giây, cuộc gọi giả sẽ đổ chuông như cuộc gọi thật – cái cớ để bạn rời đi.",
+    "shareLink": "Gửi link",
+    "sos": "SOS – giữ",
+    "revoke": "Hủy thỏa thuận",
+    "end": "Kết thúc buổi hẹn",
+    "sosSentTitle": "Đã gửi báo động",
+    "sosSentBody": "{trusted} đã nhận được vị trí chính xác của bạn và biết bạn đang ở cùng ai. {partner} sẽ không thấy gì.",
+    "sosMistake": "Nhầm thôi – mình ổn",
+    "sosHide": "Ẩn (báo động vẫn bật)",
+    "pinTitle": "Xác nhận bằng mã PIN",
+    "pinSubtitleOk": "Rằng bạn ổn.",
+    "pinSubtitleEnd": "Rằng buổi hẹn đã kết thúc và bạn ổn.",
+    "revokeConfirmTitle": "Hủy thỏa thuận?",
+    "revokeConfirmMessage": "{name} sẽ nhận được thông báo. Bạn không cần giải thích gì cả. Chế độ an toàn vẫn chạy cho đến khi bạn kết thúc."
+  },
+  "feedback": {
+    "title": "Buổi hẹn thế nào?",
+    "privacy": "Chỉ đội ngũ của chúng tôi thấy câu trả lời của bạn – {name} sẽ không bao giờ thấy. Điều này giúp chúng tôi giữ nơi đây dành cho những người tôn trọng giới hạn.",
+    "privacyNoName": "Chỉ đội ngũ của chúng tôi thấy câu trả lời của bạn – người kia sẽ không bao giờ thấy. Điều này giúp chúng tôi giữ nơi đây dành cho những người tôn trọng giới hạn.",
+    "allGood": "Mọi thứ đều ổn",
+    "somethingWrong": "Có điều không ổn",
+    "detailsLabel": "Chuyện gì đã xảy ra? (không bắt buộc)",
+    "preserve": "Giữ lại hồ sơ buổi hẹn phòng khi bạn cần báo cảnh sát. Nếu không, thỏa thuận sẽ bị xóa sau 48 giờ.",
+    "suspendNotice": "Nếu ai đó không tôn trọng bạn hoặc bạn đang gặp nguy hiểm, chúng tôi sẽ tạm khóa tài khoản của họ ngay và xem xét.",
+    "send": "Gửi",
+    "helpTitle": "Chúng tôi rất tiếc",
+    "helpIntro": "Chúng tôi sẽ xem xét sự việc, và đã tạm khóa tài khoản của người kia trong thời gian kiểm tra. Bạn không cần quyết định ngay bây giờ sẽ làm gì tiếp theo – và không điều gì trong chuyện này là lỗi của bạn.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Đường dây hỗ trợ nạn nhân tội phạm – Bílý kruh bezpečí",
+        "detail": "24/7, miễn phí, và bạn có thể giữ ẩn danh."
+      },
+      "police": {
+        "name": "Cảnh sát Séc",
+        "detail": "Nếu bạn muốn trình báo – kể cả sau này."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Hỗ trợ những người từng bị bạo lực tình dục."
+      }
+    },
+    "helpLocal": {
+      "name": "Nơi tìm kiếm sự giúp đỡ",
+      "detail": "Hãy liên hệ cảnh sát địa phương hoặc đường dây hỗ trợ tại địa phương dành cho nạn nhân tội phạm và bạo lực tình dục."
+    },
+    "medical": "Nếu có điều gì xảy ra trái với ý muốn của bạn, hãy đi khám càng sớm càng tốt – cũng để phòng tránh mang thai và nhiễm trùng, vì một số loại thuốc chỉ có tác dụng trong vòng 72 giờ. Vẫn có thể thu thập bằng chứng nếu bạn chưa tắm và giữ lại quần áo. Nhưng không điều nào trong số này là bắt buộc – bạn cũng có thể trình báo sau.",
+    "preserved": "Chúng tôi đã lưu lại hồ sơ buổi hẹn (thỏa thuận, tin nhắn, báo động) phòng khi bạn cần cho cảnh sát.",
+    "backToApp": "Quay lại ứng dụng"
+  },
+  "report": {
+    "title": "Báo cáo",
+    "intro": "Báo cáo của bạn được ẩn danh. Chúng tôi cũng sẽ chặn người đó giúp bạn, nên hai bạn sẽ không thấy nhau nữa.",
+    "introWithName": "{name}. Báo cáo của bạn được ẩn danh. Chúng tôi cũng sẽ chặn người đó giúp bạn, nên hai bạn sẽ không thấy nhau nữa.",
+    "detailsLabel": "Chi tiết (không bắt buộc)",
+    "submit": "Báo cáo",
+    "thanksTitle": "Cảm ơn bạn",
+    "thanksMessage": "Chúng tôi đã nhận được báo cáo của bạn. Hai bạn sẽ không thấy nhau nữa."
+  },
+  "chat": {
+    "unavailable": "Không thể trò chuyện",
+    "nameAge": "{name}, {age}",
+    "distance": "Cách {km} km",
+    "reportOrBlock": "Báo cáo hoặc chặn",
+    "photo": "Ảnh",
+    "photoBlurred": "Ảnh bị làm mờ, chạm để xem",
+    "tapToReveal": "Chạm để xem",
+    "sendPhoto": "Gửi ảnh",
+    "message": "Tin nhắn",
+    "messagePlaceholder": "Viết tin nhắn…",
+    "send": "Gửi",
+    "report": "Báo cáo",
+    "block": "Chặn",
+    "unmatch": "Hủy tương hợp",
+    "blockConfirmTitle": "Chặn?",
+    "blockConfirmMessage": "Bạn và {name} sẽ không thấy nhau nữa, và cuộc trò chuyện sẽ biến mất."
+  },
+  "safetySettings": {
+    "title": "An toàn và quyền riêng tư",
+    "trustedLabel": "Người tin cậy",
+    "trustedHint": "Khi bạn bắt đầu buổi hẹn, chúng tôi sẽ nhắn SMS cho họ đường link tới vị trí của bạn. Chúng tôi sẽ cảnh báo họ nếu bạn không check-in hoặc nếu bạn phát báo động.",
+    "nameLabel": "Tên",
+    "namePlaceholder": "Ví dụ: Alex",
+    "phoneLabel": "Điện thoại",
+    "phonePlaceholder": "+84 912 345 678",
+    "pinsLabel": "PIN và PIN khẩn cấp",
+    "pinsHint": "Trong buổi hẹn, bạn dùng PIN để xác nhận mình ổn. PIN khẩn cấp trông giống hệt nhưng âm thầm gửi báo động – hãy dùng nó nếu ai đó ép bạn báo với ứng dụng rằng mọi thứ đều ổn.",
+    "checkinPinLabel": "PIN (4–6 chữ số)",
+    "duressPinLabel": "PIN khẩn cấp (khác với PIN của bạn)",
+    "passwordLabel": "Mật khẩu tài khoản (để đổi PIN)",
+    "pinsSet": "Đã đặt PIN",
+    "change": "Đổi",
+    "privacyLabel": "Quyền riêng tư",
+    "appLock": "Khóa ứng dụng",
+    "appLockHint": "Face ID, vân tay hoặc mật mã điện thoại mỗi lần bạn mở ứng dụng.",
+    "discreet": "Chế độ kín đáo",
+    "discreetHint": "Biểu tượng trung tính và thông báo không có nội dung – không ai biết đây là ứng dụng gì.",
+    "save": "Lưu"
+  },
+  "tabs": {
+    "discover": "Khám phá",
+    "matches": "Tin nhắn",
+    "profile": "Hồ sơ"
+  },
+  "discover": {
+    "likesLeft": {
+      "other": "Còn {count} lượt thích."
+    },
+    "boostRunningUntil": "Boost đang bật đến {time}.",
+    "tonight": "Tối nay",
+    "tonightOn": "Tối nay – đang bật",
+    "boost": "Boost",
+    "boostOn": "Boost đang bật",
+    "searchSettings": "Cài đặt tìm kiếm",
+    "traveling": "Đang du lịch",
+    "travelingIn": "Đang du lịch · {city}",
+    "change": "Đổi",
+    "enableLocation": "Cho phép vị trí",
+    "addPhoto": "Thêm ảnh",
+    "retry": "Thử lại",
+    "empty": "Hiện không còn ai ở gần. Hãy thử lại sau hoặc mở rộng phạm vi tìm kiếm.",
+    "refresh": "Làm mới",
+    "nextPhoto": "Ảnh tiếp theo",
+    "stampLike": "MUỐN",
+    "stampNope": "KHÔNG",
+    "superLikedYou": "Đã Super Like bạn",
+    "distance": "Cách {km} km",
+    "rewind": "Hoàn tác lần quẹt cuối",
+    "pass": "Bỏ qua",
+    "superLike": "Super Like",
+    "like": "Thích",
+    "boostSheet": {
+      "title": "Bật Boost?",
+      "messageMonthly": "Bạn sẽ ở vị trí đầu với những người gần bạn trong 30 phút. Lần này dùng Boost hằng tháng trong gói đăng ký của bạn.",
+      "messageCredits": "Bạn sẽ ở vị trí đầu với những người gần bạn trong 30 phút. Bạn còn {count} lượt.",
+      "confirm": "Bật Boost",
+      "done": "Boost đang bật – bạn ở vị trí đầu trong 30 phút."
+    },
+    "tonightSheet": {
+      "title": "Bật “Tối nay”?",
+      "message": "Đến 6:00 sáng, bạn sẽ được xếp cao hơn với những người gần bạn và có nhãn “Tối nay”. Bạn có thể tắt bất cứ lúc nào.",
+      "messageCredits": "Đến 6:00 sáng, bạn sẽ được xếp cao hơn với những người gần bạn và có nhãn “Tối nay”. Bạn có thể tắt bất cứ lúc nào. Bạn còn {count} lượt.",
+      "confirm": "Bật",
+      "done": "Tối nay đang bật đến 6:00 sáng."
+    },
+    "tonightOffSheet": {
+      "title": "“Tối nay” đang bật",
+      "message": "Có hiệu lực đến {time}.",
+      "confirm": "Tắt",
+      "done": "Đã tắt Tối nay."
+    }
+  },
+  "matches": {
+    "title": "Tin nhắn",
+    "agreement": {
+      "pending": "Thỏa thuận đang chờ",
+      "confirmed": "Thỏa thuận đã xác nhận",
+      "revoked": "Thỏa thuận đã hủy"
+    },
+    "likes": "Lượt thích",
+    "likedBy": {
+      "other": "{count} người đã thích bạn"
+    },
+    "likedByLocked": {
+      "other": "{count} người đã thích bạn – xem là ai với Gold"
+    },
+    "likesHint": "Ai đã thích bạn và bạn đã thích ai",
+    "empty": "Chưa có tương hợp nào. Cứ tiếp tục quẹt – khi cả hai thích nhau, họ sẽ xuất hiện ở đây.",
+    "lastMessageMine": "Bạn: {text}",
+    "newMatch": "Tương hợp mới – gửi tin nhắn đầu tiên."
+  },
+  "profile": {
+    "title": "Hồ sơ",
+    "saving": "Đang lưu…",
+    "saved": "Đã lưu",
+    "done": "Xong",
+    "suspended": {
+      "title": "Tài khoản của bạn đang bị tạm khóa",
+      "subtitle": "Chúng tôi đang xem xét một báo cáo. Chế độ an toàn vẫn hoạt động cho bạn."
+    },
+    "photoA11y": "Ảnh – giữ để xóa",
+    "addPhoto": "Thêm ảnh",
+    "photoHint": "Không ảnh khỏa thân – ảnh phải tuân thủ quy định của các kho ứng dụng. Giữ ảnh để xóa.",
+    "name": "Tên",
+    "bio": "Giới thiệu",
+    "bioPlaceholder": "Vài dòng về bản thân bạn.",
+    "lookingFor": "Đang tìm",
+    "safety": {
+      "title": "An toàn và quyền riêng tư",
+      "trusted": "Người tin cậy: {name}",
+      "setup": "Thiết lập người tin cậy và mã PIN.",
+      "edit": "Sửa"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold và Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Thích không giới hạn, xem ai đã thích bạn, Boost và nhiều hơn nữa.",
+      "validUntil": "Có hiệu lực đến {date}.",
+      "upgrade": "Nâng cấp",
+      "manage": "Quản lý"
+    },
+    "incognito": {
+      "label": "Ẩn danh",
+      "hint": "Chỉ những người bạn thích mới thấy bạn. (Plus)"
+    },
+    "travel": {
+      "label": "Chế độ du lịch (Plus)",
+      "home": "Ở nhà",
+      "hint": "Quẹt ở thành phố khác trước chuyến đi – người ở đó sẽ thấy bạn với nhãn “Đang du lịch”."
+    },
+    "showMe": "Hiển thị",
+    "ageFrom": "Tuổi từ",
+    "ageTo": "Tuổi đến",
+    "distance": "Khoảng cách",
+    "distanceSuffix": " km",
+    "save": "Lưu hồ sơ",
+    "language": {
+      "title": "Ngôn ngữ",
+      "device": "Giống điện thoại",
+      "rtlHint": "Với ngôn ngữ viết từ phải sang trái, bố cục sẽ đảo chiều sau khi bạn khởi động lại ứng dụng."
+    },
+    "signOut": "Đăng xuất",
+    "deletePassword": "Mật khẩu để xóa tài khoản",
+    "deleteForever": "Xóa tài khoản vĩnh viễn",
+    "deleteAccount": "Xóa tài khoản",
+    "removePhoto": {
+      "title": "Xóa ảnh?",
+      "confirm": "Xóa"
+    }
+  },
+  "premium": {
+    "title": "Gói đăng ký",
+    "free": {
+      "title": "F*app hiện đang miễn phí",
+      "body": "Chúng tôi sẽ bật các tính năng trả phí sau. Tính năng an toàn – xác minh, thỏa thuận, chế độ an toàn và SOS – sẽ luôn miễn phí."
+    },
+    "back": "Quay lại",
+    "done": "Xong",
+    "continue": "Tiếp tục",
+    "reason": {
+      "likeLimitAt": "Bạn đã hết lượt thích. Lượt mới sẽ có lúc {time}.",
+      "likeLimit": "Bạn đã hết lượt thích. Lượt mới sẽ có sớm thôi.",
+      "noCredit": "{credit} có thể mua lẻ hoặc có trong gói đăng ký.",
+      "upgrade": "Tính năng này thuộc F*app {plan}."
+    },
+    "oneOff": "Mua lẻ",
+    "owned": "bạn có {count}",
+    "creditDetail": {
+      "boost": "30 phút ở vị trí đầu với những người gần bạn.",
+      "superlike": "Họ sẽ thấy bạn thật sự thích họ.",
+      "tonight": "Được xếp cao hơn đến 6:00 sáng, kèm nhãn “Tối nay”."
+    },
+    "buyCredit": "Mua {amount}× {credit} với giá {price}",
+    "creditBought": {
+      "boost": {
+        "other": "Bạn có thêm {count} Boost."
+      },
+      "superlike": {
+        "other": "Bạn có thêm {count} Super Like."
+      },
+      "tonight": {
+        "other": "Bạn có thêm {count} lượt “Tối nay”."
+      }
+    },
+    "currentPlan": "Bạn đang dùng F*app {plan}",
+    "validUntil": "Có hiệu lực đến {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Quẹt không giới hạn và lấy lại hồ sơ bạn lỡ bỏ qua.",
+      "gold": "Xem ai đã thích bạn – và tương hợp chỉ với một chạm.",
+      "platinum": "Lượt thích của bạn được thấy trước tiên. Và “Tối nay” bất cứ lúc nào."
+    },
+    "featureIncluded": "{feature}: đã bao gồm",
+    "featureNotIncluded": "{feature}: không bao gồm",
+    "months": {
+      "other": "{count} tháng"
+    },
+    "perMonth": "mỗi tháng",
+    "perMonthSave": "mỗi tháng · −{percent}%",
+    "continueWithPrice": "Tiếp tục · {price}",
+    "planBought": {
+      "other": "Bạn đã có F*app {plan} trong {count} tháng."
+    },
+    "renewal": "Gói đăng ký tự động gia hạn. Bạn có thể hủy bất cứ lúc nào trong cài đặt App Store hoặc Google Play. Giá như nhau cho tất cả mọi người.",
+    "renewalUpfront": "Bạn trả trước {total} ({monthly} mỗi tháng). Gói đăng ký tự động gia hạn. Bạn có thể hủy bất cứ lúc nào trong cài đặt App Store hoặc Google Play. Giá như nhau cho tất cả mọi người.",
+    "safetyFree": {
+      "title": "An toàn luôn miễn phí",
+      "subtitle": "Xác minh, thỏa thuận, chế độ an toàn, SOS và báo cáo."
+    },
+    "devNote": "Bản thử nghiệm: không tính phí, giao dịch chỉ là mô phỏng."
+  },
+  "likes": {
+    "title": "Lượt thích",
+    "received": "Đã thích bạn",
+    "receivedCount": "Đã thích bạn · {count}",
+    "sent": "Đã gửi",
+    "emptyReceived": "Chưa có lượt thích mới.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "other": "{count} người đã thích bạn"
+    },
+    "lockedEmpty": "Lượt thích dành cho bạn sẽ hiện ở đây",
+    "goldText": "Với F*app Gold, bạn sẽ thấy họ là ai và tương hợp chỉ với một chạm.",
+    "goldCta": "Xem với Gold",
+    "emptySent": "Không có lượt thích nào chưa tương hợp trong 7 ngày qua.",
+    "superLikePending": "Super Like · đang chờ",
+    "pending": "Đang chờ phản hồi",
+    "sentTitle": "Những người bạn đã thích",
+    "platinumText": "Với F*app Platinum, bạn sẽ thấy các lượt thích của mình trong 7 ngày qua.",
+    "platinumCta": "Xem với Platinum",
+    "likeBack": "Thích lại",
+    "pass": "Bỏ qua"
+  },
+  "match": {
+    "title": "Tương hợp rồi!",
+    "body": "Bạn và {name} đều muốn nhau.\nHãy chào và thỏa thuận điều cả hai muốn.",
+    "sendMessage": "Gửi tin nhắn",
+    "keepDiscovering": "Tiếp tục khám phá"
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "submit": "Đăng nhập"
+  },
+  "register": {
+    "title": "Tạo tài khoản",
+    "name": "Tên (người khác sẽ thấy)",
+    "email": "Email",
+    "password": "Mật khẩu (ít nhất 10 ký tự)",
+    "birthdate": "Ngày sinh",
+    "birthdatePlaceholder": "DD. MM. YYYY",
+    "birthdateInvalid": "Nhập ngày sinh theo dạng DD. MM. YYYY.",
+    "iAm": "Mình là",
+    "showMe": "Hiển thị",
+    "confirmAdult": "Mình đã đủ 18 tuổi trở lên.",
+    "acceptRules": "Mình đồng ý với quy tắc cộng đồng và việc xử lý dữ liệu của mình, bao gồm dữ liệu về đời sống tình dục, để F*app có thể hoạt động.",
+    "verifyNote": "Ngay sau đây, chúng tôi sẽ xác minh danh tính và tuổi của bạn (giấy tờ tùy thân và ảnh selfie). Chúng tôi không lưu giấy tờ tùy thân của bạn.",
+    "continue": "Tiếp tục"
+  },
+  "verify": {
+    "title": "Xác minh đó là bạn",
+    "intro": "Mọi người trên F*app đều đã xác minh danh tính và tuổi. Bạn sẽ chụp ảnh giấy tờ tùy thân và một ảnh selfie – mất khoảng hai phút.",
+    "privacy": "Chúng tôi không lưu giấy tờ tùy thân hay ảnh của bạn. Chúng tôi chỉ giữ kết quả xác minh và ngày sinh của bạn. Ai vi phạm quy tắc sẽ không thể quay lại bằng tài khoản mới.",
+    "pending": {
+      "title": "Đang chờ kết quả xác minh",
+      "subtitle": "Thường chỉ mất vài phút.",
+      "refresh": "Làm mới"
+    },
+    "declined": "Xác minh không thành công",
+    "devApprove": "Giả lập xác minh thành công (chế độ thử nghiệm)",
+    "retry": "Thử lại",
+    "start": "Xác minh danh tính",
+    "signOut": "Đăng xuất"
+  },
+  "common": {
+    "back": "Quay lại",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "save": "Lưu",
+    "retry": "Thử lại",
+    "continue": "Tiếp tục",
+    "done": "Xong",
+    "send": "Gửi",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "open": "Mở",
+    "show": "Xem",
+    "confirm": "Xác nhận",
+    "errorGeneric": "Đã xảy ra lỗi."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} đang bật chế độ an toàn",
+    "partnerSafetySubtitle": "Người tin cậy của họ biết họ đang ở đâu và với ai.",
+    "meetupTitle": "Buổi hẹn đang diễn ra",
+    "meetupSubtitle": "Chế độ an toàn đang bật.",
+    "missingTitle": "Chưa có thỏa thuận",
+    "missingSubtitle": "Mỗi người tự điền điều mình muốn – hai bạn chỉ thấy điểm chung.",
+    "fill": "Điền",
+    "revokedByMeTitle": "Bạn đã hủy thỏa thuận",
+    "revokedByPartnerTitle": "{name} đã hủy thỏa thuận",
+    "revokedSubtitle": "Buổi hẹn đã bị hủy.",
+    "revokedCooldownSubtitle": "Buổi hẹn đã bị hủy. Chỉ {name} mới có thể bắt đầu thỏa thuận mới.",
+    "newAgreement": "Thỏa thuận mới",
+    "confirmedTitle": "Thỏa thuận đã hoàn tất",
+    "confirmedSubtitle": "Khi đã gặp nhau, mỗi người vẫn có thể đổi ý bất cứ lúc nào.",
+    "partnerFilledTitle": "{name} đã điền thỏa thuận",
+    "waitingForYouTitle": "Thỏa thuận đang chờ bạn",
+    "fillYoursSubtitle": "Điền điều bạn muốn – hai bạn chỉ thấy điểm chung.",
+    "partnerPendingTitle": "{name} chưa điền",
+    "partnerPendingSubtitle": "Thỏa thuận hoàn tất khi cả hai đã điền."
+  },
+  "fakeCall": {
+    "incoming": "di động…",
+    "hangUp": "Kết thúc",
+    "decline": "Từ chối",
+    "accept": "Chấp nhận"
+  },
+  "homeBanners": {
+    "meetupTitle": "Buổi hẹn đang diễn ra · {name}",
+    "missedCheckIn": "Bạn đã bỏ lỡ một lần check-in!",
+    "safetyOn": "Chế độ an toàn đang bật.",
+    "feedbackTitle": "Buổi hẹn thế nào?",
+    "feedbackSubtitle": "{name} – chỉ đội ngũ của chúng tôi thấy câu trả lời của bạn.",
+    "feedbackAction": "Trả lời"
+  },
+  "pinPad": {
+    "entered": {
+      "other": "Đã nhập {count} chữ số"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, giảm",
+    "stepperIncrease": "{label}, tăng"
+  },
+  "api": {
+    "offline": "Không thể kết nối với máy chủ. Hãy kiểm tra kết nối mạng."
+  },
+  "billing": {
+    "storeNotConnected": "Chưa thiết lập mua hàng qua App Store và Google Play."
+  },
+  "notifications": {
+    "channelName": "Thông báo",
+    "reminderDiscreet": "Lời nhắc",
+    "checkInTitle": "Đến giờ check-in",
+    "checkInBody": "Xác nhận bằng mã PIN rằng bạn ổn.",
+    "fakeCallBody": "Cuộc gọi đến"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Đang chia sẻ vị trí",
+    "notificationBody": "Bạn có thể dừng trong ứng dụng."
+  },
+  "appLock": {
+    "prompt": "Mở khóa F*app",
+    "lockedTitle": "Ứng dụng đã bị khóa",
+    "lockedBody": "Mở khóa bằng Face ID, vân tay hoặc mật mã điện thoại.",
+    "sosHold": "SOS – nhấn và giữ",
+    "unlock": "Mở khóa",
+    "sosSentTitle": "Đã gửi báo động",
+    "sosSentBody": "{name} đã nhận được cảnh báo kèm vị trí của bạn.",
+    "sosSentBodyNoName": "Người tin cậy của bạn đã nhận được cảnh báo kèm vị trí của bạn.",
+    "sosFailedTitle": "Không gửi được"
+  },
+  "native": {
+    "locationWhenInUse": "F*app cần vị trí của bạn để hiển thị những người ở gần và, trong buổi hẹn, để chia sẻ vị trí với người tin cậy của bạn.",
+    "locationAlways": "Trong buổi hẹn, F*app chia sẻ vị trí của bạn với người tin cậy, kể cả khi màn hình tắt. Ngoài buổi hẹn, ứng dụng không dùng vị trí của bạn trong nền.",
+    "faceId": "F*app dùng Face ID để mở khóa, để không ai khác có thể xem bên trong.",
+    "photos": "Chọn ảnh cho hồ sơ của bạn.",
+    "camera": "Chụp ảnh bản thân cho hồ sơ."
+  }
+}

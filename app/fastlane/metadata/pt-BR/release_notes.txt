@@ -1,0 +1,1 @@
+A primeira versão do F*app. Verificação, acordo às cegas e modo de segurança.

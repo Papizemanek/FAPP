@@ -1,1 +1,677 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Man",
+      "woman": "Kvinna",
+      "nonbinary": "Icke-binär"
+    },
+    "gendersPlural": {
+      "man": "Män",
+      "woman": "Kvinnor",
+      "nonbinary": "Icke-binära"
+    },
+    "tags": {
+      "oneoff": "Engångsgrej",
+      "repeat": "Om och om igen",
+      "myplace": "Hos mig",
+      "yourplace": "Hos dig",
+      "vanilla": "Vanilj",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Kyssar och gos",
+      "oral": "Oralt",
+      "vaginal": "Vaginalt",
+      "anal": "Analt",
+      "toys": "Leksaker",
+      "overnight": "Sova över"
+    },
+    "wishes": {
+      "yes": "Ja",
+      "maybe": "Kanske",
+      "no": "Nej"
+    },
+    "reportReasons": {
+      "consent": "Bröt mot samtycke eller gränser",
+      "violence": "Våld eller hot",
+      "minor": "Misstänkt minderårig",
+      "harassment": "Trakasserier",
+      "fake": "Falsk profil",
+      "paid": "Erbjuder betalda tjänster",
+      "other": "Annat"
+    },
+    "feedbackReasons": {
+      "consent": "Respekterade inte gränser eller ”stopp”",
+      "safety": "Jag kände mig hotad",
+      "fake": "Såg inte ut som på bilderna",
+      "other": "Något annat"
+    },
+    "plans": {
+      "free": "Gratis",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Obegränsat med likes",
+        "detail": "Swipea så mycket du vill."
+      },
+      "rewind": {
+        "name": "Ångra swipe",
+        "detail": "Få tillbaka en profil du råkade neka."
+      },
+      "travel": {
+        "name": "Reseläge",
+        "detail": "Swipea i en annan stad redan före resan."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Bara de du gillar kan se dig."
+      },
+      "seeLikes": {
+        "name": "Se vem som gillar dig",
+        "detail": "Se alla som har gillat dig."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes i veckan",
+        "detail": "Visa någon att du verkligen är intresserad."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost i månaden",
+        "detail": "30 minuter i toppen hos folk i närheten."
+      },
+      "priorityLikes": {
+        "name": "Prioriterade likes",
+        "detail": "Din like syns före andras."
+      },
+      "sentLikes": {
+        "name": "Skickade likes",
+        "detail": "Vilka du har gillat de senaste 7 dagarna."
+      },
+      "tonight": {
+        "name": "I kväll – när som helst",
+        "detail": "Visa att du är ledig redan i kväll."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "I kväll"
+    },
+    "cities": {
+      "praha": "Prag",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Wien",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Så här tänker jag mig det. På plats kan jag säga nej till vad som helst – och det kan den andra också.",
+    "notice": "Jag förstår: samtycke gäller bara här och nu. ”Nej”, ”stopp”, stoppordet, tystnad, att stelna till eller att vara berusad är inte samtycke. En överenskommelse i appen fråntar ingen ansvaret.",
+    "deterrence": "Alla på F*app har en verifierad identitet. Vid misstanke om brott lämnar vi ut den till polisen."
+  },
+  "welcome": {
+    "tagline": "Sex utan krångel.",
+    "taglineStrong": "Bara när ni båda säger ja.",
+    "createAccount": "Skapa konto",
+    "signIn": "Logga in",
+    "adultsOnly": "Endast 18+. Alla här har en verifierad identitet."
+  },
+  "agreement": {
+    "title": "Överenskommelse",
+    "titleWithName": "Överenskommelse · {name}",
+    "timeFormatError": "Ange tiden som HH:MM, t.ex. 21:00.",
+    "revokedByPartnerTitle": "{name} har avbrutit överenskommelsen",
+    "revokedByPartnerSubtitle": "Bara {name} kan starta en ny överenskommelse nu.",
+    "revokedTitle": "Överenskommelsen avbröts",
+    "revokedSubtitle": "Du kan starta en ny.",
+    "newTitle": "Ny överenskommelse",
+    "newSubtitle": "Ni fyller i var sin del separat. Ni ser bara det ni är överens om.",
+    "logisticsChangedTitle": "Du ändrar tid, plats eller regler",
+    "logisticsChangedSubtitle": "{name} måste bekräfta dem igen.",
+    "confirmedTitle": "Ni har båda fyllt i överenskommelsen",
+    "confirmedSubtitle": "På plats kan ni båda ändra er när som helst.",
+    "myPartDoneTitle": "Din del är klar",
+    "myPartDoneSubtitle": "{name} har inte fyllt i eller bekräftat än.",
+    "partnerFilledTitle": "{name} har fyllt i sin del",
+    "partnerFilledSubtitle": "Fyll i din – ni ser bara det ni är överens om.",
+    "fillTitle": "Fyll i din del",
+    "fillSubtitle": "Ni ser bara det ni är överens om.",
+    "overlapTitle": "Det här är ni överens om",
+    "overlapNone": "Inget gemensamt än.",
+    "overlapYes": "Ni vill båda",
+    "overlapMaybe": "Kanske – det pratar ni om på plats",
+    "partnerNote": "{name}: ”{note}”",
+    "overlapHint": "Det som någon av er inte vill ser ingen – inte ens vem det var.",
+    "wishesLabel": "Det här är jag sugen på",
+    "wishesHint": "{name} ser bara det ni är överens om. Ditt ”nej” ser ingen.",
+    "wishesHintNoName": "Den andra ser bara det ni är överens om.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Mina gränser (den andra ser dem också)",
+    "notePlaceholder": "T.ex. inga bilder, jag vill lära känna dig först.",
+    "logisticsLabel": "Praktiska saker – gäller er båda",
+    "today": "I dag",
+    "tomorrow": "I morgon",
+    "timeLabel": "Tid",
+    "placeLabel": "Var",
+    "placePlaceholder": "T.ex. hos mig, Vinohrady",
+    "safewordLabel": "Stoppord",
+    "safewordPlaceholder": "Ett ord som stoppar allt",
+    "condom": "Alltid kondom",
+    "sober": "Nyktra",
+    "soberHint": "Att vara berusad är inte samtycke.",
+    "publicFirst": "Vi ses först på en offentlig plats",
+    "publicFirstHint": "Ett kafé eller en bar – om ni fortsätter bestämmer ni på plats.",
+    "partnerMayShare": "Under träffen kan {name} dela ditt namn, din bild och mötesplatsen med sin trygghetsperson.",
+    "saveAndConfirm": "Spara och bekräfta",
+    "startMeetup": "Starta träffen",
+    "revoke": "Avbryt överenskommelsen",
+    "revokeConfirmTitle": "Avbryta överenskommelsen?",
+    "revokeConfirmMessage": "Träffen blir inte av. Du behöver inte förklara något – {name} får bara en avisering."
+  },
+  "meetup": {
+    "title": "Träff · {name}",
+    "fakeCallerDefault": "Mamma",
+    "endedTitle": "Träffen är avslutad",
+    "endedMessage": "{name} har fått ett meddelande om att du är okej.",
+    "sosFailed": "Larmet kunde inte skickas: {error} Försök igen eller ring {name}.",
+    "needAgreementTitle": "Gör klart överenskommelsen först",
+    "needAgreementSubtitle": "Du kan starta träffen när ni båda har fyllt i och bekräftat överenskommelsen.",
+    "needAgreementAction": "Överenskommelse",
+    "setupTitle": "Ställ in din säkerhet",
+    "setupSubtitle": "En trygghetsperson, en pinkod och en nödpinkod.",
+    "setupAction": "Ställ in",
+    "pointTrusted": "{name} får ett sms med en länk och kan se var du är, vem du är med och om du är okej.",
+    "pointTrustedNoName": "Din trygghetsperson får ett sms med en länk och kan se var du är, vem du är med och om du är okej.",
+    "pointCheckIn": "Med jämna mellanrum bekräftar du med din pinkod att du är okej. Om du inte checkar in skickar vi en varning – även om batteriet i din telefon tar slut.",
+    "pointDuress": "Nödpinkoden ser exakt ut som din vanliga, men larmar i tysthet.",
+    "pointPartner": "{name} ser att du har säkerhetsläget på och att din trygghetsperson vet var och med vem du är. Inget mer – varken larmet eller din plats.",
+    "intervalLabel": "Bekräfta att jag är okej var",
+    "minutes": "{count} min",
+    "start": "Starta träffen",
+    "locationVisibleTo": "{name} ser din plats",
+    "bgLocationTitle": "Plats bara när appen är öppen",
+    "bgLocationSubtitle": "Ställ in platsåtkomst på ”Alltid” så att den syns även när skärmen är släckt.",
+    "bgLocationAction": "Inställningar",
+    "nextCheckIn": "Nästa incheckning om",
+    "checkIn": "Incheckning",
+    "now": "nu",
+    "imOk": "Jag är okej",
+    "overdueHint": "{name} har fått en varning. Bekräfta med din pinkod att du är okej.",
+    "graceHint": {
+      "one": "Om du inte checkar in inom {count} minut efter utsatt tid får {name} en varning med din plats.",
+      "other": "Om du inte checkar in inom {count} minuter efter utsatt tid får {name} en varning med din plats."
+    },
+    "partnerSafetyOn": "{name} har också säkerhetsläget på – en trygghetsperson vet var träffen är och med vem.",
+    "partnerSafetyOff": "{name} har inte säkerhetsläget på.",
+    "fakeCall": "Falskt samtal",
+    "fakeCallIn": "Samtal om {count} s",
+    "fakeCallHint": "Om {count} s ringer det falska samtalet precis som ett riktigt – din ursäkt för att gå.",
+    "shareLink": "Skicka länk",
+    "sos": "SOS – håll in",
+    "revoke": "Avbryt överenskommelsen",
+    "end": "Avsluta träffen",
+    "sosSentTitle": "Larm skickat",
+    "sosSentBody": "{trusted} har fått din exakta plats och vet vem du är med. {partner} ser ingenting.",
+    "sosMistake": "Det var ett misstag – jag är okej",
+    "sosHide": "Dölj (larmet fortsätter)",
+    "pinTitle": "Bekräfta med din pinkod",
+    "pinSubtitleOk": "Att du är okej.",
+    "pinSubtitleEnd": "Att träffen är slut och att du är okej.",
+    "revokeConfirmTitle": "Avbryta överenskommelsen?",
+    "revokeConfirmMessage": "{name} får en avisering. Du behöver inte förklara något. Säkerhetsläget fortsätter tills du avslutar det."
+  },
+  "feedback": {
+    "title": "Hur gick träffen?",
+    "privacy": "Bara vårt team ser ditt svar – {name} gör det aldrig. Det hjälper oss att hålla det här till en plats för folk som respekterar gränser.",
+    "privacyNoName": "Bara vårt team ser ditt svar – den andra gör det aldrig. Det hjälper oss att hålla det här till en plats för folk som respekterar gränser.",
+    "allGood": "Allt var bra",
+    "somethingWrong": "Något var inte okej",
+    "detailsLabel": "Vad hände? (valfritt)",
+    "preserve": "Spara uppgifterna om träffen ifall du behöver gå till polisen. Annars raderas överenskommelsen efter 48 timmar.",
+    "suspendNotice": "Om någon inte respekterade dig eller om du är i fara stänger vi av kontot direkt och utreder saken.",
+    "send": "Skicka",
+    "helpTitle": "Vi beklagar",
+    "helpIntro": "Vi utreder det och har stängt av den andras konto medan vi granskar saken. Du behöver inte bestämma nu vad du vill göra härnäst – och inget av det här är ditt fel.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Stödlinje för brottsoffer – Bílý kruh bezpečí",
+        "detail": "Dygnet runt, gratis, och du kan vara anonym."
+      },
+      "police": {
+        "name": "Tjeckiska polisen",
+        "detail": "Om du vill anmäla det – även senare."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Stöd till personer som har utsatts för sexuellt våld."
+      }
+    },
+    "helpLocal": {
+      "name": "Här kan du få hjälp",
+      "detail": "Kontakta den lokala polisen eller en lokal stödlinje för personer som utsatts för brott och sexuellt våld."
+    },
+    "medical": "Om något har hänt mot din vilja, sök vård så snart du kan – även för att förebygga graviditet och infektioner, eftersom vissa läkemedel bara fungerar inom 72 timmar. Spår kan fortfarande säkras om du inte har duschat och sparar dina kläder. Men inget av detta är ett krav – du kan också anmäla det senare.",
+    "preserved": "Vi har sparat uppgifterna om träffen (överenskommelse, meddelanden, larm) ifall du behöver dem för polisen.",
+    "backToApp": "Tillbaka till appen"
+  },
+  "report": {
+    "title": "Rapportera",
+    "intro": "Din rapport är anonym. Vi blockerar också personen åt dig, så att ni inte ser varandra längre.",
+    "introWithName": "{name}. Din rapport är anonym. Vi blockerar också personen åt dig, så att ni inte ser varandra längre.",
+    "detailsLabel": "Detaljer (valfritt)",
+    "submit": "Rapportera",
+    "thanksTitle": "Tack",
+    "thanksMessage": "Vi har tagit emot din rapport. Ni ser inte varandra längre."
+  },
+  "chat": {
+    "unavailable": "Chatten är inte tillgänglig",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km bort",
+    "reportOrBlock": "Rapportera eller blockera",
+    "photo": "Bild",
+    "photoBlurred": "Suddig bild, tryck för att visa",
+    "tapToReveal": "Tryck för att visa",
+    "sendPhoto": "Skicka bild",
+    "message": "Meddelande",
+    "messagePlaceholder": "Skriv ett meddelande…",
+    "send": "Skicka",
+    "report": "Rapportera",
+    "block": "Blockera",
+    "unmatch": "Ta bort match",
+    "blockConfirmTitle": "Blockera?",
+    "blockConfirmMessage": "Du och {name} ser inte varandra längre, och chatten försvinner."
+  },
+  "safetySettings": {
+    "title": "Säkerhet och integritet",
+    "trustedLabel": "Trygghetsperson",
+    "trustedHint": "När du startar en träff skickar vi ett sms till personen med en länk till din plats. Vi varnar personen om du inte checkar in eller om du larmar.",
+    "nameLabel": "Namn",
+    "namePlaceholder": "T.ex. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+46 70 123 45 67",
+    "pinsLabel": "Pinkod och nödpinkod",
+    "pinsHint": "Under en träff bekräftar du med din pinkod att du är okej. Nödpinkoden ser exakt likadan ut men skickar ett larm i tysthet – använd den om någon tvingar dig att tala om för appen att allt är bra.",
+    "checkinPinLabel": "Pinkod (4–6 siffror)",
+    "duressPinLabel": "Nödpinkod (en annan än din pinkod)",
+    "passwordLabel": "Lösenord till kontot (för att ändra pinkoder)",
+    "pinsSet": "Pinkoderna är inställda",
+    "change": "Ändra",
+    "privacyLabel": "Integritet",
+    "appLock": "Applås",
+    "appLockHint": "Face ID, fingeravtryck eller telefonens lösenkod varje gång du öppnar appen.",
+    "discreet": "Diskret läge",
+    "discreetHint": "En neutral ikon och aviseringar utan innehåll – ingen kan se vilken app det är.",
+    "save": "Spara"
+  },
+  "tabs": {
+    "discover": "Upptäck",
+    "matches": "Meddelanden",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "{count} like kvar.",
+      "other": "{count} likes kvar."
+    },
+    "boostRunningUntil": "Boost är på till {time}.",
+    "tonight": "I kväll",
+    "tonightOn": "I kväll – på",
+    "boost": "Boost",
+    "boostOn": "Boost är på",
+    "searchSettings": "Sökinställningar",
+    "traveling": "På resa",
+    "travelingIn": "På resa · {city}",
+    "change": "Ändra",
+    "enableLocation": "Tillåt plats",
+    "addPhoto": "Lägg till bild",
+    "retry": "Försök igen",
+    "empty": "Det finns ingen mer i närheten just nu. Försök igen senare eller utöka din sökning.",
+    "refresh": "Uppdatera",
+    "nextPhoto": "Nästa bild",
+    "stampLike": "JA",
+    "stampNope": "NEJ",
+    "superLikedYou": "Gav dig en Super Like",
+    "distance": "{km} km bort",
+    "rewind": "Ångra senaste swipen",
+    "pass": "Hoppa över",
+    "superLike": "Super Like",
+    "like": "Gilla",
+    "boostSheet": {
+      "title": "Starta en Boost?",
+      "messageMonthly": "Du hamnar i toppen hos folk i närheten i 30 minuter. Den månatliga Boosten från ditt abonnemang används.",
+      "messageCredits": "Du hamnar i toppen hos folk i närheten i 30 minuter. Du har {count}× kvar.",
+      "confirm": "Starta Boost",
+      "done": "Boost är på – du ligger i toppen i 30 minuter."
+    },
+    "tonightSheet": {
+      "title": "Slå på ”I kväll”?",
+      "message": "Fram till kl. 06.00 hamnar du högre upp hos folk i närheten och visas med etiketten ”I kväll”. Du kan stänga av det när som helst.",
+      "messageCredits": "Fram till kl. 06.00 hamnar du högre upp hos folk i närheten och visas med etiketten ”I kväll”. Du kan stänga av det när som helst. Du har {count}× kvar.",
+      "confirm": "Slå på",
+      "done": "I kväll är på till kl. 06.00."
+    },
+    "tonightOffSheet": {
+      "title": "”I kväll” är på",
+      "message": "Aktivt till {time}.",
+      "confirm": "Stäng av",
+      "done": "I kväll är avstängt."
+    }
+  },
+  "matches": {
+    "title": "Meddelanden",
+    "agreement": {
+      "pending": "Överenskommelse väntar",
+      "confirmed": "Överenskommelse bekräftad",
+      "revoked": "Överenskommelse avbruten"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} person har gillat dig",
+      "other": "{count} personer har gillat dig"
+    },
+    "likedByLocked": {
+      "one": "{count} person har gillat dig – se vem med Gold",
+      "other": "{count} personer har gillat dig – se vilka med Gold"
+    },
+    "likesHint": "Vilka som har gillat dig och vilka du har gillat",
+    "empty": "Inga matchningar än. Fortsätt swipea – när ni båda gillar varandra dyker de upp här.",
+    "lastMessageMine": "Du: {text}",
+    "newMatch": "Ny match – skicka det första meddelandet."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Sparar…",
+    "saved": "Sparat",
+    "done": "Klar",
+    "suspended": {
+      "title": "Ditt konto är avstängt",
+      "subtitle": "Vi utreder en rapport. Säkerhetsläget fungerar fortfarande för dig."
+    },
+    "photoA11y": "Bild – håll in för att radera",
+    "addPhoto": "Lägg till bild",
+    "photoHint": "Ingen nakenhet – bilderna måste följa appbutikernas regler. Håll in en bild för att radera den.",
+    "name": "Namn",
+    "bio": "Om mig",
+    "bioPlaceholder": "Några rader om dig själv.",
+    "lookingFor": "Jag söker",
+    "safety": {
+      "title": "Säkerhet och integritet",
+      "trusted": "Trygghetsperson: {name}",
+      "setup": "Ställ in en trygghetsperson och en pinkod.",
+      "edit": "Redigera"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold och Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Obegränsat med likes, se vem som har gillat dig, Boost och mer.",
+      "validUntil": "Giltigt till {date}.",
+      "upgrade": "Uppgradera",
+      "manage": "Hantera"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Bara de du gillar kan se dig. (Plus)"
+    },
+    "travel": {
+      "label": "Reseläge (Plus)",
+      "home": "Hemma",
+      "hint": "Swipea i en annan stad redan före resan – folk där ser dig med etiketten ”På resa”."
+    },
+    "showMe": "Visa mig",
+    "ageFrom": "Ålder från",
+    "ageTo": "Ålder till",
+    "distance": "Avstånd",
+    "distanceSuffix": " km",
+    "save": "Spara profil",
+    "language": {
+      "title": "Språk",
+      "device": "Samma som telefonen",
+      "rtlHint": "För språk som skrivs från höger till vänster vänds layouten först när du startar om appen."
+    },
+    "signOut": "Logga ut",
+    "deletePassword": "Lösenord för att radera ditt konto",
+    "deleteForever": "Radera kontot permanent",
+    "deleteAccount": "Radera konto",
+    "removePhoto": {
+      "title": "Radera bild?",
+      "confirm": "Radera"
+    }
+  },
+  "premium": {
+    "title": "Abonnemang",
+    "free": {
+      "title": "F*app är gratis tills vidare",
+      "body": "Betalfunktioner slår vi på senare. Säkerhet – verifiering, överenskommelser, säkerhetsläge och SOS – förblir alltid gratis."
+    },
+    "back": "Tillbaka",
+    "done": "Klar",
+    "continue": "Fortsätt",
+    "reason": {
+      "likeLimitAt": "Dina likes är slut. Fler kommer kl. {time}.",
+      "likeLimit": "Dina likes är slut. Fler kommer snart.",
+      "noCredit": "{credit} finns som engångsköp eller med ett abonnemang.",
+      "upgrade": "Det här ingår i F*app {plan}."
+    },
+    "oneOff": "Engångsköp",
+    "owned": "du har {count}",
+    "creditDetail": {
+      "boost": "30 minuter i toppen hos folk i närheten.",
+      "superlike": "Personen ser att du verkligen är intresserad.",
+      "tonight": "Högre upp till kl. 06.00, med etiketten ”I kväll”."
+    },
+    "buyCredit": "Köp {amount}× {credit} för {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Du har fått en extra Boost.",
+        "other": "Du har fått {count} extra Boosts."
+      },
+      "superlike": {
+        "one": "Du har fått en extra Super Like.",
+        "other": "Du har fått {count} extra Super Likes."
+      },
+      "tonight": {
+        "one": "Du har fått ett extra ”I kväll”.",
+        "other": "Du har fått {count} extra ”I kväll”."
+      }
+    },
+    "currentPlan": "Du har F*app {plan}",
+    "validUntil": "Giltigt till {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipea utan gräns och få tillbaka profiler du råkade neka.",
+      "gold": "Se vem som har gillat dig – och matcha med ett tryck.",
+      "platinum": "Din like syns först. Och ”I kväll” när som helst."
+    },
+    "featureIncluded": "{feature}: ingår",
+    "featureNotIncluded": "{feature}: ingår inte",
+    "months": {
+      "one": "{count} månad",
+      "other": "{count} månader"
+    },
+    "perMonth": "per månad",
+    "perMonthSave": "per månad · −{percent} %",
+    "continueWithPrice": "Fortsätt · {price}",
+    "planBought": {
+      "one": "Du har nu F*app {plan}.",
+      "other": "Du har nu F*app {plan} i {count} månader."
+    },
+    "renewal": "Ditt abonnemang förnyas automatiskt. Du kan säga upp det när som helst i inställningarna för App Store eller Google Play. Priset är detsamma för alla.",
+    "renewalUpfront": "Du betalar {total} i förskott ({monthly} i månaden). Ditt abonnemang förnyas automatiskt. Du kan säga upp det när som helst i inställningarna för App Store eller Google Play. Priset är detsamma för alla.",
+    "safetyFree": {
+      "title": "Säkerhet är alltid gratis",
+      "subtitle": "Verifiering, överenskommelser, säkerhetsläge, SOS och rapportering."
+    },
+    "devNote": "Prototyp: inget debiteras, köpet simuleras bara."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "Har gillat dig",
+    "receivedCount": "Har gillat dig · {count}",
+    "sent": "Skickade",
+    "emptyReceived": "Inga nya likes än.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} person har gillat dig",
+      "other": "{count} personer har gillat dig"
+    },
+    "lockedEmpty": "Dina likes visas här",
+    "goldText": "Med F*app Gold ser du vilka de är och matchar med ett tryck.",
+    "goldCta": "Se dem med Gold",
+    "emptySent": "Inga likes utan match de senaste 7 dagarna.",
+    "superLikePending": "Super Like · väntar",
+    "pending": "Väntar på svar",
+    "sentTitle": "Vilka du har gillat",
+    "platinumText": "Med F*app Platinum ser du dina likes från de senaste 7 dagarna.",
+    "platinumCta": "Se dem med Platinum",
+    "likeBack": "Gilla tillbaka",
+    "pass": "Hoppa över"
+  },
+  "match": {
+    "title": "Det är en match!",
+    "body": "Du och {name} vill ha varandra.\nSäg hej och kom överens om vad ni är sugna på.",
+    "sendMessage": "Skicka ett meddelande",
+    "keepDiscovering": "Fortsätt upptäcka"
+  },
+  "login": {
+    "title": "Logga in",
+    "email": "E-post",
+    "password": "Lösenord",
+    "submit": "Logga in"
+  },
+  "register": {
+    "title": "Skapa konto",
+    "name": "Namn (syns för andra)",
+    "email": "E-post",
+    "password": "Lösenord (minst 10 tecken)",
+    "birthdate": "Födelsedatum",
+    "birthdatePlaceholder": "DD. MM. ÅÅÅÅ",
+    "birthdateInvalid": "Ange ditt födelsedatum som DD. MM. ÅÅÅÅ.",
+    "iAm": "Jag är",
+    "showMe": "Visa mig",
+    "confirmAdult": "Jag är 18 år eller äldre.",
+    "acceptRules": "Jag godkänner gemenskapens regler och behandlingen av mina uppgifter, inklusive uppgifter om mitt sexliv, så att F*app kan fungera.",
+    "verifyNote": "Direkt efter det verifierar vi din identitet och ålder (id-handling och selfie). Vi sparar inte din id-handling.",
+    "continue": "Fortsätt"
+  },
+  "verify": {
+    "title": "Bekräfta att det är du",
+    "intro": "Alla på F*app har en verifierad identitet och ålder. Du tar en bild på din id-handling och en selfie – det tar ungefär två minuter.",
+    "privacy": "Vi sparar inte din id-handling eller dina bilder. Vi behåller bara resultatet av verifieringen och ditt födelsedatum. Den som bryter mot reglerna kan inte komma tillbaka med ett nytt konto.",
+    "pending": {
+      "title": "Väntar på resultatet av din verifiering",
+      "subtitle": "Det brukar ta några minuter.",
+      "refresh": "Uppdatera"
+    },
+    "declined": "Verifieringen misslyckades",
+    "devApprove": "Simulera lyckad verifiering (testläge)",
+    "retry": "Försök igen",
+    "start": "Verifiera identitet",
+    "signOut": "Logga ut"
+  },
+  "common": {
+    "back": "Tillbaka",
+    "cancel": "Avbryt",
+    "close": "Stäng",
+    "save": "Spara",
+    "retry": "Försök igen",
+    "continue": "Fortsätt",
+    "done": "Klar",
+    "send": "Skicka",
+    "delete": "Radera",
+    "edit": "Redigera",
+    "open": "Öppna",
+    "show": "Visa",
+    "confirm": "Bekräfta",
+    "errorGeneric": "Något gick fel."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} har säkerhetsläget på",
+    "partnerSafetySubtitle": "En trygghetsperson vet var träffen är och med vem.",
+    "meetupTitle": "Träff pågår",
+    "meetupSubtitle": "Säkerhetsläget är på.",
+    "missingTitle": "Ingen överenskommelse än",
+    "missingSubtitle": "Ni fyller i var för sig vad ni är sugna på – ni ser bara var ni matchar.",
+    "fill": "Fyll i",
+    "revokedByMeTitle": "Du har avbrutit överenskommelsen",
+    "revokedByPartnerTitle": "{name} har avbrutit överenskommelsen",
+    "revokedSubtitle": "Träffen blir inte av.",
+    "revokedCooldownSubtitle": "Träffen blir inte av. Bara {name} kan starta en ny överenskommelse.",
+    "newAgreement": "Ny överenskommelse",
+    "confirmedTitle": "Överenskommelsen är klar",
+    "confirmedSubtitle": "På plats kan ni båda ändra er när som helst.",
+    "partnerFilledTitle": "{name} har fyllt i överenskommelsen",
+    "waitingForYouTitle": "Överenskommelsen väntar på dig",
+    "fillYoursSubtitle": "Fyll i vad du är sugen på – ni ser bara var ni matchar.",
+    "partnerPendingTitle": "{name} har inte fyllt i än",
+    "partnerPendingSubtitle": "Överenskommelsen är klar när ni båda har fyllt i den."
+  },
+  "fakeCall": {
+    "incoming": "mobil…",
+    "hangUp": "Lägg på",
+    "decline": "Avvisa",
+    "accept": "Svara"
+  },
+  "homeBanners": {
+    "meetupTitle": "Träff pågår · {name}",
+    "missedCheckIn": "Du missade en incheckning!",
+    "safetyOn": "Säkerhetsläget är på.",
+    "feedbackTitle": "Hur gick träffen?",
+    "feedbackSubtitle": "{name} – bara vårt team ser ditt svar.",
+    "feedbackAction": "Svara"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} siffra angiven",
+      "other": "{count} siffror angivna"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, mindre",
+    "stepperIncrease": "{label}, mer"
+  },
+  "api": {
+    "offline": "Det gick inte att ansluta till servern. Kontrollera din anslutning."
+  },
+  "billing": {
+    "storeNotConnected": "Köp via App Store och Google Play är inte konfigurerade än."
+  },
+  "notifications": {
+    "channelName": "Aviseringar",
+    "reminderDiscreet": "Påminnelse",
+    "checkInTitle": "Dags att checka in",
+    "checkInBody": "Bekräfta med din pinkod att du är okej.",
+    "fakeCallBody": "Inkommande samtal"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Platsdelning är på",
+    "notificationBody": "Du kan stoppa den i appen."
+  },
+  "appLock": {
+    "prompt": "Lås upp F*app",
+    "lockedTitle": "Appen är låst",
+    "lockedBody": "Lås upp med Face ID, ditt fingeravtryck eller telefonens lösenkod.",
+    "sosHold": "SOS – tryck och håll",
+    "unlock": "Lås upp",
+    "sosSentTitle": "Larm skickat",
+    "sosSentBody": "{name} har fått en varning med din plats.",
+    "sosSentBodyNoName": "Din trygghetsperson har fått en varning med din plats.",
+    "sosFailedTitle": "Kunde inte skicka"
+  },
+  "native": {
+    "locationWhenInUse": "F*app behöver din plats för att visa dig folk i närheten och för att dela den med din trygghetsperson under en träff.",
+    "locationAlways": "Under en träff delar F*app din plats med din trygghetsperson, även när skärmen är släckt. Utanför träffar använder appen inte din plats i bakgrunden.",
+    "faceId": "F*app använder Face ID för att låsa upp, så att ingen annan kan titta in.",
+    "photos": "Välj bilder till din profil.",
+    "camera": "Ta en bild på dig själv till din profil."
+  }
+}

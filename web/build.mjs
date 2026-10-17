@@ -230,7 +230,8 @@ function head(code, t, assets) {
   const fonts = preview
     ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Manrope:wght@400;600;700&display=swap">'
     : '';
-  return `<title>${t('meta.title')}</title>
+  // Náhled v Claude potřebuje krátký název stránky; produkční web má plný titulek pro vyhledávače.
+  return `<title>${preview && code === DEFAULT_LOCALE ? 'F*app web' : t('meta.title')}</title>
 <meta name="description" content="${t('meta.description')}">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:title" content="${t('meta.ogTitle')}">

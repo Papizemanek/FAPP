@@ -1,1 +1,699 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Moški",
+      "woman": "Ženska",
+      "nonbinary": "Nebinarna oseba"
+    },
+    "gendersPlural": {
+      "man": "Moške",
+      "woman": "Ženske",
+      "nonbinary": "Nebinarne osebe"
+    },
+    "tags": {
+      "oneoff": "Enkratno",
+      "repeat": "Večkrat",
+      "myplace": "Pri meni",
+      "yourplace": "Pri tebi",
+      "vanilla": "Vanilija",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Poljubljanje in crkljanje",
+      "oral": "Oralni",
+      "vaginal": "Vaginalni",
+      "anal": "Analni",
+      "toys": "Igrače",
+      "overnight": "Prespanje"
+    },
+    "wishes": {
+      "yes": "Da",
+      "maybe": "Mogoče",
+      "no": "Ne"
+    },
+    "reportReasons": {
+      "consent": "Kršitev privolitve ali meja",
+      "violence": "Nasilje ali grožnje",
+      "minor": "Sum, da gre za mladoletno osebo",
+      "harassment": "Nadlegovanje",
+      "fake": "Lažen profil",
+      "paid": "Ponujanje plačljivih storitev",
+      "other": "Drugo"
+    },
+    "feedbackReasons": {
+      "consent": "Ni spoštoval/a meja ali „stop“",
+      "safety": "Počutil/a sem se ogroženo",
+      "fake": "Ni bil/a videti kot na fotografijah",
+      "other": "Nekaj drugega"
+    },
+    "plans": {
+      "free": "Brezplačno",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Neomejeni všečki",
+        "detail": "Drsaj, kolikor želiš."
+      },
+      "rewind": {
+        "name": "Vrnitev",
+        "detail": "Vrni pomotoma zavrnjen profil."
+      },
+      "travel": {
+        "name": "Na potovanju",
+        "detail": "Drsaj v drugem mestu že pred potovanjem."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Vidijo te le tisti, ki jih všečkaš."
+      },
+      "seeLikes": {
+        "name": "Kdo te je všečkal",
+        "detail": "Poglej vse, ki so te všečkali."
+      },
+      "weeklySuperLikes": {
+        "name": "5 super všečkov na teden",
+        "detail": "Pokaži, da ti je za nekoga res mar."
+      },
+      "monthlyBoost": {
+        "name": "1 boost na mesec",
+        "detail": "30 minut na vrhu pri ljudeh v bližini."
+      },
+      "priorityLikes": {
+        "name": "Prednostni všečki",
+        "detail": "Tvoj všeček vidijo pred drugimi."
+      },
+      "sentLikes": {
+        "name": "Poslani všečki",
+        "detail": "Koga si všečkal/a v zadnjih 7 dneh."
+      },
+      "tonight": {
+        "name": "Nocoj, kadar koli",
+        "detail": "Pokaži, da imaš čas še nocoj."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super všeček",
+      "tonight": "Nocoj"
+    },
+    "cities": {
+      "praha": "Praga",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzen",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Dunaj",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Tako si to predstavljam. Na kraju samem lahko karkoli zavrnem – in enako velja za drugo osebo.",
+    "notice": "Zavedam se: privolitev velja le tukaj in zdaj. „Ne“, „stop“, varnostna beseda, molk, otrplost ali pijanost niso privolitev. Dogovor v aplikaciji nikogar ne odvezuje odgovornosti.",
+    "deterrence": "Vsi na F*app imajo preverjeno identiteto. Ob sumu kaznivega dejanja jo predamo policiji."
+  },
+  "welcome": {
+    "tagline": "Seks brez ovinkarjenja.",
+    "taglineStrong": "Le s privolitvijo obeh.",
+    "createAccount": "Ustvari račun",
+    "signIn": "Prijava",
+    "adultsOnly": "Samo za 18+. Vsi tukaj imajo preverjeno identiteto."
+  },
+  "agreement": {
+    "title": "Dogovor",
+    "titleWithName": "Dogovor · {name}",
+    "timeFormatError": "Čas vnesi kot HH:MM, npr. 21:00.",
+    "revokedByPartnerTitle": "{name} je preklical/a dogovor",
+    "revokedByPartnerSubtitle": "Nov dogovor lahko zdaj začne le {name}.",
+    "revokedTitle": "Dogovor je bil preklican",
+    "revokedSubtitle": "Lahko začneš novega.",
+    "newTitle": "Nov dogovor",
+    "newSubtitle": "Vsak izpolni svoj del posebej. Videla bosta le to, v čemer se ujemata.",
+    "logisticsChangedTitle": "Spreminjaš čas, kraj ali pravila",
+    "logisticsChangedSubtitle": "{name} jih bo moral/a znova potrditi.",
+    "confirmedTitle": "Dogovor sta izpolnila oba",
+    "confirmedSubtitle": "Na kraju samem se lahko kadar koli premislita.",
+    "myPartDoneTitle": "Tvoj del je končan",
+    "myPartDoneSubtitle": "{name} še ni izpolnil/a ali potrdil/a.",
+    "partnerFilledTitle": "{name} je izpolnil/a svoj del",
+    "partnerFilledSubtitle": "Izpolni svojega – videla bosta le ujemanje.",
+    "fillTitle": "Izpolni svoj del",
+    "fillSubtitle": "Videla bosta le to, v čemer se ujemata.",
+    "overlapTitle": "V čem se ujemata",
+    "overlapNone": "Zaenkrat brez ujemanja.",
+    "overlapYes": "Oba želita",
+    "overlapMaybe": "Mogoče – dogovorita se na kraju samem",
+    "partnerNote": "{name}: „{note}“",
+    "overlapHint": "Česar eden od vaju noče, ne vidi nihče – niti tega, kdo tega ni želel.",
+    "wishesLabel": "Česa si želim",
+    "wishesHint": "{name} vidi le ujemanje. Tvojega „ne“ ne vidi nihče.",
+    "wishesHintNoName": "Druga oseba vidi le ujemanje.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Moje meje (vidi jih tudi druga oseba)",
+    "notePlaceholder": "Npr. brez fotografiranja, najprej se želim spoznati.",
+    "logisticsLabel": "Praktične stvari – veljajo za oba",
+    "today": "Danes",
+    "tomorrow": "Jutri",
+    "timeLabel": "Čas",
+    "placeLabel": "Kje",
+    "placePlaceholder": "Npr. pri meni, Vinohrady",
+    "safewordLabel": "Varnostna beseda",
+    "safewordPlaceholder": "Beseda, ki ustavi vse",
+    "condom": "Vedno s kondomom",
+    "sober": "Trezna",
+    "soberHint": "Pijanost ni privolitev.",
+    "publicFirst": "Najprej se dobiva na javnem mestu",
+    "publicFirstHint": "Kavarna ali bar – ali bosta nadaljevala, se odločita osebno.",
+    "partnerMayShare": "{name} lahko med zmenkom deli tvoje ime, fotografijo in kraj zmenka s svojo zaupno osebo.",
+    "saveAndConfirm": "Shrani in potrdi",
+    "startMeetup": "Začni zmenek",
+    "revoke": "Prekliči dogovor",
+    "revokeConfirmTitle": "Želiš preklicati dogovor?",
+    "revokeConfirmMessage": "Zmenka ne bo. Ničesar ti ni treba pojasnjevati – {name} dobi le obvestilo."
+  },
+  "meetup": {
+    "title": "Zmenek · {name}",
+    "fakeCallerDefault": "Mami",
+    "endedTitle": "Zmenek končan",
+    "endedMessage": "{name} je dobil/a sporočilo, da si v redu.",
+    "sosFailed": "Alarma ni bilo mogoče poslati: {error} Poskusi znova ali pokliči: {name}.",
+    "needAgreementTitle": "Najprej dokončaj dogovor",
+    "needAgreementSubtitle": "Zmenek lahko začneš, ko dogovor izpolnita in potrdita oba.",
+    "needAgreementAction": "Dogovor",
+    "setupTitle": "Nastavi varnost",
+    "setupSubtitle": "Zaupno osebo, PIN in PIN v sili.",
+    "setupAction": "Nastavi",
+    "pointTrusted": "{name} dobi SMS s povezavo. Vidi, kje si, s kom in ali si v redu.",
+    "pointTrustedNoName": "Tvoja zaupna oseba dobi SMS s povezavo. Vidi, kje si, s kom in ali si v redu.",
+    "pointCheckIn": "V rednih presledkih s PIN-om potrdiš, da si v redu. Če se ne javiš, pošljemo opozorilo – tudi če se ti izprazni telefon.",
+    "pointDuress": "PIN v sili je videti povsem enako kot običajni, a tiho sproži alarm.",
+    "pointPartner": "{name} vidi, da imaš vklopljen varnostni način in da tvoja zaupna oseba ve, kje in s kom si. Nič več – ne alarma ne lokacije.",
+    "intervalLabel": "Potrjujem, da sem v redu, vsakih",
+    "minutes": "{count} min",
+    "start": "Začni zmenek",
+    "locationVisibleTo": "Lokacijo vidi {name}",
+    "bgLocationTitle": "Lokacija le pri odprti aplikaciji",
+    "bgLocationSubtitle": "Dostop do lokacije nastavi na „Vedno“, da bo vidna tudi pri ugasnjenem zaslonu.",
+    "bgLocationAction": "Nastavitve",
+    "nextCheckIn": "Naslednje javljanje čez",
+    "checkIn": "Javljanje",
+    "now": "zdaj",
+    "imOk": "V redu sem",
+    "overdueHint": "{name} je dobil/a opozorilo. S PIN-om potrdi, da si v redu.",
+    "graceHint": {
+      "one": "Če se ne javiš do {count} minute po roku, {name} dobi opozorilo s tvojo lokacijo.",
+      "two": "Če se ne javiš do {count} minut po roku, {name} dobi opozorilo s tvojo lokacijo.",
+      "few": "Če se ne javiš do {count} minut po roku, {name} dobi opozorilo s tvojo lokacijo.",
+      "other": "Če se ne javiš do {count} minut po roku, {name} dobi opozorilo s tvojo lokacijo."
+    },
+    "partnerSafetyOn": "{name} ima tudi vklopljen varnostni način – zaupna oseba ve, kje in s kom je.",
+    "partnerSafetyOff": "{name} nima vklopljenega varnostnega načina.",
+    "fakeCall": "Lažni klic",
+    "fakeCallIn": "Klic čez {count} s",
+    "fakeCallHint": "Lažni klic ti bo čez {count} s zazvonil kot pravi klic – izgovor, da lahko odideš.",
+    "shareLink": "Pošlji povezavo",
+    "sos": "SOS – pridrži",
+    "revoke": "Prekliči dogovor",
+    "end": "Končaj zmenek",
+    "sosSentTitle": "Alarm poslan",
+    "sosSentBody": "{trusted} je dobil/a tvojo natančno lokacijo in podatek, s kom si. {partner} ne vidi ničesar.",
+    "sosMistake": "Bila je pomota – v redu sem",
+    "sosHide": "Skrij (alarm ostane vklopljen)",
+    "pinTitle": "Potrdi s PIN-om",
+    "pinSubtitleOk": "Da si v redu.",
+    "pinSubtitleEnd": "Da je zmenek končan in si v redu.",
+    "revokeConfirmTitle": "Želiš preklicati dogovor?",
+    "revokeConfirmMessage": "{name} dobi obvestilo. Ničesar ti ni treba pojasnjevati. Varnostni način teče naprej, dokler ga ne končaš."
+  },
+  "feedback": {
+    "title": "Kako je bilo na zmenku?",
+    "privacy": "Odgovor vidi le naša ekipa – {name} ga ne vidi nikoli. Pomaga nam, da tukaj ostanejo ljudje, ki spoštujejo meje.",
+    "privacyNoName": "Odgovor vidi le naša ekipa – druga oseba ga ne vidi nikoli. Pomaga nam, da tukaj ostanejo ljudje, ki spoštujejo meje.",
+    "allGood": "Vse je bilo v redu",
+    "somethingWrong": "Nekaj ni bilo v redu",
+    "detailsLabel": "Kaj se je zgodilo? (neobvezno)",
+    "preserve": "Ohrani zapis zmenka za morebitno prijavo policiji. Sicer se dogovor po 48 urah izbriše.",
+    "suspendNotice": "Če te kdo ni spoštoval ali si v nevarnosti, račun takoj začasno ustavimo in zadevo preverimo.",
+    "send": "Pošlji",
+    "helpTitle": "Žal nam je",
+    "helpIntro": "Zadevo bomo preverili, račun druge osebe pa smo do preverjanja začasno ustavili. Ni se ti treba takoj odločiti, kaj naprej – in nič od tega ni tvoja krivda.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Linija pomoči žrtvam kaznivih dejanj – Bílý kruh bezpečí",
+        "detail": "Ves čas dosegljiva, brezplačna, lahko ohraniš anonimnost."
+      },
+      "police": {
+        "name": "Češka policija",
+        "detail": "Če želiš dejanje prijaviti – tudi pozneje."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Pomoč ljudem, ki so doživeli spolno nasilje."
+      }
+    },
+    "helpLocal": {
+      "name": "Kje poiskati pomoč",
+      "detail": "Obrni se na lokalno policijo ali lokalno linijo pomoči za žrtve kaznivih dejanj in spolnega nasilja."
+    },
+    "medical": "Če se je zgodilo kaj proti tvoji volji, čim prej poišči zdravniško pomoč – tudi zaradi preprečevanja nosečnosti in okužb, saj nekatera zdravila delujejo le do 72 ur. Sledi je mogoče zavarovati, če se še ne stuširaš in shraniš oblačila. A nič od tega ni pogoj – prijaviš lahko tudi pozneje.",
+    "preserved": "Zapis zmenka (dogovor, sporočila, alarme) smo ohranili, če bi ga potreboval/a za policijo.",
+    "backToApp": "Nazaj v aplikacijo"
+  },
+  "report": {
+    "title": "Prijavi",
+    "intro": "Prijava je anonimna. Hkrati to osebo blokiramo, tako da se ne bosta več videla.",
+    "introWithName": "{name}. Prijava je anonimna. Hkrati to osebo blokiramo, tako da se ne bosta več videla.",
+    "detailsLabel": "Podrobnosti (neobvezno)",
+    "submit": "Prijavi",
+    "thanksTitle": "Hvala",
+    "thanksMessage": "Prijavo smo prejeli. Ne bosta se več videla."
+  },
+  "chat": {
+    "unavailable": "Klepet ni na voljo",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km od tebe",
+    "reportOrBlock": "Prijavi ali blokiraj",
+    "photo": "Fotografija",
+    "photoBlurred": "Zamegljena fotografija, tapni za prikaz",
+    "tapToReveal": "Tapni za prikaz",
+    "sendPhoto": "Pošlji fotografijo",
+    "message": "Sporočilo",
+    "messagePlaceholder": "Napiši sporočilo…",
+    "send": "Pošlji",
+    "report": "Prijavi",
+    "block": "Blokiraj",
+    "unmatch": "Prekliči ujemanje",
+    "blockConfirmTitle": "Želiš blokirati?",
+    "blockConfirmMessage": "Ti in {name} se ne bosta več videla, klepet pa bo izginil."
+  },
+  "safetySettings": {
+    "title": "Varnost in zasebnost",
+    "trustedLabel": "Zaupna oseba",
+    "trustedHint": "Ko začneš zmenek, ji pošljemo SMS s povezavo do tvoje lokacije. Opozorimo jo, če se ne javiš ali sprožiš alarm.",
+    "nameLabel": "Ime",
+    "namePlaceholder": "Npr. Petra",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+386 41 123 456",
+    "pinsLabel": "PIN in PIN v sili",
+    "pinsHint": "S PIN-om med zmenkom potrjuješ, da si v redu. PIN v sili je videti povsem enako, a tiho pošlje alarm – uporabi ga, če te kdo sili, da aplikaciji sporočiš, da je vse v redu.",
+    "checkinPinLabel": "PIN (4–6 števk)",
+    "duressPinLabel": "PIN v sili (drugačen od PIN-a)",
+    "passwordLabel": "Geslo računa (za spremembo PIN-ov)",
+    "pinsSet": "PIN-a sta nastavljena",
+    "change": "Spremeni",
+    "privacyLabel": "Zasebnost",
+    "appLock": "Zaklepanje aplikacije",
+    "appLockHint": "Face ID, prstni odtis ali koda telefona ob vsakem odprtju.",
+    "discreet": "Diskretni način",
+    "discreetHint": "Nevtralna ikona in obvestila brez vsebine – nihče ne ugotovi, za katero aplikacijo gre.",
+    "save": "Shrani"
+  },
+  "tabs": {
+    "discover": "Odkrivaj",
+    "matches": "Sporočila",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Ostal ti je {count} všeček.",
+      "two": "Ostala sta ti {count} všečka.",
+      "few": "Ostali so ti {count} všečki.",
+      "other": "Ostalo ti je {count} všečkov."
+    },
+    "boostRunningUntil": "Boost teče do {time}.",
+    "tonight": "Nocoj",
+    "tonightOn": "Nocoj – vklopljeno",
+    "boost": "Boost",
+    "boostOn": "Boost teče",
+    "searchSettings": "Nastavitve iskanja",
+    "traveling": "Na potovanju",
+    "travelingIn": "Na potovanju · {city}",
+    "change": "Spremeni",
+    "enableLocation": "Dovoli lokacijo",
+    "addPhoto": "Dodaj fotografijo",
+    "retry": "Poskusi znova",
+    "empty": "V bližini trenutno ni nikogar več. Poskusi pozneje ali razširi iskanje.",
+    "refresh": "Osveži",
+    "nextPhoto": "Naslednja fotografija",
+    "stampLike": "HOČEM",
+    "stampNope": "NE",
+    "superLikedYou": "Super všeček zate",
+    "distance": "{km} km od tebe",
+    "rewind": "Razveljavi zadnji poteg",
+    "pass": "Preskoči",
+    "superLike": "Super všeček",
+    "like": "Všečkaj",
+    "boostSheet": {
+      "title": "Želiš vklopiti boost?",
+      "messageMonthly": "30 minut boš na vrhu pri ljudeh v bližini. Porabi se mesečni boost iz naročnine.",
+      "messageCredits": "30 minut boš na vrhu pri ljudeh v bližini. Ostalo ti je še {count}×.",
+      "confirm": "Vklopi boost",
+      "done": "Boost teče – 30 minut si na vrhu."
+    },
+    "tonightSheet": {
+      "title": "Želiš vklopiti „Nocoj“?",
+      "message": "Do 6.00 zjutraj boš pri ljudeh v bližini višje in z oznako „Nocoj“. Izklopiš lahko kadar koli.",
+      "messageCredits": "Do 6.00 zjutraj boš pri ljudeh v bližini višje in z oznako „Nocoj“. Izklopiš lahko kadar koli. Ostalo ti je še {count}×.",
+      "confirm": "Vklopi",
+      "done": "„Nocoj“ je vklopljeno do 6.00."
+    },
+    "tonightOffSheet": {
+      "title": "„Nocoj“ je vklopljeno",
+      "message": "Velja do {time}.",
+      "confirm": "Izklopi",
+      "done": "„Nocoj“ je izklopljeno."
+    }
+  },
+  "matches": {
+    "title": "Sporočila",
+    "agreement": {
+      "pending": "Dogovor čaka",
+      "confirmed": "Dogovor potrjen",
+      "revoked": "Dogovor preklican"
+    },
+    "likes": "Všečki",
+    "likedBy": {
+      "one": "{count} oseba te je všečkala",
+      "two": "{count} osebi sta te všečkali",
+      "few": "{count} osebe so te všečkale",
+      "other": "{count} oseb te je všečkalo"
+    },
+    "likedByLocked": {
+      "one": "{count} oseba te je všečkala – poglej jo z Gold",
+      "two": "{count} osebi sta te všečkali – poglej ju z Gold",
+      "few": "{count} osebe so te všečkale – poglej jih z Gold",
+      "other": "{count} oseb te je všečkalo – poglej jih z Gold"
+    },
+    "likesHint": "Kdo je všečkal tebe in koga ti",
+    "empty": "Zaenkrat še ni ujemanj. Drsaj naprej – ko bosta drug drugemu všeč, se oseba prikaže tukaj.",
+    "lastMessageMine": "Ti: {text}",
+    "newMatch": "Novo ujemanje – pošlji prvo sporočilo."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Shranjujem…",
+    "saved": "Shranjeno",
+    "done": "Končano",
+    "suspended": {
+      "title": "Račun je začasno ustavljen",
+      "subtitle": "Preverjamo prijavo. Varnostni način ti še vedno deluje."
+    },
+    "photoA11y": "Fotografija – pridrži za izbris",
+    "addPhoto": "Dodaj fotografijo",
+    "photoHint": "Brez golote – fotografije morajo ustrezati pravilom trgovin z aplikacijami. Pridrži fotografijo, da jo izbrišeš.",
+    "name": "Ime",
+    "bio": "O meni",
+    "bioPlaceholder": "Nekaj stavkov o sebi.",
+    "lookingFor": "Kaj iščem",
+    "safety": {
+      "title": "Varnost in zasebnost",
+      "trusted": "Zaupna oseba: {name}",
+      "setup": "Nastavi zaupno osebo in PIN.",
+      "edit": "Uredi"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold in Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Neomejeni všečki, kdo te je všečkal, boost in več.",
+      "validUntil": "Velja do {date}.",
+      "upgrade": "Nadgradi",
+      "manage": "Upravljaj"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Vidijo te le tisti, ki jih všečkaš. (Plus)"
+    },
+    "travel": {
+      "label": "Na potovanju (Plus)",
+      "home": "Doma",
+      "hint": "Drsaj v drugem mestu že pred potovanjem – ljudje tam te bodo videli z oznako „Na potovanju“."
+    },
+    "showMe": "Koga mi prikaži",
+    "ageFrom": "Starost od",
+    "ageTo": "Starost do",
+    "distance": "Razdalja",
+    "distanceSuffix": " km",
+    "save": "Shrani profil",
+    "language": {
+      "title": "Jezik",
+      "device": "Kot v telefonu",
+      "rtlHint": "Pri jezikih, ki se pišejo od desne proti levi, se postavitev obrne šele po ponovnem zagonu aplikacije."
+    },
+    "signOut": "Odjava",
+    "deletePassword": "Geslo za izbris računa",
+    "deleteForever": "Trajno izbriši račun",
+    "deleteAccount": "Izbriši račun",
+    "removePhoto": {
+      "title": "Želiš izbrisati fotografijo?",
+      "confirm": "Izbriši"
+    }
+  },
+  "premium": {
+    "title": "Naročnina",
+    "free": {
+      "title": "F*app je zdaj brezplačen",
+      "body": "Plačljive funkcije vklopimo pozneje. Varnost – preverjanje, dogovor, varnostni način in SOS – bo vedno ostala brezplačna."
+    },
+    "back": "Nazaj",
+    "done": "Končano",
+    "continue": "Nadaljuj",
+    "reason": {
+      "likeLimitAt": "Zmanjkalo ti je všečkov. Novi pridejo ob {time}.",
+      "likeLimit": "Zmanjkalo ti je všečkov. Novi pridejo kmalu.",
+      "noCredit": "{credit} je na voljo enkratno ali z naročnino.",
+      "upgrade": "To je del F*app {plan}."
+    },
+    "oneOff": "Enkratno",
+    "owned": "imaš {count}",
+    "creditDetail": {
+      "boost": "30 minut na vrhu pri ljudeh v bližini.",
+      "superlike": "Oseba bo videla, da ti je res mar.",
+      "tonight": "Do 6.00 zjutraj višje in z oznako „Nocoj“."
+    },
+    "buyCredit": "Kupi {amount}× {credit} za {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Imaš dodaten boost.",
+        "two": "Imaš {count}× dodaten boost.",
+        "few": "Imaš {count}× dodaten boost.",
+        "other": "Imaš {count}× dodaten boost."
+      },
+      "superlike": {
+        "one": "Imaš dodaten super všeček.",
+        "two": "Imaš {count}× dodaten super všeček.",
+        "few": "Imaš {count}× dodaten super všeček.",
+        "other": "Imaš {count}× dodaten super všeček."
+      },
+      "tonight": {
+        "one": "Imaš dodaten „Nocoj“.",
+        "two": "Imaš {count}× dodaten „Nocoj“.",
+        "few": "Imaš {count}× dodaten „Nocoj“.",
+        "other": "Imaš {count}× dodaten „Nocoj“."
+      }
+    },
+    "currentPlan": "Imaš F*app {plan}",
+    "validUntil": "Velja do {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Drsaj brez omejitev in vrni pomotoma zavrnjen profil.",
+      "gold": "Poglej, kdo te je všečkal – in ujemanje ustvari z enim dotikom.",
+      "platinum": "Tvoj všeček vidijo prvi. In „Nocoj“ kadar koli."
+    },
+    "featureIncluded": "{feature}: vključeno",
+    "featureNotIncluded": "{feature}: ni vključeno",
+    "months": {
+      "one": "{count} mesec",
+      "two": "{count} meseca",
+      "few": "{count} meseci",
+      "other": "{count} mesecev"
+    },
+    "perMonth": "na mesec",
+    "perMonthSave": "na mesec · −{percent} %",
+    "continueWithPrice": "Nadaljuj · {price}",
+    "planBought": {
+      "one": "Imaš F*app {plan}.",
+      "two": "Imaš F*app {plan} za {count} meseca.",
+      "few": "Imaš F*app {plan} za {count} mesece.",
+      "other": "Imaš F*app {plan} za {count} mesecev."
+    },
+    "renewal": "Naročnina se samodejno podaljšuje, prekličeš jo lahko kadar koli v nastavitvah App Store ali Google Play. Cena je za vse enaka.",
+    "renewalUpfront": "Plačaš {total} naenkrat ({monthly} na mesec). Naročnina se samodejno podaljšuje, prekličeš jo lahko kadar koli v nastavitvah App Store ali Google Play. Cena je za vse enaka.",
+    "safetyFree": {
+      "title": "Varnost je vedno brezplačna",
+      "subtitle": "Preverjanje, dogovor, varnostni način, SOS in prijave."
+    },
+    "devNote": "Prototip: nič se ne zaračuna, nakup je le simuliran."
+  },
+  "likes": {
+    "title": "Všečki",
+    "received": "Všečkali so te",
+    "receivedCount": "Všečkali so te · {count}",
+    "sent": "Poslani",
+    "emptyReceived": "Zaenkrat ni novih všečkov.",
+    "superLike": "Super všeček",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} oseba te je všečkala",
+      "two": "{count} osebi sta te všečkali",
+      "few": "{count} osebe so te všečkale",
+      "other": "{count} oseb te je všečkalo"
+    },
+    "lockedEmpty": "Tukaj se bodo prikazali tvoji všečki",
+    "goldText": "Z F*app Gold vidiš, kdo so, in ujemanje ustvariš z enim dotikom.",
+    "goldCta": "Poglej z Gold",
+    "emptySent": "V zadnjih 7 dneh ni všečkov brez ujemanja.",
+    "superLikePending": "Super všeček · čaka",
+    "pending": "Čaka na odgovor",
+    "sentTitle": "Koga si všečkal/a",
+    "platinumText": "S F*app Platinum vidiš svoje všečke iz zadnjih 7 dni.",
+    "platinumCta": "Poglej s Platinum",
+    "likeBack": "Všečkaj nazaj",
+    "pass": "Preskoči"
+  },
+  "match": {
+    "title": "Ujemata se!",
+    "body": "Ti in {name} se želita.\nNapiši in se dogovorita, česa si želita.",
+    "sendMessage": "Napiši sporočilo",
+    "keepDiscovering": "Odkrivaj naprej"
+  },
+  "login": {
+    "title": "Prijava",
+    "email": "E-pošta",
+    "password": "Geslo",
+    "submit": "Prijava"
+  },
+  "register": {
+    "title": "Ustvari račun",
+    "name": "Ime (vidijo ga drugi)",
+    "email": "E-pošta",
+    "password": "Geslo (vsaj 10 znakov)",
+    "birthdate": "Datum rojstva",
+    "birthdatePlaceholder": "DD. MM. LLLL",
+    "birthdateInvalid": "Datum rojstva vnesi kot DD. MM. LLLL.",
+    "iAm": "Sem",
+    "showMe": "Koga mi prikaži",
+    "confirmAdult": "Imam 18 let ali več.",
+    "acceptRules": "Strinjam se s pravili skupnosti in z obdelavo svojih podatkov, vključno s podatki o spolnem življenju, da lahko F*app deluje.",
+    "verifyNote": "Takoj nato preverimo tvojo identiteto in starost (dokument in selfie). Dokumenta ne shranjujemo.",
+    "continue": "Nadaljuj"
+  },
+  "verify": {
+    "title": "Potrdi, da si to ti",
+    "intro": "Vsak na F*app ima preverjeno identiteto in starost. Fotografiraš dokument in narediš selfie – traja približno dve minuti.",
+    "privacy": "Dokumenta in fotografij ne shranjujemo. Ohranimo le rezultat preverjanja in datum rojstva. Kdor krši pravila, se ne more vrniti z novim računom.",
+    "pending": {
+      "title": "Čakamo na rezultat preverjanja",
+      "subtitle": "Običajno traja nekaj minut.",
+      "refresh": "Osveži"
+    },
+    "declined": "Preverjanje ni uspelo",
+    "devApprove": "Simuliraj uspešno preverjanje (testni način)",
+    "retry": "Poskusi znova",
+    "start": "Preveri identiteto",
+    "signOut": "Odjava"
+  },
+  "common": {
+    "back": "Nazaj",
+    "cancel": "Prekliči",
+    "close": "Zapri",
+    "save": "Shrani",
+    "retry": "Poskusi znova",
+    "continue": "Nadaljuj",
+    "done": "Končano",
+    "send": "Pošlji",
+    "delete": "Izbriši",
+    "edit": "Uredi",
+    "open": "Odpri",
+    "show": "Prikaži",
+    "confirm": "Potrdi",
+    "errorGeneric": "Nekaj je šlo narobe."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} ima vklopljen varnostni način",
+    "partnerSafetySubtitle": "Zaupna oseba ve, kje in s kom je.",
+    "meetupTitle": "Zmenek poteka",
+    "meetupSubtitle": "Varnostni način je vklopljen.",
+    "missingTitle": "Dogovora še ni",
+    "missingSubtitle": "Vsak izpolni, česa si želi – videla bosta le ujemanje.",
+    "fill": "Izpolni",
+    "revokedByMeTitle": "Preklical/a si dogovor",
+    "revokedByPartnerTitle": "{name} je preklical/a dogovor",
+    "revokedSubtitle": "Zmenka ne bo.",
+    "revokedCooldownSubtitle": "Zmenka ne bo. Nov dogovor lahko začne le {name}.",
+    "newAgreement": "Nov dogovor",
+    "confirmedTitle": "Dogovor je končan",
+    "confirmedSubtitle": "Na kraju samem se lahko kadar koli premislita.",
+    "partnerFilledTitle": "{name} je izpolnil/a dogovor",
+    "waitingForYouTitle": "Dogovor čaka nate",
+    "fillYoursSubtitle": "Izpolni, česa si želiš – videla bosta le ujemanje.",
+    "partnerPendingTitle": "{name} še ni izpolnil/a",
+    "partnerPendingSubtitle": "Dogovor bo končan, ko ga izpolnita oba."
+  },
+  "fakeCall": {
+    "incoming": "mobilni…",
+    "hangUp": "Prekini",
+    "decline": "Zavrni",
+    "accept": "Sprejmi"
+  },
+  "homeBanners": {
+    "meetupTitle": "Zmenek poteka · {name}",
+    "missedCheckIn": "Zamudil/a si javljanje!",
+    "safetyOn": "Varnostni način je vklopljen.",
+    "feedbackTitle": "Kako je bilo na zmenku?",
+    "feedbackSubtitle": "{name} – odgovor vidi le naša ekipa.",
+    "feedbackAction": "Odgovori"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "Vnesena {count} števka",
+      "two": "Vneseni {count} števki",
+      "few": "Vnesene {count} števke",
+      "other": "Vnesenih {count} števk"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, manj",
+    "stepperIncrease": "{label}, več"
+  },
+  "api": {
+    "offline": "Povezava s strežnikom ni uspela. Preveri povezavo."
+  },
+  "billing": {
+    "storeNotConnected": "Nakupi prek App Store in Google Play še niso povezani."
+  },
+  "notifications": {
+    "channelName": "Obvestila",
+    "reminderDiscreet": "Opomnik",
+    "checkInTitle": "Čas za javljanje",
+    "checkInBody": "S PIN-om potrdi, da si v redu.",
+    "fakeCallBody": "Dohodni klic"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Deljenje lokacije je vklopljeno",
+    "notificationBody": "Izklopiš ga v aplikaciji."
+  },
+  "appLock": {
+    "prompt": "Odkleni F*app",
+    "lockedTitle": "Aplikacija je zaklenjena",
+    "lockedBody": "Odkleni jo s Face ID, prstnim odtisom ali kodo telefona.",
+    "sosHold": "SOS – pritisni in pridrži",
+    "unlock": "Odkleni",
+    "sosSentTitle": "Alarm poslan",
+    "sosSentBody": "{name} je dobil/a opozorilo s tvojo lokacijo.",
+    "sosSentBodyNoName": "Zaupna oseba je dobila opozorilo s tvojo lokacijo.",
+    "sosFailedTitle": "Pošiljanje ni uspelo"
+  },
+  "native": {
+    "locationWhenInUse": "F*app potrebuje tvojo lokacijo, da ti pokaže ljudi v bližini in jo med zmenkom deli s tvojo zaupno osebo.",
+    "locationAlways": "Med zmenkom F*app deli tvojo lokacijo z zaupno osebo tudi pri ugasnjenem zaslonu. Zunaj zmenkov lokacije v ozadju ne uporablja.",
+    "faceId": "F*app se odklepa s Face ID, da vanj ne pogleda nihče drug.",
+    "photos": "Izberi fotografije za profil.",
+    "camera": "Fotografiraj se za profil."
+  }
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "name": "F*app",
+  "subtitle": "Kör anlaşma ve güvenlik",
+  "promotionalText": "Doğrulanmış yetişkinler için rahat buluşmalar. Kör anlaşma, güvendiğin kişi, check-in'ler ve SOS. Güvenlik her zaman ücretsiz.",
+  "description": "F*app, rahat buluşmalar arayan ve bunların anlaşmalı ve güvenli olmasını isteyen yetişkinler için bir tanışma uygulamasıdır.\n\nDOĞRULANMIŞ İNSANLAR\nHerkes kimlik belgesi ve selfie ile doğrulanır. Herkes olduğunu söylediği kişidir ve yasak yalnızca hesaba değil, kişiye uygulanır. Kimliğini saklamıyoruz.\n\nKÖR ANLAŞMA\nHer biriniz neye var olduğunu ayrı ayrı işaretler: evet, belki ya da hayır. İkiniz de yalnızca ortak noktalarınızı görürsünüz – kimse karşısındakinin “hayır”ını görmez. Yer, prezervatif, ayıklık ve güvenli kelime de önceden kararlaştırılır. Rıza yalnızca burada ve şimdi geçerlidir ve orada her şeye hayır diyebilirsin.\n\nGÜVENLİK MODU\n• Güvendiğin kişi, konumunu ve buluşmanın durumunu gösteren bir bağlantı alır.\n• PIN ile check-in – check-in yapmazsan sunucumuz, telefonunun şarjı bitmiş olsa bile SMS gönderir.\n• Düğmeyi basılı tutarak SOS.\n• Normal PIN'inle tamamen aynı görünen ama sessizce alarm veren bir acil durum PIN'i.\n• Ayrılmak için bahane olarak sahte arama.\n\nGİZLİLİK\nGöze batmayan simge, içeriksiz bildirimler, yüz veya parmak izi kilidi, konum bilgisi olmayan fotoğraflar. Mesajlar şifrelenir ve anlaşmanın ayrıntıları buluşmadan sonra silinir.\n\nBULUŞMADAN SONRA\nNasıl geçtiğine dair özel bir soru – karşındaki kişi cevabını asla görmez. Sınırı aşan dışarıda.\n\nYalnızca 18+.",
+  "keywords": "tanışma,buluşma,doğrulanmış,güvenlik,rıza,rahat,eşleşme,yetişkin,gizli,randevu",
+  "whatsNew": "F*app'in ilk sürümü. Doğrulama, kör anlaşma ve güvenlik modu.",
+  "screenshot1": "Yakındaki doğrulanmış insanlar",
+  "screenshot2": "Yalnızca eşleşeni görürsün",
+  "screenshot3": "Biri nerede olduğunu biliyor",
+  "screenshot4": "Normal görünen bir acil durum PIN'i",
+  "screenshot5": "Güvenlik her zaman ücretsiz"
+}

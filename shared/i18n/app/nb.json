@@ -1,1 +1,677 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Mann",
+      "woman": "Kvinne",
+      "nonbinary": "Ikke-binær"
+    },
+    "gendersPlural": {
+      "man": "Menn",
+      "woman": "Kvinner",
+      "nonbinary": "Ikke-binære"
+    },
+    "tags": {
+      "oneoff": "Én gang",
+      "repeat": "Igjen og igjen",
+      "myplace": "Hos meg",
+      "yourplace": "Hos deg",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Kyssing og kos",
+      "oral": "Oralt",
+      "vaginal": "Vaginalt",
+      "anal": "Analt",
+      "toys": "Leketøy",
+      "overnight": "Overnatting"
+    },
+    "wishes": {
+      "yes": "Ja",
+      "maybe": "Kanskje",
+      "no": "Nei"
+    },
+    "reportReasons": {
+      "consent": "Brøt samtykke eller grenser",
+      "violence": "Vold eller trusler",
+      "minor": "Mistanke om mindreårig",
+      "harassment": "Trakassering",
+      "fake": "Falsk profil",
+      "paid": "Tilbyr betalte tjenester",
+      "other": "Annet"
+    },
+    "feedbackReasons": {
+      "consent": "Respekterte ikke grenser eller «stopp»",
+      "safety": "Jeg følte meg truet",
+      "fake": "Så ikke ut som på bildene",
+      "other": "Noe annet"
+    },
+    "plans": {
+      "free": "Gratis",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Ubegrensede likes",
+        "detail": "Sveip så mye du vil."
+      },
+      "rewind": {
+        "name": "Angre sveip",
+        "detail": "Hent tilbake en profil du avviste ved en feil."
+      },
+      "travel": {
+        "name": "Reisemodus",
+        "detail": "Sveip i en annen by før reisen."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Bare de du liker, kan se deg."
+      },
+      "seeLikes": {
+        "name": "Se hvem som liker deg",
+        "detail": "Se alle som har likt deg."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes i uka",
+        "detail": "Vis noen at du virkelig er interessert."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost i måneden",
+        "detail": "30 minutter på toppen hos folk i nærheten."
+      },
+      "priorityLikes": {
+        "name": "Prioriterte likes",
+        "detail": "Liken din blir sett før andres."
+      },
+      "sentLikes": {
+        "name": "Sendte likes",
+        "detail": "Hvem du har likt de siste 7 dagene."
+      },
+      "tonight": {
+        "name": "I kveld – når som helst",
+        "detail": "Vis at du har tid i kveld."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "I kveld"
+    },
+    "cities": {
+      "praha": "Praha",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Wien",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Sånn ser jeg det for meg. Når vi er der, kan jeg si nei til hva som helst – og det kan den andre også.",
+    "notice": "Jeg forstår: Samtykke gjelder bare her og nå. «Nei», «stopp», stoppordet, stillhet, å fryse til eller å være full er ikke samtykke. En avtale i appen fritar ingen fra ansvar.",
+    "deterrence": "Alle på F*app har en verifisert identitet. Ved mistanke om en straffbar handling gir vi den videre til politiet."
+  },
+  "welcome": {
+    "tagline": "Sex uten dikkedarer.",
+    "taglineStrong": "Bare når dere begge sier ja.",
+    "createAccount": "Opprett konto",
+    "signIn": "Logg inn",
+    "adultsOnly": "Kun for 18+. Alle her har en verifisert identitet."
+  },
+  "agreement": {
+    "title": "Avtale",
+    "titleWithName": "Avtale · {name}",
+    "timeFormatError": "Skriv klokkeslettet som TT:MM, f.eks. 21:00.",
+    "revokedByPartnerTitle": "{name} har avbrutt avtalen",
+    "revokedByPartnerSubtitle": "Bare {name} kan starte en ny avtale nå.",
+    "revokedTitle": "Avtalen ble avbrutt",
+    "revokedSubtitle": "Du kan starte en ny.",
+    "newTitle": "Ny avtale",
+    "newSubtitle": "Dere fyller ut hver deres del separat. Dere ser bare det dere er enige om.",
+    "logisticsChangedTitle": "Du endrer tid, sted eller regler",
+    "logisticsChangedSubtitle": "{name} må bekrefte dem på nytt.",
+    "confirmedTitle": "Dere har begge fylt ut avtalen",
+    "confirmedSubtitle": "Når dere er der, kan dere begge ombestemme dere når som helst.",
+    "myPartDoneTitle": "Din del er ferdig",
+    "myPartDoneSubtitle": "{name} har ikke fylt ut eller bekreftet ennå.",
+    "partnerFilledTitle": "{name} har fylt ut sin del",
+    "partnerFilledSubtitle": "Fyll ut din – dere ser bare det dere er enige om.",
+    "fillTitle": "Fyll ut din del",
+    "fillSubtitle": "Dere ser bare det dere er enige om.",
+    "overlapTitle": "Dette er dere enige om",
+    "overlapNone": "Ingenting felles ennå.",
+    "overlapYes": "Dere vil begge",
+    "overlapMaybe": "Kanskje – det snakker dere om når dere er der",
+    "partnerNote": "{name}: «{note}»",
+    "overlapHint": "Det den ene av dere ikke vil, ser ingen – heller ikke hvem det var.",
+    "wishesLabel": "Dette har jeg lyst på",
+    "wishesHint": "{name} ser bare det dere er enige om. Ingen ser ditt «nei».",
+    "wishesHintNoName": "Den andre ser bare det dere er enige om.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Mine grenser (den andre ser dem også)",
+    "notePlaceholder": "F.eks. ingen bilder, jeg vil bli kjent med deg først.",
+    "logisticsLabel": "Det praktiske – gjelder for dere begge",
+    "today": "I dag",
+    "tomorrow": "I morgen",
+    "timeLabel": "Tid",
+    "placeLabel": "Hvor",
+    "placePlaceholder": "F.eks. hjemme hos meg, Vinohrady",
+    "safewordLabel": "Stoppord",
+    "safewordPlaceholder": "Et ord som stopper alt",
+    "condom": "Alltid kondom",
+    "sober": "Edru",
+    "soberHint": "Å være full er ikke samtykke.",
+    "publicFirst": "Vi møtes først på et offentlig sted",
+    "publicFirstHint": "En kafé eller bar – om dere fortsetter, bestemmer dere ansikt til ansikt.",
+    "partnerMayShare": "Under daten kan {name} dele navnet ditt, bildet ditt og møtestedet med sin tillitsperson.",
+    "saveAndConfirm": "Lagre og bekreft",
+    "startMeetup": "Start daten",
+    "revoke": "Avbryt avtalen",
+    "revokeConfirmTitle": "Avbryte avtalen?",
+    "revokeConfirmMessage": "Daten blir ikke noe av. Du trenger ikke forklare noe – {name} får bare et varsel."
+  },
+  "meetup": {
+    "title": "Date · {name}",
+    "fakeCallerDefault": "Mamma",
+    "endedTitle": "Daten er avsluttet",
+    "endedMessage": "{name} har fått beskjed om at du er ok.",
+    "sosFailed": "Alarmen kunne ikke sendes: {error} Prøv igjen eller ring {name}.",
+    "needAgreementTitle": "Fullfør avtalen først",
+    "needAgreementSubtitle": "Du kan starte daten når dere begge har fylt ut og bekreftet avtalen.",
+    "needAgreementAction": "Avtale",
+    "setupTitle": "Sett opp sikkerheten din",
+    "setupSubtitle": "En tillitsperson, en pinkode og en nødpinkode.",
+    "setupAction": "Sett opp",
+    "pointTrusted": "{name} får en SMS med en lenke og ser hvor du er, hvem du er med, og om du er ok.",
+    "pointTrustedNoName": "Tillitspersonen din får en SMS med en lenke og ser hvor du er, hvem du er med, og om du er ok.",
+    "pointCheckIn": "Med jevne mellomrom bekrefter du med pinkoden at du er ok. Hvis du ikke sjekker inn, sender vi et varsel – selv om telefonen din går tom for strøm.",
+    "pointDuress": "Nødpinkoden ser helt lik ut som den vanlige, men slår stille alarm.",
+    "pointPartner": "{name} ser at du har sikkerhetsmodus på, og at tillitspersonen din vet hvor og med hvem du er. Ikke noe mer – verken alarmen eller posisjonen din.",
+    "intervalLabel": "Bekreft at jeg er ok hvert",
+    "minutes": "{count} min",
+    "start": "Start daten",
+    "locationVisibleTo": "{name} ser posisjonen din",
+    "bgLocationTitle": "Posisjon bare når appen er åpen",
+    "bgLocationSubtitle": "Sett posisjonstilgang til «Alltid», så den vises også når skjermen er av.",
+    "bgLocationAction": "Innstillinger",
+    "nextCheckIn": "Neste innsjekking om",
+    "checkIn": "Innsjekking",
+    "now": "nå",
+    "imOk": "Jeg er ok",
+    "overdueHint": "{name} har fått et varsel. Bekreft med pinkoden at du er ok.",
+    "graceHint": {
+      "one": "Hvis du ikke sjekker inn innen {count} minutt etter avtalt tid, får {name} et varsel med posisjonen din.",
+      "other": "Hvis du ikke sjekker inn innen {count} minutter etter avtalt tid, får {name} et varsel med posisjonen din."
+    },
+    "partnerSafetyOn": "{name} har også sikkerhetsmodus på – en tillitsperson vet hvor daten er og med hvem.",
+    "partnerSafetyOff": "{name} har ikke sikkerhetsmodus på.",
+    "fakeCall": "Falsk anrop",
+    "fakeCallIn": "Anrop om {count} s",
+    "fakeCallHint": "Om {count} s ringer det falske anropet akkurat som et ekte – unnskyldningen din for å gå.",
+    "shareLink": "Send lenke",
+    "sos": "SOS – hold inne",
+    "revoke": "Avbryt avtalen",
+    "end": "Avslutt daten",
+    "sosSentTitle": "Alarm sendt",
+    "sosSentBody": "{trusted} har fått den nøyaktige posisjonen din og vet hvem du er med. {partner} ser ingenting.",
+    "sosMistake": "Det var en feil – jeg er ok",
+    "sosHide": "Skjul (alarmen fortsetter)",
+    "pinTitle": "Bekreft med pinkoden",
+    "pinSubtitleOk": "At du er ok.",
+    "pinSubtitleEnd": "At daten er over, og at du er ok.",
+    "revokeConfirmTitle": "Avbryte avtalen?",
+    "revokeConfirmMessage": "{name} får et varsel. Du trenger ikke forklare noe. Sikkerhetsmodus fortsetter til du avslutter den."
+  },
+  "feedback": {
+    "title": "Hvordan gikk daten?",
+    "privacy": "Bare teamet vårt ser svaret ditt – {name} gjør det aldri. Det hjelper oss å holde dette et sted for folk som respekterer grenser.",
+    "privacyNoName": "Bare teamet vårt ser svaret ditt – den andre gjør det aldri. Det hjelper oss å holde dette et sted for folk som respekterer grenser.",
+    "allGood": "Alt var i orden",
+    "somethingWrong": "Noe var ikke i orden",
+    "detailsLabel": "Hva skjedde? (valgfritt)",
+    "preserve": "Lagre opplysningene om daten i tilfelle du må gå til politiet. Ellers slettes avtalen etter 48 timer.",
+    "suspendNotice": "Hvis noen ikke respekterte deg, eller du er i fare, suspenderer vi kontoen med en gang og undersøker saken.",
+    "send": "Send",
+    "helpTitle": "Det er vi lei for",
+    "helpIntro": "Vi undersøker saken og har suspendert den andres konto mens vi ser på den. Du trenger ikke bestemme nå hva du vil gjøre videre – og ingenting av dette er din skyld.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Hjelpetelefon for ofre for kriminalitet – Bílý kruh bezpečí",
+        "detail": "Døgnåpen, gratis, og du kan være anonym."
+      },
+      "police": {
+        "name": "Tsjekkisk politi",
+        "detail": "Hvis du vil anmelde det – også senere."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Støtte til personer som har opplevd seksuell vold."
+      }
+    },
+    "helpLocal": {
+      "name": "Her kan du få hjelp",
+      "detail": "Kontakt det lokale politiet eller en lokal hjelpetelefon for ofre for kriminalitet og seksuell vold."
+    },
+    "medical": "Hvis noe har skjedd mot din vilje, søk medisinsk hjelp så snart du kan – også for å forebygge graviditet og infeksjoner, siden noen medisiner bare virker innen 72 timer. Spor kan fortsatt sikres hvis du ikke har dusjet ennå og tar vare på klærne dine. Men ingenting av dette er et krav – du kan også anmelde det senere.",
+    "preserved": "Vi har lagret opplysningene om daten (avtale, meldinger, alarmer) i tilfelle du trenger dem til politiet.",
+    "backToApp": "Tilbake til appen"
+  },
+  "report": {
+    "title": "Rapporter",
+    "intro": "Rapporten din er anonym. Vi blokkerer også personen for deg, så dere ikke ser hverandre mer.",
+    "introWithName": "{name}. Rapporten din er anonym. Vi blokkerer også personen for deg, så dere ikke ser hverandre mer.",
+    "detailsLabel": "Detaljer (valgfritt)",
+    "submit": "Rapporter",
+    "thanksTitle": "Takk",
+    "thanksMessage": "Vi har mottatt rapporten din. Dere ser ikke hverandre mer."
+  },
+  "chat": {
+    "unavailable": "Chatten er ikke tilgjengelig",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km unna",
+    "reportOrBlock": "Rapporter eller blokker",
+    "photo": "Bilde",
+    "photoBlurred": "Uskarpt bilde, trykk for å vise",
+    "tapToReveal": "Trykk for å vise",
+    "sendPhoto": "Send bilde",
+    "message": "Melding",
+    "messagePlaceholder": "Skriv en melding…",
+    "send": "Send",
+    "report": "Rapporter",
+    "block": "Blokker",
+    "unmatch": "Fjern match",
+    "blockConfirmTitle": "Blokkere?",
+    "blockConfirmMessage": "Du og {name} ser ikke hverandre mer, og chatten forsvinner."
+  },
+  "safetySettings": {
+    "title": "Sikkerhet og personvern",
+    "trustedLabel": "Tillitsperson",
+    "trustedHint": "Når du starter en date, sender vi personen en SMS med en lenke til posisjonen din. Vi varsler personen hvis du ikke sjekker inn eller slår alarm.",
+    "nameLabel": "Navn",
+    "namePlaceholder": "F.eks. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+47 412 34 567",
+    "pinsLabel": "Pinkode og nødpinkode",
+    "pinsHint": "Under en date bekrefter du med pinkoden at du er ok. Nødpinkoden ser helt lik ut, men sender en stille alarm – bruk den hvis noen tvinger deg til å fortelle appen at alt er i orden.",
+    "checkinPinLabel": "Pinkode (4–6 sifre)",
+    "duressPinLabel": "Nødpinkode (en annen enn pinkoden)",
+    "passwordLabel": "Kontopassord (for å endre pinkoder)",
+    "pinsSet": "Pinkodene er satt opp",
+    "change": "Endre",
+    "privacyLabel": "Personvern",
+    "appLock": "Applås",
+    "appLockHint": "Face ID, fingeravtrykk eller telefonens kode hver gang du åpner appen.",
+    "discreet": "Diskret modus",
+    "discreetHint": "Et nøytralt ikon og varsler uten innhold – ingen kan se hvilken app det er.",
+    "save": "Lagre"
+  },
+  "tabs": {
+    "discover": "Utforsk",
+    "matches": "Meldinger",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "{count} like igjen.",
+      "other": "{count} likes igjen."
+    },
+    "boostRunningUntil": "Boost er aktiv til {time}.",
+    "tonight": "I kveld",
+    "tonightOn": "I kveld – på",
+    "boost": "Boost",
+    "boostOn": "Boost er aktiv",
+    "searchSettings": "Søkeinnstillinger",
+    "traveling": "På reise",
+    "travelingIn": "På reise · {city}",
+    "change": "Endre",
+    "enableLocation": "Tillat posisjon",
+    "addPhoto": "Legg til bilde",
+    "retry": "Prøv igjen",
+    "empty": "Det er ingen flere i nærheten akkurat nå. Prøv igjen senere eller utvid søket ditt.",
+    "refresh": "Oppdater",
+    "nextPhoto": "Neste bilde",
+    "stampLike": "JA",
+    "stampNope": "NEI",
+    "superLikedYou": "Ga deg en Super Like",
+    "distance": "{km} km unna",
+    "rewind": "Angre siste sveip",
+    "pass": "Hopp over",
+    "superLike": "Super Like",
+    "like": "Lik",
+    "boostSheet": {
+      "title": "Starte en Boost?",
+      "messageMonthly": "Du ligger på toppen hos folk i nærheten i 30 minutter. Dette bruker den månedlige Boosten fra abonnementet ditt.",
+      "messageCredits": "Du ligger på toppen hos folk i nærheten i 30 minutter. Du har {count}× igjen.",
+      "confirm": "Start Boost",
+      "done": "Boost er aktiv – du ligger på toppen i 30 minutter."
+    },
+    "tonightSheet": {
+      "title": "Slå på «I kveld»?",
+      "message": "Til kl. 06.00 havner du høyere opp hos folk i nærheten og vises med merket «I kveld». Du kan slå det av når som helst.",
+      "messageCredits": "Til kl. 06.00 havner du høyere opp hos folk i nærheten og vises med merket «I kveld». Du kan slå det av når som helst. Du har {count}× igjen.",
+      "confirm": "Slå på",
+      "done": "I kveld er på til kl. 06.00."
+    },
+    "tonightOffSheet": {
+      "title": "«I kveld» er på",
+      "message": "Aktiv til {time}.",
+      "confirm": "Slå av",
+      "done": "I kveld er slått av."
+    }
+  },
+  "matches": {
+    "title": "Meldinger",
+    "agreement": {
+      "pending": "Avtale venter",
+      "confirmed": "Avtale bekreftet",
+      "revoked": "Avtale avbrutt"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} person har likt deg",
+      "other": "{count} personer har likt deg"
+    },
+    "likedByLocked": {
+      "one": "{count} person har likt deg – se hvem med Gold",
+      "other": "{count} personer har likt deg – se hvem med Gold"
+    },
+    "likesHint": "Hvem som har likt deg, og hvem du har likt",
+    "empty": "Ingen matcher ennå. Fortsett å sveipe – når dere begge liker hverandre, dukker de opp her.",
+    "lastMessageMine": "Du: {text}",
+    "newMatch": "Ny match – send den første meldingen."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Lagrer…",
+    "saved": "Lagret",
+    "done": "Ferdig",
+    "suspended": {
+      "title": "Kontoen din er suspendert",
+      "subtitle": "Vi undersøker en rapport. Sikkerhetsmodus fungerer fortsatt for deg."
+    },
+    "photoA11y": "Bilde – hold inne for å slette",
+    "addPhoto": "Legg til bilde",
+    "photoHint": "Ingen nakenhet – bildene må følge reglene til appbutikkene. Hold inne et bilde for å slette det.",
+    "name": "Navn",
+    "bio": "Om meg",
+    "bioPlaceholder": "Noen linjer om deg selv.",
+    "lookingFor": "Jeg ser etter",
+    "safety": {
+      "title": "Sikkerhet og personvern",
+      "trusted": "Tillitsperson: {name}",
+      "setup": "Sett opp en tillitsperson og en pinkode.",
+      "edit": "Rediger"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold og Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Ubegrensede likes, se hvem som har likt deg, Boost og mer.",
+      "validUntil": "Gyldig til {date}.",
+      "upgrade": "Oppgrader",
+      "manage": "Administrer"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Bare de du liker, kan se deg. (Plus)"
+    },
+    "travel": {
+      "label": "Reisemodus (Plus)",
+      "home": "Hjemme",
+      "hint": "Sveip i en annen by før reisen – folk der ser deg med merket «På reise»."
+    },
+    "showMe": "Vis meg",
+    "ageFrom": "Alder fra",
+    "ageTo": "Alder til",
+    "distance": "Avstand",
+    "distanceSuffix": " km",
+    "save": "Lagre profil",
+    "language": {
+      "title": "Språk",
+      "device": "Samme som telefonen",
+      "rtlHint": "For språk som skrives fra høyre mot venstre, snus oppsettet først når du starter appen på nytt."
+    },
+    "signOut": "Logg ut",
+    "deletePassword": "Passord for å slette kontoen din",
+    "deleteForever": "Slett kontoen permanent",
+    "deleteAccount": "Slett konto",
+    "removePhoto": {
+      "title": "Slette bilde?",
+      "confirm": "Slett"
+    }
+  },
+  "premium": {
+    "title": "Abonnement",
+    "free": {
+      "title": "F*app er gratis inntil videre",
+      "body": "Betalte funksjoner slår vi på senere. Sikkerhet – verifisering, avtaler, sikkerhetsmodus og SOS – forblir alltid gratis."
+    },
+    "back": "Tilbake",
+    "done": "Ferdig",
+    "continue": "Fortsett",
+    "reason": {
+      "likeLimitAt": "Du er tom for likes. Flere kommer kl. {time}.",
+      "likeLimit": "Du er tom for likes. Flere kommer snart.",
+      "noCredit": "{credit} fås som enkeltkjøp eller med et abonnement.",
+      "upgrade": "Dette er en del av F*app {plan}."
+    },
+    "oneOff": "Enkeltkjøp",
+    "owned": "du har {count}",
+    "creditDetail": {
+      "boost": "30 minutter på toppen hos folk i nærheten.",
+      "superlike": "Personen ser at du virkelig er interessert.",
+      "tonight": "Høyere opp til kl. 06.00, med merket «I kveld»."
+    },
+    "buyCredit": "Kjøp {amount}× {credit} for {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Du har fått en ekstra Boost.",
+        "other": "Du har fått {count} ekstra Boosts."
+      },
+      "superlike": {
+        "one": "Du har fått en ekstra Super Like.",
+        "other": "Du har fått {count} ekstra Super Likes."
+      },
+      "tonight": {
+        "one": "Du har fått en ekstra «I kveld».",
+        "other": "Du har fått {count} ekstra «I kveld»."
+      }
+    },
+    "currentPlan": "Du har F*app {plan}",
+    "validUntil": "Gyldig til {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Sveip uten grenser, og hent tilbake profiler du avviste ved en feil.",
+      "gold": "Se hvem som har likt deg – og match med ett trykk.",
+      "platinum": "Liken din blir sett først. Og «I kveld» når som helst."
+    },
+    "featureIncluded": "{feature}: inkludert",
+    "featureNotIncluded": "{feature}: ikke inkludert",
+    "months": {
+      "one": "{count} måned",
+      "other": "{count} måneder"
+    },
+    "perMonth": "per måned",
+    "perMonthSave": "per måned · −{percent} %",
+    "continueWithPrice": "Fortsett · {price}",
+    "planBought": {
+      "one": "Du har nå F*app {plan}.",
+      "other": "Du har nå F*app {plan} i {count} måneder."
+    },
+    "renewal": "Abonnementet fornyes automatisk. Du kan si det opp når som helst i innstillingene for App Store eller Google Play. Prisen er den samme for alle.",
+    "renewalUpfront": "Du betaler {total} på forhånd ({monthly} i måneden). Abonnementet fornyes automatisk. Du kan si det opp når som helst i innstillingene for App Store eller Google Play. Prisen er den samme for alle.",
+    "safetyFree": {
+      "title": "Sikkerhet er alltid gratis",
+      "subtitle": "Verifisering, avtaler, sikkerhetsmodus, SOS og rapportering."
+    },
+    "devNote": "Prototype: Ingenting belastes, kjøpet er bare simulert."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "Har likt deg",
+    "receivedCount": "Har likt deg · {count}",
+    "sent": "Sendt",
+    "emptyReceived": "Ingen nye likes ennå.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} person har likt deg",
+      "other": "{count} personer har likt deg"
+    },
+    "lockedEmpty": "Likene dine dukker opp her",
+    "goldText": "Med F*app Gold ser du hvem de er, og matcher med ett trykk.",
+    "goldCta": "Se dem med Gold",
+    "emptySent": "Ingen likes uten match de siste 7 dagene.",
+    "superLikePending": "Super Like · venter",
+    "pending": "Venter på svar",
+    "sentTitle": "Hvem du har likt",
+    "platinumText": "Med F*app Platinum ser du likene dine fra de siste 7 dagene.",
+    "platinumCta": "Se dem med Platinum",
+    "likeBack": "Lik tilbake",
+    "pass": "Hopp over"
+  },
+  "match": {
+    "title": "Det er en match!",
+    "body": "Du og {name} vil ha hverandre.\nSi hei og avtal hva dere har lyst på.",
+    "sendMessage": "Send en melding",
+    "keepDiscovering": "Utforsk videre"
+  },
+  "login": {
+    "title": "Logg inn",
+    "email": "E-post",
+    "password": "Passord",
+    "submit": "Logg inn"
+  },
+  "register": {
+    "title": "Opprett konto",
+    "name": "Navn (andre ser det)",
+    "email": "E-post",
+    "password": "Passord (minst 10 tegn)",
+    "birthdate": "Fødselsdato",
+    "birthdatePlaceholder": "DD. MM. ÅÅÅÅ",
+    "birthdateInvalid": "Skriv fødselsdatoen din som DD. MM. ÅÅÅÅ.",
+    "iAm": "Jeg er",
+    "showMe": "Vis meg",
+    "confirmAdult": "Jeg er 18 år eller eldre.",
+    "acceptRules": "Jeg godtar fellesskapets regler og behandlingen av opplysningene mine, inkludert opplysninger om sexlivet mitt, slik at F*app kan fungere.",
+    "verifyNote": "Rett etterpå verifiserer vi identiteten og alderen din (legitimasjon og selfie). Vi lagrer ikke legitimasjonen din.",
+    "continue": "Fortsett"
+  },
+  "verify": {
+    "title": "Bekreft at det er deg",
+    "intro": "Alle på F*app har verifisert identitet og alder. Du tar et bilde av legitimasjonen din og en selfie – det tar omtrent to minutter.",
+    "privacy": "Vi lagrer verken legitimasjonen din eller bildene dine. Vi tar bare vare på resultatet av verifiseringen og fødselsdatoen din. Den som bryter reglene, kan ikke komme tilbake med en ny konto.",
+    "pending": {
+      "title": "Venter på resultatet av verifiseringen",
+      "subtitle": "Det tar vanligvis noen minutter.",
+      "refresh": "Oppdater"
+    },
+    "declined": "Verifiseringen mislyktes",
+    "devApprove": "Simuler vellykket verifisering (testmodus)",
+    "retry": "Prøv igjen",
+    "start": "Verifiser identitet",
+    "signOut": "Logg ut"
+  },
+  "common": {
+    "back": "Tilbake",
+    "cancel": "Avbryt",
+    "close": "Lukk",
+    "save": "Lagre",
+    "retry": "Prøv igjen",
+    "continue": "Fortsett",
+    "done": "Ferdig",
+    "send": "Send",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "open": "Åpne",
+    "show": "Vis",
+    "confirm": "Bekreft",
+    "errorGeneric": "Noe gikk galt."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} har sikkerhetsmodus på",
+    "partnerSafetySubtitle": "En tillitsperson vet hvor daten er og med hvem.",
+    "meetupTitle": "Date pågår",
+    "meetupSubtitle": "Sikkerhetsmodus er på.",
+    "missingTitle": "Ingen avtale ennå",
+    "missingSubtitle": "Dere fyller ut hver for dere hva dere har lyst på – dere ser bare hvor dere matcher.",
+    "fill": "Fyll ut",
+    "revokedByMeTitle": "Du har avbrutt avtalen",
+    "revokedByPartnerTitle": "{name} har avbrutt avtalen",
+    "revokedSubtitle": "Daten blir ikke noe av.",
+    "revokedCooldownSubtitle": "Daten blir ikke noe av. Bare {name} kan starte en ny avtale.",
+    "newAgreement": "Ny avtale",
+    "confirmedTitle": "Avtalen er klar",
+    "confirmedSubtitle": "Når dere er der, kan dere begge ombestemme dere når som helst.",
+    "partnerFilledTitle": "{name} har fylt ut avtalen",
+    "waitingForYouTitle": "Avtalen venter på deg",
+    "fillYoursSubtitle": "Fyll ut hva du har lyst på – dere ser bare hvor dere matcher.",
+    "partnerPendingTitle": "{name} har ikke fylt ut ennå",
+    "partnerPendingSubtitle": "Avtalen er klar når dere begge har fylt den ut."
+  },
+  "fakeCall": {
+    "incoming": "mobil…",
+    "hangUp": "Legg på",
+    "decline": "Avvis",
+    "accept": "Svar"
+  },
+  "homeBanners": {
+    "meetupTitle": "Date pågår · {name}",
+    "missedCheckIn": "Du gikk glipp av en innsjekking!",
+    "safetyOn": "Sikkerhetsmodus er på.",
+    "feedbackTitle": "Hvordan gikk daten?",
+    "feedbackSubtitle": "{name} – bare teamet vårt ser svaret ditt.",
+    "feedbackAction": "Svar"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} siffer tastet inn",
+      "other": "{count} sifre tastet inn"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, mindre",
+    "stepperIncrease": "{label}, mer"
+  },
+  "api": {
+    "offline": "Kunne ikke koble til serveren. Sjekk tilkoblingen din."
+  },
+  "billing": {
+    "storeNotConnected": "Kjøp via App Store og Google Play er ikke satt opp ennå."
+  },
+  "notifications": {
+    "channelName": "Varsler",
+    "reminderDiscreet": "Påminnelse",
+    "checkInTitle": "På tide å sjekke inn",
+    "checkInBody": "Bekreft med pinkoden at du er ok.",
+    "fakeCallBody": "Innkommende anrop"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Posisjonsdeling er på",
+    "notificationBody": "Du kan stoppe den i appen."
+  },
+  "appLock": {
+    "prompt": "Lås opp F*app",
+    "lockedTitle": "Appen er låst",
+    "lockedBody": "Lås den opp med Face ID, fingeravtrykket ditt eller telefonens kode.",
+    "sosHold": "SOS – trykk og hold",
+    "unlock": "Lås opp",
+    "sosSentTitle": "Alarm sendt",
+    "sosSentBody": "{name} har fått et varsel med posisjonen din.",
+    "sosSentBodyNoName": "Tillitspersonen din har fått et varsel med posisjonen din.",
+    "sosFailedTitle": "Kunne ikke sende"
+  },
+  "native": {
+    "locationWhenInUse": "F*app trenger posisjonen din for å vise deg folk i nærheten og for å dele den med tillitspersonen din under en date.",
+    "locationAlways": "Under en date deler F*app posisjonen din med tillitspersonen din, også når skjermen er av. Utenom dater bruker appen ikke posisjonen din i bakgrunnen.",
+    "faceId": "F*app bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
+    "photos": "Velg bilder til profilen din.",
+    "camera": "Ta et bilde av deg selv til profilen din."
+  }
+}

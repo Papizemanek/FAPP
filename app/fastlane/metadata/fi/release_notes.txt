@@ -1,0 +1,1 @@
+F*app-sovelluksen ensimmäinen versio. Vahvistus, sokkosopimus ja turvatila.

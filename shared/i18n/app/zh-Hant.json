@@ -1,1 +1,666 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "男性",
+      "woman": "女性",
+      "nonbinary": "非二元性別"
+    },
+    "gendersPlural": {
+      "man": "男性",
+      "woman": "女性",
+      "nonbinary": "非二元性別者"
+    },
+    "tags": {
+      "oneoff": "一次性",
+      "repeat": "可以多次",
+      "myplace": "在我家",
+      "yourplace": "在你家",
+      "vanilla": "常規",
+      "kinky": "另類"
+    },
+    "activities": {
+      "kissing": "親吻和擁抱",
+      "oral": "口交",
+      "vaginal": "陰道性交",
+      "anal": "肛交",
+      "toys": "情趣玩具",
+      "overnight": "過夜"
+    },
+    "wishes": {
+      "yes": "可以",
+      "maybe": "也許",
+      "no": "不要"
+    },
+    "reportReasons": {
+      "consent": "違背同意或越界",
+      "violence": "暴力或威脅",
+      "minor": "疑似未成年",
+      "harassment": "騷擾",
+      "fake": "假個人檔案",
+      "paid": "提供付費服務",
+      "other": "其他"
+    },
+    "feedbackReasons": {
+      "consent": "不尊重界線或「停」",
+      "safety": "我覺得不安全",
+      "fake": "和照片不一樣",
+      "other": "其他情況"
+    },
+    "plans": {
+      "free": "免費",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "無限喜歡",
+        "detail": "想滑多少就滑多少。"
+      },
+      "rewind": {
+        "name": "復原",
+        "detail": "找回不小心滑掉的個人檔案。"
+      },
+      "travel": {
+        "name": "旅行模式",
+        "detail": "出發前就在另一個城市滑卡。"
+      },
+      "incognito": {
+        "name": "隱身模式",
+        "detail": "只有你喜歡的人看得到你。"
+      },
+      "seeLikes": {
+        "name": "看看誰喜歡你",
+        "detail": "看到所有喜歡你的人。"
+      },
+      "weeklySuperLikes": {
+        "name": "每週 5 個超級喜歡",
+        "detail": "讓對方知道你真的很有興趣。"
+      },
+      "monthlyBoost": {
+        "name": "每月 1 次加速",
+        "detail": "在附近的人之中置頂 30 分鐘。"
+      },
+      "priorityLikes": {
+        "name": "優先喜歡",
+        "detail": "你的喜歡會比別人先被看到。"
+      },
+      "sentLikes": {
+        "name": "送出的喜歡",
+        "detail": "你最近 7 天喜歡過的人。"
+      },
+      "tonight": {
+        "name": "隨時「今晚」",
+        "detail": "讓大家知道你今晚有空。"
+      }
+    },
+    "credits": {
+      "boost": "加速",
+      "superlike": "超級喜歡",
+      "tonight": "今晚"
+    },
+    "cities": {
+      "praha": "布拉格",
+      "brno": "布爾諾",
+      "ostrava": "俄斯特拉發",
+      "plzen": "皮爾森",
+      "liberec": "利貝雷茨",
+      "olomouc": "奧洛穆克",
+      "budejovice": "捷克布傑約維采",
+      "hradec": "赫拉德茨-克拉洛韋",
+      "bratislava": "布拉提斯拉瓦",
+      "viden": "維也納",
+      "berlin": "柏林"
+    }
+  },
+  "consent": {
+    "intent": "這是我的想法。到了現場，我可以拒絕任何事——對方也一樣。",
+    "notice": "我了解：同意只在此時此地有效。「不」、「停」、安全詞、沉默、身體僵住或酒醉，都不是同意。App 裡的約定不會免除任何人的責任。",
+    "deterrence": "F*app 上的每個人都通過身分驗證。如果我們懷疑有犯罪行為，會將其身分資料移交警方。"
+  },
+  "welcome": {
+    "tagline": "性，不拐彎抹角。",
+    "taglineStrong": "只在雙方都同意時。",
+    "createAccount": "建立帳號",
+    "signIn": "登入",
+    "adultsOnly": "僅限 18 歲以上。這裡的每個人都通過身分驗證。"
+  },
+  "agreement": {
+    "title": "約定",
+    "titleWithName": "約定 · {name}",
+    "timeFormatError": "請以 HH:MM 格式輸入時間，例如 21:00。",
+    "revokedByPartnerTitle": "{name} 取消了約定",
+    "revokedByPartnerSubtitle": "現在只有 {name} 可以發起新的約定。",
+    "revokedTitle": "約定已取消",
+    "revokedSubtitle": "你可以發起新的約定。",
+    "newTitle": "新約定",
+    "newSubtitle": "你們各自分開填寫自己的部分。你們只會看到雙方一致的內容。",
+    "logisticsChangedTitle": "你正在變更時間、地點或規則",
+    "logisticsChangedSubtitle": "{name} 需要重新確認。",
+    "confirmedTitle": "你們都填好約定了",
+    "confirmedSubtitle": "到了現場，你們任何一方都可以隨時改變主意。",
+    "myPartDoneTitle": "你的部分已完成",
+    "myPartDoneSubtitle": "{name} 還沒有填寫或確認。",
+    "partnerFilledTitle": "{name} 已填好自己的部分",
+    "partnerFilledSubtitle": "填寫你的部分——你們只會看到雙方一致的內容。",
+    "fillTitle": "填寫你的部分",
+    "fillSubtitle": "你們只會看到雙方一致的內容。",
+    "overlapTitle": "你們一致的內容",
+    "overlapNone": "目前還沒有一致的內容。",
+    "overlapYes": "你們都想要",
+    "overlapMaybe": "也許——到現場再商量",
+    "partnerNote": "{name}：「{note}」",
+    "overlapHint": "一方不想要的內容，誰都看不到——連是誰不想要也看不到。",
+    "wishesLabel": "我想要的",
+    "wishesHint": "{name} 只會看到你們一致的內容。你的「不要」誰都看不到。",
+    "wishesHintNoName": "對方只會看到你們一致的內容。",
+    "wishA11y": "{activity}：{wish}",
+    "noteLabel": "我的界線（對方也看得到）",
+    "notePlaceholder": "例如：不拍照，我想先互相認識一下。",
+    "logisticsLabel": "實際安排——雙方都適用",
+    "today": "今天",
+    "tomorrow": "明天",
+    "timeLabel": "時間",
+    "placeLabel": "地點",
+    "placePlaceholder": "例如：我家，信義區",
+    "safewordLabel": "安全詞",
+    "safewordPlaceholder": "一個能讓一切停下來的詞",
+    "condom": "全程使用保險套",
+    "sober": "保持清醒",
+    "soberHint": "酒醉不是同意。",
+    "publicFirst": "先在公共場所見面",
+    "publicFirstHint": "咖啡廳或酒吧——見面後再決定要不要繼續。",
+    "partnerMayShare": "約會期間，{name} 可以把你的名字、照片和見面地點分享給對方信任的人。",
+    "saveAndConfirm": "儲存並確認",
+    "startMeetup": "開始約會",
+    "revoke": "取消約定",
+    "revokeConfirmTitle": "要取消約定嗎？",
+    "revokeConfirmMessage": "約會將取消。你不需要解釋任何事——{name} 只會收到一則通知。"
+  },
+  "meetup": {
+    "title": "約會 · {name}",
+    "fakeCallerDefault": "媽媽",
+    "endedTitle": "約會已結束",
+    "endedMessage": "{name} 已收到你平安的訊息。",
+    "sosFailed": "警報傳送失敗：{error} 請再試一次或打電話給 {name}。",
+    "needAgreementTitle": "請先完成約定",
+    "needAgreementSubtitle": "你們都填寫並確認約定後，才能開始約會。",
+    "needAgreementAction": "約定",
+    "setupTitle": "設定你的安全保障",
+    "setupSubtitle": "信任的人、PIN 碼和緊急 PIN 碼。",
+    "setupAction": "設定",
+    "pointTrusted": "{name} 會收到一則附連結的簡訊，可以看到你在哪裡、和誰在一起、是否平安。",
+    "pointTrustedNoName": "你信任的人會收到一則附連結的簡訊，可以看到你在哪裡、和誰在一起、是否平安。",
+    "pointCheckIn": "你需要定時用 PIN 碼報平安。如果你沒有報平安，我們會發出提醒——即使你的手機沒電了。",
+    "pointDuress": "緊急 PIN 碼看起來和一般 PIN 碼一模一樣，但會悄悄觸發警報。",
+    "pointPartner": "{name} 會看到你開啟了安全模式，以及你信任的人知道你在哪裡、和誰在一起。僅此而已——看不到警報，也看不到你的位置。",
+    "intervalLabel": "報平安間隔",
+    "minutes": "{count} 分鐘",
+    "start": "開始約會",
+    "locationVisibleTo": "{name} 可以看到你的位置",
+    "bgLocationTitle": "僅在開啟 App 時分享位置",
+    "bgLocationSubtitle": "將位置權限設為「永遠」，這樣螢幕關閉時對方也看得到。",
+    "bgLocationAction": "設定",
+    "nextCheckIn": "距下次報平安",
+    "checkIn": "報平安",
+    "now": "現在",
+    "imOk": "我沒事",
+    "overdueHint": "{name} 已收到提醒。請用 PIN 碼確認你沒事。",
+    "graceHint": {
+      "other": "如果你在預定時間後 {count} 分鐘內沒有報平安，{name} 會收到附上你位置的提醒。"
+    },
+    "partnerSafetyOn": "{name} 也開啟了安全模式——對方信任的人知道對方在哪裡、和誰在一起。",
+    "partnerSafetyOff": "{name} 沒有開啟安全模式。",
+    "fakeCall": "假來電",
+    "fakeCallIn": "{count} 秒後來電",
+    "fakeCallHint": "{count} 秒後，假來電會像真的電話一樣響起——給你一個離開的藉口。",
+    "shareLink": "傳送連結",
+    "sos": "SOS – 長按",
+    "revoke": "取消約定",
+    "end": "結束約會",
+    "sosSentTitle": "警報已傳送",
+    "sosSentBody": "{trusted} 已收到你的精確位置以及你和誰在一起。{partner} 什麼都看不到。",
+    "sosMistake": "按錯了——我沒事",
+    "sosHide": "隱藏（警報仍然有效）",
+    "pinTitle": "用 PIN 碼確認",
+    "pinSubtitleOk": "確認你沒事。",
+    "pinSubtitleEnd": "確認約會已結束而且你沒事。",
+    "revokeConfirmTitle": "要取消約定嗎？",
+    "revokeConfirmMessage": "{name} 會收到通知。你不需要解釋任何事。安全模式會持續運作，直到你結束它。"
+  },
+  "feedback": {
+    "title": "約會還好嗎？",
+    "privacy": "只有我們的團隊看得到你的回答——{name} 永遠看不到。這能幫助我們讓這裡始終是尊重界線的人的地方。",
+    "privacyNoName": "只有我們的團隊看得到你的回答——對方永遠看不到。這能幫助我們讓這裡始終是尊重界線的人的地方。",
+    "allGood": "一切都很好",
+    "somethingWrong": "有些地方不對勁",
+    "detailsLabel": "發生了什麼事？（選填）",
+    "preserve": "保留約會紀錄，以備你需要報警。否則約定會在 48 小時後刪除。",
+    "suspendNotice": "如果有人不尊重你，或你身處危險，我們會立即停用對方的帳號並進行調查。",
+    "send": "傳送",
+    "helpTitle": "很遺憾發生這樣的事",
+    "helpIntro": "我們會進行調查，並已在審核期間停用對方的帳號。你不必現在就決定接下來怎麼做——而且這一切都不是你的錯。",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "犯罪被害人求助專線 – Bílý kruh bezpečí",
+        "detail": "24 小時、免費，可以匿名。"
+      },
+      "police": {
+        "name": "捷克警方",
+        "detail": "如果你想報案——之後也可以。"
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "為經歷過性暴力的人提供支持。"
+      }
+    },
+    "helpLocal": {
+      "name": "去哪裡求助",
+      "detail": "請聯絡當地警方，或當地為犯罪及性暴力被害人提供協助的求助專線。"
+    },
+    "medical": "如果發生了違背你意願的事，請盡快就醫——這也是為了預防懷孕和感染，有些藥物只在 72 小時內有效。如果你還沒洗澡並保留了衣物，仍然可以採集證據。但這些都不是必要的——你之後也可以報案。",
+    "preserved": "我們已保留約會紀錄（約定、訊息、警報），以備你報警時需要。",
+    "backToApp": "返回 App"
+  },
+  "report": {
+    "title": "檢舉",
+    "intro": "你的檢舉是匿名的。我們也會幫你封鎖對方，你們將不會再看到彼此。",
+    "introWithName": "檢舉 {name}。你的檢舉是匿名的。我們也會幫你封鎖對方，你們將不會再看到彼此。",
+    "detailsLabel": "詳細說明（選填）",
+    "submit": "檢舉",
+    "thanksTitle": "謝謝你",
+    "thanksMessage": "我們已收到你的檢舉。你們將不會再看到彼此。"
+  },
+  "chat": {
+    "unavailable": "無法使用聊天",
+    "nameAge": "{name}，{age}",
+    "distance": "距離你 {km} 公里",
+    "reportOrBlock": "檢舉或封鎖",
+    "photo": "照片",
+    "photoBlurred": "模糊照片，點一下查看",
+    "tapToReveal": "點一下查看",
+    "sendPhoto": "傳送照片",
+    "message": "訊息",
+    "messagePlaceholder": "輸入訊息…",
+    "send": "傳送",
+    "report": "檢舉",
+    "block": "封鎖",
+    "unmatch": "取消配對",
+    "blockConfirmTitle": "要封鎖嗎？",
+    "blockConfirmMessage": "你和 {name} 將不會再看到彼此，聊天也會消失。"
+  },
+  "safetySettings": {
+    "title": "安全與隱私",
+    "trustedLabel": "信任的人",
+    "trustedHint": "當你開始約會時，我們會傳送一則附有你位置連結的簡訊給對方。如果你沒有報平安或觸發了警報，我們會通知對方。",
+    "nameLabel": "名字",
+    "namePlaceholder": "例如：小雨",
+    "phoneLabel": "電話",
+    "phonePlaceholder": "+886 912 345 678",
+    "pinsLabel": "PIN 碼和緊急 PIN 碼",
+    "pinsHint": "約會期間，你用 PIN 碼確認自己沒事。緊急 PIN 碼看起來完全一樣，但會悄悄傳送警報——如果有人強迫你告訴 App 一切正常，就用它。",
+    "checkinPinLabel": "PIN 碼（4–6 位數）",
+    "duressPinLabel": "緊急 PIN 碼（與 PIN 碼不同）",
+    "passwordLabel": "帳號密碼（用於變更 PIN 碼）",
+    "pinsSet": "PIN 碼已設定",
+    "change": "變更",
+    "privacyLabel": "隱私",
+    "appLock": "App 鎖定",
+    "appLockHint": "每次開啟 App 時使用 Face ID、指紋或手機密碼。",
+    "discreet": "低調模式",
+    "discreetHint": "普通的圖示和不顯示內容的通知——沒人看得出這是什麼 App。",
+    "save": "儲存"
+  },
+  "tabs": {
+    "discover": "探索",
+    "matches": "訊息",
+    "profile": "我的"
+  },
+  "discover": {
+    "likesLeft": {
+      "other": "還剩 {count} 個喜歡。"
+    },
+    "boostRunningUntil": "加速進行中，持續到 {time}。",
+    "tonight": "今晚",
+    "tonightOn": "今晚 – 已開啟",
+    "boost": "加速",
+    "boostOn": "加速中",
+    "searchSettings": "搜尋設定",
+    "traveling": "旅行中",
+    "travelingIn": "旅行中 · {city}",
+    "change": "變更",
+    "enableLocation": "允許定位",
+    "addPhoto": "新增照片",
+    "retry": "再試一次",
+    "empty": "附近暫時沒有其他人了。稍後再試，或擴大搜尋範圍。",
+    "refresh": "重新整理",
+    "nextPhoto": "下一張照片",
+    "stampLike": "想要",
+    "stampNope": "不要",
+    "superLikedYou": "超級喜歡你",
+    "distance": "距離你 {km} 公里",
+    "rewind": "復原上一次滑動",
+    "pass": "略過",
+    "superLike": "超級喜歡",
+    "like": "喜歡",
+    "boostSheet": {
+      "title": "要開啟加速嗎？",
+      "messageMonthly": "接下來 30 分鐘，你會在附近的人之中置頂顯示。將使用訂閱方案中的每月加速。",
+      "messageCredits": "接下來 30 分鐘，你會在附近的人之中置頂顯示。你還剩 {count} 次。",
+      "confirm": "開啟加速",
+      "done": "加速已開啟——你將置頂 30 分鐘。"
+    },
+    "tonightSheet": {
+      "title": "要開啟「今晚」嗎？",
+      "message": "早上 6 點前，你在附近的人之中排名更前面，並顯示「今晚」標籤。你可以隨時關閉。",
+      "messageCredits": "早上 6 點前，你在附近的人之中排名更前面，並顯示「今晚」標籤。你可以隨時關閉。你還剩 {count} 次。",
+      "confirm": "開啟",
+      "done": "「今晚」已開啟，持續到早上 6 點。"
+    },
+    "tonightOffSheet": {
+      "title": "「今晚」已開啟",
+      "message": "有效至 {time}。",
+      "confirm": "關閉",
+      "done": "「今晚」已關閉。"
+    }
+  },
+  "matches": {
+    "title": "訊息",
+    "agreement": {
+      "pending": "約定待完成",
+      "confirmed": "約定已確認",
+      "revoked": "約定已取消"
+    },
+    "likes": "喜歡",
+    "likedBy": {
+      "other": "{count} 人喜歡你"
+    },
+    "likedByLocked": {
+      "other": "{count} 人喜歡你——升級 Gold 看看是誰"
+    },
+    "likesHint": "誰喜歡你，你喜歡誰",
+    "empty": "還沒有配對。繼續滑吧——你們互相喜歡後，就會出現在這裡。",
+    "lastMessageMine": "你：{text}",
+    "newMatch": "新配對——傳送第一則訊息吧。"
+  },
+  "profile": {
+    "title": "個人檔案",
+    "saving": "正在儲存…",
+    "saved": "已儲存",
+    "done": "完成",
+    "suspended": {
+      "title": "你的帳號已停用",
+      "subtitle": "我們正在調查一項檢舉。安全模式仍可正常使用。"
+    },
+    "photoA11y": "照片 – 長按刪除",
+    "addPhoto": "新增照片",
+    "photoHint": "禁止裸露——照片必須符合應用程式商店的規範。長按照片即可刪除。",
+    "name": "名字",
+    "bio": "關於我",
+    "bioPlaceholder": "簡單介紹一下自己。",
+    "lookingFor": "我在找",
+    "safety": {
+      "title": "安全與隱私",
+      "trusted": "信任的人：{name}",
+      "setup": "設定信任的人和 PIN 碼。",
+      "edit": "編輯"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus、Gold 和 Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "無限喜歡、看看誰喜歡你、加速等更多功能。",
+      "validUntil": "有效至 {date}。",
+      "upgrade": "升級",
+      "manage": "管理"
+    },
+    "incognito": {
+      "label": "隱身模式",
+      "hint": "只有你喜歡的人看得到你。（Plus）"
+    },
+    "travel": {
+      "label": "旅行模式（Plus）",
+      "home": "所在地",
+      "hint": "出發前就在另一個城市滑卡——那裡的人會看到你帶有「旅行中」標籤。"
+    },
+    "showMe": "想看到",
+    "ageFrom": "最小年齡",
+    "ageTo": "最大年齡",
+    "distance": "距離",
+    "distanceSuffix": " km",
+    "save": "儲存個人檔案",
+    "language": {
+      "title": "語言",
+      "device": "與手機相同",
+      "rtlHint": "對於由右至左書寫的語言，重新啟動 App 後版面才會翻轉。"
+    },
+    "signOut": "登出",
+    "deletePassword": "刪除帳號所需的密碼",
+    "deleteForever": "永久刪除帳號",
+    "deleteAccount": "刪除帳號",
+    "removePhoto": {
+      "title": "要刪除照片嗎？",
+      "confirm": "刪除"
+    }
+  },
+  "premium": {
+    "title": "訂閱",
+    "free": {
+      "title": "F*app 目前免費",
+      "body": "付費功能之後才會推出。安全功能——身分驗證、約定、安全模式和 SOS——將永遠免費。"
+    },
+    "back": "返回",
+    "done": "完成",
+    "continue": "繼續",
+    "reason": {
+      "likeLimitAt": "你的喜歡用完了。{time} 會補充。",
+      "likeLimit": "你的喜歡用完了。很快會補充。",
+      "noCredit": "{credit} 可單次購買，或透過訂閱取得。",
+      "upgrade": "這是 F*app {plan} 的功能。"
+    },
+    "oneOff": "單次購買",
+    "owned": "你有 {count} 個",
+    "creditDetail": {
+      "boost": "在附近的人之中置頂 30 分鐘。",
+      "superlike": "讓對方知道你真的很有興趣。",
+      "tonight": "早上 6 點前排名更前面，並帶有「今晚」標籤。"
+    },
+    "buyCredit": "以 {price} 購買 {amount}× {credit}",
+    "creditBought": {
+      "boost": {
+        "other": "你獲得了 {count} 次額外加速。"
+      },
+      "superlike": {
+        "other": "你獲得了 {count} 個額外超級喜歡。"
+      },
+      "tonight": {
+        "other": "你獲得了 {count} 次額外「今晚」。"
+      }
+    },
+    "currentPlan": "你已擁有 F*app {plan}",
+    "validUntil": "有效至 {date}。",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "無限滑卡，還能找回不小心滑掉的個人檔案。",
+      "gold": "看看誰喜歡你——一鍵配對。",
+      "platinum": "你的喜歡會最先被看到。還能隨時使用「今晚」。"
+    },
+    "featureIncluded": "{feature}：包含",
+    "featureNotIncluded": "{feature}：不包含",
+    "months": {
+      "other": "{count} 個月"
+    },
+    "perMonth": "每月",
+    "perMonthSave": "每月 · −{percent}%",
+    "continueWithPrice": "繼續 · {price}",
+    "planBought": {
+      "other": "你已獲得 {count} 個月的 F*app {plan}。"
+    },
+    "renewal": "訂閱會自動續訂。你可以隨時在 App Store 或 Google Play 設定中取消。價格對所有人都一樣。",
+    "renewalUpfront": "你需要預先支付 {total}（每月 {monthly}）。訂閱會自動續訂。你可以隨時在 App Store 或 Google Play 設定中取消。價格對所有人都一樣。",
+    "safetyFree": {
+      "title": "安全功能永遠免費",
+      "subtitle": "身分驗證、約定、安全模式、SOS 和檢舉。"
+    },
+    "devNote": "原型：不會收費，購買僅為模擬。"
+  },
+  "likes": {
+    "title": "喜歡",
+    "received": "喜歡你的人",
+    "receivedCount": "喜歡你的人 · {count}",
+    "sent": "已送出",
+    "emptyReceived": "還沒有新的喜歡。",
+    "superLike": "超級喜歡",
+    "distance": "{km} 公里",
+    "likedBy": {
+      "other": "{count} 人喜歡你"
+    },
+    "lockedEmpty": "喜歡你的人會顯示在這裡",
+    "goldText": "升級 F*app Gold，看看他們是誰，一鍵配對。",
+    "goldCta": "升級 Gold 查看",
+    "emptySent": "最近 7 天沒有未配對的喜歡。",
+    "superLikePending": "超級喜歡 · 等待中",
+    "pending": "等待回應",
+    "sentTitle": "你喜歡的人",
+    "platinumText": "升級 F*app Platinum，查看你最近 7 天送出的喜歡。",
+    "platinumCta": "升級 Platinum 查看",
+    "likeBack": "也喜歡對方",
+    "pass": "略過"
+  },
+  "match": {
+    "title": "配對成功！",
+    "body": "你和 {name} 都想要對方。\n打個招呼，約定一下你們想做什麼。",
+    "sendMessage": "傳送訊息",
+    "keepDiscovering": "繼續探索"
+  },
+  "login": {
+    "title": "登入",
+    "email": "電子郵件",
+    "password": "密碼",
+    "submit": "登入"
+  },
+  "register": {
+    "title": "建立帳號",
+    "name": "名字（其他人看得到）",
+    "email": "電子郵件",
+    "password": "密碼（至少 10 個字元）",
+    "birthdate": "出生日期",
+    "birthdatePlaceholder": "DD. MM. YYYY",
+    "birthdateInvalid": "請依「日. 月. 年」的順序，以 DD. MM. YYYY 格式輸入出生日期（西元年）。",
+    "iAm": "我是",
+    "showMe": "想看到",
+    "confirmAdult": "我已年滿 18 歲。",
+    "acceptRules": "我同意社群規範，並同意為了讓 F*app 正常運作而處理我的資料，包括與我性生活相關的資料。",
+    "verifyNote": "接下來我們會立即驗證你的身分和年齡（證件和自拍）。我們不會保存你的證件。",
+    "continue": "繼續"
+  },
+  "verify": {
+    "title": "驗證你的身分",
+    "intro": "F*app 上的每個人都通過身分和年齡驗證。你需要拍攝證件和一張自拍——大約需要兩分鐘。",
+    "privacy": "我們不會保存你的證件或照片，只保留驗證結果和你的出生日期。違反規範的人無法用新帳號重新加入。",
+    "pending": {
+      "title": "正在等待驗證結果",
+      "subtitle": "通常需要幾分鐘。",
+      "refresh": "重新整理"
+    },
+    "declined": "驗證失敗",
+    "devApprove": "模擬驗證成功（測試模式）",
+    "retry": "再試一次",
+    "start": "驗證身分",
+    "signOut": "登出"
+  },
+  "common": {
+    "back": "返回",
+    "cancel": "取消",
+    "close": "關閉",
+    "save": "儲存",
+    "retry": "再試一次",
+    "continue": "繼續",
+    "done": "完成",
+    "send": "傳送",
+    "delete": "刪除",
+    "edit": "編輯",
+    "open": "開啟",
+    "show": "查看",
+    "confirm": "確認",
+    "errorGeneric": "發生錯誤。"
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} 開啟了安全模式",
+    "partnerSafetySubtitle": "對方信任的人知道對方在哪裡、和誰在一起。",
+    "meetupTitle": "約會進行中",
+    "meetupSubtitle": "安全模式已開啟。",
+    "missingTitle": "還沒有約定",
+    "missingSubtitle": "你們各自填寫想做的事——只會看到一致的部分。",
+    "fill": "填寫",
+    "revokedByMeTitle": "你取消了約定",
+    "revokedByPartnerTitle": "{name} 取消了約定",
+    "revokedSubtitle": "約會取消了。",
+    "revokedCooldownSubtitle": "約會取消了。只有 {name} 可以發起新的約定。",
+    "newAgreement": "新約定",
+    "confirmedTitle": "約定已完成",
+    "confirmedSubtitle": "到了現場，你們任何一方都可以隨時改變主意。",
+    "partnerFilledTitle": "{name} 填好了約定",
+    "waitingForYouTitle": "約定在等你填寫",
+    "fillYoursSubtitle": "填寫你想做的事——只會看到一致的部分。",
+    "partnerPendingTitle": "{name} 還沒有填寫",
+    "partnerPendingSubtitle": "你們都填寫後，約定才算完成。"
+  },
+  "fakeCall": {
+    "incoming": "手機…",
+    "hangUp": "掛斷",
+    "decline": "拒絕",
+    "accept": "接聽"
+  },
+  "homeBanners": {
+    "meetupTitle": "約會進行中 · {name}",
+    "missedCheckIn": "你錯過了一次報平安！",
+    "safetyOn": "安全模式已開啟。",
+    "feedbackTitle": "約會還好嗎？",
+    "feedbackSubtitle": "{name}——只有我們的團隊會看到你的回答。",
+    "feedbackAction": "回答"
+  },
+  "pinPad": {
+    "entered": {
+      "other": "已輸入 {count} 位數"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}，減少",
+    "stepperIncrease": "{label}，增加"
+  },
+  "api": {
+    "offline": "無法連線到伺服器。請檢查你的網路連線。"
+  },
+  "billing": {
+    "storeNotConnected": "尚未串接 App Store 和 Google Play 的購買功能。"
+  },
+  "notifications": {
+    "channelName": "通知",
+    "reminderDiscreet": "提醒",
+    "checkInTitle": "該報平安了",
+    "checkInBody": "請用 PIN 碼確認你沒事。",
+    "fakeCallBody": "來電"
+  },
+  "safetyTracking": {
+    "notificationTitle": "位置分享已開啟",
+    "notificationBody": "你可以在 App 中停止。"
+  },
+  "appLock": {
+    "prompt": "解鎖 F*app",
+    "lockedTitle": "App 已鎖定",
+    "lockedBody": "使用 Face ID、指紋或手機密碼解鎖。",
+    "sosHold": "SOS – 長按",
+    "unlock": "解鎖",
+    "sosSentTitle": "警報已傳送",
+    "sosSentBody": "{name} 已收到附上你位置的警報。",
+    "sosSentBodyNoName": "你信任的人已收到附上你位置的警報。",
+    "sosFailedTitle": "無法傳送"
+  },
+  "native": {
+    "locationWhenInUse": "F*app 需要使用你的位置，才能顯示附近的人，並在約會期間與你信任的人分享位置。",
+    "locationAlways": "約會期間，即使螢幕關閉，F*app 也會與你信任的人分享你的位置。約會以外的時間，不會在背景使用你的位置。",
+    "faceId": "F*app 使用 Face ID 解鎖，這樣別人就無法查看其中的內容。",
+    "photos": "選擇要用於個人檔案的照片。",
+    "camera": "為個人檔案拍一張自己的照片。"
+  }
+}

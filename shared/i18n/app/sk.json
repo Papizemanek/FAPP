@@ -1,1 +1,699 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Muž",
+      "woman": "Žena",
+      "nonbinary": "Nebinárna osoba"
+    },
+    "gendersPlural": {
+      "man": "Mužov",
+      "woman": "Ženy",
+      "nonbinary": "Nebinárne osoby"
+    },
+    "tags": {
+      "oneoff": "Jednorazovka",
+      "repeat": "Opakovane",
+      "myplace": "U mňa",
+      "yourplace": "U teba",
+      "vanilla": "Vanilka",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Bozkávanie a maznanie",
+      "oral": "Orálny",
+      "vaginal": "Vaginálny",
+      "anal": "Análny",
+      "toys": "Hračky",
+      "overnight": "Prespanie"
+    },
+    "wishes": {
+      "yes": "Áno",
+      "maybe": "Možno",
+      "no": "Nie"
+    },
+    "reportReasons": {
+      "consent": "Porušenie súhlasu alebo hraníc",
+      "violence": "Násilie alebo ohrozenie",
+      "minor": "Podozrenie na maloletú osobu",
+      "harassment": "Obťažovanie",
+      "fake": "Falošný profil",
+      "paid": "Ponúkanie platených služieb",
+      "other": "Iné"
+    },
+    "feedbackReasons": {
+      "consent": "Nerešpektoval/a hranice alebo „stop“",
+      "safety": "Cítil/a som sa v ohrození",
+      "fake": "Nevyzeral/a ako na fotkách",
+      "other": "Niečo iné"
+    },
+    "plans": {
+      "free": "Zadarmo",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Neobmedzené lajky",
+        "detail": "Swipuj, koľko chceš."
+      },
+      "rewind": {
+        "name": "Vrátenie swipu",
+        "detail": "Vráť omylom odmietnutý profil."
+      },
+      "travel": {
+        "name": "Na cestách",
+        "detail": "Swipuj v inom meste ešte pred cestou."
+      },
+      "incognito": {
+        "name": "Inkognito",
+        "detail": "Uvidia ťa len tí, ktorých lajkneš."
+      },
+      "seeLikes": {
+        "name": "Kto ťa lajkol",
+        "detail": "Uvidíš všetkých, ktorí ťa lajkli."
+      },
+      "weeklySuperLikes": {
+        "name": "5 super lajkov týždenne",
+        "detail": "Daj najavo, že o niekoho naozaj stojíš."
+      },
+      "monthlyBoost": {
+        "name": "1 boost mesačne",
+        "detail": "30 minút navrchu u ľudí v okolí."
+      },
+      "priorityLikes": {
+        "name": "Prioritné lajky",
+        "detail": "Tvoj lajk uvidia skôr ako ostatné."
+      },
+      "sentLikes": {
+        "name": "Odoslané lajky",
+        "detail": "Koho si lajkol/a za posledných 7 dní."
+      },
+      "tonight": {
+        "name": "Dnes večer kedykoľvek",
+        "detail": "Ukáž, že máš čas ešte dnes."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super lajk",
+      "tonight": "Dnes večer"
+    },
+    "cities": {
+      "praha": "Praha",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Viedeň",
+      "berlin": "Berlín"
+    }
+  },
+  "consent": {
+    "intent": "Takto si to predstavujem. Na mieste môžem čokoľvek odmietnuť – a to isté platí pre druhého.",
+    "notice": "Beriem na vedomie: súhlas platí len tu a teraz. „Nie“, „stop“, stop slovo, mlčanie, stuhnutie alebo opitosť nie sú súhlas. Dohoda v aplikácii nikoho nezbavuje zodpovednosti.",
+    "deterrence": "Všetci na F*app majú overenú totožnosť. Pri podozrení z trestného činu ju odovzdáme polícii."
+  },
+  "welcome": {
+    "tagline": "Sex bez okolkov.",
+    "taglineStrong": "Len so súhlasom oboch.",
+    "createAccount": "Vytvoriť účet",
+    "signIn": "Prihlásiť sa",
+    "adultsOnly": "Len pre 18+. Každý tu má overenú totožnosť."
+  },
+  "agreement": {
+    "title": "Dohoda",
+    "titleWithName": "Dohoda · {name}",
+    "timeFormatError": "Čas zadaj ako HH:MM, napríklad 21:00.",
+    "revokedByPartnerTitle": "{name} zrušil/a dohodu",
+    "revokedByPartnerSubtitle": "Novú dohodu teraz môže otvoriť len {name}.",
+    "revokedTitle": "Dohoda bola zrušená",
+    "revokedSubtitle": "Môžeš otvoriť novú.",
+    "newTitle": "Nová dohoda",
+    "newSubtitle": "Každý vyplní svoju časť zvlášť. Uvidíte len to, na čom sa zhodnete.",
+    "logisticsChangedTitle": "Meníš čas, miesto alebo pravidlá",
+    "logisticsChangedSubtitle": "{name} ich bude musieť znova potvrdiť.",
+    "confirmedTitle": "Dohodu ste vyplnili obaja",
+    "confirmedSubtitle": "Na mieste sa môžete kedykoľvek rozhodnúť inak.",
+    "myPartDoneTitle": "Tvoja časť je hotová",
+    "myPartDoneSubtitle": "{name} ešte nevyplnil/a alebo nepotvrdil/a.",
+    "partnerFilledTitle": "{name} vyplnil/a svoju časť",
+    "partnerFilledSubtitle": "Vyplň tú svoju – uvidíte len zhodu.",
+    "fillTitle": "Vyplň svoju časť",
+    "fillSubtitle": "Uvidíte len to, na čom sa zhodnete.",
+    "overlapTitle": "Na čom sa zhodnete",
+    "overlapNone": "Zatiaľ žiadna zhoda.",
+    "overlapYes": "Chcete obaja",
+    "overlapMaybe": "Možno – dohodnete sa na mieste",
+    "partnerNote": "{name}: „{note}“",
+    "overlapHint": "Čo jeden z vás nechce, neuvidí nikto – ani to, kto to nechcel.",
+    "wishesLabel": "Na čo mám chuť",
+    "wishesHint": "{name} uvidí len zhodu. Tvoje „nie“ neuvidí nikto.",
+    "wishesHintNoName": "Druhý uvidí len zhodu.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Moje hranice (uvidí ich aj druhý)",
+    "notePlaceholder": "Napr. žiadne fotenie, najprv sa chcem spoznať.",
+    "logisticsLabel": "Praktické veci – platia pre oboch",
+    "today": "Dnes",
+    "tomorrow": "Zajtra",
+    "timeLabel": "Čas",
+    "placeLabel": "Kde",
+    "placePlaceholder": "Napr. u mňa, Vinohrady",
+    "safewordLabel": "Stop slovo",
+    "safewordPlaceholder": "Slovo, ktoré všetko zastaví",
+    "condom": "Vždy kondóm",
+    "sober": "Triezvi",
+    "soberHint": "Opitosť nie je súhlas.",
+    "publicFirst": "Najprv sa stretneme na verejnom mieste",
+    "publicFirstHint": "Kaviareň alebo bar – či pokračovať, rozhodnete osobne.",
+    "partnerMayShare": "{name} môže počas stretnutia zdieľať tvoje meno, fotku a miesto stretnutia so svojou dôveryhodnou osobou.",
+    "saveAndConfirm": "Uložiť a potvrdiť",
+    "startMeetup": "Začať stretnutie",
+    "revoke": "Zrušiť dohodu",
+    "revokeConfirmTitle": "Zrušiť dohodu?",
+    "revokeConfirmMessage": "Stretnutie sa nekoná. Nemusíš nič vysvetľovať – {name} dostane len oznámenie."
+  },
+  "meetup": {
+    "title": "Stretnutie · {name}",
+    "fakeCallerDefault": "Mamina",
+    "endedTitle": "Stretnutie ukončené",
+    "endedMessage": "{name} dostal/a správu, že si v poriadku.",
+    "sosFailed": "Poplach sa nepodarilo odoslať: {error} Skús to znova alebo zavolaj {name}.",
+    "needAgreementTitle": "Najprv hotová dohoda",
+    "needAgreementSubtitle": "Stretnutie sa dá začať, až keď dohodu vyplníte a potvrdíte obaja.",
+    "needAgreementAction": "Dohoda",
+    "setupTitle": "Nastav si bezpečnosť",
+    "setupSubtitle": "Dôveryhodnú osobu, PIN a núdzový PIN.",
+    "setupAction": "Nastaviť",
+    "pointTrusted": "{name} dostane SMS s odkazom. Uvidí, kde si, s kým a či si v poriadku.",
+    "pointTrustedNoName": "Tvoja dôveryhodná osoba dostane SMS s odkazom. Uvidí, kde si, s kým a či si v poriadku.",
+    "pointCheckIn": "V pravidelných intervaloch potvrdíš PIN-om, že si OK. Keď sa neozveš, pošleme upozornenie – aj keby sa ti vybil telefón.",
+    "pointDuress": "Núdzový PIN vyzerá úplne rovnako ako bežný, ale potichu spustí poplach.",
+    "pointPartner": "{name} uvidí, že máš zapnutý bezpečnostný režim a že tvoja dôveryhodná osoba vie, kde a s kým si. Nič viac – ani poplach, ani polohu.",
+    "intervalLabel": "Potvrdzovať, že som OK, každých",
+    "minutes": "{count} min",
+    "start": "Začať stretnutie",
+    "locationVisibleTo": "Polohu vidí {name}",
+    "bgLocationTitle": "Poloha len s otvorenou aplikáciou",
+    "bgLocationSubtitle": "Povoľ polohu „Vždy“, aby ju bolo vidieť aj pri zhasnutom displeji.",
+    "bgLocationAction": "Nastavenia",
+    "nextCheckIn": "Ďalší check-in o",
+    "checkIn": "Check-in",
+    "now": "teraz",
+    "imOk": "Som v poriadku",
+    "overdueHint": "{name} dostal/a upozornenie. Potvrď PIN-om, že si v poriadku.",
+    "graceHint": {
+      "one": "Keď sa do {count} minúty po termíne neozveš, {name} dostane upozornenie s tvojou polohou.",
+      "few": "Keď sa do {count} minút po termíne neozveš, {name} dostane upozornenie s tvojou polohou.",
+      "many": "Keď sa do {count} minúty po termíne neozveš, {name} dostane upozornenie s tvojou polohou.",
+      "other": "Keď sa do {count} minút po termíne neozveš, {name} dostane upozornenie s tvojou polohou."
+    },
+    "partnerSafetyOn": "{name} má tiež zapnutý bezpečnostný režim – jeho/jej dôveryhodná osoba vie, kde a s kým je.",
+    "partnerSafetyOff": "{name} nemá zapnutý bezpečnostný režim.",
+    "fakeCall": "Falošný hovor",
+    "fakeCallIn": "Hovor o {count} s",
+    "fakeCallHint": "Falošný hovor ti o {count} s zazvoní ako bežný hovor – výhovorka, ako odísť.",
+    "shareLink": "Poslať odkaz",
+    "sos": "SOS – podrž",
+    "revoke": "Zrušiť dohodu",
+    "end": "Ukončiť stretnutie",
+    "sosSentTitle": "Poplach odoslaný",
+    "sosSentBody": "{trusted} dostal/a tvoju presnú polohu a informáciu, s kým si. {partner} nič neuvidí.",
+    "sosMistake": "Bol to omyl – som OK",
+    "sosHide": "Skryť (poplach trvá ďalej)",
+    "pinTitle": "Potvrď PIN-om",
+    "pinSubtitleOk": "Že si v poriadku.",
+    "pinSubtitleEnd": "Že je stretnutie na konci a si v poriadku.",
+    "revokeConfirmTitle": "Zrušiť dohodu?",
+    "revokeConfirmMessage": "{name} dostane oznámenie. Nemusíš nič vysvetľovať. Bezpečnostný režim pobeží ďalej, kým ho neukončíš."
+  },
+  "feedback": {
+    "title": "Ako prebehlo stretnutie?",
+    "privacy": "Odpoveď uvidí len náš tím, {name} ju nikdy neuvidí. Pomáha nám udržať tu ľudí, ktorí rešpektujú hranice.",
+    "privacyNoName": "Odpoveď uvidí len náš tím, druhá strana ju nikdy neuvidí. Pomáha nám udržať tu ľudí, ktorí rešpektujú hranice.",
+    "allGood": "Všetko bolo v poriadku",
+    "somethingWrong": "Niečo nebolo v poriadku",
+    "detailsLabel": "Čo sa stalo? (nepovinné)",
+    "preserve": "Uchovať záznam stretnutia pre prípadné riešenie s políciou. Inak sa dohoda po 48 hodinách maže.",
+    "suspendNotice": "Ak ťa niekto nerešpektoval alebo si v ohrození, účet hneď pozastavíme a preveríme to.",
+    "send": "Odoslať",
+    "helpTitle": "Mrzí nás to",
+    "helpIntro": "Preveríme to a účet druhého sme do kontroly pozastavili. Nemusíš sa hneď rozhodovať, čo ďalej – a nič z toho nie je tvoja vina.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Linka pomoci obetiam trestných činov – Bílý kruh bezpečí",
+        "detail": "Nonstop, zadarmo, môžeš zostať v anonymite."
+      },
+      "police": {
+        "name": "Polícia Českej republiky",
+        "detail": "Ak chceš čin oznámiť – aj neskôr."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Pomoc ľuďom, ktorí zažili sexuálne násilie."
+      }
+    },
+    "helpLocal": {
+      "name": "Kde hľadať pomoc",
+      "detail": "Obráť sa na miestnu políciu alebo na miestnu linku pomoci obetiam trestných činov a sexuálneho násilia."
+    },
+    "medical": "Ak sa stalo niečo proti tvojej vôli, vyhľadaj čo najskôr lekársku pomoc – aj kvôli prevencii tehotenstva a infekcií, niektoré lieky fungujú len do 72 hodín. Stopy sa dajú zaistiť, ak sa ešte nesprchuješ a odložíš si oblečenie. Ale nič z toho nie je podmienkou – oznámiť to môžeš aj neskôr.",
+    "preserved": "Záznam stretnutia (dohodu, správy, poplachy) sme uchovali, keby si ho potreboval/a pre políciu.",
+    "backToApp": "Späť do aplikácie"
+  },
+  "report": {
+    "title": "Nahlásiť",
+    "intro": "Nahlásenie je anonymné. Zároveň túto osobu zablokujeme, takže sa už navzájom neuvidíte.",
+    "introWithName": "{name}. Nahlásenie je anonymné. Zároveň túto osobu zablokujeme, takže sa už navzájom neuvidíte.",
+    "detailsLabel": "Podrobnosti (nepovinné)",
+    "submit": "Nahlásiť",
+    "thanksTitle": "Ďakujeme",
+    "thanksMessage": "Nahlásenie sme prijali. Už sa navzájom neuvidíte."
+  },
+  "chat": {
+    "unavailable": "Chat nie je dostupný",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km od teba",
+    "reportOrBlock": "Nahlásiť alebo zablokovať",
+    "photo": "Fotka",
+    "photoBlurred": "Rozmazaná fotka, ťukni pre zobrazenie",
+    "tapToReveal": "Ťukni pre zobrazenie",
+    "sendPhoto": "Poslať fotku",
+    "message": "Správa",
+    "messagePlaceholder": "Napíš správu…",
+    "send": "Odoslať",
+    "report": "Nahlásiť",
+    "block": "Zablokovať",
+    "unmatch": "Zrušiť match",
+    "blockConfirmTitle": "Zablokovať?",
+    "blockConfirmMessage": "{name} a ty sa už navzájom neuvidíte a chat zmizne."
+  },
+  "safetySettings": {
+    "title": "Bezpečnosť a súkromie",
+    "trustedLabel": "Dôveryhodná osoba",
+    "trustedHint": "Keď začneš stretnutie, pošleme jej SMS s odkazom na tvoju polohu. Upozorníme ju, keď sa neozveš alebo spustíš poplach.",
+    "nameLabel": "Meno",
+    "namePlaceholder": "Napr. Petra",
+    "phoneLabel": "Telefón",
+    "phonePlaceholder": "+421 912 345 678",
+    "pinsLabel": "PIN a núdzový PIN",
+    "pinsHint": "PIN-om počas stretnutia potvrdzuješ, že si v poriadku. Núdzový PIN vyzerá úplne rovnako, ale potichu pošle poplach – použi ho, keď ťa niekto núti aplikáciu „upokojiť“.",
+    "checkinPinLabel": "PIN (4–6 číslic)",
+    "duressPinLabel": "Núdzový PIN (iný ako PIN)",
+    "passwordLabel": "Heslo k účtu (na zmenu PIN-ov)",
+    "pinsSet": "PIN-y sú nastavené",
+    "change": "Zmeniť",
+    "privacyLabel": "Súkromie",
+    "appLock": "Zámok aplikácie",
+    "appLockHint": "Face ID, odtlačok prsta alebo kód telefónu pri každom otvorení.",
+    "discreet": "Diskrétny režim",
+    "discreetHint": "Neutrálna ikona a notifikácie bez obsahu – nikto nespozná, o akú aplikáciu ide.",
+    "save": "Uložiť"
+  },
+  "tabs": {
+    "discover": "Objavuj",
+    "matches": "Správy",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Zostáva {count} lajk.",
+      "few": "Zostávajú {count} lajky.",
+      "many": "Zostáva {count} lajku.",
+      "other": "Zostáva {count} lajkov."
+    },
+    "boostRunningUntil": "Boost beží do {time}.",
+    "tonight": "Dnes večer",
+    "tonightOn": "Dnes večer – zapnuté",
+    "boost": "Boost",
+    "boostOn": "Boost beží",
+    "searchSettings": "Nastavenie hľadania",
+    "traveling": "Na cestách",
+    "travelingIn": "Na cestách · {city}",
+    "change": "Zmeniť",
+    "enableLocation": "Povoliť polohu",
+    "addPhoto": "Pridať fotku",
+    "retry": "Skúsiť znova",
+    "empty": "Teraz tu nablízku nikto ďalší nie je. Skús to neskôr alebo si rozšír hľadanie.",
+    "refresh": "Obnoviť",
+    "nextPhoto": "Ďalšia fotka",
+    "stampLike": "CHCEM",
+    "stampNope": "NIE",
+    "superLikedYou": "Dal/a ti super lajk",
+    "distance": "{km} km od teba",
+    "rewind": "Vrátiť posledný swipe",
+    "pass": "Preskočiť",
+    "superLike": "Super lajk",
+    "like": "Páči sa mi",
+    "boostSheet": {
+      "title": "Spustiť boost?",
+      "messageMonthly": "30 minút budeš navrchu u ľudí v okolí. Použije sa mesačný boost z predplatného.",
+      "messageCredits": "30 minút budeš navrchu u ľudí v okolí. Zostáva ti {count}×.",
+      "confirm": "Spustiť boost",
+      "done": "Boost beží – 30 minút si navrchu."
+    },
+    "tonightSheet": {
+      "title": "Zapnúť „Dnes večer“?",
+      "message": "Do 6:00 ráno budeš u ľudí v okolí vyššie a so štítkom „Dnes večer“. Vypnúť to môžeš kedykoľvek.",
+      "messageCredits": "Do 6:00 ráno budeš u ľudí v okolí vyššie a so štítkom „Dnes večer“. Vypnúť to môžeš kedykoľvek. Zostáva ti {count}×.",
+      "confirm": "Zapnúť",
+      "done": "Dnes večer je zapnuté do 6:00."
+    },
+    "tonightOffSheet": {
+      "title": "„Dnes večer“ je zapnuté",
+      "message": "Platí do {time}.",
+      "confirm": "Vypnúť",
+      "done": "Dnes večer je vypnuté."
+    }
+  },
+  "matches": {
+    "title": "Správy",
+    "agreement": {
+      "pending": "Dohoda čaká",
+      "confirmed": "Dohoda hotová",
+      "revoked": "Dohoda zrušená"
+    },
+    "likes": "Lajky",
+    "likedBy": {
+      "one": "Lajkol ťa {count} človek",
+      "few": "Lajkli ťa {count} ľudia",
+      "many": "Lajklo ťa {count} človeka",
+      "other": "Lajklo ťa {count} ľudí"
+    },
+    "likedByLocked": {
+      "one": "Lajkol ťa {count} človek – uvidíš ho s Gold",
+      "few": "Lajkli ťa {count} ľudia – uvidíš ich s Gold",
+      "many": "Lajklo ťa {count} človeka – uvidíš ich s Gold",
+      "other": "Lajklo ťa {count} ľudí – uvidíš ich s Gold"
+    },
+    "likesHint": "Kto ťa lajkol a koho si lajkol/a ty",
+    "empty": "Zatiaľ žiadny match. Swipuj ďalej – keď sa budete páčiť obom, objaví sa tu.",
+    "lastMessageMine": "Ty: {text}",
+    "newMatch": "Nový match – napíš prvú správu."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Ukladám…",
+    "saved": "Uložené",
+    "done": "Hotovo",
+    "suspended": {
+      "title": "Účet je pozastavený",
+      "subtitle": "Preverujeme nahlásenie. Bezpečnostný režim ti funguje ďalej."
+    },
+    "photoA11y": "Fotka – podrž na zmazanie",
+    "addPhoto": "Pridať fotku",
+    "photoHint": "Bez nahoty – fotky musia spĺňať pravidlá obchodov s aplikáciami. Podrž fotku na zmazanie.",
+    "name": "Meno",
+    "bio": "O mne",
+    "bioPlaceholder": "Pár viet o sebe.",
+    "lookingFor": "Čo hľadám",
+    "safety": {
+      "title": "Bezpečnosť a súkromie",
+      "trusted": "Dôveryhodná osoba: {name}",
+      "setup": "Nastav dôveryhodnú osobu a PIN.",
+      "edit": "Upraviť"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold a Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Neobmedzené lajky, kto ťa lajkol, boost a ďalšie.",
+      "validUntil": "Platí do {date}.",
+      "upgrade": "Vylepšiť",
+      "manage": "Spravovať"
+    },
+    "incognito": {
+      "label": "Inkognito",
+      "hint": "Uvidia ťa len tí, ktorých lajkneš. (Plus)"
+    },
+    "travel": {
+      "label": "Na cestách (Plus)",
+      "home": "Doma",
+      "hint": "Swipuješ v inom meste ešte pred cestou a ľudia tam ťa uvidia so štítkom „Na cestách“."
+    },
+    "showMe": "Koho mi ukazovať",
+    "ageFrom": "Vek od",
+    "ageTo": "Vek do",
+    "distance": "Vzdialenosť",
+    "distanceSuffix": " km",
+    "save": "Uložiť profil",
+    "language": {
+      "title": "Jazyk",
+      "device": "Podľa telefónu",
+      "rtlHint": "Pri jazykoch písaných sprava doľava sa rozloženie otočí až po reštarte aplikácie."
+    },
+    "signOut": "Odhlásiť sa",
+    "deletePassword": "Heslo na zmazanie účtu",
+    "deleteForever": "Zmazať účet natrvalo",
+    "deleteAccount": "Zmazať účet",
+    "removePhoto": {
+      "title": "Zmazať fotku?",
+      "confirm": "Zmazať"
+    }
+  },
+  "premium": {
+    "title": "Predplatné",
+    "free": {
+      "title": "F*app je teraz zadarmo",
+      "body": "Platené funkcie zapneme neskôr. Bezpečnosť – overenie, dohoda, bezpečnostný režim aj SOS – zostane zadarmo vždy."
+    },
+    "back": "Späť",
+    "done": "Hotovo",
+    "continue": "Pokračovať",
+    "reason": {
+      "likeLimitAt": "Minuli sa ti lajky. Ďalšie pribudnú o {time}.",
+      "likeLimit": "Minuli sa ti lajky. Ďalšie pribudnú o chvíľu.",
+      "noCredit": "{credit} je jednorazovo alebo v predplatnom.",
+      "upgrade": "Toto je súčasťou F*app {plan}."
+    },
+    "oneOff": "Jednorazovo",
+    "owned": "máš {count}",
+    "creditDetail": {
+      "boost": "30 minút navrchu u ľudí v okolí.",
+      "superlike": "Uvidí, že o neho/ňu naozaj stojíš.",
+      "tonight": "Do 6:00 ráno vyššie a so štítkom „Dnes večer“."
+    },
+    "buyCredit": "Kúpiť {amount}× {credit} za {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Máš boost navyše.",
+        "few": "Máš {count}× boost navyše.",
+        "many": "Máš {count}× boost navyše.",
+        "other": "Máš {count}× boost navyše."
+      },
+      "superlike": {
+        "one": "Máš super lajk navyše.",
+        "few": "Máš {count}× super lajk navyše.",
+        "many": "Máš {count}× super lajk navyše.",
+        "other": "Máš {count}× super lajk navyše."
+      },
+      "tonight": {
+        "one": "Máš Dnes večer navyše.",
+        "few": "Máš {count}× Dnes večer navyše.",
+        "many": "Máš {count}× Dnes večer navyše.",
+        "other": "Máš {count}× Dnes večer navyše."
+      }
+    },
+    "currentPlan": "Máš F*app {plan}",
+    "validUntil": "Platí do {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swipuj bez limitu a vráť omylom odmietnutý profil.",
+      "gold": "Uvidíš, kto ťa lajkol – a matchneš jedným ťuknutím.",
+      "platinum": "Tvoj lajk uvidia ako prvý. A „Dnes večer“ kedykoľvek."
+    },
+    "featureIncluded": "{feature}: v cene",
+    "featureNotIncluded": "{feature}: nie je v cene",
+    "months": {
+      "one": "{count} mesiac",
+      "few": "{count} mesiace",
+      "many": "{count} mesiaca",
+      "other": "{count} mesiacov"
+    },
+    "perMonth": "mesačne",
+    "perMonthSave": "mesačne · −{percent} %",
+    "continueWithPrice": "Pokračovať · {price}",
+    "planBought": {
+      "one": "Máš F*app {plan}.",
+      "few": "Máš F*app {plan} na {count} mesiace.",
+      "many": "Máš F*app {plan} na {count} mesiaca.",
+      "other": "Máš F*app {plan} na {count} mesiacov."
+    },
+    "renewal": "Predplatné sa obnovuje automaticky, zrušiť ho môžeš kedykoľvek v nastaveniach App Store alebo Google Play. Cena je pre všetkých rovnaká.",
+    "renewalUpfront": "Zaplatíš {total} naraz ({monthly} mesačne). Predplatné sa obnovuje automaticky, zrušiť ho môžeš kedykoľvek v nastaveniach App Store alebo Google Play. Cena je pre všetkých rovnaká.",
+    "safetyFree": {
+      "title": "Bezpečnosť je vždy zadarmo",
+      "subtitle": "Overenie, dohoda, bezpečnostný režim, SOS aj nahlasovanie."
+    },
+    "devNote": "Prototyp: nič sa nezaplatí, nákup sa len nasimuluje."
+  },
+  "likes": {
+    "title": "Lajky",
+    "received": "Lajkli ťa",
+    "receivedCount": "Lajkli ťa · {count}",
+    "sent": "Odoslané",
+    "emptyReceived": "Zatiaľ ťa nikto nový nelajkol.",
+    "superLike": "Super lajk",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "Lajkol ťa {count} človek",
+      "few": "Lajkli ťa {count} ľudia",
+      "many": "Lajklo ťa {count} človeka",
+      "other": "Lajklo ťa {count} ľudí"
+    },
+    "lockedEmpty": "Lajky uvidíš tu",
+    "goldText": "S F*app Gold uvidíš, kto to je, a matchneš jedným ťuknutím.",
+    "goldCta": "Zobraziť s Gold",
+    "emptySent": "Za posledných 7 dní žiadne lajky bez matchu.",
+    "superLikePending": "Super lajk · čaká",
+    "pending": "Čaká na odpoveď",
+    "sentTitle": "Koho si lajkol/a",
+    "platinumText": "S F*app Platinum uvidíš svoje lajky za posledných 7 dní.",
+    "platinumCta": "Zobraziť s Platinum",
+    "likeBack": "Lajknúť späť",
+    "pass": "Preskočiť"
+  },
+  "match": {
+    "title": "Je to match!",
+    "body": "Ty a {name} sa chcete.\nNapíš a dohodnite sa, na čo máte chuť.",
+    "sendMessage": "Napísať správu",
+    "keepDiscovering": "Pokračovať v objavovaní"
+  },
+  "login": {
+    "title": "Prihlásenie",
+    "email": "E-mail",
+    "password": "Heslo",
+    "submit": "Prihlásiť sa"
+  },
+  "register": {
+    "title": "Vytvoriť účet",
+    "name": "Meno (uvidia ho ostatní)",
+    "email": "E-mail",
+    "password": "Heslo (aspoň 10 znakov)",
+    "birthdate": "Dátum narodenia",
+    "birthdatePlaceholder": "DD. MM. RRRR",
+    "birthdateInvalid": "Dátum narodenia zadaj ako DD. MM. RRRR.",
+    "iAm": "Som",
+    "showMe": "Koho mi ukazovať",
+    "confirmAdult": "Mám 18 rokov alebo viac.",
+    "acceptRules": "Súhlasím s pravidlami komunity a so spracovaním svojich údajov vrátane údajov o sexuálnom živote, aby mohol F*app fungovať.",
+    "verifyNote": "Hneď potom overíme tvoju totožnosť a vek (doklad a selfie). Doklad si neukladáme.",
+    "continue": "Pokračovať"
+  },
+  "verify": {
+    "title": "Over, že si to ty",
+    "intro": "Každý na F*app má overenú totožnosť a vek. Odfotíš doklad a selfie – zaberie to asi dve minúty.",
+    "privacy": "Doklad ani fotky si neukladáme. Uchováme len výsledok overenia a dátum narodenia. Kto poruší pravidlá, nemôže sa vrátiť s novým účtom.",
+    "pending": {
+      "title": "Čakáme na výsledok overenia",
+      "subtitle": "Zvyčajne to trvá pár minút.",
+      "refresh": "Obnoviť"
+    },
+    "declined": "Overenie sa nepodarilo",
+    "devApprove": "Simulovať úspešné overenie (testovací režim)",
+    "retry": "Skúsiť znova",
+    "start": "Overiť totožnosť",
+    "signOut": "Odhlásiť sa"
+  },
+  "common": {
+    "back": "Späť",
+    "cancel": "Zrušiť",
+    "close": "Zavrieť",
+    "save": "Uložiť",
+    "retry": "Skúsiť znova",
+    "continue": "Pokračovať",
+    "done": "Hotovo",
+    "send": "Odoslať",
+    "delete": "Zmazať",
+    "edit": "Upraviť",
+    "open": "Otvoriť",
+    "show": "Zobraziť",
+    "confirm": "Potvrdiť",
+    "errorGeneric": "Niečo sa pokazilo."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} má zapnutý bezpečnostný režim",
+    "partnerSafetySubtitle": "Dôveryhodná osoba vie, kde a s kým je.",
+    "meetupTitle": "Stretnutie prebieha",
+    "meetupSubtitle": "Bezpečnostný režim je zapnutý.",
+    "missingTitle": "Dohoda zatiaľ chýba",
+    "missingSubtitle": "Každý vyplní, na čo má chuť – uvidíte len zhodu.",
+    "fill": "Vyplniť",
+    "revokedByMeTitle": "Zrušil/a si dohodu",
+    "revokedByPartnerTitle": "{name} zrušil/a dohodu",
+    "revokedSubtitle": "Stretnutie sa nekoná.",
+    "revokedCooldownSubtitle": "Stretnutie sa nekoná. Novú dohodu môže otvoriť len {name}.",
+    "newAgreement": "Nová dohoda",
+    "confirmedTitle": "Dohoda je hotová",
+    "confirmedSubtitle": "Na mieste sa môžete kedykoľvek rozhodnúť inak.",
+    "partnerFilledTitle": "{name} vyplnil/a dohodu",
+    "waitingForYouTitle": "Dohoda čaká na teba",
+    "fillYoursSubtitle": "Vyplň, na čo máš chuť ty – uvidíte len zhodu.",
+    "partnerPendingTitle": "{name} ešte nevyplnil/a",
+    "partnerPendingSubtitle": "Dohoda je hotová, až keď ju vyplníte obaja."
+  },
+  "fakeCall": {
+    "incoming": "mobil volá…",
+    "hangUp": "Zavesiť",
+    "decline": "Odmietnuť",
+    "accept": "Prijať"
+  },
+  "homeBanners": {
+    "meetupTitle": "Prebieha stretnutie · {name}",
+    "missedCheckIn": "Zmeškal/a si check-in!",
+    "safetyOn": "Bezpečnostný režim je zapnutý.",
+    "feedbackTitle": "Ako prebehlo stretnutie?",
+    "feedbackSubtitle": "{name} – odpoveď uvidí len náš tím.",
+    "feedbackAction": "Odpovedať"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "Zadaná {count} číslica",
+      "few": "Zadané {count} číslice",
+      "many": "Zadané {count} číslice",
+      "other": "Zadaných {count} číslic"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label} menej",
+    "stepperIncrease": "{label} viac"
+  },
+  "api": {
+    "offline": "Nepodarilo sa spojiť so serverom. Skontroluj pripojenie."
+  },
+  "billing": {
+    "storeNotConnected": "Nákupy cez App Store a Google Play zatiaľ nie sú napojené."
+  },
+  "notifications": {
+    "channelName": "Upozornenia",
+    "reminderDiscreet": "Pripomienka",
+    "checkInTitle": "Čas na check-in",
+    "checkInBody": "Potvrď PIN-om, že si v poriadku.",
+    "fakeCallBody": "Prichádzajúci hovor"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Zdieľanie polohy je zapnuté",
+    "notificationBody": "Ukončíš ho v aplikácii."
+  },
+  "appLock": {
+    "prompt": "Odomknúť F*app",
+    "lockedTitle": "Aplikácia je zamknutá",
+    "lockedBody": "Odomkni ju cez Face ID, odtlačok prsta alebo kód telefónu.",
+    "sosHold": "SOS – podrž",
+    "unlock": "Odomknúť",
+    "sosSentTitle": "Poplach odoslaný",
+    "sosSentBody": "{name} dostal/a upozornenie s tvojou polohou.",
+    "sosSentBodyNoName": "Dôveryhodná osoba dostala upozornenie s tvojou polohou.",
+    "sosFailedTitle": "Nepodarilo sa odoslať"
+  },
+  "native": {
+    "locationWhenInUse": "F*app potrebuje polohu, aby ti ukázal ľudí v okolí a počas stretnutia ju mohol zdieľať s tvojou dôveryhodnou osobou.",
+    "locationAlways": "Počas stretnutia zdieľa F*app tvoju polohu s dôveryhodnou osobou aj pri zhasnutom displeji. Mimo stretnutia polohu na pozadí nepoužíva.",
+    "faceId": "F*app sa odomyká cez Face ID, aby doň nikto nenazrel.",
+    "photos": "Vyber si fotky do profilu.",
+    "camera": "Odfoť sa do profilu."
+  }
+}

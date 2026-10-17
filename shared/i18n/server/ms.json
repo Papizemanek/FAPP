@@ -1,1 +1,264 @@
-{}
+{
+  "errors": {
+    "notFound": "Tidak ditemui.",
+    "tooLarge": "Permintaan terlalu besar.",
+    "invalidJson": "JSON tidak sah.",
+    "internal": "Berlaku ralat. Cuba lagi.",
+    "rateLimited": "Terlalu banyak cubaan sekaligus. Cuba lagi sebentar nanti.",
+    "unauthorized": "Tidak dibenarkan.",
+    "invalidSignature": "Tandatangan tidak sah.",
+    "linkExpired": "Pautan ini tidak lagi sah."
+  },
+  "validation": {
+    "required": "“{field}” tidak diisi.",
+    "notText": "“{field}” mestilah teks.",
+    "tooShort": "“{field}” terlalu pendek.",
+    "tooLong": "“{field}” terlalu panjang.",
+    "integer": "“{field}” mestilah nombor bulat dari {min} hingga {max}.",
+    "invalidValue": "Nilai tidak sah untuk “{field}”.",
+    "notList": "“{field}” mestilah senarai.",
+    "minOptions": {
+      "other": "Pilih sekurang-kurangnya {count} pilihan untuk “{field}”."
+    },
+    "date": "“{field}” mestilah tarikh dalam format TTTT-BB-HH.",
+    "dateTime": "“{field}” mestilah tarikh dan masa.",
+    "email": "E-mel tidak sah.",
+    "phone": "Nombor telefon tidak sah ({field}).",
+    "pin": "{field} mestilah 4–6 digit."
+  },
+  "fields": {
+    "email": "e-mel",
+    "password": "kata laluan",
+    "name": "nama",
+    "birthdate": "tarikh lahir",
+    "gender": "jantina",
+    "interestedIn": "siapa yang anda cari",
+    "pushToken": "token push",
+    "ageMin": "umur min.",
+    "ageMax": "umur maks.",
+    "bio": "tentang saya",
+    "tags": "apa yang saya cari",
+    "maxDistance": "jarak",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "nama kenalan dipercayai",
+    "trustedPhone": "telefon kenalan dipercayai",
+    "pin": "PIN",
+    "duressPin": "PIN kecemasan",
+    "meetAt": "bila",
+    "place": "di mana",
+    "safeword": "kata henti",
+    "note": "batasan saya",
+    "version": "versi",
+    "message": "mesej",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "selang check-in",
+    "accuracy": "ketepatan",
+    "battery": "bateri",
+    "user": "pengguna",
+    "reason": "sebab",
+    "details": "butiran",
+    "resolution": "penyelesaian",
+    "days": "bilangan hari"
+  },
+  "auth": {
+    "confirmAdult": "Anda mesti mengesahkan bahawa anda berumur 18 tahun atau lebih.",
+    "acceptRules": "Anda mesti bersetuju dengan peraturan dan pemprosesan data anda.",
+    "underage": "F*app hanya untuk mereka yang berumur 18 tahun ke atas.",
+    "invalidBirthdate": "Tarikh lahir tidak sah.",
+    "emailTaken": "Akaun dengan e-mel ini sudah wujud.",
+    "wrongCredentials": "E-mel atau kata laluan salah.",
+    "banned": "Akaun ini telah disekat kerana melanggar peraturan.",
+    "notLoggedIn": "Anda belum log masuk.",
+    "suspended": "Akaun anda digantung sehingga moderator menyemaknya.",
+    "verifyFirst": "Sahkan identiti anda dahulu."
+  },
+  "profile": {
+    "wrongPassword": "Kata laluan salah.",
+    "ageRange": "Umur minimum tidak boleh lebih tinggi daripada umur maksimum.",
+    "maxPhotos": {
+      "other": "Anda boleh mempunyai sehingga {count} foto."
+    },
+    "pinsMustDiffer": "PIN kecemasan anda mestilah berbeza daripada PIN biasa anda.",
+    "deleteDuringMeetup": "Anda tidak boleh memadam akaun anda sekarang – pertemuan sedang berlangsung. Cuba lagi selepas ia tamat."
+  },
+  "photo": {
+    "notJpeg": "Foto mestilah dalam format JPEG.",
+    "corrupt": "Foto rosak.",
+    "notBase64": "Foto mestilah JPEG yang dikodkan dalam base64.",
+    "tooLarge": "Foto terlalu besar (maks. 2 MB).",
+    "notFound": "Foto tidak ditemui.",
+    "unavailable": "Foto tidak tersedia."
+  },
+  "users": {
+    "notFound": "Pengguna tidak ditemui."
+  },
+  "match": {
+    "notFound": "Padanan tidak ditemui.",
+    "ended": "Padanan ini telah tamat.",
+    "profileUnavailable": "Profil ini tidak lagi tersedia."
+  },
+  "discover": {
+    "locationRequired": "Hidupkan lokasi dahulu supaya kami boleh menunjukkan orang berdekatan.",
+    "photoRequired": "Tambah sekurang-kurangnya satu foto.",
+    "superLikeIsLike": "Super Like sentiasa dikira sebagai suka.",
+    "profileNotFound": "Profil tidak ditemui.",
+    "profileGone": "Profil ini tidak lagi wujud.",
+    "nothingToRewind": "Tiada apa-apa untuk diundur.",
+    "cantRewindSuperLike": "Super Like tidak boleh diundur.",
+    "cantRewindMatch": "Leretan ini sudah menjadi padanan."
+  },
+  "billing": {
+    "likeLimit": "Suka anda sudah habis. Lagi akan tiba tidak lama lagi – atau leret tanpa had dengan F*app Plus.",
+    "noSuperLike": "Anda tidak mempunyai Super Like.",
+    "noBoost": "Anda tidak mempunyai Boost.",
+    "tonightPaid": "“Malam ini” tersedia dengan Platinum atau secara sekali beli.",
+    "featureInPlan": "{feature} ialah sebahagian daripada F*app {plan}.",
+    "paymentsOff": "Pembayaran belum diaktifkan – F*app percuma sepenuhnya buat masa ini.",
+    "unknownProduct": "Produk tidak dikenali.",
+    "cantBuy": "Anda tidak boleh membeli ini sekarang.",
+    "cantBoost": "Anda tidak boleh memulakan Boost sekarang.",
+    "boostRunning": "Boost sudah berjalan.",
+    "cantTonight": "Anda tidak boleh menghidupkan ini sekarang.",
+    "tonightOn": "Malam ini sudah aktif.",
+    "unknownCity": "Bandar tidak dikenali."
+  },
+  "features": {
+    "unlimitedLikes": "Suka tanpa had",
+    "rewind": "Undur",
+    "travel": "Mod perjalanan",
+    "incognito": "Inkognito",
+    "seeLikes": "Lihat siapa suka anda",
+    "weeklySuperLikes": "5 Super Like seminggu",
+    "monthlyBoost": "1 Boost sebulan",
+    "priorityLikes": "Suka keutamaan",
+    "sentLikes": "Suka dihantar",
+    "tonight": "Malam ini, bila-bila masa"
+  },
+  "agreement": {
+    "wishesRequired": "Isi apa yang anda mahu.",
+    "invalidWish": "Pilihan tidak sah dalam kehendak anda.",
+    "notFound": "Persetujuan tidak ditemui.",
+    "confirmBoth": "Sahkan kedua-dua kenyataan – bahawa inilah yang anda bayangkan dan bahawa persetujuan bukan kerelaan.",
+    "meetWithin": {
+      "other": "Pertemuan mestilah dalam tempoh {count} hari akan datang."
+    },
+    "cooldown": "Buat masa ini hanya {name} boleh memulakan persetujuan baharu.",
+    "changed": "Persetujuan telah berubah sementara itu. Baca semula."
+  },
+  "chat": {
+    "empty": "Mesej kosong.",
+    "notSent": "Mesej tidak dihantar. {reason}",
+    "photo": "Foto"
+  },
+  "moderation": {
+    "minor": "Mesej ini menunjukkan salah seorang daripada anda mungkin di bawah 18 tahun. F*app untuk 18+ sahaja.",
+    "paid": "Menawarkan atau meminta seks berbayar tidak dibenarkan di F*app.",
+    "consentPressure": "Perhatian: persetujuan dalam aplikasi bukan kerelaan. Anda boleh membatalkannya pada bila-bila masa dan menolak apa-apa sahaja apabila bertemu – tanpa perlu menjelaskan.",
+    "contact": "Padanan anda berkongsi butiran hubungan di luar aplikasi. Di luar F*app, persetujuan, mod keselamatan dan pelaporan tidak berfungsi untuk anda."
+  },
+  "safety": {
+    "notFound": "Pertemuan tidak ditemui.",
+    "ended": "Pertemuan sudah tamat.",
+    "wrongPin": "PIN salah.",
+    "agreementRequired": "Anda boleh memulakan pertemuan selepas anda berdua mengisi dan mengesahkan persetujuan.",
+    "setupRequired": "Tetapkan dahulu kenalan dipercayai, PIN dan PIN kecemasan.",
+    "invalidInterval": "Selang check-in tidak sah."
+  },
+  "reports": {
+    "feedbackSent": "Anda sudah menghantar maklum balas anda."
+  },
+  "verification": {
+    "unknown": "Pengesahan tidak dikenali.",
+    "alreadyVerified": "Identiti anda sudah disahkan.",
+    "startFirst": "Mulakan pengesahan dahulu.",
+    "noWebhook": "Penyedia pembangunan tidak mempunyai webhook.",
+    "unavailable": "Perkhidmatan pengesahan tidak bertindak balas. Cuba lagi sebentar nanti.",
+    "declined": {
+      "underage": "Pengesahan menunjukkan anda belum berumur 18 tahun. F*app untuk orang dewasa sahaja.",
+      "banned": "Orang ini telah disekat daripada F*app kerana melanggar peraturan.",
+      "duplicate": "Orang ini sudah mempunyai akaun F*app. Setiap orang hanya boleh mempunyai satu.",
+      "incomplete": "Kami tidak dapat membaca tarikh lahir daripada dokumen. Cuba lagi.",
+      "default": "Pengesahan gagal. Cuba lagi."
+    }
+  },
+  "admin": {
+    "notReported": "Perbualan ini belum dilaporkan.",
+    "unknownPlan": "Pelan tidak dikenali."
+  },
+  "push": {
+    "discreet": "Pemberitahuan baharu",
+    "match": {
+      "title": "Anda berpadanan!",
+      "body": "Anda dan {name} saling mahu."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Ada seseorang yang betul-betul berminat dengan anda."
+    },
+    "message": {
+      "photo": "Menghantar foto"
+    },
+    "agreementComplete": {
+      "title": "Persetujuan lengkap",
+      "body": "Anda berdua sudah mengesahkannya. Apabila bertemu, anda masih boleh berubah fikiran."
+    },
+    "agreementNew": {
+      "title": "Persetujuan baharu",
+      "body": "{name} memulakan persetujuan. Sekarang isi apa yang anda mahu."
+    },
+    "agreementChanged": {
+      "title": "Persetujuan berubah",
+      "body": "{name} menukar masa, tempat atau peraturan. Sahkan semula."
+    },
+    "agreementUpdated": {
+      "title": "Persetujuan dikemas kini",
+      "body": "{name} mengemas kini kehendaknya."
+    },
+    "agreementRevoked": {
+      "title": "Persetujuan dibatalkan",
+      "body": "{name} membatalkan persetujuan. Pertemuan dibatalkan – dan itu mesti dihormati."
+    },
+    "checkInOverdue": {
+      "title": "Anda terlepas check-in",
+      "body": "{name} telah dimaklumkan. Sahkan bahawa anda selamat."
+    }
+  },
+  "sms": {
+    "started": "{name} sedang berjumpa seseorang dan memilih anda sebagai kenalan dipercayai. Lihat di mana dia berada dan sama ada dia selamat: {url}",
+    "alarm": "AMARAN: {name} perlukan bantuan. Lokasi dan butiran: {url}",
+    "overdue": "{name} belum check-in - dia sepatutnya mengesahkan dirinya selamat sebelum {time}. Cuba hubungi dia. Lokasi: {url}",
+    "backOk": "{name} sudah check-in dan mengesahkan dirinya selamat.",
+    "sosCancelled": "{name} membatalkan amaran - ia tersilap, dia selamat.",
+    "endedOk": "{name} telah menamatkan pertemuan dan selamat. Terima kasih kerana bersedia membantu.",
+    "someone": "Orang terdekat anda"
+  },
+  "share": {
+    "pageTitle": "F*app – pautan keselamatan",
+    "header": "Pautan keselamatan",
+    "loading": "Memuatkan…",
+    "call": "Hubungi {number}",
+    "mapLabel": "Peta dengan lokasi terakhir yang diketahui",
+    "openMaps": "Buka dalam Peta",
+    "partnerPhotoAlt": "Foto orang yang ditemuinya",
+    "partnerLead": "Berjumpa dengan:",
+    "okTitle": "{name} selamat",
+    "okDetail": "Check-in terakhir pada {last}. Seterusnya dijangka sebelum {next}.",
+    "overdueTitle": "{name} belum check-in",
+    "overdueDetail": "Check-in sepatutnya sebelum {due}. Cuba hubungi dia. Jika tidak berjawab, hubungi {number} dan berikan alamat daripada peta.",
+    "alarmTitle": "{name} perlukan bantuan",
+    "alarmDetail": "Amaran pada {time}. Hubungi {number} dan berikan lokasi daripada peta serta tempat pertemuan di bawah.",
+    "endedTitle": "Pertemuan sudah tamat",
+    "endedDetail": "{name} mengesahkan dirinya selamat.",
+    "endedDetailAlarm": "{name} mengesahkan dirinya selamat. Satu amaran telah dicetuskan semasa pertemuan – tanya sama ada semuanya baik.",
+    "footer": "Lokasi tidak lagi kelihatan sebaik sahaja {name} menamatkan pertemuan.",
+    "locationJustNow": "Lokasi sebentar tadi",
+    "locationAgo": {
+      "other": "Lokasi {count} min lalu"
+    },
+    "battery": "bateri {percent}",
+    "linkExpired": "Pautan ini tidak lagi sah",
+    "loadFailed": "Tidak dapat memuatkan status. Mencuba semula…"
+  }
+}

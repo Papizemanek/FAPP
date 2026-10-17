@@ -142,21 +142,23 @@ function renderBanner(t, stage, fmt) {
   stage.innerHTML = `
     <div class="glow" style="width:calc(var(--u)*90);height:calc(var(--u)*90);inset-inline-end:calc(var(--u)*-30);top:calc(var(--u)*-30);background:${concept === 'soft' || concept === 'safety' ? 'var(--safe)' : 'var(--accent)'}"></div>
     <div class="banner">
-      <div class="top">${logo()}<span class="age">${t('ads.adults')}</span></div>
+      <div class="top">${logo()}<span class="age" dir="ltr">${t('ads.adults')}</span></div>
       <div class="copy">${title}${text}</div>
       ${visual}
       <div class="bottom"><span class="cta">${t('ads.cta')}</span><span class="soon">${t('ads.soon')}</span></div>
     </div>`;
   if (fmt === 'strip' && H < 70) stage.classList.add('tiny');
   if (!visual && !compact) stage.classList.add('novis');
-  // nadpis se musí vejít; u tří řádků se zmenšuje celý blok
-  const titleEl = stage.querySelector('.title, .three');
-  fit(titleEl);
-  if (titleEl?.classList.contains('three')) titleEl.querySelectorAll('span').forEach((s) => (s.style.whiteSpace = 'nowrap'));
-  fit(titleEl);
-  fit(stage.querySelector('.text'));
-  fitVisual(stage.querySelector('.visual'));
   stage.querySelectorAll('.map .ring').forEach((r) => (r.style.transform = 'scale(0.9)'));
+  // Měří se až po načtení všech písem (jinak tamilština nebo hindština přetečou).
+  return () => {
+    const titleEl = stage.querySelector('.title, .three');
+    if (titleEl?.classList.contains('three')) titleEl.querySelectorAll('span').forEach((s) => (s.style.whiteSpace = 'nowrap'));
+    fit(titleEl);
+    fit(stage.querySelector('.text'));
+    fit(stage.querySelector('.footnote'));
+    fitVisual(stage.querySelector('.visual'));
+  };
 }
 
 // --- videa: scény s časováním (sekundy) ---
@@ -208,7 +210,6 @@ function renderVideo(t, stage) {
       <div class="brandbar" style="opacity:0">${logo()}<span class="age">${t('ads.soon')} · ${t('ads.adults')}</span></div></div>`;
     const lines = [...stage.querySelectorAll('.three span')];
     lines.forEach((s) => (s.style.whiteSpace = 'nowrap'));
-    fit(stage.querySelector('.three'));
     const foot = stage.querySelector('.footnote');
     const bar = stage.querySelector('.brandbar');
     window.seek = (time) => {
@@ -224,7 +225,7 @@ function renderVideo(t, stage) {
       star.style.display = 'inline-block';
       star.style.transform = `rotate(${time * 40}deg)`;
     };
-    return;
+    return () => fit(stage.querySelector('.three'));
   }
   stage.innerHTML = `<div class="glow g1" style="width:calc(var(--u)*100);height:calc(var(--u)*100);background:var(--accent)"></div>
     <div class="glow g2" style="width:calc(var(--u)*80);height:calc(var(--u)*80);background:var(--safe)"></div>
@@ -232,12 +233,13 @@ function renderVideo(t, stage) {
     <div class="brandbar">${logo()}<span class="age">${t('ads.adults')}</span></div></div>`;
   const scenes = [...stage.querySelectorAll('.scene')];
   // Každou scénu nejdřív ukážeme, aby šlo změřit a zmenšit text, pak ji zase schováme.
-  scenes.forEach((el) => {
-    el.style.opacity = '1';
-    fit(el.querySelector('.cap .display'));
-    fit(el.querySelector('.three'));
-    el.style.opacity = '0';
-  });
+  const layout = () =>
+    scenes.forEach((el) => {
+      el.style.opacity = '1';
+      fit(el.querySelector('.cap .display'));
+      fit(el.querySelector('.three'));
+      el.style.opacity = '0';
+    });
   const g1 = stage.querySelector('.g1');
   const g2 = stage.querySelector('.g2');
   const bar = stage.querySelector('.brandbar');
@@ -302,6 +304,7 @@ function renderVideo(t, stage) {
       if (notify) notify.style.transform = `translateY(${(1 - ease((lt - 0.5) / 0.4)) * -60}%)`;
     });
   };
+  return layout;
 }
 
 async function main() {
@@ -318,14 +321,16 @@ async function main() {
   await document.fonts.ready;
   // fonty se načítají líně – vynutíme je dopředu, ať se text měří už ve správném písmu
   await Promise.all(['800 40px "Bricolage Grotesque"', '700 20px Manrope', '400 20px Manrope', '600 20px Manrope'].map((f) => document.fonts.load(f).catch(() => {})));
-  if (kind === 'video') {
-    renderVideo(t, stage);
-    await document.fonts.ready;
-    window.seek(0);
-  } else {
-    renderBanner(t, stage, fmt);
-  }
+  const layout = kind === 'video' ? renderVideo(t, stage) : renderBanner(t, stage, fmt);
+  // Písma pro jiné abecedy se stahují, až když je na stránce text, který je potřebuje.
+  const text = stage.textContent;
+  await Promise.all(
+    ['400', '700', '800'].flatMap((w) => [`${w} 40px "Noto Script"`, `${w} 40px "Manrope"`, `${w} 40px "Bricolage Grotesque"`]).map((f) => document.fonts.load(f, text).catch(() => {})),
+  );
   await document.fonts.ready;
+  await new Promise((r) => requestAnimationFrame(() => r()));
+  layout?.();
+  if (kind === 'video') window.seek(0);
   window.ready = true;
 }
 

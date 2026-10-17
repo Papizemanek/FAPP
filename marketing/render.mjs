@@ -91,9 +91,8 @@ async function open(browser, base, params, w, h) {
   return page;
 }
 
-async function banner(browser, base, lang, concept, w, h, dir) {
+async function banner(browser, base, lang, concept, w, h, file) {
   const page = await open(browser, base, { kind: 'banner', concept, lang }, w, h);
-  const file = path.join(dir, `${concept}-${w}x${h}.jpg`);
   await page.screenshot({ path: file, type: 'jpeg', quality: 90, clip: { x: 0, y: 0, width: w, height: h } });
   await page.close();
   return file;
@@ -157,12 +156,11 @@ if (doBanners) {
     if (concept === 'og') {
       const dir = path.join(out, 'og');
       fs.mkdirSync(dir, { recursive: true });
-      const file = await banner(browser, base, lang, 'brand', w, h, dir);
-      fs.renameSync(file, path.join(dir, `og-${lang}.jpg`));
+      await banner(browser, base, lang, 'brand', w, h, path.join(dir, `og-${lang}.jpg`));
     } else {
       const dir = path.join(out, 'banners', lang);
       fs.mkdirSync(dir, { recursive: true });
-      await banner(browser, base, lang, concept, w, h, dir);
+      await banner(browser, base, lang, concept, w, h, path.join(dir, `${concept}-${w}x${h}.jpg`));
     }
     done += 1;
     if (done % 25 === 0 || done === jobs.length) console.log(`bannery ${done}/${jobs.length}`);

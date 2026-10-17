@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Nem található.",
+    "tooLarge": "A kérés túl nagy.",
+    "invalidJson": "Érvénytelen JSON.",
+    "internal": "Hiba történt. Próbáld újra.",
+    "rateLimited": "Túl sok próbálkozás egyszerre. Próbáld újra egy kicsit később.",
+    "unauthorized": "Nincs jogosultság.",
+    "invalidSignature": "Érvénytelen aláírás.",
+    "linkExpired": "Ez a link már nem érvényes."
+  },
+  "validation": {
+    "required": "Hiányzó mező: „{field}”.",
+    "notText": "„{field}”: szöveget kell megadni.",
+    "tooShort": "„{field}”: túl rövid.",
+    "tooLong": "„{field}”: túl hosszú.",
+    "integer": "„{field}”: {min} és {max} közötti egész számot kell megadni.",
+    "invalidValue": "Érvénytelen érték: „{field}”.",
+    "notList": "„{field}”: listát kell megadni.",
+    "minOptions": {
+      "one": "„{field}”: válassz legalább {count} lehetőséget.",
+      "other": "„{field}”: válassz legalább {count} lehetőséget."
+    },
+    "date": "„{field}”: ÉÉÉÉ-HH-NN formátumú dátumot kell megadni.",
+    "dateTime": "„{field}”: dátumot és időpontot kell megadni.",
+    "email": "Érvénytelen e-mail-cím.",
+    "phone": "Érvénytelen telefonszám ({field}).",
+    "pin": "{field}: 4–6 számjegyet kell megadni."
+  },
+  "fields": {
+    "email": "e-mail",
+    "password": "jelszó",
+    "name": "név",
+    "birthdate": "születési dátum",
+    "gender": "nem",
+    "interestedIn": "kit keresel",
+    "pushToken": "push token",
+    "ageMin": "minimális életkor",
+    "ageMax": "maximális életkor",
+    "bio": "rólam",
+    "tags": "amit keresek",
+    "maxDistance": "távolság",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "megbízható személy neve",
+    "trustedPhone": "megbízható személy telefonszáma",
+    "pin": "PIN",
+    "duressPin": "Vész-PIN",
+    "meetAt": "mikor",
+    "place": "hol",
+    "safeword": "biztonsági szó",
+    "note": "a határaim",
+    "version": "verzió",
+    "message": "üzenet",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "check-in gyakorisága",
+    "accuracy": "pontosság",
+    "battery": "akkumulátor",
+    "user": "felhasználó",
+    "reason": "ok",
+    "details": "részletek",
+    "resolution": "megoldás",
+    "days": "napok száma"
+  },
+  "auth": {
+    "confirmAdult": "Meg kell erősítened, hogy elmúltál 18 éves.",
+    "acceptRules": "El kell fogadnod a szabályokat és az adataid kezelését.",
+    "underage": "Az F*app csak 18 éves kortól használható.",
+    "invalidBirthdate": "Érvénytelen születési dátum.",
+    "emailTaken": "Ezzel az e-mail-címmel már létezik fiók.",
+    "wrongCredentials": "Hibás e-mail-cím vagy jelszó.",
+    "banned": "Ezt a fiókot szabályszegés miatt kitiltottuk.",
+    "notLoggedIn": "Nem vagy bejelentkezve.",
+    "suspended": "A fiókod fel van függesztve, amíg egy moderátor át nem nézi.",
+    "verifyFirst": "Előbb igazold a személyazonosságodat."
+  },
+  "profile": {
+    "wrongPassword": "Hibás jelszó.",
+    "ageRange": "A minimális életkor nem lehet nagyobb a maximálisnál.",
+    "maxPhotos": {
+      "one": "Legfeljebb {count} fotód lehet.",
+      "other": "Legfeljebb {count} fotód lehet."
+    },
+    "pinsMustDiffer": "A vész-PIN-nek el kell térnie a szokásos PIN-edtől.",
+    "deleteDuringMeetup": "A fiókodat most nem törölheted – randi van folyamatban. Próbáld újra, ha véget ért."
+  },
+  "photo": {
+    "notJpeg": "A fotónak JPEG formátumúnak kell lennie.",
+    "corrupt": "A fotó sérült.",
+    "notBase64": "A fotónak base64-kódolású JPEG-nek kell lennie.",
+    "tooLarge": "A fotó túl nagy (max. 2 MB).",
+    "notFound": "A fotó nem található.",
+    "unavailable": "A fotó nem érhető el."
+  },
+  "users": {
+    "notFound": "A felhasználó nem található."
+  },
+  "match": {
+    "notFound": "A match nem található.",
+    "ended": "Ez a match véget ért.",
+    "profileUnavailable": "Ez a profil már nem érhető el."
+  },
+  "discover": {
+    "locationRequired": "Előbb kapcsold be a helyadatokat, hogy megmutathassuk a közeli embereket.",
+    "photoRequired": "Adj hozzá legalább egy fotót.",
+    "superLikeIsLike": "A szuperlájk mindig lájk is.",
+    "profileNotFound": "A profil nem található.",
+    "profileGone": "Ez a profil már nem létezik.",
+    "nothingToRewind": "Nincs mit visszavonni.",
+    "cantRewindSuperLike": "Szuperlájkot nem lehet visszavonni.",
+    "cantRewindMatch": "Ebből a swipe-ból már match lett."
+  },
+  "billing": {
+    "likeLimit": "Elfogytak a lájkjaid. Hamarosan jönnek újak – vagy swipe-olj korlátlanul az F*app Plusszal.",
+    "noSuperLike": "Nincs szuperlájkod.",
+    "noBoost": "Nincs boostod.",
+    "tonightPaid": "A „Ma este” a Platinum része, vagy egyszeri vásárlással érhető el.",
+    "featureInPlan": "{feature} az F*app {plan} része.",
+    "paymentsOff": "A fizetés még nincs bekapcsolva – az F*app egyelőre teljesen ingyenes.",
+    "unknownProduct": "Ismeretlen termék.",
+    "cantBuy": "Ezt most nem vásárolhatod meg.",
+    "cantBoost": "Most nem indíthatsz boostot.",
+    "boostRunning": "Már fut egy boost.",
+    "cantTonight": "Ezt most nem kapcsolhatod be.",
+    "tonightOn": "A „Ma este” már be van kapcsolva.",
+    "unknownCity": "Ismeretlen város."
+  },
+  "features": {
+    "unlimitedLikes": "Korlátlan lájk",
+    "rewind": "Visszavonás",
+    "travel": "Utazó mód",
+    "incognito": "Inkognitó",
+    "seeLikes": "Ki lájkolt",
+    "weeklySuperLikes": "Heti 5 szuperlájk",
+    "monthlyBoost": "Havi 1 boost",
+    "priorityLikes": "Elsőbbségi lájkok",
+    "sentLikes": "Elküldött lájkok",
+    "tonight": "Ma este, bármikor"
+  },
+  "agreement": {
+    "wishesRequired": "Töltsd ki, mire vagy kapható.",
+    "invalidWish": "Érvénytelen választás a kívánságaid között.",
+    "notFound": "A megállapodás nem található.",
+    "confirmBoth": "Erősítsd meg mindkét állítást – hogy ezt képzeled el, és hogy a megállapodás nem beleegyezés.",
+    "meetWithin": {
+      "one": "A randinak a következő {count} napon belül kell lennie.",
+      "other": "A randinak a következő {count} napon belül kell lennie."
+    },
+    "cooldown": "Új megállapodást most csak {name} kezdeményezhet.",
+    "changed": "A megállapodás közben megváltozott. Olvasd el újra."
+  },
+  "chat": {
+    "empty": "Üres üzenet.",
+    "notSent": "Az üzenet nem lett elküldve. {reason}",
+    "photo": "Fotó"
+  },
+  "moderation": {
+    "minor": "Ez az üzenet arra utal, hogy egyikőtök talán még nem múlt el 18 éves. Az F*app csak 18+.",
+    "paid": "Fizetős szex kínálása vagy keresése tilos az F*app-on.",
+    "consentPressure": "Figyelem: az alkalmazásban kötött megállapodás nem beleegyezés. Bármikor visszavonhatod, és személyesen bármire nemet mondhatsz – magyarázat nélkül.",
+    "contact": "A matched az alkalmazáson kívüli elérhetőséget oszt meg. Az F*app-on kívül a megállapodás, a biztonsági mód és a jelentés nem működik számodra."
+  },
+  "safety": {
+    "notFound": "A randi nem található.",
+    "ended": "A randi már véget ért.",
+    "wrongPin": "Hibás PIN.",
+    "agreementRequired": "A randit akkor indíthatod el, ha mindketten kitöltöttétek és megerősítettétek a megállapodást.",
+    "setupRequired": "Előbb állíts be megbízható személyt, PIN-t és vész-PIN-t.",
+    "invalidInterval": "Érvénytelen check-in gyakoriság."
+  },
+  "reports": {
+    "feedbackSent": "A visszajelzésedet már elküldted."
+  },
+  "verification": {
+    "unknown": "Ismeretlen ellenőrzés.",
+    "alreadyVerified": "A személyazonosságod már ellenőrzött.",
+    "startFirst": "Előbb indítsd el az ellenőrzést.",
+    "noWebhook": "A fejlesztői szolgáltatónak nincs webhookja.",
+    "unavailable": "Az ellenőrző szolgáltatás nem válaszol. Próbáld újra egy kicsit később.",
+    "declined": {
+      "underage": "Az ellenőrzés szerint még nem vagy 18 éves. Az F*app csak felnőtteknek szól.",
+      "banned": "Ezt a személyt szabályszegés miatt kitiltották az F*app-ról.",
+      "duplicate": "Ennek a személynek már van F*app-fiókja. Mindenkinek csak egy lehet.",
+      "incomplete": "Nem sikerült leolvasni a születési dátumot az igazolványról. Próbáld újra.",
+      "default": "Az ellenőrzés nem sikerült. Próbáld újra."
+    }
+  },
+  "admin": {
+    "notReported": "Ezt a beszélgetést nem jelentették.",
+    "unknownPlan": "Ismeretlen csomag."
+  },
+  "push": {
+    "discreet": "Új értesítés",
+    "match": {
+      "title": "Ez egy match!",
+      "body": "Te és {name} kívánjátok egymást."
+    },
+    "superLike": {
+      "title": "Szuperlájk",
+      "body": "Valakinek nagyon bejössz."
+    },
+    "message": {
+      "photo": "Fotót küldött"
+    },
+    "agreementComplete": {
+      "title": "A megállapodás kész",
+      "body": "Mindketten megerősítettétek. A találkozón ettől még meggondolhatjátok magatokat."
+    },
+    "agreementNew": {
+      "title": "Új megállapodás",
+      "body": "{name} megállapodást kezdeményezett. Töltsd ki, mire vagy kapható."
+    },
+    "agreementChanged": {
+      "title": "Megváltozott a megállapodás",
+      "body": "{name} megváltoztatta az időpontot, a helyet vagy a szabályokat. Erősítsd meg őket újra."
+    },
+    "agreementUpdated": {
+      "title": "Frissült a megállapodás",
+      "body": "{name} frissítette a kívánságait."
+    },
+    "agreementRevoked": {
+      "title": "Megállapodás visszavonva",
+      "body": "{name} visszavonta a megállapodást. A randi elmarad – és ezt tiszteletben kell tartani."
+    },
+    "checkInOverdue": {
+      "title": "Kihagytad a check-int",
+      "body": "{name} riasztást kapott. Erősítsd meg, hogy jól vagy."
+    }
+  },
+  "sms": {
+    "started": "{name} találkozóra megy, és téged választott megbízható személynek. Itt látod, hol van, és jól van-e: {url}",
+    "alarm": "RIASZTÁS: {name} segítségre szorul. Hely és részletek: {url}",
+    "overdue": "{name} nem jelentkezett - {time}-ig kellett volna megerősítenie, hogy jól van. Próbáld felhívni. Hely: {url}",
+    "backOk": "{name} jelentkezett, és megerősítette, hogy jól van.",
+    "sosCancelled": "{name} visszavonta a riasztást - tévedés volt, jól van.",
+    "endedOk": "{name} befejezte a találkozót, és jól van. Köszönjük, hogy ott voltál neki.",
+    "someone": "Egy hozzád közel álló személy"
+  },
+  "share": {
+    "pageTitle": "F*app – biztonsági link",
+    "header": "Biztonsági link",
+    "loading": "Betöltés…",
+    "call": "{number} hívása",
+    "mapLabel": "Térkép az utolsó ismert hellyel",
+    "openMaps": "Megnyitás a Térképben",
+    "partnerPhotoAlt": "Annak a fotója, akivel találkozik",
+    "partnerLead": "Akivel találkozik:",
+    "okTitle": "{name} jól van",
+    "okDetail": "Utolsó check-in: {last}. A következő legkésőbb: {next}.",
+    "overdueTitle": "{name} nem jelentkezett",
+    "overdueDetail": "A check-in határideje: {due}. Próbáld felhívni. Ha nem veszi fel, hívd a {number} számot, és add meg a címet a térképről.",
+    "alarmTitle": "{name} segítségre szorul",
+    "alarmDetail": "Riasztás időpontja: {time}. Hívd a {number} számot, és add meg a helyet a térképről, valamint a lenti találkozási helyet.",
+    "endedTitle": "A találkozó véget ért",
+    "endedDetail": "{name} megerősítette, hogy jól van.",
+    "endedDetailAlarm": "{name} megerősítette, hogy jól van. A találkozó alatt riasztás történt – kérdezd meg, minden rendben van-e.",
+    "footer": "A hely már nem lesz látható, amint {name} befejezi a találkozót.",
+    "locationJustNow": "Hely: épp most",
+    "locationAgo": {
+      "one": "Hely: {count} perce",
+      "other": "Hely: {count} perce"
+    },
+    "battery": "akkumulátor: {percent}",
+    "linkExpired": "Ez a link már nem érvényes",
+    "loadFailed": "Nem sikerült betölteni az állapotot. Újrapróbálás…"
+  }
+}

@@ -1,1 +1,677 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Erkek",
+      "woman": "Kadın",
+      "nonbinary": "Non-binary"
+    },
+    "gendersPlural": {
+      "man": "Erkekler",
+      "woman": "Kadınlar",
+      "nonbinary": "Non-binary kişiler"
+    },
+    "tags": {
+      "oneoff": "Tek seferlik",
+      "repeat": "Tekrar tekrar",
+      "myplace": "Bende",
+      "yourplace": "Sende",
+      "vanilla": "Vanilya",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Öpüşme ve sarılma",
+      "oral": "Oral",
+      "vaginal": "Vajinal",
+      "anal": "Anal",
+      "toys": "Oyuncaklar",
+      "overnight": "Gece kalma"
+    },
+    "wishes": {
+      "yes": "Evet",
+      "maybe": "Belki",
+      "no": "Hayır"
+    },
+    "reportReasons": {
+      "consent": "Rızayı veya sınırları ihlal etti",
+      "violence": "Şiddet veya tehdit",
+      "minor": "Reşit olmadığı şüphesi",
+      "harassment": "Taciz",
+      "fake": "Sahte profil",
+      "paid": "Ücretli hizmet teklifi",
+      "other": "Diğer"
+    },
+    "feedbackReasons": {
+      "consent": "Sınırlara veya “dur” sözüne saygı göstermedi",
+      "safety": "Kendimi güvende hissetmedim",
+      "fake": "Fotoğraflarındaki gibi görünmüyordu",
+      "other": "Başka bir şey"
+    },
+    "plans": {
+      "free": "Ücretsiz",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Sınırsız beğeni",
+        "detail": "İstediğin kadar kaydır."
+      },
+      "rewind": {
+        "name": "Geri al",
+        "detail": "Yanlışlıkla geçtiğin bir profili geri getir."
+      },
+      "travel": {
+        "name": "Seyahat modu",
+        "detail": "Seyahatten önce başka bir şehirde kaydır."
+      },
+      "incognito": {
+        "name": "Gizli mod",
+        "detail": "Seni yalnızca beğendiğin kişiler görebilir."
+      },
+      "seeLikes": {
+        "name": "Seni kimler beğendi",
+        "detail": "Seni beğenen herkesi gör."
+      },
+      "weeklySuperLikes": {
+        "name": "Haftada 5 Super Like",
+        "detail": "Birinden gerçekten hoşlandığını göster."
+      },
+      "monthlyBoost": {
+        "name": "Ayda 1 Boost",
+        "detail": "Yakındakiler için 30 dakika en üstte."
+      },
+      "priorityLikes": {
+        "name": "Öncelikli beğeniler",
+        "detail": "Beğenin diğerlerinden önce görülür."
+      },
+      "sentLikes": {
+        "name": "Gönderilen beğeniler",
+        "detail": "Son 7 günde kimleri beğendin."
+      },
+      "tonight": {
+        "name": "Bu gece, her zaman",
+        "detail": "Bu gece müsait olduğunu göster."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Bu gece"
+    },
+    "cities": {
+      "praha": "Prag",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Viyana",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Aklımdaki bu. Orada her şeye hayır diyebilirim – karşımdaki de.",
+    "notice": "Anlıyorum: rıza yalnızca burada ve şimdi geçerlidir. “Hayır”, “dur”, güvenli kelime, sessizlik, donup kalmak ya da sarhoş olmak rıza değildir. Uygulamadaki bir anlaşma kimseyi sorumluluktan kurtarmaz.",
+    "deterrence": "F*app'teki herkesin kimliği doğrulanmıştır. Bir suçtan şüphelenirsek kimliği polise veririz."
+  },
+  "welcome": {
+    "tagline": "Seks, uzatmadan.",
+    "taglineStrong": "Yalnızca ikiniz de evet dediğinizde.",
+    "createAccount": "Hesap oluştur",
+    "signIn": "Giriş yap",
+    "adultsOnly": "Yalnızca 18+. Buradaki herkesin kimliği doğrulanmıştır."
+  },
+  "agreement": {
+    "title": "Anlaşma",
+    "titleWithName": "Anlaşma · {name}",
+    "timeFormatError": "Saati SS:DD biçiminde gir, ör. 21:00.",
+    "revokedByPartnerTitle": "{name} anlaşmayı iptal etti",
+    "revokedByPartnerSubtitle": "Artık yeni bir anlaşmayı yalnızca {name} başlatabilir.",
+    "revokedTitle": "Anlaşma iptal edildi",
+    "revokedSubtitle": "Yeni bir tane başlatabilirsin.",
+    "newTitle": "Yeni anlaşma",
+    "newSubtitle": "Her biriniz kendi kısmını ayrı ayrı doldurur. Yalnızca ortak noktalarınızı görürsünüz.",
+    "logisticsChangedTitle": "Saati, yeri veya kuralları değiştiriyorsun",
+    "logisticsChangedSubtitle": "{name} bunları yeniden onaylamak zorunda kalacak.",
+    "confirmedTitle": "Anlaşmayı ikiniz de doldurdunuz",
+    "confirmedSubtitle": "Orada ikinizden biri istediği an fikrini değiştirebilir.",
+    "myPartDoneTitle": "Senin kısmın tamam",
+    "myPartDoneSubtitle": "{name} kendi kısmını henüz doldurmadı veya onaylamadı.",
+    "partnerFilledTitle": "{name} kendi kısmını doldurdu",
+    "partnerFilledSubtitle": "Sen de kendininkini doldur – yalnızca ortak noktalarınızı göreceksiniz.",
+    "fillTitle": "Kendi kısmını doldur",
+    "fillSubtitle": "Yalnızca ortak noktalarınızı göreceksiniz.",
+    "overlapTitle": "Ortak noktalarınız",
+    "overlapNone": "Henüz ortak bir şey yok.",
+    "overlapYes": "İkiniz de istiyorsunuz",
+    "overlapMaybe": "Belki – orada konuşursunuz",
+    "partnerNote": "{name}: “{note}”",
+    "overlapHint": "Birinizin istemediğini kimse görmez – kimin istemediğini bile.",
+    "wishesLabel": "Neye varım",
+    "wishesHint": "{name} yalnızca ortak noktalarınızı görecek. “Hayır”larını kimse görmeyecek.",
+    "wishesHintNoName": "Karşındaki kişi yalnızca ortak noktalarınızı görecek.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Sınırlarım (karşımdaki de görür)",
+    "notePlaceholder": "Ör. fotoğraf yok, önce seni tanımak istiyorum.",
+    "logisticsLabel": "Pratik konular – ikiniz için de geçerli",
+    "today": "Bugün",
+    "tomorrow": "Yarın",
+    "timeLabel": "Saat",
+    "placeLabel": "Nerede",
+    "placePlaceholder": "Ör. bende, Vinohrady",
+    "safewordLabel": "Güvenli kelime",
+    "safewordPlaceholder": "Her şeyi durduran bir kelime",
+    "condom": "Her zaman prezervatif",
+    "sober": "Ayık",
+    "soberHint": "Sarhoşluk rıza değildir.",
+    "publicFirst": "Önce halka açık bir yerde buluşuyoruz",
+    "publicFirstHint": "Bir kafe ya da bar – devam edip etmeyeceğinize yüz yüze karar verirsiniz.",
+    "partnerMayShare": "Buluşma sırasında {name}, adını, fotoğrafını ve buluşma yerini kendi güvendiği kişiyle paylaşabilir.",
+    "saveAndConfirm": "Kaydet ve onayla",
+    "startMeetup": "Buluşmayı başlat",
+    "revoke": "Anlaşmayı iptal et",
+    "revokeConfirmTitle": "Anlaşma iptal edilsin mi?",
+    "revokeConfirmMessage": "Buluşma iptal. Hiçbir şey açıklamak zorunda değilsin – {name} yalnızca bir bildirim alır."
+  },
+  "meetup": {
+    "title": "Buluşma · {name}",
+    "fakeCallerDefault": "Annem",
+    "endedTitle": "Buluşma bitti",
+    "endedMessage": "{name}, iyi olduğuna dair bir mesaj aldı.",
+    "sosFailed": "Alarm gönderilemedi: {error} Tekrar dene ya da hemen ara: {name}.",
+    "needAgreementTitle": "Önce anlaşmayı tamamlayın",
+    "needAgreementSubtitle": "Anlaşmayı ikiniz de doldurup onayladığınızda buluşmayı başlatabilirsin.",
+    "needAgreementAction": "Anlaşma",
+    "setupTitle": "Güvenliğini ayarla",
+    "setupSubtitle": "Güvendiğin bir kişi, bir PIN ve bir acil durum PIN'i.",
+    "setupAction": "Ayarla",
+    "pointTrusted": "{name}, bağlantı içeren bir SMS alır. Nerede olduğunu, kiminle olduğunu ve iyi olup olmadığını görür.",
+    "pointTrustedNoName": "Güvendiğin kişi, bağlantı içeren bir SMS alır. Nerede olduğunu, kiminle olduğunu ve iyi olup olmadığını görür.",
+    "pointCheckIn": "Düzenli aralıklarla PIN'inle iyi olduğunu onaylarsın. Check-in yapmazsan uyarı göndeririz – telefonunun şarjı bitse bile.",
+    "pointDuress": "Acil durum PIN'i normal PIN'inle tamamen aynı görünür ama sessizce alarm verir.",
+    "pointPartner": "{name}, güvenlik modunun açık olduğunu ve güvendiğin kişinin nerede ve kiminle olduğunu bildiğini görür. Fazlasını değil – ne alarmı ne de konumunu.",
+    "intervalLabel": "Check-in aralığı",
+    "minutes": "{count} dk",
+    "start": "Buluşmayı başlat",
+    "locationVisibleTo": "{name} konumunu görebiliyor",
+    "bgLocationTitle": "Konum yalnızca uygulama açıkken",
+    "bgLocationSubtitle": "Ekranın kapalıyken de görebilmesi için konum erişimini “Her zaman” olarak ayarla.",
+    "bgLocationAction": "Ayarlar",
+    "nextCheckIn": "Sonraki check-in'e kalan",
+    "checkIn": "Check-in",
+    "now": "şimdi",
+    "imOk": "İyiyim",
+    "overdueHint": "{name} uyarıldı. PIN'inle iyi olduğunu onayla.",
+    "graceHint": {
+      "one": "Belirlenen saatten sonra {count} dakika içinde check-in yapmazsan {name}, konumunla birlikte bir uyarı alır.",
+      "other": "Belirlenen saatten sonra {count} dakika içinde check-in yapmazsan {name}, konumunla birlikte bir uyarı alır."
+    },
+    "partnerSafetyOn": "{name} için de güvenlik modu açık – güvendiği kişi nerede ve kiminle olduğunu biliyor.",
+    "partnerSafetyOff": "{name} için güvenlik modu açık değil.",
+    "fakeCall": "Sahte arama",
+    "fakeCallIn": "{count} sn sonra arama",
+    "fakeCallHint": "{count} sn sonra sahte arama gerçek bir arama gibi çalar – ayrılmak için bahanen.",
+    "shareLink": "Bağlantı gönder",
+    "sos": "SOS – basılı tut",
+    "revoke": "Anlaşmayı iptal et",
+    "end": "Buluşmayı bitir",
+    "sosSentTitle": "Alarm gönderildi",
+    "sosSentBody": "{trusted}, tam konumunu ve kiminle olduğunu aldı. {partner} hiçbir şey görmeyecek.",
+    "sosMistake": "Yanlışlıktı – iyiyim",
+    "sosHide": "Gizle (alarm devam eder)",
+    "pinTitle": "PIN'inle onayla",
+    "pinSubtitleOk": "İyi olduğunu.",
+    "pinSubtitleEnd": "Buluşmanın bittiğini ve iyi olduğunu.",
+    "revokeConfirmTitle": "Anlaşma iptal edilsin mi?",
+    "revokeConfirmMessage": "{name} bir bildirim alacak. Hiçbir şey açıklamak zorunda değilsin. Güvenlik modu sen bitirene kadar çalışmaya devam eder."
+  },
+  "feedback": {
+    "title": "Buluşma nasıl geçti?",
+    "privacy": "Cevabını yalnızca ekibimiz görür – {name} asla görmez. Burayı sınırlara saygı duyan insanların yeri olarak tutmamıza yardımcı olur.",
+    "privacyNoName": "Cevabını yalnızca ekibimiz görür – karşındaki kişi asla görmez. Burayı sınırlara saygı duyan insanların yeri olarak tutmamıza yardımcı olur.",
+    "allGood": "Her şey yolundaydı",
+    "somethingWrong": "Bir şeyler yolunda değildi",
+    "detailsLabel": "Ne oldu? (isteğe bağlı)",
+    "preserve": "Polise gitmen gerekirse diye buluşmanın kaydını sakla. Aksi takdirde anlaşma 48 saat sonra silinir.",
+    "suspendNotice": "Biri sana saygısızlık ettiyse ya da tehlikedeysen, hesabını hemen askıya alır ve durumu inceleriz.",
+    "send": "Gönder",
+    "helpTitle": "Çok üzgünüz",
+    "helpIntro": "Bunu inceleyeceğiz; inceleme süresince karşı tarafın hesabını askıya aldık. Bundan sonra ne yapacağına şimdi karar vermek zorunda değilsin – ve bunların hiçbiri senin suçun değil.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Suç mağdurları için yardım hattı – Bílý kruh bezpečí",
+        "detail": "7/24, ücretsiz ve adını vermeden arayabilirsin."
+      },
+      "police": {
+        "name": "Çek Polisi",
+        "detail": "Bildirmek istersen – daha sonra da olur."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Cinsel şiddet yaşamış kişilere destek."
+      }
+    },
+    "helpLocal": {
+      "name": "Nereden yardım alabilirsin",
+      "detail": "Yerel polise ya da suç ve cinsel şiddet mağdurlarına yönelik yerel bir destek hattına başvur."
+    },
+    "medical": "İsteğin dışında bir şey olduysa, mümkün olan en kısa sürede tıbbi yardım al – gebeliği ve enfeksiyonları önlemek için de, çünkü bazı ilaçlar yalnızca 72 saat içinde etkilidir. Henüz duş almadıysan ve kıyafetlerini saklarsan kanıtlar hâlâ toplanabilir. Ama bunların hiçbiri şart değil – daha sonra da bildirebilirsin.",
+    "preserved": "Polis için gerekirse diye buluşmanın kaydını (anlaşma, mesajlar, alarmlar) sakladık.",
+    "backToApp": "Uygulamaya dön"
+  },
+  "report": {
+    "title": "Şikâyet et",
+    "intro": "Şikâyetin anonimdir. Ayrıca bu kişiyi senin için engelleyeceğiz, böylece birbirinizi artık görmeyeceksiniz.",
+    "introWithName": "{name}. Şikâyetin anonimdir. Ayrıca bu kişiyi senin için engelleyeceğiz, böylece birbirinizi artık görmeyeceksiniz.",
+    "detailsLabel": "Ayrıntılar (isteğe bağlı)",
+    "submit": "Şikâyet et",
+    "thanksTitle": "Teşekkürler",
+    "thanksMessage": "Şikâyetini aldık. Birbirinizi artık görmeyeceksiniz."
+  },
+  "chat": {
+    "unavailable": "Sohbet kullanılamıyor",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km uzakta",
+    "reportOrBlock": "Şikâyet et veya engelle",
+    "photo": "Fotoğraf",
+    "photoBlurred": "Bulanık fotoğraf, göstermek için dokun",
+    "tapToReveal": "Göstermek için dokun",
+    "sendPhoto": "Fotoğraf gönder",
+    "message": "Mesaj",
+    "messagePlaceholder": "Bir mesaj yaz…",
+    "send": "Gönder",
+    "report": "Şikâyet et",
+    "block": "Engelle",
+    "unmatch": "Eşleşmeyi kaldır",
+    "blockConfirmTitle": "Engellensin mi?",
+    "blockConfirmMessage": "Sen ve {name} birbirinizi artık görmeyeceksiniz ve sohbet kaybolacak."
+  },
+  "safetySettings": {
+    "title": "Güvenlik ve gizlilik",
+    "trustedLabel": "Güvendiğin kişi",
+    "trustedHint": "Bir buluşma başlattığında ona konumunun bağlantısını SMS ile göndeririz. Check-in yapmazsan veya alarm verirsen onu uyarırız.",
+    "nameLabel": "Ad",
+    "namePlaceholder": "Ör. Deniz",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+90 532 123 45 67",
+    "pinsLabel": "PIN ve acil durum PIN'i",
+    "pinsHint": "Buluşma sırasında iyi olduğunu PIN'inle onaylarsın. Acil durum PIN'i tamamen aynı görünür ama sessizce alarm gönderir – biri seni uygulamaya her şeyin yolunda olduğunu söylemeye zorlarsa bunu kullan.",
+    "checkinPinLabel": "PIN (4–6 haneli)",
+    "duressPinLabel": "Acil durum PIN'i (PIN'inden farklı)",
+    "passwordLabel": "Hesap şifresi (PIN'leri değiştirmek için)",
+    "pinsSet": "PIN'ler ayarlandı",
+    "change": "Değiştir",
+    "privacyLabel": "Gizlilik",
+    "appLock": "Uygulama kilidi",
+    "appLockHint": "Uygulamayı her açtığında Face ID, parmak izi veya telefon şifren.",
+    "discreet": "Göze batmayan mod",
+    "discreetHint": "Nötr bir simge ve içeriksiz bildirimler – kimse bunun hangi uygulama olduğunu anlayamaz.",
+    "save": "Kaydet"
+  },
+  "tabs": {
+    "discover": "Keşfet",
+    "matches": "Mesajlar",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "{count} beğeni hakkın kaldı.",
+      "other": "{count} beğeni hakkın kaldı."
+    },
+    "boostRunningUntil": "Boost şu saate kadar açık: {time}.",
+    "tonight": "Bu gece",
+    "tonightOn": "Bu gece – açık",
+    "boost": "Boost",
+    "boostOn": "Boost açık",
+    "searchSettings": "Arama ayarları",
+    "traveling": "Seyahatte",
+    "travelingIn": "Seyahatte · {city}",
+    "change": "Değiştir",
+    "enableLocation": "Konuma izin ver",
+    "addPhoto": "Fotoğraf ekle",
+    "retry": "Tekrar dene",
+    "empty": "Şu an yakınlarda başka kimse yok. Daha sonra tekrar dene ya da aramanı genişlet.",
+    "refresh": "Yenile",
+    "nextPhoto": "Sonraki fotoğraf",
+    "stampLike": "EVET",
+    "stampNope": "HAYIR",
+    "superLikedYou": "Sana Super Like gönderdi",
+    "distance": "{km} km uzakta",
+    "rewind": "Son kaydırmayı geri al",
+    "pass": "Geç",
+    "superLike": "Super Like",
+    "like": "Beğen",
+    "boostSheet": {
+      "title": "Boost başlatılsın mı?",
+      "messageMonthly": "30 dakika boyunca yakındakiler için en üstte olacaksın. Bunun için aboneliğindeki aylık Boost kullanılır.",
+      "messageCredits": "30 dakika boyunca yakındakiler için en üstte olacaksın. {count}× hakkın kaldı.",
+      "confirm": "Boost başlat",
+      "done": "Boost açık – 30 dakika boyunca en üsttesin."
+    },
+    "tonightSheet": {
+      "title": "“Bu gece” açılsın mı?",
+      "message": "Sabah 6:00'ya kadar yakındakiler arasında daha üstte görünecek ve “Bu gece” etiketi taşıyacaksın. İstediğin zaman kapatabilirsin.",
+      "messageCredits": "Sabah 6:00'ya kadar yakındakiler arasında daha üstte görünecek ve “Bu gece” etiketi taşıyacaksın. İstediğin zaman kapatabilirsin. {count}× hakkın kaldı.",
+      "confirm": "Aç",
+      "done": "“Bu gece” sabah 6:00'ya kadar açık."
+    },
+    "tonightOffSheet": {
+      "title": "“Bu gece” açık",
+      "message": "Şu saate kadar aktif: {time}.",
+      "confirm": "Kapat",
+      "done": "“Bu gece” kapatıldı."
+    }
+  },
+  "matches": {
+    "title": "Mesajlar",
+    "agreement": {
+      "pending": "Anlaşma bekliyor",
+      "confirmed": "Anlaşma onaylandı",
+      "revoked": "Anlaşma iptal edildi"
+    },
+    "likes": "Beğeniler",
+    "likedBy": {
+      "one": "{count} kişi seni beğendi",
+      "other": "{count} kişi seni beğendi"
+    },
+    "likedByLocked": {
+      "one": "{count} kişi seni beğendi – kim olduğunu Gold ile gör",
+      "other": "{count} kişi seni beğendi – kimler olduğunu Gold ile gör"
+    },
+    "likesHint": "Seni kimler beğendi, sen kimleri beğendin",
+    "empty": "Henüz eşleşme yok. Kaydırmaya devam et – birbirinizi beğendiğinizde burada görünecek.",
+    "lastMessageMine": "Sen: {text}",
+    "newMatch": "Yeni eşleşme – ilk mesajı gönder."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Kaydediliyor…",
+    "saved": "Kaydedildi",
+    "done": "Bitti",
+    "suspended": {
+      "title": "Hesabın askıya alındı",
+      "subtitle": "Bir şikâyeti inceliyoruz. Güvenlik modu senin için çalışmaya devam ediyor."
+    },
+    "photoA11y": "Fotoğraf – silmek için basılı tut",
+    "addPhoto": "Fotoğraf ekle",
+    "photoHint": "Çıplaklık yok – fotoğraflar uygulama mağazalarının kurallarına uymalı. Silmek için fotoğrafı basılı tut.",
+    "name": "Ad",
+    "bio": "Hakkımda",
+    "bioPlaceholder": "Kendin hakkında birkaç satır.",
+    "lookingFor": "Aradığım",
+    "safety": {
+      "title": "Güvenlik ve gizlilik",
+      "trusted": "Güvendiğin kişi: {name}",
+      "setup": "Güvendiğin bir kişi ve PIN ayarla.",
+      "edit": "Düzenle"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold ve Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Sınırsız beğeni, seni kimin beğendiğini görme, Boost ve daha fazlası.",
+      "validUntil": "{date} tarihine kadar geçerli.",
+      "upgrade": "Yükselt",
+      "manage": "Yönet"
+    },
+    "incognito": {
+      "label": "Gizli mod",
+      "hint": "Seni yalnızca beğendiğin kişiler görebilir. (Plus)"
+    },
+    "travel": {
+      "label": "Seyahat modu (Plus)",
+      "home": "Evde",
+      "hint": "Seyahatten önce başka bir şehirde kaydır – oradakiler seni “Seyahatte” etiketiyle görür."
+    },
+    "showMe": "Bana göster",
+    "ageFrom": "Yaş (en az)",
+    "ageTo": "Yaş (en fazla)",
+    "distance": "Mesafe",
+    "distanceSuffix": " km",
+    "save": "Profili kaydet",
+    "language": {
+      "title": "Dil",
+      "device": "Telefonla aynı",
+      "rtlHint": "Sağdan sola yazılan dillerde düzen, uygulamayı yeniden başlattıktan sonra tersine döner."
+    },
+    "signOut": "Çıkış yap",
+    "deletePassword": "Hesabını silmek için şifre",
+    "deleteForever": "Hesabı kalıcı olarak sil",
+    "deleteAccount": "Hesabı sil",
+    "removePhoto": {
+      "title": "Fotoğraf silinsin mi?",
+      "confirm": "Sil"
+    }
+  },
+  "premium": {
+    "title": "Abonelik",
+    "free": {
+      "title": "F*app şimdilik ücretsiz",
+      "body": "Ücretli özellikleri daha sonra açacağız. Güvenlik – doğrulama, anlaşmalar, güvenlik modu ve SOS – her zaman ücretsiz kalacak."
+    },
+    "back": "Geri",
+    "done": "Bitti",
+    "continue": "Devam",
+    "reason": {
+      "likeLimitAt": "Beğeni hakkın bitti. Yenileri şu saatte gelecek: {time}.",
+      "likeLimit": "Beğeni hakkın bitti. Yakında yenileri gelecek.",
+      "noCredit": "{credit} tek seferlik olarak veya abonelikle alınabilir.",
+      "upgrade": "Bu, F*app {plan} paketine dahildir."
+    },
+    "oneOff": "Tek seferlik",
+    "owned": "sende {count} tane var",
+    "creditDetail": {
+      "boost": "Yakındakiler için 30 dakika en üstte.",
+      "superlike": "Ondan gerçekten hoşlandığını görecek.",
+      "tonight": "Sabah 6:00'ya kadar daha üstte, “Bu gece” etiketiyle."
+    },
+    "buyCredit": "{amount}× {credit} satın al · {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Bir ekstra Boost hakkın var.",
+        "other": "{count} ekstra Boost hakkın var."
+      },
+      "superlike": {
+        "one": "Bir ekstra Super Like hakkın var.",
+        "other": "{count} ekstra Super Like hakkın var."
+      },
+      "tonight": {
+        "one": "Bir ekstra “Bu gece” hakkın var.",
+        "other": "{count} ekstra “Bu gece” hakkın var."
+      }
+    },
+    "currentPlan": "F*app {plan} kullanıyorsun",
+    "validUntil": "{date} tarihine kadar geçerli.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Sınırsız kaydır ve yanlışlıkla geçtiğin profilleri geri getir.",
+      "gold": "Seni kimin beğendiğini gör – ve tek dokunuşla eşleş.",
+      "platinum": "Beğenin ilk görülür. Ve “Bu gece” her zaman."
+    },
+    "featureIncluded": "{feature}: dahil",
+    "featureNotIncluded": "{feature}: dahil değil",
+    "months": {
+      "one": "{count} ay",
+      "other": "{count} ay"
+    },
+    "perMonth": "aylık",
+    "perMonthSave": "aylık · −%{percent}",
+    "continueWithPrice": "Devam · {price}",
+    "planBought": {
+      "one": "Artık F*app {plan} kullanıyorsun.",
+      "other": "Artık {count} ay boyunca F*app {plan} kullanıyorsun."
+    },
+    "renewal": "Aboneliğin otomatik olarak yenilenir. İstediğin zaman App Store veya Google Play ayarlarından iptal edebilirsin. Fiyat herkes için aynıdır.",
+    "renewalUpfront": "Peşin ödeme: {total} (aylık {monthly}). Aboneliğin otomatik olarak yenilenir. İstediğin zaman App Store veya Google Play ayarlarından iptal edebilirsin. Fiyat herkes için aynıdır.",
+    "safetyFree": {
+      "title": "Güvenlik her zaman ücretsiz",
+      "subtitle": "Doğrulama, anlaşmalar, güvenlik modu, SOS ve şikâyet."
+    },
+    "devNote": "Prototip: hiçbir ücret alınmaz, satın alma yalnızca simüle edilir."
+  },
+  "likes": {
+    "title": "Beğeniler",
+    "received": "Seni beğenenler",
+    "receivedCount": "Seni beğenenler · {count}",
+    "sent": "Gönderilen",
+    "emptyReceived": "Henüz yeni beğeni yok.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} kişi seni beğendi",
+      "other": "{count} kişi seni beğendi"
+    },
+    "lockedEmpty": "Beğenilerin burada görünecek",
+    "goldText": "F*app Gold ile kim olduklarını görür, tek dokunuşla eşleşirsin.",
+    "goldCta": "Gold ile gör",
+    "emptySent": "Son 7 günde eşleşmesiz beğeni yok.",
+    "superLikePending": "Super Like · bekliyor",
+    "pending": "Yanıt bekleniyor",
+    "sentTitle": "Beğendiklerin",
+    "platinumText": "F*app Platinum ile son 7 gündeki beğenilerini görürsün.",
+    "platinumCta": "Platinum ile gör",
+    "likeBack": "Sen de beğen",
+    "pass": "Geç"
+  },
+  "match": {
+    "title": "Eşleştiniz!",
+    "body": "Sen ve {name} birbirinizi istiyorsunuz.\nMerhaba de ve neler istediğiniz konusunda anlaşın.",
+    "sendMessage": "Mesaj gönder",
+    "keepDiscovering": "Keşfetmeye devam et"
+  },
+  "login": {
+    "title": "Giriş yap",
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Giriş yap"
+  },
+  "register": {
+    "title": "Hesap oluştur",
+    "name": "Ad (diğerleri görür)",
+    "email": "E-posta",
+    "password": "Şifre (en az 10 karakter)",
+    "birthdate": "Doğum tarihi",
+    "birthdatePlaceholder": "GG. AA. YYYY",
+    "birthdateInvalid": "Doğum tarihini GG. AA. YYYY biçiminde gir.",
+    "iAm": "Ben",
+    "showMe": "Bana göster",
+    "confirmAdult": "18 yaşında veya daha büyüğüm.",
+    "acceptRules": "Topluluk kurallarını ve F*app'in çalışabilmesi için cinsel hayatıma ilişkin veriler dahil verilerimin işlenmesini kabul ediyorum.",
+    "verifyNote": "Hemen ardından kimliğini ve yaşını doğrulayacağız (kimlik belgesi ve selfie). Kimlik belgeni saklamıyoruz.",
+    "continue": "Devam"
+  },
+  "verify": {
+    "title": "Sen olduğunu doğrula",
+    "intro": "F*app'teki herkesin kimliği ve yaşı doğrulanmıştır. Kimlik belgenin fotoğrafını çekip bir selfie alacaksın – yaklaşık iki dakika sürer.",
+    "privacy": "Kimlik belgeni ve fotoğraflarını saklamıyoruz. Yalnızca doğrulama sonucunu ve doğum tarihini tutuyoruz. Kuralları çiğneyen kişi yeni bir hesapla geri dönemez.",
+    "pending": {
+      "title": "Doğrulama sonucun bekleniyor",
+      "subtitle": "Genellikle birkaç dakika sürer.",
+      "refresh": "Yenile"
+    },
+    "declined": "Doğrulama başarısız oldu",
+    "devApprove": "Başarılı doğrulamayı simüle et (test modu)",
+    "retry": "Tekrar dene",
+    "start": "Kimliği doğrula",
+    "signOut": "Çıkış yap"
+  },
+  "common": {
+    "back": "Geri",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "retry": "Tekrar dene",
+    "continue": "Devam",
+    "done": "Bitti",
+    "send": "Gönder",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "open": "Aç",
+    "show": "Görüntüle",
+    "confirm": "Onayla",
+    "errorGeneric": "Bir şeyler ters gitti."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} için güvenlik modu açık",
+    "partnerSafetySubtitle": "Güvendiği kişi nerede ve kiminle olduğunu biliyor.",
+    "meetupTitle": "Buluşma devam ediyor",
+    "meetupSubtitle": "Güvenlik modu açık.",
+    "missingTitle": "Henüz anlaşma yok",
+    "missingSubtitle": "Her biriniz neye var olduğunu doldurur – yalnızca uyuştuğunuz yerleri görürsünüz.",
+    "fill": "Doldur",
+    "revokedByMeTitle": "Anlaşmayı iptal ettin",
+    "revokedByPartnerTitle": "{name} anlaşmayı iptal etti",
+    "revokedSubtitle": "Buluşma iptal.",
+    "revokedCooldownSubtitle": "Buluşma iptal. Yeni bir anlaşmayı yalnızca {name} başlatabilir.",
+    "newAgreement": "Yeni anlaşma",
+    "confirmedTitle": "Anlaşma tamam",
+    "confirmedSubtitle": "Orada ikinizden biri istediği an fikrini değiştirebilir.",
+    "partnerFilledTitle": "{name} anlaşmayı doldurdu",
+    "waitingForYouTitle": "Anlaşma seni bekliyor",
+    "fillYoursSubtitle": "Neye var olduğunu doldur – yalnızca uyuştuğunuz yerleri göreceksiniz.",
+    "partnerPendingTitle": "{name} henüz doldurmadı",
+    "partnerPendingSubtitle": "İkiniz de doldurduğunuzda anlaşma tamamlanır."
+  },
+  "fakeCall": {
+    "incoming": "cep telefonu…",
+    "hangUp": "Kapat",
+    "decline": "Reddet",
+    "accept": "Kabul et"
+  },
+  "homeBanners": {
+    "meetupTitle": "Buluşma devam ediyor · {name}",
+    "missedCheckIn": "Bir check-in'i kaçırdın!",
+    "safetyOn": "Güvenlik modu açık.",
+    "feedbackTitle": "Buluşma nasıl geçti?",
+    "feedbackSubtitle": "{name} – cevabını yalnızca ekibimiz görecek.",
+    "feedbackAction": "Yanıtla"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} hane girildi",
+      "other": "{count} hane girildi"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, azalt",
+    "stepperIncrease": "{label}, artır"
+  },
+  "api": {
+    "offline": "Sunucuya bağlanılamadı. Bağlantını kontrol et."
+  },
+  "billing": {
+    "storeNotConnected": "App Store ve Google Play üzerinden satın alma henüz ayarlanmadı."
+  },
+  "notifications": {
+    "channelName": "Bildirimler",
+    "reminderDiscreet": "Hatırlatma",
+    "checkInTitle": "Check-in zamanı",
+    "checkInBody": "PIN'inle iyi olduğunu onayla.",
+    "fakeCallBody": "Gelen arama"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Konum paylaşımı açık",
+    "notificationBody": "Uygulamadan durdurabilirsin."
+  },
+  "appLock": {
+    "prompt": "F*app kilidini aç",
+    "lockedTitle": "Uygulama kilitli",
+    "lockedBody": "Face ID, parmak izin veya telefon şifrenle kilidi aç.",
+    "sosHold": "SOS – basılı tut",
+    "unlock": "Kilidi aç",
+    "sosSentTitle": "Alarm gönderildi",
+    "sosSentBody": "{name}, konumunla birlikte bir uyarı aldı.",
+    "sosSentBodyNoName": "Güvendiğin kişi, konumunla birlikte bir uyarı aldı.",
+    "sosFailedTitle": "Gönderilemedi"
+  },
+  "native": {
+    "locationWhenInUse": "F*app, sana yakındaki kişileri göstermek ve buluşma sırasında konumunu güvendiğin kişiyle paylaşmak için konumuna ihtiyaç duyar.",
+    "locationAlways": "Buluşma sırasında F*app, ekranın kapalıyken bile konumunu güvendiğin kişiyle paylaşır. Buluşmalar dışında konumunu arka planda kullanmaz.",
+    "faceId": "F*app, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
+    "photos": "Profilin için fotoğraf seç.",
+    "camera": "Profilin için kendi fotoğrafını çek."
+  }
+}

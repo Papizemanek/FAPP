@@ -1,1 +1,13 @@
-{}
+{
+  "name": "F*app",
+  "subtitle": "Överenskommet och tryggt",
+  "promotionalText": "Avslappnade dejter för verifierade vuxna. Blind överenskommelse, en trygghetsperson, incheckningar och SOS. Säkerheten är alltid gratis.",
+  "description": "F*app är en dejtingapp för vuxna som söker avslappnade möten – och vill att de ska vara överenskomna och trygga.\n\nVERIFIERADE MÄNNISKOR\nAlla verifierar sig med id-handling och selfie. De är de som de utger sig för att vara, och en avstängning gäller personen, inte bara kontot. Vi sparar inte din id-handling.\n\nBLIND ÖVERENSKOMMELSE\nNi markerar var för sig vad ni är sugna på: ja, kanske eller nej. Ni ser båda bara det ni är överens om – ingen ser den andras ”nej”. Plats, kondom, nykterhet och ett stoppord kommer ni också överens om i förväg. Samtycke gäller bara här och nu, och på plats kan du säga nej till vad som helst.\n\nSÄKERHETSLÄGE\n• Någon du litar på får en länk till din plats och status för träffen.\n• Incheckningar med pinkod – om du inte checkar in skickar vår server ett sms, även om din telefon har dött.\n• SOS genom att hålla in en knapp.\n• En nödpinkod som ser exakt ut som din vanliga men larmar i tysthet.\n• Ett falskt samtal som ursäkt för att gå.\n\nINTEGRITET\nDiskret ikon, aviseringar utan innehåll, lås med ansikte eller fingeravtryck, bilder utan platsdata. Meddelanden är krypterade och innehållet i överenskommelsen raderas efter träffen.\n\nEFTER TRÄFFEN\nEn privat fråga om hur det gick – den andra ser aldrig ditt svar. Går du över en gräns åker du ut.\n\nEndast 18+.",
+  "keywords": "dejting,dejt,verifierad,säkerhet,samtycke,casual,match,vuxna,diskret,träffa,träff",
+  "whatsNew": "Den första versionen av F*app. Verifiering, blind överenskommelse och säkerhetsläge.",
+  "screenshot1": "Verifierade människor i närheten",
+  "screenshot2": "Ni ser bara det ni matchar på",
+  "screenshot3": "Någon vet var du är",
+  "screenshot4": "En nödpinkod som ser normal ut",
+  "screenshot5": "Säkerheten är alltid gratis"
+}

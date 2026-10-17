@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Ei löytynyt.",
+    "tooLarge": "Pyyntö on liian suuri.",
+    "invalidJson": "Virheellinen JSON.",
+    "internal": "Jokin meni pieleen. Yritä uudelleen.",
+    "rateLimited": "Liian monta yritystä kerralla. Yritä hetken päästä uudelleen.",
+    "unauthorized": "Ei oikeutta.",
+    "invalidSignature": "Virheellinen allekirjoitus.",
+    "linkExpired": "Tämä linkki ei ole enää voimassa."
+  },
+  "validation": {
+    "required": "Kenttä ”{field}” puuttuu.",
+    "notText": "Kentän ”{field}” täytyy olla tekstiä.",
+    "tooShort": "Kenttä ”{field}” on liian lyhyt.",
+    "tooLong": "Kenttä ”{field}” on liian pitkä.",
+    "integer": "Kentän ”{field}” täytyy olla kokonaisluku väliltä {min}–{max}.",
+    "invalidValue": "Kentän ”{field}” arvo on virheellinen.",
+    "notList": "Kentän ”{field}” täytyy olla luettelo.",
+    "minOptions": {
+      "one": "Valitse kenttään ”{field}” vähintään {count} vaihtoehto.",
+      "other": "Valitse kenttään ”{field}” vähintään {count} vaihtoehtoa."
+    },
+    "date": "Kentän ”{field}” täytyy olla päivämäärä muodossa VVVV-KK-PP.",
+    "dateTime": "Kentän ”{field}” täytyy olla päivämäärä ja kellonaika.",
+    "email": "Virheellinen sähköpostiosoite.",
+    "phone": "Virheellinen puhelinnumero ({field}).",
+    "pin": "Kentässä {field} täytyy olla 4–6 numeroa."
+  },
+  "fields": {
+    "email": "sähköposti",
+    "password": "salasana",
+    "name": "nimi",
+    "birthdate": "syntymäaika",
+    "gender": "sukupuoli",
+    "interestedIn": "keitä etsit",
+    "pushToken": "push-tunniste",
+    "ageMin": "vähimmäisikä",
+    "ageMax": "enimmäisikä",
+    "bio": "minusta",
+    "tags": "mitä etsin",
+    "maxDistance": "etäisyys",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "luottohenkilön nimi",
+    "trustedPhone": "luottohenkilön puhelin",
+    "pin": "PIN",
+    "duressPin": "Hätä-PIN",
+    "meetAt": "milloin",
+    "place": "missä",
+    "safeword": "turvasana",
+    "note": "omat rajani",
+    "version": "versio",
+    "message": "viesti",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "kuittausväli",
+    "accuracy": "tarkkuus",
+    "battery": "akku",
+    "user": "käyttäjä",
+    "reason": "syy",
+    "details": "lisätiedot",
+    "resolution": "ratkaisu",
+    "days": "päivien määrä"
+  },
+  "auth": {
+    "confirmAdult": "Sinun täytyy vahvistaa, että olet vähintään 18-vuotias.",
+    "acceptRules": "Sinun täytyy hyväksyä säännöt ja tietojesi käsittely.",
+    "underage": "F*app on vain 18 vuotta täyttäneille.",
+    "invalidBirthdate": "Virheellinen syntymäaika.",
+    "emailTaken": "Tällä sähköpostiosoitteella on jo tili.",
+    "wrongCredentials": "Väärä sähköpostiosoite tai salasana.",
+    "banned": "Tämä tili on suljettu sääntörikkomusten vuoksi.",
+    "notLoggedIn": "Et ole kirjautunut sisään.",
+    "suspended": "Tilisi on jäädytetty, kunnes moderaattori on tarkistanut sen.",
+    "verifyFirst": "Vahvista ensin henkilöllisyytesi."
+  },
+  "profile": {
+    "wrongPassword": "Väärä salasana.",
+    "ageRange": "Vähimmäisikä ei voi olla suurempi kuin enimmäisikä.",
+    "maxPhotos": {
+      "one": "Sinulla voi olla enintään {count} kuva.",
+      "other": "Sinulla voi olla enintään {count} kuvaa."
+    },
+    "pinsMustDiffer": "Hätä-PIN-koodin täytyy olla eri kuin tavallinen PIN-koodisi.",
+    "deleteDuringMeetup": "Et voi poistaa tiliäsi juuri nyt – treffit ovat käynnissä. Yritä uudelleen, kun ne ovat ohi."
+  },
+  "photo": {
+    "notJpeg": "Kuvan täytyy olla JPEG-muodossa.",
+    "corrupt": "Kuva on vioittunut.",
+    "notBase64": "Kuvan täytyy olla base64-koodattu JPEG.",
+    "tooLarge": "Kuva on liian suuri (enintään 2 Mt).",
+    "notFound": "Kuvaa ei löytynyt.",
+    "unavailable": "Kuva ei ole saatavilla."
+  },
+  "users": {
+    "notFound": "Käyttäjää ei löytynyt."
+  },
+  "match": {
+    "notFound": "Matchia ei löytynyt.",
+    "ended": "Tämä match on päättynyt.",
+    "profileUnavailable": "Tämä profiili ei ole enää saatavilla."
+  },
+  "discover": {
+    "locationRequired": "Laita ensin sijainti päälle, jotta voimme näyttää lähelläsi olevat ihmiset.",
+    "photoRequired": "Lisää vähintään yksi kuva.",
+    "superLikeIsLike": "Supertykkäys on aina myös tykkäys.",
+    "profileNotFound": "Profiilia ei löytynyt.",
+    "profileGone": "Tätä profiilia ei ole enää olemassa.",
+    "nothingToRewind": "Ei mitään peruttavaa.",
+    "cantRewindSuperLike": "Supertykkäystä ei voi perua.",
+    "cantRewindMatch": "Tästä swaippauksesta on jo tullut match."
+  },
+  "billing": {
+    "likeLimit": "Tykkäyksesi loppuivat. Uusia tulee pian – tai swaippaa rajatta F*app Plus -tilauksella.",
+    "noSuperLike": "Sinulla ei ole supertykkäyksiä.",
+    "noBoost": "Sinulla ei ole boosteja.",
+    "tonightPaid": "”Tänä iltana” kuuluu Platinumiin tai on saatavilla kertaostona.",
+    "featureInPlan": "{feature} kuuluu F*app {plan} -tilaukseen.",
+    "paymentsOff": "Maksut eivät ole vielä käytössä – F*app on toistaiseksi täysin ilmainen.",
+    "unknownProduct": "Tuntematon tuote.",
+    "cantBuy": "Et voi ostaa tätä juuri nyt.",
+    "cantBoost": "Et voi aloittaa boostia juuri nyt.",
+    "boostRunning": "Boost on jo käynnissä.",
+    "cantTonight": "Et voi laittaa tätä päälle juuri nyt.",
+    "tonightOn": "”Tänä iltana” on jo päällä.",
+    "unknownCity": "Tuntematon kaupunki."
+  },
+  "features": {
+    "unlimitedLikes": "Rajattomat tykkäykset",
+    "rewind": "Peruutus",
+    "travel": "Matkatila",
+    "incognito": "Incognito",
+    "seeLikes": "Näe, kuka tykkää",
+    "weeklySuperLikes": "5 supertykkäystä viikossa",
+    "monthlyBoost": "1 boost kuukaudessa",
+    "priorityLikes": "Ensisijaiset tykkäykset",
+    "sentLikes": "Lähetetyt tykkäykset",
+    "tonight": "Tänä iltana, milloin vain"
+  },
+  "agreement": {
+    "wishesRequired": "Täytä, mihin olet valmis.",
+    "invalidWish": "Virheellinen valinta toiveissasi.",
+    "notFound": "Sopimusta ei löytynyt.",
+    "confirmBoth": "Vahvista molemmat väitteet – että tätä sinulla on mielessä ja että sopimus ei ole suostumus.",
+    "meetWithin": {
+      "one": "Treffien täytyy olla seuraavan {count} päivän sisällä.",
+      "other": "Treffien täytyy olla seuraavan {count} päivän sisällä."
+    },
+    "cooldown": "Vain {name} voi aloittaa uuden sopimuksen juuri nyt.",
+    "changed": "Sopimus muuttui sillä välin. Lue se uudelleen."
+  },
+  "chat": {
+    "empty": "Tyhjä viesti.",
+    "notSent": "Viestiä ei lähetetty. {reason}",
+    "photo": "Kuva"
+  },
+  "moderation": {
+    "minor": "Tämä viesti viittaa siihen, että joku teistä saattaa olla alle 18-vuotias. F*app on vain 18+.",
+    "paid": "Maksullisen seksin tarjoaminen tai pyytäminen on kielletty F*app-sovelluksessa.",
+    "consentPressure": "Huomio: sovelluksessa tehty sopimus ei ole suostumus. Voit perua sen milloin tahansa ja kieltäytyä paikan päällä mistä tahansa – selityksiä ei tarvita.",
+    "contact": "Matchisi jakaa yhteystietoja sovelluksen ulkopuolelle. F*app-sovelluksen ulkopuolella sopimus, turvatila ja ilmoitukset eivät toimi sinulle."
+  },
+  "safety": {
+    "notFound": "Treffejä ei löytynyt.",
+    "ended": "Treffit ovat jo päättyneet.",
+    "wrongPin": "Väärä PIN.",
+    "agreementRequired": "Voit aloittaa treffit, kun olette molemmat täyttäneet ja vahvistaneet sopimuksen.",
+    "setupRequired": "Määritä ensin luottohenkilö, PIN ja hätä-PIN.",
+    "invalidInterval": "Virheellinen kuittausväli."
+  },
+  "reports": {
+    "feedbackSent": "Olet jo lähettänyt palautteesi."
+  },
+  "verification": {
+    "unknown": "Tuntematon vahvistus.",
+    "alreadyVerified": "Henkilöllisyytesi on jo vahvistettu.",
+    "startFirst": "Aloita ensin vahvistus.",
+    "noWebhook": "Kehitysympäristön palveluntarjoajalla ei ole webhookia.",
+    "unavailable": "Vahvistuspalvelu ei vastaa. Yritä hetken päästä uudelleen.",
+    "declined": {
+      "underage": "Vahvistus osoitti, että et ole vielä 18-vuotias. F*app on vain aikuisille.",
+      "banned": "Tämä henkilö on suljettu F*app-sovelluksesta sääntörikkomusten vuoksi.",
+      "duplicate": "Tällä henkilöllä on jo F*app-tili. Jokaisella voi olla vain yksi.",
+      "incomplete": "Syntymäaikaa ei voitu lukea asiakirjasta. Yritä uudelleen.",
+      "default": "Vahvistus epäonnistui. Yritä uudelleen."
+    }
+  },
+  "admin": {
+    "notReported": "Tästä keskustelusta ei ole tehty ilmoitusta.",
+    "unknownPlan": "Tuntematon tilaus."
+  },
+  "push": {
+    "discreet": "Uusi ilmoitus",
+    "match": {
+      "title": "Se on match!",
+      "body": "Sinä ja {name} haluatte toisianne."
+    },
+    "superLike": {
+      "title": "Supertykkäys",
+      "body": "Joku on todella kiinnostunut sinusta."
+    },
+    "message": {
+      "photo": "Lähetti kuvan"
+    },
+    "agreementComplete": {
+      "title": "Sopimus valmis",
+      "body": "Olette molemmat vahvistaneet sen. Voitte silti muuttaa mielenne, kun tapaatte."
+    },
+    "agreementNew": {
+      "title": "Uusi sopimus",
+      "body": "{name} aloitti sopimuksen. Täytä nyt, mihin olet valmis."
+    },
+    "agreementChanged": {
+      "title": "Sopimus muuttui",
+      "body": "{name} muutti aikaa, paikkaa tai sääntöjä. Vahvista ne uudelleen."
+    },
+    "agreementUpdated": {
+      "title": "Sopimus päivitetty",
+      "body": "{name} päivitti toiveitaan."
+    },
+    "agreementRevoked": {
+      "title": "Sopimus peruttu",
+      "body": "{name} perui sopimuksen. Treffit on peruttu – ja sitä täytyy kunnioittaa."
+    },
+    "checkInOverdue": {
+      "title": "Kuittaus jäi väliin",
+      "body": "{name} on saanut hälytyksen. Vahvista, että olet kunnossa."
+    }
+  },
+  "sms": {
+    "started": "{name} tapaa jonkun ja valitsi sinut luottohenkilökseen. Näet täältä, missä hän on ja onko hän kunnossa: {url}",
+    "alarm": "HÄLYTYS: {name} tarvitsee apua. Sijainti ja tiedot: {url}",
+    "overdue": "{name} ei ole kuitannut - hänen piti vahvistaa olevansa kunnossa klo {time} mennessä. Yritä soittaa. Sijainti: {url}",
+    "backOk": "{name} kuittasi ja vahvisti olevansa kunnossa.",
+    "sosCancelled": "{name} perui hälytyksen - se oli vahinko, hän on kunnossa.",
+    "endedOk": "{name} lopetti tapaamisen ja on kunnossa. Kiitos, että olit tukena.",
+    "someone": "Läheisesi"
+  },
+  "share": {
+    "pageTitle": "F*app – turvalinkki",
+    "header": "Turvalinkki",
+    "loading": "Ladataan…",
+    "call": "Soita {number}",
+    "mapLabel": "Kartta, jossa viimeisin tunnettu sijainti",
+    "openMaps": "Avaa Kartoissa",
+    "partnerPhotoAlt": "Kuva henkilöstä, jota hän tapaa",
+    "partnerLead": "Tapaa:",
+    "okTitle": "{name} on kunnossa",
+    "okDetail": "Viimeisin kuittaus klo {last}. Seuraava odotetaan klo {next} mennessä.",
+    "overdueTitle": "{name} ei ole kuitannut",
+    "overdueDetail": "Kuittaus piti tehdä klo {due} mennessä. Yritä soittaa. Jos hän ei vastaa, soita numeroon {number} ja kerro osoite kartalta.",
+    "alarmTitle": "{name} tarvitsee apua",
+    "alarmDetail": "Hälytys klo {time}. Soita numeroon {number} ja kerro sijainti kartalta sekä alla oleva tapaamispaikka.",
+    "endedTitle": "Tapaaminen on päättynyt",
+    "endedDetail": "{name} vahvisti olevansa kunnossa.",
+    "endedDetailAlarm": "{name} vahvisti olevansa kunnossa. Tapaamisen aikana laukesi hälytys – kysy, onko kaikki hyvin.",
+    "footer": "Sijainti lakkaa näkymästä, kun {name} lopettaa tapaamisen.",
+    "locationJustNow": "Sijainti juuri nyt",
+    "locationAgo": {
+      "one": "Sijainti {count} min sitten",
+      "other": "Sijainti {count} min sitten"
+    },
+    "battery": "akku {percent}",
+    "linkExpired": "Tämä linkki ei ole enää voimassa",
+    "loadFailed": "Tilaa ei voitu ladata. Yritetään uudelleen…"
+  }
+}

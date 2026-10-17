@@ -1,1 +1,13 @@
-{}
+{
+  "name": "F*app",
+  "subtitle": "Ustalenia w ciemno i ochrona",
+  "promotionalText": "Niezobowiązujące randki dla zweryfikowanych dorosłych. Ustalenia w ciemno, zaufana osoba, check-iny i SOS. Bezpieczeństwo zawsze za darmo.",
+  "description": "F*app to aplikacja randkowa dla dorosłych, którzy szukają niezobowiązujących spotkań – i chcą, żeby były ustalone i bezpieczne.\n\nZWERYFIKOWANI LUDZIE\nKażdy weryfikuje się dokumentem i selfie. Jest tym, za kogo się podaje, a ban dotyczy człowieka, nie tylko konta. Nie przechowujemy twojego dokumentu.\n\nUSTALENIA W CIEMNO\nKażda ze stron osobno zaznacza, na co ma ochotę: tak, może albo nie. Widzicie tylko to, w czym się zgadzacie – cudzego „nie” nie widzi nikt. Z góry ustalacie też miejsce, prezerwatywę, trzeźwość i hasło bezpieczeństwa. Zgoda liczy się tylko tu i teraz, a na miejscu możesz odmówić czegokolwiek.\n\nTRYB BEZPIECZEŃSTWA\n• Zaufana osoba dostaje link z twoją lokalizacją i statusem spotkania.\n• Check-iny PIN-em – jeśli się nie odezwiesz, nasz serwer wyśle SMS nawet przy rozładowanym telefonie.\n• SOS przez przytrzymanie przycisku.\n• PIN awaryjny, który wygląda dokładnie jak zwykły, ale po cichu włącza alarm.\n• Udawany telefon jako wymówka, żeby wyjść.\n\nPRYWATNOŚĆ\nDyskretna ikona, powiadomienia bez treści, blokada twarzą lub odciskiem palca, zdjęcia bez lokalizacji. Wiadomości są szyfrowane, a treść ustaleń jest usuwana po spotkaniu.\n\nPO SPOTKANIU\nPrywatne pytanie o to, jak poszło – druga osoba nigdy nie zobaczy twojej odpowiedzi. Kto przekracza granice, wylatuje.\n\nTylko 18+.",
+  "keywords": "randki,randka,zweryfikowani,bezpieczeństwo,zgoda,niezobowiązujące,dorośli,dyskretnie,match,para",
+  "whatsNew": "Pierwsza wersja F*app. Weryfikacja, ustalenia w ciemno i tryb bezpieczeństwa.",
+  "screenshot1": "Zweryfikowani ludzie w pobliżu",
+  "screenshot2": "Widzicie tylko to, co wspólne",
+  "screenshot3": "Ktoś wie, gdzie jesteś",
+  "screenshot4": "PIN awaryjny wygląda normalnie",
+  "screenshot5": "Bezpieczeństwo zawsze za darmo"
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "name": "F*app",
+  "subtitle": "Accordo alla cieca e sicurezza",
+  "promotionalText": "Incontri senza impegno tra persone adulte verificate. Accordo alla cieca, persona di fiducia, check-in e SOS. La sicurezza è sempre gratis.",
+  "description": "F*app è un'app di incontri per persone adulte che cercano incontri senza impegno – e li vogliono concordati e sicuri.\n\nPERSONE VERIFICATE\nOgnuno si verifica con un documento e un selfie. È chi dice di essere, e il ban vale per la persona, non solo per l'account. Non conserviamo il tuo documento.\n\nACCORDO ALLA CIECA\nOgnuno indica per conto proprio i suoi desideri: sì, forse o no. Vedete solo ciò su cui siete d'accordo – nessuno vede il «no» dell'altra persona. Concordate in anticipo anche il luogo, il preservativo, la sobrietà e una parola di sicurezza. Il consenso vale solo qui e ora, e sul posto puoi dire di no a qualsiasi cosa.\n\nMODALITÀ SICUREZZA\n• Una persona di fiducia riceve un link con la tua posizione e lo stato dell'incontro.\n• Check-in con PIN – se non fai il check-in, il nostro server invia un SMS anche se il tuo telefono è scarico.\n• SOS tenendo premuto un pulsante.\n• Un PIN di emergenza identico a quello normale, che però fa scattare l'allarme in silenzio.\n• Una chiamata finta come scusa per andartene.\n\nPRIVACY\nIcona discreta, notifiche senza contenuto, blocco con volto o impronta, foto senza posizione. I messaggi sono cifrati e il contenuto dell'accordo viene eliminato dopo l'incontro.\n\nDOPO L'INCONTRO\nUna domanda privata su com'è andata – l'altra persona non vede mai la tua risposta. Chi supera un limite è fuori.\n\nSolo 18+.",
+  "keywords": "incontri,appuntamenti,verificato,sicurezza,consenso,senza impegno,match,adulti,discreto,conoscere",
+  "whatsNew": "La prima versione di F*app. Verifica, accordo alla cieca e modalità sicurezza.",
+  "screenshot1": "Persone verificate vicino a te",
+  "screenshot2": "Vedi solo ciò che avete in comune",
+  "screenshot3": "Qualcuno sa dove sei",
+  "screenshot4": "Un PIN di emergenza che sembra normale",
+  "screenshot5": "La sicurezza è sempre gratis"
+}

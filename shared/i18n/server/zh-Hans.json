@@ -1,1 +1,264 @@
-{}
+{
+  "errors": {
+    "notFound": "未找到。",
+    "tooLarge": "请求过大。",
+    "invalidJson": "无效的 JSON。",
+    "internal": "出了点问题。请重试。",
+    "rateLimited": "尝试次数过多。请稍后再试。",
+    "unauthorized": "未授权。",
+    "invalidSignature": "签名无效。",
+    "linkExpired": "此链接已失效。"
+  },
+  "validation": {
+    "required": "缺少“{field}”。",
+    "notText": "“{field}”必须是文本。",
+    "tooShort": "“{field}”太短。",
+    "tooLong": "“{field}”太长。",
+    "integer": "“{field}”必须是 {min} 到 {max} 之间的整数。",
+    "invalidValue": "“{field}”的值无效。",
+    "notList": "“{field}”必须是列表。",
+    "minOptions": {
+      "other": "“{field}”至少要选择 {count} 项。"
+    },
+    "date": "“{field}”必须是 YYYY-MM-DD 格式的日期。",
+    "dateTime": "“{field}”必须是日期和时间。",
+    "email": "邮箱无效。",
+    "phone": "手机号无效（{field}）。",
+    "pin": "{field}必须是 4–6 位数字。"
+  },
+  "fields": {
+    "email": "邮箱",
+    "password": "密码",
+    "name": "名字",
+    "birthdate": "出生日期",
+    "gender": "性别",
+    "interestedIn": "想找的人",
+    "pushToken": "推送令牌",
+    "ageMin": "最小年龄",
+    "ageMax": "最大年龄",
+    "bio": "关于我",
+    "tags": "我在找",
+    "maxDistance": "距离",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "信任联系人的名字",
+    "trustedPhone": "信任联系人的手机号",
+    "pin": "PIN",
+    "duressPin": "紧急 PIN",
+    "meetAt": "时间",
+    "place": "地点",
+    "safeword": "安全词",
+    "note": "我的界限",
+    "version": "版本",
+    "message": "消息",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "报平安间隔",
+    "accuracy": "精度",
+    "battery": "电量",
+    "user": "用户",
+    "reason": "原因",
+    "details": "详细说明",
+    "resolution": "处理结果",
+    "days": "天数"
+  },
+  "auth": {
+    "confirmAdult": "你必须确认自己已年满 18 岁。",
+    "acceptRules": "你必须同意规则以及对你数据的处理。",
+    "underage": "F*app 仅限 18 岁及以上的人使用。",
+    "invalidBirthdate": "出生日期无效。",
+    "emailTaken": "使用此邮箱的账户已存在。",
+    "wrongCredentials": "邮箱或密码错误。",
+    "banned": "此账户因违反规则已被封禁。",
+    "notLoggedIn": "你尚未登录。",
+    "suspended": "你的账户已被暂停，等待审核员审核。",
+    "verifyFirst": "请先验证你的身份。"
+  },
+  "profile": {
+    "wrongPassword": "密码错误。",
+    "ageRange": "最小年龄不能大于最大年龄。",
+    "maxPhotos": {
+      "other": "最多只能有 {count} 张照片。"
+    },
+    "pinsMustDiffer": "紧急 PIN 必须与普通 PIN 不同。",
+    "deleteDuringMeetup": "现在无法删除账户——约会正在进行中。约会结束后再试。"
+  },
+  "photo": {
+    "notJpeg": "照片必须是 JPEG 格式。",
+    "corrupt": "照片已损坏。",
+    "notBase64": "照片必须是 base64 编码的 JPEG。",
+    "tooLarge": "照片太大（最大 2 MB）。",
+    "notFound": "未找到照片。",
+    "unavailable": "照片不可用。"
+  },
+  "users": {
+    "notFound": "未找到用户。"
+  },
+  "match": {
+    "notFound": "未找到配对。",
+    "ended": "此配对已结束。",
+    "profileUnavailable": "此资料已不可用。"
+  },
+  "discover": {
+    "locationRequired": "请先开启定位，这样我们才能为你显示附近的人。",
+    "photoRequired": "请至少添加一张照片。",
+    "superLikeIsLike": "超级喜欢也始终是喜欢。",
+    "profileNotFound": "未找到资料。",
+    "profileGone": "此资料已不存在。",
+    "nothingToRewind": "没有可撤回的滑动。",
+    "cantRewindSuperLike": "超级喜欢无法撤回。",
+    "cantRewindMatch": "这次滑动已经配对成功。"
+  },
+  "billing": {
+    "likeLimit": "你的喜欢用完了。很快会补充——或者开通 F*app Plus 无限滑卡。",
+    "noSuperLike": "你没有超级喜欢了。",
+    "noBoost": "你没有加速了。",
+    "tonightPaid": "“今晚”包含在 Platinum 中，也可单次购买。",
+    "featureInPlan": "{feature}是 F*app {plan} 的功能。",
+    "paymentsOff": "付费功能尚未开启——F*app 目前完全免费。",
+    "unknownProduct": "未知商品。",
+    "cantBuy": "现在无法购买。",
+    "cantBoost": "现在无法开启加速。",
+    "boostRunning": "加速已在进行中。",
+    "cantTonight": "现在无法开启。",
+    "tonightOn": "“今晚”已经开启。",
+    "unknownCity": "未知城市。"
+  },
+  "features": {
+    "unlimitedLikes": "无限喜欢",
+    "rewind": "撤回",
+    "travel": "旅行模式",
+    "incognito": "隐身模式",
+    "seeLikes": "查看谁喜欢你",
+    "weeklySuperLikes": "每周 5 个超级喜欢",
+    "monthlyBoost": "每月 1 次加速",
+    "priorityLikes": "优先喜欢",
+    "sentLikes": "已发送的喜欢",
+    "tonight": "随时“今晚”"
+  },
+  "agreement": {
+    "wishesRequired": "请填写你想做的事。",
+    "invalidWish": "你的意愿中有无效选项。",
+    "notFound": "未找到约定。",
+    "confirmBoth": "请确认两句话——这是你的设想，以及约定不等于同意。",
+    "meetWithin": {
+      "other": "约会必须在接下来的 {count} 天内。"
+    },
+    "cooldown": "现在只有 {name} 可以发起新的约定。",
+    "changed": "约定在此期间已更改。请重新阅读。"
+  },
+  "chat": {
+    "empty": "消息为空。",
+    "notSent": "消息未发送。{reason}",
+    "photo": "照片"
+  },
+  "moderation": {
+    "minor": "这条消息显示你们中可能有人未满 18 岁。F*app 仅限 18 岁以上。",
+    "paid": "F*app 禁止提供或寻求付费性交易。",
+    "consentPressure": "提醒：App 里的约定不等于同意。你可以随时取消，见面时也可以拒绝任何事——无需解释。",
+    "contact": "对方正在分享 App 外的联系方式。离开 F*app 后，约定、安全模式和举报都无法为你提供保障。"
+  },
+  "safety": {
+    "notFound": "未找到约会。",
+    "ended": "约会已经结束。",
+    "wrongPin": "PIN 错误。",
+    "agreementRequired": "你们都填写并确认约定后，才能开始约会。",
+    "setupRequired": "请先设置信任联系人、PIN 和紧急 PIN。",
+    "invalidInterval": "报平安间隔无效。"
+  },
+  "reports": {
+    "feedbackSent": "你已经提交过反馈了。"
+  },
+  "verification": {
+    "unknown": "未知的验证。",
+    "alreadyVerified": "你的身份已经验证过了。",
+    "startFirst": "请先开始验证。",
+    "noWebhook": "开发用提供方没有 webhook。",
+    "unavailable": "验证服务暂无响应。请稍后再试。",
+    "declined": {
+      "underage": "验证显示你还未满 18 岁。F*app 仅限成年人使用。",
+      "banned": "此人因违反规则已被 F*app 封禁。",
+      "duplicate": "此人已经有 F*app 账户了。每人只能有一个账户。",
+      "incomplete": "无法从证件中读取出生日期。请重试。",
+      "default": "验证失败。请重试。"
+    }
+  },
+  "admin": {
+    "notReported": "此对话未被举报。",
+    "unknownPlan": "未知方案。"
+  },
+  "push": {
+    "discreet": "新通知",
+    "match": {
+      "title": "配对成功！",
+      "body": "你和 {name} 互相心动。"
+    },
+    "superLike": {
+      "title": "超级喜欢",
+      "body": "有人对你非常感兴趣。"
+    },
+    "message": {
+      "photo": "发送了一张照片"
+    },
+    "agreementComplete": {
+      "title": "约定已完成",
+      "body": "你们都已确认。见面时你们仍然可以改变主意。"
+    },
+    "agreementNew": {
+      "title": "新约定",
+      "body": "{name} 发起了约定。现在填写你想做的事吧。"
+    },
+    "agreementChanged": {
+      "title": "约定已更改",
+      "body": "{name} 更改了时间、地点或规则。请重新确认。"
+    },
+    "agreementUpdated": {
+      "title": "约定已更新",
+      "body": "{name} 更新了自己的意愿。"
+    },
+    "agreementRevoked": {
+      "title": "约定已取消",
+      "body": "{name} 取消了约定。约会取消——这必须得到尊重。"
+    },
+    "checkInOverdue": {
+      "title": "你错过了报平安",
+      "body": "{name} 已收到提醒。请确认你没事。"
+    }
+  },
+  "sms": {
+    "started": "{name} 正在和人见面，并选择你作为信任联系人。查看 TA 的位置和是否平安：{url}",
+    "alarm": "警报：{name} 需要帮助。位置和详情：{url}",
+    "overdue": "{name} 没有报平安——原定在 {time} 前确认平安。请试着打电话。位置：{url}",
+    "backOk": "{name} 已报平安，确认没事。",
+    "sosCancelled": "{name} 取消了警报——是误触，TA 没事。",
+    "endedOk": "{name} 已结束见面，平安无事。谢谢你的守护。",
+    "someone": "你身边的人"
+  },
+  "share": {
+    "pageTitle": "F*app – 安全链接",
+    "header": "安全链接",
+    "loading": "正在加载…",
+    "call": "拨打 {number}",
+    "mapLabel": "显示最后已知位置的地图",
+    "openMaps": "在地图中打开",
+    "partnerPhotoAlt": "TA 正在见面的人的照片",
+    "partnerLead": "正在见面的人：",
+    "okTitle": "{name} 平安",
+    "okDetail": "最后一次报平安：{last}。下一次预计在 {next} 前。",
+    "overdueTitle": "{name} 没有报平安",
+    "overdueDetail": "原定在 {due} 前报平安。请试着打电话。如果没人接，请拨打 {number}，并告诉对方地图上的地址。",
+    "alarmTitle": "{name} 需要帮助",
+    "alarmDetail": "警报时间：{time}。请拨打 {number}，并告诉对方地图上的位置和下方的见面地点。",
+    "endedTitle": "见面已结束",
+    "endedDetail": "{name} 已确认平安。",
+    "endedDetailAlarm": "{name} 已确认平安。见面期间曾触发警报——问问 TA 是否一切都好。",
+    "footer": "{name} 结束见面后，位置将不再显示。",
+    "locationJustNow": "刚刚的位置",
+    "locationAgo": {
+      "other": "{count} 分钟前的位置"
+    },
+    "battery": "电量 {percent}",
+    "linkExpired": "此链接已失效",
+    "loadFailed": "无法加载状态。正在重试…"
+  }
+}

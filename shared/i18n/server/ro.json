@@ -1,1 +1,272 @@
-{}
+{
+  "errors": {
+    "notFound": "Nu a fost găsit.",
+    "tooLarge": "Cererea e prea mare.",
+    "invalidJson": "JSON invalid.",
+    "internal": "Ceva n-a mers bine. Încearcă din nou.",
+    "rateLimited": "Prea multe încercări deodată. Încearcă din nou peste câteva momente.",
+    "unauthorized": "Neautorizat.",
+    "invalidSignature": "Semnătură invalidă.",
+    "linkExpired": "Linkul nu mai e valabil."
+  },
+  "validation": {
+    "required": "Lipsește câmpul „{field}”.",
+    "notText": "Câmpul „{field}” trebuie să fie text.",
+    "tooShort": "Câmpul „{field}” e prea scurt.",
+    "tooLong": "Câmpul „{field}” e prea lung.",
+    "integer": "Câmpul „{field}” trebuie să fie un număr întreg între {min} și {max}.",
+    "invalidValue": "Valoare invalidă pentru câmpul „{field}”.",
+    "notList": "Câmpul „{field}” trebuie să fie o listă.",
+    "minOptions": {
+      "one": "Alege cel puțin {count} opțiune la „{field}”.",
+      "few": "Alege cel puțin {count} opțiuni la „{field}”.",
+      "other": "Alege cel puțin {count} de opțiuni la „{field}”."
+    },
+    "date": "Câmpul „{field}” trebuie să fie o dată în formatul AAAA-LL-ZZ.",
+    "dateTime": "Câmpul „{field}” trebuie să fie o dată și o oră.",
+    "email": "E-mail invalid.",
+    "phone": "Număr de telefon invalid ({field}).",
+    "pin": "Câmpul „{field}” trebuie să aibă 4–6 cifre."
+  },
+  "fields": {
+    "email": "e-mail",
+    "password": "parolă",
+    "name": "nume",
+    "birthdate": "data nașterii",
+    "gender": "gen",
+    "interestedIn": "pe cine cauți",
+    "pushToken": "token push",
+    "ageMin": "vârsta minimă",
+    "ageMax": "vârsta maximă",
+    "bio": "despre mine",
+    "tags": "ce caut",
+    "maxDistance": "distanță",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "numele persoanei de încredere",
+    "trustedPhone": "telefonul persoanei de încredere",
+    "pin": "PIN",
+    "duressPin": "PIN de urgență",
+    "meetAt": "când",
+    "place": "unde",
+    "safeword": "cuvânt de siguranță",
+    "note": "limitele mele",
+    "version": "versiune",
+    "message": "mesaj",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "intervalul de check-in",
+    "accuracy": "precizie",
+    "battery": "baterie",
+    "user": "utilizator",
+    "reason": "motiv",
+    "details": "detalii",
+    "resolution": "rezolvare",
+    "days": "număr de zile"
+  },
+  "auth": {
+    "confirmAdult": "Trebuie să confirmi că ai 18 ani sau mai mult.",
+    "acceptRules": "Trebuie să fii de acord cu regulile și cu prelucrarea datelor tale.",
+    "underage": "F*app e doar pentru persoane de 18 ani sau mai mult.",
+    "invalidBirthdate": "Data nașterii e invalidă.",
+    "emailTaken": "Există deja un cont cu acest e-mail.",
+    "wrongCredentials": "E-mail sau parolă greșită.",
+    "banned": "Contul a primit interdicție pentru încălcarea regulilor.",
+    "notLoggedIn": "Nu te-ai conectat.",
+    "suspended": "Contul tău e suspendat până când îl verifică un moderator.",
+    "verifyFirst": "Mai întâi verifică-ți identitatea."
+  },
+  "profile": {
+    "wrongPassword": "Parolă greșită.",
+    "ageRange": "Vârsta minimă nu poate fi mai mare decât cea maximă.",
+    "maxPhotos": {
+      "one": "Poți avea cel mult {count} poză.",
+      "few": "Poți avea cel mult {count} poze.",
+      "other": "Poți avea cel mult {count} de poze."
+    },
+    "pinsMustDiffer": "PIN-ul de urgență trebuie să fie diferit de PIN-ul obișnuit.",
+    "deleteDuringMeetup": "Acum nu-ți poți șterge contul – e o întâlnire în desfășurare. Încearcă după ce se încheie."
+  },
+  "photo": {
+    "notJpeg": "Poza trebuie să fie în format JPEG.",
+    "corrupt": "Poza e coruptă.",
+    "notBase64": "Poza trebuie să fie un JPEG codificat în base64.",
+    "tooLarge": "Poza e prea mare (max. 2 MB).",
+    "notFound": "Poza nu a fost găsită.",
+    "unavailable": "Poza nu e disponibilă."
+  },
+  "users": {
+    "notFound": "Utilizatorul nu a fost găsit."
+  },
+  "match": {
+    "notFound": "Match-ul nu a fost găsit.",
+    "ended": "Acest match s-a încheiat.",
+    "profileUnavailable": "Acest profil nu mai e disponibil."
+  },
+  "discover": {
+    "locationRequired": "Mai întâi activează locația, ca să-ți putem arăta oameni din apropiere.",
+    "photoRequired": "Adaugă cel puțin o poză.",
+    "superLikeIsLike": "Un Super Like e mereu și un like.",
+    "profileNotFound": "Profilul nu a fost găsit.",
+    "profileGone": "Acest profil nu mai există.",
+    "nothingToRewind": "Nu ai ce anula.",
+    "cantRewindSuperLike": "Nu poți anula un Super Like.",
+    "cantRewindMatch": "Din acest swipe a rezultat deja un match."
+  },
+  "billing": {
+    "likeLimit": "Ai rămas fără like-uri. Primești altele în curând – sau dă swipe fără limite cu F*app Plus.",
+    "noSuperLike": "Nu ai niciun Super Like.",
+    "noBoost": "Nu ai niciun Boost.",
+    "tonightPaid": "„În seara asta” e inclus în Platinum sau disponibil ca achiziție unică.",
+    "featureInPlan": "{feature} face parte din F*app {plan}.",
+    "paymentsOff": "Plățile nu sunt încă active – deocamdată F*app e complet gratuit.",
+    "unknownProduct": "Produs necunoscut.",
+    "cantBuy": "Momentan nu poți cumpăra asta.",
+    "cantBoost": "Momentan nu poți porni un Boost.",
+    "boostRunning": "Un Boost e deja activ.",
+    "cantTonight": "Momentan nu poți activa asta.",
+    "tonightOn": "„În seara asta” e deja activ.",
+    "unknownCity": "Oraș necunoscut."
+  },
+  "features": {
+    "unlimitedLikes": "Like-uri nelimitate",
+    "rewind": "Înapoi",
+    "travel": "Modul călătorie",
+    "incognito": "Incognito",
+    "seeLikes": "Cine ți-a dat like",
+    "weeklySuperLikes": "5 Super Like-uri pe săptămână",
+    "monthlyBoost": "1 Boost pe lună",
+    "priorityLikes": "Like-uri prioritare",
+    "sentLikes": "Like-uri trimise",
+    "tonight": "În seara asta, oricând"
+  },
+  "agreement": {
+    "wishesRequired": "Completează la ce ai chef.",
+    "invalidWish": "Opțiune invalidă în dorințele tale.",
+    "notFound": "Acordul nu a fost găsit.",
+    "confirmBoth": "Confirmă ambele afirmații – că asta îți imaginezi și că un acord nu înseamnă consimțământ.",
+    "meetWithin": {
+      "one": "Întâlnirea trebuie să aibă loc în cel mult {count} zi.",
+      "few": "Întâlnirea trebuie să aibă loc în cel mult {count} zile.",
+      "other": "Întâlnirea trebuie să aibă loc în cel mult {count} de zile."
+    },
+    "cooldown": "Momentan doar {name} poate iniția un acord nou.",
+    "changed": "Între timp acordul s-a schimbat. Citește-l din nou."
+  },
+  "chat": {
+    "empty": "Mesaj gol.",
+    "notSent": "Mesajul nu a fost trimis. {reason}",
+    "photo": "Poză"
+  },
+  "moderation": {
+    "minor": "Mesajul sugerează că unul dintre voi ar putea avea sub 18 ani. F*app e doar pentru 18+.",
+    "paid": "Pe F*app e interzis să oferi sau să ceri sex contra cost.",
+    "consentPressure": "Atenție: un acord în aplicație nu înseamnă consimțământ. Îl poți anula oricând și poți refuza orice la fața locului – fără explicații.",
+    "contact": "Match-ul tău trimite date de contact în afara aplicației. În afara F*app, acordul, modul siguranță și raportarea nu funcționează pentru tine."
+  },
+  "safety": {
+    "notFound": "Întâlnirea nu a fost găsită.",
+    "ended": "Întâlnirea s-a încheiat deja.",
+    "wrongPin": "PIN greșit.",
+    "agreementRequired": "Poți începe întâlnirea după ce acordul e completat și confirmat de ambele părți.",
+    "setupRequired": "Mai întâi setează o persoană de încredere, un PIN și un PIN de urgență.",
+    "invalidInterval": "Interval de check-in invalid."
+  },
+  "reports": {
+    "feedbackSent": "Ai trimis deja feedbackul."
+  },
+  "verification": {
+    "unknown": "Verificare necunoscută.",
+    "alreadyVerified": "Identitatea ta e deja verificată.",
+    "startFirst": "Mai întâi pornește verificarea.",
+    "noWebhook": "Furnizorul de dezvoltare nu are webhook.",
+    "unavailable": "Serviciul de verificare nu răspunde. Încearcă din nou peste câteva momente.",
+    "declined": {
+      "underage": "Verificarea a arătat că nu ai încă 18 ani. F*app e doar pentru adulți.",
+      "banned": "Această persoană a primit interdicție pe F*app pentru încălcarea regulilor.",
+      "duplicate": "Această persoană are deja un cont F*app. Fiecare poate avea unul singur.",
+      "incomplete": "Nu am putut citi data nașterii din act. Încearcă din nou.",
+      "default": "Verificarea a eșuat. Încearcă din nou."
+    }
+  },
+  "admin": {
+    "notReported": "Această conversație nu a fost raportată.",
+    "unknownPlan": "Plan necunoscut."
+  },
+  "push": {
+    "discreet": "Notificare nouă",
+    "match": {
+      "title": "E un match!",
+      "body": "Tu și {name} vă plăceți."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Cuiva îi place cu adevărat de tine."
+    },
+    "message": {
+      "photo": "A trimis o poză"
+    },
+    "agreementComplete": {
+      "title": "Acord complet",
+      "body": "Ați confirmat amândoi. La fața locului vă puteți răzgândi oricând."
+    },
+    "agreementNew": {
+      "title": "Acord nou",
+      "body": "{name} a inițiat un acord. Acum completează la ce ai chef."
+    },
+    "agreementChanged": {
+      "title": "Acord modificat",
+      "body": "{name} a schimbat ora, locul sau regulile. Confirmă-le din nou."
+    },
+    "agreementUpdated": {
+      "title": "Acord actualizat",
+      "body": "{name} și-a actualizat dorințele."
+    },
+    "agreementRevoked": {
+      "title": "Acord anulat",
+      "body": "{name} a anulat acordul. Întâlnirea nu mai are loc – și asta trebuie respectat."
+    },
+    "checkInOverdue": {
+      "title": "Ai ratat check-in-ul",
+      "body": "{name} a primit o alertă. Confirmă că ești bine."
+    }
+  },
+  "sms": {
+    "started": "{name} are o întâlnire și te-a ales ca persoană de încredere. Vezi aici unde este și dacă e bine: {url}",
+    "alarm": "ALERTĂ: {name} are nevoie de ajutor. Locația și detalii: {url}",
+    "overdue": "{name} nu a făcut check-in - trebuia să confirme că e bine până la {time}. Încearcă să suni. Locația: {url}",
+    "backOk": "{name} a făcut check-in și a confirmat că e bine.",
+    "sosCancelled": "{name} a anulat alerta - a fost o greșeală, e bine.",
+    "endedOk": "{name} a încheiat întâlnirea și e bine. Mulțumim că ai fost alături.",
+    "someone": "O persoană apropiată"
+  },
+  "share": {
+    "pageTitle": "F*app – link de siguranță",
+    "header": "Link de siguranță",
+    "loading": "Se încarcă…",
+    "call": "Sună la {number}",
+    "mapLabel": "Hartă cu ultima locație cunoscută",
+    "openMaps": "Deschide în Hărți",
+    "partnerPhotoAlt": "Poza persoanei cu care se întâlnește",
+    "partnerLead": "Se întâlnește cu:",
+    "okTitle": "{name} e bine",
+    "okDetail": "Ultimul check-in la {last}. Următorul e așteptat până la {next}.",
+    "overdueTitle": "{name} nu a făcut check-in",
+    "overdueDetail": "Check-in-ul trebuia făcut până la {due}. Încearcă să suni. Dacă nu răspunde, sună la {number} și dictează adresa de pe hartă.",
+    "alarmTitle": "{name} are nevoie de ajutor",
+    "alarmDetail": "Alarmă la {time}. Sună la {number} și dictează locația de pe hartă și locul întâlnirii de mai jos.",
+    "endedTitle": "Întâlnirea s-a încheiat",
+    "endedDetail": "{name} a confirmat că e bine.",
+    "endedDetailAlarm": "{name} a confirmat că e bine. În timpul întâlnirii s-a declanșat o alarmă – întreabă dacă totul e în regulă.",
+    "footer": "Locația nu va mai fi vizibilă după ce {name} încheie întâlnirea.",
+    "locationJustNow": "Locația chiar acum",
+    "locationAgo": {
+      "one": "Locația acum {count} min",
+      "few": "Locația acum {count} min",
+      "other": "Locația acum {count} min"
+    },
+    "battery": "baterie {percent}",
+    "linkExpired": "Linkul nu mai e valabil",
+    "loadFailed": "Starea nu s-a putut încărca. Încerc din nou…"
+  }
+}

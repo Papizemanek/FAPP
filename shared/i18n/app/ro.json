@@ -1,1 +1,688 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Bărbat",
+      "woman": "Femeie",
+      "nonbinary": "Non-binar"
+    },
+    "gendersPlural": {
+      "man": "Bărbați",
+      "woman": "Femei",
+      "nonbinary": "Persoane non-binare"
+    },
+    "tags": {
+      "oneoff": "O singură dată",
+      "repeat": "Din nou și din nou",
+      "myplace": "La mine",
+      "yourplace": "La tine",
+      "vanilla": "Vanilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Săruturi și îmbrățișări",
+      "oral": "Oral",
+      "vaginal": "Vaginal",
+      "anal": "Anal",
+      "toys": "Jucării erotice",
+      "overnight": "Rămas peste noapte"
+    },
+    "wishes": {
+      "yes": "Da",
+      "maybe": "Poate",
+      "no": "Nu"
+    },
+    "reportReasons": {
+      "consent": "A încălcat consimțământul sau limitele",
+      "violence": "Violență sau amenințare",
+      "minor": "Suspiciune de minor",
+      "harassment": "Hărțuire",
+      "fake": "Profil fals",
+      "paid": "Oferă servicii contra cost",
+      "other": "Altceva"
+    },
+    "feedbackReasons": {
+      "consent": "Nu a respectat limitele sau un „stop”",
+      "safety": "M-am simțit în pericol",
+      "fake": "Nu arăta ca în poze",
+      "other": "Altceva"
+    },
+    "plans": {
+      "free": "Gratuit",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Like-uri nelimitate",
+        "detail": "Dă swipe cât vrei."
+      },
+      "rewind": {
+        "name": "Înapoi",
+        "detail": "Recuperează un profil refuzat din greșeală."
+      },
+      "travel": {
+        "name": "Modul călătorie",
+        "detail": "Dă swipe în alt oraș înainte de călătorie."
+      },
+      "incognito": {
+        "name": "Incognito",
+        "detail": "Te văd doar persoanele cărora le dai like."
+      },
+      "seeLikes": {
+        "name": "Cine ți-a dat like",
+        "detail": "Vezi toate persoanele care ți-au dat like."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Like-uri pe săptămână",
+        "detail": "Arată-i cuiva că te interesează cu adevărat."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost pe lună",
+        "detail": "30 de minute în top pentru persoanele din apropiere."
+      },
+      "priorityLikes": {
+        "name": "Like-uri prioritare",
+        "detail": "Like-ul tău e văzut înaintea celorlalte."
+      },
+      "sentLikes": {
+        "name": "Like-uri trimise",
+        "detail": "Cui i-ai dat like în ultimele 7 zile."
+      },
+      "tonight": {
+        "name": "În seara asta, oricând",
+        "detail": "Arată că ai timp chiar în seara asta."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "În seara asta"
+    },
+    "cities": {
+      "praha": "Praga",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Viena",
+      "berlin": "Berlin"
+    }
+  },
+  "consent": {
+    "intent": "Asta îmi imaginez. La fața locului pot refuza orice – la fel și cealaltă persoană.",
+    "notice": "Înțeleg: consimțământul contează doar aici și acum. „Nu”, „stop”, cuvântul de siguranță, tăcerea, încremenirea sau starea de ebrietate nu înseamnă consimțământ. Un acord în aplicație nu scutește pe nimeni de responsabilitate.",
+    "deterrence": "Pe F*app, toată lumea are identitatea verificată. Dacă bănuim o infracțiune, predăm identitatea poliției."
+  },
+  "welcome": {
+    "tagline": "Sex, fără ocolișuri.",
+    "taglineStrong": "Doar când amândoi spuneți da.",
+    "createAccount": "Creează cont",
+    "signIn": "Conectează-te",
+    "adultsOnly": "Doar 18+. Aici toată lumea are identitatea verificată."
+  },
+  "agreement": {
+    "title": "Acord",
+    "titleWithName": "Acord · {name}",
+    "timeFormatError": "Introdu ora în formatul HH:MM, de ex. 21:00.",
+    "revokedByPartnerTitle": "{name} a anulat acordul",
+    "revokedByPartnerSubtitle": "Acum doar {name} poate iniția un acord nou.",
+    "revokedTitle": "Acordul a fost anulat",
+    "revokedSubtitle": "Poți iniția unul nou.",
+    "newTitle": "Acord nou",
+    "newSubtitle": "Fiecare își completează partea separat. Veți vedea doar ce aveți în comun.",
+    "logisticsChangedTitle": "Schimbi ora, locul sau regulile",
+    "logisticsChangedSubtitle": "{name} va trebui să le confirme din nou.",
+    "confirmedTitle": "Acordul e completat de ambele părți",
+    "confirmedSubtitle": "La fața locului, oricare dintre voi se poate răzgândi oricând.",
+    "myPartDoneTitle": "Partea ta e gata",
+    "myPartDoneSubtitle": "{name} nu și-a completat sau confirmat încă partea.",
+    "partnerFilledTitle": "{name} și-a completat partea",
+    "partnerFilledSubtitle": "Completează-o pe a ta – veți vedea doar ce aveți în comun.",
+    "fillTitle": "Completează-ți partea",
+    "fillSubtitle": "Veți vedea doar ce aveți în comun.",
+    "overlapTitle": "Ce aveți în comun",
+    "overlapNone": "Deocamdată nimic în comun.",
+    "overlapYes": "Vreți amândoi",
+    "overlapMaybe": "Poate – discutați la fața locului",
+    "partnerNote": "{name}: „{note}”",
+    "overlapHint": "Nimeni nu vede ce nu vrea unul dintre voi – nici măcar cine nu a vrut.",
+    "wishesLabel": "La ce am chef",
+    "wishesHint": "{name} va vedea doar ce aveți în comun. Nimeni nu va vedea „nu”-ul tău.",
+    "wishesHintNoName": "Cealaltă persoană va vedea doar ce aveți în comun.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Limitele mele (le vede și cealaltă persoană)",
+    "notePlaceholder": "De ex. fără poze, vreau să ne cunoaștem întâi.",
+    "logisticsLabel": "Detalii practice – valabile pentru amândoi",
+    "today": "Azi",
+    "tomorrow": "Mâine",
+    "timeLabel": "Ora",
+    "placeLabel": "Unde",
+    "placePlaceholder": "De ex. la mine, Vinohrady",
+    "safewordLabel": "Cuvânt de siguranță",
+    "safewordPlaceholder": "Un cuvânt care oprește totul",
+    "condom": "Mereu cu prezervativ",
+    "sober": "Sobrietate",
+    "soberHint": "Starea de ebrietate nu înseamnă consimțământ.",
+    "publicFirst": "Ne vedem întâi într-un loc public",
+    "publicFirstHint": "O cafenea sau un bar – decideți pe loc dacă mergeți mai departe.",
+    "partnerMayShare": "În timpul întâlnirii, {name} poate trimite numele tău, poza ta și locul întâlnirii persoanei sale de încredere.",
+    "saveAndConfirm": "Salvează și confirmă",
+    "startMeetup": "Începe întâlnirea",
+    "revoke": "Anulează acordul",
+    "revokeConfirmTitle": "Anulezi acordul?",
+    "revokeConfirmMessage": "Întâlnirea nu mai are loc. Nu trebuie să explici nimic – {name} primește doar o notificare."
+  },
+  "meetup": {
+    "title": "Întâlnire · {name}",
+    "fakeCallerDefault": "Mama",
+    "endedTitle": "Întâlnire încheiată",
+    "endedMessage": "{name} a primit un mesaj că ești bine.",
+    "sosFailed": "Alarma nu a putut fi trimisă: {error} Încearcă din nou sau sună-ți persoana de încredere, {name}.",
+    "needAgreementTitle": "Mai întâi, finalizați acordul",
+    "needAgreementSubtitle": "Poți începe întâlnirea după ce acordul e completat și confirmat de ambele părți.",
+    "needAgreementAction": "Acord",
+    "setupTitle": "Configurează-ți siguranța",
+    "setupSubtitle": "O persoană de încredere, un PIN și un PIN de urgență.",
+    "setupAction": "Configurează",
+    "pointTrusted": "{name} primește un SMS cu un link. Va vedea unde ești, cu cine și dacă ești bine.",
+    "pointTrustedNoName": "Persoana ta de încredere primește un SMS cu un link. Va vedea unde ești, cu cine și dacă ești bine.",
+    "pointCheckIn": "La intervale regulate confirmi cu PIN-ul că ești bine. Dacă nu o faci, trimitem o alertă – chiar dacă ți se descarcă telefonul.",
+    "pointDuress": "PIN-ul de urgență arată exact ca cel obișnuit, dar declanșează alarma în tăcere.",
+    "pointPartner": "{name} va vedea că ai activat modul siguranță și că persoana ta de încredere știe unde și cu cine ești. Nimic mai mult – nici alarma, nici locația ta.",
+    "intervalLabel": "Confirm că sunt bine la fiecare",
+    "minutes": "{count} min",
+    "start": "Începe întâlnirea",
+    "locationVisibleTo": "{name} îți vede locația",
+    "bgLocationTitle": "Locație doar cu aplicația deschisă",
+    "bgLocationSubtitle": "Setează accesul la locație pe „Întotdeauna”, ca să o vadă și cu ecranul stins.",
+    "bgLocationAction": "Setări",
+    "nextCheckIn": "Următorul check-in în",
+    "checkIn": "Check-in",
+    "now": "acum",
+    "imOk": "Sunt bine",
+    "overdueHint": "{name} a primit o alertă. Confirmă cu PIN-ul că ești bine.",
+    "graceHint": {
+      "one": "Dacă nu faci check-in în {count} minut de la ora stabilită, {name} primește o alertă cu locația ta.",
+      "few": "Dacă nu faci check-in în {count} minute de la ora stabilită, {name} primește o alertă cu locația ta.",
+      "other": "Dacă nu faci check-in în {count} de minute de la ora stabilită, {name} primește o alertă cu locația ta."
+    },
+    "partnerSafetyOn": "Și {name} are modul siguranță activat – persoana sa de încredere știe unde se află și cu cine.",
+    "partnerSafetyOff": "{name} nu are modul siguranță activat.",
+    "fakeCall": "Apel fals",
+    "fakeCallIn": "Apel în {count} s",
+    "fakeCallHint": "În {count} s, apelul fals sună exact ca unul real – scuza ta ca să pleci.",
+    "shareLink": "Trimite linkul",
+    "sos": "SOS – ține apăsat",
+    "revoke": "Anulează acordul",
+    "end": "Încheie întâlnirea",
+    "sosSentTitle": "Alarmă trimisă",
+    "sosSentBody": "{trusted} a primit locația ta exactă și informația cu cine ești. {partner} nu va vedea nimic.",
+    "sosMistake": "A fost o greșeală – sunt bine",
+    "sosHide": "Ascunde (alarma rămâne activă)",
+    "pinTitle": "Confirmă cu PIN-ul",
+    "pinSubtitleOk": "Că ești bine.",
+    "pinSubtitleEnd": "Că întâlnirea s-a încheiat și ești bine.",
+    "revokeConfirmTitle": "Anulezi acordul?",
+    "revokeConfirmMessage": "{name} va primi o notificare. Nu trebuie să explici nimic. Modul siguranță rămâne activ până când îl oprești."
+  },
+  "feedback": {
+    "title": "Cum a fost întâlnirea?",
+    "privacy": "Răspunsul tău îl vede doar echipa noastră – {name} nu îl va vedea niciodată. Ne ajută să păstrăm aici oameni care respectă limitele.",
+    "privacyNoName": "Răspunsul tău îl vede doar echipa noastră – cealaltă persoană nu îl va vedea niciodată. Ne ajută să păstrăm aici oameni care respectă limitele.",
+    "allGood": "Totul a fost în regulă",
+    "somethingWrong": "Ceva n-a fost în regulă",
+    "detailsLabel": "Ce s-a întâmplat? (opțional)",
+    "preserve": "Păstrează datele întâlnirii, în caz că trebuie să mergi la poliție. Altfel, acordul se șterge după 48 de ore.",
+    "suspendNotice": "Dacă cineva nu te-a respectat sau ești în pericol, îi suspendăm imediat contul și verificăm.",
+    "send": "Trimite",
+    "helpTitle": "Ne pare rău",
+    "helpIntro": "Vom verifica, iar între timp am suspendat contul celeilalte persoane. Nu trebuie să decizi acum ce urmează – și nimic din toate acestea nu e vina ta.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Linie de ajutor pentru victimele infracțiunilor – Bílý kruh bezpečí",
+        "detail": "Non-stop, gratuit, și îți poți păstra anonimatul."
+      },
+      "police": {
+        "name": "Poliția Cehă",
+        "detail": "Dacă vrei să denunți fapta – chiar și mai târziu."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Sprijin pentru persoanele care au trecut prin violență sexuală."
+      }
+    },
+    "helpLocal": {
+      "name": "Unde găsești ajutor",
+      "detail": "Contactează poliția locală sau o linie locală de sprijin pentru victimele infracțiunilor și ale violenței sexuale."
+    },
+    "medical": "Dacă s-a întâmplat ceva împotriva voinței tale, cere ajutor medical cât mai repede – și pentru a preveni o sarcină și infecțiile, pentru că unele medicamente funcționează doar în primele 72 de ore. Probele pot fi încă recoltate dacă nu ai făcut duș și îți păstrezi hainele. Dar nimic din toate acestea nu e obligatoriu – poți raporta și mai târziu.",
+    "preserved": "Am păstrat datele întâlnirii (acord, mesaje, alarme), în caz că ai nevoie de ele pentru poliție.",
+    "backToApp": "Înapoi la aplicație"
+  },
+  "report": {
+    "title": "Raportează",
+    "intro": "Raportarea e anonimă. Totodată blocăm această persoană pentru tine, așa că nu vă veți mai vedea.",
+    "introWithName": "{name}. Raportarea e anonimă. Totodată blocăm această persoană pentru tine, așa că nu vă veți mai vedea.",
+    "detailsLabel": "Detalii (opțional)",
+    "submit": "Raportează",
+    "thanksTitle": "Mulțumim",
+    "thanksMessage": "Am primit raportarea. Nu vă veți mai vedea."
+  },
+  "chat": {
+    "unavailable": "Chatul nu e disponibil",
+    "nameAge": "{name}, {age}",
+    "distance": "La {km} km",
+    "reportOrBlock": "Raportează sau blochează",
+    "photo": "Poză",
+    "photoBlurred": "Poză estompată, atinge ca s-o vezi",
+    "tapToReveal": "Atinge ca s-o vezi",
+    "sendPhoto": "Trimite o poză",
+    "message": "Mesaj",
+    "messagePlaceholder": "Scrie un mesaj…",
+    "send": "Trimite",
+    "report": "Raportează",
+    "block": "Blochează",
+    "unmatch": "Anulează match-ul",
+    "blockConfirmTitle": "Blochezi?",
+    "blockConfirmMessage": "Tu și {name} nu vă veți mai vedea, iar chatul va dispărea."
+  },
+  "safetySettings": {
+    "title": "Siguranță și confidențialitate",
+    "trustedLabel": "Persoană de încredere",
+    "trustedHint": "Când începi o întâlnire, îi trimitem un SMS cu un link către locația ta. O alertăm dacă nu faci check-in sau dacă declanșezi alarma.",
+    "nameLabel": "Nume",
+    "namePlaceholder": "De ex. Alex",
+    "phoneLabel": "Telefon",
+    "phonePlaceholder": "+40 712 345 678",
+    "pinsLabel": "PIN și PIN de urgență",
+    "pinsHint": "În timpul unei întâlniri confirmi cu PIN-ul că ești bine. PIN-ul de urgență arată exact la fel, dar trimite o alarmă în tăcere – folosește-l dacă cineva te obligă să-i spui aplicației că totul e în regulă.",
+    "checkinPinLabel": "PIN (4–6 cifre)",
+    "duressPinLabel": "PIN de urgență (diferit de PIN)",
+    "passwordLabel": "Parola contului (pentru schimbarea PIN-urilor)",
+    "pinsSet": "PIN-urile sunt setate",
+    "change": "Schimbă",
+    "privacyLabel": "Confidențialitate",
+    "appLock": "Blocarea aplicației",
+    "appLockHint": "Face ID, amprentă sau codul telefonului la fiecare deschidere a aplicației.",
+    "discreet": "Mod discret",
+    "discreetHint": "O pictogramă neutră și notificări fără conținut – nimeni nu-și dă seama ce aplicație e.",
+    "save": "Salvează"
+  },
+  "tabs": {
+    "discover": "Descoperă",
+    "matches": "Mesaje",
+    "profile": "Profil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Ți-a mai rămas {count} like.",
+      "few": "Ți-au mai rămas {count} like-uri.",
+      "other": "Ți-au mai rămas {count} de like-uri."
+    },
+    "boostRunningUntil": "Boostul e activ până la {time}.",
+    "tonight": "În seara asta",
+    "tonightOn": "În seara asta – activat",
+    "boost": "Boost",
+    "boostOn": "Boost activ",
+    "searchSettings": "Setări de căutare",
+    "traveling": "În călătorie",
+    "travelingIn": "În călătorie · {city}",
+    "change": "Schimbă",
+    "enableLocation": "Permite locația",
+    "addPhoto": "Adaugă o poză",
+    "retry": "Încearcă din nou",
+    "empty": "Momentan nu mai e nimeni prin apropiere. Încearcă mai târziu sau extinde căutarea.",
+    "refresh": "Reîmprospătează",
+    "nextPhoto": "Poza următoare",
+    "stampLike": "DA",
+    "stampNope": "NU",
+    "superLikedYou": "Ți-a dat Super Like",
+    "distance": "La {km} km",
+    "rewind": "Anulează ultimul swipe",
+    "pass": "Treci peste",
+    "superLike": "Super Like",
+    "like": "Like",
+    "boostSheet": {
+      "title": "Pornești un Boost?",
+      "messageMonthly": "Timp de 30 de minute vei fi în top pentru persoanele din apropiere. Se folosește Boostul lunar din abonament.",
+      "messageCredits": "Timp de 30 de minute vei fi în top pentru persoanele din apropiere. Mai ai {count}×.",
+      "confirm": "Pornește Boostul",
+      "done": "Boost activ – ești în top timp de 30 de minute."
+    },
+    "tonightSheet": {
+      "title": "Activezi „În seara asta”?",
+      "message": "Până la 6:00 dimineața vei apărea mai sus pentru persoanele din apropiere, cu eticheta „În seara asta”. Îl poți dezactiva oricând.",
+      "messageCredits": "Până la 6:00 dimineața vei apărea mai sus pentru persoanele din apropiere, cu eticheta „În seara asta”. Îl poți dezactiva oricând. Mai ai {count}×.",
+      "confirm": "Activează",
+      "done": "„În seara asta” e activ până la 6:00."
+    },
+    "tonightOffSheet": {
+      "title": "„În seara asta” e activ",
+      "message": "Activ până la {time}.",
+      "confirm": "Dezactivează",
+      "done": "„În seara asta” e dezactivat."
+    }
+  },
+  "matches": {
+    "title": "Mesaje",
+    "agreement": {
+      "pending": "Acord în așteptare",
+      "confirmed": "Acord confirmat",
+      "revoked": "Acord anulat"
+    },
+    "likes": "Like-uri",
+    "likedBy": {
+      "one": "{count} persoană ți-a dat like",
+      "few": "{count} persoane ți-au dat like",
+      "other": "{count} de persoane ți-au dat like"
+    },
+    "likedByLocked": {
+      "one": "{count} persoană ți-a dat like – vezi cine cu Gold",
+      "few": "{count} persoane ți-au dat like – vezi cine cu Gold",
+      "other": "{count} de persoane ți-au dat like – vezi cine cu Gold"
+    },
+    "likesHint": "Cine ți-a dat like și cui i-ai dat tu",
+    "empty": "Încă niciun match. Continuă să dai swipe – când like-ul e reciproc, persoana apare aici.",
+    "lastMessageMine": "Tu: {text}",
+    "newMatch": "Match nou – trimite primul mesaj."
+  },
+  "profile": {
+    "title": "Profil",
+    "saving": "Se salvează…",
+    "saved": "Salvat",
+    "done": "Gata",
+    "suspended": {
+      "title": "Contul tău e suspendat",
+      "subtitle": "Verificăm o raportare. Modul siguranță funcționează în continuare."
+    },
+    "photoA11y": "Poză – ține apăsat ca s-o ștergi",
+    "addPhoto": "Adaugă o poză",
+    "photoHint": "Fără nuditate – pozele trebuie să respecte regulile magazinelor de aplicații. Ține apăsat pe o poză ca s-o ștergi.",
+    "name": "Nume",
+    "bio": "Despre mine",
+    "bioPlaceholder": "Câteva rânduri despre tine.",
+    "lookingFor": "Ce caut",
+    "safety": {
+      "title": "Siguranță și confidențialitate",
+      "trusted": "Persoană de încredere: {name}",
+      "setup": "Setează o persoană de încredere și un PIN.",
+      "edit": "Editează"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold și Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Like-uri nelimitate, cine ți-a dat like, Boost și altele.",
+      "validUntil": "Valabil până la {date}.",
+      "upgrade": "Îmbunătățește",
+      "manage": "Gestionează"
+    },
+    "incognito": {
+      "label": "Incognito",
+      "hint": "Te văd doar persoanele cărora le dai like. (Plus)"
+    },
+    "travel": {
+      "label": "Modul călătorie (Plus)",
+      "home": "Acasă",
+      "hint": "Dai swipe în alt oraș înainte de călătorie – oamenii de acolo te vor vedea cu eticheta „În călătorie”."
+    },
+    "showMe": "Arată-mi",
+    "ageFrom": "Vârstă de la",
+    "ageTo": "Vârstă până la",
+    "distance": "Distanță",
+    "distanceSuffix": " km",
+    "save": "Salvează profilul",
+    "language": {
+      "title": "Limbă",
+      "device": "Ca pe telefon",
+      "rtlHint": "La limbile scrise de la dreapta la stânga, aspectul se inversează după repornirea aplicației."
+    },
+    "signOut": "Deconectează-te",
+    "deletePassword": "Parola pentru ștergerea contului",
+    "deleteForever": "Șterge contul definitiv",
+    "deleteAccount": "Șterge contul",
+    "removePhoto": {
+      "title": "Ștergi poza?",
+      "confirm": "Șterge"
+    }
+  },
+  "premium": {
+    "title": "Abonament",
+    "free": {
+      "title": "Deocamdată F*app e gratuit",
+      "body": "Vom activa funcțiile cu plată mai târziu. Siguranța – verificarea, acordurile, modul siguranță și SOS – va rămâne mereu gratuită."
+    },
+    "back": "Înapoi",
+    "done": "Gata",
+    "continue": "Continuă",
+    "reason": {
+      "likeLimitAt": "Ai rămas fără like-uri. Primești altele la {time}.",
+      "likeLimit": "Ai rămas fără like-uri. Primești altele în curând.",
+      "noCredit": "{credit} e disponibil ca achiziție unică sau cu abonament.",
+      "upgrade": "Asta face parte din F*app {plan}."
+    },
+    "oneOff": "Achiziție unică",
+    "owned": "ai {count}",
+    "creditDetail": {
+      "boost": "30 de minute în top pentru persoanele din apropiere.",
+      "superlike": "Va vedea că te interesează cu adevărat.",
+      "tonight": "Mai sus până la 6:00 dimineața, cu eticheta „În seara asta”."
+    },
+    "buyCredit": "Cumpără {amount}× {credit} cu {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Ai un Boost în plus.",
+        "few": "Ai {count} Boosturi în plus.",
+        "other": "Ai {count} de Boosturi în plus."
+      },
+      "superlike": {
+        "one": "Ai un Super Like în plus.",
+        "few": "Ai {count} Super Like-uri în plus.",
+        "other": "Ai {count} de Super Like-uri în plus."
+      },
+      "tonight": {
+        "one": "Ai un „În seara asta” în plus.",
+        "few": "Ai {count}× „În seara asta” în plus.",
+        "other": "Ai {count}× „În seara asta” în plus."
+      }
+    },
+    "currentPlan": "Ai F*app {plan}",
+    "validUntil": "Valabil până la {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Dă swipe fără limite și recuperează profilurile refuzate din greșeală.",
+      "gold": "Vezi cine ți-a dat like – și fă match cu o atingere.",
+      "platinum": "Like-ul tău e văzut primul. Și „În seara asta” oricând."
+    },
+    "featureIncluded": "{feature}: inclus",
+    "featureNotIncluded": "{feature}: neinclus",
+    "months": {
+      "one": "{count} lună",
+      "few": "{count} luni",
+      "other": "{count} de luni"
+    },
+    "perMonth": "pe lună",
+    "perMonthSave": "pe lună · −{percent}%",
+    "continueWithPrice": "Continuă · {price}",
+    "planBought": {
+      "one": "Ai F*app {plan}.",
+      "few": "Ai F*app {plan} pentru {count} luni.",
+      "other": "Ai F*app {plan} pentru {count} de luni."
+    },
+    "renewal": "Abonamentul se reînnoiește automat. Îl poți anula oricând din setările App Store sau Google Play. Prețul e același pentru toată lumea.",
+    "renewalUpfront": "Plătești {total} în avans ({monthly} pe lună). Abonamentul se reînnoiește automat. Îl poți anula oricând din setările App Store sau Google Play. Prețul e același pentru toată lumea.",
+    "safetyFree": {
+      "title": "Siguranța e mereu gratuită",
+      "subtitle": "Verificare, acorduri, modul siguranță, SOS și raportare."
+    },
+    "devNote": "Prototip: nu se încasează nimic, achiziția e doar simulată."
+  },
+  "likes": {
+    "title": "Like-uri",
+    "received": "Ți-au dat like",
+    "receivedCount": "Ți-au dat like · {count}",
+    "sent": "Trimise",
+    "emptyReceived": "Încă niciun like nou.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} persoană ți-a dat like",
+      "few": "{count} persoane ți-au dat like",
+      "other": "{count} de persoane ți-au dat like"
+    },
+    "lockedEmpty": "Like-urile tale vor apărea aici",
+    "goldText": "Cu F*app Gold vezi cine sunt și faci match cu o atingere.",
+    "goldCta": "Vezi-le cu Gold",
+    "emptySent": "Niciun like fără match în ultimele 7 zile.",
+    "superLikePending": "Super Like · în așteptare",
+    "pending": "Așteaptă răspuns",
+    "sentTitle": "Cui i-ai dat like",
+    "platinumText": "Cu F*app Platinum îți vezi like-urile din ultimele 7 zile.",
+    "platinumCta": "Vezi-le cu Platinum",
+    "likeBack": "Dă like înapoi",
+    "pass": "Treci peste"
+  },
+  "match": {
+    "title": "E un match!",
+    "body": "Tu și {name} vă plăceți.\nSpune salut și puneți-vă de acord la ce aveți chef.",
+    "sendMessage": "Trimite un mesaj",
+    "keepDiscovering": "Descoperă în continuare"
+  },
+  "login": {
+    "title": "Conectare",
+    "email": "E-mail",
+    "password": "Parolă",
+    "submit": "Conectează-te"
+  },
+  "register": {
+    "title": "Creează cont",
+    "name": "Nume (îl vor vedea ceilalți)",
+    "email": "E-mail",
+    "password": "Parolă (cel puțin 10 caractere)",
+    "birthdate": "Data nașterii",
+    "birthdatePlaceholder": "ZZ. LL. AAAA",
+    "birthdateInvalid": "Introdu data nașterii în formatul ZZ. LL. AAAA.",
+    "iAm": "Sunt",
+    "showMe": "Arată-mi",
+    "confirmAdult": "Am 18 ani sau mai mult.",
+    "acceptRules": "Sunt de acord cu regulile comunității și cu prelucrarea datelor mele, inclusiv a celor despre viața mea sexuală, pentru ca F*app să poată funcționa.",
+    "verifyNote": "Imediat după aceea îți verificăm identitatea și vârsta (act de identitate și selfie). Nu păstrăm actul tău.",
+    "continue": "Continuă"
+  },
+  "verify": {
+    "title": "Confirmă că ești tu",
+    "intro": "Pe F*app, toată lumea are identitatea și vârsta verificate. Fotografiezi actul de identitate și faci un selfie – durează cam două minute.",
+    "privacy": "Nu păstrăm actul tău și nici pozele. Păstrăm doar rezultatul verificării și data nașterii. Cine încalcă regulile nu se poate întoarce cu un cont nou.",
+    "pending": {
+      "title": "Așteptăm rezultatul verificării",
+      "subtitle": "De obicei durează câteva minute.",
+      "refresh": "Reîmprospătează"
+    },
+    "declined": "Verificarea a eșuat",
+    "devApprove": "Simulează o verificare reușită (mod de test)",
+    "retry": "Încearcă din nou",
+    "start": "Verifică identitatea",
+    "signOut": "Deconectează-te"
+  },
+  "common": {
+    "back": "Înapoi",
+    "cancel": "Anulează",
+    "close": "Închide",
+    "save": "Salvează",
+    "retry": "Încearcă din nou",
+    "continue": "Continuă",
+    "done": "Gata",
+    "send": "Trimite",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "open": "Deschide",
+    "show": "Vezi",
+    "confirm": "Confirmă",
+    "errorGeneric": "Ceva n-a mers bine."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} are modul siguranță activat",
+    "partnerSafetySubtitle": "Persoana sa de încredere știe unde se află și cu cine.",
+    "meetupTitle": "Întâlnire în desfășurare",
+    "meetupSubtitle": "Modul siguranță e activat.",
+    "missingTitle": "Încă nu există un acord",
+    "missingSubtitle": "Fiecare completează la ce are chef – veți vedea doar ce aveți în comun.",
+    "fill": "Completează",
+    "revokedByMeTitle": "Ai anulat acordul",
+    "revokedByPartnerTitle": "{name} a anulat acordul",
+    "revokedSubtitle": "Întâlnirea nu mai are loc.",
+    "revokedCooldownSubtitle": "Întâlnirea nu mai are loc. Doar {name} poate iniția un acord nou.",
+    "newAgreement": "Acord nou",
+    "confirmedTitle": "Acord complet",
+    "confirmedSubtitle": "La fața locului, oricare dintre voi se poate răzgândi oricând.",
+    "partnerFilledTitle": "{name} a completat acordul",
+    "waitingForYouTitle": "Acordul te așteaptă",
+    "fillYoursSubtitle": "Completează la ce ai chef – veți vedea doar ce aveți în comun.",
+    "partnerPendingTitle": "{name} nu l-a completat încă",
+    "partnerPendingSubtitle": "Acordul e complet după ce îl completați amândoi."
+  },
+  "fakeCall": {
+    "incoming": "mobil…",
+    "hangUp": "Închide",
+    "decline": "Respinge",
+    "accept": "Răspunde"
+  },
+  "homeBanners": {
+    "meetupTitle": "Întâlnire în desfășurare · {name}",
+    "missedCheckIn": "Ai ratat un check-in!",
+    "safetyOn": "Modul siguranță e activat.",
+    "feedbackTitle": "Cum a fost întâlnirea?",
+    "feedbackSubtitle": "{name} – răspunsul îl vede doar echipa noastră.",
+    "feedbackAction": "Răspunde"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} cifră introdusă",
+      "few": "{count} cifre introduse",
+      "other": "{count} de cifre introduse"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, mai puțin",
+    "stepperIncrease": "{label}, mai mult"
+  },
+  "api": {
+    "offline": "Nu ne-am putut conecta la server. Verifică-ți conexiunea."
+  },
+  "billing": {
+    "storeNotConnected": "Achizițiile prin App Store și Google Play nu sunt încă configurate."
+  },
+  "notifications": {
+    "channelName": "Notificări",
+    "reminderDiscreet": "Memento",
+    "checkInTitle": "E timpul pentru check-in",
+    "checkInBody": "Confirmă cu PIN-ul că ești bine.",
+    "fakeCallBody": "Apel primit"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Partajarea locației e activă",
+    "notificationBody": "O poți opri din aplicație."
+  },
+  "appLock": {
+    "prompt": "Deblochează F*app",
+    "lockedTitle": "Aplicația e blocată",
+    "lockedBody": "Deblocheaz-o cu Face ID, amprenta sau codul telefonului.",
+    "sosHold": "SOS – ține apăsat",
+    "unlock": "Deblochează",
+    "sosSentTitle": "Alarmă trimisă",
+    "sosSentBody": "{name} a primit o alertă cu locația ta.",
+    "sosSentBodyNoName": "Persoana ta de încredere a primit o alertă cu locația ta.",
+    "sosFailedTitle": "Nu s-a putut trimite"
+  },
+  "native": {
+    "locationWhenInUse": "F*app are nevoie de locația ta ca să-ți arate oameni din apropiere și, în timpul unei întâlniri, ca s-o trimită persoanei tale de încredere.",
+    "locationAlways": "În timpul unei întâlniri, F*app îi trimite locația ta persoanei de încredere, chiar și cu ecranul stins. În afara întâlnirilor, nu folosește locația în fundal.",
+    "faceId": "F*app folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
+    "photos": "Alege poze pentru profilul tău.",
+    "camera": "Fă-ți o poză pentru profil."
+  }
+}

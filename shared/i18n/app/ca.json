@@ -1,1 +1,688 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Home",
+      "woman": "Dona",
+      "nonbinary": "No binari"
+    },
+    "gendersPlural": {
+      "man": "Homes",
+      "woman": "Dones",
+      "nonbinary": "Persones no binàries"
+    },
+    "tags": {
+      "oneoff": "Una sola vegada",
+      "repeat": "Una vegada i una altra",
+      "myplace": "A casa meva",
+      "yourplace": "A casa teva",
+      "vanilla": "Vainilla",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Petons i carícies",
+      "oral": "Oral",
+      "vaginal": "Vaginal",
+      "anal": "Anal",
+      "toys": "Joguines",
+      "overnight": "Quedar-se a dormir"
+    },
+    "wishes": {
+      "yes": "Sí",
+      "maybe": "Potser",
+      "no": "No"
+    },
+    "reportReasons": {
+      "consent": "Ha vulnerat el consentiment o els límits",
+      "violence": "Violència o amenaça",
+      "minor": "Possible menor d'edat",
+      "harassment": "Assetjament",
+      "fake": "Perfil fals",
+      "paid": "Ofereix serveis de pagament",
+      "other": "Altres"
+    },
+    "feedbackReasons": {
+      "consent": "No ha respectat els límits o un «para»",
+      "safety": "Em sentia en perill",
+      "fake": "No s'assemblava a les seves fotos",
+      "other": "Una altra cosa"
+    },
+    "plans": {
+      "free": "Gratuït",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Likes il·limitats",
+        "detail": "Llisca tant com vulguis."
+      },
+      "rewind": {
+        "name": "Desfer",
+        "detail": "Recupera un perfil que has descartat per error."
+      },
+      "travel": {
+        "name": "Mode viatge",
+        "detail": "Llisca en una altra ciutat abans del viatge."
+      },
+      "incognito": {
+        "name": "Incògnit",
+        "detail": "Només et veuen les persones a qui fas like."
+      },
+      "seeLikes": {
+        "name": "Qui t'ha fet like",
+        "detail": "Mira totes les persones que t'han fet like."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes a la setmana",
+        "detail": "Demostra a algú que t'interessa de debò."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost al mes",
+        "detail": "30 minuts en primer lloc per a la gent propera."
+      },
+      "priorityLikes": {
+        "name": "Likes prioritaris",
+        "detail": "El teu like es veu abans que els altres."
+      },
+      "sentLikes": {
+        "name": "Likes enviats",
+        "detail": "A qui has fet like els últims 7 dies."
+      },
+      "tonight": {
+        "name": "Aquesta nit, quan vulguis",
+        "detail": "Mostra que tens temps aquesta nit."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Aquesta nit"
+    },
+    "cities": {
+      "praha": "Praga",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Viena",
+      "berlin": "Berlín"
+    }
+  },
+  "consent": {
+    "intent": "Això és el que tinc al cap. Un cop allà, puc dir que no a qualsevol cosa – i l'altra persona també.",
+    "notice": "Ho entenc: el consentiment només val aquí i ara. «No», «para», la paraula de seguretat, el silenci, bloquejar-se o l'embriaguesa no són consentiment. Un acord a l'app no treu la responsabilitat a ningú.",
+    "deterrence": "A F*app tothom té la identitat verificada. Si sospitem que s'ha comès un delicte, lliurem la identitat a la policia."
+  },
+  "welcome": {
+    "tagline": "Sexe, sense embuts.",
+    "taglineStrong": "Només amb el sí de tots dos.",
+    "createAccount": "Crea un compte",
+    "signIn": "Inicia la sessió",
+    "adultsOnly": "Només per a majors de 18 anys. Aquí tothom té la identitat verificada."
+  },
+  "agreement": {
+    "title": "Acord",
+    "titleWithName": "Acord · {name}",
+    "timeFormatError": "Escriu l'hora en format HH:MM, per exemple 21:00.",
+    "revokedByPartnerTitle": "{name} ha cancel·lat l'acord",
+    "revokedByPartnerSubtitle": "Ara només {name} pot iniciar un acord nou.",
+    "revokedTitle": "L'acord s'ha cancel·lat",
+    "revokedSubtitle": "Pots iniciar-ne un de nou.",
+    "newTitle": "Acord nou",
+    "newSubtitle": "Cada persona omple la seva part per separat. Només veureu allò en què coincidiu.",
+    "logisticsChangedTitle": "Estàs canviant l'hora, el lloc o les regles",
+    "logisticsChangedSubtitle": "{name} els haurà de tornar a confirmar.",
+    "confirmedTitle": "L'acord està complet per totes dues parts",
+    "confirmedSubtitle": "Un cop allà, totes dues parts poden canviar d'opinió en qualsevol moment.",
+    "myPartDoneTitle": "La teva part està feta",
+    "myPartDoneSubtitle": "{name} encara no ha omplert o confirmat la seva.",
+    "partnerFilledTitle": "{name} ha omplert la seva part",
+    "partnerFilledSubtitle": "Omple la teva – només veureu allò en què coincidiu.",
+    "fillTitle": "Omple la teva part",
+    "fillSubtitle": "Només veureu allò en què coincidiu.",
+    "overlapTitle": "En què coincidiu",
+    "overlapNone": "Encara no hi ha coincidències.",
+    "overlapYes": "Sí per totes dues parts",
+    "overlapMaybe": "Potser – en parlareu allà",
+    "partnerNote": "{name}: «{note}»",
+    "overlapHint": "Ningú no veu el que un de vosaltres no vol – ni tan sols qui no ho volia.",
+    "wishesLabel": "Què em ve de gust",
+    "wishesHint": "{name} només veurà les coincidències. Ningú no veurà el teu «no».",
+    "wishesHintNoName": "L'altra persona només veurà les coincidències.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Els meus límits (l'altra persona també els veu)",
+    "notePlaceholder": "P. ex. res de fotos, primer et vull conèixer.",
+    "logisticsLabel": "Coses pràctiques – valen per a totes dues parts",
+    "today": "Avui",
+    "tomorrow": "Demà",
+    "timeLabel": "Hora",
+    "placeLabel": "On",
+    "placePlaceholder": "P. ex. a casa meva, Vinohrady",
+    "safewordLabel": "Paraula de seguretat",
+    "safewordPlaceholder": "Una paraula que ho atura tot",
+    "condom": "Sempre amb preservatiu",
+    "sober": "Sobrietat",
+    "soberHint": "L'embriaguesa no és consentiment.",
+    "publicFirst": "Primer ens veiem en un lloc públic",
+    "publicFirstHint": "Un cafè o un bar – decidiu en persona si continueu.",
+    "partnerMayShare": "Durant la trobada, {name} pot compartir el teu nom, la teva foto i el lloc de la trobada amb la seva persona de confiança.",
+    "saveAndConfirm": "Desa i confirma",
+    "startMeetup": "Inicia la trobada",
+    "revoke": "Cancel·la l'acord",
+    "revokeConfirmTitle": "Vols cancel·lar l'acord?",
+    "revokeConfirmMessage": "La trobada queda anul·lada. No has d'explicar res – {name} només rep una notificació."
+  },
+  "meetup": {
+    "title": "Trobada · {name}",
+    "fakeCallerDefault": "Mama",
+    "endedTitle": "Trobada acabada",
+    "endedMessage": "{name} ha rebut un missatge que diu que estàs bé.",
+    "sosFailed": "No s'ha pogut enviar l'alarma: {error} Torna-ho a provar o truca a {name}.",
+    "needAgreementTitle": "Primer, completeu l'acord",
+    "needAgreementSubtitle": "Podràs iniciar la trobada quan l'acord estigui omplert i confirmat per totes dues parts.",
+    "needAgreementAction": "Acord",
+    "setupTitle": "Configura la teva seguretat",
+    "setupSubtitle": "Una persona de confiança, un PIN i un PIN d'emergència.",
+    "setupAction": "Configura",
+    "pointTrusted": "{name} rep un SMS amb un enllaç. Veurà on ets, amb qui i si estàs bé.",
+    "pointTrustedNoName": "La teva persona de confiança rep un SMS amb un enllaç. Veurà on ets, amb qui i si estàs bé.",
+    "pointCheckIn": "Cada cert temps confirmes amb el PIN que estàs bé. Si no ho fas, enviem un avís – encara que el telèfon es quedi sense bateria.",
+    "pointDuress": "El PIN d'emergència sembla exactament igual que el normal, però activa l'alarma en silenci.",
+    "pointPartner": "{name} veurà que tens el mode seguretat activat i que la teva persona de confiança sap on i amb qui ets. Res més – ni l'alarma ni la teva ubicació.",
+    "intervalLabel": "Confirmar que estic bé cada",
+    "minutes": "{count} min",
+    "start": "Inicia la trobada",
+    "locationVisibleTo": "{name} veu la teva ubicació",
+    "bgLocationTitle": "Ubicació només amb l'app oberta",
+    "bgLocationSubtitle": "Configura l'accés a la ubicació com a «Sempre» perquè la vegi també amb la pantalla apagada.",
+    "bgLocationAction": "Configuració",
+    "nextCheckIn": "Proper check-in d'aquí a",
+    "checkIn": "Check-in",
+    "now": "ara",
+    "imOk": "Estic bé",
+    "overdueHint": "{name} ha rebut un avís. Confirma amb el PIN que estàs bé.",
+    "graceHint": {
+      "one": "Si no fas el check-in dins de {count} minut després de l'hora prevista, {name} rebrà un avís amb la teva ubicació.",
+      "many": "Si no fas el check-in dins de {count} minuts després de l'hora prevista, {name} rebrà un avís amb la teva ubicació.",
+      "other": "Si no fas el check-in dins de {count} minuts després de l'hora prevista, {name} rebrà un avís amb la teva ubicació."
+    },
+    "partnerSafetyOn": "{name} també té el mode seguretat activat – la seva persona de confiança sap on és i amb qui.",
+    "partnerSafetyOff": "{name} no té el mode seguretat activat.",
+    "fakeCall": "Trucada falsa",
+    "fakeCallIn": "Trucada d'aquí a {count} s",
+    "fakeCallHint": "D'aquí a {count} s, la trucada falsa sonarà com una de real – la teva excusa per marxar.",
+    "shareLink": "Envia l'enllaç",
+    "sos": "SOS – mantén premut",
+    "revoke": "Cancel·la l'acord",
+    "end": "Acaba la trobada",
+    "sosSentTitle": "Alarma enviada",
+    "sosSentBody": "{trusted} ha rebut la teva ubicació exacta i sap amb qui ets. {partner} no veurà res.",
+    "sosMistake": "Ha estat un error – estic bé",
+    "sosHide": "Amaga (l'alarma continua activa)",
+    "pinTitle": "Confirma amb el PIN",
+    "pinSubtitleOk": "Que estàs bé.",
+    "pinSubtitleEnd": "Que la trobada s'ha acabat i estàs bé.",
+    "revokeConfirmTitle": "Vols cancel·lar l'acord?",
+    "revokeConfirmMessage": "{name} rebrà una notificació. No has d'explicar res. El mode seguretat continuarà actiu fins que l'aturis."
+  },
+  "feedback": {
+    "title": "Com ha anat la trobada?",
+    "privacy": "Només el nostre equip veu la teva resposta – {name} no la veurà mai. Ens ajuda a mantenir aquí persones que respecten els límits.",
+    "privacyNoName": "Només el nostre equip veu la teva resposta – l'altra persona no la veurà mai. Ens ajuda a mantenir aquí persones que respecten els límits.",
+    "allGood": "Tot ha anat bé",
+    "somethingWrong": "Alguna cosa no ha anat bé",
+    "detailsLabel": "Què ha passat? (opcional)",
+    "preserve": "Conserva el registre de la trobada per si has d'anar a la policia. Si no, l'acord s'esborra al cap de 48 hores.",
+    "suspendNotice": "Si algú no t'ha respectat o estàs en perill, suspendrem el seu compte de seguida i ho investigarem.",
+    "send": "Envia",
+    "helpTitle": "Ho sentim",
+    "helpIntro": "Ho investigarem, i mentrestant hem suspès el compte de l'altra persona. No cal que decideixis ara què fer – i res d'això és culpa teva.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Línia d'ajuda a víctimes de delictes – Bílý kruh bezpečí",
+        "detail": "24 hores, gratuïta, i pots mantenir l'anonimat."
+      },
+      "police": {
+        "name": "Policia txeca",
+        "detail": "Si vols denunciar-ho – fins i tot més endavant."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Suport per a persones que han patit violència sexual."
+      }
+    },
+    "helpLocal": {
+      "name": "On demanar ajuda",
+      "detail": "Contacta amb la policia local o amb una línia d'ajuda local per a víctimes de delictes i de violència sexual."
+    },
+    "medical": "Si ha passat alguna cosa en contra de la teva voluntat, busca atenció mèdica tan aviat com puguis – també per prevenir un embaràs i infeccions, perquè alguns medicaments només funcionen dins de les 72 hores. Encara es poden recollir proves si no t'has dutxat i guardes la roba. Però res d'això és obligatori – també ho pots denunciar més endavant.",
+    "preserved": "Hem conservat el registre de la trobada (acord, missatges, alarmes) per si el necessites per a la policia.",
+    "backToApp": "Torna a l'app"
+  },
+  "report": {
+    "title": "Denunciar",
+    "intro": "La teva denúncia és anònima. També bloquejarem aquesta persona, així que ja no us veureu més.",
+    "introWithName": "{name}. La teva denúncia és anònima. També bloquejarem aquesta persona, així que ja no us veureu més.",
+    "detailsLabel": "Detalls (opcional)",
+    "submit": "Denuncia",
+    "thanksTitle": "Gràcies",
+    "thanksMessage": "Hem rebut la teva denúncia. Ja no us veureu més."
+  },
+  "chat": {
+    "unavailable": "El xat no està disponible",
+    "nameAge": "{name}, {age}",
+    "distance": "A {km} km",
+    "reportOrBlock": "Denuncia o bloqueja",
+    "photo": "Foto",
+    "photoBlurred": "Foto difuminada, toca per veure-la",
+    "tapToReveal": "Toca per veure",
+    "sendPhoto": "Envia una foto",
+    "message": "Missatge",
+    "messagePlaceholder": "Escriu un missatge…",
+    "send": "Envia",
+    "report": "Denuncia",
+    "block": "Bloqueja",
+    "unmatch": "Desfés el match",
+    "blockConfirmTitle": "Vols bloquejar?",
+    "blockConfirmMessage": "Tu i {name} ja no us veureu més, i el xat desapareixerà."
+  },
+  "safetySettings": {
+    "title": "Seguretat i privadesa",
+    "trustedLabel": "Persona de confiança",
+    "trustedHint": "Quan iniciïs una trobada, li enviarem un SMS amb un enllaç a la teva ubicació. L'avisarem si no fas el check-in o si actives l'alarma.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "P. ex. Alex",
+    "phoneLabel": "Telèfon",
+    "phonePlaceholder": "+34 612 345 678",
+    "pinsLabel": "PIN i PIN d'emergència",
+    "pinsHint": "Durant una trobada, fas servir el PIN per confirmar que estàs bé. El PIN d'emergència sembla exactament igual, però envia una alarma en silenci – fes-lo servir si algú t'obliga a dir a l'app que tot va bé.",
+    "checkinPinLabel": "PIN (4–6 xifres)",
+    "duressPinLabel": "PIN d'emergència (diferent del PIN)",
+    "passwordLabel": "Contrasenya del compte (per canviar els PIN)",
+    "pinsSet": "Els PIN estan configurats",
+    "change": "Canvia",
+    "privacyLabel": "Privadesa",
+    "appLock": "Bloqueig de l'app",
+    "appLockHint": "Face ID, empremta o codi del telèfon cada vegada que obris l'app.",
+    "discreet": "Mode discret",
+    "discreetHint": "Una icona neutra i notificacions sense contingut – ningú no sabrà de quina app es tracta.",
+    "save": "Desa"
+  },
+  "tabs": {
+    "discover": "Descobreix",
+    "matches": "Missatges",
+    "profile": "Perfil"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "Et queda {count} like.",
+      "many": "Et queden {count} likes.",
+      "other": "Et queden {count} likes."
+    },
+    "boostRunningUntil": "El Boost està actiu fins a les {time}.",
+    "tonight": "Aquesta nit",
+    "tonightOn": "Aquesta nit – activat",
+    "boost": "Boost",
+    "boostOn": "Boost actiu",
+    "searchSettings": "Configuració de la cerca",
+    "traveling": "De viatge",
+    "travelingIn": "De viatge · {city}",
+    "change": "Canvia",
+    "enableLocation": "Permet la ubicació",
+    "addPhoto": "Afegeix una foto",
+    "retry": "Torna-ho a provar",
+    "empty": "Ara mateix no hi ha ningú més a prop. Torna-ho a provar més tard o amplia la cerca.",
+    "refresh": "Actualitza",
+    "nextPhoto": "Foto següent",
+    "stampLike": "SÍ",
+    "stampNope": "NO",
+    "superLikedYou": "T'ha fet un Super Like",
+    "distance": "A {km} km",
+    "rewind": "Desfés l'últim swipe",
+    "pass": "Passa",
+    "superLike": "Super Like",
+    "like": "Like",
+    "boostSheet": {
+      "title": "Vols activar un Boost?",
+      "messageMonthly": "Durant 30 minuts sortiràs en primer lloc per a la gent propera. Es farà servir el Boost mensual de la teva subscripció.",
+      "messageCredits": "Durant 30 minuts sortiràs en primer lloc per a la gent propera. Te'n queden {count}×.",
+      "confirm": "Activa el Boost",
+      "done": "Boost actiu – surts en primer lloc durant 30 minuts."
+    },
+    "tonightSheet": {
+      "title": "Vols activar «Aquesta nit»?",
+      "message": "Fins a les 6:00 del matí sortiràs més amunt per a la gent propera, amb l'etiqueta «Aquesta nit». Pots desactivar-ho quan vulguis.",
+      "messageCredits": "Fins a les 6:00 del matí sortiràs més amunt per a la gent propera, amb l'etiqueta «Aquesta nit». Pots desactivar-ho quan vulguis. Te'n queden {count}×.",
+      "confirm": "Activa",
+      "done": "«Aquesta nit» està activat fins a les 6:00."
+    },
+    "tonightOffSheet": {
+      "title": "«Aquesta nit» està activat",
+      "message": "Actiu fins a les {time}.",
+      "confirm": "Desactiva",
+      "done": "«Aquesta nit» està desactivat."
+    }
+  },
+  "matches": {
+    "title": "Missatges",
+    "agreement": {
+      "pending": "Acord pendent",
+      "confirmed": "Acord confirmat",
+      "revoked": "Acord cancel·lat"
+    },
+    "likes": "Likes",
+    "likedBy": {
+      "one": "{count} persona t'ha fet like",
+      "many": "{count} persones t'han fet like",
+      "other": "{count} persones t'han fet like"
+    },
+    "likedByLocked": {
+      "one": "{count} persona t'ha fet like – descobreix qui amb Gold",
+      "many": "{count} persones t'han fet like – descobreix qui amb Gold",
+      "other": "{count} persones t'han fet like – descobreix qui amb Gold"
+    },
+    "likesHint": "Qui t'ha fet like i a qui n'has fet tu",
+    "empty": "Encara no tens cap match. Continua lliscant – quan el like sigui mutu, la persona apareixerà aquí.",
+    "lastMessageMine": "Tu: {text}",
+    "newMatch": "Match nou – envia el primer missatge."
+  },
+  "profile": {
+    "title": "Perfil",
+    "saving": "S'està desant…",
+    "saved": "Desat",
+    "done": "Fet",
+    "suspended": {
+      "title": "El teu compte està suspès",
+      "subtitle": "Estem revisant una denúncia. El mode seguretat et continua funcionant."
+    },
+    "photoA11y": "Foto – mantén premut per esborrar-la",
+    "addPhoto": "Afegeix una foto",
+    "photoHint": "Res de nus – les fotos han de complir les normes de les botigues d'apps. Mantén premuda una foto per esborrar-la.",
+    "name": "Nom",
+    "bio": "Sobre mi",
+    "bioPlaceholder": "Unes quantes línies sobre tu.",
+    "lookingFor": "Què busco",
+    "safety": {
+      "title": "Seguretat i privadesa",
+      "trusted": "Persona de confiança: {name}",
+      "setup": "Configura una persona de confiança i un PIN.",
+      "edit": "Edita"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold i Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Likes il·limitats, qui t'ha fet like, Boost i més.",
+      "validUntil": "Vàlid fins al {date}.",
+      "upgrade": "Millora",
+      "manage": "Gestiona"
+    },
+    "incognito": {
+      "label": "Incògnit",
+      "hint": "Només et veuen les persones a qui fas like. (Plus)"
+    },
+    "travel": {
+      "label": "Mode viatge (Plus)",
+      "home": "Casa",
+      "hint": "Llisca en una altra ciutat abans del viatge – la gent d'allà et veurà amb l'etiqueta «De viatge»."
+    },
+    "showMe": "Mostra'm",
+    "ageFrom": "Edat des de",
+    "ageTo": "Edat fins a",
+    "distance": "Distància",
+    "distanceSuffix": " km",
+    "save": "Desa el perfil",
+    "language": {
+      "title": "Idioma",
+      "device": "Com el telèfon",
+      "rtlHint": "En els idiomes que s'escriuen de dreta a esquerra, el disseny s'inverteix després de reiniciar l'app."
+    },
+    "signOut": "Tanca la sessió",
+    "deletePassword": "Contrasenya per esborrar el compte",
+    "deleteForever": "Esborra el compte definitivament",
+    "deleteAccount": "Esborra el compte",
+    "removePhoto": {
+      "title": "Vols esborrar la foto?",
+      "confirm": "Esborra"
+    }
+  },
+  "premium": {
+    "title": "Subscripció",
+    "free": {
+      "title": "De moment F*app és gratuït",
+      "body": "Activarem les funcions de pagament més endavant. La seguretat – verificació, acords, mode seguretat i SOS – sempre serà gratuïta."
+    },
+    "back": "Enrere",
+    "done": "Fet",
+    "continue": "Continua",
+    "reason": {
+      "likeLimitAt": "T'has quedat sense likes. N'hi haurà més a les {time}.",
+      "likeLimit": "T'has quedat sense likes. Aviat en tindràs més.",
+      "noCredit": "{credit} està disponible com a compra única o amb una subscripció.",
+      "upgrade": "Això forma part de F*app {plan}."
+    },
+    "oneOff": "Compra única",
+    "owned": "en tens {count}",
+    "creditDetail": {
+      "boost": "30 minuts en primer lloc per a la gent propera.",
+      "superlike": "Veurà que t'interessa de debò.",
+      "tonight": "Més amunt fins a les 6:00 del matí, amb l'etiqueta «Aquesta nit»."
+    },
+    "buyCredit": "Compra {amount}× {credit} per {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Tens un Boost extra.",
+        "many": "Tens {count} Boosts extra.",
+        "other": "Tens {count} Boosts extra."
+      },
+      "superlike": {
+        "one": "Tens un Super Like extra.",
+        "many": "Tens {count} Super Likes extra.",
+        "other": "Tens {count} Super Likes extra."
+      },
+      "tonight": {
+        "one": "Tens un «Aquesta nit» extra.",
+        "many": "Tens {count} «Aquesta nit» extra.",
+        "other": "Tens {count} «Aquesta nit» extra."
+      }
+    },
+    "currentPlan": "Tens F*app {plan}",
+    "validUntil": "Vàlid fins al {date}.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Llisca sense límits i recupera perfils que has descartat per error.",
+      "gold": "Descobreix qui t'ha fet like – i fes match amb un toc.",
+      "platinum": "El teu like es veu primer. I «Aquesta nit» quan vulguis."
+    },
+    "featureIncluded": "{feature}: inclòs",
+    "featureNotIncluded": "{feature}: no inclòs",
+    "months": {
+      "one": "{count} mes",
+      "many": "{count} mesos",
+      "other": "{count} mesos"
+    },
+    "perMonth": "al mes",
+    "perMonthSave": "al mes · −{percent} %",
+    "continueWithPrice": "Continua · {price}",
+    "planBought": {
+      "one": "Tens F*app {plan}.",
+      "many": "Tens F*app {plan} durant {count} mesos.",
+      "other": "Tens F*app {plan} durant {count} mesos."
+    },
+    "renewal": "La subscripció es renova automàticament. La pots cancel·lar en qualsevol moment a la configuració de l'App Store o de Google Play. El preu és el mateix per a tothom.",
+    "renewalUpfront": "Pagues {total} per avançat ({monthly} al mes). La subscripció es renova automàticament. La pots cancel·lar en qualsevol moment a la configuració de l'App Store o de Google Play. El preu és el mateix per a tothom.",
+    "safetyFree": {
+      "title": "La seguretat sempre és gratuïta",
+      "subtitle": "Verificació, acords, mode seguretat, SOS i denúncies."
+    },
+    "devNote": "Prototip: no es cobra res, la compra només se simula."
+  },
+  "likes": {
+    "title": "Likes",
+    "received": "T'han fet like",
+    "receivedCount": "T'han fet like · {count}",
+    "sent": "Enviats",
+    "emptyReceived": "Encara no hi ha likes nous.",
+    "superLike": "Super Like",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} persona t'ha fet like",
+      "many": "{count} persones t'han fet like",
+      "other": "{count} persones t'han fet like"
+    },
+    "lockedEmpty": "Els teus likes apareixeran aquí",
+    "goldText": "Amb F*app Gold veuràs qui són i podràs fer match amb un toc.",
+    "goldCta": "Mira-ho amb Gold",
+    "emptySent": "Cap like sense match els últims 7 dies.",
+    "superLikePending": "Super Like · en espera",
+    "pending": "Esperant resposta",
+    "sentTitle": "A qui has fet like",
+    "platinumText": "Amb F*app Platinum veuràs els teus likes dels últims 7 dies.",
+    "platinumCta": "Mira-ho amb Platinum",
+    "likeBack": "Torna el like",
+    "pass": "Passa"
+  },
+  "match": {
+    "title": "És un match!",
+    "body": "Tu i {name} us agradeu.\nSaluda i poseu-vos d'acord en què us ve de gust.",
+    "sendMessage": "Envia un missatge",
+    "keepDiscovering": "Continua descobrint"
+  },
+  "login": {
+    "title": "Inicia la sessió",
+    "email": "Correu electrònic",
+    "password": "Contrasenya",
+    "submit": "Inicia la sessió"
+  },
+  "register": {
+    "title": "Crea un compte",
+    "name": "Nom (el veuran els altres)",
+    "email": "Correu electrònic",
+    "password": "Contrasenya (mínim 10 caràcters)",
+    "birthdate": "Data de naixement",
+    "birthdatePlaceholder": "DD. MM. AAAA",
+    "birthdateInvalid": "Escriu la data de naixement com a DD. MM. AAAA.",
+    "iAm": "Soc",
+    "showMe": "Mostra'm",
+    "confirmAdult": "Tinc 18 anys o més.",
+    "acceptRules": "Accepto les normes de la comunitat i el tractament de les meves dades, incloses les dades sobre la meva vida sexual, perquè F*app pugui funcionar.",
+    "verifyNote": "Just després verificarem la teva identitat i la teva edat (document d'identitat i selfie). No guardem el teu document.",
+    "continue": "Continua"
+  },
+  "verify": {
+    "title": "Verifica que ets tu",
+    "intro": "A F*app tothom té la identitat i l'edat verificades. Faràs una foto del document i un selfie – triga uns dos minuts.",
+    "privacy": "No guardem el teu document ni les teves fotos. Només conservem el resultat de la verificació i la data de naixement. Qui incompleixi les normes no podrà tornar amb un compte nou.",
+    "pending": {
+      "title": "Esperant el resultat de la verificació",
+      "subtitle": "Normalment triga uns minuts.",
+      "refresh": "Actualitza"
+    },
+    "declined": "La verificació ha fallat",
+    "devApprove": "Simula una verificació correcta (mode de prova)",
+    "retry": "Torna-ho a provar",
+    "start": "Verifica la identitat",
+    "signOut": "Tanca la sessió"
+  },
+  "common": {
+    "back": "Enrere",
+    "cancel": "Cancel·la",
+    "close": "Tanca",
+    "save": "Desa",
+    "retry": "Torna-ho a provar",
+    "continue": "Continua",
+    "done": "Fet",
+    "send": "Envia",
+    "delete": "Esborra",
+    "edit": "Edita",
+    "open": "Obre",
+    "show": "Mostra",
+    "confirm": "Confirma",
+    "errorGeneric": "Alguna cosa ha anat malament."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} té el mode seguretat activat",
+    "partnerSafetySubtitle": "La seva persona de confiança sap on és i amb qui.",
+    "meetupTitle": "Trobada en curs",
+    "meetupSubtitle": "El mode seguretat està activat.",
+    "missingTitle": "Encara no hi ha acord",
+    "missingSubtitle": "Cada persona indica què li ve de gust – només veureu les coincidències.",
+    "fill": "Omple",
+    "revokedByMeTitle": "Has cancel·lat l'acord",
+    "revokedByPartnerTitle": "{name} ha cancel·lat l'acord",
+    "revokedSubtitle": "La trobada queda anul·lada.",
+    "revokedCooldownSubtitle": "La trobada queda anul·lada. Només {name} pot iniciar un acord nou.",
+    "newAgreement": "Acord nou",
+    "confirmedTitle": "Acord complet",
+    "confirmedSubtitle": "Un cop allà, totes dues parts poden canviar d'opinió en qualsevol moment.",
+    "partnerFilledTitle": "{name} ha omplert l'acord",
+    "waitingForYouTitle": "L'acord t'espera",
+    "fillYoursSubtitle": "Indica què et ve de gust – només veureu les coincidències.",
+    "partnerPendingTitle": "{name} encara no l'ha omplert",
+    "partnerPendingSubtitle": "L'acord estarà complet quan totes dues parts l'hagin omplert."
+  },
+  "fakeCall": {
+    "incoming": "mòbil…",
+    "hangUp": "Penja",
+    "decline": "Rebutja",
+    "accept": "Accepta"
+  },
+  "homeBanners": {
+    "meetupTitle": "Trobada en curs · {name}",
+    "missedCheckIn": "T'has saltat un check-in!",
+    "safetyOn": "El mode seguretat està activat.",
+    "feedbackTitle": "Com ha anat la trobada?",
+    "feedbackSubtitle": "{name} – només el nostre equip veurà la teva resposta.",
+    "feedbackAction": "Respon"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} xifra introduïda",
+      "many": "{count} xifres introduïdes",
+      "other": "{count} xifres introduïdes"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, menys",
+    "stepperIncrease": "{label}, més"
+  },
+  "api": {
+    "offline": "No s'ha pogut connectar amb el servidor. Comprova la connexió."
+  },
+  "billing": {
+    "storeNotConnected": "Les compres a través de l'App Store i Google Play encara no estan configurades."
+  },
+  "notifications": {
+    "channelName": "Notificacions",
+    "reminderDiscreet": "Recordatori",
+    "checkInTitle": "És l'hora del check-in",
+    "checkInBody": "Confirma amb el PIN que estàs bé.",
+    "fakeCallBody": "Trucada entrant"
+  },
+  "safetyTracking": {
+    "notificationTitle": "La ubicació s'està compartint",
+    "notificationBody": "Pots aturar-ho a l'app."
+  },
+  "appLock": {
+    "prompt": "Desbloqueja F*app",
+    "lockedTitle": "L'app està bloquejada",
+    "lockedBody": "Desbloqueja-la amb Face ID, l'empremta o el codi del telèfon.",
+    "sosHold": "SOS – mantén premut",
+    "unlock": "Desbloqueja",
+    "sosSentTitle": "Alarma enviada",
+    "sosSentBody": "{name} ha rebut un avís amb la teva ubicació.",
+    "sosSentBodyNoName": "La teva persona de confiança ha rebut un avís amb la teva ubicació.",
+    "sosFailedTitle": "No s'ha pogut enviar"
+  },
+  "native": {
+    "locationWhenInUse": "F*app necessita la teva ubicació per mostrar-te gent propera i, durant una trobada, compartir-la amb la teva persona de confiança.",
+    "locationAlways": "Durant una trobada, F*app comparteix la teva ubicació amb la teva persona de confiança, fins i tot amb la pantalla apagada. Fora de les trobades, no fa servir la ubicació en segon pla.",
+    "faceId": "F*app fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
+    "photos": "Tria fotos per al teu perfil.",
+    "camera": "Fes-te una foto per al teu perfil."
+  }
+}

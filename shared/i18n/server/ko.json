@@ -1,1 +1,264 @@
-{}
+{
+  "errors": {
+    "notFound": "찾을 수 없어요.",
+    "tooLarge": "요청이 너무 커요.",
+    "invalidJson": "잘못된 JSON이에요.",
+    "internal": "문제가 발생했어요. 다시 시도하세요.",
+    "rateLimited": "한 번에 너무 많이 시도했어요. 잠시 후 다시 시도하세요.",
+    "unauthorized": "권한이 없어요.",
+    "invalidSignature": "잘못된 서명이에요.",
+    "linkExpired": "이 링크는 더 이상 유효하지 않아요."
+  },
+  "validation": {
+    "required": "‘{field}’ 항목이 비어 있어요.",
+    "notText": "‘{field}’ 항목은 텍스트여야 해요.",
+    "tooShort": "‘{field}’ 항목이 너무 짧아요.",
+    "tooLong": "‘{field}’ 항목이 너무 길어요.",
+    "integer": "‘{field}’ 항목은 {min}~{max} 사이의 정수여야 해요.",
+    "invalidValue": "‘{field}’ 항목의 값이 올바르지 않아요.",
+    "notList": "‘{field}’ 항목은 목록이어야 해요.",
+    "minOptions": {
+      "other": "‘{field}’ 항목에서 {count}개 이상 선택하세요."
+    },
+    "date": "‘{field}’ 항목은 YYYY-MM-DD 형식의 날짜여야 해요.",
+    "dateTime": "‘{field}’ 항목은 날짜와 시간이어야 해요.",
+    "email": "이메일이 올바르지 않아요.",
+    "phone": "전화번호가 올바르지 않아요 ({field}).",
+    "pin": "{field} 항목은 4~6자리 숫자여야 해요."
+  },
+  "fields": {
+    "email": "이메일",
+    "password": "비밀번호",
+    "name": "이름",
+    "birthdate": "생년월일",
+    "gender": "성별",
+    "interestedIn": "찾는 사람",
+    "pushToken": "푸시 토큰",
+    "ageMin": "최소 나이",
+    "ageMax": "최대 나이",
+    "bio": "자기소개",
+    "tags": "찾는 것",
+    "maxDistance": "거리",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "믿을 수 있는 사람의 이름",
+    "trustedPhone": "믿을 수 있는 사람의 전화번호",
+    "pin": "PIN",
+    "duressPin": "긴급 PIN",
+    "meetAt": "언제",
+    "place": "어디서",
+    "safeword": "세이프 워드",
+    "note": "내 경계",
+    "version": "버전",
+    "message": "메시지",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "체크인 간격",
+    "accuracy": "정확도",
+    "battery": "배터리",
+    "user": "사용자",
+    "reason": "사유",
+    "details": "자세한 내용",
+    "resolution": "처리 결과",
+    "days": "일수"
+  },
+  "auth": {
+    "confirmAdult": "만 18세 이상임을 확인해야 해요.",
+    "acceptRules": "규칙과 개인정보 처리에 동의해야 해요.",
+    "underage": "F*app은 18세 이상만 이용할 수 있어요.",
+    "invalidBirthdate": "생년월일이 올바르지 않아요.",
+    "emailTaken": "이 이메일로 된 계정이 이미 있어요.",
+    "wrongCredentials": "이메일 또는 비밀번호가 틀렸어요.",
+    "banned": "규칙 위반으로 이용이 정지된 계정이에요.",
+    "notLoggedIn": "로그인하지 않았어요.",
+    "suspended": "운영자가 검토할 때까지 계정이 정지됐어요.",
+    "verifyFirst": "먼저 본인 인증을 하세요."
+  },
+  "profile": {
+    "wrongPassword": "비밀번호가 틀렸어요.",
+    "ageRange": "최소 나이는 최대 나이보다 클 수 없어요.",
+    "maxPhotos": {
+      "other": "사진은 최대 {count}장까지 올릴 수 있어요."
+    },
+    "pinsMustDiffer": "긴급 PIN은 일반 PIN과 달라야 해요.",
+    "deleteDuringMeetup": "지금은 만남이 진행 중이라 계정을 삭제할 수 없어요. 만남이 끝난 후 다시 시도하세요."
+  },
+  "photo": {
+    "notJpeg": "사진은 JPEG 형식이어야 해요.",
+    "corrupt": "사진이 손상됐어요.",
+    "notBase64": "사진은 base64로 인코딩된 JPEG이어야 해요.",
+    "tooLarge": "사진이 너무 커요 (최대 2 MB).",
+    "notFound": "사진을 찾을 수 없어요.",
+    "unavailable": "사진을 사용할 수 없어요."
+  },
+  "users": {
+    "notFound": "사용자를 찾을 수 없어요."
+  },
+  "match": {
+    "notFound": "매치를 찾을 수 없어요.",
+    "ended": "이 매치는 종료됐어요.",
+    "profileUnavailable": "이 프로필은 더 이상 볼 수 없어요."
+  },
+  "discover": {
+    "locationRequired": "주변 사람을 보여 드릴 수 있도록 먼저 위치를 켜세요.",
+    "photoRequired": "사진을 한 장 이상 추가하세요.",
+    "superLikeIsLike": "슈퍼 좋아요는 언제나 좋아요이기도 해요.",
+    "profileNotFound": "프로필을 찾을 수 없어요.",
+    "profileGone": "이 프로필은 더 이상 존재하지 않아요.",
+    "nothingToRewind": "되돌릴 스와이프가 없어요.",
+    "cantRewindSuperLike": "슈퍼 좋아요는 되돌릴 수 없어요.",
+    "cantRewindMatch": "이 스와이프는 이미 매치됐어요."
+  },
+  "billing": {
+    "likeLimit": "좋아요를 모두 사용했어요. 곧 다시 충전돼요 – 또는 F*app Plus로 제한 없이 스와이프하세요.",
+    "noSuperLike": "슈퍼 좋아요가 없어요.",
+    "noBoost": "부스트가 없어요.",
+    "tonightPaid": "‘오늘 밤’은 Platinum에 포함되거나 단품으로 구매할 수 있어요.",
+    "featureInPlan": "{feature}은(는) F*app {plan}에 포함된 기능이에요.",
+    "paymentsOff": "결제는 아직 켜져 있지 않아요 – 지금 F*app은 완전히 무료예요.",
+    "unknownProduct": "알 수 없는 상품이에요.",
+    "cantBuy": "지금은 구매할 수 없어요.",
+    "cantBoost": "지금은 부스트를 시작할 수 없어요.",
+    "boostRunning": "부스트가 이미 진행 중이에요.",
+    "cantTonight": "지금은 켤 수 없어요.",
+    "tonightOn": "‘오늘 밤’이 이미 켜져 있어요.",
+    "unknownCity": "알 수 없는 도시예요."
+  },
+  "features": {
+    "unlimitedLikes": "무제한 좋아요",
+    "rewind": "되돌리기",
+    "travel": "여행 모드",
+    "incognito": "시크릿 모드",
+    "seeLikes": "나를 좋아한 사람 보기",
+    "weeklySuperLikes": "매주 슈퍼 좋아요 5개",
+    "monthlyBoost": "매달 부스트 1회",
+    "priorityLikes": "우선 좋아요",
+    "sentLikes": "보낸 좋아요",
+    "tonight": "언제든 ‘오늘 밤’"
+  },
+  "agreement": {
+    "wishesRequired": "원하는 것을 작성하세요.",
+    "invalidWish": "원하는 것 항목의 선택이 올바르지 않아요.",
+    "notFound": "합의를 찾을 수 없어요.",
+    "confirmBoth": "두 문장을 모두 확인하세요 – 이것이 내가 생각하는 것이라는 점, 그리고 합의는 동의가 아니라는 점.",
+    "meetWithin": {
+      "other": "만남은 앞으로 {count}일 이내여야 해요."
+    },
+    "cooldown": "지금은 {name}님만 새 합의를 시작할 수 있어요.",
+    "changed": "그사이 합의가 변경됐어요. 다시 읽어 보세요."
+  },
+  "chat": {
+    "empty": "빈 메시지예요.",
+    "notSent": "메시지를 보내지 못했어요. {reason}",
+    "photo": "사진"
+  },
+  "moderation": {
+    "minor": "이 메시지로 보아 두 사람 중 한 명이 18세 미만일 수 있어요. F*app은 18세 이상만 이용할 수 있어요.",
+    "paid": "F*app에서는 유료 성관계를 제안하거나 요구하는 것이 금지돼 있어요.",
+    "consentPressure": "알아 두세요: 앱에서 한 합의는 동의가 아니에요. 언제든 취소할 수 있고, 만나서 무엇이든 거절할 수 있어요 – 설명할 필요 없어요.",
+    "contact": "상대가 앱 밖의 연락처를 공유하고 있어요. F*app 밖에서는 합의, 안전 모드, 신고가 작동하지 않아요."
+  },
+  "safety": {
+    "notFound": "만남을 찾을 수 없어요.",
+    "ended": "만남이 이미 종료됐어요.",
+    "wrongPin": "PIN이 틀렸어요.",
+    "agreementRequired": "두 사람 모두 합의를 작성하고 확인하면 만남을 시작할 수 있어요.",
+    "setupRequired": "먼저 믿을 수 있는 사람, PIN, 긴급 PIN을 설정하세요.",
+    "invalidInterval": "체크인 간격이 올바르지 않아요."
+  },
+  "reports": {
+    "feedbackSent": "이미 피드백을 보냈어요."
+  },
+  "verification": {
+    "unknown": "알 수 없는 인증이에요.",
+    "alreadyVerified": "이미 신원이 인증됐어요.",
+    "startFirst": "먼저 인증을 시작하세요.",
+    "noWebhook": "개발용 제공자에는 webhook이 없어요.",
+    "unavailable": "인증 서비스가 응답하지 않아요. 잠시 후 다시 시도하세요.",
+    "declined": {
+      "underage": "인증 결과 아직 18세 미만이에요. F*app은 성인만 이용할 수 있어요.",
+      "banned": "이 사람은 규칙 위반으로 F*app 이용이 정지됐어요.",
+      "duplicate": "이 사람은 이미 F*app 계정이 있어요. 한 사람당 하나만 만들 수 있어요.",
+      "incomplete": "신분증에서 생년월일을 읽지 못했어요. 다시 시도하세요.",
+      "default": "인증에 실패했어요. 다시 시도하세요."
+    }
+  },
+  "admin": {
+    "notReported": "이 대화는 신고되지 않았어요.",
+    "unknownPlan": "알 수 없는 요금제예요."
+  },
+  "push": {
+    "discreet": "새 알림",
+    "match": {
+      "title": "매치됐어요!",
+      "body": "나와 {name}님이 서로 마음에 들어 해요."
+    },
+    "superLike": {
+      "title": "슈퍼 좋아요",
+      "body": "누군가 나에게 정말 관심이 있어요."
+    },
+    "message": {
+      "photo": "사진을 보냈어요"
+    },
+    "agreementComplete": {
+      "title": "합의 완료",
+      "body": "두 사람 모두 확인했어요. 만나서도 언제든 마음을 바꿀 수 있어요."
+    },
+    "agreementNew": {
+      "title": "새 합의",
+      "body": "{name}님이 합의를 시작했어요. 이제 내가 원하는 것을 작성하세요."
+    },
+    "agreementChanged": {
+      "title": "합의가 변경됐어요",
+      "body": "{name}님이 시간, 장소 또는 규칙을 변경했어요. 다시 확인하세요."
+    },
+    "agreementUpdated": {
+      "title": "합의가 수정됐어요",
+      "body": "{name}님이 원하는 것을 수정했어요."
+    },
+    "agreementRevoked": {
+      "title": "합의가 취소됐어요",
+      "body": "{name}님이 합의를 취소했어요. 만남은 취소됐고, 그 결정은 존중받아야 해요."
+    },
+    "checkInOverdue": {
+      "title": "체크인을 놓쳤어요",
+      "body": "{name}님에게 알림이 갔어요. 무사하다는 걸 확인하세요."
+    }
+  },
+  "sms": {
+    "started": "{name}의 만남 중 안전 연락처로 지정되셨어요. 어디에 있는지, 무사한지 확인: {url}",
+    "alarm": "경보: {name}에게 도움이 필요해요. 위치 및 상세 정보: {url}",
+    "overdue": "{name}에게서 연락이 없어요. {time}까지 무사 확인이 와야 했어요. 전화해 보세요. 위치: {url}",
+    "backOk": "{name}에게서 연락이 왔어요. 무사하다고 확인했어요.",
+    "sosCancelled": "{name}의 경보가 취소됐어요. 실수였고, 무사해요.",
+    "endedOk": "{name}의 만남이 끝났고 무사해요. 함께해 주셔서 고마워요.",
+    "someone": "가까운 사람"
+  },
+  "share": {
+    "pageTitle": "F*app – 안전 링크",
+    "header": "안전 링크",
+    "loading": "불러오는 중…",
+    "call": "{number}에 전화",
+    "mapLabel": "마지막으로 확인된 위치 지도",
+    "openMaps": "지도 앱에서 열기",
+    "partnerPhotoAlt": "만나는 사람의 사진",
+    "partnerLead": "만나는 사람:",
+    "okTitle": "{name} 님은 무사해요",
+    "okDetail": "마지막 체크인: {last}. 다음 체크인 예정: {next}까지.",
+    "overdueTitle": "{name} 님이 체크인하지 않았어요",
+    "overdueDetail": "체크인은 {due}까지 와야 했어요. 전화해 보세요. 받지 않으면 {number}에 전화해서 지도의 주소를 알려 주세요.",
+    "alarmTitle": "{name} 님에게 도움이 필요해요",
+    "alarmDetail": "{time}에 경보가 울렸어요. {number}에 전화해서 지도의 위치와 아래 만남 장소를 알려 주세요.",
+    "endedTitle": "만남이 끝났어요",
+    "endedDetail": "{name} 님이 무사하다고 확인했어요.",
+    "endedDetailAlarm": "{name} 님이 무사하다고 확인했어요. 만남 중에 경보가 울렸으니 괜찮은지 물어봐 주세요.",
+    "footer": "{name} 님이 만남을 종료하면 위치가 더 이상 보이지 않아요.",
+    "locationJustNow": "방금 확인된 위치",
+    "locationAgo": {
+      "other": "{count}분 전 위치"
+    },
+    "battery": "배터리 {percent}",
+    "linkExpired": "이 링크는 더 이상 유효하지 않아요",
+    "loadFailed": "상태를 불러오지 못했어요. 다시 시도하는 중…"
+  }
+}

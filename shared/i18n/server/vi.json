@@ -1,1 +1,264 @@
-{}
+{
+  "errors": {
+    "notFound": "Không tìm thấy.",
+    "tooLarge": "Yêu cầu quá lớn.",
+    "invalidJson": "JSON không hợp lệ.",
+    "internal": "Đã xảy ra lỗi. Hãy thử lại.",
+    "rateLimited": "Quá nhiều lần thử cùng lúc. Hãy thử lại sau ít phút.",
+    "unauthorized": "Không có quyền truy cập.",
+    "invalidSignature": "Chữ ký không hợp lệ.",
+    "linkExpired": "Liên kết này không còn hiệu lực."
+  },
+  "validation": {
+    "required": "Thiếu “{field}”.",
+    "notText": "“{field}” phải là văn bản.",
+    "tooShort": "“{field}” quá ngắn.",
+    "tooLong": "“{field}” quá dài.",
+    "integer": "“{field}” phải là số nguyên từ {min} đến {max}.",
+    "invalidValue": "Giá trị không hợp lệ cho “{field}”.",
+    "notList": "“{field}” phải là một danh sách.",
+    "minOptions": {
+      "other": "Chọn ít nhất {count} lựa chọn cho “{field}”."
+    },
+    "date": "“{field}” phải là ngày theo định dạng YYYY-MM-DD.",
+    "dateTime": "“{field}” phải là ngày và giờ.",
+    "email": "Email không hợp lệ.",
+    "phone": "Số điện thoại không hợp lệ ({field}).",
+    "pin": "{field} phải gồm 4–6 chữ số."
+  },
+  "fields": {
+    "email": "email",
+    "password": "mật khẩu",
+    "name": "tên",
+    "birthdate": "ngày sinh",
+    "gender": "giới tính",
+    "interestedIn": "người bạn tìm kiếm",
+    "pushToken": "push token",
+    "ageMin": "tuổi tối thiểu",
+    "ageMax": "tuổi tối đa",
+    "bio": "giới thiệu",
+    "tags": "điều mình tìm kiếm",
+    "maxDistance": "khoảng cách",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "tên người tin cậy",
+    "trustedPhone": "số điện thoại người tin cậy",
+    "pin": "PIN",
+    "duressPin": "PIN khẩn cấp",
+    "meetAt": "khi nào",
+    "place": "ở đâu",
+    "safeword": "từ an toàn",
+    "note": "giới hạn của mình",
+    "version": "phiên bản",
+    "message": "tin nhắn",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "khoảng thời gian check-in",
+    "accuracy": "độ chính xác",
+    "battery": "pin",
+    "user": "người dùng",
+    "reason": "lý do",
+    "details": "chi tiết",
+    "resolution": "cách xử lý",
+    "days": "số ngày"
+  },
+  "auth": {
+    "confirmAdult": "Bạn phải xác nhận mình đã đủ 18 tuổi trở lên.",
+    "acceptRules": "Bạn phải đồng ý với quy tắc và việc xử lý dữ liệu của mình.",
+    "underage": "F*app chỉ dành cho người từ 18 tuổi trở lên.",
+    "invalidBirthdate": "Ngày sinh không hợp lệ.",
+    "emailTaken": "Đã có tài khoản dùng email này.",
+    "wrongCredentials": "Sai email hoặc mật khẩu.",
+    "banned": "Tài khoản này đã bị cấm vì vi phạm quy tắc.",
+    "notLoggedIn": "Bạn chưa đăng nhập.",
+    "suspended": "Tài khoản của bạn bị tạm khóa cho đến khi người kiểm duyệt xem xét.",
+    "verifyFirst": "Hãy xác minh danh tính trước."
+  },
+  "profile": {
+    "wrongPassword": "Sai mật khẩu.",
+    "ageRange": "Tuổi tối thiểu không được cao hơn tuổi tối đa.",
+    "maxPhotos": {
+      "other": "Bạn có thể có tối đa {count} ảnh."
+    },
+    "pinsMustDiffer": "PIN khẩn cấp phải khác với PIN thường của bạn.",
+    "deleteDuringMeetup": "Bạn không thể xóa tài khoản lúc này – đang có buổi hẹn diễn ra. Hãy thử lại khi buổi hẹn kết thúc."
+  },
+  "photo": {
+    "notJpeg": "Ảnh phải ở định dạng JPEG.",
+    "corrupt": "Ảnh bị hỏng.",
+    "notBase64": "Ảnh phải là JPEG được mã hóa base64.",
+    "tooLarge": "Ảnh quá lớn (tối đa 2 MB).",
+    "notFound": "Không tìm thấy ảnh.",
+    "unavailable": "Ảnh không khả dụng."
+  },
+  "users": {
+    "notFound": "Không tìm thấy người dùng."
+  },
+  "match": {
+    "notFound": "Không tìm thấy tương hợp.",
+    "ended": "Tương hợp này đã kết thúc.",
+    "profileUnavailable": "Hồ sơ này không còn khả dụng."
+  },
+  "discover": {
+    "locationRequired": "Hãy bật vị trí trước để chúng tôi có thể hiển thị những người ở gần bạn.",
+    "photoRequired": "Hãy thêm ít nhất một ảnh.",
+    "superLikeIsLike": "Super Like luôn được tính là một lượt thích.",
+    "profileNotFound": "Không tìm thấy hồ sơ.",
+    "profileGone": "Hồ sơ này không còn tồn tại.",
+    "nothingToRewind": "Không có gì để hoàn tác.",
+    "cantRewindSuperLike": "Không thể hoàn tác Super Like.",
+    "cantRewindMatch": "Lần quẹt này đã thành tương hợp."
+  },
+  "billing": {
+    "likeLimit": "Bạn đã hết lượt thích. Lượt mới sẽ có sớm thôi – hoặc quẹt không giới hạn với F*app Plus.",
+    "noSuperLike": "Bạn không có Super Like nào.",
+    "noBoost": "Bạn không có Boost nào.",
+    "tonightPaid": "“Tối nay” có trong gói Platinum hoặc mua lẻ.",
+    "featureInPlan": "{feature} thuộc F*app {plan}.",
+    "paymentsOff": "Chưa bật thanh toán – hiện F*app hoàn toàn miễn phí.",
+    "unknownProduct": "Sản phẩm không xác định.",
+    "cantBuy": "Bạn không thể mua mục này lúc này.",
+    "cantBoost": "Bạn không thể bật Boost lúc này.",
+    "boostRunning": "Boost đang chạy.",
+    "cantTonight": "Bạn không thể bật tính năng này lúc này.",
+    "tonightOn": "Tối nay đã được bật.",
+    "unknownCity": "Thành phố không xác định."
+  },
+  "features": {
+    "unlimitedLikes": "Thích không giới hạn",
+    "rewind": "Quay lại",
+    "travel": "Chế độ du lịch",
+    "incognito": "Ẩn danh",
+    "seeLikes": "Xem ai thích bạn",
+    "weeklySuperLikes": "5 Super Like mỗi tuần",
+    "monthlyBoost": "1 Boost mỗi tháng",
+    "priorityLikes": "Lượt thích ưu tiên",
+    "sentLikes": "Lượt thích đã gửi",
+    "tonight": "Tối nay, bất cứ lúc nào"
+  },
+  "agreement": {
+    "wishesRequired": "Hãy điền điều bạn muốn.",
+    "invalidWish": "Lựa chọn không hợp lệ trong mong muốn của bạn.",
+    "notFound": "Không tìm thấy thỏa thuận.",
+    "confirmBoth": "Hãy xác nhận cả hai câu – rằng đây là điều bạn nghĩ tới và rằng thỏa thuận không phải là sự đồng thuận.",
+    "meetWithin": {
+      "other": "Buổi hẹn phải diễn ra trong vòng {count} ngày tới."
+    },
+    "cooldown": "Hiện chỉ {name} mới có thể bắt đầu thỏa thuận mới.",
+    "changed": "Thỏa thuận vừa thay đổi. Hãy đọc lại."
+  },
+  "chat": {
+    "empty": "Tin nhắn trống.",
+    "notSent": "Chưa gửi được tin nhắn. {reason}",
+    "photo": "Ảnh"
+  },
+  "moderation": {
+    "minor": "Tin nhắn này cho thấy một trong hai bạn có thể chưa đủ 18 tuổi. F*app chỉ dành cho 18+.",
+    "paid": "Chào mời hoặc yêu cầu mua bán dâm bị cấm trên F*app.",
+    "consentPressure": "Lưu ý: thỏa thuận trong ứng dụng không phải là sự đồng thuận. Bạn có thể hủy bất cứ lúc nào và từ chối bất cứ điều gì khi gặp nhau – không cần giải thích.",
+    "contact": "Người tương hợp với bạn đang chia sẻ thông tin liên lạc ngoài ứng dụng. Bên ngoài F*app, thỏa thuận, chế độ an toàn và tính năng báo cáo không có tác dụng với bạn."
+  },
+  "safety": {
+    "notFound": "Không tìm thấy buổi hẹn.",
+    "ended": "Buổi hẹn đã kết thúc.",
+    "wrongPin": "Sai mã PIN.",
+    "agreementRequired": "Bạn có thể bắt đầu buổi hẹn khi cả hai đã điền và xác nhận thỏa thuận.",
+    "setupRequired": "Trước tiên hãy thiết lập người tin cậy, mã PIN và PIN khẩn cấp.",
+    "invalidInterval": "Khoảng thời gian check-in không hợp lệ."
+  },
+  "reports": {
+    "feedbackSent": "Bạn đã gửi phản hồi rồi."
+  },
+  "verification": {
+    "unknown": "Lượt xác minh không xác định.",
+    "alreadyVerified": "Danh tính của bạn đã được xác minh.",
+    "startFirst": "Hãy bắt đầu xác minh trước.",
+    "noWebhook": "Nhà cung cấp dành cho phát triển không có webhook.",
+    "unavailable": "Dịch vụ xác minh không phản hồi. Hãy thử lại sau ít phút.",
+    "declined": {
+      "underage": "Kết quả xác minh cho thấy bạn chưa đủ 18 tuổi. F*app chỉ dành cho người trưởng thành.",
+      "banned": "Người này đã bị cấm khỏi F*app vì vi phạm quy tắc.",
+      "duplicate": "Người này đã có tài khoản F*app. Mỗi người chỉ được có một tài khoản.",
+      "incomplete": "Chúng tôi không đọc được ngày sinh trên giấy tờ. Hãy thử lại.",
+      "default": "Xác minh không thành công. Hãy thử lại."
+    }
+  },
+  "admin": {
+    "notReported": "Cuộc trò chuyện này chưa bị báo cáo.",
+    "unknownPlan": "Gói không xác định."
+  },
+  "push": {
+    "discreet": "Thông báo mới",
+    "match": {
+      "title": "Tương hợp rồi!",
+      "body": "Bạn và {name} đều muốn nhau."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Có người thật sự thích bạn."
+    },
+    "message": {
+      "photo": "Đã gửi một ảnh"
+    },
+    "agreementComplete": {
+      "title": "Thỏa thuận đã hoàn tất",
+      "body": "Cả hai đã xác nhận. Khi gặp nhau, hai bạn vẫn có thể đổi ý."
+    },
+    "agreementNew": {
+      "title": "Thỏa thuận mới",
+      "body": "{name} đã bắt đầu một thỏa thuận. Giờ hãy điền điều bạn muốn."
+    },
+    "agreementChanged": {
+      "title": "Thỏa thuận đã thay đổi",
+      "body": "{name} đã đổi thời gian, địa điểm hoặc quy tắc. Hãy xác nhận lại."
+    },
+    "agreementUpdated": {
+      "title": "Thỏa thuận đã cập nhật",
+      "body": "{name} đã cập nhật mong muốn của họ."
+    },
+    "agreementRevoked": {
+      "title": "Thỏa thuận đã hủy",
+      "body": "{name} đã hủy thỏa thuận. Buổi hẹn không diễn ra nữa – và điều đó cần được tôn trọng."
+    },
+    "checkInOverdue": {
+      "title": "Bạn đã bỏ lỡ check-in",
+      "body": "{name} đã nhận được cảnh báo. Hãy xác nhận bạn ổn."
+    }
+  },
+  "sms": {
+    "started": "{name} đang gặp một người và đã chọn bạn làm người tin cậy. Xem họ đang ở đâu và có ổn không: {url}",
+    "alarm": "CẢNH BÁO: {name} cần giúp đỡ. Vị trí và chi tiết: {url}",
+    "overdue": "{name} chưa check-in - lẽ ra phải xác nhận mình ổn trước {time}. Hãy thử gọi. Vị trí: {url}",
+    "backOk": "{name} đã check-in và xác nhận mình ổn.",
+    "sosCancelled": "{name} đã hủy cảnh báo - đó là nhầm lẫn, họ ổn.",
+    "endedOk": "{name} đã kết thúc buổi hẹn và vẫn ổn. Cảm ơn bạn đã luôn sẵn sàng.",
+    "someone": "Một người thân của bạn"
+  },
+  "share": {
+    "pageTitle": "F*app – liên kết an toàn",
+    "header": "Liên kết an toàn",
+    "loading": "Đang tải…",
+    "call": "Gọi {number}",
+    "mapLabel": "Bản đồ với vị trí gần nhất",
+    "openMaps": "Mở trong Bản đồ",
+    "partnerPhotoAlt": "Ảnh của người họ đang gặp",
+    "partnerLead": "Đang gặp:",
+    "okTitle": "{name} vẫn ổn",
+    "okDetail": "Lần check-in gần nhất lúc {last}. Lần tiếp theo dự kiến trước {next}.",
+    "overdueTitle": "{name} chưa check-in",
+    "overdueDetail": "Lẽ ra phải check-in trước {due}. Hãy thử gọi. Nếu họ không nghe máy, hãy gọi {number} và đọc địa chỉ trên bản đồ.",
+    "alarmTitle": "{name} cần giúp đỡ",
+    "alarmDetail": "Cảnh báo lúc {time}. Hãy gọi {number} và đọc vị trí trên bản đồ cùng địa điểm hẹn bên dưới.",
+    "endedTitle": "Buổi hẹn đã kết thúc",
+    "endedDetail": "{name} đã xác nhận mình ổn.",
+    "endedDetailAlarm": "{name} đã xác nhận mình ổn. Đã có cảnh báo trong buổi hẹn – hãy hỏi xem mọi chuyện có ổn không.",
+    "footer": "Vị trí sẽ không còn hiển thị khi {name} kết thúc buổi hẹn.",
+    "locationJustNow": "Vị trí vừa xong",
+    "locationAgo": {
+      "other": "Vị trí {count} phút trước"
+    },
+    "battery": "pin {percent}",
+    "linkExpired": "Liên kết này không còn hiệu lực",
+    "loadFailed": "Không tải được trạng thái. Đang thử lại…"
+  }
+}

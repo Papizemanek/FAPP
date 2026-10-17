@@ -1,1 +1,677 @@
-{}
+{
+  "labels": {
+    "genders": {
+      "man": "Mies",
+      "woman": "Nainen",
+      "nonbinary": "Muunsukupuolinen"
+    },
+    "gendersPlural": {
+      "man": "Miehet",
+      "woman": "Naiset",
+      "nonbinary": "Muunsukupuoliset"
+    },
+    "tags": {
+      "oneoff": "Kertajuttu",
+      "repeat": "Uudestaan ja uudestaan",
+      "myplace": "Minun luonani",
+      "yourplace": "Sinun luonasi",
+      "vanilla": "Vanilja",
+      "kinky": "Kinky"
+    },
+    "activities": {
+      "kissing": "Suutelu ja halailu",
+      "oral": "Suuseksi",
+      "vaginal": "Vaginaaliseksi",
+      "anal": "Anaaliseksi",
+      "toys": "Seksilelut",
+      "overnight": "Yöksi jääminen"
+    },
+    "wishes": {
+      "yes": "Kyllä",
+      "maybe": "Ehkä",
+      "no": "Ei"
+    },
+    "reportReasons": {
+      "consent": "Suostumuksen tai rajojen rikkominen",
+      "violence": "Väkivalta tai uhkailu",
+      "minor": "Epäily alaikäisestä",
+      "harassment": "Häirintä",
+      "fake": "Valeprofiili",
+      "paid": "Maksullisten palvelujen tarjoaminen",
+      "other": "Muu"
+    },
+    "feedbackReasons": {
+      "consent": "Ei kunnioittanut rajoja tai sanaa ”stop”",
+      "safety": "En tuntenut oloani turvalliseksi",
+      "fake": "Ei näyttänyt kuviltaan",
+      "other": "Jotain muuta"
+    },
+    "plans": {
+      "free": "Ilmainen",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Rajattomat tykkäykset",
+        "detail": "Swaippaa niin paljon kuin haluat."
+      },
+      "rewind": {
+        "name": "Peruutus",
+        "detail": "Palauta vahingossa ohitettu profiili."
+      },
+      "travel": {
+        "name": "Matkatila",
+        "detail": "Swaippaa toisessa kaupungissa jo ennen matkaa."
+      },
+      "incognito": {
+        "name": "Incognito",
+        "detail": "Vain ne, joista tykkäät, näkevät sinut."
+      },
+      "seeLikes": {
+        "name": "Näe, kuka tykkää",
+        "detail": "Näe kaikki, jotka tykkäsivät sinusta."
+      },
+      "weeklySuperLikes": {
+        "name": "5 supertykkäystä viikossa",
+        "detail": "Näytä, että joku todella kiinnostaa sinua."
+      },
+      "monthlyBoost": {
+        "name": "1 boost kuukaudessa",
+        "detail": "30 minuuttia kärjessä lähellä oleville."
+      },
+      "priorityLikes": {
+        "name": "Ensisijaiset tykkäykset",
+        "detail": "Tykkäyksesi nähdään ennen muita."
+      },
+      "sentLikes": {
+        "name": "Lähetetyt tykkäykset",
+        "detail": "Kenestä tykkäsit viimeisen 7 päivän aikana."
+      },
+      "tonight": {
+        "name": "Tänä iltana, milloin vain",
+        "detail": "Näytä, että olet vapaa tänä iltana."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Supertykkäys",
+      "tonight": "Tänä iltana"
+    },
+    "cities": {
+      "praha": "Praha",
+      "brno": "Brno",
+      "ostrava": "Ostrava",
+      "plzen": "Plzeň",
+      "liberec": "Liberec",
+      "olomouc": "Olomouc",
+      "budejovice": "České Budějovice",
+      "hradec": "Hradec Králové",
+      "bratislava": "Bratislava",
+      "viden": "Wien",
+      "berlin": "Berliini"
+    }
+  },
+  "consent": {
+    "intent": "Tätä minulla on mielessä. Paikan päällä voin kieltäytyä mistä tahansa – ja niin voi toinenkin.",
+    "notice": "Ymmärrän: suostumus pätee vain tässä ja nyt. ”Ei”, ”stop”, turvasana, hiljaisuus, jähmettyminen tai humala eivät ole suostumus. Sovelluksessa tehty sopimus ei vapauta ketään vastuusta.",
+    "deterrence": "Jokaisen F*app-käyttäjän henkilöllisyys on vahvistettu. Jos epäilemme rikosta, luovutamme sen poliisille."
+  },
+  "welcome": {
+    "tagline": "Seksiä ilman säätöä.",
+    "taglineStrong": "Vain kun molemmat sanotte kyllä.",
+    "createAccount": "Luo tili",
+    "signIn": "Kirjaudu sisään",
+    "adultsOnly": "Vain 18+. Jokaisen henkilöllisyys täällä on vahvistettu."
+  },
+  "agreement": {
+    "title": "Sopimus",
+    "titleWithName": "Sopimus · {name}",
+    "timeFormatError": "Anna aika muodossa TT:MM, esim. 21:00.",
+    "revokedByPartnerTitle": "{name} perui sopimuksen",
+    "revokedByPartnerSubtitle": "Vain {name} voi nyt aloittaa uuden sopimuksen.",
+    "revokedTitle": "Sopimus peruttiin",
+    "revokedSubtitle": "Voit aloittaa uuden.",
+    "newTitle": "Uusi sopimus",
+    "newSubtitle": "Kumpikin täyttää oman osansa erikseen. Näette vain sen, mistä olette samaa mieltä.",
+    "logisticsChangedTitle": "Muutat aikaa, paikkaa tai sääntöjä",
+    "logisticsChangedSubtitle": "{name} joutuu vahvistamaan ne uudelleen.",
+    "confirmedTitle": "Olette molemmat täyttäneet sopimuksen",
+    "confirmedSubtitle": "Paikan päällä kumpi tahansa voi muuttaa mielensä milloin vain.",
+    "myPartDoneTitle": "Oma osuutesi on valmis",
+    "myPartDoneSubtitle": "{name} ei ole vielä täyttänyt tai vahvistanut omaansa.",
+    "partnerFilledTitle": "{name} on täyttänyt oman osansa",
+    "partnerFilledSubtitle": "Täytä omasi – näette vain sen, mistä olette samaa mieltä.",
+    "fillTitle": "Täytä oma osasi",
+    "fillSubtitle": "Näette vain sen, mistä olette samaa mieltä.",
+    "overlapTitle": "Mistä olette samaa mieltä",
+    "overlapNone": "Ei vielä mitään yhteistä.",
+    "overlapYes": "Molemmat haluatte",
+    "overlapMaybe": "Ehkä – puhutte siitä paikan päällä",
+    "partnerNote": "{name}: ”{note}”",
+    "overlapHint": "Kukaan ei näe, mitä toinen teistä ei halua – eikä edes sitä, kuka ei halunnut.",
+    "wishesLabel": "Mihin olen valmis",
+    "wishesHint": "{name} näkee vain sen, mistä olette samaa mieltä. Kukaan ei näe ”ei”-vastaustasi.",
+    "wishesHintNoName": "Toinen näkee vain sen, mistä olette samaa mieltä.",
+    "wishA11y": "{activity}: {wish}",
+    "noteLabel": "Omat rajani (toinenkin näkee nämä)",
+    "notePlaceholder": "Esim. ei kuvaamista, haluan ensin tutustua.",
+    "logisticsLabel": "Käytännön asiat – koskevat teitä molempia",
+    "today": "Tänään",
+    "tomorrow": "Huomenna",
+    "timeLabel": "Aika",
+    "placeLabel": "Missä",
+    "placePlaceholder": "Esim. minun luonani, Vinohrady",
+    "safewordLabel": "Turvasana",
+    "safewordPlaceholder": "Sana, joka pysäyttää kaiken",
+    "condom": "Aina kondomi",
+    "sober": "Selvinpäin",
+    "soberHint": "Humala ei ole suostumus.",
+    "publicFirst": "Tapaamme ensin julkisella paikalla",
+    "publicFirstHint": "Kahvila tai baari – päätätte kasvotusten, jatketaanko.",
+    "partnerMayShare": "Treffien aikana {name} voi jakaa nimesi, kuvasi ja tapaamispaikan oman luottohenkilönsä kanssa.",
+    "saveAndConfirm": "Tallenna ja vahvista",
+    "startMeetup": "Aloita treffit",
+    "revoke": "Peru sopimus",
+    "revokeConfirmTitle": "Perutaanko sopimus?",
+    "revokeConfirmMessage": "Treffit peruuntuvat. Sinun ei tarvitse selittää mitään – {name} saa vain ilmoituksen."
+  },
+  "meetup": {
+    "title": "Treffit · {name}",
+    "fakeCallerDefault": "Äiti",
+    "endedTitle": "Treffit päättyivät",
+    "endedMessage": "{name} sai viestin, että olet kunnossa.",
+    "sosFailed": "Hälytystä ei voitu lähettää: {error} Yritä uudelleen tai soita: {name}.",
+    "needAgreementTitle": "Viimeistele ensin sopimus",
+    "needAgreementSubtitle": "Voit aloittaa treffit, kun olette molemmat täyttäneet ja vahvistaneet sopimuksen.",
+    "needAgreementAction": "Sopimus",
+    "setupTitle": "Määritä turvallisuutesi",
+    "setupSubtitle": "Luottohenkilö, PIN ja hätä-PIN.",
+    "setupAction": "Määritä",
+    "pointTrusted": "{name} saa tekstiviestin, jossa on linkki. Hän näkee, missä olet, kenen kanssa ja oletko kunnossa.",
+    "pointTrustedNoName": "Luottohenkilösi saa tekstiviestin, jossa on linkki. Hän näkee, missä olet, kenen kanssa ja oletko kunnossa.",
+    "pointCheckIn": "Vahvistat säännöllisin väliajoin PIN-koodilla, että olet kunnossa. Jos et kuittaa, lähetämme hälytyksen – vaikka puhelimestasi loppuisi akku.",
+    "pointDuress": "Hätä-PIN näyttää täsmälleen samalta kuin tavallinen PIN, mutta laukaisee hiljaa hälytyksen.",
+    "pointPartner": "{name} näkee, että sinulla on turvatila päällä ja että luottohenkilösi tietää, missä ja kenen kanssa olet. Ei mitään muuta – ei hälytystä eikä sijaintiasi.",
+    "intervalLabel": "Kuittausväli",
+    "minutes": "{count} min",
+    "start": "Aloita treffit",
+    "locationVisibleTo": "{name} näkee sijaintisi",
+    "bgLocationTitle": "Sijainti vain, kun sovellus on auki",
+    "bgLocationSubtitle": "Salli sijainti asetuksella ”Aina”, jotta se näkyy myös näytön ollessa pimeänä.",
+    "bgLocationAction": "Asetukset",
+    "nextCheckIn": "Seuraavaan kuittaukseen",
+    "checkIn": "Kuittaus",
+    "now": "nyt",
+    "imOk": "Olen kunnossa",
+    "overdueHint": "{name} on saanut hälytyksen. Vahvista PIN-koodilla, että olet kunnossa.",
+    "graceHint": {
+      "one": "Jos et kuittaa {count} minuutin kuluessa määräajasta, {name} saa hälytyksen, jossa on sijaintisi.",
+      "other": "Jos et kuittaa {count} minuutin kuluessa määräajasta, {name} saa hälytyksen, jossa on sijaintisi."
+    },
+    "partnerSafetyOn": "{name} käyttää myös turvatilaa – hänen luottohenkilönsä tietää, missä ja kenen kanssa hän on.",
+    "partnerSafetyOff": "{name} ei käytä turvatilaa.",
+    "fakeCall": "Valepuhelu",
+    "fakeCallIn": "Puhelu {count} s kuluttua",
+    "fakeCallHint": "{count} sekunnin kuluttua valepuhelu soi kuin oikea puhelu – tekosyysi lähteä.",
+    "shareLink": "Lähetä linkki",
+    "sos": "SOS – pidä painettuna",
+    "revoke": "Peru sopimus",
+    "end": "Lopeta treffit",
+    "sosSentTitle": "Hälytys lähetetty",
+    "sosSentBody": "{trusted} on saanut tarkan sijaintisi ja tiedon siitä, kenen kanssa olet. {partner} ei näe mitään.",
+    "sosMistake": "Se oli vahinko – olen kunnossa",
+    "sosHide": "Piilota (hälytys pysyy päällä)",
+    "pinTitle": "Vahvista PIN-koodilla",
+    "pinSubtitleOk": "Että olet kunnossa.",
+    "pinSubtitleEnd": "Että treffit ovat ohi ja olet kunnossa.",
+    "revokeConfirmTitle": "Perutaanko sopimus?",
+    "revokeConfirmMessage": "{name} saa ilmoituksen. Sinun ei tarvitse selittää mitään. Turvatila on päällä, kunnes lopetat sen."
+  },
+  "feedback": {
+    "title": "Miten treffit menivät?",
+    "privacy": "Vain tiimimme näkee vastauksesi – {name} ei koskaan. Se auttaa meitä pitämään tämän paikkana ihmisille, jotka kunnioittavat rajoja.",
+    "privacyNoName": "Vain tiimimme näkee vastauksesi – toinen osapuoli ei koskaan. Se auttaa meitä pitämään tämän paikkana ihmisille, jotka kunnioittavat rajoja.",
+    "allGood": "Kaikki meni hyvin",
+    "somethingWrong": "Jokin ei ollut kunnossa",
+    "detailsLabel": "Mitä tapahtui? (valinnainen)",
+    "preserve": "Säilytä treffien tiedot siltä varalta, että sinun täytyy mennä poliisille. Muuten sopimus poistetaan 48 tunnin kuluttua.",
+    "suspendNotice": "Jos joku ei kunnioittanut sinua tai olet vaarassa, jäädytämme hänen tilinsä heti ja selvitämme asian.",
+    "send": "Lähetä",
+    "helpTitle": "Olemme pahoillamme",
+    "helpIntro": "Selvitämme asian, ja olemme jäädyttäneet toisen osapuolen tilin selvityksen ajaksi. Sinun ei tarvitse päättää heti, mitä teet seuraavaksi – eikä mikään tästä ole sinun syytäsi.",
+    "helpCz": {
+      "whiteCircle": {
+        "name": "Rikosten uhrien auttava puhelin – Bílý kruh bezpečí",
+        "detail": "Ympäri vuorokauden, maksuton, ja voit pysyä nimettömänä."
+      },
+      "police": {
+        "name": "Tšekin poliisi",
+        "detail": "Jos haluat tehdä ilmoituksen – myöhemminkin."
+      },
+      "persefona": {
+        "name": "Persefona",
+        "detail": "Tukea seksuaalista väkivaltaa kokeneille."
+      }
+    },
+    "helpLocal": {
+      "name": "Mistä saa apua",
+      "detail": "Ota yhteyttä paikalliseen poliisiin tai paikalliseen rikosten ja seksuaalisen väkivallan uhrien tukipalveluun."
+    },
+    "medical": "Jos jotain tapahtui vastoin tahtoasi, hakeudu lääkäriin mahdollisimman pian – myös raskauden ja tartuntojen ehkäisemiseksi, sillä jotkin lääkkeet tehoavat vain 72 tunnin sisällä. Todisteita voidaan vielä kerätä, jos et ole vielä käynyt suihkussa ja säilytät vaatteesi. Mikään tästä ei kuitenkaan ole edellytys – voit tehdä ilmoituksen myöhemminkin.",
+    "preserved": "Olemme säilyttäneet treffien tiedot (sopimuksen, viestit, hälytykset) siltä varalta, että tarvitset niitä poliisia varten.",
+    "backToApp": "Takaisin sovellukseen"
+  },
+  "report": {
+    "title": "Ilmoita",
+    "intro": "Ilmoituksesi on nimetön. Estämme myös hänet puolestasi, joten ette enää näe toisianne.",
+    "introWithName": "{name}. Ilmoituksesi on nimetön. Estämme myös hänet puolestasi, joten ette enää näe toisianne.",
+    "detailsLabel": "Lisätiedot (valinnainen)",
+    "submit": "Ilmoita",
+    "thanksTitle": "Kiitos",
+    "thanksMessage": "Olemme vastaanottaneet ilmoituksesi. Ette enää näe toisianne."
+  },
+  "chat": {
+    "unavailable": "Chat ei ole käytettävissä",
+    "nameAge": "{name}, {age}",
+    "distance": "{km} km päässä",
+    "reportOrBlock": "Ilmoita tai estä",
+    "photo": "Kuva",
+    "photoBlurred": "Sumennettu kuva, näytä napauttamalla",
+    "tapToReveal": "Näytä napauttamalla",
+    "sendPhoto": "Lähetä kuva",
+    "message": "Viesti",
+    "messagePlaceholder": "Kirjoita viesti…",
+    "send": "Lähetä",
+    "report": "Ilmoita",
+    "block": "Estä",
+    "unmatch": "Pura match",
+    "blockConfirmTitle": "Estetäänkö?",
+    "blockConfirmMessage": "Sinä ja {name} ette enää näe toisianne, ja chat katoaa."
+  },
+  "safetySettings": {
+    "title": "Turvallisuus ja yksityisyys",
+    "trustedLabel": "Luottohenkilö",
+    "trustedHint": "Kun aloitat treffit, lähetämme hänelle tekstiviestillä linkin sijaintiisi. Hälytämme hänet, jos et kuittaa tai jos laukaiset hälytyksen.",
+    "nameLabel": "Nimi",
+    "namePlaceholder": "Esim. Alex",
+    "phoneLabel": "Puhelin",
+    "phonePlaceholder": "+358 40 123 4567",
+    "pinsLabel": "PIN ja hätä-PIN",
+    "pinsHint": "Treffien aikana vahvistat PIN-koodilla, että olet kunnossa. Hätä-PIN näyttää täsmälleen samalta, mutta lähettää hiljaa hälytyksen – käytä sitä, jos joku pakottaa sinut kertomaan sovellukselle, että kaikki on hyvin.",
+    "checkinPinLabel": "PIN (4–6 numeroa)",
+    "duressPinLabel": "Hätä-PIN (eri kuin PIN)",
+    "passwordLabel": "Tilin salasana (PIN-koodien vaihtamiseen)",
+    "pinsSet": "PIN-koodit on asetettu",
+    "change": "Vaihda",
+    "privacyLabel": "Yksityisyys",
+    "appLock": "Sovelluslukitus",
+    "appLockHint": "Face ID, sormenjälki tai puhelimen pääsykoodi aina, kun avaat sovelluksen.",
+    "discreet": "Huomaamaton tila",
+    "discreetHint": "Neutraali kuvake ja ilmoitukset ilman sisältöä – kukaan ei tiedä, mikä sovellus on kyseessä.",
+    "save": "Tallenna"
+  },
+  "tabs": {
+    "discover": "Löydä",
+    "matches": "Viestit",
+    "profile": "Profiili"
+  },
+  "discover": {
+    "likesLeft": {
+      "one": "{count} tykkäys jäljellä.",
+      "other": "{count} tykkäystä jäljellä."
+    },
+    "boostRunningUntil": "Boost on päällä klo {time} asti.",
+    "tonight": "Tänä iltana",
+    "tonightOn": "Tänä iltana – päällä",
+    "boost": "Boost",
+    "boostOn": "Boost on päällä",
+    "searchSettings": "Hakuasetukset",
+    "traveling": "Matkalla",
+    "travelingIn": "Matkalla · {city}",
+    "change": "Vaihda",
+    "enableLocation": "Salli sijainti",
+    "addPhoto": "Lisää kuva",
+    "retry": "Yritä uudelleen",
+    "empty": "Lähelläsi ei ole juuri nyt ketään muuta. Yritä myöhemmin tai laajenna hakua.",
+    "refresh": "Päivitä",
+    "nextPhoto": "Seuraava kuva",
+    "stampLike": "KYLLÄ",
+    "stampNope": "EI",
+    "superLikedYou": "Supertykkäsi sinusta",
+    "distance": "{km} km päässä",
+    "rewind": "Kumoa viimeisin swaippaus",
+    "pass": "Ohita",
+    "superLike": "Supertykkäys",
+    "like": "Tykkää",
+    "boostSheet": {
+      "title": "Aloitetaanko boost?",
+      "messageMonthly": "Olet 30 minuuttia kärjessä lähellä oleville. Tähän käytetään tilauksesi kuukausittainen boost.",
+      "messageCredits": "Olet 30 minuuttia kärjessä lähellä oleville. Sinulla on jäljellä {count}×.",
+      "confirm": "Aloita boost",
+      "done": "Boost on päällä – olet kärjessä 30 minuuttia."
+    },
+    "tonightSheet": {
+      "title": "Laitetaanko ”Tänä iltana” päälle?",
+      "message": "Klo 6.00 asti näyt korkeammalla lähellä oleville ja sinulla on ”Tänä iltana” -merkki. Voit laittaa sen pois päältä milloin vain.",
+      "messageCredits": "Klo 6.00 asti näyt korkeammalla lähellä oleville ja sinulla on ”Tänä iltana” -merkki. Voit laittaa sen pois päältä milloin vain. Sinulla on jäljellä {count}×.",
+      "confirm": "Laita päälle",
+      "done": "”Tänä iltana” on päällä klo 6.00 asti."
+    },
+    "tonightOffSheet": {
+      "title": "”Tänä iltana” on päällä",
+      "message": "Voimassa klo {time} asti.",
+      "confirm": "Laita pois",
+      "done": "”Tänä iltana” on pois päältä."
+    }
+  },
+  "matches": {
+    "title": "Viestit",
+    "agreement": {
+      "pending": "Sopimus odottaa",
+      "confirmed": "Sopimus vahvistettu",
+      "revoked": "Sopimus peruttu"
+    },
+    "likes": "Tykkäykset",
+    "likedBy": {
+      "one": "{count} ihminen tykkäsi sinusta",
+      "other": "{count} ihmistä tykkäsi sinusta"
+    },
+    "likedByLocked": {
+      "one": "{count} ihminen tykkäsi sinusta – näe kuka Goldilla",
+      "other": "{count} ihmistä tykkäsi sinusta – näe ketkä Goldilla"
+    },
+    "likesHint": "Kuka tykkäsi sinusta ja kenestä sinä tykkäsit",
+    "empty": "Ei vielä matcheja. Jatka swaippaamista – kun tykkäätte toisistanne, he näkyvät täällä.",
+    "lastMessageMine": "Sinä: {text}",
+    "newMatch": "Uusi match – lähetä ensimmäinen viesti."
+  },
+  "profile": {
+    "title": "Profiili",
+    "saving": "Tallennetaan…",
+    "saved": "Tallennettu",
+    "done": "Valmis",
+    "suspended": {
+      "title": "Tilisi on jäädytetty",
+      "subtitle": "Selvitämme ilmoitusta. Turvatila toimii edelleen."
+    },
+    "photoA11y": "Kuva – poista pitämällä painettuna",
+    "addPhoto": "Lisää kuva",
+    "photoHint": "Ei alastomuutta – kuvien täytyy noudattaa sovelluskauppojen sääntöjä. Poista kuva pitämällä sitä painettuna.",
+    "name": "Nimi",
+    "bio": "Minusta",
+    "bioPlaceholder": "Pari riviä itsestäsi.",
+    "lookingFor": "Etsin",
+    "safety": {
+      "title": "Turvallisuus ja yksityisyys",
+      "trusted": "Luottohenkilö: {name}",
+      "setup": "Määritä luottohenkilö ja PIN.",
+      "edit": "Muokkaa"
+    },
+    "plan": {
+      "freeTitle": "F*app Plus, Gold ja Platinum",
+      "title": "F*app {plan}",
+      "freeSubtitle": "Rajattomat tykkäykset, näe kuka tykkäsi, boost ja paljon muuta.",
+      "validUntil": "Voimassa {date} asti.",
+      "upgrade": "Päivitä",
+      "manage": "Hallitse"
+    },
+    "incognito": {
+      "label": "Incognito",
+      "hint": "Vain ne, joista tykkäät, näkevät sinut. (Plus)"
+    },
+    "travel": {
+      "label": "Matkatila (Plus)",
+      "home": "Kotona",
+      "hint": "Swaippaa toisessa kaupungissa jo ennen matkaa – siellä olevat näkevät sinut ”Matkalla”-merkinnällä."
+    },
+    "showMe": "Näytä minulle",
+    "ageFrom": "Ikä alkaen",
+    "ageTo": "Ikä enintään",
+    "distance": "Etäisyys",
+    "distanceSuffix": " km",
+    "save": "Tallenna profiili",
+    "language": {
+      "title": "Kieli",
+      "device": "Sama kuin puhelimessa",
+      "rtlHint": "Oikealta vasemmalle kirjoitettavissa kielissä asettelu kääntyy vasta, kun käynnistät sovelluksen uudelleen."
+    },
+    "signOut": "Kirjaudu ulos",
+    "deletePassword": "Salasana tilin poistamiseen",
+    "deleteForever": "Poista tili pysyvästi",
+    "deleteAccount": "Poista tili",
+    "removePhoto": {
+      "title": "Poistetaanko kuva?",
+      "confirm": "Poista"
+    }
+  },
+  "premium": {
+    "title": "Tilaus",
+    "free": {
+      "title": "F*app on toistaiseksi ilmainen",
+      "body": "Otamme maksulliset ominaisuudet käyttöön myöhemmin. Turvallisuus – henkilöllisyyden vahvistus, sopimukset, turvatila ja SOS – pysyy aina ilmaisena."
+    },
+    "back": "Takaisin",
+    "done": "Valmis",
+    "continue": "Jatka",
+    "reason": {
+      "likeLimitAt": "Tykkäyksesi loppuivat. Uusia tulee klo {time}.",
+      "likeLimit": "Tykkäyksesi loppuivat. Uusia tulee pian.",
+      "noCredit": "{credit} on saatavilla kertaostona tai tilauksella.",
+      "upgrade": "Tämä kuuluu F*app {plan} -tilaukseen."
+    },
+    "oneOff": "Kertaosto",
+    "owned": "sinulla on {count}",
+    "creditDetail": {
+      "boost": "30 minuuttia kärjessä lähellä oleville.",
+      "superlike": "Hän näkee, että olet todella kiinnostunut.",
+      "tonight": "Korkeammalla klo 6.00 asti, ”Tänä iltana” -merkillä."
+    },
+    "buyCredit": "Osta {amount}× {credit} hintaan {price}",
+    "creditBought": {
+      "boost": {
+        "one": "Sait ylimääräisen boostin.",
+        "other": "Sait {count} ylimääräistä boostia."
+      },
+      "superlike": {
+        "one": "Sait ylimääräisen supertykkäyksen.",
+        "other": "Sait {count} ylimääräistä supertykkäystä."
+      },
+      "tonight": {
+        "one": "Sait ylimääräisen ”Tänä iltana” -kerran.",
+        "other": "Sait {count} ylimääräistä ”Tänä iltana” -kertaa."
+      }
+    },
+    "currentPlan": "Sinulla on F*app {plan}",
+    "validUntil": "Voimassa {date} asti.",
+    "planTitle": "F*app {plan}",
+    "tagline": {
+      "plus": "Swaippaa rajatta ja palauta vahingossa ohitetut profiilit.",
+      "gold": "Näe, kuka tykkäsi sinusta – ja matchaa yhdellä napautuksella.",
+      "platinum": "Tykkäyksesi nähdään ensimmäisenä. Ja ”Tänä iltana” milloin vain."
+    },
+    "featureIncluded": "{feature}: sisältyy",
+    "featureNotIncluded": "{feature}: ei sisälly",
+    "months": {
+      "one": "{count} kuukausi",
+      "other": "{count} kuukautta"
+    },
+    "perMonth": "kuukaudessa",
+    "perMonthSave": "kuukaudessa · −{percent} %",
+    "continueWithPrice": "Jatka · {price}",
+    "planBought": {
+      "one": "Sinulla on nyt F*app {plan}.",
+      "other": "Sinulla on nyt F*app {plan} {count} kuukaudeksi."
+    },
+    "renewal": "Tilauksesi uusiutuu automaattisesti. Voit perua sen milloin tahansa App Storen tai Google Playn asetuksissa. Hinta on kaikille sama.",
+    "renewalUpfront": "Maksat {total} kerralla etukäteen ({monthly} kuukaudessa). Tilauksesi uusiutuu automaattisesti. Voit perua sen milloin tahansa App Storen tai Google Playn asetuksissa. Hinta on kaikille sama.",
+    "safetyFree": {
+      "title": "Turvallisuus on aina ilmaista",
+      "subtitle": "Vahvistus, sopimukset, turvatila, SOS ja ilmoitukset."
+    },
+    "devNote": "Prototyyppi: mitään ei veloiteta, osto on vain simuloitu."
+  },
+  "likes": {
+    "title": "Tykkäykset",
+    "received": "Tykkäsivät sinusta",
+    "receivedCount": "Tykkäsivät sinusta · {count}",
+    "sent": "Lähetetyt",
+    "emptyReceived": "Ei vielä uusia tykkäyksiä.",
+    "superLike": "Supertykkäys",
+    "distance": "{km} km",
+    "likedBy": {
+      "one": "{count} ihminen tykkäsi sinusta",
+      "other": "{count} ihmistä tykkäsi sinusta"
+    },
+    "lockedEmpty": "Tykkäyksesi näkyvät täällä",
+    "goldText": "F*app Goldilla näet, keitä he ovat, ja voit matchata yhdellä napautuksella.",
+    "goldCta": "Näe heidät Goldilla",
+    "emptySent": "Ei matchittomia tykkäyksiä viimeisen 7 päivän ajalta.",
+    "superLikePending": "Supertykkäys · odottaa",
+    "pending": "Odottaa vastausta",
+    "sentTitle": "Kenestä tykkäsit",
+    "platinumText": "F*app Platinumilla näet tykkäyksesi viimeisen 7 päivän ajalta.",
+    "platinumCta": "Näe ne Platinumilla",
+    "likeBack": "Tykkää takaisin",
+    "pass": "Ohita"
+  },
+  "match": {
+    "title": "Se on match!",
+    "body": "Sinä ja {name} haluatte toisianne.\nSano hei ja sopikaa, mihin olette valmiita.",
+    "sendMessage": "Lähetä viesti",
+    "keepDiscovering": "Jatka selaamista"
+  },
+  "login": {
+    "title": "Kirjaudu sisään",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "submit": "Kirjaudu sisään"
+  },
+  "register": {
+    "title": "Luo tili",
+    "name": "Nimi (muut näkevät sen)",
+    "email": "Sähköposti",
+    "password": "Salasana (vähintään 10 merkkiä)",
+    "birthdate": "Syntymäaika",
+    "birthdatePlaceholder": "PP. KK. VVVV",
+    "birthdateInvalid": "Anna syntymäaikasi muodossa PP. KK. VVVV.",
+    "iAm": "Olen",
+    "showMe": "Näytä minulle",
+    "confirmAdult": "Olen vähintään 18-vuotias.",
+    "acceptRules": "Hyväksyn yhteisön säännöt ja tietojeni käsittelyn, mukaan lukien seksuaalielämääni koskevat tiedot, jotta F*app voi toimia.",
+    "verifyNote": "Heti tämän jälkeen vahvistamme henkilöllisyytesi ja ikäsi (henkilöllisyystodistus ja selfie). Emme säilytä henkilöllisyystodistustasi.",
+    "continue": "Jatka"
+  },
+  "verify": {
+    "title": "Vahvista, että se olet sinä",
+    "intro": "Jokaisen F*app-käyttäjän henkilöllisyys ja ikä on vahvistettu. Otat kuvan henkilöllisyystodistuksestasi ja selfien – siihen menee noin kaksi minuuttia.",
+    "privacy": "Emme säilytä henkilöllisyystodistustasi emmekä kuviasi. Säilytämme vain vahvistuksen tuloksen ja syntymäaikasi. Sääntöjä rikkonut ei voi palata uudella tilillä.",
+    "pending": {
+      "title": "Odotetaan vahvistuksen tulosta",
+      "subtitle": "Yleensä se kestää muutaman minuutin.",
+      "refresh": "Päivitä"
+    },
+    "declined": "Vahvistus epäonnistui",
+    "devApprove": "Simuloi onnistunut vahvistus (testitila)",
+    "retry": "Yritä uudelleen",
+    "start": "Vahvista henkilöllisyys",
+    "signOut": "Kirjaudu ulos"
+  },
+  "common": {
+    "back": "Takaisin",
+    "cancel": "Peruuta",
+    "close": "Sulje",
+    "save": "Tallenna",
+    "retry": "Yritä uudelleen",
+    "continue": "Jatka",
+    "done": "Valmis",
+    "send": "Lähetä",
+    "delete": "Poista",
+    "edit": "Muokkaa",
+    "open": "Avaa",
+    "show": "Näytä",
+    "confirm": "Vahvista",
+    "errorGeneric": "Jokin meni pieleen."
+  },
+  "agreementBanner": {
+    "partnerSafetyTitle": "{name} käyttää turvatilaa",
+    "partnerSafetySubtitle": "Hänen luottohenkilönsä tietää, missä ja kenen kanssa hän on.",
+    "meetupTitle": "Treffit käynnissä",
+    "meetupSubtitle": "Turvatila on päällä.",
+    "missingTitle": "Ei vielä sopimusta",
+    "missingSubtitle": "Kumpikin täyttää, mihin on valmis – näette vain sen, missä kohtaatte.",
+    "fill": "Täytä",
+    "revokedByMeTitle": "Peruit sopimuksen",
+    "revokedByPartnerTitle": "{name} perui sopimuksen",
+    "revokedSubtitle": "Treffit on peruttu.",
+    "revokedCooldownSubtitle": "Treffit on peruttu. Vain {name} voi aloittaa uuden sopimuksen.",
+    "newAgreement": "Uusi sopimus",
+    "confirmedTitle": "Sopimus valmis",
+    "confirmedSubtitle": "Paikan päällä kumpi tahansa voi muuttaa mielensä milloin vain.",
+    "partnerFilledTitle": "{name} täytti sopimuksen",
+    "waitingForYouTitle": "Sopimus odottaa sinua",
+    "fillYoursSubtitle": "Täytä, mihin olet valmis – näette vain sen, missä kohtaatte.",
+    "partnerPendingTitle": "{name} ei ole vielä täyttänyt sitä",
+    "partnerPendingSubtitle": "Sopimus on valmis, kun olette molemmat täyttäneet sen."
+  },
+  "fakeCall": {
+    "incoming": "matkapuhelin…",
+    "hangUp": "Lopeta",
+    "decline": "Hylkää",
+    "accept": "Vastaa"
+  },
+  "homeBanners": {
+    "meetupTitle": "Treffit käynnissä · {name}",
+    "missedCheckIn": "Kuittaus jäi väliin!",
+    "safetyOn": "Turvatila on päällä.",
+    "feedbackTitle": "Miten treffit menivät?",
+    "feedbackSubtitle": "{name} – vain tiimimme näkee vastauksesi.",
+    "feedbackAction": "Vastaa"
+  },
+  "pinPad": {
+    "entered": {
+      "one": "{count} numero syötetty",
+      "other": "{count} numeroa syötetty"
+    }
+  },
+  "ui": {
+    "stepperDecrease": "{label}, vähemmän",
+    "stepperIncrease": "{label}, enemmän"
+  },
+  "api": {
+    "offline": "Palvelimeen ei saatu yhteyttä. Tarkista verkkoyhteytesi."
+  },
+  "billing": {
+    "storeNotConnected": "Ostot App Storen ja Google Playn kautta eivät ole vielä käytössä."
+  },
+  "notifications": {
+    "channelName": "Ilmoitukset",
+    "reminderDiscreet": "Muistutus",
+    "checkInTitle": "Aika kuitata",
+    "checkInBody": "Vahvista PIN-koodilla, että olet kunnossa.",
+    "fakeCallBody": "Saapuva puhelu"
+  },
+  "safetyTracking": {
+    "notificationTitle": "Sijainnin jakaminen on päällä",
+    "notificationBody": "Voit lopettaa sen sovelluksessa."
+  },
+  "appLock": {
+    "prompt": "Avaa F*app",
+    "lockedTitle": "Sovellus on lukittu",
+    "lockedBody": "Avaa se Face ID:llä, sormenjäljellä tai puhelimen pääsykoodilla.",
+    "sosHold": "SOS – paina pitkään",
+    "unlock": "Avaa lukitus",
+    "sosSentTitle": "Hälytys lähetetty",
+    "sosSentBody": "{name} sai hälytyksen, jossa on sijaintisi.",
+    "sosSentBodyNoName": "Luottohenkilösi sai hälytyksen, jossa on sijaintisi.",
+    "sosFailedTitle": "Lähetys epäonnistui"
+  },
+  "native": {
+    "locationWhenInUse": "F*app tarvitsee sijaintisi näyttääkseen lähelläsi olevat ihmiset ja jakaakseen sen treffien aikana luottohenkilösi kanssa.",
+    "locationAlways": "Treffien aikana F*app jakaa sijaintisi luottohenkilösi kanssa myös silloin, kun näyttö on pimeänä. Treffien ulkopuolella se ei käytä sijaintiasi taustalla.",
+    "faceId": "F*app käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
+    "photos": "Valitse kuvat profiiliisi.",
+    "camera": "Ota itsestäsi kuva profiiliisi."
+  }
+}

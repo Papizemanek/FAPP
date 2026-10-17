@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Niet gevonden.",
+    "tooLarge": "Het verzoek is te groot.",
+    "invalidJson": "Ongeldige JSON.",
+    "internal": "Er ging iets mis. Probeer het opnieuw.",
+    "rateLimited": "Te veel pogingen tegelijk. Probeer het zo opnieuw.",
+    "unauthorized": "Niet geautoriseerd.",
+    "invalidSignature": "Ongeldige handtekening.",
+    "linkExpired": "Deze link is niet meer geldig."
+  },
+  "validation": {
+    "required": "‘{field}’ ontbreekt.",
+    "notText": "‘{field}’ moet tekst zijn.",
+    "tooShort": "‘{field}’ is te kort.",
+    "tooLong": "‘{field}’ is te lang.",
+    "integer": "‘{field}’ moet een geheel getal van {min} tot {max} zijn.",
+    "invalidValue": "Ongeldige waarde voor ‘{field}’.",
+    "notList": "‘{field}’ moet een lijst zijn.",
+    "minOptions": {
+      "one": "Kies bij ‘{field}’ minstens {count} optie.",
+      "other": "Kies bij ‘{field}’ minstens {count} opties."
+    },
+    "date": "‘{field}’ moet een datum zijn in het formaat JJJJ-MM-DD.",
+    "dateTime": "‘{field}’ moet een datum en tijd zijn.",
+    "email": "Ongeldig e-mailadres.",
+    "phone": "Ongeldig telefoonnummer ({field}).",
+    "pin": "{field} moet uit 4–6 cijfers bestaan."
+  },
+  "fields": {
+    "email": "e-mailadres",
+    "password": "wachtwoord",
+    "name": "naam",
+    "birthdate": "geboortedatum",
+    "gender": "geslacht",
+    "interestedIn": "wie je zoekt",
+    "pushToken": "pushtoken",
+    "ageMin": "minimumleeftijd",
+    "ageMax": "maximumleeftijd",
+    "bio": "over mij",
+    "tags": "waar ik naar zoek",
+    "maxDistance": "afstand",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "naam van je vertrouwenspersoon",
+    "trustedPhone": "telefoon van je vertrouwenspersoon",
+    "pin": "Pincode",
+    "duressPin": "Noodpincode",
+    "meetAt": "wanneer",
+    "place": "waar",
+    "safeword": "stopwoord",
+    "note": "mijn grenzen",
+    "version": "versie",
+    "message": "bericht",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "check-in-interval",
+    "accuracy": "nauwkeurigheid",
+    "battery": "batterij",
+    "user": "gebruiker",
+    "reason": "reden",
+    "details": "details",
+    "resolution": "afhandeling",
+    "days": "aantal dagen"
+  },
+  "auth": {
+    "confirmAdult": "Je moet bevestigen dat je 18 jaar of ouder bent.",
+    "acceptRules": "Je moet akkoord gaan met de regels en met de verwerking van je gegevens.",
+    "underage": "F*app is alleen voor mensen van 18 jaar en ouder.",
+    "invalidBirthdate": "Ongeldige geboortedatum.",
+    "emailTaken": "Er bestaat al een account met dit e-mailadres.",
+    "wrongCredentials": "Verkeerd e-mailadres of wachtwoord.",
+    "banned": "Dit account is verbannen omdat de regels zijn overtreden.",
+    "notLoggedIn": "Je bent niet ingelogd.",
+    "suspended": "Je account is opgeschort tot een moderator het heeft beoordeeld.",
+    "verifyFirst": "Verifieer eerst je identiteit."
+  },
+  "profile": {
+    "wrongPassword": "Verkeerd wachtwoord.",
+    "ageRange": "De minimumleeftijd mag niet hoger zijn dan de maximumleeftijd.",
+    "maxPhotos": {
+      "one": "Je kunt maximaal {count} foto hebben.",
+      "other": "Je kunt maximaal {count} foto’s hebben."
+    },
+    "pinsMustDiffer": "Je noodpincode moet anders zijn dan je gewone pincode.",
+    "deleteDuringMeetup": "Je kunt je account nu niet verwijderen – er is een date bezig. Probeer het opnieuw als die voorbij is."
+  },
+  "photo": {
+    "notJpeg": "De foto moet een JPEG zijn.",
+    "corrupt": "De foto is beschadigd.",
+    "notBase64": "De foto moet een base64-gecodeerde JPEG zijn.",
+    "tooLarge": "De foto is te groot (max. 2 MB).",
+    "notFound": "Foto niet gevonden.",
+    "unavailable": "Foto niet beschikbaar."
+  },
+  "users": {
+    "notFound": "Gebruiker niet gevonden."
+  },
+  "match": {
+    "notFound": "Match niet gevonden.",
+    "ended": "Deze match is beëindigd.",
+    "profileUnavailable": "Dit profiel is niet meer beschikbaar."
+  },
+  "discover": {
+    "locationRequired": "Zet eerst je locatie aan, zodat we je mensen in de buurt kunnen laten zien.",
+    "photoRequired": "Voeg minstens één foto toe.",
+    "superLikeIsLike": "Een Super Like is altijd ook een like.",
+    "profileNotFound": "Profiel niet gevonden.",
+    "profileGone": "Dit profiel bestaat niet meer.",
+    "nothingToRewind": "Er is niets om terug te draaien.",
+    "cantRewindSuperLike": "Een Super Like kun je niet terugdraaien.",
+    "cantRewindMatch": "Deze swipe is al een match."
+  },
+  "billing": {
+    "likeLimit": "Je likes zijn op. Binnenkort krijg je nieuwe – of swipe zonder limiet met F*app Plus.",
+    "noSuperLike": "Je hebt geen Super Likes.",
+    "noBoost": "Je hebt geen Boosts.",
+    "tonightPaid": "‘Vanavond’ krijg je met Platinum of als losse aankoop.",
+    "featureInPlan": "{feature} hoort bij F*app {plan}.",
+    "paymentsOff": "Betalingen staan nog niet aan – F*app is voorlopig helemaal gratis.",
+    "unknownProduct": "Onbekend product.",
+    "cantBuy": "Je kunt dit nu niet kopen.",
+    "cantBoost": "Je kunt nu geen Boost starten.",
+    "boostRunning": "Er loopt al een Boost.",
+    "cantTonight": "Je kunt dit nu niet aanzetten.",
+    "tonightOn": "Vanavond staat al aan.",
+    "unknownCity": "Onbekende stad."
+  },
+  "features": {
+    "unlimitedLikes": "Onbeperkt liken",
+    "rewind": "Terugdraaien",
+    "travel": "Reismodus",
+    "incognito": "Incognito",
+    "seeLikes": "Zie wie jou liket",
+    "weeklySuperLikes": "5 Super Likes per week",
+    "monthlyBoost": "1 Boost per maand",
+    "priorityLikes": "Voorrangslikes",
+    "sentLikes": "Verstuurde likes",
+    "tonight": "Vanavond, wanneer je wilt"
+  },
+  "agreement": {
+    "wishesRequired": "Vul in waar je zin in hebt.",
+    "invalidWish": "Ongeldige keuze bij je wensen.",
+    "notFound": "Afspraak niet gevonden.",
+    "confirmBoth": "Bevestig beide uitspraken – dat dit is wat je voor ogen hebt en dat een afspraak geen toestemming is.",
+    "meetWithin": {
+      "one": "De date moet binnen de komende {count} dag plaatsvinden.",
+      "other": "De date moet binnen de komende {count} dagen plaatsvinden."
+    },
+    "cooldown": "Alleen {name} kan nu een nieuwe afspraak starten.",
+    "changed": "De afspraak is intussen gewijzigd. Lees hem opnieuw."
+  },
+  "chat": {
+    "empty": "Leeg bericht.",
+    "notSent": "Bericht niet verstuurd. {reason}",
+    "photo": "Foto"
+  },
+  "moderation": {
+    "minor": "Dit bericht wijst erop dat een van jullie jonger dan 18 kan zijn. F*app is alleen voor 18+.",
+    "paid": "Betaalde seks aanbieden of erom vragen is niet toegestaan op F*app.",
+    "consentPressure": "Let op: een afspraak in de app is geen toestemming. Je kunt hem altijd intrekken en ter plekke overal nee tegen zeggen – zonder uitleg.",
+    "contact": "Je match deelt contactgegevens buiten de app. Buiten F*app werken de afspraak, de veiligheidsmodus en melden niet voor jullie."
+  },
+  "safety": {
+    "notFound": "Date niet gevonden.",
+    "ended": "De date is al afgelopen.",
+    "wrongPin": "Verkeerde pincode.",
+    "agreementRequired": "Je kunt de date starten zodra jullie de afspraak allebei hebben ingevuld en bevestigd.",
+    "setupRequired": "Stel eerst een vertrouwenspersoon, een pincode en een noodpincode in.",
+    "invalidInterval": "Ongeldig check-in-interval."
+  },
+  "reports": {
+    "feedbackSent": "Je hebt je feedback al verstuurd."
+  },
+  "verification": {
+    "unknown": "Onbekende verificatie.",
+    "alreadyVerified": "Je identiteit is al geverifieerd.",
+    "startFirst": "Start eerst de verificatie.",
+    "noWebhook": "De ontwikkelprovider heeft geen webhook.",
+    "unavailable": "De verificatiedienst reageert niet. Probeer het zo opnieuw.",
+    "declined": {
+      "underage": "Uit de verificatie blijkt dat je nog geen 18 bent. F*app is alleen voor volwassenen.",
+      "banned": "Deze persoon is van F*app verbannen omdat de regels zijn overtreden.",
+      "duplicate": "Deze persoon heeft al een F*app-account. Iedereen mag er maar één hebben.",
+      "incomplete": "We konden de geboortedatum niet uit het document lezen. Probeer het opnieuw.",
+      "default": "Verificatie mislukt. Probeer het opnieuw."
+    }
+  },
+  "admin": {
+    "notReported": "Dit gesprek is niet gemeld.",
+    "unknownPlan": "Onbekend abonnement."
+  },
+  "push": {
+    "discreet": "Nieuwe melding",
+    "match": {
+      "title": "Het is een match!",
+      "body": "Jij en {name} willen elkaar."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Iemand heeft echt interesse in je."
+    },
+    "message": {
+      "photo": "Heeft een foto gestuurd"
+    },
+    "agreementComplete": {
+      "title": "De afspraak is rond",
+      "body": "Jullie hebben hem allebei bevestigd. Ter plekke kunnen jullie nog altijd van gedachten veranderen."
+    },
+    "agreementNew": {
+      "title": "Nieuwe afspraak",
+      "body": "{name} is een afspraak gestart. Vul nu in waar jij zin in hebt."
+    },
+    "agreementChanged": {
+      "title": "Afspraak gewijzigd",
+      "body": "{name} heeft de tijd, plek of regels gewijzigd. Bevestig ze opnieuw."
+    },
+    "agreementUpdated": {
+      "title": "Afspraak bijgewerkt",
+      "body": "{name} heeft de wensen aangepast."
+    },
+    "agreementRevoked": {
+      "title": "Afspraak ingetrokken",
+      "body": "{name} heeft de afspraak ingetrokken. De date gaat niet door – en dat moet worden gerespecteerd."
+    },
+    "checkInOverdue": {
+      "title": "Je hebt je check-in gemist",
+      "body": "{name} is gewaarschuwd. Bevestig dat alles goed met je is."
+    }
+  },
+  "sms": {
+    "started": "{name} heeft een afspraak met iemand en heeft jou gekozen als vertrouwenspersoon. Hier zie je de locatie en of alles goed is: {url}",
+    "alarm": "ALARM: {name} heeft hulp nodig. Locatie en details: {url}",
+    "overdue": "{name} heeft niet ingecheckt - de bevestiging dat alles goed is, had uiterlijk om {time} moeten komen. Probeer te bellen. Locatie: {url}",
+    "backOk": "{name} heeft ingecheckt en bevestigd dat alles goed is.",
+    "sosCancelled": "{name} heeft het alarm ingetrokken - het was een vergissing, alles is goed.",
+    "endedOk": "{name} heeft de afspraak afgesloten en alles is goed. Bedankt dat je er was.",
+    "someone": "Iemand die dicht bij je staat"
+  },
+  "share": {
+    "pageTitle": "F*app – veiligheidslink",
+    "header": "Veiligheidslink",
+    "loading": "Laden…",
+    "call": "Bel {number}",
+    "mapLabel": "Kaart met laatst bekende locatie",
+    "openMaps": "Openen in Kaarten",
+    "partnerPhotoAlt": "Foto van de persoon met wie de afspraak is",
+    "partnerLead": "Afspraak met:",
+    "okTitle": "Alles goed met {name}",
+    "okDetail": "Laatste check-in om {last}. De volgende wordt uiterlijk om {next} verwacht.",
+    "overdueTitle": "{name} heeft niet ingecheckt",
+    "overdueDetail": "De check-in had uiterlijk om {due} moeten gebeuren. Probeer te bellen. Neemt niemand op, bel dan {number} en geef het adres van de kaart door.",
+    "alarmTitle": "{name} heeft hulp nodig",
+    "alarmDetail": "Alarm om {time}. Bel {number} en geef de locatie van de kaart en de ontmoetingsplek hieronder door.",
+    "endedTitle": "De afspraak is voorbij",
+    "endedDetail": "{name} heeft bevestigd dat alles goed is.",
+    "endedDetailAlarm": "{name} heeft bevestigd dat alles goed is. Tijdens de afspraak is er alarm geslagen – vraag even of alles echt in orde is.",
+    "footer": "De locatie is niet meer zichtbaar zodra {name} de afspraak beëindigt.",
+    "locationJustNow": "Locatie zojuist",
+    "locationAgo": {
+      "one": "Locatie {count} min geleden",
+      "other": "Locatie {count} min geleden"
+    },
+    "battery": "batterij {percent}",
+    "linkExpired": "Deze link is niet meer geldig",
+    "loadFailed": "De status kon niet worden geladen. Opnieuw proberen…"
+  }
+}

@@ -1,1 +1,268 @@
-{}
+{
+  "errors": {
+    "notFound": "Ikke fundet.",
+    "tooLarge": "Anmodningen er for stor.",
+    "invalidJson": "Ugyldig JSON.",
+    "internal": "Noget gik galt. Prøv igen.",
+    "rateLimited": "For mange forsøg på én gang. Prøv igen om lidt.",
+    "unauthorized": "Ikke autoriseret.",
+    "invalidSignature": "Ugyldig signatur.",
+    "linkExpired": "Linket er ikke længere gyldigt."
+  },
+  "validation": {
+    "required": "»{field}« mangler.",
+    "notText": "»{field}« skal være tekst.",
+    "tooShort": "»{field}« er for kort.",
+    "tooLong": "»{field}« er for lang.",
+    "integer": "»{field}« skal være et helt tal fra {min} til {max}.",
+    "invalidValue": "Ugyldig værdi for »{field}«.",
+    "notList": "»{field}« skal være en liste.",
+    "minOptions": {
+      "one": "Vælg mindst {count} mulighed under »{field}«.",
+      "other": "Vælg mindst {count} muligheder under »{field}«."
+    },
+    "date": "»{field}« skal være en dato i formatet ÅÅÅÅ-MM-DD.",
+    "dateTime": "»{field}« skal være en dato og et tidspunkt.",
+    "email": "Ugyldig e-mail.",
+    "phone": "Ugyldigt telefonnummer ({field}).",
+    "pin": "{field} skal være 4–6 cifre."
+  },
+  "fields": {
+    "email": "e-mail",
+    "password": "adgangskode",
+    "name": "navn",
+    "birthdate": "fødselsdato",
+    "gender": "køn",
+    "interestedIn": "hvem du søger",
+    "pushToken": "push-token",
+    "ageMin": "alder fra",
+    "ageMax": "alder til",
+    "bio": "om mig",
+    "tags": "det søger jeg",
+    "maxDistance": "afstand",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "tillidspersonens navn",
+    "trustedPhone": "tillidspersonens telefon",
+    "pin": "Pinkode",
+    "duressPin": "Nød-pinkode",
+    "meetAt": "hvornår",
+    "place": "hvor",
+    "safeword": "stopord",
+    "note": "mine grænser",
+    "version": "version",
+    "message": "besked",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "check-in-interval",
+    "accuracy": "nøjagtighed",
+    "battery": "batteri",
+    "user": "bruger",
+    "reason": "årsag",
+    "details": "detaljer",
+    "resolution": "afgørelse",
+    "days": "antal dage"
+  },
+  "auth": {
+    "confirmAdult": "Du skal bekræfte, at du er 18 år eller ældre.",
+    "acceptRules": "Du skal acceptere reglerne og behandlingen af dine data.",
+    "underage": "F*app er kun for personer på 18 år og derover.",
+    "invalidBirthdate": "Ugyldig fødselsdato.",
+    "emailTaken": "Der findes allerede en konto med denne e-mail.",
+    "wrongCredentials": "Forkert e-mail eller adgangskode.",
+    "banned": "Denne konto er blevet udelukket for at bryde reglerne.",
+    "notLoggedIn": "Du er ikke logget ind.",
+    "suspended": "Din konto er suspenderet, indtil en moderator har gennemgået den.",
+    "verifyFirst": "Verificer din identitet først."
+  },
+  "profile": {
+    "wrongPassword": "Forkert adgangskode.",
+    "ageRange": "Alder fra kan ikke være højere end alder til.",
+    "maxPhotos": {
+      "one": "Du kan højst have {count} billede.",
+      "other": "Du kan højst have {count} billeder."
+    },
+    "pinsMustDiffer": "Din nød-pinkode skal være forskellig fra din normale pinkode.",
+    "deleteDuringMeetup": "Du kan ikke slette din konto lige nu – en date er i gang. Prøv igen, når den er slut."
+  },
+  "photo": {
+    "notJpeg": "Billedet skal være en JPEG.",
+    "corrupt": "Billedet er beskadiget.",
+    "notBase64": "Billedet skal være en base64-kodet JPEG.",
+    "tooLarge": "Billedet er for stort (maks. 2 MB).",
+    "notFound": "Billedet blev ikke fundet.",
+    "unavailable": "Billedet er ikke tilgængeligt."
+  },
+  "users": {
+    "notFound": "Brugeren blev ikke fundet."
+  },
+  "match": {
+    "notFound": "Matchet blev ikke fundet.",
+    "ended": "Dette match er afsluttet.",
+    "profileUnavailable": "Denne profil er ikke længere tilgængelig."
+  },
+  "discover": {
+    "locationRequired": "Slå placering til først, så vi kan vise dig folk i nærheden.",
+    "photoRequired": "Tilføj mindst ét billede.",
+    "superLikeIsLike": "Et Super Like er altid også et like.",
+    "profileNotFound": "Profilen blev ikke fundet.",
+    "profileGone": "Denne profil findes ikke længere.",
+    "nothingToRewind": "Der er intet at fortryde.",
+    "cantRewindSuperLike": "Du kan ikke fortryde et Super Like.",
+    "cantRewindMatch": "Dette swipe er allerede blevet til et match."
+  },
+  "billing": {
+    "likeLimit": "Du er løbet tør for likes. Der kommer snart flere – eller swipe uden grænser med F*app Plus.",
+    "noSuperLike": "Du har ingen Super Likes.",
+    "noBoost": "Du har ingen Boosts.",
+    "tonightPaid": "»I aften« fås med Platinum eller som enkeltkøb.",
+    "featureInPlan": "{feature} er en del af F*app {plan}.",
+    "paymentsOff": "Betalinger er ikke slået til endnu – F*app er helt gratis indtil videre.",
+    "unknownProduct": "Ukendt produkt.",
+    "cantBuy": "Du kan ikke købe det lige nu.",
+    "cantBoost": "Du kan ikke starte et Boost lige nu.",
+    "boostRunning": "Der kører allerede et Boost.",
+    "cantTonight": "Du kan ikke slå det til lige nu.",
+    "tonightOn": "I aften er allerede slået til.",
+    "unknownCity": "Ukendt by."
+  },
+  "features": {
+    "unlimitedLikes": "Ubegrænsede likes",
+    "rewind": "Fortryd swipe",
+    "travel": "Rejsetilstand",
+    "incognito": "Inkognito",
+    "seeLikes": "Se, hvem der liker dig",
+    "weeklySuperLikes": "5 Super Likes om ugen",
+    "monthlyBoost": "1 Boost om måneden",
+    "priorityLikes": "Prioriterede likes",
+    "sentLikes": "Sendte likes",
+    "tonight": "I aften – når som helst"
+  },
+  "agreement": {
+    "wishesRequired": "Udfyld, hvad du har lyst til.",
+    "invalidWish": "Ugyldigt valg i dine ønsker.",
+    "notFound": "Aftalen blev ikke fundet.",
+    "confirmBoth": "Bekræft begge udsagn – at det er sådan, du forestiller dig det, og at en aftale ikke er samtykke.",
+    "meetWithin": {
+      "one": "Daten skal ligge inden for den næste {count} dag.",
+      "other": "Daten skal ligge inden for de næste {count} dage."
+    },
+    "cooldown": "Kun {name} kan starte en ny aftale lige nu.",
+    "changed": "Aftalen er blevet ændret i mellemtiden. Læs den igen."
+  },
+  "chat": {
+    "empty": "Tom besked.",
+    "notSent": "Beskeden blev ikke sendt. {reason}",
+    "photo": "Billede"
+  },
+  "moderation": {
+    "minor": "Denne besked tyder på, at en af jer måske er under 18. F*app er kun for 18+.",
+    "paid": "Det er ikke tilladt at tilbyde eller efterspørge betalt sex på F*app.",
+    "consentPressure": "Husk: En aftale i appen er ikke samtykke. Du kan annullere den når som helst og sige nej til hvad som helst, når I ses – uden at forklare dig.",
+    "contact": "Dit match deler kontaktoplysninger uden for appen. Uden for F*app virker aftalen, sikkerhedstilstanden og rapportering ikke for jer."
+  },
+  "safety": {
+    "notFound": "Daten blev ikke fundet.",
+    "ended": "Daten er allerede afsluttet.",
+    "wrongPin": "Forkert pinkode.",
+    "agreementRequired": "Du kan starte daten, når I begge har udfyldt og bekræftet aftalen.",
+    "setupRequired": "Indstil først en tillidsperson, en pinkode og en nød-pinkode.",
+    "invalidInterval": "Ugyldigt check-in-interval."
+  },
+  "reports": {
+    "feedbackSent": "Du har allerede sendt din feedback."
+  },
+  "verification": {
+    "unknown": "Ukendt verificering.",
+    "alreadyVerified": "Din identitet er allerede verificeret.",
+    "startFirst": "Start verificeringen først.",
+    "noWebhook": "Udviklingsudbyderen har ingen webhook.",
+    "unavailable": "Verificeringstjenesten svarer ikke. Prøv igen om lidt.",
+    "declined": {
+      "underage": "Verificeringen viste, at du ikke er fyldt 18 endnu. F*app er kun for voksne.",
+      "banned": "Denne person er blevet udelukket fra F*app for at bryde reglerne.",
+      "duplicate": "Denne person har allerede en F*app-konto. Man kan kun have én.",
+      "incomplete": "Vi kunne ikke læse fødselsdatoen på dokumentet. Prøv igen.",
+      "default": "Verificeringen mislykkedes. Prøv igen."
+    }
+  },
+  "admin": {
+    "notReported": "Denne samtale er ikke blevet rapporteret.",
+    "unknownPlan": "Ukendt abonnement."
+  },
+  "push": {
+    "discreet": "Ny notifikation",
+    "match": {
+      "title": "Det er et match!",
+      "body": "Du og {name} vil hinanden."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Nogen er virkelig interesseret i dig."
+    },
+    "message": {
+      "photo": "Har sendt et billede"
+    },
+    "agreementComplete": {
+      "title": "Aftalen er på plads",
+      "body": "I har begge bekræftet den. Når I ses, kan I stadig altid ombestemme jer."
+    },
+    "agreementNew": {
+      "title": "Ny aftale",
+      "body": "{name} har startet en aftale. Udfyld nu, hvad du har lyst til."
+    },
+    "agreementChanged": {
+      "title": "Aftalen er ændret",
+      "body": "{name} har ændret tid, sted eller regler. Bekræft dem igen."
+    },
+    "agreementUpdated": {
+      "title": "Aftalen er opdateret",
+      "body": "{name} har opdateret sine ønsker."
+    },
+    "agreementRevoked": {
+      "title": "Aftalen er annulleret",
+      "body": "{name} har annulleret aftalen. Daten er aflyst – og det skal respekteres."
+    },
+    "checkInOverdue": {
+      "title": "Du har misset dit check-in",
+      "body": "{name} har fået en advarsel. Bekræft, at du er okay."
+    }
+  },
+  "sms": {
+    "started": "{name} skal mødes med nogen og har valgt dig som tillidsperson. Her kan du se placeringen, og om alt er okay: {url}",
+    "alarm": "ALARM: {name} har brug for hjælp. Placering og detaljer: {url}",
+    "overdue": "{name} har ikke checket ind - bekræftelsen af, at alt er okay, skulle være kommet senest kl. {time}. Prøv at ringe. Placering: {url}",
+    "backOk": "{name} har checket ind og bekræftet, at alt er okay.",
+    "sosCancelled": "{name} har annulleret alarmen - det var en fejl, alt er okay.",
+    "endedOk": "{name} har afsluttet mødet, og alt er okay. Tak, fordi du var der.",
+    "someone": "En, der står dig nær"
+  },
+  "share": {
+    "pageTitle": "F*app – sikkerhedslink",
+    "header": "Sikkerhedslink",
+    "loading": "Indlæser…",
+    "call": "Ring til {number}",
+    "mapLabel": "Kort med seneste kendte placering",
+    "openMaps": "Åbn i Kort",
+    "partnerPhotoAlt": "Billede af den anden person",
+    "partnerLead": "Mødes med:",
+    "okTitle": "{name} er okay",
+    "okDetail": "Seneste check-in kl. {last}. Det næste forventes senest kl. {next}.",
+    "overdueTitle": "{name} har ikke checket ind",
+    "overdueDetail": "Check-in skulle være sket senest kl. {due}. Prøv at ringe. Hvis der ikke bliver svaret, så ring {number}, og oplys adressen fra kortet.",
+    "alarmTitle": "{name} har brug for hjælp",
+    "alarmDetail": "Alarm kl. {time}. Ring {number}, og oplys placeringen fra kortet og mødestedet nedenfor.",
+    "endedTitle": "Mødet er slut",
+    "endedDetail": "{name} har bekræftet, at alt er okay.",
+    "endedDetailAlarm": "{name} har bekræftet, at alt er okay. Der blev slået alarm under mødet – spørg, om alt er i orden.",
+    "footer": "Placeringen er ikke længere synlig, når {name} afslutter mødet.",
+    "locationJustNow": "Placering lige nu",
+    "locationAgo": {
+      "one": "Placering for {count} min. siden",
+      "other": "Placering for {count} min. siden"
+    },
+    "battery": "batteri {percent}",
+    "linkExpired": "Linket er ikke længere gyldigt",
+    "loadFailed": "Status kunne ikke indlæses. Prøver igen…"
+  }
+}

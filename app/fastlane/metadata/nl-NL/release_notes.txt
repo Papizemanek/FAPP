@@ -1,0 +1,1 @@
+De eerste versie van F*app. Verificatie, blinde afspraak en veiligheidsmodus.

@@ -1,1 +1,272 @@
-{}
+{
+  "errors": {
+    "notFound": "No s'ha trobat.",
+    "tooLarge": "La sol·licitud és massa gran.",
+    "invalidJson": "JSON no vàlid.",
+    "internal": "Alguna cosa ha anat malament. Torna-ho a provar.",
+    "rateLimited": "Massa intents alhora. Torna-ho a provar d'aquí a una estona.",
+    "unauthorized": "No autoritzat.",
+    "invalidSignature": "Signatura no vàlida.",
+    "linkExpired": "Aquest enllaç ja no és vàlid."
+  },
+  "validation": {
+    "required": "Falta el camp «{field}».",
+    "notText": "El camp «{field}» ha de ser text.",
+    "tooShort": "El camp «{field}» és massa curt.",
+    "tooLong": "El camp «{field}» és massa llarg.",
+    "integer": "El camp «{field}» ha de ser un nombre enter de {min} a {max}.",
+    "invalidValue": "Valor no vàlid al camp «{field}».",
+    "notList": "El camp «{field}» ha de ser una llista.",
+    "minOptions": {
+      "one": "Tria almenys {count} opció a «{field}».",
+      "many": "Tria almenys {count} opcions a «{field}».",
+      "other": "Tria almenys {count} opcions a «{field}»."
+    },
+    "date": "El camp «{field}» ha de ser una data en format AAAA-MM-DD.",
+    "dateTime": "El camp «{field}» ha de ser una data i una hora.",
+    "email": "Correu electrònic no vàlid.",
+    "phone": "Número de telèfon no vàlid ({field}).",
+    "pin": "El {field} ha de tenir de 4 a 6 xifres."
+  },
+  "fields": {
+    "email": "correu electrònic",
+    "password": "contrasenya",
+    "name": "nom",
+    "birthdate": "data de naixement",
+    "gender": "gènere",
+    "interestedIn": "qui busques",
+    "pushToken": "token push",
+    "ageMin": "edat mínima",
+    "ageMax": "edat màxima",
+    "bio": "sobre mi",
+    "tags": "què busco",
+    "maxDistance": "distància",
+    "lat": "lat",
+    "lng": "lng",
+    "trustedName": "nom de la persona de confiança",
+    "trustedPhone": "telèfon de la persona de confiança",
+    "pin": "PIN",
+    "duressPin": "PIN d'emergència",
+    "meetAt": "quan",
+    "place": "on",
+    "safeword": "paraula de seguretat",
+    "note": "els meus límits",
+    "version": "versió",
+    "message": "missatge",
+    "after": "after",
+    "targetId": "targetId",
+    "checkInMinutes": "interval de check-in",
+    "accuracy": "precisió",
+    "battery": "bateria",
+    "user": "usuari",
+    "reason": "motiu",
+    "details": "detalls",
+    "resolution": "resolució",
+    "days": "nombre de dies"
+  },
+  "auth": {
+    "confirmAdult": "Has de confirmar que tens 18 anys o més.",
+    "acceptRules": "Has d'acceptar les normes i el tractament de les teves dades.",
+    "underage": "F*app és només per a persones de 18 anys o més.",
+    "invalidBirthdate": "Data de naixement no vàlida.",
+    "emailTaken": "Ja existeix un compte amb aquest correu.",
+    "wrongCredentials": "Correu o contrasenya incorrectes.",
+    "banned": "Aquest compte s'ha bloquejat per incomplir les normes.",
+    "notLoggedIn": "No has iniciat la sessió.",
+    "suspended": "El teu compte està suspès fins que l'equip de moderació el revisi.",
+    "verifyFirst": "Primer verifica la teva identitat."
+  },
+  "profile": {
+    "wrongPassword": "Contrasenya incorrecta.",
+    "ageRange": "L'edat mínima no pot ser més gran que la màxima.",
+    "maxPhotos": {
+      "one": "Pots tenir fins a {count} foto.",
+      "many": "Pots tenir fins a {count} fotos.",
+      "other": "Pots tenir fins a {count} fotos."
+    },
+    "pinsMustDiffer": "El PIN d'emergència ha de ser diferent del PIN normal.",
+    "deleteDuringMeetup": "Ara no pots esborrar el compte – hi ha una trobada en curs. Torna-ho a provar quan s'acabi."
+  },
+  "photo": {
+    "notJpeg": "La foto ha de ser en format JPEG.",
+    "corrupt": "La foto està malmesa.",
+    "notBase64": "La foto ha de ser un JPEG codificat en base64.",
+    "tooLarge": "La foto és massa gran (màx. 2 MB).",
+    "notFound": "No s'ha trobat la foto.",
+    "unavailable": "La foto no està disponible."
+  },
+  "users": {
+    "notFound": "No s'ha trobat l'usuari."
+  },
+  "match": {
+    "notFound": "No s'ha trobat el match.",
+    "ended": "Aquest match s'ha acabat.",
+    "profileUnavailable": "Aquest perfil ja no està disponible."
+  },
+  "discover": {
+    "locationRequired": "Primer activa la ubicació perquè et puguem mostrar gent propera.",
+    "photoRequired": "Afegeix almenys una foto.",
+    "superLikeIsLike": "Un Super Like sempre és un like.",
+    "profileNotFound": "No s'ha trobat el perfil.",
+    "profileGone": "Aquest perfil ja no existeix.",
+    "nothingToRewind": "No hi ha res per desfer.",
+    "cantRewindSuperLike": "No pots desfer un Super Like.",
+    "cantRewindMatch": "Aquest swipe ja és un match."
+  },
+  "billing": {
+    "likeLimit": "T'has quedat sense likes. Aviat en tindràs més – o llisca sense límits amb F*app Plus.",
+    "noSuperLike": "No tens cap Super Like.",
+    "noBoost": "No tens cap Boost.",
+    "tonightPaid": "«Aquesta nit» està inclòs a Platinum o disponible com a compra única.",
+    "featureInPlan": "{feature} forma part de F*app {plan}.",
+    "paymentsOff": "Els pagaments encara no estan activats – de moment F*app és totalment gratuït.",
+    "unknownProduct": "Producte desconegut.",
+    "cantBuy": "Ara no pots comprar això.",
+    "cantBoost": "Ara no pots activar un Boost.",
+    "boostRunning": "Ja hi ha un Boost actiu.",
+    "cantTonight": "Ara no pots activar això.",
+    "tonightOn": "«Aquesta nit» ja està activat.",
+    "unknownCity": "Ciutat desconeguda."
+  },
+  "features": {
+    "unlimitedLikes": "Likes il·limitats",
+    "rewind": "Desfer",
+    "travel": "Mode viatge",
+    "incognito": "Incògnit",
+    "seeLikes": "Qui t'ha fet like",
+    "weeklySuperLikes": "5 Super Likes a la setmana",
+    "monthlyBoost": "1 Boost al mes",
+    "priorityLikes": "Likes prioritaris",
+    "sentLikes": "Likes enviats",
+    "tonight": "Aquesta nit, quan vulguis"
+  },
+  "agreement": {
+    "wishesRequired": "Indica què et ve de gust.",
+    "invalidWish": "Opció no vàlida en els teus desitjos.",
+    "notFound": "No s'ha trobat l'acord.",
+    "confirmBoth": "Confirma totes dues frases – que això és el que tens al cap i que un acord no és consentiment.",
+    "meetWithin": {
+      "one": "La trobada ha de ser com a màxim d'aquí a {count} dia.",
+      "many": "La trobada ha de ser com a màxim d'aquí a {count} dies.",
+      "other": "La trobada ha de ser com a màxim d'aquí a {count} dies."
+    },
+    "cooldown": "Ara només {name} pot iniciar un acord nou.",
+    "changed": "L'acord ha canviat mentrestant. Torna-te'l a llegir."
+  },
+  "chat": {
+    "empty": "Missatge buit.",
+    "notSent": "Missatge no enviat. {reason}",
+    "photo": "Foto"
+  },
+  "moderation": {
+    "minor": "Aquest missatge fa pensar que un de vosaltres podria ser menor de 18 anys. F*app és només per a majors de 18.",
+    "paid": "A F*app està prohibit oferir o demanar sexe de pagament.",
+    "consentPressure": "Atenció: un acord a l'app no és consentiment. El pots cancel·lar en qualsevol moment i dir que no a qualsevol cosa en persona – sense donar explicacions.",
+    "contact": "El teu match està compartint dades de contacte fora de l'app. Fora de F*app, l'acord, el mode seguretat i les denúncies no funcionen per a tu."
+  },
+  "safety": {
+    "notFound": "Aquesta trobada no existeix.",
+    "ended": "La trobada ja s'ha acabat.",
+    "wrongPin": "PIN incorrecte.",
+    "agreementRequired": "Podràs iniciar la trobada quan totes dues parts hagin omplert i confirmat l'acord.",
+    "setupRequired": "Primer configura una persona de confiança, un PIN i un PIN d'emergència.",
+    "invalidInterval": "Interval de check-in no vàlid."
+  },
+  "reports": {
+    "feedbackSent": "Ja has enviat la teva valoració."
+  },
+  "verification": {
+    "unknown": "Verificació desconeguda.",
+    "alreadyVerified": "La teva identitat ja està verificada.",
+    "startFirst": "Primer inicia la verificació.",
+    "noWebhook": "El proveïdor de desenvolupament no té webhook.",
+    "unavailable": "El servei de verificació no respon. Torna-ho a provar d'aquí a una estona.",
+    "declined": {
+      "underage": "La verificació mostra que encara no tens 18 anys. F*app és només per a persones adultes.",
+      "banned": "Aquesta persona va ser expulsada de F*app per incomplir les normes.",
+      "duplicate": "Aquesta persona ja té un compte a F*app. Cadascú només en pot tenir un.",
+      "incomplete": "No hem pogut llegir la data de naixement del document. Torna-ho a provar.",
+      "default": "La verificació ha fallat. Torna-ho a provar."
+    }
+  },
+  "admin": {
+    "notReported": "Aquesta conversa no s'ha denunciat.",
+    "unknownPlan": "Pla desconegut."
+  },
+  "push": {
+    "discreet": "Notificació nova",
+    "match": {
+      "title": "És un match!",
+      "body": "Tu i {name} us agradeu."
+    },
+    "superLike": {
+      "title": "Super Like",
+      "body": "Li interesses de debò a algú."
+    },
+    "message": {
+      "photo": "Ha enviat una foto"
+    },
+    "agreementComplete": {
+      "title": "Acord complet",
+      "body": "L'acord s'ha confirmat per totes dues parts. En persona, sempre podeu canviar d'opinió."
+    },
+    "agreementNew": {
+      "title": "Acord nou",
+      "body": "{name} ha iniciat un acord. Ara indica què et ve de gust."
+    },
+    "agreementChanged": {
+      "title": "Acord modificat",
+      "body": "{name} ha canviat l'hora, el lloc o les regles. Torna-les a confirmar."
+    },
+    "agreementUpdated": {
+      "title": "Acord actualitzat",
+      "body": "{name} ha actualitzat els seus desitjos."
+    },
+    "agreementRevoked": {
+      "title": "Acord cancel·lat",
+      "body": "{name} ha cancel·lat l'acord. La trobada queda anul·lada – i cal respectar-ho."
+    },
+    "checkInOverdue": {
+      "title": "T'has saltat el check-in",
+      "body": "{name} ha rebut un avís. Confirma que estàs bé."
+    }
+  },
+  "sms": {
+    "started": "{name} té una trobada i t'ha triat com a persona de confiança. Aquí veuràs on és i si està bé: {url}",
+    "alarm": "ALARMA: {name} necessita ajuda. Ubicació i detalls: {url}",
+    "overdue": "{name} no ha fet el check-in - havia de confirmar que està bé abans de les {time}. Prova de trucar. Ubicació: {url}",
+    "backOk": "{name} ha fet el check-in i ha confirmat que està bé.",
+    "sosCancelled": "{name} ha cancel·lat l'alarma - era un error, està bé.",
+    "endedOk": "{name} ha acabat la trobada i està bé. Gràcies per ser-hi.",
+    "someone": "Una persona propera"
+  },
+  "share": {
+    "pageTitle": "F*app – enllaç de seguretat",
+    "header": "Enllaç de seguretat",
+    "loading": "S'està carregant…",
+    "call": "Truca al {number}",
+    "mapLabel": "Mapa amb l'última ubicació coneguda",
+    "openMaps": "Obre a Mapes",
+    "partnerPhotoAlt": "Foto de la persona amb qui es troba",
+    "partnerLead": "Trobada amb:",
+    "okTitle": "{name} està bé",
+    "okDetail": "Últim check-in a les {last}. El proper s'espera abans de les {next}.",
+    "overdueTitle": "{name} no ha fet el check-in",
+    "overdueDetail": "El check-in s'havia de fer abans de les {due}. Prova de trucar. Si no respon, truca al {number} i dona l'adreça que surt al mapa.",
+    "alarmTitle": "{name} necessita ajuda",
+    "alarmDetail": "Alarma a les {time}. Truca al {number} i dona la ubicació del mapa i el lloc de la trobada que hi ha a sota.",
+    "endedTitle": "La trobada s'ha acabat",
+    "endedDetail": "{name} ha confirmat que està bé.",
+    "endedDetailAlarm": "{name} ha confirmat que està bé. Durant la trobada s'ha activat una alarma – pregunta si tot va bé.",
+    "footer": "La ubicació deixarà de ser visible quan {name} acabi la trobada.",
+    "locationJustNow": "Ubicació ara mateix",
+    "locationAgo": {
+      "one": "Ubicació fa {count} min",
+      "many": "Ubicació fa {count} min",
+      "other": "Ubicació fa {count} min"
+    },
+    "battery": "bateria {percent}",
+    "linkExpired": "Aquest enllaç ja no és vàlid",
+    "loadFailed": "No s'ha pogut carregar l'estat. S'està tornant a provar…"
+  }
+}
