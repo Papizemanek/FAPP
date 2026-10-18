@@ -1,0 +1,9 @@
+**/node_modules
+**/*.db*
+**/.env
+.git
+app
+!app/package.json
+marketing
+web/preview
+web/src

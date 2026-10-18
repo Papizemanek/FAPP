@@ -135,6 +135,8 @@ Pozor na pravidla reklamy: Meta, TikTok a Reddit reklamy na seznamky pro sex nep
 Sklik erotiku jen 22–06 h. Kreativy „soft“ jsou bez slova sex. Jméno „F*app“ může narazit při review v App Storu
 a Google Play (vulgarismus) – zvážit neutrální název do obchodů.
 
+Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů): [TESTOVANI.md](TESTOVANI.md).
+
 ## Produkce – co je potřeba zařídit
 
 | Co | Proměnné | Poznámka |
