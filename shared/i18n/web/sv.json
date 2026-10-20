@@ -189,7 +189,13 @@
     "mockSms": "{name} har inte checkat in – det skulle ske kl. 23.40. Försök ringa henne.",
     "mockAlarm": "LARM: {name} behöver hjälp.",
     "mockLocation": "Plats delad",
-    "mockHold": "Håll in i 2 sekunder"
+    "mockHold": "Håll in i 2 sekunder",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Gäller bara när ni båda säger det.",
+    "twoTitle": "Ett ja räcker inte.",
+    "storyTitle": "Vi höll på att döpa den till F*app.",
+    "storyFoot": "* Sen kom vi överens.",
+    "bothFoot": "* Bara om ni båda vill."
   },
   "video": {
     "how1": "En dejtingapp bara för sex.",

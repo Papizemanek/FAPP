@@ -189,7 +189,13 @@
     "mockSms": "{name} se nije javila – javljanje je bilo predviđeno u 23:40. Pokušaj je nazvati.",
     "mockAlarm": "UZBUNA: {name} treba pomoć.",
     "mockLocation": "Lokacija podijeljena",
-    "mockHold": "Drži 2 sekunde"
+    "mockHold": "Drži 2 sekunde",
+    "yesTitle": "Da.",
+    "yesFoot": "* Vrijedi samo kad ga kažete oboje.",
+    "twoTitle": "Jedan da nije dovoljan.",
+    "storyTitle": "Htjeli smo se zvati F*app.",
+    "storyFoot": "* Onda smo se dogovorili.",
+    "bothFoot": "* Samo ako oboje želite."
   },
   "video": {
     "how1": "Aplikacija za upoznavanje samo za seks.",

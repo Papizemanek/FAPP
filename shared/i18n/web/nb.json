@@ -189,7 +189,13 @@
     "mockSms": "{name} har ikke sjekket inn – det skulle skjedd kl. 23.40. Prøv å ringe henne.",
     "mockAlarm": "ALARM: {name} trenger hjelp.",
     "mockLocation": "Posisjon delt",
-    "mockHold": "Hold inne i 2 sekunder"
+    "mockHold": "Hold inne i 2 sekunder",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Gjelder bare når dere begge sier det.",
+    "twoTitle": "Ett ja er ikke nok.",
+    "storyTitle": "Vi holdt på å kalle den F*app.",
+    "storyFoot": "* Så ble vi enige.",
+    "bothFoot": "* Bare hvis dere begge vil."
   },
   "video": {
     "how1": "En datingapp bare for sex.",

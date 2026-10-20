@@ -189,7 +189,13 @@
     "mockSms": "{name} chưa check-in – hạn là 23:40. Hãy thử gọi cho cô ấy.",
     "mockAlarm": "BÁO ĐỘNG: {name} cần giúp đỡ.",
     "mockLocation": "Đã chia sẻ vị trí",
-    "mockHold": "Giữ 2 giây"
+    "mockHold": "Giữ 2 giây",
+    "yesTitle": "Đồng ý.",
+    "yesFoot": "* Chỉ có giá trị khi cả hai cùng nói.",
+    "twoTitle": "Một lời đồng ý là chưa đủ.",
+    "storyTitle": "Suýt nữa chúng tôi đã đặt tên là F*app.",
+    "storyFoot": "* Rồi chúng tôi thống nhất với nhau.",
+    "bothFoot": "* Chỉ khi cả hai cùng muốn."
   },
   "video": {
     "how1": "Ứng dụng hẹn hò chỉ dành cho sex.",

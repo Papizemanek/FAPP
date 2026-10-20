@@ -131,7 +131,7 @@ body { font-family: var(--font-body); color: var(--text); -webkit-font-smoothing
 .three span { display: block; }
 .three .l2 { color: var(--accent); }
 .three .l3 { color: var(--safe); }
-.three sup { font-size: 0.5em; vertical-align: 0.85em; color: var(--accent); }
+.three sup, .starred sup { font-size: 0.5em; vertical-align: 0.85em; color: var(--accent); }
 .footnote { font-weight: 700; border-inline-start: calc(var(--u) * 0.5) solid var(--accent); padding-inline-start: calc(var(--u) * 2); font-size: calc(var(--u) * 3.4); }
 .quote::before { content: '*'; color: var(--accent); margin-inline-end: 0.06em; }
 
@@ -222,3 +222,7 @@ body { font-family: var(--font-body); color: var(--text); -webkit-font-smoothing
 .bump .three { font-size: calc(var(--u) * 21); }
 .fmt-square .bump .three { font-size: calc(var(--u) * 17); }
 .bump .three span { opacity: 0; }
+
+/* Plakát „Ano.*“ – jedno slovo přes celou šířku. */
+.banner h1.title.huge { font-size: calc(var(--u) * 30); line-height: 0.9; }
+.fmt-tall .banner h1.title.huge { font-size: calc(var(--u) * 34); }

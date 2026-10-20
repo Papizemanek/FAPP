@@ -189,7 +189,13 @@
     "mockSms": "{name} har ikke checket ind – det skulle ske kl. 23.40. Prøv at ringe til hende.",
     "mockAlarm": "ALARM: {name} har brug for hjælp.",
     "mockLocation": "Placering delt",
-    "mockHold": "Hold inde i 2 sekunder"
+    "mockHold": "Hold inde i 2 sekunder",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Gælder kun, når I begge siger det.",
+    "twoTitle": "Ét ja er ikke nok.",
+    "storyTitle": "Vi var lige ved at kalde den F*app.",
+    "storyFoot": "* Så blev vi enige.",
+    "bothFoot": "* Kun hvis I begge vil."
   },
   "video": {
     "how1": "En datingapp kun for sex.",

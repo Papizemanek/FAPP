@@ -189,7 +189,13 @@
     "mockSms": "{name} no ha fet el check-in – li tocava a les 23:40. Prova de trucar-li.",
     "mockAlarm": "ALARMA: {name} necessita ajuda.",
     "mockLocation": "Ubicació compartida",
-    "mockHold": "Mantén premut 2 segons"
+    "mockHold": "Mantén premut 2 segons",
+    "yesTitle": "Sí.",
+    "yesFoot": "* Només compta si el dieu tots dos.",
+    "twoTitle": "Amb un sol sí no n'hi ha prou.",
+    "storyTitle": "Ens volíem dir F*app.",
+    "storyFoot": "* Després ens vam posar d'acord.",
+    "bothFoot": "* Només si ho voleu tots dos."
   },
   "video": {
     "how1": "Una app de cites només per a sexe.",

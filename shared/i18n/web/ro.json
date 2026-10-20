@@ -189,7 +189,13 @@
     "mockSms": "{name} nu a făcut check-in – trebuia să confirme la 23:40. Încearcă s-o suni.",
     "mockAlarm": "ALARMĂ: {name} are nevoie de ajutor.",
     "mockLocation": "Locație partajată",
-    "mockHold": "Ține apăsat 2 secunde"
+    "mockHold": "Ține apăsat 2 secunde",
+    "yesTitle": "Da.",
+    "yesFoot": "* Contează doar dacă îl spuneți amândoi.",
+    "twoTitle": "Un singur da nu e de ajuns.",
+    "storyTitle": "Voiam să ne numim F*app.",
+    "storyFoot": "* Apoi am căzut de acord.",
+    "bothFoot": "* Doar dacă vreți amândoi."
   },
   "video": {
     "how1": "O aplicație de dating doar pentru sex.",

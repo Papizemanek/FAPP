@@ -189,7 +189,13 @@
     "mockSms": "{name} hasn't checked in – it was due at 23:40. Try calling her.",
     "mockAlarm": "ALARM: {name} needs help.",
     "mockLocation": "Location shared",
-    "mockHold": "Hold for 2 seconds"
+    "mockHold": "Hold for 2 seconds",
+    "yesTitle": "Yes.",
+    "yesFoot": "* Only counts when you both say it.",
+    "twoTitle": "One yes isn’t enough.",
+    "storyTitle": "We almost called it F*app.",
+    "storyFoot": "* Then we talked it over.",
+    "bothFoot": "* Only if you both want it."
   },
   "video": {
     "how1": "A dating app just for sex.",

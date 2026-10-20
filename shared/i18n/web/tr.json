@@ -189,7 +189,13 @@
     "mockSms": "{name} check-in yapmadı – saat 23:40'ta yapması gerekiyordu. Onu aramayı dene.",
     "mockAlarm": "ALARM: {name} yardıma ihtiyaç duyuyor.",
     "mockLocation": "Konum paylaşıldı",
-    "mockHold": "2 saniye basılı tut"
+    "mockHold": "2 saniye basılı tut",
+    "yesTitle": "Evet.",
+    "yesFoot": "* Sadece ikiniz de söylediğinizde geçerli.",
+    "twoTitle": "Tek bir evet yetmez.",
+    "storyTitle": "Adı neredeyse F*app olacaktı.",
+    "storyFoot": "* Sonra anlaştık.",
+    "bothFoot": "* Sadece ikiniz de istiyorsanız."
   },
   "video": {
     "how1": "Yalnızca seks için bir tanışma uygulaması.",

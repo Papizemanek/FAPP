@@ -189,7 +189,13 @@
     "mockSms": "{name} hat sich nicht gemeldet – fällig war es um 23:40. Versuch, sie anzurufen.",
     "mockAlarm": "ALARM: {name} braucht Hilfe.",
     "mockLocation": "Standort geteilt",
-    "mockHold": "2 Sekunden halten"
+    "mockHold": "2 Sekunden halten",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Zählt nur, wenn ihr es beide sagt.",
+    "twoTitle": "Ein Ja reicht nicht.",
+    "storyTitle": "Fast hätten wir uns F*app genannt.",
+    "storyFoot": "* Dann haben wir uns abgesprochen.",
+    "bothFoot": "* Nur wenn ihr es beide wollt."
   },
   "video": {
     "how1": "Eine Dating-App nur für Sex.",

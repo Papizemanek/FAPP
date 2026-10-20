@@ -189,7 +189,13 @@
     "mockSms": "{name} n'a pas fait son check-in – il était prévu à 23 h 40. Essaie de l'appeler.",
     "mockAlarm": "ALERTE : {name} a besoin d'aide.",
     "mockLocation": "Position partagée",
-    "mockHold": "Maintiens 2 secondes"
+    "mockHold": "Maintiens 2 secondes",
+    "yesTitle": "Oui.",
+    "yesFoot": "* Ça ne compte que si vous le dites à deux.",
+    "twoTitle": "Un seul oui ne suffit pas.",
+    "storyTitle": "On a failli s'appeler F*app.",
+    "storyFoot": "* Puis on s'est mis d'accord.",
+    "bothFoot": "* Seulement si l'envie est partagée."
   },
   "video": {
     "how1": "Une appli de rencontres juste pour le sexe.",

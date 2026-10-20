@@ -122,8 +122,15 @@ const mocks = {
 };
 
 // --- bannery ---
+// Titulek s hvězdičkou, kterou vysvětlí poznámka pod čarou (foot).
+const starred = (key, cls = '') => (t) =>
+  `<h1 class="display title starred ${cls}">${t(key).replace('F*app', 'F<span class="star">*</span>app')}<sup>*</sup></h1>`;
 const BANNERS = {
-  brand: { title: (t) => three(t, 'h1', 'title'), visual: null, footnote: true },
+  brand: { title: (t) => three(t, 'h1', 'title'), visual: null, foot: 'hero.footnote' },
+  yes: { title: starred('ads.yesTitle', 'huge'), visual: null, foot: 'ads.yesFoot' },
+  twoyes: { title: starred('ads.twoTitle'), visual: 'overlap', foot: 'hero.footnote' },
+  both: { title: (t) => three(t, 'h1', 'title'), visual: null, foot: 'ads.bothFoot' },
+  story: { title: starred('ads.storyTitle'), visual: null, foot: 'ads.storyFoot' },
   blind: { title: (t) => `<h1 class="display title">${t('ads.blindTitle')}</h1>`, text: 'ads.blindText', visual: 'overlap' },
   safety: { title: (t) => `<h1 class="display title">${t('ads.safetyTitle')}</h1>`, text: 'ads.safetyText', visual: 'safety' },
   consent: { title: (t) => `<h1 class="display title quote">${t('ads.consentTitle')}</h1>`, text: 'ads.consentText', visual: null },
@@ -136,8 +143,8 @@ function renderBanner(t, stage, fmt) {
   const spec = BANNERS[concept] ?? BANNERS.brand;
   const compact = ['strip', 'billboard', 'sky', 'small'].includes(fmt);
   // V malých formátech je místo tří řádků jen jedna věta.
-  const title = compact && concept === 'brand' ? `<h1 class="display title">${t('ads.brandTitle')}</h1>` : spec.title(t);
-  const text = spec.text ? `<p class="text">${t(spec.text)}</p>` : concept === 'brand' && !compact ? `<p class="footnote">${t('hero.footnote')}</p>` : '';
+  const title = compact && ['brand', 'both'].includes(concept) ? `<h1 class="display title">${t('ads.brandTitle')}</h1>` : spec.title(t);
+  const text = spec.text ? `<p class="text">${t(spec.text)}</p>` : spec.foot && !compact ? `<p class="footnote">${t(spec.foot)}</p>` : '';
   const visual = spec.visual && !compact ? `<div class="visual">${mocks[spec.visual](t)}</div>` : '';
   stage.innerHTML = `
     <div class="glow" style="width:calc(var(--u)*90);height:calc(var(--u)*90);inset-inline-end:calc(var(--u)*-30);top:calc(var(--u)*-30);background:${concept === 'soft' || concept === 'safety' ? 'var(--safe)' : 'var(--accent)'}"></div>

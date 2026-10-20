@@ -189,7 +189,13 @@
     "mockSms": "{name} no ha hecho check-in: debía hacerlo a las 23:40. Intenta llamarla.",
     "mockAlarm": "ALARMA: {name} necesita ayuda.",
     "mockLocation": "Ubicación compartida",
-    "mockHold": "Mantén presionado 2 segundos"
+    "mockHold": "Mantén presionado 2 segundos",
+    "yesTitle": "Sí.",
+    "yesFoot": "* Solo cuenta si lo decís los dos.",
+    "twoTitle": "Un solo sí no basta.",
+    "storyTitle": "Casi nos llamamos F*app.",
+    "storyFoot": "* Luego nos pusimos de acuerdo.",
+    "bothFoot": "* Solo si los dos queréis."
   },
   "video": {
     "how1": "Una app de citas solo para sexo.",

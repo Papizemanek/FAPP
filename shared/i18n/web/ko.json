@@ -189,7 +189,13 @@
     "mockSms": "{name}님이 체크인하지 않았어요 – 23:40까지였어요. 전화해 보세요.",
     "mockAlarm": "경보: {name}님이 도움이 필요해요.",
     "mockLocation": "위치 공유됨",
-    "mockHold": "2초간 길게 누르기"
+    "mockHold": "2초간 길게 누르기",
+    "yesTitle": "좋아요.",
+    "yesFoot": "* 둘 다 말해야만 유효해요.",
+    "twoTitle": "한 사람의 ‘좋아요’로는 부족해요.",
+    "storyTitle": "이름이 F*app이 될 뻔했어요.",
+    "storyFoot": "* 그러다 서로 합의했어요.",
+    "bothFoot": "* 둘 다 원할 때만요."
   },
   "video": {
     "how1": "섹스만을 위한 데이팅 앱.",

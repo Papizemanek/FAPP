@@ -189,7 +189,13 @@
     "mockSms": "{name} se ni javila – potrditev bi morala priti ob 23.40. Poskusi jo poklicati.",
     "mockAlarm": "ALARM: {name} potrebuje pomoč.",
     "mockLocation": "Lokacija deljena",
-    "mockHold": "Pridrži 2 sekundi"
+    "mockHold": "Pridrži 2 sekundi",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Velja le, če ga rečeta oba.",
+    "twoTitle": "En ja ni dovolj.",
+    "storyTitle": "Hoteli smo se imenovati F*app.",
+    "storyFoot": "* Potem smo se zmenili.",
+    "bothFoot": "* Le če si oba želita."
   },
   "video": {
     "how1": "Aplikacija za zmenke samo za seks.",

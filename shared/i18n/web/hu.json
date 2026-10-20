@@ -189,7 +189,13 @@
     "mockSms": "{name} nem jelentkezett – 23:40-re kellett volna. Próbáld felhívni.",
     "mockAlarm": "RIASZTÁS: {name} segítségre szorul.",
     "mockLocation": "Hely megosztva",
-    "mockHold": "Tartsd nyomva 2 másodpercig"
+    "mockHold": "Tartsd nyomva 2 másodpercig",
+    "yesTitle": "Igen.",
+    "yesFoot": "* Csak akkor számít, ha mindketten kimondjátok.",
+    "twoTitle": "Egy igen nem elég.",
+    "storyTitle": "Majdnem F*app lett a nevünk.",
+    "storyFoot": "* Aztán megegyeztünk.",
+    "bothFoot": "* Csak ha mindketten akarjátok."
   },
   "video": {
     "how1": "Randiapp csak szexre.",

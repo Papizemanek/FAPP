@@ -189,7 +189,13 @@
     "mockSms": "{name} belum check-in – seharusnya pukul 23.40. Coba telepon dia.",
     "mockAlarm": "ALARM: {name} butuh bantuan.",
     "mockLocation": "Lokasi dibagikan",
-    "mockHold": "Tahan 2 detik"
+    "mockHold": "Tahan 2 detik",
+    "yesTitle": "Ya.",
+    "yesFoot": "* Hanya berlaku kalau kalian berdua mengatakannya.",
+    "twoTitle": "Satu ya tidak cukup.",
+    "storyTitle": "Kami hampir menamainya F*app.",
+    "storyFoot": "* Lalu kami sepakat.",
+    "bothFoot": "* Hanya kalau kalian berdua mau."
   },
   "video": {
     "how1": "Aplikasi kencan khusus seks.",

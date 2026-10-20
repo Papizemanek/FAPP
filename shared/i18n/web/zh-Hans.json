@@ -189,7 +189,13 @@
     "mockSms": "{name} 没有报平安——原定 23:40 前确认。试着给她打电话。",
     "mockAlarm": "警报：{name} 需要帮助。",
     "mockLocation": "位置已共享",
-    "mockHold": "长按 2 秒"
+    "mockHold": "长按 2 秒",
+    "yesTitle": "好。",
+    "yesFoot": "* 只有你们都说了才算数。",
+    "twoTitle": "一个“好”不够。",
+    "storyTitle": "我们差点叫它F*app。",
+    "storyFoot": "* 后来我们谈妥了。",
+    "bothFoot": "* 只在你们都想要的时候。"
   },
   "video": {
     "how1": "只为性的约会 App。",

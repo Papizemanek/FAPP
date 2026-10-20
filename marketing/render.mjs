@@ -23,7 +23,7 @@ const opt = (name) => {
 };
 
 const FULL_LANGS = ['cs', 'en'];
-const CONCEPTS = ['brand', 'blind', 'safety', 'consent', 'verified', 'duress', 'soft'];
+const CONCEPTS = ['brand', 'yes', 'twoyes', 'both', 'story', 'blind', 'safety', 'consent', 'verified', 'duress', 'soft'];
 const SOCIAL = [
   [1080, 1080],
   [1080, 1350],
@@ -37,7 +37,7 @@ const DISPLAY = [
   [320, 50],
   [970, 250],
 ];
-const DISPLAY_CONCEPTS = ['brand', 'safety', 'soft'];
+const DISPLAY_CONCEPTS = ['brand', 'twoyes', 'safety', 'soft'];
 const VIDEOS = [
   ['how', 1080, 1920],
   ['how', 1080, 1080],
@@ -148,7 +148,7 @@ if (doBanners) {
     for (const c of DISPLAY_CONCEPTS) for (const [w, h] of DISPLAY) jobs.push([lang, c, w, h]);
   }
   for (const lang of core) {
-    jobs.push([lang, 'brand', 1080, 1080], [lang, 'safety', 1080, 1920], [lang, 'blind', 1080, 1350]);
+    jobs.push([lang, 'brand', 1080, 1080], [lang, 'yes', 1080, 1080], [lang, 'safety', 1080, 1920], [lang, 'blind', 1080, 1350]);
   }
   for (const lang of [...full, ...core]) jobs.push([lang, 'og', 1200, 630]);
   let done = 0;

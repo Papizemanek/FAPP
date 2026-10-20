@@ -189,7 +189,13 @@
     "mockSms": "{name} heeft niet ingecheckt – dat had om 23:40 moeten gebeuren. Probeer haar te bellen.",
     "mockAlarm": "ALARM: {name} heeft hulp nodig.",
     "mockLocation": "Locatie gedeeld",
-    "mockHold": "2 seconden vasthouden"
+    "mockHold": "2 seconden vasthouden",
+    "yesTitle": "Ja.",
+    "yesFoot": "* Telt alleen als jullie het allebei zeggen.",
+    "twoTitle": "Eén ja is niet genoeg.",
+    "storyTitle": "We wilden hem bijna F*app noemen.",
+    "storyFoot": "* Toen werden we het eens.",
+    "bothFoot": "* Alleen als jullie het allebei willen."
   },
   "video": {
     "how1": "Een datingapp puur voor seks.",

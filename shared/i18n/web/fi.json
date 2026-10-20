@@ -189,7 +189,13 @@
     "mockSms": "{name} ei ole kuitannut – kuittaus oli määrä tehdä klo 23.40. Yritä soittaa hänelle.",
     "mockAlarm": "HÄLYTYS: {name} tarvitsee apua.",
     "mockLocation": "Sijainti jaettu",
-    "mockHold": "Pidä painettuna 2 sekuntia"
+    "mockHold": "Pidä painettuna 2 sekuntia",
+    "yesTitle": "Kyllä.",
+    "yesFoot": "* Pätee vain, kun sanotte sen molemmat.",
+    "twoTitle": "Yksi kyllä ei riitä.",
+    "storyTitle": "Nimen piti olla F*app.",
+    "storyFoot": "* Sitten sovimme toisin.",
+    "bothFoot": "* Vain jos haluatte molemmat."
   },
   "video": {
     "how1": "Deittisovellus vain seksiin.",

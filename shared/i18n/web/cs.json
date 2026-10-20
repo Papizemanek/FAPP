@@ -189,7 +189,13 @@
     "mockSms": "{name} se neozvala – potvrzení mělo přijít ve 23:40. Zkus zavolat.",
     "mockAlarm": "POPLACH: {name} potřebuje pomoc.",
     "mockLocation": "Poloha sdílená",
-    "mockHold": "Podrž 2 sekundy"
+    "mockHold": "Podrž 2 sekundy",
+    "yesTitle": "Ano.",
+    "yesFoot": "* Platí, jen když ho řeknete oba.",
+    "twoTitle": "Jedno ano nestačí.",
+    "storyTitle": "Chtěli jsme se jmenovat F*app.",
+    "storyFoot": "* Pak jsme se domluvili.",
+    "bothFoot": "* Jen když chcete oba."
   },
   "video": {
     "how1": "Seznamka jen na sex.",

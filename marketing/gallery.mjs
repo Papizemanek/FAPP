@@ -9,7 +9,11 @@ const exists = (p) => fs.existsSync(path.join(out, p));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const CONCEPTS = [
-  ['brand', 'Značka', 'Sex. Domluvený. Bezpečný.'],
+  ['brand', 'Značka', 'Sex. Domluvený. Bezpečný.* – *Dvě ano, nebo nic.'],
+  ['yes', 'Ano.*', '*Platí, jen když ho řeknete oba.'],
+  ['twoyes', 'Jedno ano nestačí.*', '*Dvě ano, nebo nic. S maketou domluvy naslepo.'],
+  ['both', 'Jen když oba', 'Sex. Domluvený. Bezpečný.* – *Jen když chcete oba.'],
+  ['story', 'Příběh jména', 'Chtěli jsme se jmenovat F*app.* – *Pak jsme se domluvili. Jen vlastní kanály a PR, ne placená reklama.'],
   ['blind', 'Domluva naslepo', 'Uvidíte jen shodu.'],
   ['safety', 'Bezpečí', 'Někdo ví, kde jsi.'],
   ['consent', 'Souhlas', 'Ne znamená ne. I v appce.'],
@@ -52,7 +56,7 @@ function setFor(lang) {
       .join('');
     return imgs ? `<div class="concept"><div class="concept-head"><b>${name}</b><span>${esc(note)}</span></div><div class="row">${imgs}</div></div>` : '';
   }).join('');
-  const display = ['brand', 'safety', 'soft']
+  const display = ['brand', 'twoyes', 'safety', 'soft']
     .map((c) =>
       DISPLAY.filter((s) => exists(`banners/${lang}/${c}-${s}.jpg`))
         .map((s) => {
@@ -73,7 +77,7 @@ const others = LOCALES.filter((l) => !['cs', 'en'].includes(l.code) && exists(`b
 const langGrid = others
   .map(
     (l) => `<div class="lang"><div class="lang-name" dir="auto">${esc(l.name)} <span>${l.code}</span></div><div class="lang-row">
-      ${['brand-1080x1080', 'blind-1080x1350', 'safety-1080x1920']
+      ${['brand-1080x1080', 'yes-1080x1080', 'blind-1080x1350', 'safety-1080x1920']
         .filter((f) => exists(`banners/${l.code}/${f}.jpg`))
         .map((f) => `<img loading="lazy" src="${ref(`banners/${l.code}/${f}.jpg`)}" alt="${esc(l.name)} ${f}">`)
         .join('')}</div></div>`,
@@ -115,7 +119,7 @@ figcaption b { color: var(--text); }
 .langs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
 .lang-name { font: 800 1.05rem var(--display); margin-bottom: 8px; }
 .lang-name span { font: 600 12px var(--body); color: var(--muted); margin-inline-start: 6px; }
-.lang-row { display: grid; grid-template-columns: 1fr 0.8fr 0.5625fr; gap: 8px; align-items: end; }
+.lang-row { display: grid; grid-template-columns: 1fr 1fr 0.8fr 0.5625fr; gap: 8px; align-items: end; }
 @media (max-width: 640px) { .row { grid-template-columns: 1fr 1fr; } .vid.wide { grid-column: auto; } }
 </style>
 <div class="wrap">
@@ -128,7 +132,7 @@ figcaption b { color: var(--text); }
   ${setFor('cs')}
   ${setFor('en')}
   <h2>Další jazyky</h2>
-  <p class="lead" style="margin-bottom:18px">Základní sada (čtverec, feed, stories) pro ${others.length} dalších jazyků. Ostatní formáty a videa jedním příkazem.</p>
+  <p class="lead" style="margin-bottom:18px">Základní sada (dva čtverce, feed, stories) pro ${others.length} dalších jazyků. Ostatní formáty a videa jedním příkazem.</p>
   <div class="langs">${langGrid}</div>
 </div>
 <script>

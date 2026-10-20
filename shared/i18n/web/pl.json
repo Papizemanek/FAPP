@@ -189,7 +189,13 @@
     "mockSms": "{name} nie odezwała się – potwierdzenie miało przyjść o 23:40. Spróbuj do niej zadzwonić.",
     "mockAlarm": "ALARM: {name} potrzebuje pomocy.",
     "mockLocation": "Lokalizacja udostępniona",
-    "mockHold": "Przytrzymaj 2 sekundy"
+    "mockHold": "Przytrzymaj 2 sekundy",
+    "yesTitle": "Tak.",
+    "yesFoot": "* Liczy się tylko, gdy powiecie je oboje.",
+    "twoTitle": "Jedno tak nie wystarczy.",
+    "storyTitle": "Chcieliśmy się nazywać F*app.",
+    "storyFoot": "* Potem się dogadaliśmy.",
+    "bothFoot": "* Tylko jeśli oboje chcecie."
   },
   "video": {
     "how1": "Aplikacja randkowa tylko na seks.",
