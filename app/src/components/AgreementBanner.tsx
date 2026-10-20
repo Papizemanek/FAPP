@@ -1,4 +1,4 @@
-import { REVOKE_COOLDOWN_DAYS } from '@fapp/shared';
+import { REVOKE_COOLDOWN_DAYS } from '@yesyes/shared';
 import { router } from 'expo-router';
 import { View } from 'react-native';
 import type { MatchDetail } from '@/lib/api';

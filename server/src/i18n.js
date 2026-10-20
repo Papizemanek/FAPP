@@ -56,7 +56,7 @@ export function normalizeLocale(locale) {
   return matchLocale([locale]);
 }
 
-const MSG = Symbol.for('fapp.i18n.msg');
+const MSG = Symbol.for('yesyes.i18n.msg');
 
 /** Text, který se přeloží až podle jazyka toho, kdo ho uvidí. */
 export const msg = (key, params) => ({ [MSG]: true, key, params });

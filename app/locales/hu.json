@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "Az F*app a helyadataid alapján mutatja meg a közelben lévő embereket, randi közben pedig megosztja őket a megbízható személyeddel.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Randi közben az F*app akkor is megosztja a tartózkodási helyedet a megbízható személyeddel, ha ki van kapcsolva a képernyő. Randin kívül nem használja a helyadataidat a háttérben.",
-    "NSFaceIDUsageDescription": "Az F*app Face ID-val oldható fel, így más nem nézhet bele.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "Az YesYes a helyadataid alapján mutatja meg a közelben lévő embereket, randi közben pedig megosztja őket a megbízható személyeddel.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Randi közben az YesYes akkor is megosztja a tartózkodási helyedet a megbízható személyeddel, ha ki van kapcsolva a képernyő. Randin kívül nem használja a helyadataidat a háttérben.",
+    "NSFaceIDUsageDescription": "Az YesYes Face ID-val oldható fel, így más nem nézhet bele.",
     "NSPhotoLibraryUsageDescription": "Válassz fotókat a profilodhoz.",
     "NSCameraUsageDescription": "Készíts magadról fotót a profilodhoz."
   }

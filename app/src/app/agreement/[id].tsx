@@ -1,4 +1,4 @@
-import { ACTIVITIES, REVOKE_COOLDOWN_DAYS, WISHES } from '@fapp/shared';
+import { ACTIVITIES, REVOKE_COOLDOWN_DAYS, WISHES } from '@yesyes/shared';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useMemo, useState } from 'react';

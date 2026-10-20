@@ -1,4 +1,4 @@
-import { GENDERS } from '@fapp/shared';
+import { GENDERS } from '@yesyes/shared';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';

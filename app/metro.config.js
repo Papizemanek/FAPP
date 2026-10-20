@@ -3,9 +3,9 @@ const path = require('path');
 
 const config = getDefaultConfig(__dirname);
 
-// FAPP_DEMO=1: webový prototyp (npm run demo:build). Server nahradí simulovaný backend v prohlížeči
+// YESYES_DEMO=1: webový prototyp (npm run demo:build). Server nahradí simulovaný backend v prohlížeči
 // a nativní moduly prázdné náhrady. Běžné sestavení aplikace se tím nemění.
-if (process.env.FAPP_DEMO === '1') {
+if (process.env.YESYES_DEMO === '1') {
   const demo = (file) => path.join(__dirname, 'demo', file);
   const modules = {
     'react-native-maps': 'shims/maps.js',

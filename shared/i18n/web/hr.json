@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplikacija za upoznavanje samo za seks. Dogovoreno i sigurno.",
-    "description": "F*app je aplikacija za upoznavanje samo za seks, za provjerene odrasle osobe. Dogovor naslijepo, sigurnosni način s osobom od povjerenja, SOS i hitni PIN. Uskoro u Pragu.",
+    "title": "YesYes – aplikacija za upoznavanje samo za seks. Dogovoreno i sigurno.",
+    "description": "YesYes je aplikacija za upoznavanje samo za seks, za provjerene odrasle osobe. Dogovor naslijepo, sigurnosni način s osobom od povjerenja, SOS i hitni PIN. Uskoro u Pragu.",
     "ogTitle": "Seks. Dogovoreno. Sigurno.",
     "langName": "Hrvatski"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Dogovoreno.",
     "title3": "Sigurno.",
-    "lead": "F*app je aplikacija za upoznavanje samo za seks. Ljudi s provjerenim identitetom, dogovor naslijepo, a tijekom spoja netko kome vjeruješ zna gdje si.",
+    "lead": "YesYes je aplikacija za upoznavanje samo za seks. Ljudi s provjerenim identitetom, dogovor naslijepo, a tijekom spoja netko kome vjeruješ zna gdje si.",
     "note": "Samo za 18+. Javit ćemo ti se e-mailom jednom, kad krenemo.",
-    "footnote": "* Samo kad oboje kažete da. I samo ovdje i sada.",
+    "footnote": "* Dva „da” ili ništa.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km od tebe",
@@ -36,7 +36,7 @@
     "email": "Tvoj e-mail",
     "emailPlaceholder": "ime@email.com",
     "city": "Grad",
-    "consent": "Pristajem da mi F*app pošalje pozivnicu na ovaj e-mail. Mogu se odjaviti u bilo kojem trenutku.",
+    "consent": "Pristajem da mi YesYes pošalje pozivnicu na ovaj e-mail. Mogu se odjaviti u bilo kojem trenutku.",
     "submit": "Želim pozivnicu",
     "sending": "Šaljem…",
     "success": "Gotovo. Kad krenemo, saznat ćeš među prvima.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Besplatno na početku. Sigurnost zauvijek.",
-    "text": "Trenutno je F*app potpuno besplatan. Plaćeni dodaci poput neograničenih lajkova ili boostova stižu kasnije. Provjera identiteta, dogovor i sigurnosni način uvijek će biti besplatni.",
+    "text": "Trenutno je YesYes potpuno besplatan. Plaćeni dodaci poput neograničenih lajkova ili boostova stižu kasnije. Provjera identiteta, dogovor i sigurnosni način uvijek će biti besplatni.",
     "freeTitle": "Uvijek besplatno",
     "free1": "Provjera identiteta",
     "free2": "Dogovor naslijepo",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Česta pitanja",
-    "q1": "Je li F*app stvarno samo za seks?",
+    "q1": "Je li YesYes stvarno samo za seks?",
     "a1": "Da. Bez traženja veze i bez pretvaranja. Ako tražiš nešto drugo, naći ćeš to negdje drugdje.",
     "q2": "Zašto moram potvrditi identitet?",
     "a2": "Da bi svatko bio onaj za koga se predstavlja i da bi zabrana vrijedila za osobu, a ne samo za račun. Provjeru obavlja specijalizirana usluga; mi čuvamo samo rezultat, tvoj datum rođenja i šifrirani otisak – nikad tvoj dokument.",
@@ -129,14 +129,14 @@
     "a3": "Nitko. Druga osoba vidi samo ono oko čega se slažete. Tvoje „ne“ ostaje samo tvoje.",
     "q4": "Što ako nešto pođe po zlu na spoju?",
     "a4": "Drži SOS ili unesi hitni PIN, koji izgleda kao obični. Tvoja osoba od povjerenja dobiva uzbunu s tvojom lokacijom. Nakon spoja aplikacija ti nudi kontakte za pomoć.",
-    "q5": "Hoće li ljudi oko mene znati da koristim F*app?",
+    "q5": "Hoće li ljudi oko mene znati da koristim YesYes?",
     "a5": "Ne moraju. Možeš se prebaciti na diskretnu ikonu, obavijesti ništa ne odaju, a aplikacija se zaključava licem ili otiskom prsta.",
     "q6": "Koliko košta?",
     "a6": "Na početku ništa. Sigurnost ostaje besplatna i nakon toga.",
-    "q7": "Gdje F*app radi?",
+    "q7": "Gdje YesYes radi?",
     "a7": "Krećemo u Pragu. Ostali gradovi slijede prema listi čekanja.",
     "q8": "Imam 17 godina. Mogu li se pridružiti?",
-    "a8": "Ne. F*app je samo za osobe starije od 18 godina, a to provjeravamo prema osobnom dokumentu."
+    "a8": "Ne. YesYes je samo za osobe starije od 18 godina, a to provjeravamo prema osobnom dokumentu."
   },
   "rules": {
     "title": "Pravila zajednice",
@@ -158,7 +158,7 @@
     "rules": "Pravila zajednice",
     "privacy": "Privatnost",
     "help": "Trebaš pomoć nakon spoja? Obrati se lokalnoj policiji ili liniji za podršku žrtvama.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Želim pozivnicu",
@@ -185,7 +185,7 @@
     "mockPin": "Unesi PIN",
     "mockTrusted": "Osoba od povjerenja",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Poruka od F*app",
+    "mockSmsFrom": "Poruka od YesYes",
     "mockSms": "{name} se nije javila – javljanje je bilo predviđeno u 23:40. Pokušaj je nazvati.",
     "mockAlarm": "UZBUNA: {name} treba pomoć.",
     "mockLocation": "Lokacija podijeljena",

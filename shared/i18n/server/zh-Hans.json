@@ -65,7 +65,7 @@
   "auth": {
     "confirmAdult": "你必须确认自己已年满 18 岁。",
     "acceptRules": "你必须同意规则以及对你数据的处理。",
-    "underage": "F*app 仅限 18 岁及以上的人使用。",
+    "underage": "YesYes 仅限 18 岁及以上的人使用。",
     "invalidBirthdate": "出生日期无效。",
     "emailTaken": "使用此邮箱的账户已存在。",
     "wrongCredentials": "邮箱或密码错误。",
@@ -110,12 +110,12 @@
     "cantRewindMatch": "这次滑动已经配对成功。"
   },
   "billing": {
-    "likeLimit": "你的喜欢用完了。很快会补充——或者开通 F*app Plus 无限滑卡。",
+    "likeLimit": "你的喜欢用完了。很快会补充——或者开通 YesYes Plus 无限滑卡。",
     "noSuperLike": "你没有超级喜欢了。",
     "noBoost": "你没有加速了。",
     "tonightPaid": "“今晚”包含在 Platinum 中，也可单次购买。",
-    "featureInPlan": "{feature}是 F*app {plan} 的功能。",
-    "paymentsOff": "付费功能尚未开启——F*app 目前完全免费。",
+    "featureInPlan": "{feature}是 YesYes {plan} 的功能。",
+    "paymentsOff": "付费功能尚未开启——YesYes 目前完全免费。",
     "unknownProduct": "未知商品。",
     "cantBuy": "现在无法购买。",
     "cantBoost": "现在无法开启加速。",
@@ -153,10 +153,10 @@
     "photo": "照片"
   },
   "moderation": {
-    "minor": "这条消息显示你们中可能有人未满 18 岁。F*app 仅限 18 岁以上。",
-    "paid": "F*app 禁止提供或寻求付费性交易。",
+    "minor": "这条消息显示你们中可能有人未满 18 岁。YesYes 仅限 18 岁以上。",
+    "paid": "YesYes 禁止提供或寻求付费性交易。",
     "consentPressure": "提醒：App 里的约定不等于同意。你可以随时取消，见面时也可以拒绝任何事——无需解释。",
-    "contact": "对方正在分享 App 外的联系方式。离开 F*app 后，约定、安全模式和举报都无法为你提供保障。"
+    "contact": "对方正在分享 App 外的联系方式。离开 YesYes 后，约定、安全模式和举报都无法为你提供保障。"
   },
   "safety": {
     "notFound": "未找到约会。",
@@ -176,9 +176,9 @@
     "noWebhook": "开发用提供方没有 webhook。",
     "unavailable": "验证服务暂无响应。请稍后再试。",
     "declined": {
-      "underage": "验证显示你还未满 18 岁。F*app 仅限成年人使用。",
-      "banned": "此人因违反规则已被 F*app 封禁。",
-      "duplicate": "此人已经有 F*app 账户了。每人只能有一个账户。",
+      "underage": "验证显示你还未满 18 岁。YesYes 仅限成年人使用。",
+      "banned": "此人因违反规则已被 YesYes 封禁。",
+      "duplicate": "此人已经有 YesYes 账户了。每人只能有一个账户。",
       "incomplete": "无法从证件中读取出生日期。请重试。",
       "default": "验证失败。请重试。"
     }
@@ -235,7 +235,7 @@
     "someone": "你身边的人"
   },
   "share": {
-    "pageTitle": "F*app – 安全链接",
+    "pageTitle": "YesYes – 安全链接",
     "header": "安全链接",
     "loading": "正在加载…",
     "call": "拨打 {number}",

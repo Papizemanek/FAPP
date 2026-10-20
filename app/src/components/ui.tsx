@@ -29,8 +29,8 @@ export function Screen({ children, edges = ['top', 'bottom'], style }: { childre
 
 export function Logo({ size = 26 }: { size?: number }) {
   return (
-    <Text style={{ fontFamily: fonts.display, fontSize: size, color: colors.text, letterSpacing: -size / 50 }}>
-      F<Text style={{ color: colors.accent }}>*</Text>app
+    <Text style={{ fontFamily: fonts.display, fontSize: size, color: colors.text, letterSpacing: -size / 50, writingDirection: 'ltr' }}>
+      YesYes<Text style={{ color: colors.accent }}>*</Text>
     </Text>
   );
 }

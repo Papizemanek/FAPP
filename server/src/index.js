@@ -17,5 +17,5 @@ const { app, ctx } = createApp({ db, config, services });
 startWatchdog(ctx);
 
 app.listen(config.port, () => {
-  console.log(`F*app server běží na ${config.publicUrl} (ověření: ${services.verification.name}, SMS: ${services.sms.name})`);
+  console.log(`YesYes server běží na ${config.publicUrl} (ověření: ${services.verification.name}, SMS: ${services.sms.name})`);
 });

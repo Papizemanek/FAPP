@@ -1,1 +1,1 @@
-Prva verzija aplikacije F*app. Provjera identiteta, dogovor naslijepo i sigurnosni način.
+Prva verzija aplikacije YesYes. Provjera identiteta, dogovor naslijepo i sigurnosni način.

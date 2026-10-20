@@ -103,7 +103,7 @@ export function shareRoutes({ db }) {
 
   // Návrat z ověřovací služby zpět do aplikace.
   r.get('/verification/done', (_req, res) => {
-    res.redirect('fapp://verify');
+    res.redirect('yesyes://verify');
   });
 
   return r;

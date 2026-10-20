@@ -116,7 +116,7 @@
   "consent": {
     "intent": "這是我的想法。到了現場，我可以拒絕任何事——對方也一樣。",
     "notice": "我了解：同意只在此時此地有效。「不」、「停」、安全詞、沉默、身體僵住或酒醉，都不是同意。App 裡的約定不會免除任何人的責任。",
-    "deterrence": "F*app 上的每個人都通過身分驗證。如果我們懷疑有犯罪行為，會將其身分資料移交警方。"
+    "deterrence": "YesYes 上的每個人都通過身分驗證。如果我們懷疑有犯罪行為，會將其身分資料移交警方。"
   },
   "welcome": {
     "tagline": "性，不拐彎抹角。",
@@ -406,8 +406,8 @@
       "edit": "編輯"
     },
     "plan": {
-      "freeTitle": "F*app Plus、Gold 和 Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus、Gold 和 Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "無限喜歡、看看誰喜歡你、加速等更多功能。",
       "validUntil": "有效至 {date}。",
       "upgrade": "升級",
@@ -445,7 +445,7 @@
   "premium": {
     "title": "訂閱",
     "free": {
-      "title": "F*app 目前免費",
+      "title": "YesYes 目前免費",
       "body": "付費功能之後才會推出。安全功能——身分驗證、約定、安全模式和 SOS——將永遠免費。"
     },
     "back": "返回",
@@ -455,7 +455,7 @@
       "likeLimitAt": "你的喜歡用完了。{time} 會補充。",
       "likeLimit": "你的喜歡用完了。很快會補充。",
       "noCredit": "{credit} 可單次購買，或透過訂閱取得。",
-      "upgrade": "這是 F*app {plan} 的功能。"
+      "upgrade": "這是 YesYes {plan} 的功能。"
     },
     "oneOff": "單次購買",
     "owned": "你有 {count} 個",
@@ -476,9 +476,9 @@
         "other": "你獲得了 {count} 次額外「今晚」。"
       }
     },
-    "currentPlan": "你已擁有 F*app {plan}",
+    "currentPlan": "你已擁有 YesYes {plan}",
     "validUntil": "有效至 {date}。",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "無限滑卡，還能找回不小心滑掉的個人檔案。",
       "gold": "看看誰喜歡你——一鍵配對。",
@@ -493,7 +493,7 @@
     "perMonthSave": "每月 · −{percent}%",
     "continueWithPrice": "繼續 · {price}",
     "planBought": {
-      "other": "你已獲得 {count} 個月的 F*app {plan}。"
+      "other": "你已獲得 {count} 個月的 YesYes {plan}。"
     },
     "renewal": "訂閱會自動續訂。你可以隨時在 App Store 或 Google Play 設定中取消。價格對所有人都一樣。",
     "renewalUpfront": "你需要預先支付 {total}（每月 {monthly}）。訂閱會自動續訂。你可以隨時在 App Store 或 Google Play 設定中取消。價格對所有人都一樣。",
@@ -515,13 +515,13 @@
       "other": "{count} 人喜歡你"
     },
     "lockedEmpty": "喜歡你的人會顯示在這裡",
-    "goldText": "升級 F*app Gold，看看他們是誰，一鍵配對。",
+    "goldText": "升級 YesYes Gold，看看他們是誰，一鍵配對。",
     "goldCta": "升級 Gold 查看",
     "emptySent": "最近 7 天沒有未配對的喜歡。",
     "superLikePending": "超級喜歡 · 等待中",
     "pending": "等待回應",
     "sentTitle": "你喜歡的人",
-    "platinumText": "升級 F*app Platinum，查看你最近 7 天送出的喜歡。",
+    "platinumText": "升級 YesYes Platinum，查看你最近 7 天送出的喜歡。",
     "platinumCta": "升級 Platinum 查看",
     "likeBack": "也喜歡對方",
     "pass": "略過"
@@ -549,13 +549,13 @@
     "iAm": "我是",
     "showMe": "想看到",
     "confirmAdult": "我已年滿 18 歲。",
-    "acceptRules": "我同意社群規範，並同意為了讓 F*app 正常運作而處理我的資料，包括與我性生活相關的資料。",
+    "acceptRules": "我同意社群規範，並同意為了讓 YesYes 正常運作而處理我的資料，包括與我性生活相關的資料。",
     "verifyNote": "接下來我們會立即驗證你的身分和年齡（證件和自拍）。我們不會保存你的證件。",
     "continue": "繼續"
   },
   "verify": {
     "title": "驗證你的身分",
-    "intro": "F*app 上的每個人都通過身分和年齡驗證。你需要拍攝證件和一張自拍——大約需要兩分鐘。",
+    "intro": "YesYes 上的每個人都通過身分和年齡驗證。你需要拍攝證件和一張自拍——大約需要兩分鐘。",
     "privacy": "我們不會保存你的證件或照片，只保留驗證結果和你的出生日期。違反規範的人無法用新帳號重新加入。",
     "pending": {
       "title": "正在等待驗證結果",
@@ -646,7 +646,7 @@
     "notificationBody": "你可以在 App 中停止。"
   },
   "appLock": {
-    "prompt": "解鎖 F*app",
+    "prompt": "解鎖 YesYes",
     "lockedTitle": "App 已鎖定",
     "lockedBody": "使用 Face ID、指紋或手機密碼解鎖。",
     "sosHold": "SOS – 長按",
@@ -657,9 +657,9 @@
     "sosFailedTitle": "無法傳送"
   },
   "native": {
-    "locationWhenInUse": "F*app 需要使用你的位置，才能顯示附近的人，並在約會期間與你信任的人分享位置。",
-    "locationAlways": "約會期間，即使螢幕關閉，F*app 也會與你信任的人分享你的位置。約會以外的時間，不會在背景使用你的位置。",
-    "faceId": "F*app 使用 Face ID 解鎖，這樣別人就無法查看其中的內容。",
+    "locationWhenInUse": "YesYes 需要使用你的位置，才能顯示附近的人，並在約會期間與你信任的人分享位置。",
+    "locationAlways": "約會期間，即使螢幕關閉，YesYes 也會與你信任的人分享你的位置。約會以外的時間，不會在背景使用你的位置。",
+    "faceId": "YesYes 使用 Face ID 解鎖，這樣別人就無法查看其中的內容。",
     "photos": "選擇要用於個人檔案的照片。",
     "camera": "為個人檔案拍一張自己的照片。"
   }

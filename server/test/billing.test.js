@@ -255,14 +255,14 @@ describe('platby přes obchody (RevenueCat webhook)', () => {
     t.ctx.config.revenuecat.webhookAuth = 'Bearer rc-secret';
     const [a] = await people(1, place());
     const inMonth = Date.now() + 30 * 86400_000;
-    await hook({ type: 'INITIAL_PURCHASE', app_user_id: String(a.id), product_id: 'fapp_gold_1m', original_transaction_id: 'tx-1', expiration_at_ms: inMonth });
+    await hook({ type: 'INITIAL_PURCHASE', app_user_id: String(a.id), product_id: 'yesyes_gold_1m', original_transaction_id: 'tx-1', expiration_at_ms: inMonth });
     assert.equal((await billing(a)).plan, 'gold');
 
-    await hook({ type: 'RENEWAL', app_user_id: String(a.id), product_id: 'fapp_gold_1m', original_transaction_id: 'tx-1', expiration_at_ms: inMonth + 30 * 86400_000 });
+    await hook({ type: 'RENEWAL', app_user_id: String(a.id), product_id: 'yesyes_gold_1m', original_transaction_id: 'tx-1', expiration_at_ms: inMonth + 30 * 86400_000 });
     assert.equal(t.db.prepare('SELECT COUNT(*) AS n FROM subscriptions WHERE user_id = ?').get(a.id).n, 1);
     assert.equal(Date.parse((await billing(a)).planExpiresAt), inMonth + 30 * 86400_000);
 
-    await hook({ type: 'EXPIRATION', app_user_id: String(a.id), product_id: 'fapp_gold_1m', original_transaction_id: 'tx-1' });
+    await hook({ type: 'EXPIRATION', app_user_id: String(a.id), product_id: 'yesyes_gold_1m', original_transaction_id: 'tx-1' });
     assert.equal((await billing(a)).plan, 'free');
 
     const credit = { type: 'NON_RENEWING_PURCHASE', app_user_id: String(a.id), product_id: 'boost_5:jednorazove', transaction_id: 'tx-2' };

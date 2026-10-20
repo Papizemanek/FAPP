@@ -66,7 +66,7 @@
   "auth": {
     "confirmAdult": "Meg kell erősítened, hogy elmúltál 18 éves.",
     "acceptRules": "El kell fogadnod a szabályokat és az adataid kezelését.",
-    "underage": "Az F*app csak 18 éves kortól használható.",
+    "underage": "Az YesYes csak 18 éves kortól használható.",
     "invalidBirthdate": "Érvénytelen születési dátum.",
     "emailTaken": "Ezzel az e-mail-címmel már létezik fiók.",
     "wrongCredentials": "Hibás e-mail-cím vagy jelszó.",
@@ -112,12 +112,12 @@
     "cantRewindMatch": "Ebből a swipe-ból már match lett."
   },
   "billing": {
-    "likeLimit": "Elfogytak a lájkjaid. Hamarosan jönnek újak – vagy swipe-olj korlátlanul az F*app Plusszal.",
+    "likeLimit": "Elfogytak a lájkjaid. Hamarosan jönnek újak – vagy swipe-olj korlátlanul az YesYes Plusszal.",
     "noSuperLike": "Nincs szuperlájkod.",
     "noBoost": "Nincs boostod.",
     "tonightPaid": "A „Ma este” a Platinum része, vagy egyszeri vásárlással érhető el.",
-    "featureInPlan": "{feature} az F*app {plan} része.",
-    "paymentsOff": "A fizetés még nincs bekapcsolva – az F*app egyelőre teljesen ingyenes.",
+    "featureInPlan": "{feature} az YesYes {plan} része.",
+    "paymentsOff": "A fizetés még nincs bekapcsolva – az YesYes egyelőre teljesen ingyenes.",
     "unknownProduct": "Ismeretlen termék.",
     "cantBuy": "Ezt most nem vásárolhatod meg.",
     "cantBoost": "Most nem indíthatsz boostot.",
@@ -156,10 +156,10 @@
     "photo": "Fotó"
   },
   "moderation": {
-    "minor": "Ez az üzenet arra utal, hogy egyikőtök talán még nem múlt el 18 éves. Az F*app csak 18+.",
-    "paid": "Fizetős szex kínálása vagy keresése tilos az F*app-on.",
+    "minor": "Ez az üzenet arra utal, hogy egyikőtök talán még nem múlt el 18 éves. Az YesYes csak 18+.",
+    "paid": "Fizetős szex kínálása vagy keresése tilos az YesYes-on.",
     "consentPressure": "Figyelem: az alkalmazásban kötött megállapodás nem beleegyezés. Bármikor visszavonhatod, és személyesen bármire nemet mondhatsz – magyarázat nélkül.",
-    "contact": "A matched az alkalmazáson kívüli elérhetőséget oszt meg. Az F*app-on kívül a megállapodás, a biztonsági mód és a jelentés nem működik számodra."
+    "contact": "A matched az alkalmazáson kívüli elérhetőséget oszt meg. Az YesYes-on kívül a megállapodás, a biztonsági mód és a jelentés nem működik számodra."
   },
   "safety": {
     "notFound": "A randi nem található.",
@@ -179,9 +179,9 @@
     "noWebhook": "A fejlesztői szolgáltatónak nincs webhookja.",
     "unavailable": "Az ellenőrző szolgáltatás nem válaszol. Próbáld újra egy kicsit később.",
     "declined": {
-      "underage": "Az ellenőrzés szerint még nem vagy 18 éves. Az F*app csak felnőtteknek szól.",
-      "banned": "Ezt a személyt szabályszegés miatt kitiltották az F*app-ról.",
-      "duplicate": "Ennek a személynek már van F*app-fiókja. Mindenkinek csak egy lehet.",
+      "underage": "Az ellenőrzés szerint még nem vagy 18 éves. Az YesYes csak felnőtteknek szól.",
+      "banned": "Ezt a személyt szabályszegés miatt kitiltották az YesYes-ról.",
+      "duplicate": "Ennek a személynek már van YesYes-fiókja. Mindenkinek csak egy lehet.",
       "incomplete": "Nem sikerült leolvasni a születési dátumot az igazolványról. Próbáld újra.",
       "default": "Az ellenőrzés nem sikerült. Próbáld újra."
     }
@@ -238,7 +238,7 @@
     "someone": "Egy hozzád közel álló személy"
   },
   "share": {
-    "pageTitle": "F*app – biztonsági link",
+    "pageTitle": "YesYes – biztonsági link",
     "header": "Biztonsági link",
     "loading": "Betöltés…",
     "call": "{number} hívása",

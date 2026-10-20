@@ -1,6 +1,6 @@
-// Sestaví webový prototyp do jednoho HTML souboru (demo/dist/fapp.html):
+// Sestaví webový prototyp do jednoho HTML souboru (demo/dist/yesyes.html):
 //   1. vloží písma jako data URI (náhled nesmí načítat soubory odjinud),
-//   2. spustí `expo export --platform web` s FAPP_DEMO=1 (simulovaný backend, viz metro.config.js),
+//   2. spustí `expo export --platform web` s YESYES_DEMO=1 (simulovaný backend, viz metro.config.js),
 //   3. vloží JS bundle přímo do stránky.
 // Použití: npm run demo:build -w app
 import { execFileSync } from 'node:child_process';
@@ -35,7 +35,7 @@ rmSync(out, { recursive: true, force: true });
 execFileSync('npx', ['expo', 'export', '--platform', 'web', '--clear', '--output-dir', out], {
   cwd: appDir,
   stdio: 'inherit',
-  env: { ...process.env, FAPP_DEMO: '1', EXPO_OFFLINE: '1', CI: '1' },
+  env: { ...process.env, YESYES_DEMO: '1', EXPO_OFFLINE: '1', CI: '1' },
 });
 
 // 3. jedna stránka
@@ -56,7 +56,7 @@ const preScript = `(function () {
   });
 })();`;
 
-const html = `<title>F*app</title>
+const html = `<title>YesYes</title>
 <meta name="theme-color" content="#121014">
 <style>
 ${expoStyles}
@@ -72,6 +72,6 @@ body { height: 100%; margin: 0; overflow: hidden; background: var(--bg); color: 
 
 const dist = path.join(here, 'dist');
 if (!existsSync(dist)) mkdirSync(dist);
-const target = path.join(dist, 'fapp.html');
+const target = path.join(dist, 'yesyes.html');
 writeFileSync(target, html);
 console.log(`Hotovo: ${path.relative(process.cwd(), target)} (${(html.length / 1024 / 1024).toFixed(2)} MB)`);

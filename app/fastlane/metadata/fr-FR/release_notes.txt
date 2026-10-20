@@ -1,1 +1,1 @@
-Première version de F*app. Vérification, accord à l'aveugle et mode sécurité.
+Première version de YesYes. Vérification, accord à l'aveugle et mode sécurité.

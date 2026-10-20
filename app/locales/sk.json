@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app potrebuje polohu, aby ti ukázal ľudí v okolí a počas stretnutia ju mohol zdieľať s tvojou dôveryhodnou osobou.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Počas stretnutia zdieľa F*app tvoju polohu s dôveryhodnou osobou aj pri zhasnutom displeji. Mimo stretnutia polohu na pozadí nepoužíva.",
-    "NSFaceIDUsageDescription": "F*app sa odomyká cez Face ID, aby doň nikto nenazrel.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes potrebuje polohu, aby ti ukázal ľudí v okolí a počas stretnutia ju mohol zdieľať s tvojou dôveryhodnou osobou.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Počas stretnutia zdieľa YesYes tvoju polohu s dôveryhodnou osobou aj pri zhasnutom displeji. Mimo stretnutia polohu na pozadí nepoužíva.",
+    "NSFaceIDUsageDescription": "YesYes sa odomyká cez Face ID, aby doň nikto nenazrel.",
     "NSPhotoLibraryUsageDescription": "Vyber si fotky do profilu.",
     "NSCameraUsageDescription": "Odfoť sa do profilu."
   }

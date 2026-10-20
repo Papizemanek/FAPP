@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app behöver din plats för att visa dig folk i närheten och för att dela den med din trygghetsperson under en träff.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Under en träff delar F*app din plats med din trygghetsperson, även när skärmen är släckt. Utanför träffar använder appen inte din plats i bakgrunden.",
-    "NSFaceIDUsageDescription": "F*app använder Face ID för att låsa upp, så att ingen annan kan titta in.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes behöver din plats för att visa dig folk i närheten och för att dela den med din trygghetsperson under en träff.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Under en träff delar YesYes din plats med din trygghetsperson, även när skärmen är släckt. Utanför träffar använder appen inte din plats i bakgrunden.",
+    "NSFaceIDUsageDescription": "YesYes använder Face ID för att låsa upp, så att ingen annan kan titta in.",
     "NSPhotoLibraryUsageDescription": "Välj bilder till din profil.",
     "NSCameraUsageDescription": "Ta en bild på dig själv till din profil."
   }

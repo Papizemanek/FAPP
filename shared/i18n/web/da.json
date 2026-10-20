@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – en datingapp kun for sex. Aftalt og trygt.",
-    "description": "F*app er en datingapp kun for sex, for verificerede voksne. Blind aftale, sikkerhedstilstand med en tillidsperson, SOS og nød-pinkode. Snart i Prag.",
+    "title": "YesYes – en datingapp kun for sex. Aftalt og trygt.",
+    "description": "YesYes er en datingapp kun for sex, for verificerede voksne. Blind aftale, sikkerhedstilstand med en tillidsperson, SOS og nød-pinkode. Snart i Prag.",
     "ogTitle": "Sex. Aftalt. Trygt.",
     "langName": "Dansk"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Aftalt.",
     "title3": "Trygt.",
-    "lead": "F*app er en datingapp kun for sex. Folk med verificeret identitet, en blind aftale – og under daten ved en, du stoler på, hvor du er.",
+    "lead": "YesYes er en datingapp kun for sex. Folk med verificeret identitet, en blind aftale – og under daten ved en, du stoler på, hvor du er.",
     "note": "Kun for 18+. Vi skriver til dig én gang, når vi lancerer.",
-    "footnote": "* Kun når I begge siger ja. Og kun her og nu.",
+    "footnote": "* To ja – eller ingenting.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km væk",
@@ -36,7 +36,7 @@
     "email": "Din e-mail",
     "emailPlaceholder": "navn@email.dk",
     "city": "By",
-    "consent": "Jeg accepterer, at F*app sender en invitation til denne e-mail. Jeg kan til enhver tid afmelde mig.",
+    "consent": "Jeg accepterer, at YesYes sender en invitation til denne e-mail. Jeg kan til enhver tid afmelde mig.",
     "submit": "Få en invitation",
     "sending": "Sender…",
     "success": "Færdig. Når vi lancerer, er du blandt de første, der får besked.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratis fra start. Sikkerhed for altid.",
-    "text": "Lige nu er F*app helt gratis. Betalte ekstrafunktioner som ubegrænsede likes eller boosts kommer senere. Verificering, aftalen og sikkerhedstilstand forbliver altid gratis.",
+    "text": "Lige nu er YesYes helt gratis. Betalte ekstrafunktioner som ubegrænsede likes eller boosts kommer senere. Verificering, aftalen og sikkerhedstilstand forbliver altid gratis.",
     "freeTitle": "Altid gratis",
     "free1": "Verificering af identitet",
     "free2": "Blind aftale",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Ofte stillede spørgsmål",
-    "q1": "Er F*app virkelig kun for sex?",
+    "q1": "Er YesYes virkelig kun for sex?",
     "a1": "Ja. Ingen jagt på et forhold og ingen forstillelse. Leder du efter noget andet, finder du det et andet sted.",
     "q2": "Hvorfor skal jeg verificere min identitet?",
     "a2": "Så alle er dem, de udgiver sig for, og en udelukkelse gælder personen, ikke kun kontoen. En specialiseret tjeneste står for tjekket; vi gemmer kun resultatet, din fødselsdato og et krypteret fingeraftryk – aldrig dit ID.",
@@ -129,14 +129,14 @@
     "a3": "Ingen. Den anden ser kun det, I er enige om. Dit »nej« forbliver dit.",
     "q4": "Hvad hvis noget går galt på en date?",
     "a4": "Hold SOS inde, eller indtast din nød-pinkode, som ligner den normale. Din tillidsperson får en alarm med din placering. Efter daten viser appen dig, hvor du kan få hjælp.",
-    "q5": "Kan folk omkring mig se, at jeg bruger F*app?",
+    "q5": "Kan folk omkring mig se, at jeg bruger YesYes?",
     "a5": "Det behøver de ikke. Du kan skifte til et diskret ikon, notifikationer afslører ingenting, og appen låses med dit ansigt eller fingeraftryk.",
     "q6": "Hvad koster det?",
     "a6": "Intet ved lanceringen. Sikkerhed forbliver gratis bagefter også.",
-    "q7": "Hvor virker F*app?",
+    "q7": "Hvor virker YesYes?",
     "a7": "Vi starter i Prag. Flere byer følger ud fra ventelisten.",
     "q8": "Jeg er 17. Må jeg være med?",
-    "a8": "Nej. F*app er kun for personer over 18, og det tjekker vi ud fra et ID."
+    "a8": "Nej. YesYes er kun for personer over 18, og det tjekker vi ud fra et ID."
   },
   "rules": {
     "title": "Fællesskabets regler",
@@ -158,7 +158,7 @@
     "rules": "Fællesskabets regler",
     "privacy": "Privatliv",
     "help": "Brug for hjælp efter en date? Kontakt det lokale politi eller en hjælpelinje for ofre.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Få en invitation",
@@ -185,7 +185,7 @@
     "mockPin": "Indtast pinkode",
     "mockTrusted": "Tillidsperson",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Besked fra F*app",
+    "mockSmsFrom": "Besked fra YesYes",
     "mockSms": "{name} har ikke checket ind – det skulle ske kl. 23.40. Prøv at ringe til hende.",
     "mockAlarm": "ALARM: {name} har brug for hjælp.",
     "mockLocation": "Placering delt",

@@ -67,7 +67,7 @@
   "auth": {
     "confirmAdult": "Moraš potvrditi da imaš 18 ili više godina.",
     "acceptRules": "Moraš prihvatiti pravila i obradu svojih podataka.",
-    "underage": "F*app je samo za osobe od 18 godina naviše.",
+    "underage": "YesYes je samo za osobe od 18 godina naviše.",
     "invalidBirthdate": "Neispravan datum rođenja.",
     "emailTaken": "Račun s ovim e-mailom već postoji.",
     "wrongCredentials": "Pogrešan e-mail ili lozinka.",
@@ -114,12 +114,12 @@
     "cantRewindMatch": "Ovaj swajp je već match."
   },
   "billing": {
-    "likeLimit": "Ponestalo ti je lajkova. Novi stižu uskoro – ili swajpaj bez ograničenja uz F*app Plus.",
+    "likeLimit": "Ponestalo ti je lajkova. Novi stižu uskoro – ili swajpaj bez ograničenja uz YesYes Plus.",
     "noSuperLike": "Nemaš nijedan super lajk.",
     "noBoost": "Nemaš nijedan boost.",
     "tonightPaid": "„Večeras“ dolazi uz Platinum ili kao jednokratna kupnja.",
-    "featureInPlan": "{feature} je dio paketa F*app {plan}.",
-    "paymentsOff": "Plaćanja još nisu uključena – F*app je zasad potpuno besplatan.",
+    "featureInPlan": "{feature} je dio paketa YesYes {plan}.",
+    "paymentsOff": "Plaćanja još nisu uključena – YesYes je zasad potpuno besplatan.",
     "unknownProduct": "Nepoznat proizvod.",
     "cantBuy": "Ovo sada ne možeš kupiti.",
     "cantBoost": "Boost sada ne možeš pokrenuti.",
@@ -159,10 +159,10 @@
     "photo": "Fotografija"
   },
   "moderation": {
-    "minor": "Ova poruka upućuje na to da netko od vas možda nema 18 godina. F*app je samo za 18+.",
-    "paid": "Nuđenje ili traženje plaćenog seksa nije dopušteno u aplikaciji F*app.",
+    "minor": "Ova poruka upućuje na to da netko od vas možda nema 18 godina. YesYes je samo za 18+.",
+    "paid": "Nuđenje ili traženje plaćenog seksa nije dopušteno u aplikaciji YesYes.",
     "consentPressure": "Pažnja: dogovor u aplikaciji nije pristanak. Možeš ga otkazati bilo kad i uživo odbiti bilo što – bez objašnjavanja.",
-    "contact": "Druga osoba dijeli kontakt izvan aplikacije. Izvan aplikacije F*app dogovor, sigurnosni način i prijave za tebe ne funkcioniraju."
+    "contact": "Druga osoba dijeli kontakt izvan aplikacije. Izvan aplikacije YesYes dogovor, sigurnosni način i prijave za tebe ne funkcioniraju."
   },
   "safety": {
     "notFound": "Susret nije pronađen.",
@@ -182,9 +182,9 @@
     "noWebhook": "Razvojni pružatelj usluge nema webhook.",
     "unavailable": "Usluga provjere ne odgovara. Pokušaj ponovno za trenutak.",
     "declined": {
-      "underage": "Provjera je pokazala da još nemaš 18 godina. F*app je samo za odrasle.",
-      "banned": "Ova osoba je zabranjena u aplikaciji F*app zbog kršenja pravila.",
-      "duplicate": "Ova osoba već ima račun u aplikaciji F*app. Svatko može imati samo jedan.",
+      "underage": "Provjera je pokazala da još nemaš 18 godina. YesYes je samo za odrasle.",
+      "banned": "Ova osoba je zabranjena u aplikaciji YesYes zbog kršenja pravila.",
+      "duplicate": "Ova osoba već ima račun u aplikaciji YesYes. Svatko može imati samo jedan.",
       "incomplete": "Iz dokumenta nismo uspjeli pročitati datum rođenja. Pokušaj ponovno.",
       "default": "Provjera nije uspjela. Pokušaj ponovno."
     }
@@ -241,7 +241,7 @@
     "someone": "Tvoja bliska osoba"
   },
   "share": {
-    "pageTitle": "F*app – sigurnosna poveznica",
+    "pageTitle": "YesYes – sigurnosna poveznica",
     "header": "Sigurnosna poveznica",
     "loading": "Učitavanje…",
     "call": "Nazovi {number}",

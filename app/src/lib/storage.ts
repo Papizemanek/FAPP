@@ -5,10 +5,10 @@ import * as SecureStore from 'expo-secure-store';
 const options: SecureStore.SecureStoreOptions = { keychainAccessible: SecureStore.AFTER_FIRST_UNLOCK };
 
 const KEYS = {
-  token: 'fapp.token',
-  activeSafety: 'fapp.activeSafety',
-  appLock: 'fapp.appLock',
-  language: 'fapp.language',
+  token: 'yesyes.token',
+  activeSafety: 'yesyes.activeSafety',
+  appLock: 'yesyes.appLock',
+  language: 'yesyes.language',
 } as const;
 
 export const storage = {

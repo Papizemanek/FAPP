@@ -116,7 +116,7 @@
   "consent": {
     "intent": "So stelle ich es mir vor. Vor Ort kann ich alles ablehnen – und die andere Person auch.",
     "notice": "Mir ist klar: Zustimmung gilt nur hier und jetzt. „Nein“, „Stopp“, das Safeword, Schweigen, Erstarren oder Betrunkensein sind keine Zustimmung. Eine Absprache in der App nimmt niemandem die Verantwortung ab.",
-    "deterrence": "Alle auf F*app haben eine verifizierte Identität. Bei Verdacht auf eine Straftat geben wir sie an die Polizei weiter."
+    "deterrence": "Alle auf YesYes haben eine verifizierte Identität. Bei Verdacht auf eine Straftat geben wir sie an die Polizei weiter."
   },
   "welcome": {
     "tagline": "Sex ohne Umschweife.",
@@ -410,8 +410,8 @@
       "edit": "Bearbeiten"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold und Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold und Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Unbegrenzte Likes, sehen, wer dich geliked hat, Boost und mehr.",
       "validUntil": "Gültig bis {date}.",
       "upgrade": "Upgraden",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Abo",
     "free": {
-      "title": "F*app ist vorerst kostenlos",
+      "title": "YesYes ist vorerst kostenlos",
       "body": "Bezahlfunktionen schalten wir später frei. Sicherheit – Verifizierung, Absprachen, Sicherheitsmodus und SOS – bleibt immer kostenlos."
     },
     "back": "Zurück",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Deine Likes sind aufgebraucht. Neue gibt es um {time}.",
       "likeLimit": "Deine Likes sind aufgebraucht. Bald gibt es neue.",
       "noCredit": "{credit} gibt es einzeln oder im Abo.",
-      "upgrade": "Das ist Teil von F*app {plan}."
+      "upgrade": "Das ist Teil von YesYes {plan}."
     },
     "oneOff": "Einzeln",
     "owned": "du hast {count}",
@@ -483,9 +483,9 @@
         "other": "Du hast {count}× „Heute Abend“ extra."
       }
     },
-    "currentPlan": "Du hast F*app {plan}",
+    "currentPlan": "Du hast YesYes {plan}",
     "validUntil": "Gültig bis {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipe ohne Limit und hol versehentlich abgelehnte Profile zurück.",
       "gold": "Sieh, wer dich geliked hat – und matche mit einem Tipp.",
@@ -501,8 +501,8 @@
     "perMonthSave": "pro Monat · −{percent} %",
     "continueWithPrice": "Weiter · {price}",
     "planBought": {
-      "one": "Du hast jetzt F*app {plan}.",
-      "other": "Du hast jetzt F*app {plan} für {count} Monate."
+      "one": "Du hast jetzt YesYes {plan}.",
+      "other": "Du hast jetzt YesYes {plan} für {count} Monate."
     },
     "renewal": "Dein Abo verlängert sich automatisch. Du kannst es jederzeit in den Einstellungen von App Store oder Google Play kündigen. Der Preis ist für alle gleich.",
     "renewalUpfront": "Du zahlst {total} im Voraus ({monthly} pro Monat). Dein Abo verlängert sich automatisch. Du kannst es jederzeit in den Einstellungen von App Store oder Google Play kündigen. Der Preis ist für alle gleich.",
@@ -525,13 +525,13 @@
       "other": "{count} Personen haben dich geliked"
     },
     "lockedEmpty": "Hier erscheinen deine Likes",
-    "goldText": "Mit F*app Gold siehst du, wer es ist, und matchst mit einem Tipp.",
+    "goldText": "Mit YesYes Gold siehst du, wer es ist, und matchst mit einem Tipp.",
     "goldCta": "Mit Gold ansehen",
     "emptySent": "In den letzten 7 Tagen keine Likes ohne Match.",
     "superLikePending": "Super Like · wartet",
     "pending": "Wartet auf Antwort",
     "sentTitle": "Wen du geliked hast",
-    "platinumText": "Mit F*app Platinum siehst du deine Likes der letzten 7 Tage.",
+    "platinumText": "Mit YesYes Platinum siehst du deine Likes der letzten 7 Tage.",
     "platinumCta": "Mit Platinum ansehen",
     "likeBack": "Zurückliken",
     "pass": "Weiter"
@@ -559,13 +559,13 @@
     "iAm": "Ich bin",
     "showMe": "Zeig mir",
     "confirmAdult": "Ich bin 18 oder älter.",
-    "acceptRules": "Ich stimme den Community-Regeln und der Verarbeitung meiner Daten zu, einschließlich Daten zu meinem Sexualleben, damit F*app funktionieren kann.",
+    "acceptRules": "Ich stimme den Community-Regeln und der Verarbeitung meiner Daten zu, einschließlich Daten zu meinem Sexualleben, damit YesYes funktionieren kann.",
     "verifyNote": "Gleich danach verifizieren wir deine Identität und dein Alter (Ausweis und Selfie). Deinen Ausweis speichern wir nicht.",
     "continue": "Weiter"
   },
   "verify": {
     "title": "Bestätige, dass du es bist",
-    "intro": "Alle auf F*app haben eine verifizierte Identität und ein verifiziertes Alter. Du fotografierst deinen Ausweis und machst ein Selfie – das dauert etwa zwei Minuten.",
+    "intro": "Alle auf YesYes haben eine verifizierte Identität und ein verifiziertes Alter. Du fotografierst deinen Ausweis und machst ein Selfie – das dauert etwa zwei Minuten.",
     "privacy": "Wir speichern weder deinen Ausweis noch deine Fotos. Wir behalten nur das Ergebnis der Verifizierung und dein Geburtsdatum. Wer gegen die Regeln verstößt, kann nicht mit einem neuen Konto zurückkommen.",
     "pending": {
       "title": "Wir warten auf das Ergebnis deiner Verifizierung",
@@ -657,7 +657,7 @@
     "notificationBody": "Du kannst sie in der App beenden."
   },
   "appLock": {
-    "prompt": "F*app entsperren",
+    "prompt": "YesYes entsperren",
     "lockedTitle": "Die App ist gesperrt",
     "lockedBody": "Entsperre sie mit Face ID, deinem Fingerabdruck oder dem Code deines Handys.",
     "sosHold": "SOS – gedrückt halten",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Senden fehlgeschlagen"
   },
   "native": {
-    "locationWhenInUse": "F*app braucht deinen Standort, um dir Leute in der Nähe zu zeigen und ihn während eines Treffens mit deiner Vertrauensperson zu teilen.",
-    "locationAlways": "Während eines Treffens teilt F*app deinen Standort mit deiner Vertrauensperson, auch bei ausgeschaltetem Bildschirm. Außerhalb von Treffen nutzt die App deinen Standort nicht im Hintergrund.",
-    "faceId": "F*app nutzt Face ID zum Entsperren, damit niemand sonst hineinschauen kann.",
+    "locationWhenInUse": "YesYes braucht deinen Standort, um dir Leute in der Nähe zu zeigen und ihn während eines Treffens mit deiner Vertrauensperson zu teilen.",
+    "locationAlways": "Während eines Treffens teilt YesYes deinen Standort mit deiner Vertrauensperson, auch bei ausgeschaltetem Bildschirm. Außerhalb von Treffen nutzt die App deinen Standort nicht im Hintergrund.",
+    "faceId": "YesYes nutzt Face ID zum Entsperren, damit niemand sonst hineinschauen kann.",
     "photos": "Wähle Fotos für dein Profil aus.",
     "camera": "Mach ein Foto von dir für dein Profil."
   }

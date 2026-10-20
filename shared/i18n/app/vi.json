@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Đây là điều mình nghĩ tới. Khi gặp nhau, mình có thể từ chối bất cứ điều gì – người kia cũng vậy.",
     "notice": "Mình hiểu: sự đồng thuận chỉ có giá trị ở đây và lúc này. “Không”, “dừng lại”, từ an toàn, im lặng, đờ người hay say xỉn đều không phải là đồng thuận. Thỏa thuận trong ứng dụng không miễn trách nhiệm cho bất kỳ ai.",
-    "deterrence": "Mọi người trên F*app đều đã xác minh danh tính. Nếu nghi ngờ có tội phạm, chúng tôi sẽ cung cấp danh tính đó cho cảnh sát."
+    "deterrence": "Mọi người trên YesYes đều đã xác minh danh tính. Nếu nghi ngờ có tội phạm, chúng tôi sẽ cung cấp danh tính đó cho cảnh sát."
   },
   "welcome": {
     "tagline": "Sex, không rườm rà.",
@@ -406,8 +406,8 @@
       "edit": "Sửa"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold và Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold và Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Thích không giới hạn, xem ai đã thích bạn, Boost và nhiều hơn nữa.",
       "validUntil": "Có hiệu lực đến {date}.",
       "upgrade": "Nâng cấp",
@@ -445,7 +445,7 @@
   "premium": {
     "title": "Gói đăng ký",
     "free": {
-      "title": "F*app hiện đang miễn phí",
+      "title": "YesYes hiện đang miễn phí",
       "body": "Chúng tôi sẽ bật các tính năng trả phí sau. Tính năng an toàn – xác minh, thỏa thuận, chế độ an toàn và SOS – sẽ luôn miễn phí."
     },
     "back": "Quay lại",
@@ -455,7 +455,7 @@
       "likeLimitAt": "Bạn đã hết lượt thích. Lượt mới sẽ có lúc {time}.",
       "likeLimit": "Bạn đã hết lượt thích. Lượt mới sẽ có sớm thôi.",
       "noCredit": "{credit} có thể mua lẻ hoặc có trong gói đăng ký.",
-      "upgrade": "Tính năng này thuộc F*app {plan}."
+      "upgrade": "Tính năng này thuộc YesYes {plan}."
     },
     "oneOff": "Mua lẻ",
     "owned": "bạn có {count}",
@@ -476,9 +476,9 @@
         "other": "Bạn có thêm {count} lượt “Tối nay”."
       }
     },
-    "currentPlan": "Bạn đang dùng F*app {plan}",
+    "currentPlan": "Bạn đang dùng YesYes {plan}",
     "validUntil": "Có hiệu lực đến {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Quẹt không giới hạn và lấy lại hồ sơ bạn lỡ bỏ qua.",
       "gold": "Xem ai đã thích bạn – và tương hợp chỉ với một chạm.",
@@ -493,7 +493,7 @@
     "perMonthSave": "mỗi tháng · −{percent}%",
     "continueWithPrice": "Tiếp tục · {price}",
     "planBought": {
-      "other": "Bạn đã có F*app {plan} trong {count} tháng."
+      "other": "Bạn đã có YesYes {plan} trong {count} tháng."
     },
     "renewal": "Gói đăng ký tự động gia hạn. Bạn có thể hủy bất cứ lúc nào trong cài đặt App Store hoặc Google Play. Giá như nhau cho tất cả mọi người.",
     "renewalUpfront": "Bạn trả trước {total} ({monthly} mỗi tháng). Gói đăng ký tự động gia hạn. Bạn có thể hủy bất cứ lúc nào trong cài đặt App Store hoặc Google Play. Giá như nhau cho tất cả mọi người.",
@@ -515,13 +515,13 @@
       "other": "{count} người đã thích bạn"
     },
     "lockedEmpty": "Lượt thích dành cho bạn sẽ hiện ở đây",
-    "goldText": "Với F*app Gold, bạn sẽ thấy họ là ai và tương hợp chỉ với một chạm.",
+    "goldText": "Với YesYes Gold, bạn sẽ thấy họ là ai và tương hợp chỉ với một chạm.",
     "goldCta": "Xem với Gold",
     "emptySent": "Không có lượt thích nào chưa tương hợp trong 7 ngày qua.",
     "superLikePending": "Super Like · đang chờ",
     "pending": "Đang chờ phản hồi",
     "sentTitle": "Những người bạn đã thích",
-    "platinumText": "Với F*app Platinum, bạn sẽ thấy các lượt thích của mình trong 7 ngày qua.",
+    "platinumText": "Với YesYes Platinum, bạn sẽ thấy các lượt thích của mình trong 7 ngày qua.",
     "platinumCta": "Xem với Platinum",
     "likeBack": "Thích lại",
     "pass": "Bỏ qua"
@@ -549,13 +549,13 @@
     "iAm": "Mình là",
     "showMe": "Hiển thị",
     "confirmAdult": "Mình đã đủ 18 tuổi trở lên.",
-    "acceptRules": "Mình đồng ý với quy tắc cộng đồng và việc xử lý dữ liệu của mình, bao gồm dữ liệu về đời sống tình dục, để F*app có thể hoạt động.",
+    "acceptRules": "Mình đồng ý với quy tắc cộng đồng và việc xử lý dữ liệu của mình, bao gồm dữ liệu về đời sống tình dục, để YesYes có thể hoạt động.",
     "verifyNote": "Ngay sau đây, chúng tôi sẽ xác minh danh tính và tuổi của bạn (giấy tờ tùy thân và ảnh selfie). Chúng tôi không lưu giấy tờ tùy thân của bạn.",
     "continue": "Tiếp tục"
   },
   "verify": {
     "title": "Xác minh đó là bạn",
-    "intro": "Mọi người trên F*app đều đã xác minh danh tính và tuổi. Bạn sẽ chụp ảnh giấy tờ tùy thân và một ảnh selfie – mất khoảng hai phút.",
+    "intro": "Mọi người trên YesYes đều đã xác minh danh tính và tuổi. Bạn sẽ chụp ảnh giấy tờ tùy thân và một ảnh selfie – mất khoảng hai phút.",
     "privacy": "Chúng tôi không lưu giấy tờ tùy thân hay ảnh của bạn. Chúng tôi chỉ giữ kết quả xác minh và ngày sinh của bạn. Ai vi phạm quy tắc sẽ không thể quay lại bằng tài khoản mới.",
     "pending": {
       "title": "Đang chờ kết quả xác minh",
@@ -646,7 +646,7 @@
     "notificationBody": "Bạn có thể dừng trong ứng dụng."
   },
   "appLock": {
-    "prompt": "Mở khóa F*app",
+    "prompt": "Mở khóa YesYes",
     "lockedTitle": "Ứng dụng đã bị khóa",
     "lockedBody": "Mở khóa bằng Face ID, vân tay hoặc mật mã điện thoại.",
     "sosHold": "SOS – nhấn và giữ",
@@ -657,9 +657,9 @@
     "sosFailedTitle": "Không gửi được"
   },
   "native": {
-    "locationWhenInUse": "F*app cần vị trí của bạn để hiển thị những người ở gần và, trong buổi hẹn, để chia sẻ vị trí với người tin cậy của bạn.",
-    "locationAlways": "Trong buổi hẹn, F*app chia sẻ vị trí của bạn với người tin cậy, kể cả khi màn hình tắt. Ngoài buổi hẹn, ứng dụng không dùng vị trí của bạn trong nền.",
-    "faceId": "F*app dùng Face ID để mở khóa, để không ai khác có thể xem bên trong.",
+    "locationWhenInUse": "YesYes cần vị trí của bạn để hiển thị những người ở gần và, trong buổi hẹn, để chia sẻ vị trí với người tin cậy của bạn.",
+    "locationAlways": "Trong buổi hẹn, YesYes chia sẻ vị trí của bạn với người tin cậy, kể cả khi màn hình tắt. Ngoài buổi hẹn, ứng dụng không dùng vị trí của bạn trong nền.",
+    "faceId": "YesYes dùng Face ID để mở khóa, để không ai khác có thể xem bên trong.",
     "photos": "Chọn ảnh cho hồ sơ của bạn.",
     "camera": "Chụp ảnh bản thân cho hồ sơ."
   }

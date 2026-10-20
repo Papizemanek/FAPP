@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – yalnızca seks için bir tanışma uygulaması. Anlaşmalı ve güvenli.",
-    "description": "F*app, doğrulanmış yetişkinler için yalnızca seks odaklı bir tanışma uygulaması. Kör anlaşma, güvendiğin biriyle güvenlik modu, SOS ve acil durum PIN'i. Yakında Prag'da.",
+    "title": "YesYes – yalnızca seks için bir tanışma uygulaması. Anlaşmalı ve güvenli.",
+    "description": "YesYes, doğrulanmış yetişkinler için yalnızca seks odaklı bir tanışma uygulaması. Kör anlaşma, güvendiğin biriyle güvenlik modu, SOS ve acil durum PIN'i. Yakında Prag'da.",
     "ogTitle": "Seks. Anlaşmalı. Güvenli.",
     "langName": "Türkçe"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Anlaşmalı.",
     "title3": "Güvenli.",
-    "lead": "F*app yalnızca seks için bir tanışma uygulaması. Kimliği doğrulanmış insanlar, kör bir anlaşma – ve buluşman sırasında güvendiğin biri nerede olduğunu bilir.",
+    "lead": "YesYes yalnızca seks için bir tanışma uygulaması. Kimliği doğrulanmış insanlar, kör bir anlaşma – ve buluşman sırasında güvendiğin biri nerede olduğunu bilir.",
     "note": "Yalnızca 18+. Yayına girdiğimizde sana bir kez e-posta göndereceğiz.",
-    "footnote": "* Yalnızca ikiniz de evet dediğinizde. Ve yalnızca burada ve şimdi.",
+    "footnote": "* İki evet ya da hiçbiri.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km uzakta",
@@ -36,7 +36,7 @@
     "email": "E-postan",
     "emailPlaceholder": "isim@email.com",
     "city": "Şehir",
-    "consent": "F*app'in bu e-posta adresine davet göndermesini kabul ediyorum. İstediğim zaman abonelikten çıkabilirim.",
+    "consent": "YesYes'in bu e-posta adresine davet göndermesini kabul ediyorum. İstediğim zaman abonelikten çıkabilirim.",
     "submit": "Davet iste",
     "sending": "Gönderiliyor…",
     "success": "Tamam. Yayına girdiğimizde ilk öğrenenlerden olacaksın.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Açılışta ücretsiz. Güvenlik sonsuza dek.",
-    "text": "Şu an F*app tamamen ücretsiz. Sınırsız beğeni veya Boost gibi ücretli ekstralar daha sonra gelecek. Doğrulama, anlaşma ve güvenlik modu her zaman ücretsiz olacak.",
+    "text": "Şu an YesYes tamamen ücretsiz. Sınırsız beğeni veya Boost gibi ücretli ekstralar daha sonra gelecek. Doğrulama, anlaşma ve güvenlik modu her zaman ücretsiz olacak.",
     "freeTitle": "Her zaman ücretsiz",
     "free1": "Kimlik doğrulama",
     "free2": "Kör anlaşma",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "SSS",
-    "q1": "F*app gerçekten yalnızca seks için mi?",
+    "q1": "YesYes gerçekten yalnızca seks için mi?",
     "a1": "Evet. İlişki arayışı yok, rol yapmak yok. Başka bir şey arıyorsan onu başka yerde bulursun.",
     "q2": "Kimliğimi neden doğrulamam gerekiyor?",
     "a2": "Herkes olduğunu söylediği kişi olsun ve yasak yalnızca hesaba değil, kişiye uygulansın diye. Kontrolü uzman bir hizmet yapar; biz yalnızca sonucu, doğum tarihini ve şifrelenmiş bir dijital izi saklarız – kimliğini asla.",
@@ -129,14 +129,14 @@
     "a3": "Hiç kimse. Karşındaki yalnızca ortak noktalarınızı görür. “Hayır”ın sende kalır.",
     "q4": "Buluşmada bir şeyler ters giderse ne olur?",
     "a4": "SOS'u basılı tut ya da normal PIN gibi görünen acil durum PIN'ini gir. Güvendiğin kişi konumunla birlikte bir alarm alır. Buluşmadan sonra uygulama sana nereden yardım alabileceğini gösterir.",
-    "q5": "Çevremdekiler F*app kullandığımı anlar mı?",
+    "q5": "Çevremdekiler YesYes kullandığımı anlar mı?",
     "a5": "Anlamaları gerekmez. Göze batmayan bir simgeye geçebilirsin, bildirimler hiçbir şey ele vermez ve uygulama yüzün veya parmak izinle kilitlenir.",
     "q6": "Ücreti ne kadar?",
     "a6": "Açılışta hiçbir şey. Güvenlik sonrasında da ücretsiz kalır.",
-    "q7": "F*app nerede çalışıyor?",
+    "q7": "YesYes nerede çalışıyor?",
     "a7": "Prag'da başlıyoruz. Diğer şehirler bekleme listesine göre gelecek.",
     "q8": "17 yaşındayım. Katılabilir miyim?",
-    "a8": "Hayır. F*app yalnızca 18 yaşından büyükler içindir ve bunu kimlik belgesiyle kontrol ediyoruz."
+    "a8": "Hayır. YesYes yalnızca 18 yaşından büyükler içindir ve bunu kimlik belgesiyle kontrol ediyoruz."
   },
   "rules": {
     "title": "Topluluk kuralları",
@@ -158,7 +158,7 @@
     "rules": "Topluluk kuralları",
     "privacy": "Gizlilik",
     "help": "Buluşmadan sonra yardıma mı ihtiyacın var? Yerel polise veya bir mağdur destek hattına başvur.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Davet iste",
@@ -185,7 +185,7 @@
     "mockPin": "PIN gir",
     "mockTrusted": "Güvendiğin kişi",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "F*app'ten mesaj",
+    "mockSmsFrom": "YesYes'ten mesaj",
     "mockSms": "{name} check-in yapmadı – saat 23:40'ta yapması gerekiyordu. Onu aramayı dene.",
     "mockAlarm": "ALARM: {name} yardıma ihtiyaç duyuyor.",
     "mockLocation": "Konum paylaşıldı",

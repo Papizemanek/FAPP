@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Takto si to predstavujem. Na mieste môžem čokoľvek odmietnuť – a to isté platí pre druhého.",
     "notice": "Beriem na vedomie: súhlas platí len tu a teraz. „Nie“, „stop“, stop slovo, mlčanie, stuhnutie alebo opitosť nie sú súhlas. Dohoda v aplikácii nikoho nezbavuje zodpovednosti.",
-    "deterrence": "Všetci na F*app majú overenú totožnosť. Pri podozrení z trestného činu ju odovzdáme polícii."
+    "deterrence": "Všetci na YesYes majú overenú totožnosť. Pri podozrení z trestného činu ju odovzdáme polícii."
   },
   "welcome": {
     "tagline": "Sex bez okolkov.",
@@ -418,8 +418,8 @@
       "edit": "Upraviť"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold a Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold a Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Neobmedzené lajky, kto ťa lajkol, boost a ďalšie.",
       "validUntil": "Platí do {date}.",
       "upgrade": "Vylepšiť",
@@ -457,7 +457,7 @@
   "premium": {
     "title": "Predplatné",
     "free": {
-      "title": "F*app je teraz zadarmo",
+      "title": "YesYes je teraz zadarmo",
       "body": "Platené funkcie zapneme neskôr. Bezpečnosť – overenie, dohoda, bezpečnostný režim aj SOS – zostane zadarmo vždy."
     },
     "back": "Späť",
@@ -467,7 +467,7 @@
       "likeLimitAt": "Minuli sa ti lajky. Ďalšie pribudnú o {time}.",
       "likeLimit": "Minuli sa ti lajky. Ďalšie pribudnú o chvíľu.",
       "noCredit": "{credit} je jednorazovo alebo v predplatnom.",
-      "upgrade": "Toto je súčasťou F*app {plan}."
+      "upgrade": "Toto je súčasťou YesYes {plan}."
     },
     "oneOff": "Jednorazovo",
     "owned": "máš {count}",
@@ -497,9 +497,9 @@
         "other": "Máš {count}× Dnes večer navyše."
       }
     },
-    "currentPlan": "Máš F*app {plan}",
+    "currentPlan": "Máš YesYes {plan}",
     "validUntil": "Platí do {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipuj bez limitu a vráť omylom odmietnutý profil.",
       "gold": "Uvidíš, kto ťa lajkol – a matchneš jedným ťuknutím.",
@@ -517,10 +517,10 @@
     "perMonthSave": "mesačne · −{percent} %",
     "continueWithPrice": "Pokračovať · {price}",
     "planBought": {
-      "one": "Máš F*app {plan}.",
-      "few": "Máš F*app {plan} na {count} mesiace.",
-      "many": "Máš F*app {plan} na {count} mesiaca.",
-      "other": "Máš F*app {plan} na {count} mesiacov."
+      "one": "Máš YesYes {plan}.",
+      "few": "Máš YesYes {plan} na {count} mesiace.",
+      "many": "Máš YesYes {plan} na {count} mesiaca.",
+      "other": "Máš YesYes {plan} na {count} mesiacov."
     },
     "renewal": "Predplatné sa obnovuje automaticky, zrušiť ho môžeš kedykoľvek v nastaveniach App Store alebo Google Play. Cena je pre všetkých rovnaká.",
     "renewalUpfront": "Zaplatíš {total} naraz ({monthly} mesačne). Predplatné sa obnovuje automaticky, zrušiť ho môžeš kedykoľvek v nastaveniach App Store alebo Google Play. Cena je pre všetkých rovnaká.",
@@ -545,13 +545,13 @@
       "other": "Lajklo ťa {count} ľudí"
     },
     "lockedEmpty": "Lajky uvidíš tu",
-    "goldText": "S F*app Gold uvidíš, kto to je, a matchneš jedným ťuknutím.",
+    "goldText": "S YesYes Gold uvidíš, kto to je, a matchneš jedným ťuknutím.",
     "goldCta": "Zobraziť s Gold",
     "emptySent": "Za posledných 7 dní žiadne lajky bez matchu.",
     "superLikePending": "Super lajk · čaká",
     "pending": "Čaká na odpoveď",
     "sentTitle": "Koho si lajkol/a",
-    "platinumText": "S F*app Platinum uvidíš svoje lajky za posledných 7 dní.",
+    "platinumText": "S YesYes Platinum uvidíš svoje lajky za posledných 7 dní.",
     "platinumCta": "Zobraziť s Platinum",
     "likeBack": "Lajknúť späť",
     "pass": "Preskočiť"
@@ -579,13 +579,13 @@
     "iAm": "Som",
     "showMe": "Koho mi ukazovať",
     "confirmAdult": "Mám 18 rokov alebo viac.",
-    "acceptRules": "Súhlasím s pravidlami komunity a so spracovaním svojich údajov vrátane údajov o sexuálnom živote, aby mohol F*app fungovať.",
+    "acceptRules": "Súhlasím s pravidlami komunity a so spracovaním svojich údajov vrátane údajov o sexuálnom živote, aby mohol YesYes fungovať.",
     "verifyNote": "Hneď potom overíme tvoju totožnosť a vek (doklad a selfie). Doklad si neukladáme.",
     "continue": "Pokračovať"
   },
   "verify": {
     "title": "Over, že si to ty",
-    "intro": "Každý na F*app má overenú totožnosť a vek. Odfotíš doklad a selfie – zaberie to asi dve minúty.",
+    "intro": "Každý na YesYes má overenú totožnosť a vek. Odfotíš doklad a selfie – zaberie to asi dve minúty.",
     "privacy": "Doklad ani fotky si neukladáme. Uchováme len výsledok overenia a dátum narodenia. Kto poruší pravidlá, nemôže sa vrátiť s novým účtom.",
     "pending": {
       "title": "Čakáme na výsledok overenia",
@@ -679,7 +679,7 @@
     "notificationBody": "Ukončíš ho v aplikácii."
   },
   "appLock": {
-    "prompt": "Odomknúť F*app",
+    "prompt": "Odomknúť YesYes",
     "lockedTitle": "Aplikácia je zamknutá",
     "lockedBody": "Odomkni ju cez Face ID, odtlačok prsta alebo kód telefónu.",
     "sosHold": "SOS – podrž",
@@ -690,9 +690,9 @@
     "sosFailedTitle": "Nepodarilo sa odoslať"
   },
   "native": {
-    "locationWhenInUse": "F*app potrebuje polohu, aby ti ukázal ľudí v okolí a počas stretnutia ju mohol zdieľať s tvojou dôveryhodnou osobou.",
-    "locationAlways": "Počas stretnutia zdieľa F*app tvoju polohu s dôveryhodnou osobou aj pri zhasnutom displeji. Mimo stretnutia polohu na pozadí nepoužíva.",
-    "faceId": "F*app sa odomyká cez Face ID, aby doň nikto nenazrel.",
+    "locationWhenInUse": "YesYes potrebuje polohu, aby ti ukázal ľudí v okolí a počas stretnutia ju mohol zdieľať s tvojou dôveryhodnou osobou.",
+    "locationAlways": "Počas stretnutia zdieľa YesYes tvoju polohu s dôveryhodnou osobou aj pri zhasnutom displeji. Mimo stretnutia polohu na pozadí nepoužíva.",
+    "faceId": "YesYes sa odomyká cez Face ID, aby doň nikto nenazrel.",
     "photos": "Vyber si fotky do profilu.",
     "camera": "Odfoť sa do profilu."
   }

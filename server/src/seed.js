@@ -1,5 +1,5 @@
 // Demo data pro vývoj: ověřené profily v Praze. Heslo všech: demo-heslo-123, PIN 1234, nouzový PIN 9999.
-// Demo profily (e-mail @demo.fapp) ve vývojovém režimu automaticky lajkují zpátky.
+// Demo profily (e-mail @demo.yesyes) ve vývojovém režimu automaticky lajkují zpátky.
 import { readFileSync } from 'node:fs';
 import { loadConfig } from './config.js';
 import { openDb } from './db.js';
@@ -28,7 +28,7 @@ const insert = db.prepare(
 );
 
 for (const [i, [name, gender, interestedIn, birthdate, bio, tags]] of people.entries()) {
-  const email = `${name.toLowerCase()}@demo.fapp`;
+  const email = `${name.toLowerCase()}@demo.yesyes`;
   if (db.prepare('SELECT 1 FROM users WHERE email = ?').get(email)) continue;
   const { lastInsertRowid } = insert.run(
     email,

@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app нужна твоя геопозиция, чтобы показывать людей поблизости и во время встречи делиться ею с твоим доверенным контактом.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Во время встречи F*app передаёт твою геопозицию доверенному контакту, даже когда экран выключен. Вне встреч приложение не использует геопозицию в фоновом режиме.",
-    "NSFaceIDUsageDescription": "F*app использует Face ID для разблокировки, чтобы никто другой не заглянул внутрь.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes нужна твоя геопозиция, чтобы показывать людей поблизости и во время встречи делиться ею с твоим доверенным контактом.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Во время встречи YesYes передаёт твою геопозицию доверенному контакту, даже когда экран выключен. Вне встреч приложение не использует геопозицию в фоновом режиме.",
+    "NSFaceIDUsageDescription": "YesYes использует Face ID для разблокировки, чтобы никто другой не заглянул внутрь.",
     "NSPhotoLibraryUsageDescription": "Выбери фото для профиля.",
     "NSCameraUsageDescription": "Сфотографируй себя для профиля."
   }

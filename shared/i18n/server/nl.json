@@ -66,7 +66,7 @@
   "auth": {
     "confirmAdult": "Je moet bevestigen dat je 18 jaar of ouder bent.",
     "acceptRules": "Je moet akkoord gaan met de regels en met de verwerking van je gegevens.",
-    "underage": "F*app is alleen voor mensen van 18 jaar en ouder.",
+    "underage": "YesYes is alleen voor mensen van 18 jaar en ouder.",
     "invalidBirthdate": "Ongeldige geboortedatum.",
     "emailTaken": "Er bestaat al een account met dit e-mailadres.",
     "wrongCredentials": "Verkeerd e-mailadres of wachtwoord.",
@@ -112,12 +112,12 @@
     "cantRewindMatch": "Deze swipe is al een match."
   },
   "billing": {
-    "likeLimit": "Je likes zijn op. Binnenkort krijg je nieuwe – of swipe zonder limiet met F*app Plus.",
+    "likeLimit": "Je likes zijn op. Binnenkort krijg je nieuwe – of swipe zonder limiet met YesYes Plus.",
     "noSuperLike": "Je hebt geen Super Likes.",
     "noBoost": "Je hebt geen Boosts.",
     "tonightPaid": "‘Vanavond’ krijg je met Platinum of als losse aankoop.",
-    "featureInPlan": "{feature} hoort bij F*app {plan}.",
-    "paymentsOff": "Betalingen staan nog niet aan – F*app is voorlopig helemaal gratis.",
+    "featureInPlan": "{feature} hoort bij YesYes {plan}.",
+    "paymentsOff": "Betalingen staan nog niet aan – YesYes is voorlopig helemaal gratis.",
     "unknownProduct": "Onbekend product.",
     "cantBuy": "Je kunt dit nu niet kopen.",
     "cantBoost": "Je kunt nu geen Boost starten.",
@@ -156,10 +156,10 @@
     "photo": "Foto"
   },
   "moderation": {
-    "minor": "Dit bericht wijst erop dat een van jullie jonger dan 18 kan zijn. F*app is alleen voor 18+.",
-    "paid": "Betaalde seks aanbieden of erom vragen is niet toegestaan op F*app.",
+    "minor": "Dit bericht wijst erop dat een van jullie jonger dan 18 kan zijn. YesYes is alleen voor 18+.",
+    "paid": "Betaalde seks aanbieden of erom vragen is niet toegestaan op YesYes.",
     "consentPressure": "Let op: een afspraak in de app is geen toestemming. Je kunt hem altijd intrekken en ter plekke overal nee tegen zeggen – zonder uitleg.",
-    "contact": "Je match deelt contactgegevens buiten de app. Buiten F*app werken de afspraak, de veiligheidsmodus en melden niet voor jullie."
+    "contact": "Je match deelt contactgegevens buiten de app. Buiten YesYes werken de afspraak, de veiligheidsmodus en melden niet voor jullie."
   },
   "safety": {
     "notFound": "Date niet gevonden.",
@@ -179,9 +179,9 @@
     "noWebhook": "De ontwikkelprovider heeft geen webhook.",
     "unavailable": "De verificatiedienst reageert niet. Probeer het zo opnieuw.",
     "declined": {
-      "underage": "Uit de verificatie blijkt dat je nog geen 18 bent. F*app is alleen voor volwassenen.",
-      "banned": "Deze persoon is van F*app verbannen omdat de regels zijn overtreden.",
-      "duplicate": "Deze persoon heeft al een F*app-account. Iedereen mag er maar één hebben.",
+      "underage": "Uit de verificatie blijkt dat je nog geen 18 bent. YesYes is alleen voor volwassenen.",
+      "banned": "Deze persoon is van YesYes verbannen omdat de regels zijn overtreden.",
+      "duplicate": "Deze persoon heeft al een YesYes-account. Iedereen mag er maar één hebben.",
       "incomplete": "We konden de geboortedatum niet uit het document lezen. Probeer het opnieuw.",
       "default": "Verificatie mislukt. Probeer het opnieuw."
     }
@@ -238,7 +238,7 @@
     "someone": "Iemand die dicht bij je staat"
   },
   "share": {
-    "pageTitle": "F*app – veiligheidslink",
+    "pageTitle": "YesYes – veiligheidslink",
     "header": "Veiligheidslink",
     "loading": "Laden…",
     "call": "Bel {number}",

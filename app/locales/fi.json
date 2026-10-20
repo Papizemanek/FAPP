@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app tarvitsee sijaintisi näyttääkseen lähelläsi olevat ihmiset ja jakaakseen sen treffien aikana luottohenkilösi kanssa.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Treffien aikana F*app jakaa sijaintisi luottohenkilösi kanssa myös silloin, kun näyttö on pimeänä. Treffien ulkopuolella se ei käytä sijaintiasi taustalla.",
-    "NSFaceIDUsageDescription": "F*app käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes tarvitsee sijaintisi näyttääkseen lähelläsi olevat ihmiset ja jakaakseen sen treffien aikana luottohenkilösi kanssa.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Treffien aikana YesYes jakaa sijaintisi luottohenkilösi kanssa myös silloin, kun näyttö on pimeänä. Treffien ulkopuolella se ei käytä sijaintiasi taustalla.",
+    "NSFaceIDUsageDescription": "YesYes käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
     "NSPhotoLibraryUsageDescription": "Valitse kuvat profiiliisi.",
     "NSCameraUsageDescription": "Ota itsestäsi kuva profiiliisi."
   }

@@ -80,7 +80,7 @@ const langGrid = others
   )
   .join('');
 
-const html = `<title>F*app kreativy</title>
+const html = `<title>YesYes kreativy</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Manrope:wght@400;600;700&display=swap">
 <style>
@@ -119,7 +119,7 @@ figcaption b { color: var(--text); }
 @media (max-width: 640px) { .row { grid-template-columns: 1fr 1fr; } .vid.wide { grid-column: auto; } }
 </style>
 <div class="wrap">
-  <h1>F<b>*</b>app – kreativy kampaně</h1>
+  <h1>YesYes<b>*</b> – kreativy kampaně</h1>
   <p class="lead">Bannery a videa vyrenderované ze šablon v <code>marketing/</code>; texty jsou z překladových slovníků, takže každý jazyk jde přegenerovat příkazem <code>node marketing/render.mjs --langs de</code>. Žádná nahota ani dvojsmysly – kvůli zákonu o regulaci reklamy a pravidlům platforem.</p>
   <div class="toggle" role="group" aria-label="Jazyk kreativ">
     <button type="button" data-show="cs" aria-pressed="true">Čeština</button>

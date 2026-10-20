@@ -65,7 +65,7 @@
   "auth": {
     "confirmAdult": "Kamu harus mengonfirmasi bahwa kamu berusia 18 tahun atau lebih.",
     "acceptRules": "Kamu harus menyetujui aturan dan pemrosesan datamu.",
-    "underage": "F*app hanya untuk orang berusia 18 tahun ke atas.",
+    "underage": "YesYes hanya untuk orang berusia 18 tahun ke atas.",
     "invalidBirthdate": "Tanggal lahir tidak valid.",
     "emailTaken": "Akun dengan email ini sudah ada.",
     "wrongCredentials": "Email atau kata sandi salah.",
@@ -110,12 +110,12 @@
     "cantRewindMatch": "Geseran ini sudah menjadi match."
   },
   "billing": {
-    "likeLimit": "Like-mu habis. Tambahan segera datang – atau geser tanpa batas dengan F*app Plus.",
+    "likeLimit": "Like-mu habis. Tambahan segera datang – atau geser tanpa batas dengan YesYes Plus.",
     "noSuperLike": "Kamu tidak punya Super Like.",
     "noBoost": "Kamu tidak punya Boost.",
     "tonightPaid": "“Malam ini” tersedia dengan Platinum atau sekali beli.",
-    "featureInPlan": "{feature} adalah bagian dari F*app {plan}.",
-    "paymentsOff": "Pembayaran belum aktif – F*app sepenuhnya gratis untuk saat ini.",
+    "featureInPlan": "{feature} adalah bagian dari YesYes {plan}.",
+    "paymentsOff": "Pembayaran belum aktif – YesYes sepenuhnya gratis untuk saat ini.",
     "unknownProduct": "Produk tidak dikenal.",
     "cantBuy": "Kamu tidak bisa membeli ini sekarang.",
     "cantBoost": "Kamu tidak bisa memulai Boost sekarang.",
@@ -153,10 +153,10 @@
     "photo": "Foto"
   },
   "moderation": {
-    "minor": "Pesan ini menunjukkan bahwa salah satu dari kalian mungkin di bawah 18 tahun. F*app khusus 18+.",
-    "paid": "Menawarkan atau meminta seks berbayar tidak diizinkan di F*app.",
+    "minor": "Pesan ini menunjukkan bahwa salah satu dari kalian mungkin di bawah 18 tahun. YesYes khusus 18+.",
+    "paid": "Menawarkan atau meminta seks berbayar tidak diizinkan di YesYes.",
     "consentPressure": "Perhatian: kesepakatan di aplikasi bukanlah persetujuan. Kamu bisa membatalkannya kapan saja dan menolak apa pun saat bertemu – tanpa perlu menjelaskan.",
-    "contact": "Match-mu membagikan kontak di luar aplikasi. Di luar F*app, kesepakatan, mode keselamatan, dan pelaporan tidak berlaku untukmu."
+    "contact": "Match-mu membagikan kontak di luar aplikasi. Di luar YesYes, kesepakatan, mode keselamatan, dan pelaporan tidak berlaku untukmu."
   },
   "safety": {
     "notFound": "Pertemuan tidak ditemukan.",
@@ -176,9 +176,9 @@
     "noWebhook": "Penyedia pengembangan tidak memiliki webhook.",
     "unavailable": "Layanan verifikasi tidak merespons. Coba lagi sebentar lagi.",
     "declined": {
-      "underage": "Verifikasi menunjukkan kamu belum berusia 18 tahun. F*app hanya untuk orang dewasa.",
-      "banned": "Orang ini telah diblokir dari F*app karena melanggar aturan.",
-      "duplicate": "Orang ini sudah punya akun F*app. Setiap orang hanya boleh punya satu.",
+      "underage": "Verifikasi menunjukkan kamu belum berusia 18 tahun. YesYes hanya untuk orang dewasa.",
+      "banned": "Orang ini telah diblokir dari YesYes karena melanggar aturan.",
+      "duplicate": "Orang ini sudah punya akun YesYes. Setiap orang hanya boleh punya satu.",
       "incomplete": "Kami tidak bisa membaca tanggal lahir dari dokumen. Coba lagi.",
       "default": "Verifikasi gagal. Coba lagi."
     }
@@ -235,7 +235,7 @@
     "someone": "Orang terdekatmu"
   },
   "share": {
-    "pageTitle": "F*app – tautan keselamatan",
+    "pageTitle": "YesYes – tautan keselamatan",
     "header": "Tautan keselamatan",
     "loading": "Memuat…",
     "call": "Telepon {number}",

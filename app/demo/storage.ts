@@ -16,12 +16,12 @@ const set = (k: string, v: string | null) => {
 };
 
 export const storage = {
-  getToken: async () => get('fapp.token'),
-  setToken: async (token: string | null) => set('fapp.token', token),
+  getToken: async () => get('yesyes.token'),
+  setToken: async (token: string | null) => set('yesyes.token', token),
   getActiveSafetyIds: async (): Promise<number[]> => [],
   setActiveSafetyIds: async (_ids: number[]) => {},
   getAppLock: async () => false,
   setAppLock: async (_on: boolean) => {},
-  getLanguage: async () => get('fapp.language'),
-  setLanguage: async (code: string | null) => set('fapp.language', code),
+  getLanguage: async () => get('yesyes.language'),
+  setLanguage: async (code: string | null) => set('yesyes.language', code),
 };

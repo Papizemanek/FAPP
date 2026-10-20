@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app a besoin de ta position pour te montrer les gens à proximité et, pendant un rendez-vous, pour la partager avec ta personne de confiance.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Pendant un rendez-vous, F*app partage ta position avec ta personne de confiance, même écran éteint. En dehors des rendez-vous, F*app n'utilise pas ta position en arrière-plan.",
-    "NSFaceIDUsageDescription": "F*app utilise Face ID pour se déverrouiller, afin que personne d'autre ne puisse voir son contenu.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes a besoin de ta position pour te montrer les gens à proximité et, pendant un rendez-vous, pour la partager avec ta personne de confiance.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Pendant un rendez-vous, YesYes partage ta position avec ta personne de confiance, même écran éteint. En dehors des rendez-vous, YesYes n'utilise pas ta position en arrière-plan.",
+    "NSFaceIDUsageDescription": "YesYes utilise Face ID pour se déverrouiller, afin que personne d'autre ne puisse voir son contenu.",
     "NSPhotoLibraryUsageDescription": "Choisis des photos pour ton profil.",
     "NSCameraUsageDescription": "Prends-toi en photo pour ton profil."
   }

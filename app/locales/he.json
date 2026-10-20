@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app צריכה את המיקום שלכם כדי להציג אנשים בסביבה, ובמהלך מפגש – כדי לשתף אותו עם איש הקשר המהימן שלכם.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "במהלך מפגש F*app משתפת את המיקום שלכם עם איש הקשר המהימן, גם כשהמסך כבוי. מחוץ למפגשים היא לא משתמשת במיקום ברקע.",
-    "NSFaceIDUsageDescription": "F*app משתמשת ב-Face ID לביטול הנעילה, כדי שאף אחד אחר לא יוכל להציץ פנימה.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes צריכה את המיקום שלכם כדי להציג אנשים בסביבה, ובמהלך מפגש – כדי לשתף אותו עם איש הקשר המהימן שלכם.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "במהלך מפגש YesYes משתפת את המיקום שלכם עם איש הקשר המהימן, גם כשהמסך כבוי. מחוץ למפגשים היא לא משתמשת במיקום ברקע.",
+    "NSFaceIDUsageDescription": "YesYes משתמשת ב-Face ID לביטול הנעילה, כדי שאף אחד אחר לא יוכל להציץ פנימה.",
     "NSPhotoLibraryUsageDescription": "בחרו תמונות לפרופיל.",
     "NSCameraUsageDescription": "צלמו את עצמכם לפרופיל."
   }

@@ -1,11 +1,11 @@
 {
-  "name": "@fapp/app",
+  "name": "@yesyes/app",
   "version": "0.1.0",
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/bricolage-grotesque": "^0.4.1",
     "@expo-google-fonts/manrope": "^0.4.2",
-    "@fapp/shared": "*",
+    "@yesyes/shared": "*",
     "expo": "~57.0.29",
     "expo-alternate-app-icons": "^8.0.0",
     "expo-battery": "~57.0.3",

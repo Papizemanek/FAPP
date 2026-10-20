@@ -66,7 +66,7 @@
   "auth": {
     "confirmAdult": "18 yaşında veya daha büyük olduğunu onaylaman gerekiyor.",
     "acceptRules": "Kuralları ve verilerinin işlenmesini kabul etmen gerekiyor.",
-    "underage": "F*app yalnızca 18 yaş ve üzeri içindir.",
+    "underage": "YesYes yalnızca 18 yaş ve üzeri içindir.",
     "invalidBirthdate": "Geçersiz doğum tarihi.",
     "emailTaken": "Bu e-posta ile zaten bir hesap var.",
     "wrongCredentials": "E-posta veya şifre yanlış.",
@@ -112,12 +112,12 @@
     "cantRewindMatch": "Bu kaydırma zaten bir eşleşme."
   },
   "billing": {
-    "likeLimit": "Beğeni hakkın bitti. Yakında yenileri gelecek – ya da F*app Plus ile sınırsız kaydır.",
+    "likeLimit": "Beğeni hakkın bitti. Yakında yenileri gelecek – ya da YesYes Plus ile sınırsız kaydır.",
     "noSuperLike": "Hiç Super Like hakkın yok.",
     "noBoost": "Hiç Boost hakkın yok.",
     "tonightPaid": "“Bu gece” Platinum'a dahildir veya tek seferlik satın alınabilir.",
-    "featureInPlan": "{feature}, F*app {plan} paketine dahildir.",
-    "paymentsOff": "Ödemeler henüz açık değil – F*app şimdilik tamamen ücretsiz.",
+    "featureInPlan": "{feature}, YesYes {plan} paketine dahildir.",
+    "paymentsOff": "Ödemeler henüz açık değil – YesYes şimdilik tamamen ücretsiz.",
     "unknownProduct": "Bilinmeyen ürün.",
     "cantBuy": "Bunu şu an satın alamazsın.",
     "cantBoost": "Şu an Boost başlatamazsın.",
@@ -156,10 +156,10 @@
     "photo": "Fotoğraf"
   },
   "moderation": {
-    "minor": "Bu mesaj, birinizin 18 yaşından küçük olabileceğini gösteriyor. F*app yalnızca 18+ içindir.",
-    "paid": "F*app'te ücretli seks teklif etmek veya istemek yasaktır.",
+    "minor": "Bu mesaj, birinizin 18 yaşından küçük olabileceğini gösteriyor. YesYes yalnızca 18+ içindir.",
+    "paid": "YesYes'te ücretli seks teklif etmek veya istemek yasaktır.",
     "consentPressure": "Dikkat: uygulamadaki bir anlaşma rıza değildir. İstediğin zaman iptal edebilir ve yüz yüzeyken her şeye hayır diyebilirsin – açıklama gerekmez.",
-    "contact": "Eşleştiğin kişi uygulama dışı iletişim bilgisi paylaşıyor. F*app dışında anlaşma, güvenlik modu ve şikâyet senin için çalışmaz."
+    "contact": "Eşleştiğin kişi uygulama dışı iletişim bilgisi paylaşıyor. YesYes dışında anlaşma, güvenlik modu ve şikâyet senin için çalışmaz."
   },
   "safety": {
     "notFound": "Buluşma bulunamadı.",
@@ -179,9 +179,9 @@
     "noWebhook": "Geliştirme sağlayıcısının webhook'u yok.",
     "unavailable": "Doğrulama hizmeti yanıt vermiyor. Birazdan tekrar dene.",
     "declined": {
-      "underage": "Doğrulama henüz 18 yaşında olmadığını gösterdi. F*app yalnızca yetişkinler içindir.",
-      "banned": "Bu kişi kuralları çiğnediği için F*app'ten yasaklandı.",
-      "duplicate": "Bu kişinin zaten bir F*app hesabı var. Herkesin yalnızca bir hesabı olabilir.",
+      "underage": "Doğrulama henüz 18 yaşında olmadığını gösterdi. YesYes yalnızca yetişkinler içindir.",
+      "banned": "Bu kişi kuralları çiğnediği için YesYes'ten yasaklandı.",
+      "duplicate": "Bu kişinin zaten bir YesYes hesabı var. Herkesin yalnızca bir hesabı olabilir.",
       "incomplete": "Belgeden doğum tarihini okuyamadık. Tekrar dene.",
       "default": "Doğrulama başarısız oldu. Tekrar dene."
     }
@@ -238,7 +238,7 @@
     "someone": "Yakının olan biri"
   },
   "share": {
-    "pageTitle": "F*app – güvenlik bağlantısı",
+    "pageTitle": "YesYes – güvenlik bağlantısı",
     "header": "Güvenlik bağlantısı",
     "loading": "Yükleniyor…",
     "call": "{number} ara",

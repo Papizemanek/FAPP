@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app are nevoie de locația ta ca să-ți arate oameni din apropiere și, în timpul unei întâlniri, ca s-o trimită persoanei tale de încredere.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "În timpul unei întâlniri, F*app îi trimite locația ta persoanei de încredere, chiar și cu ecranul stins. În afara întâlnirilor, nu folosește locația în fundal.",
-    "NSFaceIDUsageDescription": "F*app folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes are nevoie de locația ta ca să-ți arate oameni din apropiere și, în timpul unei întâlniri, ca s-o trimită persoanei tale de încredere.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "În timpul unei întâlniri, YesYes îi trimite locația ta persoanei de încredere, chiar și cu ecranul stins. În afara întâlnirilor, nu folosește locația în fundal.",
+    "NSFaceIDUsageDescription": "YesYes folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
     "NSPhotoLibraryUsageDescription": "Alege poze pentru profilul tău.",
     "NSCameraUsageDescription": "Fă-ți o poză pentru profil."
   }

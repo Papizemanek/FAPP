@@ -103,8 +103,8 @@
       "edit": "Upravit"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold a Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold a Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Neomezené lajky, kdo tě lajkl, boost a další.",
       "validUntil": "Platí do {date}.",
       "upgrade": "Vylepšit",
@@ -142,7 +142,7 @@
   "premium": {
     "title": "Předplatné",
     "free": {
-      "title": "F*app je teď zdarma",
+      "title": "YesYes je teď zdarma",
       "body": "Placené funkce zapneme později. Bezpečnost – ověření, domluva, bezpečnostní režim i SOS – zůstane zdarma vždycky."
     },
     "back": "Zpět",
@@ -152,7 +152,7 @@
       "likeLimitAt": "Došly ti lajky. Další přibudou v {time}.",
       "likeLimit": "Došly ti lajky. Další přibudou za chvíli.",
       "noCredit": "{credit} je jednorázově, nebo v předplatném.",
-      "upgrade": "Tohle je součástí F*app {plan}."
+      "upgrade": "Tohle je součástí YesYes {plan}."
     },
     "oneOff": "Jednorázově",
     "owned": "máš {count}",
@@ -182,9 +182,9 @@
         "other": "Máš {count}× dnes večer navíc."
       }
     },
-    "currentPlan": "Máš F*app {plan}",
+    "currentPlan": "Máš YesYes {plan}",
     "validUntil": "Platí do {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipuj bez limitu a vrať omylem odmítnutý profil.",
       "gold": "Uvidíš, kdo tě lajkl – a matchneš jedním klepnutím.",
@@ -202,10 +202,10 @@
     "perMonthSave": "za měsíc · −{percent} %",
     "continueWithPrice": "Pokračovat · {price}",
     "planBought": {
-      "one": "Máš F*app {plan}.",
-      "few": "Máš F*app {plan} na {count} měsíce.",
-      "many": "Máš F*app {plan} na {count} měsíce.",
-      "other": "Máš F*app {plan} na {count} měsíců."
+      "one": "Máš YesYes {plan}.",
+      "few": "Máš YesYes {plan} na {count} měsíce.",
+      "many": "Máš YesYes {plan} na {count} měsíce.",
+      "other": "Máš YesYes {plan} na {count} měsíců."
     },
     "renewal": "Předplatné se obnovuje automaticky, zrušit ho jde kdykoli v nastavení App Store nebo Google Play. Cena je pro všechny stejná.",
     "renewalUpfront": "Zaplatíš {total} najednou ({monthly} měsíčně). Předplatné se obnovuje automaticky, zrušit ho jde kdykoli v nastavení App Store nebo Google Play. Cena je pro všechny stejná.",
@@ -230,13 +230,13 @@
       "other": "Lajklo tě {count} lidí"
     },
     "lockedEmpty": "Lajky uvidíš tady",
-    "goldText": "S F*app Gold uvidíš, kdo to je, a matchneš jedním klepnutím.",
+    "goldText": "S YesYes Gold uvidíš, kdo to je, a matchneš jedním klepnutím.",
     "goldCta": "Zobrazit s Gold",
     "emptySent": "Za posledních 7 dní žádné lajky bez matche.",
     "superLikePending": "Super lajk · čeká",
     "pending": "Čeká na odpověď",
     "sentTitle": "Koho jsi lajkl/a",
-    "platinumText": "S F*app Platinum uvidíš svoje lajky za posledních 7 dní.",
+    "platinumText": "S YesYes Platinum uvidíš svoje lajky za posledních 7 dní.",
     "platinumCta": "Zobrazit s Platinum",
     "likeBack": "Lajknout zpátky",
     "pass": "Přeskočit"
@@ -264,13 +264,13 @@
     "iAm": "Jsem",
     "showMe": "Koho mi ukazovat",
     "confirmAdult": "Je mi 18 let nebo víc.",
-    "acceptRules": "Souhlasím s pravidly komunity a se zpracováním svých údajů, včetně údajů o sexuálním životě, pro fungování F*app.",
+    "acceptRules": "Souhlasím s pravidly komunity a se zpracováním svých údajů, včetně údajů o sexuálním životě, pro fungování YesYes.",
     "verifyNote": "Hned potom ověříme tvou totožnost a věk (doklad a selfie). Doklad si neukládáme.",
     "continue": "Pokračovat"
   },
   "verify": {
     "title": "Ověř, že jsi to ty",
-    "intro": "Každý na F*app má ověřenou totožnost a věk. Vyfotíš doklad a selfie – zabere to asi dvě minuty.",
+    "intro": "Každý na YesYes má ověřenou totožnost a věk. Vyfotíš doklad a selfie – zabere to asi dvě minuty.",
     "privacy": "Doklad ani fotky si neukládáme. Uchováme jen výsledek ověření a datum narození. Kdo poruší pravidla, nemůže se vrátit s novým účtem.",
     "pending": {
       "title": "Čekáme na výsledek ověření",

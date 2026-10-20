@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – l'app de cites només per a sexe. Acordat i segur.",
-    "description": "F*app és una app de cites només per a sexe, per a persones adultes verificades. Acord a cegues, mode seguretat amb una persona de confiança, SOS i PIN d'emergència. Aviat a Praga.",
+    "title": "YesYes – l'app de cites només per a sexe. Acordat i segur.",
+    "description": "YesYes és una app de cites només per a sexe, per a persones adultes verificades. Acord a cegues, mode seguretat amb una persona de confiança, SOS i PIN d'emergència. Aviat a Praga.",
     "ogTitle": "Sexe. Acordat. Segur.",
     "langName": "Català"
   },
@@ -20,9 +20,9 @@
     "title1": "Sexe.",
     "title2": "Acordat.",
     "title3": "Segur.",
-    "lead": "F*app és una app de cites només per a sexe. Persones amb identitat verificada, un acord a cegues i, durant la cita, algú de confiança sap on ets.",
+    "lead": "YesYes és una app de cites només per a sexe. Persones amb identitat verificada, un acord a cegues i, durant la cita, algú de confiança sap on ets.",
     "note": "Només per a majors de 18 anys. T'escriurem una sola vegada, quan llancem l'app.",
-    "footnote": "* Només amb el sí de tots dos. I només aquí i ara.",
+    "footnote": "* Dos sís o res.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "A 2 km",
@@ -36,7 +36,7 @@
     "email": "El teu correu electrònic",
     "emailPlaceholder": "nom@email.com",
     "city": "Ciutat",
-    "consent": "Accepto que F*app m'enviï una invitació a aquest correu. Em puc donar de baixa en qualsevol moment.",
+    "consent": "Accepto que YesYes m'enviï una invitació a aquest correu. Em puc donar de baixa en qualsevol moment.",
     "submit": "Vull una invitació",
     "sending": "S'està enviant…",
     "success": "Fet. Quan llancem l'app, seràs de les primeres persones a saber-ho.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratuït en el llançament. La seguretat, sempre.",
-    "text": "Ara mateix F*app és totalment gratuït. Més endavant arribaran extres de pagament, com likes il·limitats o Boosts. La verificació, l'acord i el mode seguretat sempre seran gratuïts.",
+    "text": "Ara mateix YesYes és totalment gratuït. Més endavant arribaran extres de pagament, com likes il·limitats o Boosts. La verificació, l'acord i el mode seguretat sempre seran gratuïts.",
     "freeTitle": "Sempre gratuït",
     "free1": "Verificació de la identitat",
     "free2": "Acord a cegues",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Preguntes freqüents",
-    "q1": "F*app és de debò només per a sexe?",
+    "q1": "YesYes és de debò només per a sexe?",
     "a1": "Sí. Sense buscar parella i sense fingir. Si busques una altra cosa, la trobaràs en un altre lloc.",
     "q2": "Per què he de verificar la meva identitat?",
     "a2": "Perquè cadascú sigui qui diu que és, i perquè l'expulsió s'apliqui a la persona, no només al compte. La verificació la fa un servei especialitzat; nosaltres només guardem el resultat, la data de naixement i una empremta xifrada – mai el document.",
@@ -129,14 +129,14 @@
     "a3": "Ningú. L'altra persona només veu les coincidències. El teu «no» és només teu.",
     "q4": "I si alguna cosa va malament en una cita?",
     "a4": "Mantén premut el SOS o introdueix el PIN d'emergència, que sembla el normal. La teva persona de confiança rep una alarma amb la teva ubicació. Després de la cita, l'app t'ofereix contactes on demanar ajuda.",
-    "q5": "La gent del meu entorn sabrà que faig servir F*app?",
+    "q5": "La gent del meu entorn sabrà que faig servir YesYes?",
     "a5": "No cal. Pots canviar a una icona discreta, les notificacions no revelen res i l'app es bloqueja amb la cara o l'empremta.",
     "q6": "Quant costa?",
     "a6": "Res en el llançament. I la seguretat continuarà sent gratuïta després.",
-    "q7": "On funciona F*app?",
+    "q7": "On funciona YesYes?",
     "a7": "Comencem a Praga. Vindran més ciutats segons la llista d'espera.",
     "q8": "Tinc 17 anys. Puc entrar-hi?",
-    "a8": "No. F*app és només per a persones majors de 18 anys, i ho comprovem amb un document d'identitat."
+    "a8": "No. YesYes és només per a persones majors de 18 anys, i ho comprovem amb un document d'identitat."
   },
   "rules": {
     "title": "Normes de la comunitat",
@@ -158,7 +158,7 @@
     "rules": "Normes de la comunitat",
     "privacy": "Privadesa",
     "help": "Necessites ajuda després d'una cita? Contacta amb la policia local o amb una línia d'ajuda a les víctimes.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Vull una invitació",
@@ -185,7 +185,7 @@
     "mockPin": "Introdueix el PIN",
     "mockTrusted": "Persona de confiança",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Missatge de F*app",
+    "mockSmsFrom": "Missatge de YesYes",
     "mockSms": "{name} no ha fet el check-in – li tocava a les 23:40. Prova de trucar-li.",
     "mockAlarm": "ALARMA: {name} necessita ajuda.",
     "mockLocation": "Ubicació compartida",

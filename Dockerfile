@@ -1,8 +1,8 @@
-# Server F*app (API, hlídač check-inů, stránka pro důvěryhodnou osobu).
+# Server YesYes (API, hlídač check-inů, stránka pro důvěryhodnou osobu).
 # Databáze SQLite leží v /data – na hostingu tam připoj trvalý disk (volume), jinak se po restartu smaže.
 FROM node:22-slim
 WORKDIR /srv
-ENV DB_FILE=/data/fapp.db PORT=3000
+ENV DB_FILE=/data/yesyes.db PORT=3000
 COPY package.json package-lock.json ./
 COPY shared/package.json shared/
 COPY server/package.json server/

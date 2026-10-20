@@ -23,7 +23,7 @@ nikomu nedávej (kdo ji zná, zaregistruje se bez ověření) a po testu server 
 3. **Trvalý disk:** pravým tlačítkem na službu → **Attach Volume**, mount path `/data`. Bez něj se databáze po každém
    restartu smaže.
 4. **Adresa:** Settings → Networking → **Generate Domain**, port `3000`. Dostaneš něco jako
-   `https://fapp-production-1234.up.railway.app`.
+   `https://yesyes-production-1234.up.railway.app`.
 5. **Proměnné** (záložka Variables). Hodnoty vygeneruješ v terminálu příkazem `openssl rand -base64 32` (každou zvlášť):
 
    | Proměnná | Hodnota |

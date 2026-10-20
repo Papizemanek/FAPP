@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – l'appli de rencontres juste pour le sexe. D'un commun accord et en sécurité.",
-    "description": "F*app est une appli de rencontres juste pour le sexe, réservée aux adultes vérifiés. Accord à l'aveugle, mode sécurité avec une personne de confiance, SOS et PIN de détresse. Bientôt à Prague.",
+    "title": "YesYes – l'appli de rencontres juste pour le sexe. D'un commun accord et en sécurité.",
+    "description": "YesYes est une appli de rencontres juste pour le sexe, réservée aux adultes vérifiés. Accord à l'aveugle, mode sécurité avec une personne de confiance, SOS et PIN de détresse. Bientôt à Prague.",
     "ogTitle": "Sexe. Consenti. Sûr.",
     "langName": "Français"
   },
@@ -20,9 +20,9 @@
     "title1": "Sexe.",
     "title2": "Consenti.",
     "title3": "Sûr.",
-    "lead": "F*app est une appli de rencontres juste pour le sexe. Des personnes à l'identité vérifiée, un accord à l'aveugle et, pendant ton rendez-vous, une personne de confiance qui sait où tu es.",
+    "lead": "YesYes est une appli de rencontres juste pour le sexe. Des personnes à l'identité vérifiée, un accord à l'aveugle et, pendant ton rendez-vous, une personne de confiance qui sait où tu es.",
     "note": "18+ uniquement. Nous t'écrirons une seule fois, au lancement.",
-    "footnote": "* Seulement si vous dites oui tous les deux. Et seulement ici et maintenant.",
+    "footnote": "* Deux oui, ou rien.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "à 2 km",
@@ -36,7 +36,7 @@
     "email": "Ton adresse courriel",
     "emailPlaceholder": "nom@exemple.com",
     "city": "Ville",
-    "consent": "J'accepte que F*app envoie une invitation à cette adresse. Je peux me désinscrire à tout moment.",
+    "consent": "J'accepte que YesYes envoie une invitation à cette adresse. Je peux me désinscrire à tout moment.",
     "submit": "Recevoir une invitation",
     "sending": "Envoi…",
     "success": "C'est fait. Au lancement, tu seras parmi les premières personnes informées.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratuit au lancement. La sécurité, pour toujours.",
-    "text": "Pour l'instant, F*app est entièrement gratuit. Des options payantes comme les likes illimités ou les Boosts arriveront plus tard. La vérification, l'accord et le mode sécurité resteront toujours gratuits.",
+    "text": "Pour l'instant, YesYes est entièrement gratuit. Des options payantes comme les likes illimités ou les Boosts arriveront plus tard. La vérification, l'accord et le mode sécurité resteront toujours gratuits.",
     "freeTitle": "Toujours gratuit",
     "free1": "Vérification d'identité",
     "free2": "Accord à l'aveugle",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "q1": "F*app, c'est vraiment juste pour le sexe ?",
+    "q1": "YesYes, c'est vraiment juste pour le sexe ?",
     "a1": "Oui. Pas de recherche de relation, pas de faux-semblants. Si tu cherches autre chose, tu le trouveras ailleurs.",
     "q2": "Pourquoi dois-je vérifier mon identité ?",
     "a2": "Pour que chaque personne soit bien qui elle prétend être, et qu'un bannissement vise la personne, pas seulement le compte. Un service spécialisé fait la vérification ; nous gardons seulement le résultat, ta date de naissance et une empreinte chiffrée – jamais ta pièce d'identité.",
@@ -129,14 +129,14 @@
     "a3": "Personne. L'autre personne voit seulement ce sur quoi vous êtes d'accord. Ton « non » reste à toi.",
     "q4": "Et si quelque chose tourne mal pendant un rendez-vous ?",
     "a4": "Maintiens le bouton SOS, ou saisis ton PIN de détresse, qui ressemble au PIN habituel. Ta personne de confiance reçoit une alerte avec ta position. Après le rendez-vous, l'appli te propose des contacts pour obtenir de l'aide.",
-    "q5": "Mon entourage saura-t-il que j'utilise F*app ?",
+    "q5": "Mon entourage saura-t-il que j'utilise YesYes ?",
     "a5": "Pas forcément. Tu peux passer à une icône discrète, les notifications ne révèlent rien et l'appli se verrouille avec ton visage ou ton empreinte.",
     "q6": "Combien ça coûte ?",
     "a6": "Rien au lancement. Et la sécurité restera gratuite ensuite.",
-    "q7": "Où F*app fonctionne-t-il ?",
+    "q7": "Où YesYes fonctionne-t-il ?",
     "a7": "Nous commençons à Prague. D'autres villes suivront selon la liste d'attente.",
     "q8": "J'ai 17 ans. Je peux m'inscrire ?",
-    "a8": "Non. F*app est réservé aux personnes de plus de 18 ans, et nous le vérifions avec une pièce d'identité."
+    "a8": "Non. YesYes est réservé aux personnes de plus de 18 ans, et nous le vérifions avec une pièce d'identité."
   },
   "rules": {
     "title": "Règles de la communauté",
@@ -158,7 +158,7 @@
     "rules": "Règles de la communauté",
     "privacy": "Confidentialité",
     "help": "Besoin d'aide après un rendez-vous ? Contacte la police locale ou une ligne d'aide aux victimes.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Recevoir une invitation",
@@ -185,7 +185,7 @@
     "mockPin": "Saisis ton PIN",
     "mockTrusted": "Personne de confiance",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Message de F*app",
+    "mockSmsFrom": "Message de YesYes",
     "mockSms": "{name} n'a pas fait son check-in – il était prévu à 23 h 40. Essaie de l'appeler.",
     "mockAlarm": "ALERTE : {name} a besoin d'aide.",
     "mockLocation": "Position partagée",

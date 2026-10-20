@@ -65,7 +65,7 @@
   "auth": {
     "confirmAdult": "你必須確認自己已年滿 18 歲。",
     "acceptRules": "你必須同意規範以及資料處理。",
-    "underage": "F*app 僅限 18 歲以上的人使用。",
+    "underage": "YesYes 僅限 18 歲以上的人使用。",
     "invalidBirthdate": "出生日期無效。",
     "emailTaken": "使用此電子郵件的帳號已存在。",
     "wrongCredentials": "電子郵件或密碼錯誤。",
@@ -110,12 +110,12 @@
     "cantRewindMatch": "這次滑動已經配對成功。"
   },
   "billing": {
-    "likeLimit": "你的喜歡用完了。很快會補充——或者升級 F*app Plus 無限滑卡。",
+    "likeLimit": "你的喜歡用完了。很快會補充——或者升級 YesYes Plus 無限滑卡。",
     "noSuperLike": "你沒有超級喜歡了。",
     "noBoost": "你沒有加速了。",
     "tonightPaid": "「今晚」包含在 Platinum 中，也可以單次購買。",
-    "featureInPlan": "{feature}是 F*app {plan} 的功能。",
-    "paymentsOff": "付款功能尚未開啟——F*app 目前完全免費。",
+    "featureInPlan": "{feature}是 YesYes {plan} 的功能。",
+    "paymentsOff": "付款功能尚未開啟——YesYes 目前完全免費。",
     "unknownProduct": "不明的商品。",
     "cantBuy": "現在無法購買。",
     "cantBoost": "現在無法開啟加速。",
@@ -153,10 +153,10 @@
     "photo": "照片"
   },
   "moderation": {
-    "minor": "這則訊息顯示你們之中可能有人未滿 18 歲。F*app 僅限 18 歲以上。",
-    "paid": "F*app 禁止提供或尋求付費性交易。",
+    "minor": "這則訊息顯示你們之中可能有人未滿 18 歲。YesYes 僅限 18 歲以上。",
+    "paid": "YesYes 禁止提供或尋求付費性交易。",
     "consentPressure": "提醒：App 裡的約定不等於同意。你可以隨時取消，見面時也可以拒絕任何事——不需要解釋。",
-    "contact": "對方正在分享 App 以外的聯絡方式。離開 F*app 後，約定、安全模式和檢舉都無法為你提供保障。"
+    "contact": "對方正在分享 App 以外的聯絡方式。離開 YesYes 後，約定、安全模式和檢舉都無法為你提供保障。"
   },
   "safety": {
     "notFound": "找不到約會。",
@@ -176,9 +176,9 @@
     "noWebhook": "開發用的服務提供者沒有 webhook。",
     "unavailable": "驗證服務目前沒有回應。請稍後再試。",
     "declined": {
-      "underage": "驗證結果顯示你還未滿 18 歲。F*app 僅限成年人使用。",
-      "banned": "此人因違反規範已被 F*app 停權。",
-      "duplicate": "此人已經有 F*app 帳號了。每個人只能有一個帳號。",
+      "underage": "驗證結果顯示你還未滿 18 歲。YesYes 僅限成年人使用。",
+      "banned": "此人因違反規範已被 YesYes 停權。",
+      "duplicate": "此人已經有 YesYes 帳號了。每個人只能有一個帳號。",
       "incomplete": "無法從證件讀取出生日期。請再試一次。",
       "default": "驗證失敗。請再試一次。"
     }
@@ -235,7 +235,7 @@
     "someone": "你身邊的人"
   },
   "share": {
-    "pageTitle": "F*app – 安全連結",
+    "pageTitle": "YesYes – 安全連結",
     "header": "安全連結",
     "loading": "正在載入…",
     "call": "撥打 {number}",

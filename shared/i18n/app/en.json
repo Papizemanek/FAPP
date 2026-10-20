@@ -116,7 +116,7 @@
   "consent": {
     "intent": "This is what I have in mind. I can say no to anything once we're there – and so can they.",
     "notice": "I understand: consent only counts here and now. \"No\", \"stop\", the safe word, silence, freezing up or being drunk are not consent. An agreement in the app doesn't take responsibility away from anyone.",
-    "deterrence": "Everyone on F*app has a verified identity. If we suspect a crime, we hand it to the police."
+    "deterrence": "Everyone on YesYes has a verified identity. If we suspect a crime, we hand it to the police."
   },
   "welcome": {
     "tagline": "Sex, no fuss.",
@@ -410,8 +410,8 @@
       "edit": "Edit"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold and Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold and Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Unlimited likes, see who liked you, Boost and more.",
       "validUntil": "Valid until {date}.",
       "upgrade": "Upgrade",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Subscription",
     "free": {
-      "title": "F*app is free for now",
+      "title": "YesYes is free for now",
       "body": "We'll turn on paid features later. Safety – verification, agreements, safety mode and SOS – will always stay free."
     },
     "back": "Back",
@@ -459,7 +459,7 @@
       "likeLimitAt": "You're out of likes. More arrive at {time}.",
       "likeLimit": "You're out of likes. More are coming soon.",
       "noCredit": "{credit} is available as a one-off or with a subscription.",
-      "upgrade": "This is part of F*app {plan}."
+      "upgrade": "This is part of YesYes {plan}."
     },
     "oneOff": "One-off",
     "owned": "you have {count}",
@@ -483,9 +483,9 @@
         "other": "You've got {count} extra Tonights."
       }
     },
-    "currentPlan": "You have F*app {plan}",
+    "currentPlan": "You have YesYes {plan}",
     "validUntil": "Valid until {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipe without limits and bring back profiles you passed by mistake.",
       "gold": "See who liked you – and match with one tap.",
@@ -501,8 +501,8 @@
     "perMonthSave": "per month · −{percent}%",
     "continueWithPrice": "Continue · {price}",
     "planBought": {
-      "one": "You've got F*app {plan}.",
-      "other": "You've got F*app {plan} for {count} months."
+      "one": "You've got YesYes {plan}.",
+      "other": "You've got YesYes {plan} for {count} months."
     },
     "renewal": "Your subscription renews automatically. You can cancel anytime in App Store or Google Play settings. The price is the same for everyone.",
     "renewalUpfront": "You pay {total} up front ({monthly} a month). Your subscription renews automatically. You can cancel anytime in App Store or Google Play settings. The price is the same for everyone.",
@@ -525,13 +525,13 @@
       "other": "{count} people liked you"
     },
     "lockedEmpty": "Your likes will show up here",
-    "goldText": "With F*app Gold you'll see who they are and match with one tap.",
+    "goldText": "With YesYes Gold you'll see who they are and match with one tap.",
     "goldCta": "See them with Gold",
     "emptySent": "No likes without a match in the last 7 days.",
     "superLikePending": "Super Like · waiting",
     "pending": "Waiting for a response",
     "sentTitle": "Who you liked",
-    "platinumText": "With F*app Platinum you'll see your likes from the last 7 days.",
+    "platinumText": "With YesYes Platinum you'll see your likes from the last 7 days.",
     "platinumCta": "See them with Platinum",
     "likeBack": "Like back",
     "pass": "Pass"
@@ -559,13 +559,13 @@
     "iAm": "I am",
     "showMe": "Show me",
     "confirmAdult": "I'm 18 or older.",
-    "acceptRules": "I agree to the community rules and to the processing of my data, including data about my sex life, so that F*app can work.",
+    "acceptRules": "I agree to the community rules and to the processing of my data, including data about my sex life, so that YesYes can work.",
     "verifyNote": "Right after this, we'll verify your identity and age (ID and selfie). We don't store your ID.",
     "continue": "Continue"
   },
   "verify": {
     "title": "Verify it's you",
-    "intro": "Everyone on F*app has a verified identity and age. You'll take a photo of your ID and a selfie – it takes about two minutes.",
+    "intro": "Everyone on YesYes has a verified identity and age. You'll take a photo of your ID and a selfie – it takes about two minutes.",
     "privacy": "We don't store your ID or photos. We only keep the verification result and your date of birth. Anyone who breaks the rules can't come back with a new account.",
     "pending": {
       "title": "Waiting for your verification result",
@@ -657,7 +657,7 @@
     "notificationBody": "You can stop it in the app."
   },
   "appLock": {
-    "prompt": "Unlock F*app",
+    "prompt": "Unlock YesYes",
     "lockedTitle": "The app is locked",
     "lockedBody": "Unlock it with Face ID, your fingerprint or your phone passcode.",
     "sosHold": "SOS – press and hold",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Couldn't send"
   },
   "native": {
-    "locationWhenInUse": "F*app needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
-    "locationAlways": "During a meetup, F*app shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
-    "faceId": "F*app uses Face ID to unlock, so no one else can look inside.",
+    "locationWhenInUse": "YesYes needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
+    "locationAlways": "During a meetup, YesYes shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
+    "faceId": "YesYes uses Face ID to unlock, so no one else can look inside.",
     "photos": "Choose photos for your profile.",
     "camera": "Take a photo of yourself for your profile."
   }

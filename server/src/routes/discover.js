@@ -124,7 +124,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
     }
 
     // Jen pro vývoj: demo profily (seed) lajkují zpátky, ať jde hned vyzkoušet match.
-    if (config.dev && target.email.endsWith('@demo.fapp')) {
+    if (config.dev && target.email.endsWith('@demo.yesyes')) {
       db.prepare('INSERT OR IGNORE INTO swipes (swiper_id, target_id, liked, created_at) VALUES (?, ?, 1, ?)').run(
         targetId,
         req.user.id,

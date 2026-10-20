@@ -82,7 +82,7 @@ const icons = {
   eyeOff: '<svg viewBox="0 0 24 24" width="1.2em" height="1.2em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M10.6 6.1A9.6 9.6 0 0 1 12 6c5.5 0 9 6 9 6a16.6 16.6 0 0 1-2.9 3.5"/><path d="M6.6 7.6C4.3 9.1 3 12 3 12s3.5 6 9 6a8.7 8.7 0 0 0 4-.9"/></svg>',
 };
 
-const logo = () => '<span class="logo">F<b>*</b>app</span>';
+const logo = () => '<span class="logo" dir="ltr">YesYes<b>*</b></span>';
 const three = (t, tag = 'h1', cls = '') =>
   `<${tag} class="display three ${cls}"><span>${t('video.bumper1')}<sup>*</sup></span><span class="l2">${t('video.bumper2')}</span><span class="l3">${t('video.bumper3')}</span></${tag}>`;
 

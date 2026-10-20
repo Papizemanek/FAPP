@@ -45,7 +45,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const written = [];
 for (const { code } of LOCALES) {
   const native = readNative(code);
-  const ios = { CFBundleDisplayName: 'F*app' };
+  const ios = { CFBundleDisplayName: 'YesYes' };
   let translated = 0;
   for (const [plistKey, key] of Object.entries(KEYS)) {
     const own = typeof native[key] === 'string' && native[key].trim() ? native[key] : null;

@@ -68,7 +68,7 @@
   "auth": {
     "confirmAdult": "Potrditi moraš, da imaš 18 let ali več.",
     "acceptRules": "Strinjati se moraš s pravili in z obdelavo podatkov.",
-    "underage": "F*app je samo za osebe, starejše od 18 let.",
+    "underage": "YesYes je samo za osebe, starejše od 18 let.",
     "invalidBirthdate": "Neveljaven datum rojstva.",
     "emailTaken": "Račun s tem e-naslovom že obstaja.",
     "wrongCredentials": "Napačen e-naslov ali geslo.",
@@ -116,12 +116,12 @@
     "cantRewindMatch": "Iz tega potega je že ujemanje."
   },
   "billing": {
-    "likeLimit": "Zmanjkalo ti je všečkov. Novi pridejo kmalu – ali pa drsaj brez omejitev s F*app Plus.",
+    "likeLimit": "Zmanjkalo ti je všečkov. Novi pridejo kmalu – ali pa drsaj brez omejitev s YesYes Plus.",
     "noSuperLike": "Nimaš nobenega super všečka.",
     "noBoost": "Nimaš nobenega boosta.",
     "tonightPaid": "„Nocoj“ je v paketu Platinum ali kot enkraten nakup.",
-    "featureInPlan": "{feature} je del F*app {plan}.",
-    "paymentsOff": "Plačila še niso vklopljena – F*app je zdaj povsem brezplačen.",
+    "featureInPlan": "{feature} je del YesYes {plan}.",
+    "paymentsOff": "Plačila še niso vklopljena – YesYes je zdaj povsem brezplačen.",
     "unknownProduct": "Neznan izdelek.",
     "cantBuy": "Tega zdaj ni mogoče kupiti.",
     "cantBoost": "Boosta zdaj ni mogoče vklopiti.",
@@ -162,10 +162,10 @@
     "photo": "Fotografija"
   },
   "moderation": {
-    "minor": "Sporočilo nakazuje, da je lahko kdo od vaju mladoleten. F*app je samo za 18+.",
-    "paid": "Ponujanje ali iskanje plačanega seksa je na F*app prepovedano.",
+    "minor": "Sporočilo nakazuje, da je lahko kdo od vaju mladoleten. YesYes je samo za 18+.",
+    "paid": "Ponujanje ali iskanje plačanega seksa je na YesYes prepovedano.",
     "consentPressure": "Pozor: dogovor v aplikaciji ni privolitev. Kadar koli ga lahko prekličeš in na kraju samem karkoli zavrneš – brez pojasnjevanja.",
-    "contact": "Druga oseba deli kontakt zunaj aplikacije. Zunaj F*app za vaju ne delujejo dogovor, varnostni način in prijave."
+    "contact": "Druga oseba deli kontakt zunaj aplikacije. Zunaj YesYes za vaju ne delujejo dogovor, varnostni način in prijave."
   },
   "safety": {
     "notFound": "Zmenek ne obstaja.",
@@ -185,9 +185,9 @@
     "noWebhook": "Razvojni ponudnik nima webhooka.",
     "unavailable": "Storitev za preverjanje se ne odziva. Poskusi čez trenutek.",
     "declined": {
-      "underage": "Preverjanje je pokazalo, da še nimaš 18 let. F*app je samo za odrasle.",
-      "banned": "Ta oseba je bila na F*app blokirana zaradi kršitve pravil.",
-      "duplicate": "Ta oseba že ima račun na F*app. Vsak ima lahko le enega.",
+      "underage": "Preverjanje je pokazalo, da še nimaš 18 let. YesYes je samo za odrasle.",
+      "banned": "Ta oseba je bila na YesYes blokirana zaradi kršitve pravil.",
+      "duplicate": "Ta oseba že ima račun na YesYes. Vsak ima lahko le enega.",
       "incomplete": "Datuma rojstva iz dokumenta ni bilo mogoče prebrati. Poskusi znova.",
       "default": "Preverjanje ni uspelo. Poskusi znova."
     }
@@ -244,7 +244,7 @@
     "someone": "Tebi bližnja oseba"
   },
   "share": {
-    "pageTitle": "F*app – varnostna povezava",
+    "pageTitle": "YesYes – varnostna povezava",
     "header": "Varnostna povezava",
     "loading": "Nalagam…",
     "call": "Pokliči {number}",

@@ -1,11 +1,11 @@
-import type { ProductId } from '@fapp/shared';
+import type { ProductId } from '@yesyes/shared';
 import { router } from 'expo-router';
 import { useEffect, useSyncExternalStore } from 'react';
 import { t } from '@/lib/i18n';
 import { api, ApiError, type Billing } from './api';
 
 // Stav předplatného sdílený mezi obrazovkami. Placené prvky se ukazují jen v placeném režimu
-// (BILLING_MODE=paid) nebo s darovaným předplatným – na startu je F*app celý zdarma.
+// (BILLING_MODE=paid) nebo s darovaným předplatným – na startu je YesYes celý zdarma.
 
 let current: Billing | null = null;
 const listeners = new Set<() => void>();
@@ -62,4 +62,4 @@ export function openPaywall(err: unknown) {
 
 // Webový prototyp: demo panel přepíná režim plateb a dá vědět, ať se stav načte znovu.
 const g = globalThis as { addEventListener?: (type: string, fn: () => void) => void };
-g.addEventListener?.('fapp-demo-billing', () => void refreshBilling());
+g.addEventListener?.('yesyes-demo-billing', () => void refreshBilling());

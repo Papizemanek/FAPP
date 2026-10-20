@@ -150,11 +150,11 @@ const addMonths = (now, months) => {
   return d.toISOString();
 };
 
-/** ID produktu z obchodu → náš produkt („fapp_gold_1m“, Google „gold_1m:mesicne“ → „gold_1m“). */
+/** ID produktu z obchodu → náš produkt („yesyes_gold_1m“, Google „gold_1m:mesicne“ → „gold_1m“). */
 export function productIdFrom(storeId) {
   const base = String(storeId ?? '')
     .split(':')[0]
-    .replace(/^fapp[._]/, '');
+    .replace(/^yesyes[._]/, '');
   return Object.hasOwn(PRODUCTS, base) ? base : null;
 }
 

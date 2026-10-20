@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Voilà ce que j'ai en tête. Sur place, je peux refuser n'importe quoi – et l'autre aussi.",
     "notice": "Je comprends : le consentement ne vaut qu'ici et maintenant. « Non », « stop », le mot de sécurité, le silence, le fait de se figer ou d'être ivre ne sont pas un consentement. Un accord dans l'appli ne dégage personne de sa responsabilité.",
-    "deterrence": "Sur F*app, tout le monde a une identité vérifiée. En cas de soupçon d'infraction pénale, nous transmettons l'identité à la police."
+    "deterrence": "Sur YesYes, tout le monde a une identité vérifiée. En cas de soupçon d'infraction pénale, nous transmettons l'identité à la police."
   },
   "welcome": {
     "tagline": "Du sexe, sans détour.",
@@ -414,8 +414,8 @@
       "edit": "Modifier"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold et Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold et Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Likes illimités, qui a liké ton profil, Boost et plus encore.",
       "validUntil": "Valable jusqu'au {date}.",
       "upgrade": "Améliorer",
@@ -453,7 +453,7 @@
   "premium": {
     "title": "Abonnement",
     "free": {
-      "title": "F*app est gratuit pour l'instant",
+      "title": "YesYes est gratuit pour l'instant",
       "body": "Nous activerons les fonctions payantes plus tard. La sécurité – vérification, accords, mode sécurité et SOS – restera toujours gratuite."
     },
     "back": "Retour",
@@ -463,7 +463,7 @@
       "likeLimitAt": "Tu n'as plus de likes. D'autres arrivent à {time}.",
       "likeLimit": "Tu n'as plus de likes. D'autres arrivent bientôt.",
       "noCredit": "{credit} est disponible à l'unité ou avec un abonnement.",
-      "upgrade": "Ça fait partie de F*app {plan}."
+      "upgrade": "Ça fait partie de YesYes {plan}."
     },
     "oneOff": "À l'unité",
     "owned": "tu en as {count}",
@@ -490,9 +490,9 @@
         "other": "Tu as {count} « Ce soir » en plus."
       }
     },
-    "currentPlan": "Tu as F*app {plan}",
+    "currentPlan": "Tu as YesYes {plan}",
     "validUntil": "Valable jusqu'au {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipe sans limite et récupère les profils passés par erreur.",
       "gold": "Vois qui a liké ton profil – et matche d'un simple toucher.",
@@ -509,9 +509,9 @@
     "perMonthSave": "par mois · −{percent} %",
     "continueWithPrice": "Continuer · {price}",
     "planBought": {
-      "one": "Tu as F*app {plan}.",
-      "many": "Tu as F*app {plan} pour {count} mois.",
-      "other": "Tu as F*app {plan} pour {count} mois."
+      "one": "Tu as YesYes {plan}.",
+      "many": "Tu as YesYes {plan} pour {count} mois.",
+      "other": "Tu as YesYes {plan} pour {count} mois."
     },
     "renewal": "Ton abonnement se renouvelle automatiquement. Tu peux l'annuler à tout moment dans les réglages de l'App Store ou de Google Play. Le prix est le même pour tout le monde.",
     "renewalUpfront": "Tu paies {total} d'avance ({monthly} par mois). Ton abonnement se renouvelle automatiquement. Tu peux l'annuler à tout moment dans les réglages de l'App Store ou de Google Play. Le prix est le même pour tout le monde.",
@@ -535,13 +535,13 @@
       "other": "{count} personnes ont liké ton profil"
     },
     "lockedEmpty": "Tes likes apparaîtront ici",
-    "goldText": "Avec F*app Gold, tu verras qui c'est et tu pourras matcher d'un simple toucher.",
+    "goldText": "Avec YesYes Gold, tu verras qui c'est et tu pourras matcher d'un simple toucher.",
     "goldCta": "Les voir avec Gold",
     "emptySent": "Aucun like sans match ces 7 derniers jours.",
     "superLikePending": "Super Like · en attente",
     "pending": "En attente de réponse",
     "sentTitle": "Les profils que tu as likés",
-    "platinumText": "Avec F*app Platinum, tu verras tes likes des 7 derniers jours.",
+    "platinumText": "Avec YesYes Platinum, tu verras tes likes des 7 derniers jours.",
     "platinumCta": "Les voir avec Platinum",
     "likeBack": "Liker en retour",
     "pass": "Passer"
@@ -569,13 +569,13 @@
     "iAm": "Je suis",
     "showMe": "Montre-moi",
     "confirmAdult": "J'ai 18 ans ou plus.",
-    "acceptRules": "J'accepte les règles de la communauté et le traitement de mes données, y compris celles sur ma vie sexuelle, pour que F*app puisse fonctionner.",
+    "acceptRules": "J'accepte les règles de la communauté et le traitement de mes données, y compris celles sur ma vie sexuelle, pour que YesYes puisse fonctionner.",
     "verifyNote": "Juste après, nous vérifierons ton identité et ton âge (pièce d'identité et selfie). Nous ne conservons pas ta pièce d'identité.",
     "continue": "Continuer"
   },
   "verify": {
     "title": "Vérifie que c'est bien toi",
-    "intro": "Sur F*app, tout le monde a une identité et un âge vérifiés. Tu prends en photo ta pièce d'identité et un selfie – ça prend environ deux minutes.",
+    "intro": "Sur YesYes, tout le monde a une identité et un âge vérifiés. Tu prends en photo ta pièce d'identité et un selfie – ça prend environ deux minutes.",
     "privacy": "Nous ne conservons ni ta pièce d'identité ni tes photos. Nous gardons seulement le résultat de la vérification et ta date de naissance. Quiconque enfreint les règles ne peut pas revenir avec un nouveau compte.",
     "pending": {
       "title": "En attente du résultat de ta vérification",
@@ -668,7 +668,7 @@
     "notificationBody": "Tu peux l'arrêter dans l'appli."
   },
   "appLock": {
-    "prompt": "Déverrouiller F*app",
+    "prompt": "Déverrouiller YesYes",
     "lockedTitle": "L'appli est verrouillée",
     "lockedBody": "Déverrouille-la avec Face ID, ton empreinte ou le code de ton téléphone.",
     "sosHold": "SOS – maintiens appuyé",
@@ -679,9 +679,9 @@
     "sosFailedTitle": "Envoi impossible"
   },
   "native": {
-    "locationWhenInUse": "F*app a besoin de ta position pour te montrer les gens à proximité et, pendant un rendez-vous, pour la partager avec ta personne de confiance.",
-    "locationAlways": "Pendant un rendez-vous, F*app partage ta position avec ta personne de confiance, même écran éteint. En dehors des rendez-vous, F*app n'utilise pas ta position en arrière-plan.",
-    "faceId": "F*app utilise Face ID pour se déverrouiller, afin que personne d'autre ne puisse voir son contenu.",
+    "locationWhenInUse": "YesYes a besoin de ta position pour te montrer les gens à proximité et, pendant un rendez-vous, pour la partager avec ta personne de confiance.",
+    "locationAlways": "Pendant un rendez-vous, YesYes partage ta position avec ta personne de confiance, même écran éteint. En dehors des rendez-vous, YesYes n'utilise pas ta position en arrière-plan.",
+    "faceId": "YesYes utilise Face ID pour se déverrouiller, afin que personne d'autre ne puisse voir son contenu.",
     "photos": "Choisis des photos pour ton profil.",
     "camera": "Prends-toi en photo pour ton profil."
   }

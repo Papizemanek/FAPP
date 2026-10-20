@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – een datingapp puur voor seks. Afgesproken en veilig.",
-    "description": "F*app is een datingapp puur voor seks, voor geverifieerde volwassenen. Blinde afspraak, een veiligheidsmodus met een vertrouwenspersoon, SOS en een noodpincode. Binnenkort in Praag.",
+    "title": "YesYes – een datingapp puur voor seks. Afgesproken en veilig.",
+    "description": "YesYes is een datingapp puur voor seks, voor geverifieerde volwassenen. Blinde afspraak, een veiligheidsmodus met een vertrouwenspersoon, SOS en een noodpincode. Binnenkort in Praag.",
     "ogTitle": "Seks. Afgesproken. Veilig.",
     "langName": "Nederlands"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Afgesproken.",
     "title3": "Veilig.",
-    "lead": "F*app is een datingapp puur voor seks. Mensen met een geverifieerde identiteit, een blinde afspraak, en tijdens je date weet iemand die je vertrouwt waar je bent.",
+    "lead": "YesYes is een datingapp puur voor seks. Mensen met een geverifieerde identiteit, een blinde afspraak, en tijdens je date weet iemand die je vertrouwt waar je bent.",
     "note": "Alleen voor 18+. We mailen je één keer, als we live gaan.",
-    "footnote": "* Alleen als jullie allebei ja zeggen. En alleen hier en nu.",
+    "footnote": "* Twee keer ja, of niets.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "Op 2 km afstand",
@@ -36,7 +36,7 @@
     "email": "Je e-mailadres",
     "emailPlaceholder": "naam@email.nl",
     "city": "Stad",
-    "consent": "Ik ga ermee akkoord dat F*app een uitnodiging naar dit e-mailadres stuurt. Ik kan me altijd afmelden.",
+    "consent": "Ik ga ermee akkoord dat YesYes een uitnodiging naar dit e-mailadres stuurt. Ik kan me altijd afmelden.",
     "submit": "Uitnodiging aanvragen",
     "sending": "Versturen…",
     "success": "Klaar. Als we live gaan, hoor jij het als eerste.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratis bij de start. Veiligheid voor altijd.",
-    "text": "Op dit moment is F*app helemaal gratis. Betaalde extra’s zoals onbeperkt liken of boosts komen later. Verificatie, de afspraak en de veiligheidsmodus blijven altijd gratis.",
+    "text": "Op dit moment is YesYes helemaal gratis. Betaalde extra’s zoals onbeperkt liken of boosts komen later. Verificatie, de afspraak en de veiligheidsmodus blijven altijd gratis.",
     "freeTitle": "Altijd gratis",
     "free1": "Identiteitsverificatie",
     "free2": "Blinde afspraak",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Veelgestelde vragen",
-    "q1": "Is F*app echt alleen voor seks?",
+    "q1": "Is YesYes echt alleen voor seks?",
     "a1": "Ja. Geen relatie zoeken en geen gedoe met doen alsof. Zoek je iets anders, dan vind je dat elders.",
     "q2": "Waarom moet ik mijn identiteit verifiëren?",
     "a2": "Zodat iedereen is wie hij of zij zegt te zijn, en een ban voor de persoon geldt, niet alleen voor het account. Een gespecialiseerde dienst doet de controle; wij bewaren alleen de uitkomst, je geboortedatum en een versleutelde vingerafdruk – nooit je ID-bewijs.",
@@ -129,14 +129,14 @@
     "a3": "Niemand. De ander ziet alleen waar jullie het over eens zijn. Jouw ‘nee’ blijft van jou.",
     "q4": "Wat als er tijdens een date iets misgaat?",
     "a4": "Houd SOS ingedrukt, of voer je noodpincode in, die eruitziet als de gewone. Je vertrouwenspersoon krijgt een alarm met je locatie. Na de date laat de app je zien waar je hulp kunt krijgen.",
-    "q5": "Merken mensen om me heen dat ik F*app gebruik?",
+    "q5": "Merken mensen om me heen dat ik YesYes gebruik?",
     "a5": "Dat hoeft niet. Je kunt overschakelen op een discreet icoon, meldingen verraden niets, en de app vergrendelt met je gezicht of vingerafdruk.",
     "q6": "Wat kost het?",
     "a6": "Niets bij de start. Veiligheid blijft daarna ook gratis.",
-    "q7": "Waar werkt F*app?",
+    "q7": "Waar werkt YesYes?",
     "a7": "We beginnen in Praag. Meer steden volgen op basis van de wachtlijst.",
     "q8": "Ik ben 17. Mag ik meedoen?",
-    "a8": "Nee. F*app is alleen voor mensen van 18 jaar en ouder, en dat controleren we aan de hand van een ID-bewijs."
+    "a8": "Nee. YesYes is alleen voor mensen van 18 jaar en ouder, en dat controleren we aan de hand van een ID-bewijs."
   },
   "rules": {
     "title": "Communityregels",
@@ -158,7 +158,7 @@
     "rules": "Communityregels",
     "privacy": "Privacy",
     "help": "Hulp nodig na een date? Neem contact op met de lokale politie of een hulplijn voor slachtoffers.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Uitnodiging aanvragen",
@@ -185,7 +185,7 @@
     "mockPin": "Voer pincode in",
     "mockTrusted": "Vertrouwenspersoon",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Bericht van F*app",
+    "mockSmsFrom": "Bericht van YesYes",
     "mockSms": "{name} heeft niet ingecheckt – dat had om 23:40 moeten gebeuren. Probeer haar te bellen.",
     "mockAlarm": "ALARM: {name} heeft hulp nodig.",
     "mockLocation": "Locatie gedeeld",

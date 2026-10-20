@@ -78,7 +78,7 @@
     "notificationBody": "You can stop it in the app."
   },
   "appLock": {
-    "prompt": "Unlock F*app",
+    "prompt": "Unlock YesYes",
     "lockedTitle": "The app is locked",
     "lockedBody": "Unlock it with Face ID, your fingerprint or your phone passcode.",
     "sosHold": "SOS – press and hold",
@@ -89,9 +89,9 @@
     "sosFailedTitle": "Couldn't send"
   },
   "native": {
-    "locationWhenInUse": "F*app needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
-    "locationAlways": "During a meetup, F*app shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
-    "faceId": "F*app uses Face ID to unlock, so no one else can look inside.",
+    "locationWhenInUse": "YesYes needs your location to show you people nearby and, during a meetup, to share it with your trusted contact.",
+    "locationAlways": "During a meetup, YesYes shares your location with your trusted contact, even when your screen is off. Outside of meetups, it doesn't use your location in the background.",
+    "faceId": "YesYes uses Face ID to unlock, so no one else can look inside.",
     "photos": "Choose photos for your profile.",
     "camera": "Take a photo of yourself for your profile."
   }

@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*appは、近くの人を表示するため、またデート中に信頼できる人と位置情報を共有するために、位置情報を使用します。",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "デート中、F*appは画面がオフのときでも、信頼できる人とあなたの位置情報を共有します。デート以外では、バックグラウンドで位置情報を使用しません。",
-    "NSFaceIDUsageDescription": "F*appはロック解除にFace IDを使用し、他の人に中を見られないようにします。",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYesは、近くの人を表示するため、またデート中に信頼できる人と位置情報を共有するために、位置情報を使用します。",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "デート中、YesYesは画面がオフのときでも、信頼できる人とあなたの位置情報を共有します。デート以外では、バックグラウンドで位置情報を使用しません。",
+    "NSFaceIDUsageDescription": "YesYesはロック解除にFace IDを使用し、他の人に中を見られないようにします。",
     "NSPhotoLibraryUsageDescription": "プロフィール用の写真を選択してください。",
     "NSCameraUsageDescription": "プロフィール用に自分の写真を撮影してください。"
   }

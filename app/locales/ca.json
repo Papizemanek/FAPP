@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app necessita la teva ubicació per mostrar-te gent propera i, durant una trobada, compartir-la amb la teva persona de confiança.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Durant una trobada, F*app comparteix la teva ubicació amb la teva persona de confiança, fins i tot amb la pantalla apagada. Fora de les trobades, no fa servir la ubicació en segon pla.",
-    "NSFaceIDUsageDescription": "F*app fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes necessita la teva ubicació per mostrar-te gent propera i, durant una trobada, compartir-la amb la teva persona de confiança.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Durant una trobada, YesYes comparteix la teva ubicació amb la teva persona de confiança, fins i tot amb la pantalla apagada. Fora de les trobades, no fa servir la ubicació en segon pla.",
+    "NSFaceIDUsageDescription": "YesYes fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
     "NSPhotoLibraryUsageDescription": "Tria fotos per al teu perfil.",
     "NSCameraUsageDescription": "Fes-te una foto per al teu perfil."
   }

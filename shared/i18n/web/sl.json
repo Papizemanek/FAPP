@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplikacija za zmenke samo za seks. Dogovorjeno in varno.",
-    "description": "F*app je aplikacija za zmenke samo za seks, za preverjene odrasle. Dogovor na slepo, varnostni način z zaupno osebo, SOS in PIN v sili. Kmalu v Pragi.",
+    "title": "YesYes – aplikacija za zmenke samo za seks. Dogovorjeno in varno.",
+    "description": "YesYes je aplikacija za zmenke samo za seks, za preverjene odrasle. Dogovor na slepo, varnostni način z zaupno osebo, SOS in PIN v sili. Kmalu v Pragi.",
     "ogTitle": "Seks. Dogovorjeno. Varno.",
     "langName": "Slovenščina"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Dogovorjeno.",
     "title3": "Varno.",
-    "lead": "F*app je aplikacija za zmenke samo za seks. Ljudje s preverjeno identiteto, dogovor na slepo, med zmenkom pa nekdo, ki mu zaupaš, ve, kje si.",
+    "lead": "YesYes je aplikacija za zmenke samo za seks. Ljudje s preverjeno identiteto, dogovor na slepo, med zmenkom pa nekdo, ki mu zaupaš, ve, kje si.",
     "note": "Samo za 18+. Pisali ti bomo enkrat, ko začnemo.",
-    "footnote": "* Le s privolitvijo obeh. In le tukaj in zdaj.",
+    "footnote": "* Dva »ja« ali nič.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km od tebe",
@@ -36,7 +36,7 @@
     "email": "Tvoj e-naslov",
     "emailPlaceholder": "ime@email.si",
     "city": "Mesto",
-    "consent": "Strinjam se, da mi F*app na ta e-naslov pošlje povabilo. Odjavim se lahko kadar koli.",
+    "consent": "Strinjam se, da mi YesYes na ta e-naslov pošlje povabilo. Odjavim se lahko kadar koli.",
     "submit": "Želim povabilo",
     "sending": "Pošiljam…",
     "success": "Končano. Ko začnemo, se najprej oglasimo tebi.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Ob začetku brezplačno. Varnost za vedno.",
-    "text": "Zdaj je F*app povsem brezplačen. Plačljivi dodatki, kot so neomejeni všečki ali boosti, pridejo pozneje. Preverjanje, dogovor in varnostni način bodo vedno brezplačni.",
+    "text": "Zdaj je YesYes povsem brezplačen. Plačljivi dodatki, kot so neomejeni všečki ali boosti, pridejo pozneje. Preverjanje, dogovor in varnostni način bodo vedno brezplačni.",
     "freeTitle": "Vedno brezplačno",
     "free1": "Preverjanje identitete",
     "free2": "Dogovor na slepo",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Pogosta vprašanja",
-    "q1": "Je F*app res samo za seks?",
+    "q1": "Je YesYes res samo za seks?",
     "a1": "Da. Brez iskanja zveze in brez pretvarjanja. Kdor išče kaj drugega, bo to našel drugje.",
     "q2": "Zakaj moram preveriti identiteto?",
     "a2": "Da je vsak tisti, za kogar se predstavlja, in da prepoved velja za človeka, ne le za račun. Preverjanje opravi specializirana storitev; mi shranimo le rezultat, datum rojstva in šifriran odtis identitete – nikoli dokumenta.",
@@ -129,14 +129,14 @@
     "a3": "Nihče. Druga oseba vidi le to, v čemer se ujemata. Tvoj „ne“ ostane samo tvoj.",
     "q4": "Kaj, če gre na zmenku kaj narobe?",
     "a4": "Pridrži SOS ali vnesi PIN v sili, ki je videti kot običajni. Zaupna oseba dobi alarm s tvojo lokacijo. Po zmenku ti aplikacija pokaže, kje poiskati pomoč.",
-    "q5": "Bo kdo v moji okolici vedel, da uporabljam F*app?",
+    "q5": "Bo kdo v moji okolici vedel, da uporabljam YesYes?",
     "a5": "Ni nujno. Ikono lahko zamenjaš za neopazno, obvestila ne izdajo ničesar, aplikacijo pa lahko zakleneš z obrazom ali prstnim odtisom.",
     "q6": "Koliko stane?",
     "a6": "Ob začetku nič. Varnost bo brezplačna tudi pozneje.",
-    "q7": "Kje F*app deluje?",
+    "q7": "Kje YesYes deluje?",
     "a7": "Začnemo v Pragi. Druga mesta sledijo glede na zanimanje na čakalnem seznamu.",
     "q8": "Imam 17 let. Lahko?",
-    "a8": "Ne. F*app je samo za osebe, starejše od 18 let, kar preverimo z dokumentom."
+    "a8": "Ne. YesYes je samo za osebe, starejše od 18 let, kar preverimo z dokumentom."
   },
   "rules": {
     "title": "Pravila skupnosti",
@@ -158,7 +158,7 @@
     "rules": "Pravila skupnosti",
     "privacy": "Zasebnost",
     "help": "Potrebuješ pomoč po zmenku? Obrni se na lokalno policijo ali linijo pomoči za žrtve kaznivih dejanj.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Želim povabilo",
@@ -185,7 +185,7 @@
     "mockPin": "Vnesi PIN",
     "mockTrusted": "Zaupna oseba",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Sporočilo od F*app",
+    "mockSmsFrom": "Sporočilo od YesYes",
     "mockSms": "{name} se ni javila – potrditev bi morala priti ob 23.40. Poskusi jo poklicati.",
     "mockAlarm": "ALARM: {name} potrebuje pomoč.",
     "mockLocation": "Lokacija deljena",

@@ -29,9 +29,9 @@ test('čekací listina: bez souhlasu nebo se špatným e-mailem ne', async () =>
 });
 
 test('čekací listina: CORS jen pro povolený web', async () => {
-  t.ctx.config.webOrigins = ['https://fapp.example'];
-  const ok = await t.call('OPTIONS', '/api/waitlist', { headers: { Origin: 'https://fapp.example' } });
-  assert.equal(ok.raw.headers.get('access-control-allow-origin'), 'https://fapp.example');
+  t.ctx.config.webOrigins = ['https://yesyes.example'];
+  const ok = await t.call('OPTIONS', '/api/waitlist', { headers: { Origin: 'https://yesyes.example' } });
+  assert.equal(ok.raw.headers.get('access-control-allow-origin'), 'https://yesyes.example');
   const other = await t.call('OPTIONS', '/api/waitlist', { headers: { Origin: 'https://evil.example' } });
   assert.equal(other.raw.headers.get('access-control-allow-origin'), null);
 });

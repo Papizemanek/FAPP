@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app 需要使用你的位置，以便向你显示附近的人，并在约会期间与你的信任联系人共享位置。",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "约会期间，即使屏幕关闭，F*app 也会与你的信任联系人共享你的位置。约会之外，它不会在后台使用你的位置。",
-    "NSFaceIDUsageDescription": "F*app 使用面容 ID 解锁，这样别人就无法查看其中的内容。",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes 需要使用你的位置，以便向你显示附近的人，并在约会期间与你的信任联系人共享位置。",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "约会期间，即使屏幕关闭，YesYes 也会与你的信任联系人共享你的位置。约会之外，它不会在后台使用你的位置。",
+    "NSFaceIDUsageDescription": "YesYes 使用面容 ID 解锁，这样别人就无法查看其中的内容。",
     "NSPhotoLibraryUsageDescription": "选择用于个人资料的照片。",
     "NSCameraUsageDescription": "为个人资料拍一张自己的照片。"
   }

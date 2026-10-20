@@ -68,7 +68,7 @@
   "auth": {
     "confirmAdult": "Musíš potvrdiť, že máš 18 rokov alebo viac.",
     "acceptRules": "Musíš súhlasiť s pravidlami a so spracovaním údajov.",
-    "underage": "F*app je len pre ľudí starších ako 18 rokov.",
+    "underage": "YesYes je len pre ľudí starších ako 18 rokov.",
     "invalidBirthdate": "Neplatný dátum narodenia.",
     "emailTaken": "Účet s týmto e-mailom už existuje.",
     "wrongCredentials": "Nesprávny e-mail alebo heslo.",
@@ -116,12 +116,12 @@
     "cantRewindMatch": "Z tohto swipu už je match."
   },
   "billing": {
-    "likeLimit": "Minuli sa ti lajky. Ďalšie pribudnú o chvíľu – alebo swipuj bez limitu s F*app Plus.",
+    "likeLimit": "Minuli sa ti lajky. Ďalšie pribudnú o chvíľu – alebo swipuj bez limitu s YesYes Plus.",
     "noSuperLike": "Nemáš žiadny super lajk.",
     "noBoost": "Nemáš žiadny boost.",
     "tonightPaid": "„Dnes večer“ je v Platinum alebo jednorazovo.",
-    "featureInPlan": "{feature} je súčasťou F*app {plan}.",
-    "paymentsOff": "Platby zatiaľ nie sú zapnuté – F*app je teraz celý zadarmo.",
+    "featureInPlan": "{feature} je súčasťou YesYes {plan}.",
+    "paymentsOff": "Platby zatiaľ nie sú zapnuté – YesYes je teraz celý zadarmo.",
     "unknownProduct": "Neznámy produkt.",
     "cantBuy": "Toto sa teraz kúpiť nedá.",
     "cantBoost": "Boost sa teraz spustiť nedá.",
@@ -162,10 +162,10 @@
     "photo": "Fotka"
   },
   "moderation": {
-    "minor": "Správa naznačuje, že niekto z vás môže byť maloletý. F*app je len pre 18+.",
-    "paid": "Ponúkanie alebo zháňanie plateného sexu je na F*app zakázané.",
+    "minor": "Správa naznačuje, že niekto z vás môže byť maloletý. YesYes je len pre 18+.",
+    "paid": "Ponúkanie alebo zháňanie plateného sexu je na YesYes zakázané.",
     "consentPressure": "Pozor: dohoda v aplikácii nie je súhlas. Môžeš ju kedykoľvek zrušiť a na mieste čokoľvek odmietnuť – bez vysvetľovania.",
-    "contact": "Druhá strana zdieľa kontakt mimo aplikácie. Mimo F*app pre vás nefunguje dohoda, bezpečnostný režim ani nahlásenie."
+    "contact": "Druhá strana zdieľa kontakt mimo aplikácie. Mimo YesYes pre vás nefunguje dohoda, bezpečnostný režim ani nahlásenie."
   },
   "safety": {
     "notFound": "Stretnutie neexistuje.",
@@ -185,9 +185,9 @@
     "noWebhook": "Vývojový poskytovateľ nemá webhook.",
     "unavailable": "Overovacia služba teraz neodpovedá. Skús to o chvíľu.",
     "declined": {
-      "underage": "Overenie ukázalo, že ešte nemáš 18. F*app je len pre dospelých.",
-      "banned": "Táto osoba bola na F*app zablokovaná za porušenie pravidiel.",
-      "duplicate": "Táto osoba už na F*app účet má. Každý môže mať len jeden.",
+      "underage": "Overenie ukázalo, že ešte nemáš 18. YesYes je len pre dospelých.",
+      "banned": "Táto osoba bola na YesYes zablokovaná za porušenie pravidiel.",
+      "duplicate": "Táto osoba už na YesYes účet má. Každý môže mať len jeden.",
       "incomplete": "Z dokladu sa nepodarilo prečítať dátum narodenia. Skús to znova.",
       "default": "Overenie sa nepodarilo. Skús to znova."
     }
@@ -244,7 +244,7 @@
     "someone": "Tvoj blízky človek"
   },
   "share": {
-    "pageTitle": "F*app – bezpečnostný odkaz",
+    "pageTitle": "YesYes – bezpečnostný odkaz",
     "header": "Bezpečnostný odkaz",
     "loading": "Načítavam…",
     "call": "Zavolať {number}",

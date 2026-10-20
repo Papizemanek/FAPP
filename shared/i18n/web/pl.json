@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplikacja randkowa tylko na seks. Ustalony i bezpieczny.",
-    "description": "F*app to aplikacja randkowa tylko na seks dla zweryfikowanych dorosłych. Ustalenia w ciemno, tryb bezpieczeństwa z zaufaną osobą, SOS i PIN awaryjny. Wkrótce w Pradze.",
+    "title": "YesYes – aplikacja randkowa tylko na seks. Ustalony i bezpieczny.",
+    "description": "YesYes to aplikacja randkowa tylko na seks dla zweryfikowanych dorosłych. Ustalenia w ciemno, tryb bezpieczeństwa z zaufaną osobą, SOS i PIN awaryjny. Wkrótce w Pradze.",
     "ogTitle": "Seks. Ustalony. Bezpieczny.",
     "langName": "Polski"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Ustalony.",
     "title3": "Bezpieczny.",
-    "lead": "F*app to aplikacja randkowa tylko na seks. Ludzie ze zweryfikowaną tożsamością, ustalenia w ciemno, a podczas randki ktoś, komu ufasz, wie, gdzie jesteś.",
+    "lead": "YesYes to aplikacja randkowa tylko na seks. Ludzie ze zweryfikowaną tożsamością, ustalenia w ciemno, a podczas randki ktoś, komu ufasz, wie, gdzie jesteś.",
     "note": "Tylko 18+. Napiszemy do ciebie raz – gdy wystartujemy.",
-    "footnote": "* Tylko za zgodą obu stron. I tylko tu i teraz.",
+    "footnote": "* Dwa razy tak albo nic.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km od ciebie",
@@ -36,7 +36,7 @@
     "email": "Twój e-mail",
     "emailPlaceholder": "imie@email.pl",
     "city": "Miasto",
-    "consent": "Zgadzam się, by F*app wysłał zaproszenie na ten e-mail. Mogę zrezygnować w każdej chwili.",
+    "consent": "Zgadzam się, by YesYes wysłał zaproszenie na ten e-mail. Mogę zrezygnować w każdej chwili.",
     "submit": "Chcę zaproszenie",
     "sending": "Wysyłanie…",
     "success": "Gotowe. Gdy wystartujemy, odezwiemy się do ciebie w pierwszej kolejności.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Na start za darmo. Bezpieczeństwo na zawsze.",
-    "text": "Teraz F*app jest całkowicie darmowy. Płatne dodatki, jak nielimitowane polubienia czy Boosty, pojawią się później. Weryfikacja, ustalenia i tryb bezpieczeństwa zawsze będą za darmo.",
+    "text": "Teraz YesYes jest całkowicie darmowy. Płatne dodatki, jak nielimitowane polubienia czy Boosty, pojawią się później. Weryfikacja, ustalenia i tryb bezpieczeństwa zawsze będą za darmo.",
     "freeTitle": "Zawsze za darmo",
     "free1": "Weryfikacja tożsamości",
     "free2": "Ustalenia w ciemno",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Częste pytania",
-    "q1": "Czy F*app jest naprawdę tylko na seks?",
+    "q1": "Czy YesYes jest naprawdę tylko na seks?",
     "a1": "Tak. Bez szukania związku i bez udawania. Kto szuka czegoś innego, znajdzie to gdzie indziej.",
     "q2": "Dlaczego muszę weryfikować tożsamość?",
     "a2": "Żeby każdy był tym, za kogo się podaje, i żeby ban dotyczył człowieka, a nie tylko konta. Weryfikację przeprowadza wyspecjalizowany serwis; my przechowujemy tylko wynik, datę urodzenia i zaszyfrowany odcisk tożsamości – nigdy dokument.",
@@ -129,14 +129,14 @@
     "a3": "Nikt. Druga osoba zobaczy tylko to, w czym się zgadzacie. Twoje „nie” zostaje tylko twoje.",
     "q4": "Co, jeśli na randce coś pójdzie nie tak?",
     "a4": "Przytrzymaj SOS albo wpisz PIN awaryjny, który wygląda jak zwykły. Zaufana osoba dostanie alarm z twoją lokalizacją. Po randce aplikacja podpowie, gdzie szukać pomocy.",
-    "q5": "Czy ktoś z otoczenia pozna, że mam F*app?",
+    "q5": "Czy ktoś z otoczenia pozna, że mam YesYes?",
     "a5": "Nie musi. Możesz przełączyć ikonę na dyskretną, powiadomienia niczego nie zdradzają, a aplikację da się zablokować twarzą lub odciskiem palca.",
     "q6": "Ile to kosztuje?",
     "a6": "Na start nic. Bezpieczeństwo będzie za darmo także później.",
-    "q7": "Gdzie działa F*app?",
+    "q7": "Gdzie działa YesYes?",
     "a7": "Zaczynamy w Pradze. Kolejne miasta – zależnie od zainteresowania na liście oczekujących.",
     "q8": "Mam 17 lat. Mogę dołączyć?",
-    "a8": "Nie. F*app jest tylko dla osób powyżej 18 lat i sprawdzamy to na podstawie dokumentu."
+    "a8": "Nie. YesYes jest tylko dla osób powyżej 18 lat i sprawdzamy to na podstawie dokumentu."
   },
   "rules": {
     "title": "Zasady społeczności",
@@ -158,7 +158,7 @@
     "rules": "Zasady społeczności",
     "privacy": "Prywatność",
     "help": "Potrzebujesz pomocy po randce? Skontaktuj się z miejscową policją lub telefonem wsparcia dla ofiar przestępstw.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Chcę zaproszenie",
@@ -185,7 +185,7 @@
     "mockPin": "Wpisz PIN",
     "mockTrusted": "Zaufana osoba",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Wiadomość od F*app",
+    "mockSmsFrom": "Wiadomość od YesYes",
     "mockSms": "{name} nie odezwała się – potwierdzenie miało przyjść o 23:40. Spróbuj do niej zadzwonić.",
     "mockAlarm": "ALARM: {name} potrzebuje pomocy.",
     "mockLocation": "Lokalizacja udostępniona",

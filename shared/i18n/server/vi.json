@@ -65,7 +65,7 @@
   "auth": {
     "confirmAdult": "Bạn phải xác nhận mình đã đủ 18 tuổi trở lên.",
     "acceptRules": "Bạn phải đồng ý với quy tắc và việc xử lý dữ liệu của mình.",
-    "underage": "F*app chỉ dành cho người từ 18 tuổi trở lên.",
+    "underage": "YesYes chỉ dành cho người từ 18 tuổi trở lên.",
     "invalidBirthdate": "Ngày sinh không hợp lệ.",
     "emailTaken": "Đã có tài khoản dùng email này.",
     "wrongCredentials": "Sai email hoặc mật khẩu.",
@@ -110,12 +110,12 @@
     "cantRewindMatch": "Lần quẹt này đã thành tương hợp."
   },
   "billing": {
-    "likeLimit": "Bạn đã hết lượt thích. Lượt mới sẽ có sớm thôi – hoặc quẹt không giới hạn với F*app Plus.",
+    "likeLimit": "Bạn đã hết lượt thích. Lượt mới sẽ có sớm thôi – hoặc quẹt không giới hạn với YesYes Plus.",
     "noSuperLike": "Bạn không có Super Like nào.",
     "noBoost": "Bạn không có Boost nào.",
     "tonightPaid": "“Tối nay” có trong gói Platinum hoặc mua lẻ.",
-    "featureInPlan": "{feature} thuộc F*app {plan}.",
-    "paymentsOff": "Chưa bật thanh toán – hiện F*app hoàn toàn miễn phí.",
+    "featureInPlan": "{feature} thuộc YesYes {plan}.",
+    "paymentsOff": "Chưa bật thanh toán – hiện YesYes hoàn toàn miễn phí.",
     "unknownProduct": "Sản phẩm không xác định.",
     "cantBuy": "Bạn không thể mua mục này lúc này.",
     "cantBoost": "Bạn không thể bật Boost lúc này.",
@@ -153,10 +153,10 @@
     "photo": "Ảnh"
   },
   "moderation": {
-    "minor": "Tin nhắn này cho thấy một trong hai bạn có thể chưa đủ 18 tuổi. F*app chỉ dành cho 18+.",
-    "paid": "Chào mời hoặc yêu cầu mua bán dâm bị cấm trên F*app.",
+    "minor": "Tin nhắn này cho thấy một trong hai bạn có thể chưa đủ 18 tuổi. YesYes chỉ dành cho 18+.",
+    "paid": "Chào mời hoặc yêu cầu mua bán dâm bị cấm trên YesYes.",
     "consentPressure": "Lưu ý: thỏa thuận trong ứng dụng không phải là sự đồng thuận. Bạn có thể hủy bất cứ lúc nào và từ chối bất cứ điều gì khi gặp nhau – không cần giải thích.",
-    "contact": "Người tương hợp với bạn đang chia sẻ thông tin liên lạc ngoài ứng dụng. Bên ngoài F*app, thỏa thuận, chế độ an toàn và tính năng báo cáo không có tác dụng với bạn."
+    "contact": "Người tương hợp với bạn đang chia sẻ thông tin liên lạc ngoài ứng dụng. Bên ngoài YesYes, thỏa thuận, chế độ an toàn và tính năng báo cáo không có tác dụng với bạn."
   },
   "safety": {
     "notFound": "Không tìm thấy buổi hẹn.",
@@ -176,9 +176,9 @@
     "noWebhook": "Nhà cung cấp dành cho phát triển không có webhook.",
     "unavailable": "Dịch vụ xác minh không phản hồi. Hãy thử lại sau ít phút.",
     "declined": {
-      "underage": "Kết quả xác minh cho thấy bạn chưa đủ 18 tuổi. F*app chỉ dành cho người trưởng thành.",
-      "banned": "Người này đã bị cấm khỏi F*app vì vi phạm quy tắc.",
-      "duplicate": "Người này đã có tài khoản F*app. Mỗi người chỉ được có một tài khoản.",
+      "underage": "Kết quả xác minh cho thấy bạn chưa đủ 18 tuổi. YesYes chỉ dành cho người trưởng thành.",
+      "banned": "Người này đã bị cấm khỏi YesYes vì vi phạm quy tắc.",
+      "duplicate": "Người này đã có tài khoản YesYes. Mỗi người chỉ được có một tài khoản.",
       "incomplete": "Chúng tôi không đọc được ngày sinh trên giấy tờ. Hãy thử lại.",
       "default": "Xác minh không thành công. Hãy thử lại."
     }
@@ -235,7 +235,7 @@
     "someone": "Một người thân của bạn"
   },
   "share": {
-    "pageTitle": "F*app – liên kết an toàn",
+    "pageTitle": "YesYes – liên kết an toàn",
     "header": "Liên kết an toàn",
     "loading": "Đang tải…",
     "call": "Gọi {number}",

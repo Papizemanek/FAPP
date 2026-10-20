@@ -5,7 +5,7 @@ import { fonts } from '@/lib/theme';
 
 /**
  * Falešný příchozí hovor – nenápadná výmluva, jak ze schůzky odejít („volá mi ségra, musím jít“).
- * Vypadá jako obyčejný hovor, nic na něm neprozrazuje F*app.
+ * Vypadá jako obyčejný hovor, nic na něm neprozrazuje YesYes.
  */
 export function FakeCall({ visible, caller, onClose }: { visible: boolean; caller: string; onClose: () => void }) {
   const t = useT();

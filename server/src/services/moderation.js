@@ -51,8 +51,8 @@ export const RULES = [
     priority: 'high',
     messageKey: 'moderation.consentPressure',
     patterns: [
-      /\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?)\b.{0,40}\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl|dal[ao]? souhlas)/,
-      /\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl)\w*\b.{0,20}\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?)\b/,
+      /\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?|yesyes)\b.{0,40}\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl|dal[ao]? souhlas)/,
+      /\b(souhlasil|potvrdil|odklikl|slibil|odsouhlasil|zaskrtl)\w*\b.{0,20}\b(v|na|pres) (appce|apce|appku|apku|aplikaci|fappu?|yesyes)\b/,
       /\b(uz|prece|stejne) jsi (to )?(souhlasil|potvrdil|odklikl|slibil|odsouhlasil)/,
       /\b(nemuzes|nesmis|nejde) (to )?(vzit|brat|dat) (zpet|zpatky)\b/,
       /\bdohoda je dohoda\b/,

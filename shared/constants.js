@@ -1,6 +1,6 @@
 // Číselníky sdílené serverem (validace) i aplikací (popisky).
 
-export const APP_NAME = 'F*app';
+export const APP_NAME = 'YesYes';
 
 export const MIN_AGE = 18;
 
@@ -38,7 +38,7 @@ export const CONSENT_TEXT_VERSION = 2;
 export const INTENT_TEXT = 'Takhle si to představuju. Na místě můžu cokoli odmítnout – a totéž platí pro druhého.';
 export const NOTICE_TEXT =
   'Beru na vědomí: souhlas platí jen teď a tady. „Ne“, „stop“, stopslovo, mlčení, ztuhnutí nebo opilost nejsou souhlas. Domluva v aplikaci nikoho nezbavuje odpovědnosti.';
-export const DETERRENCE_TEXT = 'Všichni na F*app mají ověřenou totožnost. Při podezření z trestného činu ji předáme policii.';
+export const DETERRENCE_TEXT = 'Všichni na YesYes mají ověřenou totožnost. Při podezření z trestného činu ji předáme policii.';
 
 // Po zrušení domluvy může novou otevřít jen ten, kdo ji zrušil – druhý až po této době.
 export const REVOKE_COOLDOWN_DAYS = 7;

@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app potrebuje tvojo lokacijo, da ti pokaže ljudi v bližini in jo med zmenkom deli s tvojo zaupno osebo.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Med zmenkom F*app deli tvojo lokacijo z zaupno osebo tudi pri ugasnjenem zaslonu. Zunaj zmenkov lokacije v ozadju ne uporablja.",
-    "NSFaceIDUsageDescription": "F*app se odklepa s Face ID, da vanj ne pogleda nihče drug.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes potrebuje tvojo lokacijo, da ti pokaže ljudi v bližini in jo med zmenkom deli s tvojo zaupno osebo.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Med zmenkom YesYes deli tvojo lokacijo z zaupno osebo tudi pri ugasnjenem zaslonu. Zunaj zmenkov lokacije v ozadju ne uporablja.",
+    "NSFaceIDUsageDescription": "YesYes se odklepa s Face ID, da vanj ne pogleda nihče drug.",
     "NSPhotoLibraryUsageDescription": "Izberi fotografije za profil.",
     "NSCameraUsageDescription": "Fotografiraj se za profil."
   }

@@ -1,4 +1,4 @@
-F*app es una app de citas para personas adultas que buscan encuentros casuales y quieren que sean acordados y seguros.
+YesYes es una app de citas para personas adultas que buscan encuentros casuales y quieren que sean acordados y seguros.
 
 PERSONAS VERIFICADAS
 Cada persona se verifica con un documento de identidad y un selfie. Es quien dice ser, y una expulsión se aplica a la persona, no solo a la cuenta. No guardamos tu documento.

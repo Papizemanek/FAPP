@@ -9,7 +9,7 @@ import type {
   REPORT_REASONS,
   TAGS,
   TravelCityId,
-} from '@fapp/shared';
+} from '@yesyes/shared';
 import { t } from '@/lib/i18n';
 import { API_URL } from './config';
 import { transport, type TransportResponse } from './transport';

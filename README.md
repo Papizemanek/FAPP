@@ -1,4 +1,4 @@
-# F*app
+# YesYes
 
 Seznamka pro dospělé – jednoduchá jako Tinder, ale jen na sex. Navíc má domluvu naslepo (každý řekne, na co má chuť, oba uvidí jen shodu) a bezpečnou schůzku.
 
@@ -76,7 +76,7 @@ Potřeba: Node.js ≥ 22.12, pro aplikaci Xcode (iOS) nebo Android Studio (Andro
 
 ```bash
 npm install
-npm run seed      # demo profily v Praze: lucie@demo.fapp … heslo demo-heslo-123, PIN 1234, nouzový PIN 9999
+npm run seed      # demo profily v Praze: lucie@demo.yesyes … heslo demo-heslo-123, PIN 1234, nouzový PIN 9999
 npm run server    # http://localhost:3000 (SMS se vypisují do konzole, ověření totožnosti je simulované)
 ```
 
@@ -99,10 +99,10 @@ npm run typecheck   # TypeScript aplikace
 
 ### Webový prototyp
 
-`npm run demo:build -w app` sestaví aplikaci pro web do jednoho souboru `app/demo/dist/fapp.html`.
+`npm run demo:build -w app` sestaví aplikaci pro web do jednoho souboru `app/demo/dist/yesyes.html`.
 Místo serveru v něm běží simulovaný backend v prohlížeči (`app/demo/mockServer.ts` – stejná pravidla domluvy,
 PINů a hlídání check-inů, moderace převzatá ze serveru) a nativní moduly mají prázdné náhrady (`app/demo/shims`).
-Přepínání řeší `app/metro.config.js` jen při `FAPP_DEMO=1` – běžné sestavení aplikace se nemění.
+Přepínání řeší `app/metro.config.js` jen při `YESYES_DEMO=1` – běžné sestavení aplikace se nemění.
 Demo panel (štítek DEMO u pravého okraje) ukazuje „odeslané“ SMS, pohled důvěryhodné osoby a umí posunout čas.
 
 ### Jazyky
@@ -132,8 +132,11 @@ Když existuje `web/dist`, server ho sám servíruje; formulář čekací listin
 (e-maily šifrované, export přes `GET /api/admin/waitlist`). Web na jiné doméně: `WEB_ORIGINS` (CORS).
 
 Pozor na pravidla reklamy: Meta, TikTok a Reddit reklamy na seznamky pro sex nepouštějí, Google jen s certifikací,
-Sklik erotiku jen 22–06 h. Kreativy „soft“ jsou bez slova sex. Jméno „F*app“ může narazit při review v App Storu
-a Google Play (vulgarismus) – zvážit neutrální název do obchodů.
+Sklik erotiku jen 22–06 h. Kreativy „soft“ jsou bez slova sex.
+
+**Značka:** YesYes\* (pracovně F\*app). Hvězdička je poznámka pod čarou: „\*Dvě ano, nebo nic.“ – v logu a kreativách,
+v běžném textu se píše bez ní. Rešerše názvu: https://claude.ai/artifact/XAcuy32U6ydU2MoMEGS6EY. Před spuštěním ověřit
+domény, rezervaci jména v App Store Connect a ochranné známky (unijní „yesyes“ firmy TREEZY ve třídách 9/35–38/42).
 
 Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů): [TESTOVANI.md](TESTOVANI.md).
 

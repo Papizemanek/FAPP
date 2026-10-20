@@ -5,7 +5,7 @@ import { overlay } from './overlay';
 export type TransportResponse = { status: number; json: unknown };
 
 // Po změně režimu plateb si aplikace znovu načte stav předplatného (viz src/lib/billing.ts).
-const billingChanged = () => globalThis.dispatchEvent?.(new Event('fapp-demo-billing'));
+const billingChanged = () => globalThis.dispatchEvent?.(new Event('yesyes-demo-billing'));
 
 overlay.init({
   shareView,

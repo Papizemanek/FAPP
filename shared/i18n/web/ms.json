@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplikasi temu janji khusus untuk seks. Dipersetujui dan selamat.",
-    "description": "F*app ialah aplikasi temu janji khusus untuk seks bagi orang dewasa yang disahkan. Persetujuan tertutup, mod keselamatan dengan orang yang anda percayai, SOS dan PIN kecemasan. Tidak lama lagi di Prague.",
+    "title": "YesYes – aplikasi temu janji khusus untuk seks. Dipersetujui dan selamat.",
+    "description": "YesYes ialah aplikasi temu janji khusus untuk seks bagi orang dewasa yang disahkan. Persetujuan tertutup, mod keselamatan dengan orang yang anda percayai, SOS dan PIN kecemasan. Tidak lama lagi di Prague.",
     "ogTitle": "Seks. Dipersetujui. Selamat.",
     "langName": "Bahasa Melayu"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Dipersetujui.",
     "title3": "Selamat.",
-    "lead": "F*app ialah aplikasi temu janji khusus untuk seks. Orang dengan identiti yang disahkan, persetujuan tertutup, dan semasa temu janji anda, orang yang anda percayai tahu di mana anda berada.",
+    "lead": "YesYes ialah aplikasi temu janji khusus untuk seks. Orang dengan identiti yang disahkan, persetujuan tertutup, dan semasa temu janji anda, orang yang anda percayai tahu di mana anda berada.",
     "note": "Untuk 18+ sahaja. Kami akan menghantar e-mel sekali sahaja, apabila kami dilancarkan.",
-    "footnote": "* Hanya jika anda berdua kata ya. Dan hanya di sini dan pada saat ini.",
+    "footnote": "* Dua kali ya, atau tiada apa-apa.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km dari anda",
@@ -36,7 +36,7 @@
     "email": "E-mel anda",
     "emailPlaceholder": "nama@email.com",
     "city": "Bandar",
-    "consent": "Saya bersetuju F*app boleh menghantar jemputan ke e-mel ini. Saya boleh berhenti melanggan pada bila-bila masa.",
+    "consent": "Saya bersetuju YesYes boleh menghantar jemputan ke e-mel ini. Saya boleh berhenti melanggan pada bila-bila masa.",
     "submit": "Dapatkan jemputan",
     "sending": "Menghantar…",
     "success": "Selesai. Apabila kami dilancarkan, anda antara yang pertama tahu.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Percuma semasa pelancaran. Keselamatan selamanya.",
-    "text": "Buat masa ini F*app percuma sepenuhnya. Ciri tambahan berbayar seperti suka tanpa had atau Boost akan datang kemudian. Pengesahan, persetujuan dan mod keselamatan akan sentiasa percuma.",
+    "text": "Buat masa ini YesYes percuma sepenuhnya. Ciri tambahan berbayar seperti suka tanpa had atau Boost akan datang kemudian. Pengesahan, persetujuan dan mod keselamatan akan sentiasa percuma.",
     "freeTitle": "Sentiasa percuma",
     "free1": "Pengesahan identiti",
     "free2": "Persetujuan tertutup",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Soalan Lazim",
-    "q1": "Adakah F*app benar-benar hanya untuk seks?",
+    "q1": "Adakah YesYes benar-benar hanya untuk seks?",
     "a1": "Ya. Bukan untuk mencari hubungan dan tiada berpura-pura. Jika anda mencari sesuatu yang lain, anda akan menemuinya di tempat lain.",
     "q2": "Kenapa saya perlu mengesahkan identiti?",
     "a2": "Supaya semua orang memang seperti yang didakwa, dan larangan dikenakan pada orangnya, bukan sekadar akaunnya. Semakan dilakukan oleh perkhidmatan pakar; kami hanya menyimpan keputusannya, tarikh lahir anda dan cap jari digital yang disulitkan – tidak sekali-kali dokumen pengenalan anda.",
@@ -129,14 +129,14 @@
     "a3": "Tiada siapa. Orang itu hanya melihat perkara yang anda berdua setujui. “Tidak” anda kekal milik anda.",
     "q4": "Bagaimana jika sesuatu tidak kena semasa temu janji?",
     "a4": "Tahan SOS, atau masukkan PIN kecemasan anda yang kelihatan seperti PIN biasa. Orang yang anda percayai akan menerima penggera bersama lokasi anda. Selepas temu janji, aplikasi menawarkan tempat untuk mendapatkan bantuan.",
-    "q5": "Adakah orang di sekeliling saya akan tahu saya guna F*app?",
+    "q5": "Adakah orang di sekeliling saya akan tahu saya guna YesYes?",
     "a5": "Tidak semestinya. Anda boleh menukar kepada ikon diskret, pemberitahuan tidak mendedahkan apa-apa, dan aplikasi dikunci dengan wajah atau cap jari anda.",
     "q6": "Berapa harganya?",
     "a6": "Percuma semasa pelancaran. Keselamatan kekal percuma selepas itu juga.",
-    "q7": "Di mana F*app beroperasi?",
+    "q7": "Di mana YesYes beroperasi?",
     "a7": "Kami bermula di Prague. Bandar lain akan menyusul berdasarkan senarai menunggu.",
     "q8": "Saya berumur 17 tahun. Boleh saya sertai?",
-    "a8": "Tidak. F*app hanya untuk mereka yang berumur lebih 18 tahun, dan kami menyemaknya dengan dokumen pengenalan."
+    "a8": "Tidak. YesYes hanya untuk mereka yang berumur lebih 18 tahun, dan kami menyemaknya dengan dokumen pengenalan."
   },
   "rules": {
     "title": "Peraturan komuniti",
@@ -158,7 +158,7 @@
     "rules": "Peraturan komuniti",
     "privacy": "Privasi",
     "help": "Perlukan bantuan selepas temu janji? Hubungi polis tempatan atau talian sokongan mangsa.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Dapatkan jemputan",
@@ -185,7 +185,7 @@
     "mockPin": "Masukkan PIN",
     "mockTrusted": "Orang yang anda percayai",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Mesej daripada F*app",
+    "mockSmsFrom": "Mesej daripada YesYes",
     "mockSms": "{name} belum check-in – sepatutnya pada 23:40. Cuba hubungi dia.",
     "mockAlarm": "PENGGERA: {name} perlukan bantuan.",
     "mockLocation": "Lokasi dikongsi",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – uma app de encontros só para sexo. Combinado e seguro.",
-    "description": "O F*app é uma app de encontros só para sexo, para adultos verificados. Acordo às cegas, modo de segurança com alguém de confiança, SOS e PIN de emergência. Em breve em Praga.",
+    "title": "YesYes – uma app de encontros só para sexo. Combinado e seguro.",
+    "description": "O YesYes é uma app de encontros só para sexo, para adultos verificados. Acordo às cegas, modo de segurança com alguém de confiança, SOS e PIN de emergência. Em breve em Praga.",
     "ogTitle": "Sexo. Combinado. Seguro.",
     "langName": "Português (Portugal)"
   },
@@ -20,9 +20,9 @@
     "title1": "Sexo.",
     "title2": "Combinado.",
     "title3": "Seguro.",
-    "lead": "O F*app é uma app de encontros só para sexo. Pessoas com identidade verificada, um acordo às cegas e, durante o encontro, alguém de confiança sabe onde estás.",
+    "lead": "O YesYes é uma app de encontros só para sexo. Pessoas com identidade verificada, um acordo às cegas e, durante o encontro, alguém de confiança sabe onde estás.",
     "note": "Só para maiores de 18. Enviamos-te um único e-mail, quando lançarmos.",
-    "footnote": "* Só quando os dois dizem sim. E só aqui e agora.",
+    "footnote": "* Dois sins, ou nada.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "A 2 km de ti",
@@ -36,7 +36,7 @@
     "email": "O teu e-mail",
     "emailPlaceholder": "nome@email.com",
     "city": "Cidade",
-    "consent": "Aceito que o F*app me envie um convite para este e-mail. Posso cancelar a subscrição a qualquer momento.",
+    "consent": "Aceito que o YesYes me envie um convite para este e-mail. Posso cancelar a subscrição a qualquer momento.",
     "submit": "Quero um convite",
     "sending": "A enviar…",
     "success": "Feito. Quando lançarmos, ficas a saber antes de toda a gente.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Grátis no lançamento. Segurança para sempre.",
-    "text": "Neste momento, o F*app é totalmente grátis. Os extras pagos, como gostos ilimitados ou Boosts, chegam mais tarde. A verificação, o acordo e o modo de segurança vão ser sempre grátis.",
+    "text": "Neste momento, o YesYes é totalmente grátis. Os extras pagos, como gostos ilimitados ou Boosts, chegam mais tarde. A verificação, o acordo e o modo de segurança vão ser sempre grátis.",
     "freeTitle": "Sempre grátis",
     "free1": "Verificação de identidade",
     "free2": "Acordo às cegas",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Perguntas frequentes",
-    "q1": "O F*app é mesmo só para sexo?",
+    "q1": "O YesYes é mesmo só para sexo?",
     "a1": "Sim. Sem procurar uma relação e sem fingimentos. Se procuras outra coisa, vais encontrá-la noutro lado.",
     "q2": "Porque tenho de verificar a minha identidade?",
     "a2": "Para que toda a gente seja quem diz ser e a expulsão se aplique à pessoa, não só à conta. A verificação é feita por um serviço especializado; nós só guardamos o resultado, a tua data de nascimento e um código encriptado da identidade – nunca o teu documento.",
@@ -129,14 +129,14 @@
     "a3": "Ninguém. A outra pessoa só vê aquilo em que estão de acordo. O teu «não» fica só contigo.",
     "q4": "E se algo correr mal no encontro?",
     "a4": "Mantém o SOS premido ou introduz o teu PIN de emergência, que parece o normal. A pessoa de confiança recebe um alarme com a tua localização. Depois do encontro, a app indica-te onde procurar ajuda.",
-    "q5": "As pessoas à minha volta vão saber que uso o F*app?",
+    "q5": "As pessoas à minha volta vão saber que uso o YesYes?",
     "a5": "Não precisam. Podes mudar para um ícone discreto, as notificações não revelam nada e a app bloqueia-se com o rosto ou a impressão digital.",
     "q6": "Quanto custa?",
     "a6": "Nada no lançamento. E a segurança continua grátis depois disso.",
-    "q7": "Onde funciona o F*app?",
+    "q7": "Onde funciona o YesYes?",
     "a7": "Vamos começar em Praga. Seguem-se outras cidades, conforme a lista de espera.",
     "q8": "Tenho 17 anos. Posso entrar?",
-    "a8": "Não. O F*app é só para maiores de 18, e confirmamos isso com um documento."
+    "a8": "Não. O YesYes é só para maiores de 18, e confirmamos isso com um documento."
   },
   "rules": {
     "title": "Regras da comunidade",
@@ -158,7 +158,7 @@
     "rules": "Regras da comunidade",
     "privacy": "Privacidade",
     "help": "Precisas de ajuda depois de um encontro? Contacta a polícia local ou uma linha de apoio à vítima.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Quero um convite",
@@ -185,7 +185,7 @@
     "mockPin": "Introduz o PIN",
     "mockTrusted": "Alguém de confiança",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Mensagem do F*app",
+    "mockSmsFrom": "Mensagem do YesYes",
     "mockSms": "{name} não fez o check-in – devia ter sido às 23:40. Tenta ligar-lhe.",
     "mockAlarm": "ALARME: {name} precisa de ajuda.",
     "mockLocation": "Localização partilhada",

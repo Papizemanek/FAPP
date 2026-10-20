@@ -1,4 +1,4 @@
-// Sestaví statický web F*app pro všechny jazyky ze shared/i18n/web/<jazyk>.json.
+// Sestaví statický web YesYes pro všechny jazyky ze shared/i18n/web/<jazyk>.json.
 //   node web/build.mjs            → web/dist (produkce: /, /en/, /de/ … + assets)
 //   node web/build.mjs --preview  → web/preview (náhled bez serveru: čekací listina se jen nasimuluje)
 // Adresa serveru, e-mail a firma jsou ve web/site.config.json.
@@ -85,7 +85,7 @@ function body(code, t) {
   return `<a class="skip" href="#obsah">${t('nav.skip')}</a>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="${pageHref(code, code)}" aria-label="F*app">F<b>*</b>app</a>
+    <a class="logo" dir="ltr" href="${pageHref(code, code)}" aria-label="YesYes">YesYes<b>*</b></a>
     <nav class="nav" aria-label="${t('nav.language')}">
       <a href="#jak">${t('nav.how')}</a><a href="#domluva">${t('nav.blind')}</a><a href="#bezpeci">${t('nav.safety')}</a><a href="#cena">${t('nav.pricing')}</a><a href="#otazky">${t('nav.faq')}</a>
     </nav>
@@ -106,7 +106,7 @@ function body(code, t) {
       </div>
       <div class="phone" role="img" aria-label="${t('hero.mockName')}, ${t('hero.mockAge')} · ${t('hero.mockSafety')}">
         <div class="screen">
-          <div class="bar"><span>F<span class="star">*</span>app</span></div>
+          <div class="bar"><span dir="ltr">YesYes<span class="star">*</span></span></div>
           <div class="card">
             <div class="initial">${t('hero.mockName').slice(0, 1)}</div>
             <div class="info">
@@ -231,7 +231,7 @@ function head(code, t, assets) {
     ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Manrope:wght@400;600;700&display=swap">'
     : '';
   // Náhled v Claude potřebuje krátký název stránky; produkční web má plný titulek pro vyhledávače.
-  return `<title>${preview && code === DEFAULT_LOCALE ? 'F*app web' : t('meta.title')}</title>
+  return `<title>${preview && code === DEFAULT_LOCALE ? 'YesYes web' : t('meta.title')}</title>
 <meta name="description" content="${t('meta.description')}">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:title" content="${t('meta.ogTitle')}">
@@ -255,9 +255,9 @@ function script(code, assets) {
   // Úvodní stránka (čeština) přesměruje návštěvníka podle jazyka prohlížeče, pokud si sám nevybral.
   const redirect =
     code === DEFAULT_LOCALE
-      ? `<script>(function(){try{if(localStorage.getItem('fapp.lang'))return;}catch(e){}var have=${JSON.stringify(ready.map((l) => l.code))};var langs=navigator.languages||[navigator.language];for(var i=0;i<langs.length;i++){var tag=String(langs[i]||'').toLowerCase();var base=tag.split('-')[0];if(base==='cs')return;var hit=null;if(base==='zh')hit=/hant|tw|hk|mo/.test(tag)?'zh-Hant':'zh-Hans';else if(base==='pt')hit=/-pt/.test(tag)?'pt-PT':'pt-BR';else if(base==='no'||base==='nn')hit='nb';else{for(var j=0;j<have.length;j++){if(have[j].toLowerCase()===tag||have[j].toLowerCase()===base){hit=have[j];break;}}}if(hit&&have.indexOf(hit)>=0&&hit!=='cs'){location.replace(hit+'/index.html');return;}}})();</script>`
+      ? `<script>(function(){try{if(localStorage.getItem('yesyes.lang'))return;}catch(e){}var have=${JSON.stringify(ready.map((l) => l.code))};var langs=navigator.languages||[navigator.language];for(var i=0;i<langs.length;i++){var tag=String(langs[i]||'').toLowerCase();var base=tag.split('-')[0];if(base==='cs')return;var hit=null;if(base==='zh')hit=/hant|tw|hk|mo/.test(tag)?'zh-Hant':'zh-Hans';else if(base==='pt')hit=/-pt/.test(tag)?'pt-PT':'pt-BR';else if(base==='no'||base==='nn')hit='nb';else{for(var j=0;j<have.length;j++){if(have[j].toLowerCase()===tag||have[j].toLowerCase()===base){hit=have[j];break;}}}if(hit&&have.indexOf(hit)>=0&&hit!=='cs'){location.replace(hit+'/index.html');return;}}})();</script>`
       : '';
-  return `<script>window.FAPP_SITE=${JSON.stringify(data).replace(/</g, '\\u003c')};</script>${redirect}
+  return `<script>window.YESYES_SITE=${JSON.stringify(data).replace(/</g, '\\u003c')};</script>${redirect}
 <script src="${assets}site.js" defer></script>`;
 }
 

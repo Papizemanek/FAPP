@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Sånn ser jeg det for meg. Når vi er der, kan jeg si nei til hva som helst – og det kan den andre også.",
     "notice": "Jeg forstår: Samtykke gjelder bare her og nå. «Nei», «stopp», stoppordet, stillhet, å fryse til eller å være full er ikke samtykke. En avtale i appen fritar ingen fra ansvar.",
-    "deterrence": "Alle på F*app har en verifisert identitet. Ved mistanke om en straffbar handling gir vi den videre til politiet."
+    "deterrence": "Alle på YesYes har en verifisert identitet. Ved mistanke om en straffbar handling gir vi den videre til politiet."
   },
   "welcome": {
     "tagline": "Sex uten dikkedarer.",
@@ -410,8 +410,8 @@
       "edit": "Rediger"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold og Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold og Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Ubegrensede likes, se hvem som har likt deg, Boost og mer.",
       "validUntil": "Gyldig til {date}.",
       "upgrade": "Oppgrader",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Abonnement",
     "free": {
-      "title": "F*app er gratis inntil videre",
+      "title": "YesYes er gratis inntil videre",
       "body": "Betalte funksjoner slår vi på senere. Sikkerhet – verifisering, avtaler, sikkerhetsmodus og SOS – forblir alltid gratis."
     },
     "back": "Tilbake",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Du er tom for likes. Flere kommer kl. {time}.",
       "likeLimit": "Du er tom for likes. Flere kommer snart.",
       "noCredit": "{credit} fås som enkeltkjøp eller med et abonnement.",
-      "upgrade": "Dette er en del av F*app {plan}."
+      "upgrade": "Dette er en del av YesYes {plan}."
     },
     "oneOff": "Enkeltkjøp",
     "owned": "du har {count}",
@@ -483,9 +483,9 @@
         "other": "Du har fått {count} ekstra «I kveld»."
       }
     },
-    "currentPlan": "Du har F*app {plan}",
+    "currentPlan": "Du har YesYes {plan}",
     "validUntil": "Gyldig til {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Sveip uten grenser, og hent tilbake profiler du avviste ved en feil.",
       "gold": "Se hvem som har likt deg – og match med ett trykk.",
@@ -501,8 +501,8 @@
     "perMonthSave": "per måned · −{percent} %",
     "continueWithPrice": "Fortsett · {price}",
     "planBought": {
-      "one": "Du har nå F*app {plan}.",
-      "other": "Du har nå F*app {plan} i {count} måneder."
+      "one": "Du har nå YesYes {plan}.",
+      "other": "Du har nå YesYes {plan} i {count} måneder."
     },
     "renewal": "Abonnementet fornyes automatisk. Du kan si det opp når som helst i innstillingene for App Store eller Google Play. Prisen er den samme for alle.",
     "renewalUpfront": "Du betaler {total} på forhånd ({monthly} i måneden). Abonnementet fornyes automatisk. Du kan si det opp når som helst i innstillingene for App Store eller Google Play. Prisen er den samme for alle.",
@@ -525,13 +525,13 @@
       "other": "{count} personer har likt deg"
     },
     "lockedEmpty": "Likene dine dukker opp her",
-    "goldText": "Med F*app Gold ser du hvem de er, og matcher med ett trykk.",
+    "goldText": "Med YesYes Gold ser du hvem de er, og matcher med ett trykk.",
     "goldCta": "Se dem med Gold",
     "emptySent": "Ingen likes uten match de siste 7 dagene.",
     "superLikePending": "Super Like · venter",
     "pending": "Venter på svar",
     "sentTitle": "Hvem du har likt",
-    "platinumText": "Med F*app Platinum ser du likene dine fra de siste 7 dagene.",
+    "platinumText": "Med YesYes Platinum ser du likene dine fra de siste 7 dagene.",
     "platinumCta": "Se dem med Platinum",
     "likeBack": "Lik tilbake",
     "pass": "Hopp over"
@@ -559,13 +559,13 @@
     "iAm": "Jeg er",
     "showMe": "Vis meg",
     "confirmAdult": "Jeg er 18 år eller eldre.",
-    "acceptRules": "Jeg godtar fellesskapets regler og behandlingen av opplysningene mine, inkludert opplysninger om sexlivet mitt, slik at F*app kan fungere.",
+    "acceptRules": "Jeg godtar fellesskapets regler og behandlingen av opplysningene mine, inkludert opplysninger om sexlivet mitt, slik at YesYes kan fungere.",
     "verifyNote": "Rett etterpå verifiserer vi identiteten og alderen din (legitimasjon og selfie). Vi lagrer ikke legitimasjonen din.",
     "continue": "Fortsett"
   },
   "verify": {
     "title": "Bekreft at det er deg",
-    "intro": "Alle på F*app har verifisert identitet og alder. Du tar et bilde av legitimasjonen din og en selfie – det tar omtrent to minutter.",
+    "intro": "Alle på YesYes har verifisert identitet og alder. Du tar et bilde av legitimasjonen din og en selfie – det tar omtrent to minutter.",
     "privacy": "Vi lagrer verken legitimasjonen din eller bildene dine. Vi tar bare vare på resultatet av verifiseringen og fødselsdatoen din. Den som bryter reglene, kan ikke komme tilbake med en ny konto.",
     "pending": {
       "title": "Venter på resultatet av verifiseringen",
@@ -657,7 +657,7 @@
     "notificationBody": "Du kan stoppe den i appen."
   },
   "appLock": {
-    "prompt": "Lås opp F*app",
+    "prompt": "Lås opp YesYes",
     "lockedTitle": "Appen er låst",
     "lockedBody": "Lås den opp med Face ID, fingeravtrykket ditt eller telefonens kode.",
     "sosHold": "SOS – trykk og hold",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Kunne ikke sende"
   },
   "native": {
-    "locationWhenInUse": "F*app trenger posisjonen din for å vise deg folk i nærheten og for å dele den med tillitspersonen din under en date.",
-    "locationAlways": "Under en date deler F*app posisjonen din med tillitspersonen din, også når skjermen er av. Utenom dater bruker appen ikke posisjonen din i bakgrunnen.",
-    "faceId": "F*app bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
+    "locationWhenInUse": "YesYes trenger posisjonen din for å vise deg folk i nærheten og for å dele den med tillitspersonen din under en date.",
+    "locationAlways": "Under en date deler YesYes posisjonen din med tillitspersonen din, også når skjermen er av. Utenom dater bruker appen ikke posisjonen din i bakgrunnen.",
+    "faceId": "YesYes bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
     "photos": "Velg bilder til profilen din.",
     "camera": "Ta et bilde av deg selv til profilen din."
   }

@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app memerlukan lokasi anda untuk menunjukkan orang berdekatan dan, semasa pertemuan, untuk berkongsinya dengan kenalan dipercayai anda.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Semasa pertemuan, F*app berkongsi lokasi anda dengan kenalan dipercayai anda, walaupun skrin anda mati. Di luar pertemuan, F*app tidak menggunakan lokasi anda di latar belakang.",
-    "NSFaceIDUsageDescription": "F*app menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes memerlukan lokasi anda untuk menunjukkan orang berdekatan dan, semasa pertemuan, untuk berkongsinya dengan kenalan dipercayai anda.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Semasa pertemuan, YesYes berkongsi lokasi anda dengan kenalan dipercayai anda, walaupun skrin anda mati. Di luar pertemuan, YesYes tidak menggunakan lokasi anda di latar belakang.",
+    "NSFaceIDUsageDescription": "YesYes menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
     "NSPhotoLibraryUsageDescription": "Pilih foto untuk profil anda.",
     "NSCameraUsageDescription": "Ambil gambar diri anda untuk profil."
   }

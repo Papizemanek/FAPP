@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – randiapp csak szexre. Megbeszélve és biztonságban.",
-    "description": "Az F*app randiapp csak szexre, ellenőrzött felnőtteknek. Vak megállapodás, biztonsági mód egy megbízható személlyel, SOS és vész-PIN. Hamarosan Prágában.",
+    "title": "YesYes – randiapp csak szexre. Megbeszélve és biztonságban.",
+    "description": "Az YesYes randiapp csak szexre, ellenőrzött felnőtteknek. Vak megállapodás, biztonsági mód egy megbízható személlyel, SOS és vész-PIN. Hamarosan Prágában.",
     "ogTitle": "Szex. Megbeszélve. Biztonságban.",
     "langName": "Magyar"
   },
@@ -20,9 +20,9 @@
     "title1": "Szex.",
     "title2": "Megbeszélve.",
     "title3": "Biztonságban.",
-    "lead": "Az F*app randiapp csak szexre. Ellenőrzött személyazonosságú emberek, vak megállapodás, és a randi alatt valaki, akiben megbízol, tudja, hol vagy.",
+    "lead": "Az YesYes randiapp csak szexre. Ellenőrzött személyazonosságú emberek, vak megállapodás, és a randi alatt valaki, akiben megbízol, tudja, hol vagy.",
     "note": "Csak 18+. Egyszer írunk e-mailt: amikor elindulunk.",
-    "footnote": "* Csak ha mindketten igent mondotok. És csak itt és most.",
+    "footnote": "* Két igen, vagy semmi.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km-re",
@@ -36,7 +36,7 @@
     "email": "E-mail-címed",
     "emailPlaceholder": "nev@email.com",
     "city": "Város",
-    "consent": "Hozzájárulok, hogy az F*app meghívót küldjön erre az e-mail-címre. Bármikor leiratkozhatok.",
+    "consent": "Hozzájárulok, hogy az YesYes meghívót küldjön erre az e-mail-címre. Bármikor leiratkozhatok.",
     "submit": "Kérek meghívót",
     "sending": "Küldés…",
     "success": "Kész. Amikor elindulunk, az elsők között tudod meg.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Induláskor ingyenes. A biztonság örökre.",
-    "text": "Most az F*app teljesen ingyenes. A fizetős extrák, például a korlátlan lájk vagy a boost, később jönnek. Az ellenőrzés, a megállapodás és a biztonsági mód mindig ingyenes marad.",
+    "text": "Most az YesYes teljesen ingyenes. A fizetős extrák, például a korlátlan lájk vagy a boost, később jönnek. Az ellenőrzés, a megállapodás és a biztonsági mód mindig ingyenes marad.",
     "freeTitle": "Mindig ingyenes",
     "free1": "Személyazonosság-ellenőrzés",
     "free2": "Vak megállapodás",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "GYIK",
-    "q1": "Tényleg csak szexről szól az F*app?",
+    "q1": "Tényleg csak szexről szól az YesYes?",
     "a1": "Igen. Nincs párkeresés és nincs színlelés. Ha mást keresel, azt máshol találod meg.",
     "q2": "Miért kell igazolnom a személyazonosságomat?",
     "a2": "Hogy mindenki az legyen, akinek mondja magát, és hogy a kitiltás a személyre vonatkozzon, ne csak a fiókra. Az ellenőrzést egy erre szakosodott szolgáltatás végzi; mi csak az eredményt, a születési dátumodat és egy titkosított lenyomatot tárolunk – az igazolványodat soha.",
@@ -129,14 +129,14 @@
     "a3": "Senki. A másik csak azt látja, amiben egyetértetek. A „nem”-ed a tiéd marad.",
     "q4": "Mi van, ha valami rosszul sül el a randin?",
     "a4": "Tartsd nyomva az SOS-t, vagy írd be a vész-PIN-t, ami úgy néz ki, mint a szokásos. A megbízható személyed riasztást kap a tartózkodási helyeddel. A randi után az app megmutatja, hol kaphatsz segítséget.",
-    "q5": "Megtudják a környezetemben, hogy F*app-ot használok?",
+    "q5": "Megtudják a környezetemben, hogy YesYes-ot használok?",
     "a5": "Nem kell, hogy megtudják. Átválthatsz diszkrét ikonra, az értesítések semmit sem árulnak el, és az app arccal vagy ujjlenyomattal zárható.",
     "q6": "Mennyibe kerül?",
     "a6": "Induláskor semmibe. A biztonság utána is ingyenes marad.",
-    "q7": "Hol működik az F*app?",
+    "q7": "Hol működik az YesYes?",
     "a7": "Prágában indulunk. A további városok a várólista alapján jönnek.",
     "q8": "17 éves vagyok. Csatlakozhatok?",
-    "a8": "Nem. Az F*app csak 18 év felettieknek szól, és ezt igazolvány alapján ellenőrizzük."
+    "a8": "Nem. Az YesYes csak 18 év felettieknek szól, és ezt igazolvány alapján ellenőrizzük."
   },
   "rules": {
     "title": "Közösségi szabályok",
@@ -158,7 +158,7 @@
     "rules": "Közösségi szabályok",
     "privacy": "Adatvédelem",
     "help": "Segítségre van szükséged egy randi után? Fordulj a helyi rendőrséghez vagy egy áldozatsegítő vonalhoz.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Kérek meghívót",
@@ -185,7 +185,7 @@
     "mockPin": "Írd be a PIN-t",
     "mockTrusted": "Megbízható személy",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "F*app üzenet",
+    "mockSmsFrom": "YesYes üzenet",
     "mockSms": "{name} nem jelentkezett – 23:40-re kellett volna. Próbáld felhívni.",
     "mockAlarm": "RIASZTÁS: {name} segítségre szorul.",
     "mockLocation": "Hely megosztva",

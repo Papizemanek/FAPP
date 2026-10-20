@@ -1,4 +1,4 @@
-import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS } from '@fapp/shared';
+import { CHECK_IN_GRACE_MINUTES, CHECK_IN_OPTIONS } from '@yesyes/shared';
 import * as Location from 'expo-location';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';

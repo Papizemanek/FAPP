@@ -1,6 +1,6 @@
 // Čekací listina a přepínač jazyka. Bez knihoven, funguje i bez serveru (náhled webu).
 (function () {
-  var cfg = window.FAPP_SITE || {};
+  var cfg = window.YESYES_SITE || {};
   var t = cfg.t || {};
 
   // Jazyk: výběr ze seznamu vede na stránku v daném jazyce a zapamatuje se.
@@ -8,7 +8,7 @@
   if (select) {
     select.addEventListener('change', function () {
       try {
-        localStorage.setItem('fapp.lang', select.value);
+        localStorage.setItem('yesyes.lang', select.value);
       } catch (e) {}
       var option = select.options[select.selectedIndex];
       if (option && option.dataset.href) window.location.href = option.dataset.href;

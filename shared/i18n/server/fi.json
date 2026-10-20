@@ -66,7 +66,7 @@
   "auth": {
     "confirmAdult": "Sinun täytyy vahvistaa, että olet vähintään 18-vuotias.",
     "acceptRules": "Sinun täytyy hyväksyä säännöt ja tietojesi käsittely.",
-    "underage": "F*app on vain 18 vuotta täyttäneille.",
+    "underage": "YesYes on vain 18 vuotta täyttäneille.",
     "invalidBirthdate": "Virheellinen syntymäaika.",
     "emailTaken": "Tällä sähköpostiosoitteella on jo tili.",
     "wrongCredentials": "Väärä sähköpostiosoite tai salasana.",
@@ -112,12 +112,12 @@
     "cantRewindMatch": "Tästä swaippauksesta on jo tullut match."
   },
   "billing": {
-    "likeLimit": "Tykkäyksesi loppuivat. Uusia tulee pian – tai swaippaa rajatta F*app Plus -tilauksella.",
+    "likeLimit": "Tykkäyksesi loppuivat. Uusia tulee pian – tai swaippaa rajatta YesYes Plus -tilauksella.",
     "noSuperLike": "Sinulla ei ole supertykkäyksiä.",
     "noBoost": "Sinulla ei ole boosteja.",
     "tonightPaid": "”Tänä iltana” kuuluu Platinumiin tai on saatavilla kertaostona.",
-    "featureInPlan": "{feature} kuuluu F*app {plan} -tilaukseen.",
-    "paymentsOff": "Maksut eivät ole vielä käytössä – F*app on toistaiseksi täysin ilmainen.",
+    "featureInPlan": "{feature} kuuluu YesYes {plan} -tilaukseen.",
+    "paymentsOff": "Maksut eivät ole vielä käytössä – YesYes on toistaiseksi täysin ilmainen.",
     "unknownProduct": "Tuntematon tuote.",
     "cantBuy": "Et voi ostaa tätä juuri nyt.",
     "cantBoost": "Et voi aloittaa boostia juuri nyt.",
@@ -156,10 +156,10 @@
     "photo": "Kuva"
   },
   "moderation": {
-    "minor": "Tämä viesti viittaa siihen, että joku teistä saattaa olla alle 18-vuotias. F*app on vain 18+.",
-    "paid": "Maksullisen seksin tarjoaminen tai pyytäminen on kielletty F*app-sovelluksessa.",
+    "minor": "Tämä viesti viittaa siihen, että joku teistä saattaa olla alle 18-vuotias. YesYes on vain 18+.",
+    "paid": "Maksullisen seksin tarjoaminen tai pyytäminen on kielletty YesYes-sovelluksessa.",
     "consentPressure": "Huomio: sovelluksessa tehty sopimus ei ole suostumus. Voit perua sen milloin tahansa ja kieltäytyä paikan päällä mistä tahansa – selityksiä ei tarvita.",
-    "contact": "Matchisi jakaa yhteystietoja sovelluksen ulkopuolelle. F*app-sovelluksen ulkopuolella sopimus, turvatila ja ilmoitukset eivät toimi sinulle."
+    "contact": "Matchisi jakaa yhteystietoja sovelluksen ulkopuolelle. YesYes-sovelluksen ulkopuolella sopimus, turvatila ja ilmoitukset eivät toimi sinulle."
   },
   "safety": {
     "notFound": "Treffejä ei löytynyt.",
@@ -179,9 +179,9 @@
     "noWebhook": "Kehitysympäristön palveluntarjoajalla ei ole webhookia.",
     "unavailable": "Vahvistuspalvelu ei vastaa. Yritä hetken päästä uudelleen.",
     "declined": {
-      "underage": "Vahvistus osoitti, että et ole vielä 18-vuotias. F*app on vain aikuisille.",
-      "banned": "Tämä henkilö on suljettu F*app-sovelluksesta sääntörikkomusten vuoksi.",
-      "duplicate": "Tällä henkilöllä on jo F*app-tili. Jokaisella voi olla vain yksi.",
+      "underage": "Vahvistus osoitti, että et ole vielä 18-vuotias. YesYes on vain aikuisille.",
+      "banned": "Tämä henkilö on suljettu YesYes-sovelluksesta sääntörikkomusten vuoksi.",
+      "duplicate": "Tällä henkilöllä on jo YesYes-tili. Jokaisella voi olla vain yksi.",
       "incomplete": "Syntymäaikaa ei voitu lukea asiakirjasta. Yritä uudelleen.",
       "default": "Vahvistus epäonnistui. Yritä uudelleen."
     }
@@ -238,7 +238,7 @@
     "someone": "Läheisesi"
   },
   "share": {
-    "pageTitle": "F*app – turvalinkki",
+    "pageTitle": "YesYes – turvalinkki",
     "header": "Turvalinkki",
     "loading": "Ladataan…",
     "call": "Soita {number}",

@@ -67,7 +67,7 @@
   "auth": {
     "confirmAdult": "Has de confirmar que tens 18 anys o més.",
     "acceptRules": "Has d'acceptar les normes i el tractament de les teves dades.",
-    "underage": "F*app és només per a persones de 18 anys o més.",
+    "underage": "YesYes és només per a persones de 18 anys o més.",
     "invalidBirthdate": "Data de naixement no vàlida.",
     "emailTaken": "Ja existeix un compte amb aquest correu.",
     "wrongCredentials": "Correu o contrasenya incorrectes.",
@@ -114,12 +114,12 @@
     "cantRewindMatch": "Aquest swipe ja és un match."
   },
   "billing": {
-    "likeLimit": "T'has quedat sense likes. Aviat en tindràs més – o llisca sense límits amb F*app Plus.",
+    "likeLimit": "T'has quedat sense likes. Aviat en tindràs més – o llisca sense límits amb YesYes Plus.",
     "noSuperLike": "No tens cap Super Like.",
     "noBoost": "No tens cap Boost.",
     "tonightPaid": "«Aquesta nit» està inclòs a Platinum o disponible com a compra única.",
-    "featureInPlan": "{feature} forma part de F*app {plan}.",
-    "paymentsOff": "Els pagaments encara no estan activats – de moment F*app és totalment gratuït.",
+    "featureInPlan": "{feature} forma part de YesYes {plan}.",
+    "paymentsOff": "Els pagaments encara no estan activats – de moment YesYes és totalment gratuït.",
     "unknownProduct": "Producte desconegut.",
     "cantBuy": "Ara no pots comprar això.",
     "cantBoost": "Ara no pots activar un Boost.",
@@ -159,10 +159,10 @@
     "photo": "Foto"
   },
   "moderation": {
-    "minor": "Aquest missatge fa pensar que un de vosaltres podria ser menor de 18 anys. F*app és només per a majors de 18.",
-    "paid": "A F*app està prohibit oferir o demanar sexe de pagament.",
+    "minor": "Aquest missatge fa pensar que un de vosaltres podria ser menor de 18 anys. YesYes és només per a majors de 18.",
+    "paid": "A YesYes està prohibit oferir o demanar sexe de pagament.",
     "consentPressure": "Atenció: un acord a l'app no és consentiment. El pots cancel·lar en qualsevol moment i dir que no a qualsevol cosa en persona – sense donar explicacions.",
-    "contact": "El teu match està compartint dades de contacte fora de l'app. Fora de F*app, l'acord, el mode seguretat i les denúncies no funcionen per a tu."
+    "contact": "El teu match està compartint dades de contacte fora de l'app. Fora de YesYes, l'acord, el mode seguretat i les denúncies no funcionen per a tu."
   },
   "safety": {
     "notFound": "Aquesta trobada no existeix.",
@@ -182,9 +182,9 @@
     "noWebhook": "El proveïdor de desenvolupament no té webhook.",
     "unavailable": "El servei de verificació no respon. Torna-ho a provar d'aquí a una estona.",
     "declined": {
-      "underage": "La verificació mostra que encara no tens 18 anys. F*app és només per a persones adultes.",
-      "banned": "Aquesta persona va ser expulsada de F*app per incomplir les normes.",
-      "duplicate": "Aquesta persona ja té un compte a F*app. Cadascú només en pot tenir un.",
+      "underage": "La verificació mostra que encara no tens 18 anys. YesYes és només per a persones adultes.",
+      "banned": "Aquesta persona va ser expulsada de YesYes per incomplir les normes.",
+      "duplicate": "Aquesta persona ja té un compte a YesYes. Cadascú només en pot tenir un.",
       "incomplete": "No hem pogut llegir la data de naixement del document. Torna-ho a provar.",
       "default": "La verificació ha fallat. Torna-ho a provar."
     }
@@ -241,7 +241,7 @@
     "someone": "Una persona propera"
   },
   "share": {
-    "pageTitle": "F*app – enllaç de seguretat",
+    "pageTitle": "YesYes – enllaç de seguretat",
     "header": "Enllaç de seguretat",
     "loading": "S'està carregant…",
     "call": "Truca al {number}",

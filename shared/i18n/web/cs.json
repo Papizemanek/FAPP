@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – seznamka jen na sex. Domluvená a bezpečná.",
-    "description": "F*app je seznamka jen na sex pro ověřené dospělé. Domluva naslepo, bezpečnostní režim s důvěryhodnou osobou, SOS a nouzový PIN. Brzy v Praze.",
+    "title": "YesYes – seznamka jen na sex. Domluvená a bezpečná.",
+    "description": "YesYes je seznamka jen na sex pro ověřené dospělé. Domluva naslepo, bezpečnostní režim s důvěryhodnou osobou, SOS a nouzový PIN. Brzy v Praze.",
     "ogTitle": "Sex. Domluvený. Bezpečný.",
     "langName": "Čeština"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Domluvený.",
     "title3": "Bezpečný.",
-    "lead": "F*app je seznamka jen na sex. Lidé s ověřenou totožností, domluva naslepo a během schůzky o tobě ví někdo, komu věříš.",
+    "lead": "YesYes je seznamka jen na sex. Lidé s ověřenou totožností, domluva naslepo a během schůzky o tobě ví někdo, komu věříš.",
     "note": "Jen pro 18+. Napíšeme ti jednou, až spustíme.",
-    "footnote": "* Jen se souhlasem obou. A jen teď a tady.",
+    "footnote": "* Dvě ano, nebo nic.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km od tebe",
@@ -36,7 +36,7 @@
     "email": "Tvůj e-mail",
     "emailPlaceholder": "jmeno@email.cz",
     "city": "Město",
-    "consent": "Souhlasím, že mi F*app pošle pozvánku na tento e-mail. Odhlásit se můžu kdykoli.",
+    "consent": "Souhlasím, že mi YesYes pošle pozvánku na tento e-mail. Odhlásit se můžu kdykoli.",
     "submit": "Chci pozvánku",
     "sending": "Posílám…",
     "success": "Hotovo. Až spustíme, ozveme se jako první tobě.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Na startu zdarma. Bezpečnost navždy.",
-    "text": "Teď je F*app celý zdarma. Později přibudou placené výhody jako neomezené lajky nebo boost. Ověření, domluva i bezpečnostní režim zůstanou zdarma vždycky.",
+    "text": "Teď je YesYes celý zdarma. Později přibudou placené výhody jako neomezené lajky nebo boost. Ověření, domluva i bezpečnostní režim zůstanou zdarma vždycky.",
     "freeTitle": "Vždy zdarma",
     "free1": "Ověření totožnosti",
     "free2": "Domluva naslepo",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Časté otázky",
-    "q1": "Je F*app opravdu jen na sex?",
+    "q1": "Je YesYes opravdu jen na sex?",
     "a1": "Ano. Žádné hledání vztahu a žádné předstírání. Kdo hledá něco jiného, najde to jinde.",
     "q2": "Proč musím ověřovat totožnost?",
     "a2": "Aby každý byl ten, za koho se vydává, a aby ban platil na člověka, ne na účet. Ověření dělá specializovaná služba; my si ukládáme jen výsledek, datum narození a šifrovaný otisk – ne doklad.",
@@ -129,14 +129,14 @@
     "a3": "Nikdo. Druhý uvidí jen to, na čem se shodnete. Tvoje „ne“ zůstane jen tvoje.",
     "q4": "Co když se na schůzce něco pokazí?",
     "a4": "Podržíš SOS, nebo zadáš nouzový PIN, který vypadá jako běžný. Tvoje důvěryhodná osoba dostane poplach s polohou. Po schůzce ti aplikace nabídne kontakty na pomoc.",
-    "q5": "Pozná někdo z okolí, že F*app mám?",
+    "q5": "Pozná někdo z okolí, že YesYes mám?",
     "a5": "Nemusí. Ikonu můžeš přepnout na nenápadnou, notifikace nic neprozradí a aplikace jde zamknout obličejem nebo otiskem.",
     "q6": "Kolik to stojí?",
     "a6": "Na startu nic. Bezpečnost bude zdarma i potom.",
-    "q7": "Kde F*app funguje?",
+    "q7": "Kde YesYes funguje?",
     "a7": "Začínáme v Praze. Další města podle zájmu na čekací listině.",
     "q8": "Je mi 17. Můžu?",
-    "a8": "Ne. F*app je jen pro lidi starší 18 let a kontrolujeme to podle dokladu."
+    "a8": "Ne. YesYes je jen pro lidi starší 18 let a kontrolujeme to podle dokladu."
   },
   "rules": {
     "title": "Pravidla komunity",
@@ -158,7 +158,7 @@
     "rules": "Pravidla komunity",
     "privacy": "Soukromí",
     "help": "Potřebuješ pomoc po schůzce? Linka pro oběti kriminality 116 006 (nonstop, zdarma).",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Chci pozvánku",
@@ -185,7 +185,7 @@
     "mockPin": "Zadej PIN",
     "mockTrusted": "Důvěryhodná osoba",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Zpráva od F*app",
+    "mockSmsFrom": "Zpráva od YesYes",
     "mockSms": "{name} se neozvala – potvrzení mělo přijít ve 23:40. Zkus zavolat.",
     "mockAlarm": "POPLACH: {name} potřebuje pomoc.",
     "mockLocation": "Poloha sdílená",

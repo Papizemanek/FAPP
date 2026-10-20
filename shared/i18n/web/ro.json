@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplicația de dating doar pentru sex. Convenit și sigur.",
-    "description": "F*app e o aplicație de dating doar pentru sex, pentru adulți verificați. Acord pe nevăzute, modul siguranță cu o persoană de încredere, SOS și PIN de urgență. În curând în Praga.",
+    "title": "YesYes – aplicația de dating doar pentru sex. Convenit și sigur.",
+    "description": "YesYes e o aplicație de dating doar pentru sex, pentru adulți verificați. Acord pe nevăzute, modul siguranță cu o persoană de încredere, SOS și PIN de urgență. În curând în Praga.",
     "ogTitle": "Sex. Convenit. Sigur.",
     "langName": "Română"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Convenit.",
     "title3": "Sigur.",
-    "lead": "F*app e o aplicație de dating doar pentru sex. Oameni cu identitate verificată, un acord pe nevăzute și, în timpul întâlnirii, cineva de încredere știe unde ești.",
+    "lead": "YesYes e o aplicație de dating doar pentru sex. Oameni cu identitate verificată, un acord pe nevăzute și, în timpul întâlnirii, cineva de încredere știe unde ești.",
     "note": "Doar 18+. Îți scriem o singură dată, la lansare.",
-    "footnote": "* Doar când amândoi spuneți da. Și doar aici și acum.",
+    "footnote": "* Doi de „da” sau nimic.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "La 2 km",
@@ -36,7 +36,7 @@
     "email": "E-mailul tău",
     "emailPlaceholder": "nume@email.com",
     "city": "Oraș",
-    "consent": "Sunt de acord ca F*app să-mi trimită o invitație pe acest e-mail. Mă pot dezabona oricând.",
+    "consent": "Sunt de acord ca YesYes să-mi trimită o invitație pe acest e-mail. Mă pot dezabona oricând.",
     "submit": "Vreau o invitație",
     "sending": "Se trimite…",
     "success": "Gata. La lansare, vei afla printre primele persoane.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratuit la lansare. Siguranța, pentru totdeauna.",
-    "text": "Momentan F*app e complet gratuit. Mai târziu vor apărea extraopțiuni cu plată, cum ar fi like-uri nelimitate sau Boosturi. Verificarea, acordul și modul siguranță vor rămâne mereu gratuite.",
+    "text": "Momentan YesYes e complet gratuit. Mai târziu vor apărea extraopțiuni cu plată, cum ar fi like-uri nelimitate sau Boosturi. Verificarea, acordul și modul siguranță vor rămâne mereu gratuite.",
     "freeTitle": "Mereu gratuit",
     "free1": "Verificarea identității",
     "free2": "Acord pe nevăzute",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Întrebări frecvente",
-    "q1": "F*app e chiar doar pentru sex?",
+    "q1": "YesYes e chiar doar pentru sex?",
     "a1": "Da. Fără căutat de relații și fără prefăcătorii. Dacă vrei altceva, găsești în altă parte.",
     "q2": "De ce trebuie să-mi verific identitatea?",
     "a2": "Ca fiecare să fie cine spune că este și ca interdicția să se aplice persoanei, nu doar contului. Verificarea o face un serviciu specializat; noi păstrăm doar rezultatul, data nașterii și o amprentă criptată – niciodată actul.",
@@ -129,14 +129,14 @@
     "a3": "Nimeni. Cealaltă persoană vede doar ce aveți în comun. „Nu”-ul tău rămâne al tău.",
     "q4": "Ce fac dacă ceva merge prost la o întâlnire?",
     "a4": "Ține apăsat SOS sau introdu PIN-ul de urgență, care arată ca cel obișnuit. Persoana de încredere primește o alarmă cu locația ta. După întâlnire, aplicația îți oferă contacte unde poți cere ajutor.",
-    "q5": "Vor ști cei din jur că folosesc F*app?",
+    "q5": "Vor ști cei din jur că folosesc YesYes?",
     "a5": "Nu e nevoie. Poți trece la o pictogramă discretă, notificările nu dezvăluie nimic, iar aplicația se blochează cu fața sau amprenta.",
     "q6": "Cât costă?",
     "a6": "Nimic la lansare. Iar siguranța va rămâne gratuită și după aceea.",
-    "q7": "Unde funcționează F*app?",
+    "q7": "Unde funcționează YesYes?",
     "a7": "Începem în Praga. Vor urma alte orașe, în funcție de lista de așteptare.",
     "q8": "Am 17 ani. Pot să intru?",
-    "a8": "Nu. F*app e doar pentru persoane de peste 18 ani, iar asta verificăm pe baza actului de identitate."
+    "a8": "Nu. YesYes e doar pentru persoane de peste 18 ani, iar asta verificăm pe baza actului de identitate."
   },
   "rules": {
     "title": "Regulile comunității",
@@ -158,7 +158,7 @@
     "rules": "Regulile comunității",
     "privacy": "Confidențialitate",
     "help": "Ai nevoie de ajutor după o întâlnire? Contactează poliția locală sau o linie de sprijin pentru victime.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Vreau o invitație",
@@ -185,7 +185,7 @@
     "mockPin": "Introdu PIN-ul",
     "mockTrusted": "Persoană de încredere",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Mesaj de la F*app",
+    "mockSmsFrom": "Mesaj de la YesYes",
     "mockSms": "{name} nu a făcut check-in – trebuia să confirme la 23:40. Încearcă s-o suni.",
     "mockAlarm": "ALARMĂ: {name} are nevoie de ajutor.",
     "mockLocation": "Locație partajată",

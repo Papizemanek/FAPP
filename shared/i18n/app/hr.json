@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Ovo je ono što imam na umu. Na licu mjesta mogu bilo što odbiti – a isto vrijedi i za drugu osobu.",
     "notice": "Razumijem: pristanak vrijedi samo ovdje i sada. „Ne“, „stop“, sigurnosna riječ, šutnja, ukočenost ili pijanstvo nisu pristanak. Dogovor u aplikaciji nikoga ne oslobađa odgovornosti.",
-    "deterrence": "Svi u aplikaciji F*app imaju provjeren identitet. Ako posumnjamo na kazneno djelo, predat ćemo ga policiji."
+    "deterrence": "Svi u aplikaciji YesYes imaju provjeren identitet. Ako posumnjamo na kazneno djelo, predat ćemo ga policiji."
   },
   "welcome": {
     "tagline": "Seks bez komplikacija.",
@@ -414,8 +414,8 @@
       "edit": "Uredi"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold i Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold i Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Neograničeni lajkovi, tko te lajkao, boost i više.",
       "validUntil": "Vrijedi do {date}.",
       "upgrade": "Nadogradi",
@@ -453,7 +453,7 @@
   "premium": {
     "title": "Pretplata",
     "free": {
-      "title": "F*app je zasad besplatan",
+      "title": "YesYes je zasad besplatan",
       "body": "Plaćene značajke uključit ćemo kasnije. Sigurnost – provjera identiteta, dogovori, sigurnosni način i SOS – uvijek će ostati besplatna."
     },
     "back": "Natrag",
@@ -463,7 +463,7 @@
       "likeLimitAt": "Ponestalo ti je lajkova. Novi stižu u {time}.",
       "likeLimit": "Ponestalo ti je lajkova. Novi stižu uskoro.",
       "noCredit": "{credit} možeš dobiti jednokratno ili uz pretplatu.",
-      "upgrade": "Ovo je dio paketa F*app {plan}."
+      "upgrade": "Ovo je dio paketa YesYes {plan}."
     },
     "oneOff": "Jednokratno",
     "owned": "imaš {count}",
@@ -490,9 +490,9 @@
         "other": "Imaš {count}× dodatno „Večeras“."
       }
     },
-    "currentPlan": "Imaš F*app {plan}",
+    "currentPlan": "Imaš YesYes {plan}",
     "validUntil": "Vrijedi do {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swajpaj bez ograničenja i vrati greškom preskočene profile.",
       "gold": "Vidi tko te lajkao – i spoji se jednim dodirom.",
@@ -509,9 +509,9 @@
     "perMonthSave": "mjesečno · −{percent} %",
     "continueWithPrice": "Nastavi · {price}",
     "planBought": {
-      "one": "Imaš F*app {plan} na {count} mjesec.",
-      "few": "Imaš F*app {plan} na {count} mjeseca.",
-      "other": "Imaš F*app {plan} na {count} mjeseci."
+      "one": "Imaš YesYes {plan} na {count} mjesec.",
+      "few": "Imaš YesYes {plan} na {count} mjeseca.",
+      "other": "Imaš YesYes {plan} na {count} mjeseci."
     },
     "renewal": "Pretplata se automatski obnavlja. Možeš je otkazati bilo kad u postavkama App Storea ili Google Playa. Cijena je ista za sve.",
     "renewalUpfront": "Plaćaš {total} unaprijed ({monthly} mjesečno). Pretplata se automatski obnavlja. Možeš je otkazati bilo kad u postavkama App Storea ili Google Playa. Cijena je ista za sve.",
@@ -535,13 +535,13 @@
       "other": "{count} osoba te lajkalo"
     },
     "lockedEmpty": "Ovdje će se pojaviti tvoji lajkovi",
-    "goldText": "Uz F*app Gold vidjet ćeš tko su i spojiti se jednim dodirom.",
+    "goldText": "Uz YesYes Gold vidjet ćeš tko su i spojiti se jednim dodirom.",
     "goldCta": "Vidi ih uz Gold",
     "emptySent": "U zadnjih 7 dana nema lajkova bez matcha.",
     "superLikePending": "Super lajk · čeka",
     "pending": "Čeka odgovor",
     "sentTitle": "Koga si lajkao/la",
-    "platinumText": "Uz F*app Platinum vidjet ćeš svoje lajkove iz zadnjih 7 dana.",
+    "platinumText": "Uz YesYes Platinum vidjet ćeš svoje lajkove iz zadnjih 7 dana.",
     "platinumCta": "Vidi ih uz Platinum",
     "likeBack": "Uzvrati lajk",
     "pass": "Preskoči"
@@ -569,13 +569,13 @@
     "iAm": "Ja sam",
     "showMe": "Prikaži mi",
     "confirmAdult": "Imam 18 ili više godina.",
-    "acceptRules": "Prihvaćam pravila zajednice i obradu svojih podataka, uključujući podatke o spolnom životu, kako bi F*app mogao raditi.",
+    "acceptRules": "Prihvaćam pravila zajednice i obradu svojih podataka, uključujući podatke o spolnom životu, kako bi YesYes mogao raditi.",
     "verifyNote": "Odmah nakon toga provjerit ćemo tvoj identitet i dob (osobni dokument i selfie). Tvoj dokument ne pohranjujemo.",
     "continue": "Nastavi"
   },
   "verify": {
     "title": "Potvrdi da si to ti",
-    "intro": "Svatko u aplikaciji F*app ima provjeren identitet i dob. Fotografirat ćeš osobni dokument i snimiti selfie – traje otprilike dvije minute.",
+    "intro": "Svatko u aplikaciji YesYes ima provjeren identitet i dob. Fotografirat ćeš osobni dokument i snimiti selfie – traje otprilike dvije minute.",
     "privacy": "Ne pohranjujemo tvoj dokument ni fotografije. Čuvamo samo rezultat provjere i datum rođenja. Tko prekrši pravila, ne može se vratiti s novim računom.",
     "pending": {
       "title": "Čekamo rezultat provjere",
@@ -668,7 +668,7 @@
     "notificationBody": "Možeš ga zaustaviti u aplikaciji."
   },
   "appLock": {
-    "prompt": "Otključaj F*app",
+    "prompt": "Otključaj YesYes",
     "lockedTitle": "Aplikacija je zaključana",
     "lockedBody": "Otključaj je Face ID-jem, otiskom prsta ili šifrom mobitela.",
     "sosHold": "SOS – pritisni i drži",
@@ -679,9 +679,9 @@
     "sosFailedTitle": "Slanje nije uspjelo"
   },
   "native": {
-    "locationWhenInUse": "F*app treba tvoju lokaciju kako bi ti prikazao ljude u blizini i, tijekom susreta, podijelio je s tvojom osobom od povjerenja.",
-    "locationAlways": "Tijekom susreta F*app dijeli tvoju lokaciju s osobom od povjerenja, čak i kad je zaslon isključen. Izvan susreta ne koristi tvoju lokaciju u pozadini.",
-    "faceId": "F*app koristi Face ID za otključavanje, da nitko drugi ne može zaviriti unutra.",
+    "locationWhenInUse": "YesYes treba tvoju lokaciju kako bi ti prikazao ljude u blizini i, tijekom susreta, podijelio je s tvojom osobom od povjerenja.",
+    "locationAlways": "Tijekom susreta YesYes dijeli tvoju lokaciju s osobom od povjerenja, čak i kad je zaslon isključen. Izvan susreta ne koristi tvoju lokaciju u pozadini.",
+    "faceId": "YesYes koristi Face ID za otključavanje, da nitko drugi ne može zaviriti unutra.",
     "photos": "Odaberi fotografije za svoj profil.",
     "camera": "Fotografiraj se za svoj profil."
   }

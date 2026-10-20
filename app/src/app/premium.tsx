@@ -1,4 +1,4 @@
-import { CREDITS, FEATURES, PLANS, PRODUCTS, type CreditKind, type FeatureId, type PlanId, type ProductId } from '@fapp/shared';
+import { CREDITS, FEATURES, PLANS, PRODUCTS, type CreditKind, type FeatureId, type PlanId, type ProductId } from '@yesyes/shared';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';

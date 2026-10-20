@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app necesita tu ubicación para mostrarte personas cerca y, durante una cita, compartirla con tu persona de confianza.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Durante una cita, F*app comparte tu ubicación con tu persona de confianza, incluso con la pantalla apagada. Fuera de las citas, no usa tu ubicación en segundo plano.",
-    "NSFaceIDUsageDescription": "F*app usa Face ID para desbloquearse, para que nadie más pueda ver su contenido.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes necesita tu ubicación para mostrarte personas cerca y, durante una cita, compartirla con tu persona de confianza.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Durante una cita, YesYes comparte tu ubicación con tu persona de confianza, incluso con la pantalla apagada. Fuera de las citas, no usa tu ubicación en segundo plano.",
+    "NSFaceIDUsageDescription": "YesYes usa Face ID para desbloquearse, para que nadie más pueda ver su contenido.",
     "NSPhotoLibraryUsageDescription": "Elige fotos para tu perfil.",
     "NSCameraUsageDescription": "Tómate una foto para tu perfil."
   }

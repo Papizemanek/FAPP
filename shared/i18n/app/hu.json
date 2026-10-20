@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Ezt képzelem el. A helyszínen bármire nemet mondhatok – és ő is.",
     "notice": "Tudomásul veszem: a beleegyezés csak itt és most érvényes. A „nem”, a „stop”, a biztonsági szó, a hallgatás, a lefagyás vagy az ittasság nem beleegyezés. Az alkalmazásban kötött megállapodás senkit sem ment fel a felelősség alól.",
-    "deterrence": "Az F*app minden felhasználójának ellenőrzött a személyazonossága. Bűncselekmény gyanúja esetén átadjuk a rendőrségnek."
+    "deterrence": "Az YesYes minden felhasználójának ellenőrzött a személyazonossága. Bűncselekmény gyanúja esetén átadjuk a rendőrségnek."
   },
   "welcome": {
     "tagline": "Szex, felhajtás nélkül.",
@@ -410,8 +410,8 @@
       "edit": "Szerkesztés"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold és Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold és Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Korlátlan lájk, látod, ki lájkolt, boost és még több.",
       "validUntil": "Érvényes eddig: {date}.",
       "upgrade": "Váltás",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Előfizetés",
     "free": {
-      "title": "Az F*app egyelőre ingyenes",
+      "title": "Az YesYes egyelőre ingyenes",
       "body": "A fizetős funkciókat később kapcsoljuk be. A biztonság – ellenőrzés, megállapodások, biztonsági mód és SOS – mindig ingyenes marad."
     },
     "back": "Vissza",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Elfogytak a lájkjaid. Újak ekkor érkeznek: {time}.",
       "likeLimit": "Elfogytak a lájkjaid. Hamarosan érkeznek újak.",
       "noCredit": "{credit} egyszeri vásárlással vagy előfizetéssel érhető el.",
-      "upgrade": "Ez az F*app {plan} része."
+      "upgrade": "Ez az YesYes {plan} része."
     },
     "oneOff": "Egyszeri",
     "owned": "{count} van belőle",
@@ -483,9 +483,9 @@
         "other": "Van {count} extra „Ma este” lehetőséged."
       }
     },
-    "currentPlan": "F*app {plan} előfizetésed van",
+    "currentPlan": "YesYes {plan} előfizetésed van",
     "validUntil": "Érvényes eddig: {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipe-olj korlátlanul, és hozd vissza a véletlenül átugrott profilokat.",
       "gold": "Lásd, ki lájkolt – és matchelj egy koppintással.",
@@ -501,8 +501,8 @@
     "perMonthSave": "havonta · −{percent}%",
     "continueWithPrice": "Tovább · {price}",
     "planBought": {
-      "one": "Megvan az F*app {plan}.",
-      "other": "Megvan az F*app {plan} {count} hónapra."
+      "one": "Megvan az YesYes {plan}.",
+      "other": "Megvan az YesYes {plan} {count} hónapra."
     },
     "renewal": "Az előfizetés automatikusan megújul. Bármikor lemondhatod az App Store vagy a Google Play beállításaiban. Az ár mindenkinek ugyanannyi.",
     "renewalUpfront": "Előre fizetsz: {total} (havonta {monthly}). Az előfizetés automatikusan megújul. Bármikor lemondhatod az App Store vagy a Google Play beállításaiban. Az ár mindenkinek ugyanannyi.",
@@ -525,13 +525,13 @@
       "other": "{count} ember lájkolt"
     },
     "lockedEmpty": "Itt jelennek meg a lájkjaid",
-    "goldText": "Az F*app Golddal látod, kik ők, és egy koppintással matchelhetsz.",
+    "goldText": "Az YesYes Golddal látod, kik ők, és egy koppintással matchelhetsz.",
     "goldCta": "Nézd meg a Golddal",
     "emptySent": "Az elmúlt 7 napban nincs match nélküli lájk.",
     "superLikePending": "Szuperlájk · válaszra vár",
     "pending": "Válaszra vár",
     "sentTitle": "Kiket lájkoltál",
-    "platinumText": "Az F*app Platinummal látod az elmúlt 7 nap lájkjaidat.",
+    "platinumText": "Az YesYes Platinummal látod az elmúlt 7 nap lájkjaidat.",
     "platinumCta": "Nézd meg a Platinummal",
     "likeBack": "Visszalájkolás",
     "pass": "Kihagyom"
@@ -559,13 +559,13 @@
     "iAm": "Nemem",
     "showMe": "Kiket mutassunk",
     "confirmAdult": "Elmúltam 18 éves.",
-    "acceptRules": "Elfogadom a közösségi szabályokat és az adataim kezelését – beleértve a szexuális életemre vonatkozó adatokat is –, hogy az F*app működni tudjon.",
+    "acceptRules": "Elfogadom a közösségi szabályokat és az adataim kezelését – beleértve a szexuális életemre vonatkozó adatokat is –, hogy az YesYes működni tudjon.",
     "verifyNote": "Ezután rögtön ellenőrizzük a személyazonosságodat és az életkorodat (igazolvány és szelfi). Az igazolványodat nem tároljuk.",
     "continue": "Tovább"
   },
   "verify": {
     "title": "Igazold, hogy te vagy az",
-    "intro": "Az F*app-on mindenkinek ellenőrzött a személyazonossága és az életkora. Lefotózod az igazolványodat és készítesz egy szelfit – kb. két percet vesz igénybe.",
+    "intro": "Az YesYes-on mindenkinek ellenőrzött a személyazonossága és az életkora. Lefotózod az igazolványodat és készítesz egy szelfit – kb. két percet vesz igénybe.",
     "privacy": "Az igazolványodat és a fotóidat nem tároljuk. Csak az ellenőrzés eredményét és a születési dátumodat őrizzük meg. Aki megszegi a szabályokat, nem térhet vissza új fiókkal.",
     "pending": {
       "title": "Várjuk az ellenőrzés eredményét",
@@ -657,7 +657,7 @@
     "notificationBody": "Az alkalmazásban leállíthatod."
   },
   "appLock": {
-    "prompt": "F*app feloldása",
+    "prompt": "YesYes feloldása",
     "lockedTitle": "Az alkalmazás zárolva van",
     "lockedBody": "Oldd fel Face ID-val, ujjlenyomattal vagy a telefonod kódjával.",
     "sosHold": "SOS – nyomd és tartsd",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Nem sikerült elküldeni"
   },
   "native": {
-    "locationWhenInUse": "Az F*app a helyadataid alapján mutatja meg a közelben lévő embereket, randi közben pedig megosztja őket a megbízható személyeddel.",
-    "locationAlways": "Randi közben az F*app akkor is megosztja a tartózkodási helyedet a megbízható személyeddel, ha ki van kapcsolva a képernyő. Randin kívül nem használja a helyadataidat a háttérben.",
-    "faceId": "Az F*app Face ID-val oldható fel, így más nem nézhet bele.",
+    "locationWhenInUse": "Az YesYes a helyadataid alapján mutatja meg a közelben lévő embereket, randi közben pedig megosztja őket a megbízható személyeddel.",
+    "locationAlways": "Randi közben az YesYes akkor is megosztja a tartózkodási helyedet a megbízható személyeddel, ha ki van kapcsolva a képernyő. Randin kívül nem használja a helyadataidat a háttérben.",
+    "faceId": "Az YesYes Face ID-val oldható fel, így más nem nézhet bele.",
     "photos": "Válassz fotókat a profilodhoz.",
     "camera": "Készíts magadról fotót a profilodhoz."
   }

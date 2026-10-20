@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app trenger posisjonen din for å vise deg folk i nærheten og for å dele den med tillitspersonen din under en date.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Under en date deler F*app posisjonen din med tillitspersonen din, også når skjermen er av. Utenom dater bruker appen ikke posisjonen din i bakgrunnen.",
-    "NSFaceIDUsageDescription": "F*app bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes trenger posisjonen din for å vise deg folk i nærheten og for å dele den med tillitspersonen din under en date.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Under en date deler YesYes posisjonen din med tillitspersonen din, også når skjermen er av. Utenom dater bruker appen ikke posisjonen din i bakgrunnen.",
+    "NSFaceIDUsageDescription": "YesYes bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
     "NSPhotoLibraryUsageDescription": "Velg bilder til profilen din.",
     "NSCameraUsageDescription": "Ta et bilde av deg selv til profilen din."
   }

@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app은 주변 사람을 보여 주고, 만남 중에 믿을 수 있는 사람과 위치를 공유하기 위해 위치 정보가 필요해요.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "만남 중에는 화면이 꺼져 있어도 F*app이 믿을 수 있는 사람과 내 위치를 공유해요. 만남이 아닐 때는 백그라운드에서 위치를 사용하지 않아요.",
-    "NSFaceIDUsageDescription": "F*app은 다른 사람이 앱 안을 볼 수 없도록 Face ID로 잠금을 해제해요.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes은 주변 사람을 보여 주고, 만남 중에 믿을 수 있는 사람과 위치를 공유하기 위해 위치 정보가 필요해요.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "만남 중에는 화면이 꺼져 있어도 YesYes이 믿을 수 있는 사람과 내 위치를 공유해요. 만남이 아닐 때는 백그라운드에서 위치를 사용하지 않아요.",
+    "NSFaceIDUsageDescription": "YesYes은 다른 사람이 앱 안을 볼 수 없도록 Face ID로 잠금을 해제해요.",
     "NSPhotoLibraryUsageDescription": "프로필에 사용할 사진을 선택하세요.",
     "NSCameraUsageDescription": "프로필에 사용할 사진을 찍으세요."
   }

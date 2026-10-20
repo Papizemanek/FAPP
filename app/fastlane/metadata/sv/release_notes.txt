@@ -1,1 +1,1 @@
-Den första versionen av F*app. Verifiering, blind överenskommelse och säkerhetsläge.
+Den första versionen av YesYes. Verifiering, blind överenskommelse och säkerhetsläge.

@@ -1,4 +1,4 @@
-F*app, rahat buluşmalar arayan ve bunların anlaşmalı ve güvenli olmasını isteyen yetişkinler için bir tanışma uygulamasıdır.
+YesYes, rahat buluşmalar arayan ve bunların anlaşmalı ve güvenli olmasını isteyen yetişkinler için bir tanışma uygulamasıdır.
 
 DOĞRULANMIŞ İNSANLAR
 Herkes kimlik belgesi ve selfie ile doğrulanır. Herkes olduğunu söylediği kişidir ve yasak yalnızca hesaba değil, kişiye uygulanır. Kimliğini saklamıyoruz.

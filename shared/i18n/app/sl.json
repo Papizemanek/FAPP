@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Tako si to predstavljam. Na kraju samem lahko karkoli zavrnem – in enako velja za drugo osebo.",
     "notice": "Zavedam se: privolitev velja le tukaj in zdaj. „Ne“, „stop“, varnostna beseda, molk, otrplost ali pijanost niso privolitev. Dogovor v aplikaciji nikogar ne odvezuje odgovornosti.",
-    "deterrence": "Vsi na F*app imajo preverjeno identiteto. Ob sumu kaznivega dejanja jo predamo policiji."
+    "deterrence": "Vsi na YesYes imajo preverjeno identiteto. Ob sumu kaznivega dejanja jo predamo policiji."
   },
   "welcome": {
     "tagline": "Seks brez ovinkarjenja.",
@@ -418,8 +418,8 @@
       "edit": "Uredi"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold in Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold in Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Neomejeni všečki, kdo te je všečkal, boost in več.",
       "validUntil": "Velja do {date}.",
       "upgrade": "Nadgradi",
@@ -457,7 +457,7 @@
   "premium": {
     "title": "Naročnina",
     "free": {
-      "title": "F*app je zdaj brezplačen",
+      "title": "YesYes je zdaj brezplačen",
       "body": "Plačljive funkcije vklopimo pozneje. Varnost – preverjanje, dogovor, varnostni način in SOS – bo vedno ostala brezplačna."
     },
     "back": "Nazaj",
@@ -467,7 +467,7 @@
       "likeLimitAt": "Zmanjkalo ti je všečkov. Novi pridejo ob {time}.",
       "likeLimit": "Zmanjkalo ti je všečkov. Novi pridejo kmalu.",
       "noCredit": "{credit} je na voljo enkratno ali z naročnino.",
-      "upgrade": "To je del F*app {plan}."
+      "upgrade": "To je del YesYes {plan}."
     },
     "oneOff": "Enkratno",
     "owned": "imaš {count}",
@@ -497,9 +497,9 @@
         "other": "Imaš {count}× dodaten „Nocoj“."
       }
     },
-    "currentPlan": "Imaš F*app {plan}",
+    "currentPlan": "Imaš YesYes {plan}",
     "validUntil": "Velja do {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Drsaj brez omejitev in vrni pomotoma zavrnjen profil.",
       "gold": "Poglej, kdo te je všečkal – in ujemanje ustvari z enim dotikom.",
@@ -517,10 +517,10 @@
     "perMonthSave": "na mesec · −{percent} %",
     "continueWithPrice": "Nadaljuj · {price}",
     "planBought": {
-      "one": "Imaš F*app {plan}.",
-      "two": "Imaš F*app {plan} za {count} meseca.",
-      "few": "Imaš F*app {plan} za {count} mesece.",
-      "other": "Imaš F*app {plan} za {count} mesecev."
+      "one": "Imaš YesYes {plan}.",
+      "two": "Imaš YesYes {plan} za {count} meseca.",
+      "few": "Imaš YesYes {plan} za {count} mesece.",
+      "other": "Imaš YesYes {plan} za {count} mesecev."
     },
     "renewal": "Naročnina se samodejno podaljšuje, prekličeš jo lahko kadar koli v nastavitvah App Store ali Google Play. Cena je za vse enaka.",
     "renewalUpfront": "Plačaš {total} naenkrat ({monthly} na mesec). Naročnina se samodejno podaljšuje, prekličeš jo lahko kadar koli v nastavitvah App Store ali Google Play. Cena je za vse enaka.",
@@ -545,13 +545,13 @@
       "other": "{count} oseb te je všečkalo"
     },
     "lockedEmpty": "Tukaj se bodo prikazali tvoji všečki",
-    "goldText": "Z F*app Gold vidiš, kdo so, in ujemanje ustvariš z enim dotikom.",
+    "goldText": "Z YesYes Gold vidiš, kdo so, in ujemanje ustvariš z enim dotikom.",
     "goldCta": "Poglej z Gold",
     "emptySent": "V zadnjih 7 dneh ni všečkov brez ujemanja.",
     "superLikePending": "Super všeček · čaka",
     "pending": "Čaka na odgovor",
     "sentTitle": "Koga si všečkal/a",
-    "platinumText": "S F*app Platinum vidiš svoje všečke iz zadnjih 7 dni.",
+    "platinumText": "S YesYes Platinum vidiš svoje všečke iz zadnjih 7 dni.",
     "platinumCta": "Poglej s Platinum",
     "likeBack": "Všečkaj nazaj",
     "pass": "Preskoči"
@@ -579,13 +579,13 @@
     "iAm": "Sem",
     "showMe": "Koga mi prikaži",
     "confirmAdult": "Imam 18 let ali več.",
-    "acceptRules": "Strinjam se s pravili skupnosti in z obdelavo svojih podatkov, vključno s podatki o spolnem življenju, da lahko F*app deluje.",
+    "acceptRules": "Strinjam se s pravili skupnosti in z obdelavo svojih podatkov, vključno s podatki o spolnem življenju, da lahko YesYes deluje.",
     "verifyNote": "Takoj nato preverimo tvojo identiteto in starost (dokument in selfie). Dokumenta ne shranjujemo.",
     "continue": "Nadaljuj"
   },
   "verify": {
     "title": "Potrdi, da si to ti",
-    "intro": "Vsak na F*app ima preverjeno identiteto in starost. Fotografiraš dokument in narediš selfie – traja približno dve minuti.",
+    "intro": "Vsak na YesYes ima preverjeno identiteto in starost. Fotografiraš dokument in narediš selfie – traja približno dve minuti.",
     "privacy": "Dokumenta in fotografij ne shranjujemo. Ohranimo le rezultat preverjanja in datum rojstva. Kdor krši pravila, se ne more vrniti z novim računom.",
     "pending": {
       "title": "Čakamo na rezultat preverjanja",
@@ -679,7 +679,7 @@
     "notificationBody": "Izklopiš ga v aplikaciji."
   },
   "appLock": {
-    "prompt": "Odkleni F*app",
+    "prompt": "Odkleni YesYes",
     "lockedTitle": "Aplikacija je zaklenjena",
     "lockedBody": "Odkleni jo s Face ID, prstnim odtisom ali kodo telefona.",
     "sosHold": "SOS – pritisni in pridrži",
@@ -690,9 +690,9 @@
     "sosFailedTitle": "Pošiljanje ni uspelo"
   },
   "native": {
-    "locationWhenInUse": "F*app potrebuje tvojo lokacijo, da ti pokaže ljudi v bližini in jo med zmenkom deli s tvojo zaupno osebo.",
-    "locationAlways": "Med zmenkom F*app deli tvojo lokacijo z zaupno osebo tudi pri ugasnjenem zaslonu. Zunaj zmenkov lokacije v ozadju ne uporablja.",
-    "faceId": "F*app se odklepa s Face ID, da vanj ne pogleda nihče drug.",
+    "locationWhenInUse": "YesYes potrebuje tvojo lokacijo, da ti pokaže ljudi v bližini in jo med zmenkom deli s tvojo zaupno osebo.",
+    "locationAlways": "Med zmenkom YesYes deli tvojo lokacijo z zaupno osebo tudi pri ugasnjenem zaslonu. Zunaj zmenkov lokacije v ozadju ne uporablja.",
+    "faceId": "YesYes se odklepa s Face ID, da vanj ne pogleda nihče drug.",
     "photos": "Izberi fotografije za profil.",
     "camera": "Fotografiraj se za profil."
   }

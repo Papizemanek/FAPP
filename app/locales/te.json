@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "దగ్గర్లో ఉన్నవారిని మీకు చూపించడానికి, డేట్ సమయంలో మీ నమ్మకమైన వ్యక్తితో పంచుకోవడానికి F*appకి మీ లొకేషన్ అవసరం.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "డేట్ సమయంలో, మీ స్క్రీన్ ఆఫ్‌లో ఉన్నా F*app మీ లొకేషన్‌ను మీ నమ్మకమైన వ్యక్తితో పంచుకుంటుంది. డేట్‌ల వెలుపల, బ్యాక్‌గ్రౌండ్‌లో మీ లొకేషన్‌ను ఉపయోగించదు.",
-    "NSFaceIDUsageDescription": "వేరెవరూ లోపల చూడకుండా ఉండేందుకు, అన్‌లాక్ చేయడానికి F*app Face IDని ఉపయోగిస్తుంది.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "దగ్గర్లో ఉన్నవారిని మీకు చూపించడానికి, డేట్ సమయంలో మీ నమ్మకమైన వ్యక్తితో పంచుకోవడానికి YesYesకి మీ లొకేషన్ అవసరం.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "డేట్ సమయంలో, మీ స్క్రీన్ ఆఫ్‌లో ఉన్నా YesYes మీ లొకేషన్‌ను మీ నమ్మకమైన వ్యక్తితో పంచుకుంటుంది. డేట్‌ల వెలుపల, బ్యాక్‌గ్రౌండ్‌లో మీ లొకేషన్‌ను ఉపయోగించదు.",
+    "NSFaceIDUsageDescription": "వేరెవరూ లోపల చూడకుండా ఉండేందుకు, అన్‌లాక్ చేయడానికి YesYes Face IDని ఉపయోగిస్తుంది.",
     "NSPhotoLibraryUsageDescription": "మీ ప్రొఫైల్ కోసం ఫోటోలను ఎంచుకోండి.",
     "NSCameraUsageDescription": "మీ ప్రొఫైల్ కోసం మీ ఫోటో తీసుకోండి."
   }

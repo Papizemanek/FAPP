@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Tätä minulla on mielessä. Paikan päällä voin kieltäytyä mistä tahansa – ja niin voi toinenkin.",
     "notice": "Ymmärrän: suostumus pätee vain tässä ja nyt. ”Ei”, ”stop”, turvasana, hiljaisuus, jähmettyminen tai humala eivät ole suostumus. Sovelluksessa tehty sopimus ei vapauta ketään vastuusta.",
-    "deterrence": "Jokaisen F*app-käyttäjän henkilöllisyys on vahvistettu. Jos epäilemme rikosta, luovutamme sen poliisille."
+    "deterrence": "Jokaisen YesYes-käyttäjän henkilöllisyys on vahvistettu. Jos epäilemme rikosta, luovutamme sen poliisille."
   },
   "welcome": {
     "tagline": "Seksiä ilman säätöä.",
@@ -410,8 +410,8 @@
       "edit": "Muokkaa"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold ja Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold ja Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Rajattomat tykkäykset, näe kuka tykkäsi, boost ja paljon muuta.",
       "validUntil": "Voimassa {date} asti.",
       "upgrade": "Päivitä",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Tilaus",
     "free": {
-      "title": "F*app on toistaiseksi ilmainen",
+      "title": "YesYes on toistaiseksi ilmainen",
       "body": "Otamme maksulliset ominaisuudet käyttöön myöhemmin. Turvallisuus – henkilöllisyyden vahvistus, sopimukset, turvatila ja SOS – pysyy aina ilmaisena."
     },
     "back": "Takaisin",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Tykkäyksesi loppuivat. Uusia tulee klo {time}.",
       "likeLimit": "Tykkäyksesi loppuivat. Uusia tulee pian.",
       "noCredit": "{credit} on saatavilla kertaostona tai tilauksella.",
-      "upgrade": "Tämä kuuluu F*app {plan} -tilaukseen."
+      "upgrade": "Tämä kuuluu YesYes {plan} -tilaukseen."
     },
     "oneOff": "Kertaosto",
     "owned": "sinulla on {count}",
@@ -483,9 +483,9 @@
         "other": "Sait {count} ylimääräistä ”Tänä iltana” -kertaa."
       }
     },
-    "currentPlan": "Sinulla on F*app {plan}",
+    "currentPlan": "Sinulla on YesYes {plan}",
     "validUntil": "Voimassa {date} asti.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swaippaa rajatta ja palauta vahingossa ohitetut profiilit.",
       "gold": "Näe, kuka tykkäsi sinusta – ja matchaa yhdellä napautuksella.",
@@ -501,8 +501,8 @@
     "perMonthSave": "kuukaudessa · −{percent} %",
     "continueWithPrice": "Jatka · {price}",
     "planBought": {
-      "one": "Sinulla on nyt F*app {plan}.",
-      "other": "Sinulla on nyt F*app {plan} {count} kuukaudeksi."
+      "one": "Sinulla on nyt YesYes {plan}.",
+      "other": "Sinulla on nyt YesYes {plan} {count} kuukaudeksi."
     },
     "renewal": "Tilauksesi uusiutuu automaattisesti. Voit perua sen milloin tahansa App Storen tai Google Playn asetuksissa. Hinta on kaikille sama.",
     "renewalUpfront": "Maksat {total} kerralla etukäteen ({monthly} kuukaudessa). Tilauksesi uusiutuu automaattisesti. Voit perua sen milloin tahansa App Storen tai Google Playn asetuksissa. Hinta on kaikille sama.",
@@ -525,13 +525,13 @@
       "other": "{count} ihmistä tykkäsi sinusta"
     },
     "lockedEmpty": "Tykkäyksesi näkyvät täällä",
-    "goldText": "F*app Goldilla näet, keitä he ovat, ja voit matchata yhdellä napautuksella.",
+    "goldText": "YesYes Goldilla näet, keitä he ovat, ja voit matchata yhdellä napautuksella.",
     "goldCta": "Näe heidät Goldilla",
     "emptySent": "Ei matchittomia tykkäyksiä viimeisen 7 päivän ajalta.",
     "superLikePending": "Supertykkäys · odottaa",
     "pending": "Odottaa vastausta",
     "sentTitle": "Kenestä tykkäsit",
-    "platinumText": "F*app Platinumilla näet tykkäyksesi viimeisen 7 päivän ajalta.",
+    "platinumText": "YesYes Platinumilla näet tykkäyksesi viimeisen 7 päivän ajalta.",
     "platinumCta": "Näe ne Platinumilla",
     "likeBack": "Tykkää takaisin",
     "pass": "Ohita"
@@ -559,13 +559,13 @@
     "iAm": "Olen",
     "showMe": "Näytä minulle",
     "confirmAdult": "Olen vähintään 18-vuotias.",
-    "acceptRules": "Hyväksyn yhteisön säännöt ja tietojeni käsittelyn, mukaan lukien seksuaalielämääni koskevat tiedot, jotta F*app voi toimia.",
+    "acceptRules": "Hyväksyn yhteisön säännöt ja tietojeni käsittelyn, mukaan lukien seksuaalielämääni koskevat tiedot, jotta YesYes voi toimia.",
     "verifyNote": "Heti tämän jälkeen vahvistamme henkilöllisyytesi ja ikäsi (henkilöllisyystodistus ja selfie). Emme säilytä henkilöllisyystodistustasi.",
     "continue": "Jatka"
   },
   "verify": {
     "title": "Vahvista, että se olet sinä",
-    "intro": "Jokaisen F*app-käyttäjän henkilöllisyys ja ikä on vahvistettu. Otat kuvan henkilöllisyystodistuksestasi ja selfien – siihen menee noin kaksi minuuttia.",
+    "intro": "Jokaisen YesYes-käyttäjän henkilöllisyys ja ikä on vahvistettu. Otat kuvan henkilöllisyystodistuksestasi ja selfien – siihen menee noin kaksi minuuttia.",
     "privacy": "Emme säilytä henkilöllisyystodistustasi emmekä kuviasi. Säilytämme vain vahvistuksen tuloksen ja syntymäaikasi. Sääntöjä rikkonut ei voi palata uudella tilillä.",
     "pending": {
       "title": "Odotetaan vahvistuksen tulosta",
@@ -657,7 +657,7 @@
     "notificationBody": "Voit lopettaa sen sovelluksessa."
   },
   "appLock": {
-    "prompt": "Avaa F*app",
+    "prompt": "Avaa YesYes",
     "lockedTitle": "Sovellus on lukittu",
     "lockedBody": "Avaa se Face ID:llä, sormenjäljellä tai puhelimen pääsykoodilla.",
     "sosHold": "SOS – paina pitkään",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Lähetys epäonnistui"
   },
   "native": {
-    "locationWhenInUse": "F*app tarvitsee sijaintisi näyttääkseen lähelläsi olevat ihmiset ja jakaakseen sen treffien aikana luottohenkilösi kanssa.",
-    "locationAlways": "Treffien aikana F*app jakaa sijaintisi luottohenkilösi kanssa myös silloin, kun näyttö on pimeänä. Treffien ulkopuolella se ei käytä sijaintiasi taustalla.",
-    "faceId": "F*app käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
+    "locationWhenInUse": "YesYes tarvitsee sijaintisi näyttääkseen lähelläsi olevat ihmiset ja jakaakseen sen treffien aikana luottohenkilösi kanssa.",
+    "locationAlways": "Treffien aikana YesYes jakaa sijaintisi luottohenkilösi kanssa myös silloin, kun näyttö on pimeänä. Treffien ulkopuolella se ei käytä sijaintiasi taustalla.",
+    "faceId": "YesYes käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
     "photos": "Valitse kuvat profiiliisi.",
     "camera": "Ota itsestäsi kuva profiiliisi."
   }

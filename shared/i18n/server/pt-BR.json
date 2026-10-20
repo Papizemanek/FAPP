@@ -67,7 +67,7 @@
   "auth": {
     "confirmAdult": "Você precisa confirmar que tem 18 anos ou mais.",
     "acceptRules": "Você precisa aceitar as regras e o tratamento dos seus dados.",
-    "underage": "O F*app é só para maiores de 18 anos.",
+    "underage": "O YesYes é só para maiores de 18 anos.",
     "invalidBirthdate": "Data de nascimento inválida.",
     "emailTaken": "Já existe uma conta com este e-mail.",
     "wrongCredentials": "E-mail ou senha incorretos.",
@@ -114,12 +114,12 @@
     "cantRewindMatch": "Esta escolha já virou match."
   },
   "billing": {
-    "likeLimit": "Suas curtidas acabaram. Mais chegam em breve – ou deslize sem limites com o F*app Plus.",
+    "likeLimit": "Suas curtidas acabaram. Mais chegam em breve – ou deslize sem limites com o YesYes Plus.",
     "noSuperLike": "Você não tem nenhum Super Like.",
     "noBoost": "Você não tem nenhum Boost.",
     "tonightPaid": "“Hoje à noite” vem com o Platinum ou como compra avulsa.",
-    "featureInPlan": "{feature} faz parte do F*app {plan}.",
-    "paymentsOff": "Os pagamentos ainda não estão ativos – por enquanto, o F*app é totalmente grátis.",
+    "featureInPlan": "{feature} faz parte do YesYes {plan}.",
+    "paymentsOff": "Os pagamentos ainda não estão ativos – por enquanto, o YesYes é totalmente grátis.",
     "unknownProduct": "Produto desconhecido.",
     "cantBuy": "Não é possível comprar isso agora.",
     "cantBoost": "Não é possível ativar um Boost agora.",
@@ -159,10 +159,10 @@
     "photo": "Foto"
   },
   "moderation": {
-    "minor": "Esta mensagem sugere que um de vocês pode ter menos de 18 anos. O F*app é só para maiores de 18.",
-    "paid": "Oferecer ou pedir sexo pago não é permitido no F*app.",
+    "minor": "Esta mensagem sugere que um de vocês pode ter menos de 18 anos. O YesYes é só para maiores de 18.",
+    "paid": "Oferecer ou pedir sexo pago não é permitido no YesYes.",
     "consentPressure": "Atenção: um acordo no app não é consentimento. Você pode cancelá-lo quando quiser e, na hora, dizer não a qualquer coisa – sem precisar explicar.",
-    "contact": "Seu match está compartilhando contatos fora do app. Fora do F*app, o acordo, o modo de segurança e as denúncias não funcionam para vocês."
+    "contact": "Seu match está compartilhando contatos fora do app. Fora do YesYes, o acordo, o modo de segurança e as denúncias não funcionam para vocês."
   },
   "safety": {
     "notFound": "Encontro não encontrado.",
@@ -182,9 +182,9 @@
     "noWebhook": "O provedor de desenvolvimento não tem webhook.",
     "unavailable": "O serviço de verificação não está respondendo. Tente de novo daqui a pouco.",
     "declined": {
-      "underage": "A verificação mostrou que você ainda não tem 18 anos. O F*app é só para adultos.",
-      "banned": "Esta pessoa foi banida do F*app por violar as regras.",
-      "duplicate": "Esta pessoa já tem uma conta no F*app. Cada pessoa só pode ter uma.",
+      "underage": "A verificação mostrou que você ainda não tem 18 anos. O YesYes é só para adultos.",
+      "banned": "Esta pessoa foi banida do YesYes por violar as regras.",
+      "duplicate": "Esta pessoa já tem uma conta no YesYes. Cada pessoa só pode ter uma.",
       "incomplete": "Não conseguimos ler a data de nascimento no documento. Tente de novo.",
       "default": "A verificação falhou. Tente de novo."
     }
@@ -241,7 +241,7 @@
     "someone": "Uma pessoa próxima"
   },
   "share": {
-    "pageTitle": "F*app – link de segurança",
+    "pageTitle": "YesYes – link de segurança",
     "header": "Link de segurança",
     "loading": "Carregando…",
     "call": "Ligar para {number}",

@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Aklımdaki bu. Orada her şeye hayır diyebilirim – karşımdaki de.",
     "notice": "Anlıyorum: rıza yalnızca burada ve şimdi geçerlidir. “Hayır”, “dur”, güvenli kelime, sessizlik, donup kalmak ya da sarhoş olmak rıza değildir. Uygulamadaki bir anlaşma kimseyi sorumluluktan kurtarmaz.",
-    "deterrence": "F*app'teki herkesin kimliği doğrulanmıştır. Bir suçtan şüphelenirsek kimliği polise veririz."
+    "deterrence": "YesYes'teki herkesin kimliği doğrulanmıştır. Bir suçtan şüphelenirsek kimliği polise veririz."
   },
   "welcome": {
     "tagline": "Seks, uzatmadan.",
@@ -410,8 +410,8 @@
       "edit": "Düzenle"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold ve Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold ve Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Sınırsız beğeni, seni kimin beğendiğini görme, Boost ve daha fazlası.",
       "validUntil": "{date} tarihine kadar geçerli.",
       "upgrade": "Yükselt",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Abonelik",
     "free": {
-      "title": "F*app şimdilik ücretsiz",
+      "title": "YesYes şimdilik ücretsiz",
       "body": "Ücretli özellikleri daha sonra açacağız. Güvenlik – doğrulama, anlaşmalar, güvenlik modu ve SOS – her zaman ücretsiz kalacak."
     },
     "back": "Geri",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Beğeni hakkın bitti. Yenileri şu saatte gelecek: {time}.",
       "likeLimit": "Beğeni hakkın bitti. Yakında yenileri gelecek.",
       "noCredit": "{credit} tek seferlik olarak veya abonelikle alınabilir.",
-      "upgrade": "Bu, F*app {plan} paketine dahildir."
+      "upgrade": "Bu, YesYes {plan} paketine dahildir."
     },
     "oneOff": "Tek seferlik",
     "owned": "sende {count} tane var",
@@ -483,9 +483,9 @@
         "other": "{count} ekstra “Bu gece” hakkın var."
       }
     },
-    "currentPlan": "F*app {plan} kullanıyorsun",
+    "currentPlan": "YesYes {plan} kullanıyorsun",
     "validUntil": "{date} tarihine kadar geçerli.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Sınırsız kaydır ve yanlışlıkla geçtiğin profilleri geri getir.",
       "gold": "Seni kimin beğendiğini gör – ve tek dokunuşla eşleş.",
@@ -501,8 +501,8 @@
     "perMonthSave": "aylık · −%{percent}",
     "continueWithPrice": "Devam · {price}",
     "planBought": {
-      "one": "Artık F*app {plan} kullanıyorsun.",
-      "other": "Artık {count} ay boyunca F*app {plan} kullanıyorsun."
+      "one": "Artık YesYes {plan} kullanıyorsun.",
+      "other": "Artık {count} ay boyunca YesYes {plan} kullanıyorsun."
     },
     "renewal": "Aboneliğin otomatik olarak yenilenir. İstediğin zaman App Store veya Google Play ayarlarından iptal edebilirsin. Fiyat herkes için aynıdır.",
     "renewalUpfront": "Peşin ödeme: {total} (aylık {monthly}). Aboneliğin otomatik olarak yenilenir. İstediğin zaman App Store veya Google Play ayarlarından iptal edebilirsin. Fiyat herkes için aynıdır.",
@@ -525,13 +525,13 @@
       "other": "{count} kişi seni beğendi"
     },
     "lockedEmpty": "Beğenilerin burada görünecek",
-    "goldText": "F*app Gold ile kim olduklarını görür, tek dokunuşla eşleşirsin.",
+    "goldText": "YesYes Gold ile kim olduklarını görür, tek dokunuşla eşleşirsin.",
     "goldCta": "Gold ile gör",
     "emptySent": "Son 7 günde eşleşmesiz beğeni yok.",
     "superLikePending": "Super Like · bekliyor",
     "pending": "Yanıt bekleniyor",
     "sentTitle": "Beğendiklerin",
-    "platinumText": "F*app Platinum ile son 7 gündeki beğenilerini görürsün.",
+    "platinumText": "YesYes Platinum ile son 7 gündeki beğenilerini görürsün.",
     "platinumCta": "Platinum ile gör",
     "likeBack": "Sen de beğen",
     "pass": "Geç"
@@ -559,13 +559,13 @@
     "iAm": "Ben",
     "showMe": "Bana göster",
     "confirmAdult": "18 yaşında veya daha büyüğüm.",
-    "acceptRules": "Topluluk kurallarını ve F*app'in çalışabilmesi için cinsel hayatıma ilişkin veriler dahil verilerimin işlenmesini kabul ediyorum.",
+    "acceptRules": "Topluluk kurallarını ve YesYes'in çalışabilmesi için cinsel hayatıma ilişkin veriler dahil verilerimin işlenmesini kabul ediyorum.",
     "verifyNote": "Hemen ardından kimliğini ve yaşını doğrulayacağız (kimlik belgesi ve selfie). Kimlik belgeni saklamıyoruz.",
     "continue": "Devam"
   },
   "verify": {
     "title": "Sen olduğunu doğrula",
-    "intro": "F*app'teki herkesin kimliği ve yaşı doğrulanmıştır. Kimlik belgenin fotoğrafını çekip bir selfie alacaksın – yaklaşık iki dakika sürer.",
+    "intro": "YesYes'teki herkesin kimliği ve yaşı doğrulanmıştır. Kimlik belgenin fotoğrafını çekip bir selfie alacaksın – yaklaşık iki dakika sürer.",
     "privacy": "Kimlik belgeni ve fotoğraflarını saklamıyoruz. Yalnızca doğrulama sonucunu ve doğum tarihini tutuyoruz. Kuralları çiğneyen kişi yeni bir hesapla geri dönemez.",
     "pending": {
       "title": "Doğrulama sonucun bekleniyor",
@@ -657,7 +657,7 @@
     "notificationBody": "Uygulamadan durdurabilirsin."
   },
   "appLock": {
-    "prompt": "F*app kilidini aç",
+    "prompt": "YesYes kilidini aç",
     "lockedTitle": "Uygulama kilitli",
     "lockedBody": "Face ID, parmak izin veya telefon şifrenle kilidi aç.",
     "sosHold": "SOS – basılı tut",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Gönderilemedi"
   },
   "native": {
-    "locationWhenInUse": "F*app, sana yakındaki kişileri göstermek ve buluşma sırasında konumunu güvendiğin kişiyle paylaşmak için konumuna ihtiyaç duyar.",
-    "locationAlways": "Buluşma sırasında F*app, ekranın kapalıyken bile konumunu güvendiğin kişiyle paylaşır. Buluşmalar dışında konumunu arka planda kullanmaz.",
-    "faceId": "F*app, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
+    "locationWhenInUse": "YesYes, sana yakındaki kişileri göstermek ve buluşma sırasında konumunu güvendiğin kişiyle paylaşmak için konumuna ihtiyaç duyar.",
+    "locationAlways": "Buluşma sırasında YesYes, ekranın kapalıyken bile konumunu güvendiğin kişiyle paylaşır. Buluşmalar dışında konumunu arka planda kullanmaz.",
+    "faceId": "YesYes, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
     "photos": "Profilin için fotoğraf seç.",
     "camera": "Profilin için kendi fotoğrafını çek."
   }

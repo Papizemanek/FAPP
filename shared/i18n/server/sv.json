@@ -66,7 +66,7 @@
   "auth": {
     "confirmAdult": "Du måste bekräfta att du är 18 år eller äldre.",
     "acceptRules": "Du måste godkänna reglerna och behandlingen av dina uppgifter.",
-    "underage": "F*app är bara för personer som är 18 år eller äldre.",
+    "underage": "YesYes är bara för personer som är 18 år eller äldre.",
     "invalidBirthdate": "Ogiltigt födelsedatum.",
     "emailTaken": "Det finns redan ett konto med den här e-postadressen.",
     "wrongCredentials": "Fel e-post eller lösenord.",
@@ -112,12 +112,12 @@
     "cantRewindMatch": "Den här swipen har redan blivit en match."
   },
   "billing": {
-    "likeLimit": "Dina likes är slut. Fler kommer snart – eller swipea utan gräns med F*app Plus.",
+    "likeLimit": "Dina likes är slut. Fler kommer snart – eller swipea utan gräns med YesYes Plus.",
     "noSuperLike": "Du har inga Super Likes.",
     "noBoost": "Du har inga Boosts.",
     "tonightPaid": "”I kväll” ingår i Platinum eller finns som engångsköp.",
-    "featureInPlan": "{feature} ingår i F*app {plan}.",
-    "paymentsOff": "Betalningar är inte aktiverade än – F*app är helt gratis tills vidare.",
+    "featureInPlan": "{feature} ingår i YesYes {plan}.",
+    "paymentsOff": "Betalningar är inte aktiverade än – YesYes är helt gratis tills vidare.",
     "unknownProduct": "Okänd produkt.",
     "cantBuy": "Du kan inte köpa det här just nu.",
     "cantBoost": "Du kan inte starta en Boost just nu.",
@@ -156,10 +156,10 @@
     "photo": "Bild"
   },
   "moderation": {
-    "minor": "Det här meddelandet tyder på att någon av er kan vara under 18. F*app är bara för 18+.",
-    "paid": "Att erbjuda eller efterfråga sex mot betalning är inte tillåtet på F*app.",
+    "minor": "Det här meddelandet tyder på att någon av er kan vara under 18. YesYes är bara för 18+.",
+    "paid": "Att erbjuda eller efterfråga sex mot betalning är inte tillåtet på YesYes.",
     "consentPressure": "Tänk på: en överenskommelse i appen är inte samtycke. Du kan avbryta den när som helst och säga nej till vad som helst på plats – utan att förklara dig.",
-    "contact": "Din match delar kontaktuppgifter utanför appen. Utanför F*app fungerar inte överenskommelsen, säkerhetsläget eller rapportering för er."
+    "contact": "Din match delar kontaktuppgifter utanför appen. Utanför YesYes fungerar inte överenskommelsen, säkerhetsläget eller rapportering för er."
   },
   "safety": {
     "notFound": "Träffen hittades inte.",
@@ -179,9 +179,9 @@
     "noWebhook": "Utvecklingsleverantören har ingen webhook.",
     "unavailable": "Verifieringstjänsten svarar inte. Försök igen om en stund.",
     "declined": {
-      "underage": "Verifieringen visade att du inte har fyllt 18 än. F*app är bara för vuxna.",
-      "banned": "Den här personen har stängts av från F*app för brott mot reglerna.",
-      "duplicate": "Den här personen har redan ett F*app-konto. Alla kan bara ha ett.",
+      "underage": "Verifieringen visade att du inte har fyllt 18 än. YesYes är bara för vuxna.",
+      "banned": "Den här personen har stängts av från YesYes för brott mot reglerna.",
+      "duplicate": "Den här personen har redan ett YesYes-konto. Alla kan bara ha ett.",
       "incomplete": "Vi kunde inte läsa födelsedatumet i dokumentet. Försök igen.",
       "default": "Verifieringen misslyckades. Försök igen."
     }
@@ -238,7 +238,7 @@
     "someone": "En person som står dig nära"
   },
   "share": {
-    "pageTitle": "F*app – trygghetslänk",
+    "pageTitle": "YesYes – trygghetslänk",
     "header": "Trygghetslänk",
     "loading": "Läser in…",
     "call": "Ring {number}",

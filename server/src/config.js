@@ -16,7 +16,7 @@ export function loadConfig(env = process.env) {
     dev,
     port,
     publicUrl: (env.PUBLIC_URL ?? `http://localhost:${port}`).replace(/\/$/, ''),
-    dbFile: env.DB_FILE ?? 'fapp.db',
+    dbFile: env.DB_FILE ?? 'yesyes.db',
     dataKey: required('DATA_KEY', DEV_DATA_KEY),
     identitySecret: required('IDENTITY_SECRET', 'dev-identity-secret'),
     adminToken: required('ADMIN_TOKEN', 'dev-admin'),

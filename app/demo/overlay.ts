@@ -129,7 +129,7 @@ function openPanel() {
   if (!root || !hooks) return;
   closePanel();
   const h = hooks;
-  const title = el('div', { font: `800 24px ${DISPLAY}` }, 'Prototyp F*app');
+  const title = el('div', { font: `800 24px ${DISPLAY}` }, 'Prototyp YesYes');
   const intro = el(
     'div',
     { color: C.muted },
@@ -137,7 +137,7 @@ function openPanel() {
   );
   const creds = el('div', { background: C.bg, border: `1px solid ${C.line}`, borderRadius: '14px', padding: '12px 14px' });
   creds.innerHTML = `<div style="font-weight:700">Demo účet</div>
-    <div>E-mail: <b style="user-select:all">lucie@demo.fapp</b></div>
+    <div>E-mail: <b style="user-select:all">lucie@demo.yesyes</b></div>
     <div>Heslo: <b style="user-select:all">demo-heslo-123</b></div>
     <div style="color:${C.muted};margin-top:6px">PIN <b style="color:${C.text}">1234</b> · nouzový PIN <b style="color:${C.text}">9999</b> (vypadá stejně, ale spustí poplach)</div>
     <div style="color:${C.muted};margin-top:6px">Nebo si založ vlastní účet – ověření totožnosti je tu simulované.</div>`;
@@ -161,7 +161,7 @@ function openPanel() {
     }),
   );
 
-  // Platby: na startu je F*app zdarma, placený režim ukazuje model po vzoru Tinderu.
+  // Platby: na startu je YesYes zdarma, placený režim ukazuje model po vzoru Tinderu.
   const mode = h.billingMode();
   const billingBox = el('div', { background: C.bg, border: `1px solid ${C.line}`, borderRadius: '14px', padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '10px' });
   billingBox.appendChild(el('div', { fontWeight: '700' }, 'Platby'));
@@ -317,8 +317,8 @@ export const overlay = {
     else document.addEventListener('DOMContentLoaded', ensureRoot);
     // úvodní panel jen při první návštěvě
     try {
-      if (!localStorage.getItem('fapp-demo-intro')) {
-        localStorage.setItem('fapp-demo-intro', '1');
+      if (!localStorage.getItem('yesyes-demo-intro')) {
+        localStorage.setItem('yesyes-demo-intro', '1');
         setTimeout(openPanel, 1200);
       }
     } catch {

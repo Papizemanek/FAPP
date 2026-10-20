@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Asta îmi imaginez. La fața locului pot refuza orice – la fel și cealaltă persoană.",
     "notice": "Înțeleg: consimțământul contează doar aici și acum. „Nu”, „stop”, cuvântul de siguranță, tăcerea, încremenirea sau starea de ebrietate nu înseamnă consimțământ. Un acord în aplicație nu scutește pe nimeni de responsabilitate.",
-    "deterrence": "Pe F*app, toată lumea are identitatea verificată. Dacă bănuim o infracțiune, predăm identitatea poliției."
+    "deterrence": "Pe YesYes, toată lumea are identitatea verificată. Dacă bănuim o infracțiune, predăm identitatea poliției."
   },
   "welcome": {
     "tagline": "Sex, fără ocolișuri.",
@@ -414,8 +414,8 @@
       "edit": "Editează"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold și Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold și Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Like-uri nelimitate, cine ți-a dat like, Boost și altele.",
       "validUntil": "Valabil până la {date}.",
       "upgrade": "Îmbunătățește",
@@ -453,7 +453,7 @@
   "premium": {
     "title": "Abonament",
     "free": {
-      "title": "Deocamdată F*app e gratuit",
+      "title": "Deocamdată YesYes e gratuit",
       "body": "Vom activa funcțiile cu plată mai târziu. Siguranța – verificarea, acordurile, modul siguranță și SOS – va rămâne mereu gratuită."
     },
     "back": "Înapoi",
@@ -463,7 +463,7 @@
       "likeLimitAt": "Ai rămas fără like-uri. Primești altele la {time}.",
       "likeLimit": "Ai rămas fără like-uri. Primești altele în curând.",
       "noCredit": "{credit} e disponibil ca achiziție unică sau cu abonament.",
-      "upgrade": "Asta face parte din F*app {plan}."
+      "upgrade": "Asta face parte din YesYes {plan}."
     },
     "oneOff": "Achiziție unică",
     "owned": "ai {count}",
@@ -490,9 +490,9 @@
         "other": "Ai {count}× „În seara asta” în plus."
       }
     },
-    "currentPlan": "Ai F*app {plan}",
+    "currentPlan": "Ai YesYes {plan}",
     "validUntil": "Valabil până la {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Dă swipe fără limite și recuperează profilurile refuzate din greșeală.",
       "gold": "Vezi cine ți-a dat like – și fă match cu o atingere.",
@@ -509,9 +509,9 @@
     "perMonthSave": "pe lună · −{percent}%",
     "continueWithPrice": "Continuă · {price}",
     "planBought": {
-      "one": "Ai F*app {plan}.",
-      "few": "Ai F*app {plan} pentru {count} luni.",
-      "other": "Ai F*app {plan} pentru {count} de luni."
+      "one": "Ai YesYes {plan}.",
+      "few": "Ai YesYes {plan} pentru {count} luni.",
+      "other": "Ai YesYes {plan} pentru {count} de luni."
     },
     "renewal": "Abonamentul se reînnoiește automat. Îl poți anula oricând din setările App Store sau Google Play. Prețul e același pentru toată lumea.",
     "renewalUpfront": "Plătești {total} în avans ({monthly} pe lună). Abonamentul se reînnoiește automat. Îl poți anula oricând din setările App Store sau Google Play. Prețul e același pentru toată lumea.",
@@ -535,13 +535,13 @@
       "other": "{count} de persoane ți-au dat like"
     },
     "lockedEmpty": "Like-urile tale vor apărea aici",
-    "goldText": "Cu F*app Gold vezi cine sunt și faci match cu o atingere.",
+    "goldText": "Cu YesYes Gold vezi cine sunt și faci match cu o atingere.",
     "goldCta": "Vezi-le cu Gold",
     "emptySent": "Niciun like fără match în ultimele 7 zile.",
     "superLikePending": "Super Like · în așteptare",
     "pending": "Așteaptă răspuns",
     "sentTitle": "Cui i-ai dat like",
-    "platinumText": "Cu F*app Platinum îți vezi like-urile din ultimele 7 zile.",
+    "platinumText": "Cu YesYes Platinum îți vezi like-urile din ultimele 7 zile.",
     "platinumCta": "Vezi-le cu Platinum",
     "likeBack": "Dă like înapoi",
     "pass": "Treci peste"
@@ -569,13 +569,13 @@
     "iAm": "Sunt",
     "showMe": "Arată-mi",
     "confirmAdult": "Am 18 ani sau mai mult.",
-    "acceptRules": "Sunt de acord cu regulile comunității și cu prelucrarea datelor mele, inclusiv a celor despre viața mea sexuală, pentru ca F*app să poată funcționa.",
+    "acceptRules": "Sunt de acord cu regulile comunității și cu prelucrarea datelor mele, inclusiv a celor despre viața mea sexuală, pentru ca YesYes să poată funcționa.",
     "verifyNote": "Imediat după aceea îți verificăm identitatea și vârsta (act de identitate și selfie). Nu păstrăm actul tău.",
     "continue": "Continuă"
   },
   "verify": {
     "title": "Confirmă că ești tu",
-    "intro": "Pe F*app, toată lumea are identitatea și vârsta verificate. Fotografiezi actul de identitate și faci un selfie – durează cam două minute.",
+    "intro": "Pe YesYes, toată lumea are identitatea și vârsta verificate. Fotografiezi actul de identitate și faci un selfie – durează cam două minute.",
     "privacy": "Nu păstrăm actul tău și nici pozele. Păstrăm doar rezultatul verificării și data nașterii. Cine încalcă regulile nu se poate întoarce cu un cont nou.",
     "pending": {
       "title": "Așteptăm rezultatul verificării",
@@ -668,7 +668,7 @@
     "notificationBody": "O poți opri din aplicație."
   },
   "appLock": {
-    "prompt": "Deblochează F*app",
+    "prompt": "Deblochează YesYes",
     "lockedTitle": "Aplicația e blocată",
     "lockedBody": "Deblocheaz-o cu Face ID, amprenta sau codul telefonului.",
     "sosHold": "SOS – ține apăsat",
@@ -679,9 +679,9 @@
     "sosFailedTitle": "Nu s-a putut trimite"
   },
   "native": {
-    "locationWhenInUse": "F*app are nevoie de locația ta ca să-ți arate oameni din apropiere și, în timpul unei întâlniri, ca s-o trimită persoanei tale de încredere.",
-    "locationAlways": "În timpul unei întâlniri, F*app îi trimite locația ta persoanei de încredere, chiar și cu ecranul stins. În afara întâlnirilor, nu folosește locația în fundal.",
-    "faceId": "F*app folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
+    "locationWhenInUse": "YesYes are nevoie de locația ta ca să-ți arate oameni din apropiere și, în timpul unei întâlniri, ca s-o trimită persoanei tale de încredere.",
+    "locationAlways": "În timpul unei întâlniri, YesYes îi trimite locația ta persoanei de încredere, chiar și cu ecranul stins. În afara întâlnirilor, nu folosește locația în fundal.",
+    "faceId": "YesYes folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
     "photos": "Alege poze pentru profilul tău.",
     "camera": "Fă-ți o poză pentru profil."
   }

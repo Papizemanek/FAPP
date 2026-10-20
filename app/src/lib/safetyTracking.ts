@@ -9,7 +9,7 @@ import { storage } from './storage';
 // Úloha se musí definovat hned při startu JS (import v kořenovém layoutu), protože ji systém
 // může spustit i bez otevřené aplikace.
 
-export const SAFETY_LOCATION_TASK = 'fapp-safety-location';
+export const SAFETY_LOCATION_TASK = 'yesyes-safety-location';
 
 async function postLocation(sessionId: number, token: string, loc: Location.LocationObject, battery: number | null) {
   const res = await fetch(`${API_URL}/api/safety/${sessionId}/location`, {

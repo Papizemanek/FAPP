@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Inilah yang saya bayangkan. Apabila bertemu nanti, saya boleh menolak apa-apa sahaja – begitu juga dia.",
     "notice": "Saya faham: kerelaan hanya sah di sini dan pada saat ini. “Tidak”, “berhenti”, kata henti, diam, terkaku atau mabuk bukan kerelaan. Persetujuan dalam aplikasi tidak melepaskan sesiapa daripada tanggungjawab.",
-    "deterrence": "Semua orang di F*app mempunyai identiti yang disahkan. Jika kami mengesyaki jenayah, kami akan menyerahkan identiti itu kepada polis."
+    "deterrence": "Semua orang di YesYes mempunyai identiti yang disahkan. Jika kami mengesyaki jenayah, kami akan menyerahkan identiti itu kepada polis."
   },
   "welcome": {
     "tagline": "Seks, tanpa leceh.",
@@ -406,8 +406,8 @@
       "edit": "Edit"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold dan Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold dan Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Suka tanpa had, lihat siapa suka anda, Boost dan banyak lagi.",
       "validUntil": "Sah sehingga {date}.",
       "upgrade": "Naik taraf",
@@ -445,7 +445,7 @@
   "premium": {
     "title": "Langganan",
     "free": {
-      "title": "F*app percuma buat masa ini",
+      "title": "YesYes percuma buat masa ini",
       "body": "Kami akan mengaktifkan ciri berbayar kemudian. Keselamatan – pengesahan, persetujuan, mod keselamatan dan SOS – akan sentiasa percuma."
     },
     "back": "Kembali",
@@ -455,7 +455,7 @@
       "likeLimitAt": "Suka anda sudah habis. Lagi akan tiba pada {time}.",
       "likeLimit": "Suka anda sudah habis. Lagi akan tiba tidak lama lagi.",
       "noCredit": "{credit} boleh didapati secara sekali beli atau dengan langganan.",
-      "upgrade": "Ini sebahagian daripada F*app {plan}."
+      "upgrade": "Ini sebahagian daripada YesYes {plan}."
     },
     "oneOff": "Sekali beli",
     "owned": "anda ada {count}",
@@ -476,9 +476,9 @@
         "other": "Anda mendapat {count}× “Malam ini” tambahan."
       }
     },
-    "currentPlan": "Anda mempunyai F*app {plan}",
+    "currentPlan": "Anda mempunyai YesYes {plan}",
     "validUntil": "Sah sehingga {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Leret tanpa had dan kembalikan profil yang anda langkau secara tidak sengaja.",
       "gold": "Lihat siapa suka anda – dan berpadanan dengan satu ketikan.",
@@ -493,7 +493,7 @@
     "perMonthSave": "sebulan · −{percent}%",
     "continueWithPrice": "Teruskan · {price}",
     "planBought": {
-      "other": "Anda mendapat F*app {plan} selama {count} bulan."
+      "other": "Anda mendapat YesYes {plan} selama {count} bulan."
     },
     "renewal": "Langganan anda diperbaharui secara automatik. Anda boleh membatalkannya bila-bila masa dalam tetapan App Store atau Google Play. Harganya sama untuk semua orang.",
     "renewalUpfront": "Anda membayar {total} secara pendahuluan ({monthly} sebulan). Langganan anda diperbaharui secara automatik. Anda boleh membatalkannya bila-bila masa dalam tetapan App Store atau Google Play. Harganya sama untuk semua orang.",
@@ -515,13 +515,13 @@
       "other": "{count} orang suka anda"
     },
     "lockedEmpty": "Suka untuk anda akan muncul di sini",
-    "goldText": "Dengan F*app Gold anda akan melihat siapa mereka dan berpadanan dengan satu ketikan.",
+    "goldText": "Dengan YesYes Gold anda akan melihat siapa mereka dan berpadanan dengan satu ketikan.",
     "goldCta": "Lihat dengan Gold",
     "emptySent": "Tiada suka tanpa padanan dalam 7 hari lepas.",
     "superLikePending": "Super Like · menunggu",
     "pending": "Menunggu respons",
     "sentTitle": "Siapa yang anda suka",
-    "platinumText": "Dengan F*app Platinum anda akan melihat suka anda dari 7 hari lepas.",
+    "platinumText": "Dengan YesYes Platinum anda akan melihat suka anda dari 7 hari lepas.",
     "platinumCta": "Lihat dengan Platinum",
     "likeBack": "Suka kembali",
     "pass": "Langkau"
@@ -549,13 +549,13 @@
     "iAm": "Saya",
     "showMe": "Tunjukkan",
     "confirmAdult": "Saya berumur 18 tahun atau lebih.",
-    "acceptRules": "Saya bersetuju dengan peraturan komuniti dan pemprosesan data saya, termasuk data tentang kehidupan seks saya, supaya F*app dapat berfungsi.",
+    "acceptRules": "Saya bersetuju dengan peraturan komuniti dan pemprosesan data saya, termasuk data tentang kehidupan seks saya, supaya YesYes dapat berfungsi.",
     "verifyNote": "Sejurus selepas ini, kami akan mengesahkan identiti dan umur anda (dokumen pengenalan dan swafoto). Kami tidak menyimpan dokumen pengenalan anda.",
     "continue": "Teruskan"
   },
   "verify": {
     "title": "Sahkan bahawa ini anda",
-    "intro": "Semua orang di F*app mempunyai identiti dan umur yang disahkan. Anda akan mengambil gambar dokumen pengenalan dan swafoto – ia mengambil masa kira-kira dua minit.",
+    "intro": "Semua orang di YesYes mempunyai identiti dan umur yang disahkan. Anda akan mengambil gambar dokumen pengenalan dan swafoto – ia mengambil masa kira-kira dua minit.",
     "privacy": "Kami tidak menyimpan dokumen pengenalan atau foto anda. Kami hanya menyimpan keputusan pengesahan dan tarikh lahir anda. Sesiapa yang melanggar peraturan tidak boleh kembali dengan akaun baharu.",
     "pending": {
       "title": "Menunggu keputusan pengesahan anda",
@@ -646,7 +646,7 @@
     "notificationBody": "Anda boleh menghentikannya dalam aplikasi."
   },
   "appLock": {
-    "prompt": "Buka kunci F*app",
+    "prompt": "Buka kunci YesYes",
     "lockedTitle": "Aplikasi dikunci",
     "lockedBody": "Buka kuncinya dengan Face ID, cap jari atau kod laluan telefon anda.",
     "sosHold": "SOS – tekan dan tahan",
@@ -657,9 +657,9 @@
     "sosFailedTitle": "Tidak dapat dihantar"
   },
   "native": {
-    "locationWhenInUse": "F*app memerlukan lokasi anda untuk menunjukkan orang berdekatan dan, semasa pertemuan, untuk berkongsinya dengan kenalan dipercayai anda.",
-    "locationAlways": "Semasa pertemuan, F*app berkongsi lokasi anda dengan kenalan dipercayai anda, walaupun skrin anda mati. Di luar pertemuan, F*app tidak menggunakan lokasi anda di latar belakang.",
-    "faceId": "F*app menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
+    "locationWhenInUse": "YesYes memerlukan lokasi anda untuk menunjukkan orang berdekatan dan, semasa pertemuan, untuk berkongsinya dengan kenalan dipercayai anda.",
+    "locationAlways": "Semasa pertemuan, YesYes berkongsi lokasi anda dengan kenalan dipercayai anda, walaupun skrin anda mati. Di luar pertemuan, YesYes tidak menggunakan lokasi anda di latar belakang.",
+    "faceId": "YesYes menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
     "photos": "Pilih foto untuk profil anda.",
     "camera": "Ambil gambar diri anda untuk profil."
   }

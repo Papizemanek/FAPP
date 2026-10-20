@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – deittisovellus vain seksiin. Sovitusti ja turvallisesti.",
-    "description": "F*app on deittisovellus vain seksiin, vahvistetuille aikuisille. Sokkosopimus, turvatila luottohenkilön kanssa, SOS ja hätä-PIN. Pian Prahassa.",
+    "title": "YesYes – deittisovellus vain seksiin. Sovitusti ja turvallisesti.",
+    "description": "YesYes on deittisovellus vain seksiin, vahvistetuille aikuisille. Sokkosopimus, turvatila luottohenkilön kanssa, SOS ja hätä-PIN. Pian Prahassa.",
     "ogTitle": "Seksiä. Sovitusti. Turvallisesti.",
     "langName": "Suomi"
   },
@@ -20,9 +20,9 @@
     "title1": "Seksiä.",
     "title2": "Sovitusti.",
     "title3": "Turvallisesti.",
-    "lead": "F*app on deittisovellus vain seksiin. Ihmisiä, joiden henkilöllisyys on vahvistettu, sokkosopimus – ja treffien aikana joku, johon luotat, tietää, missä olet.",
+    "lead": "YesYes on deittisovellus vain seksiin. Ihmisiä, joiden henkilöllisyys on vahvistettu, sokkosopimus – ja treffien aikana joku, johon luotat, tietää, missä olet.",
     "note": "Vain 18+. Lähetämme sinulle sähköpostia kerran, kun avaamme.",
-    "footnote": "* Vain kun molemmat sanotte kyllä. Ja vain tässä ja nyt.",
+    "footnote": "* Kaksi kyllä tai ei mitään.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km päässä",
@@ -36,7 +36,7 @@
     "email": "Sähköpostisi",
     "emailPlaceholder": "nimi@email.com",
     "city": "Kaupunki",
-    "consent": "Hyväksyn, että F*app lähettää kutsun tähän sähköpostiosoitteeseen. Voin perua tilauksen milloin tahansa.",
+    "consent": "Hyväksyn, että YesYes lähettää kutsun tähän sähköpostiosoitteeseen. Voin perua tilauksen milloin tahansa.",
     "submit": "Pyydä kutsu",
     "sending": "Lähetetään…",
     "success": "Valmista. Kun avaamme, kuulet siitä ensimmäisten joukossa.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Ilmainen alussa. Turvallisuus aina.",
-    "text": "Tällä hetkellä F*app on täysin ilmainen. Maksulliset lisät, kuten rajattomat tykkäykset tai boostit, tulevat myöhemmin. Henkilöllisyyden vahvistus, sopimus ja turvatila pysyvät aina ilmaisina.",
+    "text": "Tällä hetkellä YesYes on täysin ilmainen. Maksulliset lisät, kuten rajattomat tykkäykset tai boostit, tulevat myöhemmin. Henkilöllisyyden vahvistus, sopimus ja turvatila pysyvät aina ilmaisina.",
     "freeTitle": "Aina ilmaista",
     "free1": "Henkilöllisyyden vahvistus",
     "free2": "Sokkosopimus",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "UKK",
-    "q1": "Onko F*app oikeasti vain seksiä varten?",
+    "q1": "Onko YesYes oikeasti vain seksiä varten?",
     "a1": "On. Ei parisuhteen etsimistä eikä esittämistä. Jos etsit jotain muuta, löydät sen muualta.",
     "q2": "Miksi minun täytyy vahvistaa henkilöllisyyteni?",
     "a2": "Jotta jokainen on se, joka sanoo olevansa, ja porttikielto koskee ihmistä eikä vain tiliä. Tarkistuksen tekee erikoistunut palvelu; me säilytämme vain tuloksen, syntymäaikasi ja salatun tunnisteen – emme koskaan henkilöllisyystodistustasi.",
@@ -129,14 +129,14 @@
     "a3": "Ei kukaan. Toinen näkee vain sen, mistä olette samaa mieltä. Sinun ”ei”-vastauksesi pysyy sinun.",
     "q4": "Entä jos treffeillä menee jokin pieleen?",
     "a4": "Pidä SOS-nappia painettuna tai syötä hätä-PIN, joka näyttää tavalliselta. Luottohenkilösi saa hälytyksen ja sijaintisi. Treffien jälkeen sovellus kertoo, mistä saa apua.",
-    "q5": "Saavatko muut tietää, että käytän F*app-sovellusta?",
+    "q5": "Saavatko muut tietää, että käytän YesYes-sovellusta?",
     "a5": "Heidän ei tarvitse. Voit vaihtaa huomaamattomaan kuvakkeeseen, ilmoitukset eivät paljasta mitään ja sovellus lukittuu kasvoilla tai sormenjäljellä.",
     "q6": "Paljonko se maksaa?",
     "a6": "Alussa ei mitään. Turvallisuus pysyy ilmaisena sen jälkeenkin.",
-    "q7": "Missä F*app toimii?",
+    "q7": "Missä YesYes toimii?",
     "a7": "Aloitamme Prahasta. Muut kaupungit seuraavat jonotuslistan perusteella.",
     "q8": "Olen 17. Voinko liittyä?",
-    "a8": "Et. F*app on vain yli 18-vuotiaille, ja tarkistamme sen henkilöllisyystodistuksesta."
+    "a8": "Et. YesYes on vain yli 18-vuotiaille, ja tarkistamme sen henkilöllisyystodistuksesta."
   },
   "rules": {
     "title": "Yhteisön säännöt",
@@ -158,7 +158,7 @@
     "rules": "Yhteisön säännöt",
     "privacy": "Yksityisyys",
     "help": "Tarvitsetko apua treffien jälkeen? Ota yhteyttä paikalliseen poliisiin tai rikosten uhrien tukipalveluun.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Pyydä kutsu",
@@ -185,7 +185,7 @@
     "mockPin": "Syötä PIN",
     "mockTrusted": "Luottohenkilö",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "F*app-viesti",
+    "mockSmsFrom": "YesYes-viesti",
     "mockSms": "{name} ei ole kuitannut – kuittaus oli määrä tehdä klo 23.40. Yritä soittaa hänelle.",
     "mockAlarm": "HÄLYTYS: {name} tarvitsee apua.",
     "mockLocation": "Sijainti jaettu",

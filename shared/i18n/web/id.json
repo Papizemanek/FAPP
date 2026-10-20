@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – aplikasi kencan khusus seks. Disepakati dan aman.",
-    "description": "F*app adalah aplikasi kencan khusus seks untuk orang dewasa terverifikasi. Kesepakatan tertutup, mode keselamatan dengan orang yang kamu percaya, SOS, dan PIN darurat. Segera hadir di Praha.",
+    "title": "YesYes – aplikasi kencan khusus seks. Disepakati dan aman.",
+    "description": "YesYes adalah aplikasi kencan khusus seks untuk orang dewasa terverifikasi. Kesepakatan tertutup, mode keselamatan dengan orang yang kamu percaya, SOS, dan PIN darurat. Segera hadir di Praha.",
     "ogTitle": "Seks. Disepakati. Aman.",
     "langName": "Bahasa Indonesia"
   },
@@ -20,9 +20,9 @@
     "title1": "Seks.",
     "title2": "Disepakati.",
     "title3": "Aman.",
-    "lead": "F*app adalah aplikasi kencan khusus seks. Orang-orang dengan identitas terverifikasi, kesepakatan tertutup, dan selama kencan ada orang yang kamu percaya yang tahu di mana kamu berada.",
+    "lead": "YesYes adalah aplikasi kencan khusus seks. Orang-orang dengan identitas terverifikasi, kesepakatan tertutup, dan selama kencan ada orang yang kamu percaya yang tahu di mana kamu berada.",
     "note": "Khusus 18+. Kami akan mengirim email sekali saja, saat kami meluncur.",
-    "footnote": "* Hanya jika kalian berdua bilang ya. Dan hanya di sini dan saat ini.",
+    "footnote": "* Dua kali ya, atau tidak sama sekali.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km darimu",
@@ -36,7 +36,7 @@
     "email": "Emailmu",
     "emailPlaceholder": "nama@email.com",
     "city": "Kota",
-    "consent": "Aku setuju F*app boleh mengirim undangan ke email ini. Aku bisa berhenti berlangganan kapan saja.",
+    "consent": "Aku setuju YesYes boleh mengirim undangan ke email ini. Aku bisa berhenti berlangganan kapan saja.",
     "submit": "Minta undangan",
     "sending": "Mengirim…",
     "success": "Beres. Saat kami meluncur, kamu termasuk yang pertama tahu.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratis saat peluncuran. Keselamatan selamanya.",
-    "text": "Saat ini F*app sepenuhnya gratis. Fitur tambahan berbayar seperti like tanpa batas atau Boost akan hadir nanti. Verifikasi, kesepakatan, dan mode keselamatan akan selalu gratis.",
+    "text": "Saat ini YesYes sepenuhnya gratis. Fitur tambahan berbayar seperti like tanpa batas atau Boost akan hadir nanti. Verifikasi, kesepakatan, dan mode keselamatan akan selalu gratis.",
     "freeTitle": "Selalu gratis",
     "free1": "Verifikasi identitas",
     "free2": "Kesepakatan tertutup",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "q1": "Apakah F*app benar-benar hanya untuk seks?",
+    "q1": "Apakah YesYes benar-benar hanya untuk seks?",
     "a1": "Ya. Tidak mencari hubungan dan tidak pura-pura. Kalau kamu mencari hal lain, kamu akan menemukannya di tempat lain.",
     "q2": "Kenapa aku harus memverifikasi identitas?",
     "a2": "Agar semua orang benar-benar sesuai pengakuannya, dan larangan berlaku untuk orangnya, bukan hanya akunnya. Pemeriksaan dilakukan oleh layanan khusus; kami hanya menyimpan hasilnya, tanggal lahirmu, dan sidik digital terenkripsi – tidak pernah kartu identitasmu.",
@@ -129,14 +129,14 @@
     "a3": "Tidak ada. Orang lain hanya melihat hal yang kalian berdua sepakati. “Tidak”-mu tetap milikmu.",
     "q4": "Bagaimana kalau ada yang tidak beres saat kencan?",
     "a4": "Tahan SOS, atau masukkan PIN daruratmu yang terlihat seperti PIN biasa. Orang yang kamu percaya akan menerima alarm beserta lokasimu. Setelah kencan, aplikasi menawarkan tempat untuk mencari bantuan.",
-    "q5": "Apakah orang di sekitarku akan tahu aku memakai F*app?",
+    "q5": "Apakah orang di sekitarku akan tahu aku memakai YesYes?",
     "a5": "Tidak harus. Kamu bisa beralih ke ikon samaran, notifikasi tidak membocorkan apa pun, dan aplikasi terkunci dengan wajah atau sidik jarimu.",
     "q6": "Berapa biayanya?",
     "a6": "Gratis saat peluncuran. Keselamatan tetap gratis setelahnya.",
-    "q7": "Di mana F*app tersedia?",
+    "q7": "Di mana YesYes tersedia?",
     "a7": "Kami mulai di Praha. Kota lain akan menyusul berdasarkan daftar tunggu.",
     "q8": "Aku 17 tahun. Boleh ikut?",
-    "a8": "Tidak. F*app hanya untuk orang berusia di atas 18 tahun, dan kami memeriksanya dengan kartu identitas."
+    "a8": "Tidak. YesYes hanya untuk orang berusia di atas 18 tahun, dan kami memeriksanya dengan kartu identitas."
   },
   "rules": {
     "title": "Aturan komunitas",
@@ -158,7 +158,7 @@
     "rules": "Aturan komunitas",
     "privacy": "Privasi",
     "help": "Butuh bantuan setelah kencan? Hubungi polisi setempat atau layanan pendampingan korban.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Minta undangan",
@@ -185,7 +185,7 @@
     "mockPin": "Masukkan PIN",
     "mockTrusted": "Orang yang kamu percaya",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Pesan dari F*app",
+    "mockSmsFrom": "Pesan dari YesYes",
     "mockSms": "{name} belum check-in – seharusnya pukul 23.40. Coba telepon dia.",
     "mockAlarm": "ALARM: {name} butuh bantuan.",
     "mockLocation": "Lokasi dibagikan",

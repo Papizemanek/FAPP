@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import cs from '@fapp/shared/i18n/app/cs.json';
+import cs from '@yesyes/shared/i18n/app/cs.json';
 import type { ExpoConfig } from 'expo/config';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,16 +25,16 @@ const locales = fs.existsSync(localesDir)
   : {};
 
 const config: ExpoConfig = {
-  name: 'F*app',
-  slug: 'fapp',
-  scheme: 'fapp',
+  name: 'YesYes',
+  slug: 'yesyes',
+  scheme: 'yesyes',
   version: '0.1.0',
   orientation: 'portrait',
   icon: './assets/icon.png',
   userInterfaceStyle: 'dark',
   backgroundColor: '#121014',
   ios: {
-    bundleIdentifier: 'app.fapp',
+    bundleIdentifier: 'app.yesyes',
     supportsTablet: false,
     infoPlist: {
       UIBackgroundModes: ['location', 'remote-notification'],
@@ -42,7 +42,7 @@ const config: ExpoConfig = {
     },
   },
   android: {
-    package: 'app.fapp',
+    package: 'app.yesyes',
     adaptiveIcon: {
       foregroundImage: './assets/android-icon-foreground.png',
       backgroundColor: '#121014',

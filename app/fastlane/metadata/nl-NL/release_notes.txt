@@ -1,1 +1,1 @@
-De eerste versie van F*app. Verificatie, blinde afspraak en veiligheidsmodus.
+De eerste versie van YesYes. Verificatie, blinde afspraak en veiligheidsmodus.

@@ -41,12 +41,12 @@ describe('jazyk chyb', () => {
     const u = await t.makeUser();
     const res = await t.call('POST', '/api/swipes/rewind', { token: u.token, headers: EN });
     assert.equal(res.status, 402);
-    assert.equal(res.body.error, 'Rewind is part of F*app Plus.');
+    assert.equal(res.body.error, 'Rewind is part of YesYes Plus.');
     assert.equal(res.body.code, 'upgrade');
     assert.equal(res.body.plan, 'plus');
     assert.equal('params' in res.body, false);
     const cs = await t.call('POST', '/api/swipes/rewind', { token: u.token });
-    assert.equal(cs.body.error, 'Vrácení swipu je součástí F*app Plus.');
+    assert.equal(cs.body.error, 'Vrácení swipu je součástí YesYes Plus.');
   });
 
   test('discover: chybějící poloha a fotka mají strojový kód', async () => {
@@ -80,7 +80,7 @@ describe('jazyk chyb', () => {
       headers: EN,
       body: { firstName: 'A', lastName: 'B', dateOfBirth: new Date(Date.now() - 16 * 365.25 * 86400_000).toISOString().slice(0, 10) },
     });
-    assert.equal(res.body.message, "Verification showed you're not 18 yet. F*app is for adults only.");
+    assert.equal(res.body.message, "Verification showed you're not 18 yet. YesYes is for adults only.");
   });
 });
 
@@ -106,7 +106,7 @@ describe('upozornění moderace u zprávy', () => {
     const m = await t.makeMatch();
     const res = await t.call('POST', `/api/matches/${m.matchId}/messages`, { token: m.a.token, headers: EN, body: { text: 'je mi 16' } });
     assert.equal(res.status, 422);
-    assert.equal(res.body.error, 'Message not sent. This message suggests one of you may be under 18. F*app is 18+ only.');
+    assert.equal(res.body.error, 'Message not sent. This message suggests one of you may be under 18. YesYes is 18+ only.');
   });
 });
 
@@ -190,7 +190,7 @@ describe('stránka pro důvěryhodnou osobu', () => {
 
     const en = await page('?lang=en', { 'Accept-Language': 'cs' });
     assert.match(en, /<html lang="en" dir="ltr">/);
-    assert.match(en, /<title>F\*app – safety link<\/title>/);
+    assert.match(en, /<title>YesYes – safety link<\/title>/);
     const embedded = JSON.parse(en.match(/<script id="i18n" type="application\/json">(.*?)<\/script>/s)[1]);
     assert.equal(embedded.locale, 'en');
     assert.equal(embedded.explicit, true);

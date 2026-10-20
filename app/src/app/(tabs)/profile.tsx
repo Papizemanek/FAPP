@@ -1,5 +1,5 @@
-import { GENDERS, MAX_PROFILE_PHOTOS, TAGS, TRAVEL_CITIES, type TravelCityId } from '@fapp/shared';
-import { LOCALES } from '@fapp/shared/i18n';
+import { GENDERS, MAX_PROFILE_PHOTOS, TAGS, TRAVEL_CITIES, type TravelCityId } from '@yesyes/shared';
+import { LOCALES } from '@yesyes/shared/i18n';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';

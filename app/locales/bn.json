@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "আশেপাশের মানুষ দেখাতে এবং সাক্ষাতের সময় আপনার বিশ্বস্ত ব্যক্তির সঙ্গে শেয়ার করতে F*app-এর আপনার লোকেশন দরকার।",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "সাক্ষাতের সময় F*app স্ক্রিন বন্ধ থাকলেও আপনার লোকেশন আপনার বিশ্বস্ত ব্যক্তির সঙ্গে শেয়ার করে। সাক্ষাতের বাইরে এটি ব্যাকগ্রাউন্ডে আপনার লোকেশন ব্যবহার করে না।",
-    "NSFaceIDUsageDescription": "F*app আনলক করতে Face ID ব্যবহার করে, যাতে অন্য কেউ ভেতরে দেখতে না পারে।",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "আশেপাশের মানুষ দেখাতে এবং সাক্ষাতের সময় আপনার বিশ্বস্ত ব্যক্তির সঙ্গে শেয়ার করতে YesYes-এর আপনার লোকেশন দরকার।",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "সাক্ষাতের সময় YesYes স্ক্রিন বন্ধ থাকলেও আপনার লোকেশন আপনার বিশ্বস্ত ব্যক্তির সঙ্গে শেয়ার করে। সাক্ষাতের বাইরে এটি ব্যাকগ্রাউন্ডে আপনার লোকেশন ব্যবহার করে না।",
+    "NSFaceIDUsageDescription": "YesYes আনলক করতে Face ID ব্যবহার করে, যাতে অন্য কেউ ভেতরে দেখতে না পারে।",
     "NSPhotoLibraryUsageDescription": "আপনার প্রোফাইলের জন্য ছবি বেছে নিন।",
     "NSCameraUsageDescription": "আপনার প্রোফাইলের জন্য নিজের একটি ছবি তুলুন।"
   }

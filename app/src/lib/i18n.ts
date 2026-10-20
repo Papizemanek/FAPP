@@ -1,4 +1,4 @@
-import { createTranslator, FALLBACK_LOCALE, isRTL, LOCALES, matchLocale, type Translate, type TranslateParams } from '@fapp/shared/i18n';
+import { createTranslator, FALLBACK_LOCALE, isRTL, LOCALES, matchLocale, type Translate, type TranslateParams } from '@yesyes/shared/i18n';
 import { getLocales } from 'expo-localization';
 import { useSyncExternalStore } from 'react';
 import { I18nManager } from 'react-native';

@@ -1,4 +1,4 @@
-# Překlady F*app
+# Překlady YesYes
 
 Všechny texty, které vidí uživatel, jsou ve slovnících `shared/i18n/<doména>/<jazyk>.json`.
 Seznam jazyků (všechny lokalizace App Storu) je v `shared/i18n/index.js` → `LOCALES`.
@@ -22,7 +22,7 @@ Zdrojová řeč je **čeština** (`cs`), **angličtina** (`en`) je záloha pro c
 - Popisky z `shared/constants.js` jsou v `labels.*` (`labels.activities.kissing`, `labels.tags.oneoff`, `labels.features.rewind.name`…),
   texty domluvy v `consent.intent`, `consent.notice`, `consent.deterrence`.
 - Data, časy, čísla a ceny formátuje `app/src/lib/format.ts` podle jazyka – nikdy napevno `'cs-CZ'`.
-- Značka **F*app** se nepřekládá.
+- Značka **YesYes** se nepřekládá.
 
 ## V aplikaci
 

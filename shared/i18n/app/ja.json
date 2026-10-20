@@ -116,7 +116,7 @@
   "consent": {
     "intent": "これが私の希望です。その場では何でも断れます。相手も同じです。",
     "notice": "理解しています：同意は「今、ここで」のものだけが有効です。「いや」「やめて」、セーフワード、沈黙、体が固まってしまうこと、酔っていることは同意ではありません。アプリでの合意によって、誰かの責任がなくなることはありません。",
-    "deterrence": "F*appの全員が本人確認済みです。犯罪の疑いがある場合は、その身元情報を警察に提供します。"
+    "deterrence": "YesYesの全員が本人確認済みです。犯罪の疑いがある場合は、その身元情報を警察に提供します。"
   },
   "welcome": {
     "tagline": "駆け引きなしのセックス。",
@@ -406,8 +406,8 @@
       "edit": "編集"
     },
     "plan": {
-      "freeTitle": "F*app Plus、Gold、Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus、Gold、Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "いいね無制限、いいねした人の確認、ブーストなど。",
       "validUntil": "{date}まで有効。",
       "upgrade": "アップグレード",
@@ -445,7 +445,7 @@
   "premium": {
     "title": "サブスクリプション",
     "free": {
-      "title": "F*appは現在無料です",
+      "title": "YesYesは現在無料です",
       "body": "有料機能は後日提供します。安全機能（本人確認、合意、セーフティモード、SOS）はずっと無料です。"
     },
     "back": "戻る",
@@ -455,7 +455,7 @@
       "likeLimitAt": "いいねを使い切りました。{time}に補充されます。",
       "likeLimit": "いいねを使い切りました。まもなく補充されます。",
       "noCredit": "{credit}は単品購入またはサブスクリプションで利用できます。",
-      "upgrade": "これはF*app {plan}の機能です。"
+      "upgrade": "これはYesYes {plan}の機能です。"
     },
     "oneOff": "単品購入",
     "owned": "所持：{count}",
@@ -476,9 +476,9 @@
         "other": "「今夜」が{count}回追加されました。"
       }
     },
-    "currentPlan": "F*app {plan}を利用中",
+    "currentPlan": "YesYes {plan}を利用中",
     "validUntil": "{date}まで有効。",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "無制限にスワイプでき、間違えてスキップしたプロフィールも戻せます。",
       "gold": "いいねしてくれた人が分かり、ワンタップでマッチできます。",
@@ -493,7 +493,7 @@
     "perMonthSave": "1か月あたり · −{percent}%",
     "continueWithPrice": "続ける · {price}",
     "planBought": {
-      "other": "F*app {plan}を{count}か月利用できます。"
+      "other": "YesYes {plan}を{count}か月利用できます。"
     },
     "renewal": "サブスクリプションは自動更新されます。App StoreまたはGoogle Playの設定からいつでも解約できます。料金は全員同じです。",
     "renewalUpfront": "{total}を一括で前払いします（1か月あたり{monthly}）。サブスクリプションは自動更新されます。App StoreまたはGoogle Playの設定からいつでも解約できます。料金は全員同じです。",
@@ -515,13 +515,13 @@
       "other": "{count}人があなたにいいねしました"
     },
     "lockedEmpty": "あなたへのいいねはここに表示されます",
-    "goldText": "F*app Goldなら、相手が誰か分かり、ワンタップでマッチできます。",
+    "goldText": "YesYes Goldなら、相手が誰か分かり、ワンタップでマッチできます。",
     "goldCta": "Goldで見る",
     "emptySent": "過去7日間に、マッチしていないいいねはありません。",
     "superLikePending": "スーパーいいね · 返事待ち",
     "pending": "返事待ち",
     "sentTitle": "あなたがいいねした人",
-    "platinumText": "F*app Platinumなら、過去7日間に送ったいいねを確認できます。",
+    "platinumText": "YesYes Platinumなら、過去7日間に送ったいいねを確認できます。",
     "platinumCta": "Platinumで見る",
     "likeBack": "いいねを返す",
     "pass": "スキップ"
@@ -549,13 +549,13 @@
     "iAm": "自分の性別",
     "showMe": "表示する相手",
     "confirmAdult": "18歳以上です。",
-    "acceptRules": "コミュニティルールに同意し、F*appを利用するために、性生活に関する情報を含む私のデータが処理されることに同意します。",
+    "acceptRules": "コミュニティルールに同意し、YesYesを利用するために、性生活に関する情報を含む私のデータが処理されることに同意します。",
     "verifyNote": "この後すぐ、本人確認と年齢確認（身分証明書とセルフィー）を行います。身分証明書は保存しません。",
     "continue": "続ける"
   },
   "verify": {
     "title": "本人確認をしてください",
-    "intro": "F*appでは全員が本人確認と年齢確認を済ませています。身分証明書とセルフィーを撮影します。所要時間は約2分です。",
+    "intro": "YesYesでは全員が本人確認と年齢確認を済ませています。身分証明書とセルフィーを撮影します。所要時間は約2分です。",
     "privacy": "身分証明書や写真は保存しません。保存するのは確認結果と生年月日だけです。ルールに違反した人は、新しいアカウントで戻ってくることはできません。",
     "pending": {
       "title": "確認結果を待っています",
@@ -646,7 +646,7 @@
     "notificationBody": "アプリで停止できます。"
   },
   "appLock": {
-    "prompt": "F*appのロックを解除",
+    "prompt": "YesYesのロックを解除",
     "lockedTitle": "アプリはロックされています",
     "lockedBody": "Face ID、指紋、またはスマホのパスコードでロックを解除してください。",
     "sosHold": "SOS – 長押し",
@@ -657,9 +657,9 @@
     "sosFailedTitle": "送信できませんでした"
   },
   "native": {
-    "locationWhenInUse": "F*appは、近くの人を表示するため、またデート中に信頼できる人と位置情報を共有するために、位置情報を使用します。",
-    "locationAlways": "デート中、F*appは画面がオフのときでも、信頼できる人とあなたの位置情報を共有します。デート以外では、バックグラウンドで位置情報を使用しません。",
-    "faceId": "F*appはロック解除にFace IDを使用し、他の人に中を見られないようにします。",
+    "locationWhenInUse": "YesYesは、近くの人を表示するため、またデート中に信頼できる人と位置情報を共有するために、位置情報を使用します。",
+    "locationAlways": "デート中、YesYesは画面がオフのときでも、信頼できる人とあなたの位置情報を共有します。デート以外では、バックグラウンドで位置情報を使用しません。",
+    "faceId": "YesYesはロック解除にFace IDを使用し、他の人に中を見られないようにします。",
     "photos": "プロフィール用の写真を選択してください。",
     "camera": "プロフィール用に自分の写真を撮影してください。"
   }

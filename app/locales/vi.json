@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app cần vị trí của bạn để hiển thị những người ở gần và, trong buổi hẹn, để chia sẻ vị trí với người tin cậy của bạn.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Trong buổi hẹn, F*app chia sẻ vị trí của bạn với người tin cậy, kể cả khi màn hình tắt. Ngoài buổi hẹn, ứng dụng không dùng vị trí của bạn trong nền.",
-    "NSFaceIDUsageDescription": "F*app dùng Face ID để mở khóa, để không ai khác có thể xem bên trong.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes cần vị trí của bạn để hiển thị những người ở gần và, trong buổi hẹn, để chia sẻ vị trí với người tin cậy của bạn.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Trong buổi hẹn, YesYes chia sẻ vị trí của bạn với người tin cậy, kể cả khi màn hình tắt. Ngoài buổi hẹn, ứng dụng không dùng vị trí của bạn trong nền.",
+    "NSFaceIDUsageDescription": "YesYes dùng Face ID để mở khóa, để không ai khác có thể xem bên trong.",
     "NSPhotoLibraryUsageDescription": "Chọn ảnh cho hồ sơ của bạn.",
     "NSCameraUsageDescription": "Chụp ảnh bản thân cho hồ sơ."
   }

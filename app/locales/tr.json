@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app, sana yakındaki kişileri göstermek ve buluşma sırasında konumunu güvendiğin kişiyle paylaşmak için konumuna ihtiyaç duyar.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Buluşma sırasında F*app, ekranın kapalıyken bile konumunu güvendiğin kişiyle paylaşır. Buluşmalar dışında konumunu arka planda kullanmaz.",
-    "NSFaceIDUsageDescription": "F*app, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes, sana yakındaki kişileri göstermek ve buluşma sırasında konumunu güvendiğin kişiyle paylaşmak için konumuna ihtiyaç duyar.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Buluşma sırasında YesYes, ekranın kapalıyken bile konumunu güvendiğin kişiyle paylaşır. Buluşmalar dışında konumunu arka planda kullanmaz.",
+    "NSFaceIDUsageDescription": "YesYes, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
     "NSPhotoLibraryUsageDescription": "Profilin için fotoğraf seç.",
     "NSCameraUsageDescription": "Profilin için kendi fotoğrafını çek."
   }

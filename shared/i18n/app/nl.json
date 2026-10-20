@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Zo zie ik het voor me. Ter plekke kan ik overal nee tegen zeggen – en de ander ook.",
     "notice": "Ik begrijp het: toestemming geldt alleen hier en nu. ‘Nee’, ‘stop’, het stopwoord, stilte, verstijven of dronken zijn is geen toestemming. Een afspraak in de app ontslaat niemand van verantwoordelijkheid.",
-    "deterrence": "Iedereen op F*app heeft een geverifieerde identiteit. Bij een vermoeden van een misdrijf geven we die door aan de politie."
+    "deterrence": "Iedereen op YesYes heeft een geverifieerde identiteit. Bij een vermoeden van een misdrijf geven we die door aan de politie."
   },
   "welcome": {
     "tagline": "Seks zonder gedoe.",
@@ -410,8 +410,8 @@
       "edit": "Bewerken"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold en Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold en Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Onbeperkt liken, zien wie je heeft geliket, Boost en meer.",
       "validUntil": "Geldig tot {date}.",
       "upgrade": "Upgraden",
@@ -449,7 +449,7 @@
   "premium": {
     "title": "Abonnement",
     "free": {
-      "title": "F*app is voorlopig gratis",
+      "title": "YesYes is voorlopig gratis",
       "body": "Betaalde functies zetten we later aan. Veiligheid – verificatie, afspraken, veiligheidsmodus en SOS – blijft altijd gratis."
     },
     "back": "Terug",
@@ -459,7 +459,7 @@
       "likeLimitAt": "Je likes zijn op. Om {time} krijg je nieuwe.",
       "likeLimit": "Je likes zijn op. Binnenkort krijg je nieuwe.",
       "noCredit": "{credit} is los verkrijgbaar of met een abonnement.",
-      "upgrade": "Dit hoort bij F*app {plan}."
+      "upgrade": "Dit hoort bij YesYes {plan}."
     },
     "oneOff": "Los",
     "owned": "je hebt er {count}",
@@ -483,9 +483,9 @@
         "other": "Je hebt {count}× extra Vanavond."
       }
     },
-    "currentPlan": "Je hebt F*app {plan}",
+    "currentPlan": "Je hebt YesYes {plan}",
     "validUntil": "Geldig tot {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Swipe zonder limiet en haal per ongeluk afgewezen profielen terug.",
       "gold": "Zie wie je heeft geliket – en match met één tik.",
@@ -501,8 +501,8 @@
     "perMonthSave": "per maand · −{percent}%",
     "continueWithPrice": "Doorgaan · {price}",
     "planBought": {
-      "one": "Je hebt nu F*app {plan}.",
-      "other": "Je hebt nu F*app {plan} voor {count} maanden."
+      "one": "Je hebt nu YesYes {plan}.",
+      "other": "Je hebt nu YesYes {plan} voor {count} maanden."
     },
     "renewal": "Je abonnement wordt automatisch verlengd. Je kunt het altijd opzeggen in de instellingen van de App Store of Google Play. De prijs is voor iedereen gelijk.",
     "renewalUpfront": "Je betaalt {total} vooraf ({monthly} per maand). Je abonnement wordt automatisch verlengd. Je kunt het altijd opzeggen in de instellingen van de App Store of Google Play. De prijs is voor iedereen gelijk.",
@@ -525,13 +525,13 @@
       "other": "{count} mensen hebben je geliket"
     },
     "lockedEmpty": "Hier verschijnen je likes",
-    "goldText": "Met F*app Gold zie je wie het zijn en match je met één tik.",
+    "goldText": "Met YesYes Gold zie je wie het zijn en match je met één tik.",
     "goldCta": "Bekijk ze met Gold",
     "emptySent": "Geen likes zonder match in de afgelopen 7 dagen.",
     "superLikePending": "Super Like · wacht",
     "pending": "Wacht op reactie",
     "sentTitle": "Wie jij hebt geliket",
-    "platinumText": "Met F*app Platinum zie je je likes van de afgelopen 7 dagen.",
+    "platinumText": "Met YesYes Platinum zie je je likes van de afgelopen 7 dagen.",
     "platinumCta": "Bekijk ze met Platinum",
     "likeBack": "Terug liken",
     "pass": "Overslaan"
@@ -559,13 +559,13 @@
     "iAm": "Ik ben",
     "showMe": "Laat me zien",
     "confirmAdult": "Ik ben 18 jaar of ouder.",
-    "acceptRules": "Ik ga akkoord met de communityregels en met de verwerking van mijn gegevens, inclusief gegevens over mijn seksleven, zodat F*app kan werken.",
+    "acceptRules": "Ik ga akkoord met de communityregels en met de verwerking van mijn gegevens, inclusief gegevens over mijn seksleven, zodat YesYes kan werken.",
     "verifyNote": "Direct hierna verifiëren we je identiteit en leeftijd (ID-bewijs en selfie). We bewaren je ID-bewijs niet.",
     "continue": "Doorgaan"
   },
   "verify": {
     "title": "Bevestig dat jij het bent",
-    "intro": "Iedereen op F*app heeft een geverifieerde identiteit en leeftijd. Je maakt een foto van je ID-bewijs en een selfie – dat duurt ongeveer twee minuten.",
+    "intro": "Iedereen op YesYes heeft een geverifieerde identiteit en leeftijd. Je maakt een foto van je ID-bewijs en een selfie – dat duurt ongeveer twee minuten.",
     "privacy": "We bewaren je ID-bewijs en foto’s niet. We houden alleen de uitkomst van de verificatie en je geboortedatum bij. Wie de regels overtreedt, kan niet terugkomen met een nieuw account.",
     "pending": {
       "title": "We wachten op de uitkomst van je verificatie",
@@ -657,7 +657,7 @@
     "notificationBody": "Je kunt het stoppen in de app."
   },
   "appLock": {
-    "prompt": "F*app ontgrendelen",
+    "prompt": "YesYes ontgrendelen",
     "lockedTitle": "De app is vergrendeld",
     "lockedBody": "Ontgrendel met Face ID, je vingerafdruk of de toegangscode van je telefoon.",
     "sosHold": "SOS – ingedrukt houden",
@@ -668,9 +668,9 @@
     "sosFailedTitle": "Versturen mislukt"
   },
   "native": {
-    "locationWhenInUse": "F*app heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
-    "locationAlways": "Tijdens een date deelt F*app je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
-    "faceId": "F*app gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
+    "locationWhenInUse": "YesYes heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
+    "locationAlways": "Tijdens een date deelt YesYes je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
+    "faceId": "YesYes gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
     "photos": "Kies foto’s voor je profiel.",
     "camera": "Maak een foto van jezelf voor je profiel."
   }

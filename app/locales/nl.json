@@ -1,9 +1,9 @@
 {
   "ios": {
-    "CFBundleDisplayName": "F*app",
-    "NSLocationWhenInUseUsageDescription": "F*app heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
-    "NSLocationAlwaysAndWhenInUseUsageDescription": "Tijdens een date deelt F*app je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
-    "NSFaceIDUsageDescription": "F*app gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
+    "CFBundleDisplayName": "YesYes",
+    "NSLocationWhenInUseUsageDescription": "YesYes heeft je locatie nodig om je mensen in de buurt te laten zien en om die tijdens een date te delen met je vertrouwenspersoon.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Tijdens een date deelt YesYes je locatie met je vertrouwenspersoon, ook als je scherm uit staat. Buiten dates gebruikt de app je locatie niet op de achtergrond.",
+    "NSFaceIDUsageDescription": "YesYes gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
     "NSPhotoLibraryUsageDescription": "Kies foto’s voor je profiel.",
     "NSCameraUsageDescription": "Maak een foto van jezelf voor je profiel."
   }

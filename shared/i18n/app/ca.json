@@ -116,7 +116,7 @@
   "consent": {
     "intent": "Això és el que tinc al cap. Un cop allà, puc dir que no a qualsevol cosa – i l'altra persona també.",
     "notice": "Ho entenc: el consentiment només val aquí i ara. «No», «para», la paraula de seguretat, el silenci, bloquejar-se o l'embriaguesa no són consentiment. Un acord a l'app no treu la responsabilitat a ningú.",
-    "deterrence": "A F*app tothom té la identitat verificada. Si sospitem que s'ha comès un delicte, lliurem la identitat a la policia."
+    "deterrence": "A YesYes tothom té la identitat verificada. Si sospitem que s'ha comès un delicte, lliurem la identitat a la policia."
   },
   "welcome": {
     "tagline": "Sexe, sense embuts.",
@@ -414,8 +414,8 @@
       "edit": "Edita"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold i Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold i Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "Likes il·limitats, qui t'ha fet like, Boost i més.",
       "validUntil": "Vàlid fins al {date}.",
       "upgrade": "Millora",
@@ -453,7 +453,7 @@
   "premium": {
     "title": "Subscripció",
     "free": {
-      "title": "De moment F*app és gratuït",
+      "title": "De moment YesYes és gratuït",
       "body": "Activarem les funcions de pagament més endavant. La seguretat – verificació, acords, mode seguretat i SOS – sempre serà gratuïta."
     },
     "back": "Enrere",
@@ -463,7 +463,7 @@
       "likeLimitAt": "T'has quedat sense likes. N'hi haurà més a les {time}.",
       "likeLimit": "T'has quedat sense likes. Aviat en tindràs més.",
       "noCredit": "{credit} està disponible com a compra única o amb una subscripció.",
-      "upgrade": "Això forma part de F*app {plan}."
+      "upgrade": "Això forma part de YesYes {plan}."
     },
     "oneOff": "Compra única",
     "owned": "en tens {count}",
@@ -490,9 +490,9 @@
         "other": "Tens {count} «Aquesta nit» extra."
       }
     },
-    "currentPlan": "Tens F*app {plan}",
+    "currentPlan": "Tens YesYes {plan}",
     "validUntil": "Vàlid fins al {date}.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "Llisca sense límits i recupera perfils que has descartat per error.",
       "gold": "Descobreix qui t'ha fet like – i fes match amb un toc.",
@@ -509,9 +509,9 @@
     "perMonthSave": "al mes · −{percent} %",
     "continueWithPrice": "Continua · {price}",
     "planBought": {
-      "one": "Tens F*app {plan}.",
-      "many": "Tens F*app {plan} durant {count} mesos.",
-      "other": "Tens F*app {plan} durant {count} mesos."
+      "one": "Tens YesYes {plan}.",
+      "many": "Tens YesYes {plan} durant {count} mesos.",
+      "other": "Tens YesYes {plan} durant {count} mesos."
     },
     "renewal": "La subscripció es renova automàticament. La pots cancel·lar en qualsevol moment a la configuració de l'App Store o de Google Play. El preu és el mateix per a tothom.",
     "renewalUpfront": "Pagues {total} per avançat ({monthly} al mes). La subscripció es renova automàticament. La pots cancel·lar en qualsevol moment a la configuració de l'App Store o de Google Play. El preu és el mateix per a tothom.",
@@ -535,13 +535,13 @@
       "other": "{count} persones t'han fet like"
     },
     "lockedEmpty": "Els teus likes apareixeran aquí",
-    "goldText": "Amb F*app Gold veuràs qui són i podràs fer match amb un toc.",
+    "goldText": "Amb YesYes Gold veuràs qui són i podràs fer match amb un toc.",
     "goldCta": "Mira-ho amb Gold",
     "emptySent": "Cap like sense match els últims 7 dies.",
     "superLikePending": "Super Like · en espera",
     "pending": "Esperant resposta",
     "sentTitle": "A qui has fet like",
-    "platinumText": "Amb F*app Platinum veuràs els teus likes dels últims 7 dies.",
+    "platinumText": "Amb YesYes Platinum veuràs els teus likes dels últims 7 dies.",
     "platinumCta": "Mira-ho amb Platinum",
     "likeBack": "Torna el like",
     "pass": "Passa"
@@ -569,13 +569,13 @@
     "iAm": "Soc",
     "showMe": "Mostra'm",
     "confirmAdult": "Tinc 18 anys o més.",
-    "acceptRules": "Accepto les normes de la comunitat i el tractament de les meves dades, incloses les dades sobre la meva vida sexual, perquè F*app pugui funcionar.",
+    "acceptRules": "Accepto les normes de la comunitat i el tractament de les meves dades, incloses les dades sobre la meva vida sexual, perquè YesYes pugui funcionar.",
     "verifyNote": "Just després verificarem la teva identitat i la teva edat (document d'identitat i selfie). No guardem el teu document.",
     "continue": "Continua"
   },
   "verify": {
     "title": "Verifica que ets tu",
-    "intro": "A F*app tothom té la identitat i l'edat verificades. Faràs una foto del document i un selfie – triga uns dos minuts.",
+    "intro": "A YesYes tothom té la identitat i l'edat verificades. Faràs una foto del document i un selfie – triga uns dos minuts.",
     "privacy": "No guardem el teu document ni les teves fotos. Només conservem el resultat de la verificació i la data de naixement. Qui incompleixi les normes no podrà tornar amb un compte nou.",
     "pending": {
       "title": "Esperant el resultat de la verificació",
@@ -668,7 +668,7 @@
     "notificationBody": "Pots aturar-ho a l'app."
   },
   "appLock": {
-    "prompt": "Desbloqueja F*app",
+    "prompt": "Desbloqueja YesYes",
     "lockedTitle": "L'app està bloquejada",
     "lockedBody": "Desbloqueja-la amb Face ID, l'empremta o el codi del telèfon.",
     "sosHold": "SOS – mantén premut",
@@ -679,9 +679,9 @@
     "sosFailedTitle": "No s'ha pogut enviar"
   },
   "native": {
-    "locationWhenInUse": "F*app necessita la teva ubicació per mostrar-te gent propera i, durant una trobada, compartir-la amb la teva persona de confiança.",
-    "locationAlways": "Durant una trobada, F*app comparteix la teva ubicació amb la teva persona de confiança, fins i tot amb la pantalla apagada. Fora de les trobades, no fa servir la ubicació en segon pla.",
-    "faceId": "F*app fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
+    "locationWhenInUse": "YesYes necessita la teva ubicació per mostrar-te gent propera i, durant una trobada, compartir-la amb la teva persona de confiança.",
+    "locationAlways": "Durant una trobada, YesYes comparteix la teva ubicació amb la teva persona de confiança, fins i tot amb la pantalla apagada. Fora de les trobades, no fa servir la ubicació en segon pla.",
+    "faceId": "YesYes fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
     "photos": "Tria fotos per al teu perfil.",
     "camera": "Fes-te una foto per al teu perfil."
   }

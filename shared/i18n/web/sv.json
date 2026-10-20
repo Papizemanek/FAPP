@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – en dejtingapp bara för sex. Överenskommet och tryggt.",
-    "description": "F*app är en dejtingapp bara för sex, för verifierade vuxna. Blind överenskommelse, säkerhetsläge med en trygghetsperson, SOS och nödpinkod. Snart i Prag.",
+    "title": "YesYes – en dejtingapp bara för sex. Överenskommet och tryggt.",
+    "description": "YesYes är en dejtingapp bara för sex, för verifierade vuxna. Blind överenskommelse, säkerhetsläge med en trygghetsperson, SOS och nödpinkod. Snart i Prag.",
     "ogTitle": "Sex. Överenskommet. Tryggt.",
     "langName": "Svenska"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Överenskommet.",
     "title3": "Tryggt.",
-    "lead": "F*app är en dejtingapp bara för sex. Människor med verifierad identitet, en blind överenskommelse – och under träffen vet någon du litar på var du är.",
+    "lead": "YesYes är en dejtingapp bara för sex. Människor med verifierad identitet, en blind överenskommelse – och under träffen vet någon du litar på var du är.",
     "note": "Endast 18+. Vi mejlar dig en gång, när vi lanserar.",
-    "footnote": "* Bara när ni båda säger ja. Och bara här och nu.",
+    "footnote": "* Två ja – eller inget.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km bort",
@@ -36,7 +36,7 @@
     "email": "Din e-post",
     "emailPlaceholder": "namn@epost.se",
     "city": "Stad",
-    "consent": "Jag godkänner att F*app skickar en inbjudan till den här e-postadressen. Jag kan avregistrera mig när som helst.",
+    "consent": "Jag godkänner att YesYes skickar en inbjudan till den här e-postadressen. Jag kan avregistrera mig när som helst.",
     "submit": "Få en inbjudan",
     "sending": "Skickar…",
     "success": "Klart. När vi lanserar blir du bland de första att få veta.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Gratis vid lanseringen. Säkerhet för alltid.",
-    "text": "Just nu är F*app helt gratis. Betalda extrafunktioner som obegränsat med likes eller boosts kommer senare. Verifiering, överenskommelsen och säkerhetsläget förblir alltid gratis.",
+    "text": "Just nu är YesYes helt gratis. Betalda extrafunktioner som obegränsat med likes eller boosts kommer senare. Verifiering, överenskommelsen och säkerhetsläget förblir alltid gratis.",
     "freeTitle": "Alltid gratis",
     "free1": "Identitetsverifiering",
     "free2": "Blind överenskommelse",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Vanliga frågor",
-    "q1": "Är F*app verkligen bara för sex?",
+    "q1": "Är YesYes verkligen bara för sex?",
     "a1": "Ja. Inget letande efter förhållanden och inget låtsande. Söker du något annat hittar du det någon annanstans.",
     "q2": "Varför måste jag verifiera min identitet?",
     "a2": "Så att alla är de som de utger sig för att vara och en avstängning gäller personen, inte bara kontot. En specialiserad tjänst gör kontrollen; vi sparar bara resultatet, ditt födelsedatum och ett krypterat fingeravtryck – aldrig din id-handling.",
@@ -129,14 +129,14 @@
     "a3": "Ingen. Den andra ser bara det ni är överens om. Ditt ”nej” förblir ditt.",
     "q4": "Vad händer om något går fel på en träff?",
     "a4": "Håll in SOS eller ange din nödpinkod, som ser ut som den vanliga. Din trygghetsperson får ett larm med din plats. Efter träffen visar appen var du kan få hjälp.",
-    "q5": "Märker folk runt mig att jag använder F*app?",
+    "q5": "Märker folk runt mig att jag använder YesYes?",
     "a5": "Det behöver de inte. Du kan byta till en diskret ikon, aviseringar avslöjar ingenting och appen låses med ansikte eller fingeravtryck.",
     "q6": "Vad kostar det?",
     "a6": "Ingenting vid lanseringen. Säkerheten förblir gratis även efter det.",
-    "q7": "Var fungerar F*app?",
+    "q7": "Var fungerar YesYes?",
     "a7": "Vi börjar i Prag. Fler städer följer utifrån väntelistan.",
     "q8": "Jag är 17. Får jag vara med?",
-    "a8": "Nej. F*app är bara för personer över 18, och det kontrollerar vi mot en id-handling."
+    "a8": "Nej. YesYes är bara för personer över 18, och det kontrollerar vi mot en id-handling."
   },
   "rules": {
     "title": "Gemenskapens regler",
@@ -158,7 +158,7 @@
     "rules": "Gemenskapens regler",
     "privacy": "Integritet",
     "help": "Behöver du hjälp efter en träff? Kontakta den lokala polisen eller en stödlinje för brottsoffer.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Få en inbjudan",
@@ -185,7 +185,7 @@
     "mockPin": "Ange pinkod",
     "mockTrusted": "Trygghetsperson",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Meddelande från F*app",
+    "mockSmsFrom": "Meddelande från YesYes",
     "mockSms": "{name} har inte checkat in – det skulle ske kl. 23.40. Försök ringa henne.",
     "mockAlarm": "LARM: {name} behöver hjälp.",
     "mockLocation": "Plats delad",

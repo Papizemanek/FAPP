@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – a dating app just for sex. Agreed and safe.",
-    "description": "F*app is a dating app just for sex, for verified adults. Blind agreement, a safety mode with someone you trust, SOS and a duress PIN. Coming soon to Prague.",
+    "title": "YesYes – a dating app just for sex. Agreed and safe.",
+    "description": "YesYes is a dating app just for sex, for verified adults. Blind agreement, a safety mode with someone you trust, SOS and a duress PIN. Coming soon to Prague.",
     "ogTitle": "Sex. Agreed. Safe.",
     "langName": "English"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Agreed.",
     "title3": "Safe.",
-    "lead": "F*app is a dating app just for sex. People with verified identities, a blind agreement, and during your date someone you trust knows where you are.",
+    "lead": "YesYes is a dating app just for sex. People with verified identities, a blind agreement, and during your date someone you trust knows where you are.",
     "note": "18+ only. We'll email you once, when we launch.",
-    "footnote": "* Only when you both say yes. And only here and now.",
+    "footnote": "* Two yeses or nothing.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "2 km away",
@@ -36,7 +36,7 @@
     "email": "Your email",
     "emailPlaceholder": "name@email.com",
     "city": "City",
-    "consent": "I agree that F*app may send an invite to this email. I can unsubscribe at any time.",
+    "consent": "I agree that YesYes may send an invite to this email. I can unsubscribe at any time.",
     "submit": "Get an invite",
     "sending": "Sending…",
     "success": "Done. When we launch, you'll be among the first to know.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Free at launch. Safety forever.",
-    "text": "Right now F*app is completely free. Paid extras like unlimited likes or boosts will come later. Verification, the agreement and safety mode will always be free.",
+    "text": "Right now YesYes is completely free. Paid extras like unlimited likes or boosts will come later. Verification, the agreement and safety mode will always be free.",
     "freeTitle": "Always free",
     "free1": "Identity verification",
     "free2": "Blind agreement",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "q1": "Is F*app really just for sex?",
+    "q1": "Is YesYes really just for sex?",
     "a1": "Yes. No looking for a relationship and no pretending. If you're after something else, you'll find it elsewhere.",
     "q2": "Why do I have to verify my identity?",
     "a2": "So everyone is who they say they are, and a ban applies to the person, not just the account. A specialist service does the check; we only keep the result, your date of birth and an encrypted fingerprint – never your ID.",
@@ -129,14 +129,14 @@
     "a3": "Nobody. The other person only sees what you both agree on. Your \"no\" stays yours.",
     "q4": "What if something goes wrong on a date?",
     "a4": "Hold SOS, or enter your duress PIN, which looks like the normal one. The person you trust gets an alarm with your location. After the date, the app offers places to get help.",
-    "q5": "Will people around me know I use F*app?",
+    "q5": "Will people around me know I use YesYes?",
     "a5": "They don't have to. You can switch to a discreet icon, notifications give nothing away, and the app locks with your face or fingerprint.",
     "q6": "How much does it cost?",
     "a6": "Nothing at launch. Safety stays free after that too.",
-    "q7": "Where does F*app work?",
+    "q7": "Where does YesYes work?",
     "a7": "We're starting in Prague. More cities will follow based on the waitlist.",
     "q8": "I'm 17. Can I join?",
-    "a8": "No. F*app is for people over 18 only, and we check it against an ID."
+    "a8": "No. YesYes is for people over 18 only, and we check it against an ID."
   },
   "rules": {
     "title": "Community rules",
@@ -158,7 +158,7 @@
     "rules": "Community rules",
     "privacy": "Privacy",
     "help": "Need help after a date? Contact your local police or a victim support line.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Get an invite",
@@ -185,7 +185,7 @@
     "mockPin": "Enter PIN",
     "mockTrusted": "Someone you trust",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Message from F*app",
+    "mockSmsFrom": "Message from YesYes",
     "mockSms": "{name} hasn't checked in – it was due at 23:40. Try calling her.",
     "mockAlarm": "ALARM: {name} needs help.",
     "mockLocation": "Location shared",

@@ -24,7 +24,7 @@ import {
   type FeatureId,
   type PlanId,
   type TravelCityId,
-} from '@fapp/shared';
+} from '@yesyes/shared';
 import { moderate } from '../../server/src/services/moderation.js';
 import { overlay } from './overlay';
 import { srv, translateError } from './serverText';
@@ -138,7 +138,7 @@ class HttpError extends Error {
   }
 }
 
-const STORAGE_KEY = 'fapp-demo-db-v3';
+const STORAGE_KEY = 'yesyes-demo-db-v3';
 const nowIso = () => new Date().toISOString();
 
 // --- demo data ---
@@ -182,7 +182,7 @@ const ASCII = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerC
 function seed(): Db {
   const users: User[] = DEMO_PEOPLE.map(([name, gender, interestedIn, birthdate, bio, tags], i) => ({
     id: i + 1,
-    email: `${ASCII(name)}@demo.fapp`,
+    email: `${ASCII(name)}@demo.yesyes`,
     password: 'demo-heslo-123',
     name,
     birthdate,
@@ -294,7 +294,7 @@ const paywall = (message: string, data: Record<string, unknown>) => new HttpErro
 function requireFeature(u: User, f: FeatureId) {
   if (!hasFeature(u, f)) {
     const plan = FEATURES[f].plan;
-    throw paywall(`${FEATURES[f].name} je součástí F*app ${PLANS[plan].name}.`, { code: 'upgrade', plan });
+    throw paywall(`${FEATURES[f].name} je součástí YesYes ${PLANS[plan].name}.`, { code: 'upgrade', plan });
   }
 }
 
@@ -486,7 +486,7 @@ function shareStatus(s: Safety) {
   return 'ok';
 }
 
-const shareUrl = (s: Safety) => `https://fapp.example/s/${s.id}`;
+const shareUrl = (s: Safety) => `https://yesyes.example/s/${s.id}`;
 
 function safetyView(s: Safety) {
   return {
@@ -670,7 +670,7 @@ route('POST', '/auth/register', (c) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(str(b.birthdate))) throw new HttpError(400, 'Neplatné datum narození.');
   if (b.confirmAdult !== true) throw new HttpError(400, 'Musíš potvrdit, že je ti 18 let nebo víc.');
   if (b.acceptRules !== true) throw new HttpError(400, 'Musíš souhlasit s pravidly a se zpracováním údajů.');
-  if (ageFrom(str(b.birthdate)) < MIN_AGE) throw new HttpError(403, 'F*app je jen pro lidi starší 18 let.');
+  if (ageFrom(str(b.birthdate)) < MIN_AGE) throw new HttpError(403, 'YesYes je jen pro lidi starší 18 let.');
   if (db.users.some((u) => u.email === email)) throw new HttpError(409, 'Účet s tímhle e-mailem už existuje.');
   const user: User = {
     id: id(),
@@ -842,7 +842,7 @@ route('POST', '/swipes', (c) => {
   if (superLike && !like) throw new HttpError(400, 'Super lajk je vždycky lajk.');
   const quota = likeQuota(me);
   if (like && !superLike && quota.remaining === 0) {
-    throw paywall('Došly ti lajky. Další přibudou za chvíli – nebo swipuj bez limitu s F*app Plus.', { code: 'like_limit', resetAt: quota.resetAt });
+    throw paywall('Došly ti lajky. Další přibudou za chvíli – nebo swipuj bez limitu s YesYes Plus.', { code: 'like_limit', resetAt: quota.resetAt });
   }
   let superCredit = false;
   if (superLike && weeklySuperLikesLeft(me) === 0) {
@@ -891,7 +891,7 @@ route('POST', '/swipes/rewind', (c) => {
 route('GET', '/billing', (c) => billingStatus(requireVerified(c)));
 route('POST', '/billing/purchase', (c) => {
   const me = requireVerified(c);
-  if (db.billingMode !== 'paid') throw new HttpError(403, 'Platby zatím nejsou zapnuté – F*app je teď celý zdarma.');
+  if (db.billingMode !== 'paid') throw new HttpError(403, 'Platby zatím nejsou zapnuté – YesYes je teď celý zdarma.');
   const productId = str(c.body.productId);
   if (!Object.hasOwn(PRODUCTS, productId)) throw new HttpError(400, 'Neznámý produkt.');
   const product = PRODUCTS[productId as keyof typeof PRODUCTS];

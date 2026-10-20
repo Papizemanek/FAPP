@@ -44,7 +44,7 @@ export default function Verify() {
     try {
       const { url } = await api<{ provider: string; url: string | null }>('POST', '/verification/start');
       if (url) {
-        await WebBrowser.openAuthSessionAsync(url, 'fapp://verify');
+        await WebBrowser.openAuthSessionAsync(url, 'yesyes://verify');
         await load();
       } else {
         setDevMode(true); // vývojový server bez skutečného ověřovatele

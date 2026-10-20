@@ -1,4 +1,4 @@
-import { FEEDBACK_REASONS } from '@fapp/shared';
+import { FEEDBACK_REASONS } from '@yesyes/shared';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';

@@ -116,7 +116,7 @@
   "consent": {
     "intent": "이게 제가 생각하는 거예요. 만나서 무엇이든 거절할 수 있어요. 상대도 마찬가지예요.",
     "notice": "이해했어요. 동의는 지금, 여기서만 유효해요. ‘싫어’, ‘그만’, 세이프 워드, 침묵, 얼어붙는 것, 술에 취한 상태는 동의가 아니에요. 앱에서 한 합의가 누구의 책임도 덜어 주지 않아요.",
-    "deterrence": "F*app의 모든 사람은 신원이 인증되어 있어요. 범죄가 의심되면 신원 정보를 경찰에 넘겨요."
+    "deterrence": "YesYes의 모든 사람은 신원이 인증되어 있어요. 범죄가 의심되면 신원 정보를 경찰에 넘겨요."
   },
   "welcome": {
     "tagline": "군더더기 없는 섹스.",
@@ -406,8 +406,8 @@
       "edit": "편집"
     },
     "plan": {
-      "freeTitle": "F*app Plus, Gold, Platinum",
-      "title": "F*app {plan}",
+      "freeTitle": "YesYes Plus, Gold, Platinum",
+      "title": "YesYes {plan}",
       "freeSubtitle": "무제한 좋아요, 나를 좋아한 사람 보기, 부스트 등.",
       "validUntil": "{date}까지 유효.",
       "upgrade": "업그레이드",
@@ -445,7 +445,7 @@
   "premium": {
     "title": "구독",
     "free": {
-      "title": "F*app은 지금 무료예요",
+      "title": "YesYes은 지금 무료예요",
       "body": "유료 기능은 나중에 추가할 예정이에요. 안전 기능 – 인증, 합의, 안전 모드, SOS – 은 항상 무료예요."
     },
     "back": "뒤로",
@@ -455,7 +455,7 @@
       "likeLimitAt": "좋아요를 모두 사용했어요. {time}에 다시 충전돼요.",
       "likeLimit": "좋아요를 모두 사용했어요. 곧 다시 충전돼요.",
       "noCredit": "{credit}은(는) 단품 구매 또는 구독으로 이용할 수 있어요.",
-      "upgrade": "F*app {plan}에 포함된 기능이에요."
+      "upgrade": "YesYes {plan}에 포함된 기능이에요."
     },
     "oneOff": "단품 구매",
     "owned": "{count}개 보유",
@@ -476,9 +476,9 @@
         "other": "‘오늘 밤’ {count}개가 추가됐어요."
       }
     },
-    "currentPlan": "F*app {plan} 이용 중",
+    "currentPlan": "YesYes {plan} 이용 중",
     "validUntil": "{date}까지 유효.",
-    "planTitle": "F*app {plan}",
+    "planTitle": "YesYes {plan}",
     "tagline": {
       "plus": "제한 없이 스와이프하고 실수로 넘긴 프로필을 되돌리세요.",
       "gold": "나를 좋아한 사람을 확인하고 탭 한 번으로 매치하세요.",
@@ -493,7 +493,7 @@
     "perMonthSave": "매월 · −{percent}%",
     "continueWithPrice": "계속 · {price}",
     "planBought": {
-      "other": "F*app {plan} {count}개월 이용권이 생겼어요."
+      "other": "YesYes {plan} {count}개월 이용권이 생겼어요."
     },
     "renewal": "구독은 자동으로 갱신돼요. App Store 또는 Google Play 설정에서 언제든 취소할 수 있어요. 가격은 모두에게 동일해요.",
     "renewalUpfront": "{total}을(를) 한 번에 선결제해요 (월 {monthly}). 구독은 자동으로 갱신돼요. App Store 또는 Google Play 설정에서 언제든 취소할 수 있어요. 가격은 모두에게 동일해요.",
@@ -515,13 +515,13 @@
       "other": "{count}명이 나를 좋아해요"
     },
     "lockedEmpty": "받은 좋아요가 여기에 표시돼요",
-    "goldText": "F*app Gold로 누군지 확인하고 탭 한 번으로 매치하세요.",
+    "goldText": "YesYes Gold로 누군지 확인하고 탭 한 번으로 매치하세요.",
     "goldCta": "Gold로 보기",
     "emptySent": "최근 7일 동안 매치되지 않은 좋아요가 없어요.",
     "superLikePending": "슈퍼 좋아요 · 대기 중",
     "pending": "응답 대기 중",
     "sentTitle": "내가 좋아한 사람",
-    "platinumText": "F*app Platinum으로 최근 7일 동안 보낸 좋아요를 확인하세요.",
+    "platinumText": "YesYes Platinum으로 최근 7일 동안 보낸 좋아요를 확인하세요.",
     "platinumCta": "Platinum으로 보기",
     "likeBack": "나도 좋아요",
     "pass": "패스"
@@ -549,13 +549,13 @@
     "iAm": "내 성별",
     "showMe": "보고 싶은 사람",
     "confirmAdult": "만 18세 이상이에요.",
-    "acceptRules": "커뮤니티 규칙에 동의하며, F*app 이용을 위해 성생활에 관한 정보를 포함한 내 개인정보 처리에 동의해요.",
+    "acceptRules": "커뮤니티 규칙에 동의하며, YesYes 이용을 위해 성생활에 관한 정보를 포함한 내 개인정보 처리에 동의해요.",
     "verifyNote": "바로 다음 단계에서 신원과 나이를 인증해요 (신분증과 셀카). 신분증은 저장하지 않아요.",
     "continue": "계속"
   },
   "verify": {
     "title": "본인 인증",
-    "intro": "F*app의 모든 사람은 신원과 나이가 인증되어 있어요. 신분증과 셀카를 찍으면 돼요. 약 2분 걸려요.",
+    "intro": "YesYes의 모든 사람은 신원과 나이가 인증되어 있어요. 신분증과 셀카를 찍으면 돼요. 약 2분 걸려요.",
     "privacy": "신분증과 사진은 저장하지 않아요. 인증 결과와 생년월일만 보관해요. 규칙을 어긴 사람은 새 계정으로 돌아올 수 없어요.",
     "pending": {
       "title": "인증 결과를 기다리는 중",
@@ -646,7 +646,7 @@
     "notificationBody": "앱에서 중지할 수 있어요."
   },
   "appLock": {
-    "prompt": "F*app 잠금 해제",
+    "prompt": "YesYes 잠금 해제",
     "lockedTitle": "앱이 잠겨 있어요",
     "lockedBody": "Face ID, 지문 또는 휴대폰 암호로 잠금을 해제하세요.",
     "sosHold": "SOS – 길게 누르기",
@@ -657,9 +657,9 @@
     "sosFailedTitle": "보내지 못했어요"
   },
   "native": {
-    "locationWhenInUse": "F*app은 주변 사람을 보여 주고, 만남 중에 믿을 수 있는 사람과 위치를 공유하기 위해 위치 정보가 필요해요.",
-    "locationAlways": "만남 중에는 화면이 꺼져 있어도 F*app이 믿을 수 있는 사람과 내 위치를 공유해요. 만남이 아닐 때는 백그라운드에서 위치를 사용하지 않아요.",
-    "faceId": "F*app은 다른 사람이 앱 안을 볼 수 없도록 Face ID로 잠금을 해제해요.",
+    "locationWhenInUse": "YesYes은 주변 사람을 보여 주고, 만남 중에 믿을 수 있는 사람과 위치를 공유하기 위해 위치 정보가 필요해요.",
+    "locationAlways": "만남 중에는 화면이 꺼져 있어도 YesYes이 믿을 수 있는 사람과 내 위치를 공유해요. 만남이 아닐 때는 백그라운드에서 위치를 사용하지 않아요.",
+    "faceId": "YesYes은 다른 사람이 앱 안을 볼 수 없도록 Face ID로 잠금을 해제해요.",
     "photos": "프로필에 사용할 사진을 선택하세요.",
     "camera": "프로필에 사용할 사진을 찍으세요."
   }

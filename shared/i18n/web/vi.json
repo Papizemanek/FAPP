@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "F*app – ứng dụng hẹn hò chỉ dành cho sex. Có thỏa thuận và an toàn.",
-    "description": "F*app là ứng dụng hẹn hò chỉ dành cho sex, dành cho người trưởng thành đã xác minh. Thỏa thuận kín, chế độ an toàn với người bạn tin tưởng, SOS và PIN khẩn cấp. Sắp ra mắt tại Praha.",
+    "title": "YesYes – ứng dụng hẹn hò chỉ dành cho sex. Có thỏa thuận và an toàn.",
+    "description": "YesYes là ứng dụng hẹn hò chỉ dành cho sex, dành cho người trưởng thành đã xác minh. Thỏa thuận kín, chế độ an toàn với người bạn tin tưởng, SOS và PIN khẩn cấp. Sắp ra mắt tại Praha.",
     "ogTitle": "Sex. Có thỏa thuận. An toàn.",
     "langName": "Tiếng Việt"
   },
@@ -20,9 +20,9 @@
     "title1": "Sex.",
     "title2": "Có thỏa thuận.",
     "title3": "An toàn.",
-    "lead": "F*app là ứng dụng hẹn hò chỉ dành cho sex. Những người đã xác minh danh tính, thỏa thuận kín, và trong buổi hẹn luôn có người bạn tin tưởng biết bạn đang ở đâu.",
+    "lead": "YesYes là ứng dụng hẹn hò chỉ dành cho sex. Những người đã xác minh danh tính, thỏa thuận kín, và trong buổi hẹn luôn có người bạn tin tưởng biết bạn đang ở đâu.",
     "note": "Chỉ dành cho 18+. Chúng tôi sẽ gửi email cho bạn một lần duy nhất, khi ra mắt.",
-    "footnote": "* Chỉ khi cả hai cùng đồng ý. Và chỉ ở đây, lúc này.",
+    "footnote": "* Cả hai cùng đồng ý, hoặc không gì cả.",
     "mockName": "Klára",
     "mockAge": "29",
     "mockMeta": "Cách 2 km",
@@ -36,7 +36,7 @@
     "email": "Email của bạn",
     "emailPlaceholder": "ten@email.com",
     "city": "Thành phố",
-    "consent": "Mình đồng ý để F*app gửi lời mời tới email này. Mình có thể hủy đăng ký bất cứ lúc nào.",
+    "consent": "Mình đồng ý để YesYes gửi lời mời tới email này. Mình có thể hủy đăng ký bất cứ lúc nào.",
     "submit": "Nhận lời mời",
     "sending": "Đang gửi…",
     "success": "Xong rồi. Khi ra mắt, bạn sẽ là một trong những người biết đầu tiên.",
@@ -112,7 +112,7 @@
   },
   "pricing": {
     "title": "Miễn phí khi ra mắt. An toàn mãi mãi.",
-    "text": "Hiện tại F*app hoàn toàn miễn phí. Các tiện ích trả phí như thích không giới hạn hay Boost sẽ có sau. Xác minh, thỏa thuận và chế độ an toàn sẽ luôn miễn phí.",
+    "text": "Hiện tại YesYes hoàn toàn miễn phí. Các tiện ích trả phí như thích không giới hạn hay Boost sẽ có sau. Xác minh, thỏa thuận và chế độ an toàn sẽ luôn miễn phí.",
     "freeTitle": "Luôn miễn phí",
     "free1": "Xác minh danh tính",
     "free2": "Thỏa thuận kín",
@@ -121,7 +121,7 @@
   },
   "faq": {
     "title": "Hỏi đáp",
-    "q1": "F*app thật sự chỉ dành cho sex?",
+    "q1": "YesYes thật sự chỉ dành cho sex?",
     "a1": "Đúng vậy. Không tìm kiếm mối quan hệ và không giả vờ. Nếu bạn muốn điều gì khác, bạn sẽ tìm thấy ở nơi khác.",
     "q2": "Tại sao mình phải xác minh danh tính?",
     "a2": "Để ai cũng đúng là người họ nói, và lệnh cấm áp dụng cho con người, không chỉ cho tài khoản. Một dịch vụ chuyên biệt thực hiện việc kiểm tra; chúng tôi chỉ lưu kết quả, ngày sinh của bạn và một dấu vân tay số đã mã hóa – không bao giờ lưu giấy tờ tùy thân của bạn.",
@@ -129,14 +129,14 @@
     "a3": "Không ai cả. Người kia chỉ thấy những gì cả hai cùng đồng ý. Lựa chọn “không” của bạn vẫn là của riêng bạn.",
     "q4": "Nếu có chuyện không hay trong buổi hẹn thì sao?",
     "a4": "Giữ nút SOS, hoặc nhập PIN khẩn cấp trông giống PIN thường. Người bạn tin tưởng sẽ nhận báo động kèm vị trí của bạn. Sau buổi hẹn, ứng dụng sẽ gợi ý những nơi có thể giúp đỡ.",
-    "q5": "Người xung quanh có biết mình dùng F*app không?",
+    "q5": "Người xung quanh có biết mình dùng YesYes không?",
     "a5": "Không nhất thiết. Bạn có thể chuyển sang biểu tượng kín đáo, thông báo không tiết lộ gì, và ứng dụng được khóa bằng khuôn mặt hoặc vân tay.",
     "q6": "Giá bao nhiêu?",
     "a6": "Miễn phí khi ra mắt. Sau đó tính năng an toàn vẫn miễn phí.",
-    "q7": "F*app hoạt động ở đâu?",
+    "q7": "YesYes hoạt động ở đâu?",
     "a7": "Chúng tôi bắt đầu tại Praha. Các thành phố khác sẽ theo sau dựa trên danh sách chờ.",
     "q8": "Mình 17 tuổi. Mình có tham gia được không?",
-    "a8": "Không. F*app chỉ dành cho người trên 18 tuổi, và chúng tôi kiểm tra bằng giấy tờ tùy thân."
+    "a8": "Không. YesYes chỉ dành cho người trên 18 tuổi, và chúng tôi kiểm tra bằng giấy tờ tùy thân."
   },
   "rules": {
     "title": "Quy tắc cộng đồng",
@@ -158,7 +158,7 @@
     "rules": "Quy tắc cộng đồng",
     "privacy": "Quyền riêng tư",
     "help": "Cần giúp đỡ sau buổi hẹn? Hãy liên hệ cảnh sát địa phương hoặc đường dây hỗ trợ nạn nhân.",
-    "rights": "© {year} F*app"
+    "rights": "© {year} YesYes"
   },
   "ads": {
     "cta": "Nhận lời mời",
@@ -185,7 +185,7 @@
     "mockPin": "Nhập PIN",
     "mockTrusted": "Người bạn tin tưởng",
     "mockTrustedName": "Petra",
-    "mockSmsFrom": "Tin nhắn từ F*app",
+    "mockSmsFrom": "Tin nhắn từ YesYes",
     "mockSms": "{name} chưa check-in – hạn là 23:40. Hãy thử gọi cho cô ấy.",
     "mockAlarm": "BÁO ĐỘNG: {name} cần giúp đỡ.",
     "mockLocation": "Đã chia sẻ vị trí",

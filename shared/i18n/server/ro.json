@@ -67,7 +67,7 @@
   "auth": {
     "confirmAdult": "Trebuie să confirmi că ai 18 ani sau mai mult.",
     "acceptRules": "Trebuie să fii de acord cu regulile și cu prelucrarea datelor tale.",
-    "underage": "F*app e doar pentru persoane de 18 ani sau mai mult.",
+    "underage": "YesYes e doar pentru persoane de 18 ani sau mai mult.",
     "invalidBirthdate": "Data nașterii e invalidă.",
     "emailTaken": "Există deja un cont cu acest e-mail.",
     "wrongCredentials": "E-mail sau parolă greșită.",
@@ -114,12 +114,12 @@
     "cantRewindMatch": "Din acest swipe a rezultat deja un match."
   },
   "billing": {
-    "likeLimit": "Ai rămas fără like-uri. Primești altele în curând – sau dă swipe fără limite cu F*app Plus.",
+    "likeLimit": "Ai rămas fără like-uri. Primești altele în curând – sau dă swipe fără limite cu YesYes Plus.",
     "noSuperLike": "Nu ai niciun Super Like.",
     "noBoost": "Nu ai niciun Boost.",
     "tonightPaid": "„În seara asta” e inclus în Platinum sau disponibil ca achiziție unică.",
-    "featureInPlan": "{feature} face parte din F*app {plan}.",
-    "paymentsOff": "Plățile nu sunt încă active – deocamdată F*app e complet gratuit.",
+    "featureInPlan": "{feature} face parte din YesYes {plan}.",
+    "paymentsOff": "Plățile nu sunt încă active – deocamdată YesYes e complet gratuit.",
     "unknownProduct": "Produs necunoscut.",
     "cantBuy": "Momentan nu poți cumpăra asta.",
     "cantBoost": "Momentan nu poți porni un Boost.",
@@ -159,10 +159,10 @@
     "photo": "Poză"
   },
   "moderation": {
-    "minor": "Mesajul sugerează că unul dintre voi ar putea avea sub 18 ani. F*app e doar pentru 18+.",
-    "paid": "Pe F*app e interzis să oferi sau să ceri sex contra cost.",
+    "minor": "Mesajul sugerează că unul dintre voi ar putea avea sub 18 ani. YesYes e doar pentru 18+.",
+    "paid": "Pe YesYes e interzis să oferi sau să ceri sex contra cost.",
     "consentPressure": "Atenție: un acord în aplicație nu înseamnă consimțământ. Îl poți anula oricând și poți refuza orice la fața locului – fără explicații.",
-    "contact": "Match-ul tău trimite date de contact în afara aplicației. În afara F*app, acordul, modul siguranță și raportarea nu funcționează pentru tine."
+    "contact": "Match-ul tău trimite date de contact în afara aplicației. În afara YesYes, acordul, modul siguranță și raportarea nu funcționează pentru tine."
   },
   "safety": {
     "notFound": "Întâlnirea nu a fost găsită.",
@@ -182,9 +182,9 @@
     "noWebhook": "Furnizorul de dezvoltare nu are webhook.",
     "unavailable": "Serviciul de verificare nu răspunde. Încearcă din nou peste câteva momente.",
     "declined": {
-      "underage": "Verificarea a arătat că nu ai încă 18 ani. F*app e doar pentru adulți.",
-      "banned": "Această persoană a primit interdicție pe F*app pentru încălcarea regulilor.",
-      "duplicate": "Această persoană are deja un cont F*app. Fiecare poate avea unul singur.",
+      "underage": "Verificarea a arătat că nu ai încă 18 ani. YesYes e doar pentru adulți.",
+      "banned": "Această persoană a primit interdicție pe YesYes pentru încălcarea regulilor.",
+      "duplicate": "Această persoană are deja un cont YesYes. Fiecare poate avea unul singur.",
       "incomplete": "Nu am putut citi data nașterii din act. Încearcă din nou.",
       "default": "Verificarea a eșuat. Încearcă din nou."
     }
@@ -241,7 +241,7 @@
     "someone": "O persoană apropiată"
   },
   "share": {
-    "pageTitle": "F*app – link de siguranță",
+    "pageTitle": "YesYes – link de siguranță",
     "header": "Link de siguranță",
     "loading": "Se încarcă…",
     "call": "Sună la {number}",

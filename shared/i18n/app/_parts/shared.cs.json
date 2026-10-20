@@ -80,7 +80,7 @@
     "notificationBody": "Ukončíš ho v aplikaci."
   },
   "appLock": {
-    "prompt": "Odemknout F*app",
+    "prompt": "Odemknout YesYes",
     "lockedTitle": "Aplikace je zamčená",
     "lockedBody": "Odemkni ji Face ID, otiskem nebo kódem telefonu.",
     "sosHold": "SOS – podrž",
@@ -91,9 +91,9 @@
     "sosFailedTitle": "Nepodařilo se odeslat"
   },
   "native": {
-    "locationWhenInUse": "F*app potřebuje polohu, aby ti ukázal lidi v okolí a během schůzky ji mohl sdílet s tvou důvěryhodnou osobou.",
-    "locationAlways": "Během schůzky sdílí F*app tvoji polohu s důvěryhodnou osobou i se zhasnutým displejem. Mimo schůzku polohu na pozadí nepoužívá.",
-    "faceId": "F*app se odemyká Face ID, aby se do něj nikdo nepodíval.",
+    "locationWhenInUse": "YesYes potřebuje polohu, aby ti ukázal lidi v okolí a během schůzky ji mohl sdílet s tvou důvěryhodnou osobou.",
+    "locationAlways": "Během schůzky sdílí YesYes tvoji polohu s důvěryhodnou osobou i se zhasnutým displejem. Mimo schůzku polohu na pozadí nepoužívá.",
+    "faceId": "YesYes se odemyká Face ID, aby se do něj nikdo nepodíval.",
     "photos": "Vyber si fotky do profilu.",
     "camera": "Vyfoť se do profilu."
   }
