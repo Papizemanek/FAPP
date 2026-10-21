@@ -486,7 +486,7 @@ function shareStatus(s: Safety) {
   return 'ok';
 }
 
-const shareUrl = (s: Safety) => `https://yesyes.example/s/${s.id}`;
+const shareUrl = (s: Safety) => `https://yesyesapp.com/s/${s.id}`;
 
 function safetyView(s: Safety) {
   return {

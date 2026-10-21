@@ -5,10 +5,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LOCALE_CODES } from './index.js';
+import { DEFAULT_LOCALE, LOCALE_CODES } from './index.js';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const out = path.join(dir, '..', '..', 'app', 'fastlane', 'metadata');
+const site = JSON.parse(fs.readFileSync(path.join(dir, '..', '..', 'web', 'site.config.json'), 'utf8')).siteUrl.replace(/\/$/, '');
+// Stránka webu v daném jazyce (čeština v kořeni, ostatní v /<kód>/) – web se sestavuje jen pro přeložené jazyky.
+const webPage = (code) => `${site}/${code === DEFAULT_LOCALE ? '' : `${code}/`}`;
 
 // Naše kódy → lokalizace App Store Connect (Apple má u některých jazyků regionální varianty).
 const APPLE = {
@@ -55,6 +58,9 @@ for (const code of LOCALE_CODES) {
     write(path.join(base, 'keywords.txt'), data.keywords);
     write(path.join(base, 'promotional_text.txt'), data.promotionalText);
     write(path.join(base, 'release_notes.txt'), data.whatsNew);
+    write(path.join(base, 'marketing_url.txt'), webPage(code));
+    write(path.join(base, 'support_url.txt'), `${webPage(code)}#otazky`);
+    write(path.join(base, 'privacy_url.txt'), `${webPage(code)}#soukromi`);
     ios += 1;
   }
   for (const locale of PLAY[code] ?? []) {

@@ -142,6 +142,19 @@ Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů)
 
 ## Produkce – co je potřeba zařídit
 
+### Domény
+
+`yesyesapp.com` je hlavní adresa: web, API i stránka pro důvěryhodnou osobu (`/s/…`) běží na jednom serveru.
+`yesyesapp.cz` jen přesměrovává (301) na `https://yesyesapp.com/`.
+
+1. U hostingu (např. Railway → Settings → Networking → Custom Domain) přidej `yesyesapp.com` a `www.yesyesapp.com`
+   a u registrátora nastav DNS záznamy, které hosting ukáže (CNAME, případně ALIAS/A pro holou doménu). HTTPS zařídí hosting.
+2. Proměnné serveru: `PUBLIC_URL=https://yesyesapp.com`; na serveru sestav web (`node web/build.mjs`), server ho sám servíruje.
+3. `yesyesapp.cz`: u registrátora přesměrování (301) na `https://yesyesapp.com/`.
+4. E-mail `ahoj@yesyesapp.com` (kontakt na webu a v obchodech): přeposílání u registrátora nebo Cloudflare Email Routing,
+   později Google Workspace či jiná schránka.
+5. Aplikace: `EXPO_PUBLIC_API_URL=https://yesyesapp.com` (profil `production` v `app/eas.json`).
+
 | Co | Proměnné | Poznámka |
 | --- | --- | --- |
 | Šifrovací klíč dat | `DATA_KEY` (32 B v base64), `IDENTITY_SECRET` | `openssl rand -base64 32`. Bez nich server v produkci nenastartuje. **Nesmí se ztratit** – bez nich nejdou přečíst zprávy a nefungují bany. |

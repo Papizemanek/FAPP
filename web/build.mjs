@@ -238,7 +238,7 @@ function head(code, t, assets) {
 <meta property="og:description" content="${t('meta.description')}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${canonical(code)}">
-<meta property="og:image" content="${config.siteUrl.replace(/\/$/, '')}/assets/og-${code}.png">
+<meta property="og:image" content="${config.siteUrl.replace(/\/$/, '')}/assets/og-${code}.jpg">
 <meta name="theme-color" content="#121014">
 <meta name="rating" content="adult">
 <link rel="canonical" href="${canonical(code)}">

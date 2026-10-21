@@ -8,7 +8,7 @@
       "env": { "EXPO_PUBLIC_API_URL": "https://ZMEN-NA-ADRESU-SERVERU.up.railway.app" }
     },
     "production": {
-      "env": { "EXPO_PUBLIC_API_URL": "https://api.yesyes.example" }
+      "env": { "EXPO_PUBLIC_API_URL": "https://yesyesapp.com" }
     }
   }
 }
