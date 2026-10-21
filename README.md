@@ -165,6 +165,7 @@ Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů)
 | Předplatné | `BILLING_MODE` (`free`/`paid`), `PAYMENTS_PROVIDER=revenuecat`, `REVENUECAT_WEBHOOK_AUTH` | Na startu `free`. Webhook: `POST {PUBLIC_URL}/api/billing/webhook/revenuecat`. Před zapnutím `paid` přidat do aplikace SDK `react-native-purchases` (funkce `purchase` v `app/src/lib/billing.ts`) a založit produkty v obchodech (ID v `shared/constants.js` → `PRODUCTS`). Testerům jde dát předplatné přes `POST /api/admin/users/:id/plan`. |
 | Moderátoři | `ADMIN_TOKEN` | API pod `/api/admin` (fronta příznaků, detail uživatele, nahlášené konverzace, suspend/ban/reinstate). Zatím bez UI. |
 | Web | `WEB_ORIGINS` (čárkami), `WEB_DIR` | Povolené domény webu pro čekací listinu; složka statického webu (výchozí `web/dist`). |
+| Uzavřený provoz | `ACCESS_KEY` (server), `EXPO_PUBLIC_ACCESS_KEY` (aplikace) | Bez klíče server nic neukáže: API jako prázdný server, web za heslem, noindex. Volné zůstávají odkazy pro důvěryhodnou osobu, webhooky a `/health`. Na ostrý start proměnnou smaž. |
 | Ostatní | `PUBLIC_URL`, `PORT`, `DB_FILE`, `TRUST_PROXY`, `NODE_ENV=production` | HTTPS je nutnost. |
 
 ## Co ještě zbývá

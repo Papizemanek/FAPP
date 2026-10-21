@@ -2,7 +2,7 @@ import * as Battery from 'expo-battery';
 import * as Location from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
 import { t } from '@/lib/i18n';
-import { API_URL } from './config';
+import { accessHeaders, API_URL } from './config';
 import { storage } from './storage';
 
 // Sdílení polohy během schůzky – běží i se zhasnutým displejem a na pozadí.
@@ -14,7 +14,7 @@ export const SAFETY_LOCATION_TASK = 'yesyes-safety-location';
 async function postLocation(sessionId: number, token: string, loc: Location.LocationObject, battery: number | null) {
   const res = await fetch(`${API_URL}/api/safety/${sessionId}/location`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, ...accessHeaders },
     body: JSON.stringify({
       lat: loc.coords.latitude,
       lng: loc.coords.longitude,

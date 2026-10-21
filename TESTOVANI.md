@@ -4,8 +4,12 @@ Server poběží na Railway (cca 5 USD měsíčně), aplikace se sestaví v clou
 se přímo do telefonů – bez App Storu a Google Play.
 
 Server běží ve **vývojovém režimu**: ověření totožnosti se potvrdí tlačítkem, SMS a push notifikace se jen vypisují
-do logu serveru. Nic dalšího (Veriff, Twilio) tedy není potřeba. Je to jen pro uzavřené testování – adresu serveru
-nikomu nedávej (kdo ji zná, zaregistruje se bez ověření) a po testu server smaž.
+do logu serveru. Nic dalšího (Veriff, Twilio) tedy není potřeba.
+
+**Uzavřený provoz:** s proměnnou `ACCESS_KEY` server bez klíče nic neukáže – API odpovídá jako prázdný server,
+web se v prohlížeči zeptá na heslo a vyhledávače stránky neindexují. Klíč je zabudovaný jen v testovacím buildu
+aplikace, který dostanou testeři. Volný zůstává jen odkaz pro důvěryhodnou osobu z SMS (chrání ho vlastní tajný
+token), aby fungoval i lidem bez aplikace.
 
 ## Co budeš potřebovat
 
@@ -32,10 +36,16 @@ nikomu nedávej (kdo ji zná, zaregistruje se bez ověření) a po testu server 
    | `IDENTITY_SECRET` | výstup `openssl rand -base64 32` |
    | `ADMIN_TOKEN` | výstup `openssl rand -base64 32` |
    | `PUBLIC_URL` | adresa z kroku 4 |
+   | `ACCESS_KEY` | výstup `openssl rand -hex 24` – přístupový klíč; ulož si ho, budeš ho potřebovat i pro aplikaci |
 
    `NODE_ENV` **nenastavuj** – tím zůstane vývojový režim se simulovaným ověřením a SMS.
-6. **Kontrola:** otevři v prohlížeči `<adresa>/api/me`. Musí přijít JSON s chybou o přihlášení – to je správně,
-   server běží.
+6. **Kontrola:**
+   - `<adresa>/health` v prohlížeči → `{"ok":true}` (server běží),
+   - `<adresa>` v prohlížeči → zeptá se na jméno a heslo (jméno cokoli, heslo = `ACCESS_KEY`),
+   - `curl <adresa>/api/me` → „nenalezeno“ (bez klíče nic), `curl -H "X-Access-Key: <klíč>" <adresa>/api/me` →
+     chyba o přihlášení (s klíčem server odpovídá).
+7. **Vlastní adresa (nepovinné):** místo `…up.railway.app` můžeš použít třeba `test.yesyesapp.com` –
+   Settings → Networking → Custom Domain a u registrátora záznam CNAME, který Railway ukáže.
 
 ## 2. Aplikace (Expo EAS)
 
@@ -51,7 +61,12 @@ npx eas-cli login          # účet z expo.dev
 npx eas-cli init           # založí projekt, vypíše jeho ID
 ```
 
-1. V `app/eas.json` v profilu `test` přepiš `EXPO_PUBLIC_API_URL` na adresu serveru z kroku 1.4.
+1. V `app/eas.json` v profilu `test` přepiš `EXPO_PUBLIC_API_URL` na adresu serveru z kroku 1.4 (nebo 1.7).
+   Přístupový klíč do souboru **nepiš** (repozitář by ho prozradil) – ulož ho do Expa jako tajnou proměnnou:
+   ```bash
+   npx eas-cli env:create --environment preview --name EXPO_PUBLIC_ACCESS_KEY --value "<ACCESS_KEY>" --visibility sensitive
+   ```
+   Profil `test` si ji při sestavení vezme sám.
 2. Pokud `eas init` napíše, že ID projektu nemůže uložit do konfigurace, přidej ho do téhož profilu:
    `"EAS_PROJECT_ID": "<id>"` vedle `EXPO_PUBLIC_API_URL`, a v terminálu nastav `export EAS_PROJECT_ID=<id>`
    (Windows: `set EAS_PROJECT_ID=<id>`).
@@ -76,6 +91,9 @@ EAS se přihlásí k Apple účtu a certifikáty vyřeší sám. Hotový build n
 Na iOS 16 a novějším je potřeba zapnout **Nastavení → Soukromí a zabezpečení → Režim pro vývojáře**.
 
 Po každé změně kódu stačí build spustit znovu. Server se aktualizuje sám při pushi do vybrané větve.
+
+Odkazy na stažení buildu z Expa posílej jen testerům. Kdyby klíč unikl, změň `ACCESS_KEY` na Railway
+i v Expu (`npx eas-cli env:update`) a sestav aplikaci znovu – staré buildy se pak k serveru nepřipojí.
 
 ## 3. Co otestovat
 

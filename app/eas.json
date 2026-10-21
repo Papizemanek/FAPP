@@ -3,6 +3,7 @@
   "build": {
     "test": {
       "distribution": "internal",
+      "environment": "preview",
       "android": { "buildType": "apk" },
       "ios": { "simulator": false },
       "env": { "EXPO_PUBLIC_API_URL": "https://ZMEN-NA-ADRESU-SERVERU.up.railway.app" }

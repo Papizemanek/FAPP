@@ -16,8 +16,8 @@ export function jpegWithExif() {
   return Buffer.concat([PHOTO.subarray(0, 2), header, payload, PHOTO.subarray(2)]);
 }
 
-export async function startTestServer() {
-  const config = { ...loadConfig({ NODE_ENV: 'test', DATA_KEY: Buffer.alloc(32, 1).toString('base64') }), dev: true };
+export async function startTestServer({ env = {} } = {}) {
+  const config = { ...loadConfig({ NODE_ENV: 'test', DATA_KEY: Buffer.alloc(32, 1).toString('base64'), ...env }), dev: true };
   const db = openDb(':memory:');
   const services = { sms: memorySms(), push: memoryPush(), verification: devVerification() };
   const { app, ctx } = createApp({ db, config, services, rateLimit: false });

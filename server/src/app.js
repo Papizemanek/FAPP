@@ -2,6 +2,7 @@ import express from 'express';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
+import { accessGate } from './accessGate.js';
 import { createSealer } from './crypto.js';
 import { localeFromRequest, tr } from './i18n.js';
 import { adminRoutes } from './routes/admin.js';
@@ -36,6 +37,7 @@ export function createApp({ db, config, services, rateLimit = true }) {
     if (!config.dev) res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
     next();
   });
+  if (config.accessKey) app.use(accessGate(config.accessKey));
   // Jazyk odpovědi (chyby). requireAuth ho upřesní podle uloženého jazyka uživatele.
   app.use((req, _res, next) => {
     req.locale = localeFromRequest(req);

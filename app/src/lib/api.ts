@@ -11,7 +11,7 @@ import type {
   TravelCityId,
 } from '@yesyes/shared';
 import { t } from '@/lib/i18n';
-import { API_URL } from './config';
+import { accessHeaders, API_URL } from './config';
 import { transport, type TransportResponse } from './transport';
 
 export { API_URL };
@@ -197,7 +197,7 @@ export async function api<T = unknown>(method: string, path: string, body?: unkn
 export const imageSource = (url: string | null | undefined) => {
   if (!url) return null;
   if (url.startsWith('data:')) return { uri: url };
-  return { uri: `${API_URL}${url}`, headers: authToken ? { Authorization: `Bearer ${authToken}` } : undefined };
+  return { uri: `${API_URL}${url}`, headers: { ...accessHeaders, ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) } };
 };
 
 export const errorMessage = (err: unknown) => (err instanceof Error ? err.message : t('common.errorGeneric'));

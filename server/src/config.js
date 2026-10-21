@@ -41,6 +41,8 @@ export function loadConfig(env = process.env) {
     revenuecat: { webhookAuth: env.REVENUECAT_WEBHOOK_AUTH },
     // Web s čekací listinou: adresy, ze kterých smí posílat formulář (CORS), a složka se sestaveným webem.
     webOrigins: (env.WEB_ORIGINS ?? '').split(',').map((s) => s.trim()).filter(Boolean),
+    // Uzavřený provoz: bez tohoto klíče server nic neukáže (viz accessGate.js). Prázdné = veřejný provoz.
+    accessKey: env.ACCESS_KEY || null,
     webDir: env.WEB_DIR ?? new URL('../../web/dist/', import.meta.url).pathname,
   };
 
