@@ -1,55 +1,78 @@
-# Testovací nasazení na dva telefony
+# Testovací nasazení – krok za krokem
 
-Server poběží na Railway (cca 5 USD měsíčně), aplikace se sestaví v cloudu přes Expo (EAS, zdarma) a nainstaluje
-se přímo do telefonů – bez App Storu a Google Play.
+Výsledek: server YesYes běží na internetu, ale bez přístupového klíče z něj nikdo nic nedostane. Aplikace je
+nainstalovaná na tvých telefonech (bez App Storu a Google Play) a mluví s tímhle serverem.
 
-Server běží ve **vývojovém režimu**: ověření totožnosti se potvrdí tlačítkem, SMS a push notifikace se jen vypisují
-do logu serveru. Nic dalšího (Veriff, Twilio) tedy není potřeba.
+- **Cena:** Railway cca 5 USD měsíčně, Expo zdarma. iPhone navíc potřebuje Apple Developer Program (99 USD ročně).
+- **Čas:** zhruba hodina, z toho půl hodiny čekání na sestavení aplikace.
+- **Režim testu:** ověření totožnosti se potvrdí tlačítkem, SMS a push notifikace se jen zapisují do logu serveru.
+  Veriff ani Twilio nepotřebuješ.
 
-**Uzavřený provoz:** s proměnnou `ACCESS_KEY` server bez klíče nic neukáže – API odpovídá jako prázdný server,
-web se v prohlížeči zeptá na heslo a vyhledávače stránky neindexují. Klíč je zabudovaný jen v testovacím buildu
-aplikace, který dostanou testeři. Volný zůstává jen odkaz pro důvěryhodnou osobu z SMS (chrání ho vlastní tajný
-token), aby fungoval i lidem bez aplikace.
+Odškrtávej si jednotlivé kroky. Když se něco zasekne, pošli mi, na kterém kroku jsi a co vidíš.
 
-## Co budeš potřebovat
+---
 
-- počítač (Mac nebo Windows) s [Node.js 22](https://nodejs.org) a [Gitem](https://git-scm.com)
-- účet na [railway.com](https://railway.com) (přihlášení přes GitHub, platební karta)
-- účet na [expo.dev](https://expo.dev) (zdarma)
-- **Android:** nic dalšího
-- **iPhone:** placený [Apple Developer Program](https://developer.apple.com/programs/) (99 USD ročně, schválení až 48 h)
+## Část A – příprava (jednou)
 
-## 1. Server na Railway
+- [ ] **A1. Node.js 22:** stáhni z [nodejs.org](https://nodejs.org) verzi „LTS“ (22 nebo novější) a nainstaluj.
+- [ ] **A2. Git:** Mac – v Terminálu napiš `git --version`, a pokud se nabídne instalace, potvrď ji.
+      Windows – stáhni z [git-scm.com](https://git-scm.com) a nainstaluj. Na Windows pak všechny příkazy
+      z tohoto návodu piš do programu **Git Bash** (nainstaluje se s Gitem).
+- [ ] **A3. Kontrola:** v Terminálu (Git Bash) napiš `node -v` → musí vypsat `v22…` nebo vyšší.
+- [ ] **A4. Účet Railway:** na [railway.com](https://railway.com) → Login → **Login with GitHub** (účet, kde je
+      repozitář `papizemanek/fapp`). Přidej platební kartu (Hobby plán).
+- [ ] **A5. Účet Expo:** na [expo.dev](https://expo.dev) → Sign up (zdarma).
+- [ ] **A6. Jen pro iPhone:** přihlas se do [Apple Developer Programu](https://developer.apple.com/programs/)
+      a počkej na schválení (až 48 h). Pro Android nic.
 
-1. Na railway.com: **New Project → Deploy from GitHub repo → papizemanek/fapp**.
-2. V nastavení služby (**Settings → Source**) vyber větev `claude/gifted-pasteur-dpkg04` (nebo ji předtím slouč do `main`).
-   Railway najde `Dockerfile` a server sestaví sám.
-3. **Trvalý disk:** pravým tlačítkem na službu → **Attach Volume**, mount path `/data`. Bez něj se databáze po každém
-   restartu smaže.
-4. **Adresa:** Settings → Networking → **Generate Domain**, port `3000`. Dostaneš něco jako
-   `https://yesyes-production-1234.up.railway.app`.
-5. **Proměnné** (záložka Variables). Hodnoty vygeneruješ v terminálu příkazem `openssl rand -base64 32` (každou zvlášť):
+## Část B – vygeneruj tajné klíče
 
-   | Proměnná | Hodnota |
-   | --- | --- |
-   | `DATA_KEY` | výstup `openssl rand -base64 32` |
-   | `IDENTITY_SECRET` | výstup `openssl rand -base64 32` |
-   | `ADMIN_TOKEN` | výstup `openssl rand -base64 32` |
-   | `PUBLIC_URL` | adresa z kroku 4 |
-   | `ACCESS_KEY` | výstup `openssl rand -hex 24` – přístupový klíč; ulož si ho, budeš ho potřebovat i pro aplikaci |
+- [ ] **B1.** V Terminálu (Git Bash) spusť tyto čtyři příkazy a každý výsledek si ulož do poznámek pod daným jménem:
 
-   `NODE_ENV` **nenastavuj** – tím zůstane vývojový režim se simulovaným ověřením a SMS.
-6. **Kontrola:**
-   - `<adresa>/health` v prohlížeči → `{"ok":true}` (server běží),
-   - `<adresa>` v prohlížeči → zeptá se na jméno a heslo (jméno cokoli, heslo = `ACCESS_KEY`),
-   - `curl <adresa>/api/me` → „nenalezeno“ (bez klíče nic), `curl -H "X-Access-Key: <klíč>" <adresa>/api/me` →
-     chyba o přihlášení (s klíčem server odpovídá).
-7. **Vlastní adresa (nepovinné):** místo `…up.railway.app` můžeš použít třeba `test.yesyesapp.com` –
-   Settings → Networking → Custom Domain a u registrátora záznam CNAME, který Railway ukáže.
+```bash
+openssl rand -base64 32   # → DATA_KEY
+openssl rand -base64 32   # → IDENTITY_SECRET
+openssl rand -base64 32   # → ADMIN_TOKEN
+openssl rand -hex 24      # → ACCESS_KEY (přístupový klíč k celému serveru)
+```
 
-## 2. Aplikace (Expo EAS)
+> **DATA_KEY a IDENTITY_SECRET nesmíš ztratit** – bez nich nejdou přečíst uložená data. Ulož je do správce hesel.
 
-V terminálu:
+## Část C – server na Railway
+
+- [ ] **C1.** Na railway.com: **New Project → Deploy from GitHub repo → papizemanek/fapp**.
+      (Kdyby Railway repozitář neviděl: **Configure GitHub App** a povol mu přístup k `fapp`.)
+- [ ] **C2.** Klikni na vzniklou službu → **Settings → Source → Branch** → vyber `claude/gifted-pasteur-dpkg04`.
+- [ ] **C3.** Pravým tlačítkem na službu (v plátně projektu) → **Attach Volume** → Mount path `/data`.
+      Bez toho by se databáze při každém restartu smazala.
+- [ ] **C4.** Služba → záložka **Variables** → **Raw Editor** → vlož následující řádky a doplň hodnoty z části B:
+
+```
+DATA_KEY=…
+IDENTITY_SECRET=…
+ADMIN_TOKEN=…
+ACCESS_KEY=…
+PORT=3000
+TRUST_PROXY=1
+```
+
+  `NODE_ENV` **nenastavuj** – tím zůstane testovací režim se simulovaným ověřením a SMS.
+- [ ] **C5.** **Settings → Networking → Generate Domain** → port `3000`. Dostaneš adresu typu
+      `https://fapp-production-1234.up.railway.app` – ulož si ji jako **ADRESA_SERVERU**.
+- [ ] **C6.** Ve **Variables** přidej ještě `PUBLIC_URL=<ADRESA_SERVERU>` (bez lomítka na konci).
+- [ ] **C7.** Počkej, až v záložce **Deployments** bude poslední nasazení zelené (**Active**). Trvá to pár minut.
+- [ ] **C8. Kontrola:**
+  - otevři v prohlížeči `<ADRESA_SERVERU>/health` → musí ukázat `{"ok":true}`,
+  - otevři `<ADRESA_SERVERU>` → prohlížeč se zeptá na jméno a heslo (jméno cokoli, heslo = `ACCESS_KEY`).
+    To je správně: bez klíče nikdo nic neuvidí.
+
+> Nepovinné: místo `…up.railway.app` můžeš mít `test.yesyesapp.com` – **Settings → Networking → Custom Domain**,
+> zadej `test.yesyesapp.com` a u registrátora domény přidej záznam CNAME přesně podle toho, co Railway ukáže.
+> Pak tuhle adresu použij jako ADRESA_SERVERU (i v kroku C6).
+
+## Část D – aplikace (Expo)
+
+- [ ] **D1.** V Terminálu:
 
 ```bash
 git clone https://github.com/papizemanek/fapp.git
@@ -57,62 +80,71 @@ cd fapp
 git checkout claude/gifted-pasteur-dpkg04
 npm install
 cd app
-npx eas-cli login          # účet z expo.dev
-npx eas-cli init           # založí projekt, vypíše jeho ID
+npx eas-cli login          # přihlas se účtem z expo.dev
+npx eas-cli init           # potvrď vytvoření projektu; na konci vypíše jeho ID
 ```
 
-1. V `app/eas.json` v profilu `test` přepiš `EXPO_PUBLIC_API_URL` na adresu serveru z kroku 1.4 (nebo 1.7).
-   Přístupový klíč do souboru **nepiš** (repozitář by ho prozradil) – ulož ho do Expa jako tajnou proměnnou:
-   ```bash
-   npx eas-cli env:create --environment preview --name EXPO_PUBLIC_ACCESS_KEY --value "<ACCESS_KEY>" --visibility sensitive
-   ```
-   Profil `test` si ji při sestavení vezme sám.
-2. Pokud `eas init` napíše, že ID projektu nemůže uložit do konfigurace, přidej ho do téhož profilu:
-   `"EAS_PROJECT_ID": "<id>"` vedle `EXPO_PUBLIC_API_URL`, a v terminálu nastav `export EAS_PROJECT_ID=<id>`
-   (Windows: `set EAS_PROJECT_ID=<id>`).
+- [ ] **D2.** ID projektu z `eas init` ulož do Expa i do Terminálu:
+
+```bash
+npx eas-cli env:create --environment preview --name EAS_PROJECT_ID --value "<ID>" --visibility plaintext
+export EAS_PROJECT_ID=<ID>          # v každém novém okně Terminálu je potřeba znovu
+```
+
+- [ ] **D3.** Přístupový klíč ulož do Expa jako tajnou proměnnou (do souborů ho nepiš):
+
+```bash
+npx eas-cli env:create --environment preview --name EXPO_PUBLIC_ACCESS_KEY --value "<ACCESS_KEY>" --visibility sensitive
+```
+
+- [ ] **D4.** Otevři soubor `app/eas.json` (v jakémkoli textovém editoru) a v profilu `test` nahraď
+      `https://ZMEN-NA-ADRESU-SERVERU.up.railway.app` svou ADRESOU_SERVERU. Ulož.
 
 ### Android
 
-```bash
-npx eas-cli build -p android --profile test
-```
-
-Sestavení trvá 15–30 minut. Na konci dostaneš odkaz a QR kód – otevři ho v telefonu, stáhni APK a nainstaluj
-(telefon se zeptá na povolení instalace z neznámých zdrojů).
+- [ ] **D5a.** `npx eas-cli build -p android --profile test` → na otázky odpověz Enterem (výchozí volby).
+      Sestavení běží v cloudu 15–30 minut.
+- [ ] **D6a.** Na konci se vypíše odkaz a QR kód. Otevři ho na telefonu, stáhni APK a nainstaluj
+      (Android se zeptá na povolení instalace z neznámých zdrojů – povol). Totéž na druhém telefonu.
 
 ### iPhone
 
-```bash
-npx eas-cli device:create   # vygeneruje odkaz – otevři ho na každém iPhonu a nainstaluj profil
-npx eas-cli build -p ios --profile test
-```
+- [ ] **D5i.** `npx eas-cli device:create` → vyber „Website“ → odkaz otevři na **každém** iPhonu a nainstaluj profil
+      (Nastavení → Stažený profil).
+- [ ] **D6i.** `npx eas-cli build -p ios --profile test` → přihlas se Apple účtem, ostatní otázky Enterem.
+- [ ] **D7i.** Odkaz z konce sestavení otevři na iPhonu a nainstaluj. Na iOS 16+ zapni
+      **Nastavení → Soukromí a zabezpečení → Režim pro vývojáře** a restartuj telefon.
 
-EAS se přihlásí k Apple účtu a certifikáty vyřeší sám. Hotový build nainstaluješ přes odkaz z konce sestavení.
-Na iOS 16 a novějším je potřeba zapnout **Nastavení → Soukromí a zabezpečení → Režim pro vývojáře**.
+> Odkazy na stažení posílej jen testerům. Bez nainstalovaného testovacího buildu se k serveru nikdo nedostane.
 
-Po každé změně kódu stačí build spustit znovu. Server se aktualizuje sám při pushi do vybrané větve.
+## Část E – co otestovat (dva telefony)
 
-Odkazy na stažení buildu z Expa posílej jen testerům. Kdyby klíč unikl, změň `ACCESS_KEY` na Railway
-i v Expu (`npx eas-cli env:update`) a sestav aplikaci znovu – staré buildy se pak k serveru nepřipojí.
+- [ ] **E1. Registrace** na obou telefonech (různé e-maily, věk 18+).
+- [ ] **E2. Ověření:** „Ověřit totožnost“ → „Simulovat úspěšné ověření (testovací režim)“.
+- [ ] **E3. Profil:** nahraj fotku, povol polohu. Telefony musí být v okruhu nastavené vzdálenosti.
+- [ ] **E4. Swipe** doprava na obou → match → chat (zkus i poslat fotku).
+- [ ] **E5. Domluva naslepo:** oba vyplní, uvidí jen shodu; zkus i odvolání.
+- [ ] **E6. Bezpečná schůzka:** důvěryhodná osoba (jakékoli číslo), check-in, SOS, nouzový PIN.
+      „Odeslané“ SMS najdeš v Railway → **Deployments → View Logs**. Odkaz z SMS otevři v prohlížeči –
+      to je stránka, kterou uvidí důvěryhodná osoba (funguje i bez klíče).
+- [ ] **E7. Po schůzce:** hodnocení, nahlášení, blokace.
+- [ ] **E8. Jazyky:** Profil → Jazyk.
 
-## 3. Co otestovat
+## Když něco nejde
 
-1. **Registrace** na obou telefonech (různé e-maily, věk 18+).
-2. **Ověření:** „Ověřit totožnost“ → tlačítko „Simulovat úspěšné ověření (testovací režim)“.
-3. **Profil:** fotka, povolit polohu. Telefony musí být v okruhu nastavené vzdálenosti.
-4. **Swipe** doprava na obou → match → chat.
-5. **Domluva naslepo:** oba vyplní, uvidí jen shodu; zkus i odvolání.
-6. **Bezpečná schůzka:** důvěryhodná osoba (jakékoli číslo), check-in, SOS, nouzový PIN.
-   „Odeslané“ SMS i s odkazem na stránku pro důvěryhodnou osobu najdeš v Railway → **Deployments → View Logs**.
-   Odkaz otevři v prohlížeči.
-7. **Po schůzce:** hodnocení, nahlášení, blokace.
-8. **Jazyky:** Profil → Jazyk.
+| Co vidíš | Co s tím |
+| --- | --- |
+| Nasazení na Railway je červené | Deployments → klikni na něj → View Logs, pošli mi posledních pár řádků. |
+| `/health` nejde otevřít | Zkontroluj krok C5 (port 3000) a C7. |
+| Aplikace píše chybu spojení | Adresa v `app/eas.json` (D4) musí přesně odpovídat ADRESE_SERVERU a `EXPO_PUBLIC_ACCESS_KEY` (D3) musí být stejný jako `ACCESS_KEY` na Railway. Po opravě sestav aplikaci znovu. |
+| `eas build` hlásí chybějící projectId | Znovu `export EAS_PROJECT_ID=<ID>` (D2) ve stejném okně Terminálu. |
+| Mapa na Androidu je prázdná | Chybí klíč Google Maps – pro test to nevadí, ostatní funguje. |
 
-## Co v testu nefunguje
+## Údržba
 
-- skutečné ověření dokladem (Veriff) – jen tlačítko
-- skutečné SMS (Twilio) – jen log
-- push notifikace – jen log
-- mapa na Androidu bez `GOOGLE_MAPS_API_KEY` může být prázdná (zbytek funguje)
+- Server se aktualizuje sám po každé změně ve větvi. Aplikaci po změně kódu sestav znovu (D5).
+- Kdyby přístupový klíč unikl: změň `ACCESS_KEY` na Railway i v Expu
+  (`npx eas-cli env:update --environment preview --name EXPO_PUBLIC_ACCESS_KEY`) a sestav aplikaci znovu.
+- Po testování: Railway → projekt → Settings → **Delete Project** (smaže server i data).
 
-Až budeš chtít ostrý provoz, postup je v README v části „Produkce – co je potřeba zařídit“.
+Ostrý provoz (skutečné ověření, SMS, doména yesyesapp.com) je popsaný v README v části „Produkce – co je potřeba zařídit“.
