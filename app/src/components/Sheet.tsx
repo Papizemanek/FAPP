@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Icon } from './Icon';
 import { useT } from '@/lib/i18n';
 import { colors, fonts } from '@/lib/theme';
 import { Button } from './ui';
@@ -83,7 +84,50 @@ export function ActionSheet({ visible, title, actions, onClose }: { visible: boo
   );
 }
 
+/** Výběr jedné možnosti z delšího seznamu (např. jazyk). */
+export function PickerSheet<T extends string>({
+  visible,
+  title,
+  options,
+  selected,
+  onSelect,
+  onClose,
+}: {
+  visible: boolean;
+  title: string;
+  options: { value: T; label: string }[];
+  selected: T;
+  onSelect: (value: T) => void;
+  onClose: () => void;
+}) {
+  const t = useT();
+  return (
+    <SheetFrame visible={visible} onClose={onClose}>
+      <Text style={s.title}>{title}</Text>
+      <ScrollView style={{ maxHeight: 420, marginTop: 4 }}>
+        {options.map((o) => (
+          <Pressable
+            key={o.value}
+            accessibilityRole="button"
+            accessibilityState={{ selected: o.value === selected }}
+            onPress={() => {
+              onClose();
+              onSelect(o.value);
+            }}
+            style={({ pressed }) => [s.action, s.option, pressed && { backgroundColor: colors.surface2 }]}
+          >
+            <Text style={[s.actionText, o.value === selected && { color: colors.accent }]}>{o.label}</Text>
+            {o.value === selected ? <Icon name="check" size={18} color={colors.accent} /> : null}
+          </Pressable>
+        ))}
+      </ScrollView>
+      <Button label={t('common.close')} variant="ghost" height={48} onPress={onClose} style={{ marginTop: 8 }} />
+    </SheetFrame>
+  );
+}
+
 const s = StyleSheet.create({
+  option: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   backdrop: { flex: 1, backgroundColor: 'rgba(10, 8, 12, 0.72)', justifyContent: 'flex-end' },
   sheet: { backgroundColor: colors.surface, borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: 24, paddingBottom: 36, gap: 8 },
   title: { fontFamily: fonts.display, fontSize: 24, color: colors.text },

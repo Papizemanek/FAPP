@@ -202,7 +202,7 @@ export default function Discover() {
               />
             </>
           ) : null}
-          <IconButton name="sliders" label={t('discover.searchSettings')} onPress={() => router.push('/profile')} />
+          <IconButton name="sliders" label={t('discover.searchSettings')} onPress={() => router.push({ pathname: '/profile', params: { focus: 'search' } })} />
         </View>
       </View>
       {paid && billing.travelCity ? (

@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
-import type { ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import {
   ActivityIndicator,
   Pressable,
@@ -266,17 +266,58 @@ export function Stepper({
   suffix?: string;
 }) {
   const t = useT();
+  const clamp = (v: number) => Math.min(max, Math.max(min, v));
+  // Číslo jde rovnou napsat; podržené tlačítko přičítá čím dál rychleji.
+  const [text, setText] = useState(String(value));
+  useEffect(() => setText(String(value)), [value]);
+  const latest = useRef(value);
+  latest.current = value;
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const stop = () => {
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = null;
+  };
+  useEffect(() => stop, []);
+  const hold = (dir: 1 | -1) => {
+    let delay = 400;
+    const tick = () => {
+      const next = clamp(latest.current + dir * step);
+      if (next === latest.current) return stop();
+      latest.current = next;
+      onChange(next);
+      delay = Math.max(50, delay * 0.75);
+      timer.current = setTimeout(tick, delay);
+    };
+    tick();
+  };
+  const commit = () => {
+    const n = parseInt(text.replace(/\D/g, ''), 10);
+    const v = Number.isFinite(n) ? clamp(n) : value;
+    setText(String(v));
+    if (v !== value) onChange(v);
+  };
   return (
     <View style={styles.toggleRow}>
       <Text style={[styles.toggleLabel, { flex: 1 }]}>{label}</Text>
-      <Pressable accessibilityLabel={t('ui.stepperDecrease', { label })} onPress={() => onChange(Math.max(min, value - step))} style={styles.stepBtn}>
+      <Pressable accessibilityLabel={t('ui.stepperDecrease', { label })} onPressIn={() => hold(-1)} onPressOut={stop} style={styles.stepBtn}>
         <Text style={styles.stepBtnText}>−</Text>
       </Pressable>
-      <Text style={[styles.toggleLabel, { minWidth: 64, textAlign: 'center' }]}>
-        {value}
-        {suffix}
-      </Text>
-      <Pressable accessibilityLabel={t('ui.stepperIncrease', { label })} onPress={() => onChange(Math.min(max, value + step))} style={styles.stepBtn}>
+      <View style={{ width: 88, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+        <TextInput
+          accessibilityLabel={label}
+          value={text}
+          onChangeText={setText}
+          onBlur={commit}
+          onSubmitEditing={commit}
+          keyboardType="number-pad"
+          returnKeyType="done"
+          selectTextOnFocus
+          maxLength={3}
+          style={[styles.toggleLabel, { width: suffix ? 40 : 56, textAlign: 'center', padding: 0 }]}
+        />
+        {suffix ? <Text style={styles.toggleLabel}>{suffix}</Text> : null}
+      </View>
+      <Pressable accessibilityLabel={t('ui.stepperIncrease', { label })} onPressIn={() => hold(1)} onPressOut={stop} style={styles.stepBtn}>
         <Text style={styles.stepBtnText}>+</Text>
       </Pressable>
     </View>

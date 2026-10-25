@@ -12,7 +12,7 @@ import { colors, fonts } from '@/lib/theme';
 
 const activityKeys = Object.keys(ACTIVITIES) as Activity[];
 const wishKeys = Object.keys(WISHES) as Wish[];
-const DAYS = 7;
+const DAYS = 14;
 const weekday = (d: Date) => formatDate(d, { weekday: 'short', day: 'numeric', month: 'numeric' });
 
 function startOfDay(d: Date) {

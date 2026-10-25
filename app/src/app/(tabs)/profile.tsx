@@ -1,10 +1,10 @@
 import { GENDERS, MAX_PROFILE_PHOTOS, TAGS, TRAVEL_CITIES, type TravelCityId } from '@yesyes/shared';
 import { LOCALES } from '@yesyes/shared/i18n';
 import { Image } from 'expo-image';
-import { router } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { ConfirmSheet } from '@/components/Sheet';
+import { ConfirmSheet, PickerSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { Banner, Button, Chip, ErrorText, Field, Label, Screen, Stepper, Title, Toggle } from '@/components/ui';
 import { api, errorMessage, imageSource, type Billing, type Gender, type Me, type Tag } from '@/lib/api';
@@ -26,6 +26,14 @@ export default function ProfileScreen() {
   const [form, setForm] = useState(() => toForm(me));
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  // Ikona filtru na objevování otevírá profil rovnou u nastavení hledání.
+  const { focus } = useLocalSearchParams<{ focus?: string }>();
+  const scrollRef = useRef<ScrollView>(null);
+  const [searchY, setSearchY] = useState<number | null>(null);
+  useEffect(() => {
+    if (focus === 'search' && searchY != null) scrollRef.current?.scrollTo({ y: Math.max(0, searchY - 12), animated: true });
+  }, [focus, searchY]);
   const [saved, setSaved] = useState(false);
   const [deletePassword, setDeletePassword] = useState('');
   const [showDelete, setShowDelete] = useState(false);
@@ -103,7 +111,7 @@ export default function ProfileScreen() {
             <Text style={s.doneText}>{busy ? t('profile.saving') : saved ? t('profile.saved') : t('profile.done')}</Text>
           </Pressable>
         </View>
-        <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
+        <ScrollView ref={scrollRef} contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
           {me.status === 'suspended' ? (
             <Banner tone="alarm" title={t('profile.suspended.title')} subtitle={t('profile.suspended.subtitle')} />
           ) : null}
@@ -180,7 +188,7 @@ export default function ProfileScreen() {
             </View>
           ) : null}
 
-          <View style={{ gap: 10 }}>
+          <View style={{ gap: 10 }} onLayout={(e) => setSearchY(e.nativeEvent.layout.y)}>
             <Label>{t('profile.showMe')}</Label>
             <View style={s.wrap}>
               {genderKeys.map((g) => (
@@ -197,12 +205,18 @@ export default function ProfileScreen() {
 
           <View style={{ gap: 10 }}>
             <Label>{t('profile.language.title')}</Label>
-            <View style={s.wrap}>
-              <Chip label={t('profile.language.device')} selected={i18n.override === null} onPress={() => void i18n.setLocale(null)} />
-              {LOCALES.map((l) => (
-                <Chip key={l.code} label={l.name} selected={i18n.override === l.code} onPress={() => void i18n.setLocale(l.code)} />
-              ))}
-            </View>
+            <Pressable accessibilityRole="button" onPress={() => setLanguageOpen(true)} style={s.select}>
+              <Text style={s.selectText}>{LOCALES.find((l) => l.code === i18n.override)?.name ?? t('profile.language.device')}</Text>
+              <Icon name="chevronDown" size={18} color={colors.muted} />
+            </Pressable>
+            <PickerSheet
+              visible={languageOpen}
+              title={t('profile.language.title')}
+              options={[{ value: 'device', label: t('profile.language.device') }, ...LOCALES.map((l) => ({ value: l.code, label: l.name }))]}
+              selected={i18n.override ?? 'device'}
+              onSelect={(code) => void i18n.setLocale(code === 'device' ? null : code)}
+              onClose={() => setLanguageOpen(false)}
+            />
             <Text style={s.hint2}>{t('profile.language.rtlHint')}</Text>
           </View>
 
@@ -242,6 +256,8 @@ function toForm(me: Me | null) {
 }
 
 const s = StyleSheet.create({
+  select: { height: 52, borderRadius: 14, borderWidth: 1, borderColor: colors.line, backgroundColor: colors.surface, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  selectText: { fontFamily: fonts.semibold, fontSize: 16, color: colors.text },
   top: { height: 64, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   done: { height: 40, paddingHorizontal: 16, borderRadius: 999, backgroundColor: colors.accent, justifyContent: 'center' },
   doneText: { fontFamily: fonts.bold, fontSize: 14, color: colors.onAccent },
