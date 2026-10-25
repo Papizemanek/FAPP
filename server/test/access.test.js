@@ -47,3 +47,11 @@ test('webová verze: pozvánka uloží cookie a ta pustí web i API', async () =
   assert.notEqual((await t.call('GET', '/', { headers: { Cookie: jar } })).status, 401);
   assert.equal((await t.call('GET', '/', { headers: { Cookie: 'yy_access=padelek' } })).status, 401);
 });
+
+test('webová verze: heslo z prohlížeče uloží cookie, s ní projde i přihlášené API', async () => {
+  const res = await fetch(`${t.base}/`, { headers: { Authorization: basic(KEY) } });
+  const jar = res.headers.get('set-cookie')?.split(';')[0];
+  assert.match(jar, /^yy_access=/);
+  const withBearer = await t.call('GET', '/api/me', { headers: { Cookie: jar, Authorization: 'Bearer neplatny' } });
+  assert.equal(withBearer.status, 401); // brána pustila, přihlášení odmítlo – ne 404
+});

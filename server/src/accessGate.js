@@ -41,6 +41,11 @@ export function accessGate(accessKey) {
     return value != null && timingSafeEqual(digest(value), expectedCookie);
   };
 
+  const setAccessCookie = (req, res) => {
+    const secure = req.secure || req.get('x-forwarded-proto') === 'https' ? '; Secure' : '';
+    res.append('Set-Cookie', `${ACCESS_COOKIE}=${cookieValue(accessKey)}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax${secure}`);
+  };
+
   return (req, res, next) => {
     res.set('X-Robots-Tag', 'noindex, nofollow');
     if (OPEN.some((re) => re.test(req.path))) return next();
@@ -49,21 +54,26 @@ export function accessGate(accessKey) {
     const invite = req.path.match(/^\/app\/([^/]+)\/?$/);
     if (invite && req.method === 'GET') {
       if (!matches(decodeURIComponent(invite[1]))) return res.status(404).type('text').send('404');
-      const secure = req.secure || req.get('x-forwarded-proto') === 'https' ? '; Secure' : '';
-      res.set('Set-Cookie', `${ACCESS_COOKIE}=${cookieValue(accessKey)}; Path=/; Max-Age=31536000; HttpOnly; SameSite=Lax${secure}`);
+      setAccessCookie(req, res);
       return res.redirect(302, '/');
     }
 
     if (cookieOk(req)) return next();
+
+    // Heslo z prohlížeče (HTTP Basic). Rovnou uloží i přístupovou cookie – po přihlášení posílá webová
+    // verze vlastní hlavičku Authorization a heslo by se s jejími požadavky už nedostalo na server.
+    const [scheme, encoded] = String(req.get('authorization') ?? '').split(' ');
+    const password = scheme === 'Basic' && encoded ? Buffer.from(encoded, 'base64').toString('utf8').split(':').slice(1).join(':') : null;
+    if (matches(password)) {
+      setAccessCookie(req, res);
+      return next();
+    }
 
     if (req.path.startsWith('/api/')) {
       if (matches(req.get('x-access-key'))) return next();
       return res.status(404).json({ error: tr(localeFromRequest(req), 'errors.notFound') });
     }
 
-    const [scheme, encoded] = String(req.get('authorization') ?? '').split(' ');
-    const password = scheme === 'Basic' && encoded ? Buffer.from(encoded, 'base64').toString('utf8').split(':').slice(1).join(':') : null;
-    if (matches(password)) return next();
     res.set('WWW-Authenticate', 'Basic realm="YesYes", charset="UTF-8"');
     res.status(401).type('text').send('401');
   };
