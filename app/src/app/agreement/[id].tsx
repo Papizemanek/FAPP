@@ -3,7 +3,7 @@ import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useMemo, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { ConfirmSheet } from '@/components/Sheet';
+import { ConfirmSheet, PickerSheet } from '@/components/Sheet';
 import { Banner, Body, Button, Checkbox, Chip, ErrorText, Field, Header, Label, Screen, Toggle } from '@/components/ui';
 import { api, errorMessage, type Activity, type Agreement, type MatchDetail, type Wish } from '@/lib/api';
 import { formatDate } from '@/lib/format';
@@ -12,8 +12,14 @@ import { colors, fonts } from '@/lib/theme';
 
 const activityKeys = Object.keys(ACTIVITIES) as Activity[];
 const wishKeys = Object.keys(WISHES) as Wish[];
-const DAYS = 14;
+// Server přijme schůzku nejvýš 30 dní dopředu (MAX_DAYS_AHEAD v routes/agreements.js).
+const DAYS = 30;
 const weekday = (d: Date) => formatDate(d, { weekday: 'short', day: 'numeric', month: 'numeric' });
+const dayFromToday = (offset: number) => {
+  const d = new Date();
+  d.setDate(d.getDate() + offset);
+  return d;
+};
 
 function startOfDay(d: Date) {
   const x = new Date(d);
@@ -69,6 +75,7 @@ export default function AgreementScreen() {
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const [confirmRevoke, setConfirmRevoke] = useState(false);
+  const [dayPickerOpen, setDayPickerOpen] = useState(false);
 
   const load = useCallback(async () => {
     try {
@@ -272,15 +279,23 @@ export default function AgreementScreen() {
 
           <View style={{ gap: 12 }}>
             <Label>{t('agreement.logisticsLabel')}</Label>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
-              {Array.from({ length: DAYS }, (_, i) => {
-                const d = new Date();
-                d.setDate(d.getDate() + i);
-                return (
-                  <Chip key={i} label={i === 0 ? t('agreement.today') : i === 1 ? t('agreement.tomorrow') : weekday(d)} selected={form.dayOffset === i} onPress={() => update({ dayOffset: i }, true)} />
-                );
-              })}
-            </ScrollView>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+              <Chip label={t('agreement.today')} selected={form.dayOffset === 0} onPress={() => update({ dayOffset: 0 }, true)} />
+              <Chip label={t('agreement.tomorrow')} selected={form.dayOffset === 1} onPress={() => update({ dayOffset: 1 }, true)} />
+              <Chip
+                label={form.dayOffset >= 2 ? weekday(dayFromToday(form.dayOffset)) : t('agreement.otherDay')}
+                selected={form.dayOffset >= 2}
+                onPress={() => setDayPickerOpen(true)}
+              />
+            </View>
+            <PickerSheet
+              visible={dayPickerOpen}
+              title={t('agreement.otherDay')}
+              options={Array.from({ length: DAYS - 2 }, (_, i) => ({ value: String(i + 2), label: weekday(dayFromToday(i + 2)) }))}
+              selected={String(form.dayOffset)}
+              onSelect={(v) => update({ dayOffset: Number(v) }, true)}
+              onClose={() => setDayPickerOpen(false)}
+            />
             <View style={{ flexDirection: 'row', gap: 10 }}>
               <View style={{ width: 110 }}>
                 <Field label={t('agreement.timeLabel')} value={form.time} onChangeText={(time) => update({ time }, true)} keyboardType="numbers-and-punctuation" placeholder="21:00" />
