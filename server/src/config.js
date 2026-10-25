@@ -43,6 +43,9 @@ export function loadConfig(env = process.env) {
     webOrigins: (env.WEB_ORIGINS ?? '').split(',').map((s) => s.trim()).filter(Boolean),
     // Uzavřený provoz: bez tohoto klíče server nic neukáže (viz accessGate.js). Prázdné = veřejný provoz.
     accessKey: env.ACCESS_KEY || null,
+    // Webová verze aplikace (npm run webapp:build -w app → server/webapp) místo webu s čekací listinou.
+    webApp: env.WEB_APP === '1',
+    webAppDir: env.WEB_APP_DIR ?? new URL('../webapp/', import.meta.url).pathname,
     webDir: env.WEB_DIR ?? new URL('../../web/dist/', import.meta.url).pathname,
   };
 

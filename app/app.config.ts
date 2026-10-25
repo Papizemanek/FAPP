@@ -1,6 +1,7 @@
 /// <reference types="node" />
 import cs from '@yesyes/shared/i18n/app/cs.json';
 import type { ExpoConfig } from 'expo/config';
+import { withEntitlementsPlist, type ConfigPlugin } from 'expo/config-plugins';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -8,6 +9,16 @@ import path from 'node:path';
 //   EXPO_PUBLIC_API_URL      – adresa serveru (výchozí http://localhost:3000)
 //   GOOGLE_MAPS_API_KEY      – klíč pro mapy na Androidu
 //   EAS_PROJECT_ID           – pro push notifikace (Expo Push)
+//   IOS_FREE_SIGNING=1       – sestavení pro bezplatné Apple ID (Xcode „Personal Team“): bez push notifikací,
+//                              které Apple bezplatným účtům nepovolí; ostatní funguje (viz TESTOVANI.md)
+
+const freeSigning = process.env.IOS_FREE_SIGNING === '1';
+// Pojistka pro případ, že by push entitlement přidal jiný modul.
+const withoutPushEntitlement: ConfigPlugin = (c) =>
+  withEntitlementsPlist(c, (mod) => {
+    delete mod.modResults['aps-environment'];
+    return mod;
+  });
 
 // Systémové texty (žádosti o oprávnění) jsou ve slovníku aplikace, jmenný prostor `native`.
 // V Info.plist je výchozí čeština, ostatní jazyky dostane iOS z ./locales/<jazyk>.json
@@ -66,7 +77,7 @@ const config: ExpoConfig = {
         isAndroidForegroundServiceEnabled: true,
       },
     ],
-    ['expo-notifications', { color: '#FF6B8B' }],
+    ...(freeSigning ? [] : [['expo-notifications', { color: '#FF6B8B' }] as [string, object]]),
     ['expo-local-authentication', { faceIDPermission: native.faceId }],
     [
       'expo-image-picker',
@@ -94,4 +105,4 @@ const config: ExpoConfig = {
   },
 };
 
-export default config;
+export default freeSigning ? withoutPushEntitlement(config) : config;

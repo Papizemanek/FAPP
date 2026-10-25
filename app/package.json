@@ -48,7 +48,8 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "typecheck": "tsc --noEmit",
-    "demo:build": "node demo/build.mjs"
+    "demo:build": "node demo/build.mjs",
+    "webapp:build": "node webapp/build.mjs"
   },
   "private": true
 }

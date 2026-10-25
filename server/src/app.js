@@ -73,6 +73,29 @@ export function createApp({ db, config, services, rateLimit = true }) {
 
   app.use('/api', (req, res) => res.status(404).json({ error: tr(req.locale, 'errors.notFound') }));
 
+  // Webová verze aplikace: jedna stránka pro všechny cesty (trasy řeší aplikace sama).
+  const webAppIndex = path.join(config.webAppDir ?? '', 'index.html');
+  if (config.webApp && fs.existsSync(webAppIndex)) {
+    app.get('/manifest.webmanifest', (_req, res) => {
+      res.type('application/manifest+json').json({
+        name: 'YesYes',
+        short_name: 'YesYes',
+        // Ikona na ploše iPhonu startuje přes pozvánku – má vlastní úložiště a cookie z Safari nevidí.
+        start_url: config.accessKey ? `/app/${encodeURIComponent(config.accessKey)}` : '/',
+        scope: '/',
+        display: 'standalone',
+        background_color: '#121014',
+        theme_color: '#121014',
+        icons: [{ src: '/icon.png', sizes: '1024x1024', type: 'image/png' }],
+      });
+    });
+    app.get('/icon.png', (_req, res) => res.sendFile(path.join(config.webAppDir, 'icon.png')));
+    app.get(/^\/(?!api\/).*/, (_req, res) => {
+      res.set('Cache-Control', 'no-cache');
+      res.sendFile(webAppIndex);
+    });
+  }
+
   // Sestavený web (npm run build -w web) – pokud existuje, server ho rovnou servíruje na /.
   if (config.webDir && fs.existsSync(path.join(config.webDir, 'index.html'))) {
     app.use(express.static(config.webDir, { maxAge: '1h', extensions: ['html'] }));

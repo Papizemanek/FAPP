@@ -22,3 +22,4 @@ web/dist/
 web/preview/
 # vyrenderované kreativy se commitují zvlášť, až jsou hotové
 marketing/out/
+app/webapp/.export/
