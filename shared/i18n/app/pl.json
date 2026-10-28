@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Jednorazowo",
       "repeat": "Wielokrotnie",
-      "myplace": "U mnie",
-      "yourplace": "U ciebie",
-      "vanilla": "Waniliowo",
-      "kinky": "Kinky"
+      "dateFirst": "Najpierw randka",
+      "openToMore": "Otwarty/a na więcej",
+      "figuring": "Jeszcze sprawdzam",
+      "classic": "Klasycznie",
+      "curious": "Z ciekawości",
+      "kink": "Kink",
+      "chatFirst": "Najpierw czat",
+      "videoFirst": "Najpierw wideo",
+      "sober": "Na trzeźwo",
+      "boundaries": "Granice z góry",
+      "slow": "Powoli",
+      "spontaneous": "Spontanicznie",
+      "host": "U mnie",
+      "visit": "U ciebie",
+      "neutral": "Neutralne miejsce",
+      "single": "Singiel/ka",
+      "open": "Otwarty związek",
+      "poly": "Poliamoria",
+      "couple": "Para"
+    },
+    "yesGroups": {
+      "intent": "Czego szukam",
+      "mood": "Klimat",
+      "comfort": "Co daje mi komfort",
+      "place": "Gdzie",
+      "status": "Status związku"
     },
     "activities": {
       "kissing": "Pocałunki i przytulanie",
@@ -369,6 +391,12 @@
       "message": "Aktywne do {time}.",
       "confirm": "Wyłącz",
       "done": "„Dziś wieczorem” wyłączone."
+    },
+    "sharedYes": {
+      "one": "{count} wspólne tak",
+      "few": "{count} wspólne tak",
+      "many": "{count} wspólnych tak",
+      "other": "{count} wspólnego tak"
     }
   },
   "matches": {
@@ -411,7 +439,6 @@
     "name": "Imię",
     "bio": "O mnie",
     "bioPlaceholder": "Kilka zdań o sobie.",
-    "lookingFor": "Czego szukam",
     "safety": {
       "title": "Bezpieczeństwo i prywatność",
       "trusted": "Zaufana osoba: {name}",
@@ -453,6 +480,18 @@
     "removePhoto": {
       "title": "Usunąć zdjęcie?",
       "confirm": "Usuń"
+    },
+    "yes": {
+      "title": "Moje tak",
+      "hint": "Tagi pokazują, na co jesteś otwarty/a, a nie co obiecujesz.",
+      "footnote": "Zobaczą to tylko osoby, które też powiedziały tak.",
+      "matchOnly": "Widoczne po matchu",
+      "upTo": {
+        "one": "Maks. {count}",
+        "few": "Maks. {count}",
+        "many": "Maks. {count}",
+        "other": "Maks. {count}"
+      }
     }
   },
   "premium": {
@@ -561,7 +600,8 @@
     "title": "Macie parę!",
     "body": "Ty i {name} chcecie siebie nawzajem.\nNapisz i ustalcie, na co macie ochotę.",
     "sendMessage": "Napisz wiadomość",
-    "keepDiscovering": "Odkrywaj dalej"
+    "keepDiscovering": "Odkrywaj dalej",
+    "sharedYes": "Wspólne tak"
   },
   "login": {
     "title": "Logowanie",

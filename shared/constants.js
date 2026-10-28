@@ -10,15 +10,42 @@ export const GENDERS = {
   nonbinary: 'Nebinární',
 };
 
-// Co člověk hledá – zobrazuje se na kartě profilu.
-export const TAGS = {
-  oneoff: 'Jednorázovka',
-  repeat: 'Opakovaně',
-  myplace: 'U mě',
-  yourplace: 'U tebe',
-  vanilla: 'Vanilka',
-  kinky: 'Kinky',
+// „Moje ano*“ – k čemu je člověk otevřený (ne co slibuje). Cizím se ukazují jen štítky, které mají
+// oba společné („společná ano“); místo a vztahový status uvidí až match.
+export const YES_GROUPS = {
+  intent: { max: 2, tags: { oneoff: 'Jednorázovka', repeat: 'Opakovaně', dateFirst: 'Nejdřív rande', openToMore: 'Klidně i víc', figuring: 'Zjišťuju, co chci' } },
+  mood: { max: 1, tags: { classic: 'Klasika', curious: 'Zvědavě', kink: 'Kink' } },
+  comfort: {
+    max: 3,
+    tags: {
+      chatFirst: 'Nejdřív si psát',
+      videoFirst: 'Nejdřív videohovor',
+      sober: 'Střízlivě',
+      boundaries: 'Hranice předem',
+      slow: 'Pomalu',
+      spontaneous: 'Spontánně',
+    },
+  },
+  place: { max: 2, matchOnly: true, tags: { host: 'U mě', visit: 'U tebe', neutral: 'Neutrální místo' } },
+  status: { max: 1, matchOnly: true, tags: { single: 'Nezadaný/á', open: 'Otevřený vztah', poly: 'Polyamorie', couple: 'Pár' } },
 };
+
+// Všechny štítky v jednom seznamu (validace, popisky).
+export const TAGS = Object.fromEntries(Object.values(YES_GROUPS).flatMap((g) => Object.entries(g.tags)));
+
+// Skupina každého štítku.
+export const TAG_GROUP = Object.fromEntries(
+  Object.entries(YES_GROUPS).flatMap(([group, g]) => Object.keys(g.tags).map((tag) => [tag, group])),
+);
+
+// Starší štítky z doby před „Moje ano*“.
+export const LEGACY_TAGS = { myplace: 'host', yourplace: 'visit', vanilla: 'classic', kinky: 'kink' };
+
+/** Společná ano: štítky, které mají oba. Bez `matched` jen ty, které smí vidět i cizí. */
+export function sharedYes(mine, theirs, { matched = false } = {}) {
+  const set = new Set(mine);
+  return theirs.filter((tag) => set.has(tag) && TAG_GROUP[tag] && (matched || !YES_GROUPS[TAG_GROUP[tag]].matchOnly));
+}
 
 // Aktivity v domluvě. Každý u nich zvlášť zvolí ano / možná / ne.
 export const ACTIVITIES = {

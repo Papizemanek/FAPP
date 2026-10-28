@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Egyszeri",
       "repeat": "Újra meg újra",
-      "myplace": "Nálam",
-      "yourplace": "Nálad",
-      "vanilla": "Vanília",
-      "kinky": "Kinky"
+      "dateFirst": "Előbb randi",
+      "openToMore": "Lehet több is",
+      "figuring": "Még keresem",
+      "classic": "Klasszikus",
+      "curious": "Kíváncsian",
+      "kink": "Kink",
+      "chatFirst": "Előbb chat",
+      "videoFirst": "Előbb videóhívás",
+      "sober": "Józanul",
+      "boundaries": "Határok előre",
+      "slow": "Lassan",
+      "spontaneous": "Spontán",
+      "host": "Nálam",
+      "visit": "Nálad",
+      "neutral": "Semleges hely",
+      "single": "Egyedülálló",
+      "open": "Nyitott kapcsolat",
+      "poly": "Poliamor",
+      "couple": "Pár"
+    },
+    "yesGroups": {
+      "intent": "Amit keresek",
+      "mood": "Hangulat",
+      "comfort": "Amitől jól érzem magam",
+      "place": "Hol",
+      "status": "Kapcsolati státusz"
     },
     "activities": {
       "kissing": "Csók és összebújás",
@@ -365,6 +387,10 @@
       "message": "Aktív eddig: {time}.",
       "confirm": "Kikapcsolás",
       "done": "A „Ma este” kikapcsolva."
+    },
+    "sharedYes": {
+      "one": "{count} közös igen",
+      "other": "{count} közös igen"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Név",
     "bio": "Rólam",
     "bioPlaceholder": "Pár sor magadról.",
-    "lookingFor": "Amit keresek",
     "safety": {
       "title": "Biztonság és adatvédelem",
       "trusted": "Megbízható személy: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Törlöd a fotót?",
       "confirm": "Törlés"
+    },
+    "yes": {
+      "title": "Az igenem",
+      "hint": "A címkék azt mutatják, mire vagy nyitott, nem azt, amit ígérsz.",
+      "footnote": "Csak az látja, aki szintén igent mondott.",
+      "matchOnly": "Match után látható",
+      "upTo": {
+        "one": "Legfeljebb {count}",
+        "other": "Legfeljebb {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Ez egy match!",
     "body": "Te és {name} kívánjátok egymást.\nKöszönj, és beszéljétek meg, mire vagytok kaphatók.",
     "sendMessage": "Üzenet küldése",
-    "keepDiscovering": "Felfedezés folytatása"
+    "keepDiscovering": "Felfedezés folytatása",
+    "sharedYes": "Közös igenek"
   },
   "login": {
     "title": "Bejelentkezés",

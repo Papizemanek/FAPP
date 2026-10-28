@@ -10,6 +10,7 @@ import {
   useCredit,
   weeklySuperLikesLeft,
 } from '../billing.js';
+import { sharedYes } from '../../../shared/constants.js';
 import { tx } from '../db.js';
 import { msg } from '../i18n.js';
 import { getUser, isBlocked, publicProfile } from '../model.js';
@@ -31,6 +32,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
     const now = Date.now();
     const myAge = ageFrom(me.birthdate);
     const myInterest = parseJson(me.interested_in, []);
+    const myTags = parseJson(me.tags, []);
     const here = effectiveLocation(me, now);
     // Kdo mě už lajkl (super lajk a prioritní lajky jdou v balíčku dopředu).
     const likedMe = new Map(
@@ -48,7 +50,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
       )
       .all(me.id, me.id, me.id, me.id);
 
-    // Pořadí: super lajk → prioritní lajk (Platinum) → boost → „Dnes večer“ → vzdálenost.
+    // Pořadí: super lajk → prioritní lajk (Platinum) → boost → „Dnes večer“ → víc společných ano → vzdálenost.
     // Účtům s vážným nevyřešeným příznakem se placená viditelnost neprojeví.
     const tier = (u) => {
       if (restricted.has(u.id)) return 4;
@@ -62,7 +64,13 @@ export function discoverRoutes({ db, config, services, limiter }) {
     const deck = rows
       .map((u) => {
         const there = effectiveLocation(u, now);
-        return { u, age: ageFrom(u.birthdate), km: distanceKm(here.lat, here.lng, there.lat, there.lng), tier: tier(u) };
+        return {
+          u,
+          age: ageFrom(u.birthdate),
+          km: distanceKm(here.lat, here.lng, there.lat, there.lng),
+          tier: tier(u),
+          shared: sharedYes(myTags, parseJson(u.tags, [])).length,
+        };
       })
       .filter(
         ({ u, age, km }) =>
@@ -76,7 +84,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
           myAge <= u.age_max &&
           km <= Math.min(me.max_distance_km, u.max_distance_km),
       )
-      .sort((a, b) => a.tier - b.tier || a.km - b.km)
+      .sort((a, b) => a.tier - b.tier || b.shared - a.shared || a.km - b.km)
       .slice(0, DECK_SIZE)
       .map(({ u }) => ({ ...publicProfile(u, me), superLike: likedMe.get(u.id) === 1 && !restricted.has(u.id) }));
     res.json(deck);
@@ -151,7 +159,7 @@ export function discoverRoutes({ db, config, services, limiter }) {
         data: { type: 'match', matchId: match.id },
       });
     }
-    res.json({ match: { id: match.id, partner: publicProfile(target, req.user) }, likesLeft });
+    res.json({ match: { id: match.id, partner: publicProfile(target, req.user, { matched: true }) }, likesLeft });
   });
 
   // Vrácení posledního swipu (Plus). Super lajk ani swipe, ze kterého je match, vrátit nejde.

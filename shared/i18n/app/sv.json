@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Engångsgrej",
       "repeat": "Om och om igen",
-      "myplace": "Hos mig",
-      "yourplace": "Hos dig",
-      "vanilla": "Vanilj",
-      "kinky": "Kinky"
+      "dateFirst": "Dejt först",
+      "openToMore": "Öppen för mer",
+      "figuring": "Kollar läget",
+      "classic": "Klassiskt",
+      "curious": "Nyfiken",
+      "kink": "Kink",
+      "chatFirst": "Chatta först",
+      "videoFirst": "Videosamtal först",
+      "sober": "Nykter",
+      "boundaries": "Gränser i förväg",
+      "slow": "Långsamt",
+      "spontaneous": "Spontant",
+      "host": "Hos mig",
+      "visit": "Hos dig",
+      "neutral": "Neutral plats",
+      "single": "Singel",
+      "open": "Öppet förhållande",
+      "poly": "Polyamorös",
+      "couple": "Par"
+    },
+    "yesGroups": {
+      "intent": "Jag söker",
+      "mood": "Vibe",
+      "comfort": "Vad som känns bra för mig",
+      "place": "Var",
+      "status": "Relationsstatus"
     },
     "activities": {
       "kissing": "Kyssar och gos",
@@ -365,6 +387,10 @@
       "message": "Aktivt till {time}.",
       "confirm": "Stäng av",
       "done": "I kväll är avstängt."
+    },
+    "sharedYes": {
+      "one": "{count} gemensamt ja",
+      "other": "{count} gemensamma ja"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Namn",
     "bio": "Om mig",
     "bioPlaceholder": "Några rader om dig själv.",
-    "lookingFor": "Jag söker",
     "safety": {
       "title": "Säkerhet och integritet",
       "trusted": "Trygghetsperson: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Radera bild?",
       "confirm": "Radera"
+    },
+    "yes": {
+      "title": "Mitt ja",
+      "hint": "Taggarna visar vad du är öppen för, inte vad du lovar.",
+      "footnote": "Bara de som också sagt ja ser det.",
+      "matchOnly": "Syns efter en match",
+      "upTo": {
+        "one": "Upp till {count}",
+        "other": "Upp till {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Det är en match!",
     "body": "Du och {name} vill ha varandra.\nSäg hej och kom överens om vad ni är sugna på.",
     "sendMessage": "Skicka ett meddelande",
-    "keepDiscovering": "Fortsätt upptäcka"
+    "keepDiscovering": "Fortsätt upptäcka",
+    "sharedYes": "Gemensamma ja"
   },
   "login": {
     "title": "Logga in",

@@ -104,6 +104,42 @@ describe('objevování a match', () => {
     assert.equal(deckAfter.body.some((p) => p.id === b.id), false);
   });
 
+  test('Moje ano*: cizí vidí jen společná ano, match vidí i místo a status', async () => {
+    const setTags = (u, tags) => t.db.prepare('UPDATE users SET tags = ? WHERE id = ?').run(JSON.stringify(tags), u.id);
+    const a = await t.makeUser({ gender: 'woman', interestedIn: ['man'], lat: 48.6, lng: 18.1 });
+    const b = await t.makeUser({ gender: 'man', interestedIn: ['woman'], lat: 48.61, lng: 18.11 });
+    const c = await t.makeUser({ gender: 'man', interestedIn: ['woman'], lat: 48.6, lng: 18.1 });
+    setTags(a, ['oneoff', 'kink', 'sober', 'host', 'single']);
+    setTags(b, ['oneoff', 'kink', 'chatFirst', 'host', 'single']);
+    setTags(c, ['repeat', 'classic']);
+
+    const deck = (await t.call('GET', '/api/discover', { token: a.token })).body;
+    assert.deepEqual(deck.map((p) => p.id).slice(0, 2), [b.id, c.id], 'víc společných ano má přednost před vzdáleností');
+    const card = deck.find((p) => p.id === b.id);
+    assert.deepEqual(card.sharedYes, ['oneoff', 'kink']);
+    assert.deepEqual(card.tags, ['oneoff', 'kink'], 'ostatní štítky ani místo cizí nevidí');
+    assert.deepEqual(deck.find((p) => p.id === c.id).tags, []);
+
+    await t.call('POST', '/api/swipes', { token: a.token, body: { targetId: b.id, like: true } });
+    const res = await t.call('POST', '/api/swipes', { token: b.token, body: { targetId: a.id, like: true } });
+    assert.deepEqual(res.body.match.partner.tags, ['oneoff', 'kink', 'sober', 'host', 'single']);
+    assert.deepEqual(res.body.match.partner.sharedYes, ['oneoff', 'kink', 'host', 'single']);
+    const detail = await t.call('GET', `/api/matches/${res.body.match.id}`, { token: a.token });
+    assert.deepEqual(detail.body.partner.tags, ['oneoff', 'kink', 'chatFirst', 'host', 'single']);
+    assert.deepEqual((await t.call('GET', '/api/me', { token: a.token })).body.tags, ['oneoff', 'kink', 'sober', 'host', 'single']);
+  });
+
+  test('Moje ano*: limit štítků ve skupině', async () => {
+    const u = await t.makeUser({ verify: false });
+    const body = { name: 'Tester', bio: '', gender: 'woman', interestedIn: ['man'], ageMin: 18, ageMax: 40, maxDistanceKm: 20 };
+    const tooMany = await t.call('PUT', '/api/me', { token: u.token, body: { ...body, tags: ['classic', 'kink'] } });
+    assert.equal(tooMany.status, 400);
+    assert.match(tooMany.body.error, /Naladění.*1 štítek/);
+    const ok = await t.call('PUT', '/api/me', { token: u.token, body: { ...body, tags: ['oneoff', 'repeat', 'kink', 'host', 'visit'] } });
+    assert.equal(ok.status, 200);
+    assert.equal((await t.call('PUT', '/api/me', { token: u.token, body: { ...body, tags: ['oneoff', 'repeat', 'dateFirst'] } })).status, 400);
+  });
+
   test('poloha domova se ukládá jen zaokrouhlená', async () => {
     const u = await t.makeUser({ verify: false });
     await t.call('PUT', '/api/me/location', { token: u.token, body: { lat: 50.087654, lng: 14.421234 } });

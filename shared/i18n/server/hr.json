@@ -85,7 +85,12 @@
       "other": "Možeš imati najviše {count} fotografija."
     },
     "pinsMustDiffer": "Hitni PIN mora biti različit od običnog PIN-a.",
-    "deleteDuringMeetup": "Račun sada ne možeš izbrisati – susret je u tijeku. Pokušaj ponovno kad završi."
+    "deleteDuringMeetup": "Račun sada ne možeš izbrisati – susret je u tijeku. Pokušaj ponovno kad završi.",
+    "tooManyYes": {
+      "one": "U skupini „{group}” odaberi najviše {count} oznaku.",
+      "few": "U skupini „{group}” odaberi najviše {count} oznake.",
+      "other": "U skupini „{group}” odaberi najviše {count} oznaka."
+    }
   },
   "photo": {
     "notJpeg": "Fotografija mora biti u formatu JPEG.",
@@ -268,5 +273,12 @@
     "battery": "baterija {percent}",
     "linkExpired": "Ova poveznica više ne vrijedi",
     "loadFailed": "Stanje nije učitano. Pokušavam ponovno…"
+  },
+  "yesGroups": {
+    "intent": "Što tražim",
+    "mood": "Raspoloženje",
+    "comfort": "Što mi paše",
+    "place": "Gdje",
+    "status": "Status veze"
   }
 }

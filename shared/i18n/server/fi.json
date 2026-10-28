@@ -83,7 +83,11 @@
       "other": "Sinulla voi olla enintään {count} kuvaa."
     },
     "pinsMustDiffer": "Hätä-PIN-koodin täytyy olla eri kuin tavallinen PIN-koodisi.",
-    "deleteDuringMeetup": "Et voi poistaa tiliäsi juuri nyt – treffit ovat käynnissä. Yritä uudelleen, kun ne ovat ohi."
+    "deleteDuringMeetup": "Et voi poistaa tiliäsi juuri nyt – treffit ovat käynnissä. Yritä uudelleen, kun ne ovat ohi.",
+    "tooManyYes": {
+      "one": "Valitse ryhmästä ”{group}” enintään {count} tagi.",
+      "other": "Valitse ryhmästä ”{group}” enintään {count} tagia."
+    }
   },
   "photo": {
     "notJpeg": "Kuvan täytyy olla JPEG-muodossa.",
@@ -264,5 +268,12 @@
     "battery": "akku {percent}",
     "linkExpired": "Tämä linkki ei ole enää voimassa",
     "loadFailed": "Tilaa ei voitu ladata. Yritetään uudelleen…"
+  },
+  "yesGroups": {
+    "intent": "Mitä etsin",
+    "mood": "Fiilis",
+    "comfort": "Mikä tuntuu hyvältä",
+    "place": "Missä",
+    "status": "Suhdetilanne"
   }
 }

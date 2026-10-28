@@ -87,7 +87,13 @@
       "other": "Maximálne {count} fotiek."
     },
     "pinsMustDiffer": "Núdzový PIN musí byť iný ako bežný PIN.",
-    "deleteDuringMeetup": "Účet sa teraz nedá zmazať – prebieha stretnutie. Skús to po jeho skončení."
+    "deleteDuringMeetup": "Účet sa teraz nedá zmazať – prebieha stretnutie. Skús to po jeho skončení.",
+    "tooManyYes": {
+      "one": "V skupine „{group}“ vyber najviac {count} štítok.",
+      "few": "V skupine „{group}“ vyber najviac {count} štítky.",
+      "many": "V skupine „{group}“ vyber najviac {count} štítka.",
+      "other": "V skupine „{group}“ vyber najviac {count} štítkov."
+    }
   },
   "photo": {
     "notJpeg": "Fotka musí byť vo formáte JPEG.",
@@ -272,5 +278,12 @@
     "battery": "batéria {percent}",
     "linkExpired": "Odkaz už neplatí",
     "loadFailed": "Stav sa nepodarilo načítať. Skúšam znova…"
+  },
+  "yesGroups": {
+    "intent": "Čo hľadám",
+    "mood": "Naladenie",
+    "comfort": "Kedy sa cítim dobre",
+    "place": "Kde",
+    "status": "Vzťahový status"
   }
 }

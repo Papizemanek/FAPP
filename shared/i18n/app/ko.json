@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "한 번만",
       "repeat": "여러 번",
-      "myplace": "우리 집에서",
-      "yourplace": "상대 집에서",
-      "vanilla": "바닐라",
-      "kinky": "킨키"
+      "dateFirst": "데이트 먼저",
+      "openToMore": "그 이상도 OK",
+      "figuring": "아직 알아가는 중",
+      "classic": "클래식",
+      "curious": "호기심",
+      "kink": "킨크",
+      "chatFirst": "대화 먼저",
+      "videoFirst": "영상통화 먼저",
+      "sober": "맨정신으로",
+      "boundaries": "경계 먼저 정하기",
+      "slow": "천천히",
+      "spontaneous": "즉흥적으로",
+      "host": "우리 집에서",
+      "visit": "네 집에서",
+      "neutral": "중립적인 장소",
+      "single": "싱글",
+      "open": "오픈 관계",
+      "poly": "폴리아모리",
+      "couple": "커플"
+    },
+    "yesGroups": {
+      "intent": "찾는 것",
+      "mood": "분위기",
+      "comfort": "편안함을 주는 것",
+      "place": "장소",
+      "status": "연애 상태"
     },
     "activities": {
       "kissing": "키스와 스킨십",
@@ -363,6 +385,9 @@
       "message": "{time}까지 유효해요.",
       "confirm": "끄기",
       "done": "‘오늘 밤’을 껐어요."
+    },
+    "sharedYes": {
+      "other": "공통 yes {count}개"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "이름",
     "bio": "자기소개",
     "bioPlaceholder": "나에 대해 몇 줄 적어 보세요.",
-    "lookingFor": "찾는 것",
     "safety": {
       "title": "안전 및 개인정보",
       "trusted": "믿을 수 있는 사람: {name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "사진을 삭제할까요?",
       "confirm": "삭제"
+    },
+    "yes": {
+      "title": "나의 yes",
+      "hint": "태그는 네가 약속하는 게 아니라 열려 있는 것을 보여줘.",
+      "footnote": "같이 yes한 사람만 볼 수 있어.",
+      "matchOnly": "매치 후 공개",
+      "upTo": {
+        "other": "최대 {count}개"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "매치됐어요!",
     "body": "나와 {name}님이 서로를 원해요.\n인사하고 원하는 걸 합의해 보세요.",
     "sendMessage": "메시지 보내기",
-    "keepDiscovering": "계속 탐색하기"
+    "keepDiscovering": "계속 탐색하기",
+    "sharedYes": "공통 yes"
   },
   "login": {
     "title": "로그인",

@@ -83,7 +83,11 @@
       "other": "Du kan ha högst {count} bilder."
     },
     "pinsMustDiffer": "Din nödpinkod måste vara en annan än din vanliga pinkod.",
-    "deleteDuringMeetup": "Du kan inte radera ditt konto just nu – en träff pågår. Försök igen när den är slut."
+    "deleteDuringMeetup": "Du kan inte radera ditt konto just nu – en träff pågår. Försök igen när den är slut.",
+    "tooManyYes": {
+      "one": "I ”{group}” kan du välja högst {count} tagg.",
+      "other": "I ”{group}” kan du välja högst {count} taggar."
+    }
   },
   "photo": {
     "notJpeg": "Bilden måste vara en JPEG.",
@@ -264,5 +268,12 @@
     "battery": "batteri {percent}",
     "linkExpired": "Länken är inte längre giltig",
     "loadFailed": "Statusen kunde inte läsas in. Försöker igen…"
+  },
+  "yesGroups": {
+    "intent": "Jag söker",
+    "mood": "Vibe",
+    "comfort": "Vad som känns bra för mig",
+    "place": "Var",
+    "status": "Relationsstatus"
   }
 }

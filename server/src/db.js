@@ -1,4 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
+import { LEGACY_TAGS, TAGS } from '../../shared/constants.js';
 
 const SCHEMA = `
 CREATE TABLE IF NOT EXISTS users (
@@ -309,6 +310,20 @@ function migrate(db) {
   for (const [table, column, definition] of MIGRATIONS) {
     const exists = db.prepare(`PRAGMA table_info(${table})`).all().some((c) => c.name === column);
     if (!exists) db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+  }
+  migrateTags(db);
+}
+
+// Štítky z doby před „Moje ano*“ → nové (U mě → host, Vanilka → classic…); neznámé zahodí.
+function migrateTags(db) {
+  const legacy = Object.keys(LEGACY_TAGS);
+  const rows = db
+    .prepare(`SELECT id, tags FROM users WHERE ${legacy.map(() => 'tags LIKE ?').join(' OR ')}`)
+    .all(...legacy.map((tag) => `%"${tag}"%`));
+  const update = db.prepare('UPDATE users SET tags = ? WHERE id = ?');
+  for (const { id, tags } of rows) {
+    const next = [...new Set(JSON.parse(tags).map((tag) => LEGACY_TAGS[tag] ?? tag))].filter((tag) => tag in TAGS);
+    update.run(JSON.stringify(next), id);
   }
 }
 

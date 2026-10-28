@@ -81,7 +81,10 @@
       "other": "Kamu bisa memiliki maksimal {count} foto."
     },
     "pinsMustDiffer": "PIN daruratmu harus berbeda dari PIN biasamu.",
-    "deleteDuringMeetup": "Kamu tidak bisa menghapus akunmu sekarang – pertemuan sedang berlangsung. Coba lagi setelah selesai."
+    "deleteDuringMeetup": "Kamu tidak bisa menghapus akunmu sekarang – pertemuan sedang berlangsung. Coba lagi setelah selesai.",
+    "tooManyYes": {
+      "other": "Di “{group}”, pilih maksimal {count} tag."
+    }
   },
   "photo": {
     "notJpeg": "Foto harus berformat JPEG.",
@@ -260,5 +263,12 @@
     "battery": "baterai {percent}",
     "linkExpired": "Tautan ini sudah tidak berlaku",
     "loadFailed": "Gagal memuat status. Mencoba lagi…"
+  },
+  "yesGroups": {
+    "intent": "Mencari",
+    "mood": "Suasana hati",
+    "comfort": "Yang bikin aku nyaman",
+    "place": "Di mana",
+    "status": "Status hubungan"
   }
 }

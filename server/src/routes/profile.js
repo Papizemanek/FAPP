@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { GENDERS, MAX_PROFILE_PHOTOS, MIN_AGE, TAGS } from '../../../shared/constants.js';
+import { GENDERS, MAX_PROFILE_PHOTOS, MIN_AGE, TAGS, TAG_GROUP, YES_GROUPS } from '../../../shared/constants.js';
+import { msg } from '../i18n.js';
 import { saveImage } from '../images.js';
 import { getUser, ownProfile } from '../model.js';
 import { moderate } from '../services/moderation.js';
@@ -20,6 +21,17 @@ import {
   verifySecret,
 } from '../util.js';
 import { requireAuth } from './auth.js';
+
+// Štítky „Moje ano*“: každá skupina má svůj limit (naladění jen jedno, záměr nejvýš dva…).
+function yesTags(value) {
+  const tags = listOf(value, 'fields.tags', TAGS);
+  for (const [group, { max }] of Object.entries(YES_GROUPS)) {
+    if (tags.filter((tag) => TAG_GROUP[tag] === group).length > max) {
+      throw new HttpError(400, 'profile.tooManyYes', { params: { group: msg(`yesGroups.${group}`), count: max } });
+    }
+  }
+  return tags;
+}
 
 export function profileRoutes({ db }) {
   const r = Router();
@@ -46,7 +58,7 @@ export function profileRoutes({ db }) {
       bio,
       gender: oneOf(b.gender, 'fields.gender', GENDERS),
       interested_in: JSON.stringify(listOf(b.interestedIn, 'fields.interestedIn', GENDERS, { min: 1 })),
-      tags: JSON.stringify(listOf(b.tags ?? [], 'fields.tags', TAGS)),
+      tags: JSON.stringify(yesTags(b.tags ?? [])),
       age_min: ageMin,
       age_max: ageMax,
       max_distance_km: int(b.maxDistanceKm, 'fields.maxDistance', { min: 1, max: 300 }),

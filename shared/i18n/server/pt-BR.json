@@ -85,7 +85,12 @@
       "other": "Você pode ter até {count} fotos."
     },
     "pinsMustDiffer": "Seu PIN de emergência precisa ser diferente do PIN normal.",
-    "deleteDuringMeetup": "Não dá para excluir sua conta agora – há um encontro em andamento. Tente de novo quando ele terminar."
+    "deleteDuringMeetup": "Não dá para excluir sua conta agora – há um encontro em andamento. Tente de novo quando ele terminar.",
+    "tooManyYes": {
+      "one": "Em “{group}”, escolha no máximo {count} tag.",
+      "many": "Em “{group}”, escolha no máximo {count} de tags.",
+      "other": "Em “{group}”, escolha no máximo {count} tags."
+    }
   },
   "photo": {
     "notJpeg": "A foto precisa estar em JPEG.",
@@ -268,5 +273,12 @@
     "battery": "bateria {percent}",
     "linkExpired": "Este link não é mais válido",
     "loadFailed": "Não foi possível carregar o status. Tentando de novo…"
+  },
+  "yesGroups": {
+    "intent": "O que procuro",
+    "mood": "Vibe",
+    "comfort": "O que me deixa à vontade",
+    "place": "Onde",
+    "status": "Status de relacionamento"
   }
 }

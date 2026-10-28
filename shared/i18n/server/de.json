@@ -83,7 +83,11 @@
       "other": "Du kannst höchstens {count} Fotos haben."
     },
     "pinsMustDiffer": "Deine Notfall-PIN muss sich von deiner normalen PIN unterscheiden.",
-    "deleteDuringMeetup": "Du kannst dein Konto gerade nicht löschen – ein Treffen läuft. Versuch es noch mal, wenn es vorbei ist."
+    "deleteDuringMeetup": "Du kannst dein Konto gerade nicht löschen – ein Treffen läuft. Versuch es noch mal, wenn es vorbei ist.",
+    "tooManyYes": {
+      "one": "Wähle in „{group}“ höchstens {count} Tag.",
+      "other": "Wähle in „{group}“ höchstens {count} Tags."
+    }
   },
   "photo": {
     "notJpeg": "Das Foto muss ein JPEG sein.",
@@ -264,5 +268,12 @@
     "battery": "Akku {percent}",
     "linkExpired": "Dieser Link ist nicht mehr gültig",
     "loadFailed": "Status konnte nicht geladen werden. Neuer Versuch…"
+  },
+  "yesGroups": {
+    "intent": "Ich suche",
+    "mood": "Vibe",
+    "comfort": "Damit fühle ich mich wohl",
+    "place": "Wo",
+    "status": "Beziehungsstatus"
   }
 }

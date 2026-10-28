@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Én gang",
       "repeat": "Igen og igen",
-      "myplace": "Hos mig",
-      "yourplace": "Hos dig",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Date først",
+      "openToMore": "Åben for mere",
+      "figuring": "Finder ud af det",
+      "classic": "Klassisk",
+      "curious": "Nysgerrig",
+      "kink": "Kink",
+      "chatFirst": "Skriv først",
+      "videoFirst": "Videoopkald først",
+      "sober": "Ædru",
+      "boundaries": "Grænser på forhånd",
+      "slow": "Langsomt",
+      "spontaneous": "Spontant",
+      "host": "Hos mig",
+      "visit": "Hos dig",
+      "neutral": "Neutralt sted",
+      "single": "Single",
+      "open": "Åbent forhold",
+      "poly": "Polyamorøs",
+      "couple": "Par"
+    },
+    "yesGroups": {
+      "intent": "Jeg søger",
+      "mood": "Vibe",
+      "comfort": "Det gør mig tryg",
+      "place": "Hvor",
+      "status": "Forholdsstatus"
     },
     "activities": {
       "kissing": "Kys og kæl",
@@ -365,6 +387,10 @@
       "message": "Aktiv indtil {time}.",
       "confirm": "Slå fra",
       "done": "I aften er slået fra."
+    },
+    "sharedYes": {
+      "one": "{count} fælles ja",
+      "other": "{count} fælles ja"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Navn",
     "bio": "Om mig",
     "bioPlaceholder": "Et par linjer om dig selv.",
-    "lookingFor": "Jeg søger",
     "safety": {
       "title": "Sikkerhed og privatliv",
       "trusted": "Tillidsperson: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Slet billede?",
       "confirm": "Slet"
+    },
+    "yes": {
+      "title": "Mit ja",
+      "hint": "Tags viser, hvad du er åben for, ikke hvad du lover.",
+      "footnote": "Kun dem, der også har sagt ja, kan se det.",
+      "matchOnly": "Synligt efter et match",
+      "upTo": {
+        "one": "Op til {count}",
+        "other": "Op til {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Det er et match!",
     "body": "Du og {name} vil hinanden.\nSig hej, og aftal, hvad I har lyst til.",
     "sendMessage": "Send en besked",
-    "keepDiscovering": "Udforsk videre"
+    "keepDiscovering": "Udforsk videre",
+    "sharedYes": "Fælles ja"
   },
   "login": {
     "title": "Log ind",

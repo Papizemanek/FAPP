@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Sekali sahaja",
       "repeat": "Berulang kali",
-      "myplace": "Tempat saya",
-      "yourplace": "Tempat anda",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Dating dulu",
+      "openToMore": "Terbuka untuk lebih",
+      "figuring": "Masih mencari arah",
+      "classic": "Klasik",
+      "curious": "Ingin mencuba",
+      "kink": "Kink",
+      "chatFirst": "Chat dulu",
+      "videoFirst": "Panggilan video dulu",
+      "sober": "Tanpa alkohol",
+      "boundaries": "Batasan dari awal",
+      "slow": "Perlahan-lahan",
+      "spontaneous": "Spontan",
+      "host": "Tempat saya",
+      "visit": "Tempat awak",
+      "neutral": "Tempat neutral",
+      "single": "Bujang",
+      "open": "Hubungan terbuka",
+      "poly": "Poliamori",
+      "couple": "Pasangan"
+    },
+    "yesGroups": {
+      "intent": "Apa yang saya cari",
+      "mood": "Mood",
+      "comfort": "Apa yang buat saya selesa",
+      "place": "Di mana",
+      "status": "Status hubungan"
     },
     "activities": {
       "kissing": "Bercium dan berpelukan",
@@ -363,6 +385,9 @@
       "message": "Aktif sehingga {time}.",
       "confirm": "Matikan",
       "done": "Malam ini dimatikan."
+    },
+    "sharedYes": {
+      "other": "{count} yes bersama"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "Nama",
     "bio": "Tentang saya",
     "bioPlaceholder": "Beberapa baris tentang diri anda.",
-    "lookingFor": "Mencari",
     "safety": {
       "title": "Keselamatan dan privasi",
       "trusted": "Kenalan dipercayai: {name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "Padam foto?",
       "confirm": "Padam"
+    },
+    "yes": {
+      "title": "Yes saya",
+      "hint": "Tag menunjukkan apa yang awak terbuka untuk, bukan apa yang awak janjikan.",
+      "footnote": "Hanya orang yang turut berkata yes akan melihatnya.",
+      "matchOnly": "Kelihatan selepas match",
+      "upTo": {
+        "other": "Sehingga {count}"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "Anda berpadanan!",
     "body": "Anda dan {name} saling mahu.\nSapa dia dan setujui apa yang anda berdua mahu.",
     "sendMessage": "Hantar mesej",
-    "keepDiscovering": "Teruskan meneroka"
+    "keepDiscovering": "Teruskan meneroka",
+    "sharedYes": "Yes bersama"
   },
   "login": {
     "title": "Log masuk",

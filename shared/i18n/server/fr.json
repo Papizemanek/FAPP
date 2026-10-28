@@ -85,7 +85,12 @@
       "other": "Tu peux avoir jusqu'à {count} photos."
     },
     "pinsMustDiffer": "Ton PIN de détresse doit être différent de ton PIN habituel.",
-    "deleteDuringMeetup": "Impossible de supprimer ton compte pour l'instant – un rendez-vous est en cours. Réessaie une fois qu'il sera terminé."
+    "deleteDuringMeetup": "Impossible de supprimer ton compte pour l'instant – un rendez-vous est en cours. Réessaie une fois qu'il sera terminé.",
+    "tooManyYes": {
+      "one": "Dans « {group} », choisis {count} tag maximum.",
+      "many": "Dans « {group} », choisis {count} tags maximum.",
+      "other": "Dans « {group} », choisis {count} tags maximum."
+    }
   },
   "photo": {
     "notJpeg": "La photo doit être au format JPEG.",
@@ -268,5 +273,12 @@
     "battery": "batterie {percent}",
     "linkExpired": "Ce lien n'est plus valide",
     "loadFailed": "Impossible de charger l'état. Nouvel essai…"
+  },
+  "yesGroups": {
+    "intent": "Ce que je cherche",
+    "mood": "Ambiance",
+    "comfort": "Ce qui me met à l'aise",
+    "place": "Où",
+    "status": "Situation amoureuse"
   }
 }

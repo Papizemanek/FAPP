@@ -81,7 +81,10 @@
       "other": "사진은 최대 {count}장까지 올릴 수 있어요."
     },
     "pinsMustDiffer": "긴급 PIN은 일반 PIN과 달라야 해요.",
-    "deleteDuringMeetup": "지금은 만남이 진행 중이라 계정을 삭제할 수 없어요. 만남이 끝난 후 다시 시도하세요."
+    "deleteDuringMeetup": "지금은 만남이 진행 중이라 계정을 삭제할 수 없어요. 만남이 끝난 후 다시 시도하세요.",
+    "tooManyYes": {
+      "other": "“{group}”에서 최대 {count}개까지 골라 줘."
+    }
   },
   "photo": {
     "notJpeg": "사진은 JPEG 형식이어야 해요.",
@@ -260,5 +263,12 @@
     "battery": "배터리 {percent}",
     "linkExpired": "이 링크는 더 이상 유효하지 않아요",
     "loadFailed": "상태를 불러오지 못했어요. 다시 시도하는 중…"
+  },
+  "yesGroups": {
+    "intent": "찾는 것",
+    "mood": "분위기",
+    "comfort": "편안함을 주는 것",
+    "place": "장소",
+    "status": "연애 상태"
   }
 }

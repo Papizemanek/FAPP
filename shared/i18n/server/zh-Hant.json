@@ -81,7 +81,10 @@
       "other": "最多只能有 {count} 張照片。"
     },
     "pinsMustDiffer": "緊急 PIN 碼必須與一般 PIN 碼不同。",
-    "deleteDuringMeetup": "現在無法刪除帳號——約會正在進行中。約會結束後再試一次。"
+    "deleteDuringMeetup": "現在無法刪除帳號——約會正在進行中。約會結束後再試一次。",
+    "tooManyYes": {
+      "other": "在「{group}」中最多選擇 {count} 個標籤。"
+    }
   },
   "photo": {
     "notJpeg": "照片必須是 JPEG 格式。",
@@ -260,5 +263,12 @@
     "battery": "電量 {percent}",
     "linkExpired": "此連結已失效",
     "loadFailed": "無法載入狀態。正在重試…"
+  },
+  "yesGroups": {
+    "intent": "我在找",
+    "mood": "氛圍",
+    "comfort": "讓我舒服的方式",
+    "place": "地點",
+    "status": "感情狀態"
   }
 }

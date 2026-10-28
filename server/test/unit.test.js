@@ -58,3 +58,19 @@ test('telefon se normalizuje na mezinárodní formát', () => {
   assert.equal(phone('00421 905 123 456', 't'), '+421905123456');
   assert.throws(() => phone('123', 't'));
 });
+
+test('Moje ano*: staré štítky se převedou na nové', async () => {
+  const { openDb } = await import('../src/db.js');
+  const { mkdtempSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const file = `${mkdtempSync(`${tmpdir()}/yy-`)}/db.sqlite`;
+  const db = openDb(file);
+  db.prepare(
+    `INSERT INTO users (email, password_hash, name, birthdate, gender, interested_in, tags, created_at)
+     VALUES ('a@b.cz', 'x', 'A', '1990-01-01', 'woman', '["man"]', '["oneoff","myplace","yourplace","kinky","nonsense"]', '2026-01-01')`,
+  ).run();
+  db.close();
+  const reopened = openDb(file);
+  assert.deepEqual(JSON.parse(reopened.prepare('SELECT tags FROM users').get().tags), ['oneoff', 'host', 'visit', 'kink']);
+  reopened.close();
+});

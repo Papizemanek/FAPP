@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Sans lendemain",
       "repeat": "Encore et encore",
-      "myplace": "Chez moi",
-      "yourplace": "Chez toi",
-      "vanilla": "Vanille",
-      "kinky": "Kinky"
+      "dateFirst": "D'abord un rencard",
+      "openToMore": "Ouvert·e à plus",
+      "figuring": "En réflexion",
+      "classic": "Classique",
+      "curious": "Curieux·se",
+      "kink": "Kink",
+      "chatFirst": "D'abord discuter",
+      "videoFirst": "D'abord en visio",
+      "sober": "Sobre",
+      "boundaries": "Limites d'abord",
+      "slow": "En douceur",
+      "spontaneous": "Spontané·e",
+      "host": "Chez moi",
+      "visit": "Chez toi",
+      "neutral": "Lieu neutre",
+      "single": "Célibataire",
+      "open": "Relation libre",
+      "poly": "Polyamoureux·se",
+      "couple": "Couple"
+    },
+    "yesGroups": {
+      "intent": "Ce que je cherche",
+      "mood": "Ambiance",
+      "comfort": "Ce qui me met à l'aise",
+      "place": "Où",
+      "status": "Situation amoureuse"
     },
     "activities": {
       "kissing": "Bisous et câlins",
@@ -367,6 +389,11 @@
       "message": "Actif jusqu'à {time}.",
       "confirm": "Désactiver",
       "done": "« Ce soir » est désactivé."
+    },
+    "sharedYes": {
+      "one": "{count} oui en commun",
+      "many": "{count} oui en commun",
+      "other": "{count} oui en commun"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Prénom",
     "bio": "À propos de moi",
     "bioPlaceholder": "Quelques lignes sur toi.",
-    "lookingFor": "Ce que je cherche",
     "safety": {
       "title": "Sécurité et confidentialité",
       "trusted": "Personne de confiance : {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Supprimer la photo ?",
       "confirm": "Supprimer"
+    },
+    "yes": {
+      "title": "Mes oui",
+      "hint": "Les tags montrent ce à quoi tu es ouvert·e, pas ce que tu promets.",
+      "footnote": "Seules les personnes qui ont aussi dit oui le verront.",
+      "matchOnly": "Visible après un match",
+      "upTo": {
+        "one": "Jusqu'à {count}",
+        "many": "Jusqu'à {count}",
+        "other": "Jusqu'à {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "C'est un match !",
     "body": "{name} et toi, vous vous plaisez.\nDis bonjour et mettez-vous d'accord sur ce qui vous tente.",
     "sendMessage": "Envoyer un message",
-    "keepDiscovering": "Continuer à découvrir"
+    "keepDiscovering": "Continuer à découvrir",
+    "sharedYes": "Oui en commun"
   },
   "login": {
     "title": "Connexion",

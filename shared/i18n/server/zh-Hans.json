@@ -81,7 +81,10 @@
       "other": "最多只能有 {count} 张照片。"
     },
     "pinsMustDiffer": "紧急 PIN 必须与普通 PIN 不同。",
-    "deleteDuringMeetup": "现在无法删除账户——约会正在进行中。约会结束后再试。"
+    "deleteDuringMeetup": "现在无法删除账户——约会正在进行中。约会结束后再试。",
+    "tooManyYes": {
+      "other": "在“{group}”中最多选择 {count} 个标签。"
+    }
   },
   "photo": {
     "notJpeg": "照片必须是 JPEG 格式。",
@@ -260,5 +263,12 @@
     "battery": "电量 {percent}",
     "linkExpired": "此链接已失效",
     "loadFailed": "无法加载状态。正在重试…"
+  },
+  "yesGroups": {
+    "intent": "我在找",
+    "mood": "氛围",
+    "comfort": "让我舒服的方式",
+    "place": "地点",
+    "status": "感情状态"
   }
 }

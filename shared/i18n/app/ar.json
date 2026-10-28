@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "لمرة واحدة",
       "repeat": "أكثر من مرة",
-      "myplace": "عندي",
-      "yourplace": "عندك",
-      "vanilla": "تقليدي",
-      "kinky": "غير تقليدي"
+      "dateFirst": "موعد أولًا",
+      "openToMore": "منفتح/ة على المزيد",
+      "figuring": "ما زلت أكتشف",
+      "classic": "كلاسيكي",
+      "curious": "فضول",
+      "kink": "كينك",
+      "chatFirst": "دردشة أولًا",
+      "videoFirst": "مكالمة فيديو أولًا",
+      "sober": "بلا كحول",
+      "boundaries": "الحدود مسبقًا",
+      "slow": "على مهل",
+      "spontaneous": "عفويًا",
+      "host": "عندي",
+      "visit": "عندك",
+      "neutral": "مكان محايد",
+      "single": "عازب/ة",
+      "open": "علاقة مفتوحة",
+      "poly": "تعدد العلاقات",
+      "couple": "ثنائي"
+    },
+    "yesGroups": {
+      "intent": "ما أبحث عنه",
+      "mood": "المزاج",
+      "comfort": "ما يريحني",
+      "place": "أين",
+      "status": "الحالة العاطفية"
     },
     "activities": {
       "kissing": "التقبيل والعناق",
@@ -373,6 +395,14 @@
       "message": "ساري حتى {time}.",
       "confirm": "إيقاف",
       "done": "تم إيقاف «الليلة»."
+    },
+    "sharedYes": {
+      "zero": "{count} موافقة مشتركة",
+      "one": "{count} موافقة مشتركة",
+      "two": "{count} موافقتان مشتركتان",
+      "few": "{count} موافقات مشتركة",
+      "many": "{count} موافقة مشتركة",
+      "other": "{count} موافقة مشتركة"
     }
   },
   "matches": {
@@ -419,7 +449,6 @@
     "name": "الاسم",
     "bio": "نبذة عني",
     "bioPlaceholder": "بضعة أسطر عن نفسك.",
-    "lookingFor": "ما أبحث عنه",
     "safety": {
       "title": "الأمان والخصوصية",
       "trusted": "جهة الاتصال الموثوقة: {name}",
@@ -461,6 +490,20 @@
     "removePhoto": {
       "title": "حذف الصورة؟",
       "confirm": "حذف"
+    },
+    "yes": {
+      "title": "موافقاتي",
+      "hint": "الوسوم تُظهر ما أنت منفتح عليه، لا ما تعد به.",
+      "footnote": "لن يراها إلا من قال نعم أيضًا.",
+      "matchOnly": "تظهر بعد التطابق",
+      "upTo": {
+        "zero": "حتى {count}",
+        "one": "حتى {count}",
+        "two": "حتى {count}",
+        "few": "حتى {count}",
+        "many": "حتى {count}",
+        "other": "حتى {count}"
+      }
     }
   },
   "premium": {
@@ -581,7 +624,8 @@
     "title": "إنه تطابق!",
     "body": "أنت و{name} ترغبان في بعضكما.\nقل مرحبًا واتفقا على ما تريدانه.",
     "sendMessage": "إرسال رسالة",
-    "keepDiscovering": "متابعة الاستكشاف"
+    "keepDiscovering": "متابعة الاستكشاف",
+    "sharedYes": "موافقات مشتركة"
   },
   "login": {
     "title": "تسجيل الدخول",

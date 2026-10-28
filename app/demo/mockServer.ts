@@ -14,6 +14,9 @@ import {
   PLANS,
   PRODUCTS,
   REVOKE_COOLDOWN_DAYS,
+  sharedYes,
+  TAG_GROUP,
+  YES_GROUPS,
   SENT_LIKES_DAYS,
   TONIGHT_END_HOUR,
   TRAVEL_CITIES,
@@ -138,7 +141,7 @@ class HttpError extends Error {
   }
 }
 
-const STORAGE_KEY = 'yesyes-demo-db-v3';
+const STORAGE_KEY = 'yesyes-demo-db-v4';
 const nowIso = () => new Date().toISOString();
 
 // --- demo data ---
@@ -161,20 +164,20 @@ function photo(name: string, i: number) {
 }
 
 const DEMO_PEOPLE: [string, Gender, Gender[], string, string, string[]][] = [
-  ['Lucie', 'woman', ['man'], '1997-03-12', 'Ráda začínám drinkem. Pak uvidíme.', ['oneoff', 'myplace']],
-  ['Klára', 'woman', ['man', 'woman'], '1992-07-01', 'Jasná domluva, žádné drama.', ['repeat', 'vanilla']],
-  ['Eva', 'woman', ['man'], '2000-11-23', 'Večer po práci, ne přes den.', ['yourplace', 'kinky']],
-  ['Tereza', 'woman', ['woman', 'man'], '1995-01-30', 'Nejdřív kafe, pak se uvidí.', ['oneoff', 'vanilla']],
-  ['Barbora', 'woman', ['man', 'nonbinary'], '1990-09-14', 'Diskrétní, upřímná, nekuřačka.', ['repeat', 'myplace']],
-  ['Nikola', 'woman', ['woman'], '1998-05-02', 'Hledám holku na občasné večery.', ['repeat', 'yourplace']],
-  ['Jakub', 'man', ['woman'], '1990-05-17', 'Sportovec, nekuřák, diskrétní.', ['repeat', 'yourplace']],
-  ['Martin', 'man', ['woman', 'man'], '1988-09-09', 'Pohodový, respektuju hranice.', ['oneoff', 'myplace']],
-  ['Tomáš', 'man', ['woman'], '1994-02-21', 'Vařím, běhám, rád se nechám překvapit.', ['oneoff', 'vanilla']],
-  ['Ondřej', 'man', ['woman', 'nonbinary'], '1986-12-11', 'Klidný, čistý, testovaný.', ['repeat', 'myplace']],
-  ['Filip', 'man', ['woman'], '1999-08-08', 'Spontánní, ale vždycky s domluvou.', ['oneoff', 'yourplace']],
-  ['David', 'man', ['woman', 'man'], '1992-04-27', 'Přes den práce, večer volno.', ['repeat', 'kinky']],
-  ['Adam', 'man', ['man'], '1996-12-02', 'Hledám někoho na občasné večery.', ['repeat', 'kinky']],
-  ['Sam', 'nonbinary', ['man', 'woman', 'nonbinary'], '1998-04-04', 'Otevřené, citlivé, bez spěchu.', ['oneoff', 'vanilla']],
+  ['Lucie', 'woman', ['man'], '1997-03-12', 'Ráda začínám drinkem. Pak uvidíme.', ['oneoff', 'curious', 'chatFirst', 'host', 'single']],
+  ['Klára', 'woman', ['man', 'woman'], '1992-07-01', 'Jasná domluva, žádné drama.', ['repeat', 'classic', 'boundaries', 'slow', 'visit']],
+  ['Eva', 'woman', ['man'], '2000-11-23', 'Večer po práci, ne přes den.', ['oneoff', 'kink', 'boundaries', 'sober', 'visit', 'open']],
+  ['Tereza', 'woman', ['woman', 'man'], '1995-01-30', 'Nejdřív kafe, pak se uvidí.', ['dateFirst', 'classic', 'chatFirst', 'neutral', 'single']],
+  ['Barbora', 'woman', ['man', 'nonbinary'], '1990-09-14', 'Diskrétní, upřímná, nekuřačka.', ['repeat', 'openToMore', 'classic', 'sober', 'host', 'single']],
+  ['Nikola', 'woman', ['woman'], '1998-05-02', 'Hledám holku na občasné večery.', ['repeat', 'curious', 'slow', 'visit', 'single']],
+  ['Jakub', 'man', ['woman'], '1990-05-17', 'Sportovec, nekuřák, diskrétní.', ['repeat', 'classic', 'spontaneous', 'visit', 'single']],
+  ['Martin', 'man', ['woman', 'man'], '1988-09-09', 'Pohodový, respektuju hranice.', ['oneoff', 'openToMore', 'curious', 'boundaries', 'host']],
+  ['Tomáš', 'man', ['woman'], '1994-02-21', 'Vařím, běhám, rád se nechám překvapit.', ['oneoff', 'classic', 'spontaneous', 'host', 'single']],
+  ['Ondřej', 'man', ['woman', 'nonbinary'], '1986-12-11', 'Klidný, čistý, testovaný.', ['repeat', 'classic', 'sober', 'boundaries', 'host', 'open']],
+  ['Filip', 'man', ['woman'], '1999-08-08', 'Spontánní, ale vždycky s domluvou.', ['oneoff', 'curious', 'chatFirst', 'videoFirst', 'visit', 'single']],
+  ['David', 'man', ['woman', 'man'], '1992-04-27', 'Přes den práce, večer volno.', ['repeat', 'kink', 'boundaries', 'chatFirst', 'neutral', 'poly']],
+  ['Adam', 'man', ['man'], '1996-12-02', 'Hledám někoho na občasné večery.', ['repeat', 'kink', 'boundaries', 'host', 'poly']],
+  ['Sam', 'nonbinary', ['man', 'woman', 'nonbinary'], '1998-04-04', 'Otevřené, citlivé, bez spěchu.', ['figuring', 'curious', 'slow', 'videoFirst', 'neutral']],
 ];
 
 const ASCII = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -365,7 +368,9 @@ export function exhaustLikes() {
 }
 const blocked = (a: number, b: number) => db.blocks.some((x) => (x.a === a && x.b === b) || (x.a === b && x.b === a));
 
-function publicProfile(u: User, viewer: User | null) {
+/** Jako server: cizí vidí jen společná ano (bez místa a statusu), match všechno. */
+function publicProfile(u: User, viewer: User | null, { matched = false } = {}) {
+  const shared = viewer ? sharedYes(viewer.tags, u.tags, { matched }) : [];
   const d = viewer ? km(effectiveLocation(viewer), effectiveLocation(u)) : null;
   const here = effectiveLocation(u);
   return {
@@ -375,7 +380,8 @@ function publicProfile(u: User, viewer: User | null) {
     gender: u.gender,
     bio: u.bio,
     photos: u.photos.map((p) => p.url),
-    tags: u.tags,
+    tags: viewer && !matched ? shared : u.tags,
+    sharedYes: shared,
     verified: u.verificationStatus === 'approved',
     distanceKm: d == null ? null : Math.max(1, Math.round(d)),
     traveling: here.traveling,
@@ -722,6 +728,17 @@ route('POST', '/auth/logout', (c) => {
 });
 route('PUT', '/auth/push-token', () => null);
 
+// Limit štítků ve skupině – jako server.
+function yesTags(value: unknown): string[] {
+  const tags = [...new Set(Array.isArray(value) ? (value as string[]) : [])].filter((tag) => tag in TAG_GROUP);
+  for (const [group, { max }] of Object.entries(YES_GROUPS)) {
+    if (tags.filter((tag) => TAG_GROUP[tag as keyof typeof TAG_GROUP] === group).length > max) {
+      throw new HttpError(400, srv('profile.tooManyYes', { group: srv(`yesGroups.${group}`), count: max }));
+    }
+  }
+  return tags;
+}
+
 // profil
 route('GET', '/me', (c) => own(requireUser(c, { allowSuspended: true })));
 route('PUT', '/me', (c) => {
@@ -734,7 +751,7 @@ route('PUT', '/me', (c) => {
     name: str(b.name) || u.name,
     bio: str(b.bio),
     interestedIn: b.interestedIn,
-    tags: b.tags,
+    tags: yesTags(b.tags),
     ageMin: Number(b.ageMin),
     ageMax: Number(b.ageMax),
     maxDistanceKm: Number(b.maxDistanceKm),
@@ -817,7 +834,7 @@ route('GET', '/discover', (c) => {
     .filter((u) => u.id !== me.id && u.status === 'active' && u.verificationStatus === 'approved')
     .filter((u) => !db.swipes.some((x) => x.from === me.id && x.to === u.id) && !blocked(me.id, u.id))
     .filter((u) => !(u.incognito && hasFeature(u, 'incognito') && !likedMe.has(u.id)))
-    .map((u) => ({ u, age: ageFrom(u.birthdate), d: km(here, effectiveLocation(u)) ?? 0, t: tier(u) }))
+    .map((u) => ({ u, age: ageFrom(u.birthdate), d: km(here, effectiveLocation(u)) ?? 0, t: tier(u), s: sharedYes(me.tags, u.tags).length }))
     .filter(
       ({ u, age, d }) =>
         me.interestedIn.includes(u.gender) &&
@@ -828,7 +845,7 @@ route('GET', '/discover', (c) => {
         myAge <= u.ageMax &&
         d <= Math.min(me.maxDistanceKm, u.maxDistanceKm),
     )
-    .sort((x, y) => x.t - y.t || x.d - y.d)
+    .sort((x, y) => x.t - y.t || y.s - x.s || x.d - y.d)
     .slice(0, 20)
     .map(({ u }) => ({ ...publicProfile(u, me), superLike: !!likedMe.get(u.id) && (paidWorld || !u.demo) }));
 });
@@ -870,7 +887,7 @@ route('POST', '/swipes', (c) => {
     }
   }
   if (m.endedAt) return { match: null, likesLeft };
-  return { match: { id: m.id, partner: publicProfile(target, me) }, likesLeft };
+  return { match: { id: m.id, partner: publicProfile(target, me, { matched: true }) }, likesLeft };
 });
 
 route('POST', '/swipes/rewind', (c) => {
@@ -990,7 +1007,7 @@ route('GET', '/matches', (c) => {
       return {
         id: m.id,
         matchedAt: m.createdAt,
-        partner: publicProfile(other, me),
+        partner: publicProfile(other, me, { matched: true }),
         lastMessage: last ? { text: last.text || 'Fotka', mine: last.senderId === me.id, at: last.createdAt } : null,
         agreementStatus: a ? agreementStatus(a, m) : null,
       };
@@ -1003,7 +1020,7 @@ route('GET', '/matches/:id', (c, [mid]) => {
   const mine = db.safety.find((s) => s.userId === me.id && s.matchId === m.id && !s.endedAt) ?? null;
   return {
     id: m.id,
-    partner: publicProfile(other, me),
+    partner: publicProfile(other, me, { matched: true }),
     agreement: agreementView(currentAgreement(m.id), m, me.id),
     safety: { mine: mine ? safetyView(mine) : null, partner: { active: m.partnerSafety } },
   };

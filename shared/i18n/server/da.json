@@ -83,7 +83,11 @@
       "other": "Du kan højst have {count} billeder."
     },
     "pinsMustDiffer": "Din nød-pinkode skal være forskellig fra din normale pinkode.",
-    "deleteDuringMeetup": "Du kan ikke slette din konto lige nu – en date er i gang. Prøv igen, når den er slut."
+    "deleteDuringMeetup": "Du kan ikke slette din konto lige nu – en date er i gang. Prøv igen, når den er slut.",
+    "tooManyYes": {
+      "one": "I »{group}« kan du højst vælge {count} tag.",
+      "other": "I »{group}« kan du højst vælge {count} tags."
+    }
   },
   "photo": {
     "notJpeg": "Billedet skal være en JPEG.",
@@ -264,5 +268,12 @@
     "battery": "batteri {percent}",
     "linkExpired": "Linket er ikke længere gyldigt",
     "loadFailed": "Status kunne ikke indlæses. Prøver igen…"
+  },
+  "yesGroups": {
+    "intent": "Jeg søger",
+    "mood": "Vibe",
+    "comfort": "Det gør mig tryg",
+    "place": "Hvor",
+    "status": "Forholdsstatus"
   }
 }

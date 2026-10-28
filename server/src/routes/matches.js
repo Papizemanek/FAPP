@@ -52,7 +52,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
         return {
           id: row.match_id,
           matchedAt: row.matched_at,
-          partner: publicProfile(row, req.user),
+          partner: publicProfile(row, req.user, { matched: true }),
           lastMessage: last
             ? { text: last.image_id && !last.body ? tr(req.locale, 'chat.photo') : sealer.open(last.body), mine: last.sender_id === req.user.id, at: last.created_at }
             : null,
@@ -69,7 +69,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
     const theirs = activeSafetySession(db, other.id, match.id);
     res.json({
       id: match.id,
-      partner: publicProfile(other, req.user),
+      partner: publicProfile(other, req.user, { matched: true }),
       agreement: agreementView(db, currentAgreement(db, match.id), match, req.user.id, sealer.open),
       safety: { mine: ownSafetyView(mine, config.publicUrl), partner: partnerSafetyView(theirs) },
     });

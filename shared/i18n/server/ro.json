@@ -85,7 +85,12 @@
       "other": "Poți avea cel mult {count} de poze."
     },
     "pinsMustDiffer": "PIN-ul de urgență trebuie să fie diferit de PIN-ul obișnuit.",
-    "deleteDuringMeetup": "Acum nu-ți poți șterge contul – e o întâlnire în desfășurare. Încearcă după ce se încheie."
+    "deleteDuringMeetup": "Acum nu-ți poți șterge contul – e o întâlnire în desfășurare. Încearcă după ce se încheie.",
+    "tooManyYes": {
+      "one": "În „{group}”, alege cel mult {count} etichetă.",
+      "few": "În „{group}”, alege cel mult {count} etichete.",
+      "other": "În „{group}”, alege cel mult {count} de etichete."
+    }
   },
   "photo": {
     "notJpeg": "Poza trebuie să fie în format JPEG.",
@@ -268,5 +273,12 @@
     "battery": "baterie {percent}",
     "linkExpired": "Linkul nu mai e valabil",
     "loadFailed": "Starea nu s-a putut încărca. Încerc din nou…"
+  },
+  "yesGroups": {
+    "intent": "Ce caut",
+    "mood": "Vibe",
+    "comfort": "Ce mă face să mă simt bine",
+    "place": "Unde",
+    "status": "Statut relațional"
   }
 }

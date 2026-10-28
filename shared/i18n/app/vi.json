@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Một lần",
       "repeat": "Nhiều lần",
-      "myplace": "Chỗ mình",
-      "yourplace": "Chỗ bạn",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Hẹn hò trước",
+      "openToMore": "Sẵn sàng hơn thế",
+      "figuring": "Đang tìm hiểu",
+      "classic": "Truyền thống",
+      "curious": "Tò mò",
+      "kink": "Kink",
+      "chatFirst": "Nhắn tin trước",
+      "videoFirst": "Gọi video trước",
+      "sober": "Tỉnh táo",
+      "boundaries": "Ranh giới trước",
+      "slow": "Từ từ",
+      "spontaneous": "Ngẫu hứng",
+      "host": "Chỗ mình",
+      "visit": "Chỗ bạn",
+      "neutral": "Chỗ trung lập",
+      "single": "Độc thân",
+      "open": "Mối quan hệ mở",
+      "poly": "Đa ái",
+      "couple": "Cặp đôi"
+    },
+    "yesGroups": {
+      "intent": "Mình đang tìm gì",
+      "mood": "Tâm trạng",
+      "comfort": "Điều khiến mình thoải mái",
+      "place": "Ở đâu",
+      "status": "Tình trạng quan hệ"
     },
     "activities": {
       "kissing": "Hôn và âu yếm",
@@ -363,6 +385,9 @@
       "message": "Có hiệu lực đến {time}.",
       "confirm": "Tắt",
       "done": "Đã tắt Tối nay."
+    },
+    "sharedYes": {
+      "other": "{count} đồng ý chung"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "Tên",
     "bio": "Giới thiệu",
     "bioPlaceholder": "Vài dòng về bản thân bạn.",
-    "lookingFor": "Đang tìm",
     "safety": {
       "title": "An toàn và quyền riêng tư",
       "trusted": "Người tin cậy: {name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "Xóa ảnh?",
       "confirm": "Xóa"
+    },
+    "yes": {
+      "title": "Đồng ý của mình",
+      "hint": "Thẻ cho thấy bạn sẵn lòng với điều gì, không phải điều bạn hứa.",
+      "footnote": "Chỉ người cũng nói đồng ý mới thấy.",
+      "matchOnly": "Hiện sau khi match",
+      "upTo": {
+        "other": "Tối đa {count}"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "Tương hợp rồi!",
     "body": "Bạn và {name} đều muốn nhau.\nHãy chào và thỏa thuận điều cả hai muốn.",
     "sendMessage": "Gửi tin nhắn",
-    "keepDiscovering": "Tiếp tục khám phá"
+    "keepDiscovering": "Tiếp tục khám phá",
+    "sharedYes": "Đồng ý chung"
   },
   "login": {
     "title": "Đăng nhập",

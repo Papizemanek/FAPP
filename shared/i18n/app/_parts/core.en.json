@@ -1,14 +1,44 @@
 {
   "labels": {
-    "genders": { "man": "Man", "woman": "Woman", "nonbinary": "Non-binary" },
-    "gendersPlural": { "man": "Men", "woman": "Women", "nonbinary": "Non-binary people" },
+    "genders": {
+      "man": "Man",
+      "woman": "Woman",
+      "nonbinary": "Non-binary"
+    },
+    "gendersPlural": {
+      "man": "Men",
+      "woman": "Women",
+      "nonbinary": "Non-binary people"
+    },
     "tags": {
       "oneoff": "One-off",
       "repeat": "Again and again",
-      "myplace": "My place",
-      "yourplace": "Your place",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Date first",
+      "openToMore": "Open to more",
+      "figuring": "Figuring it out",
+      "classic": "Classic",
+      "curious": "Curious",
+      "kink": "Kink",
+      "chatFirst": "Chat first",
+      "videoFirst": "Video call first",
+      "sober": "Sober",
+      "boundaries": "Boundaries upfront",
+      "slow": "Slow",
+      "spontaneous": "Spontaneous",
+      "host": "My place",
+      "visit": "Your place",
+      "neutral": "Neutral place",
+      "single": "Single",
+      "open": "Open relationship",
+      "poly": "Polyamorous",
+      "couple": "Couple"
+    },
+    "yesGroups": {
+      "intent": "What I'm looking for",
+      "mood": "Vibe",
+      "comfort": "What makes me comfortable",
+      "place": "Where",
+      "status": "Relationship status"
     },
     "activities": {
       "kissing": "Kissing and cuddling",
@@ -18,7 +48,11 @@
       "toys": "Toys",
       "overnight": "Staying the night"
     },
-    "wishes": { "yes": "Yes", "maybe": "Maybe", "no": "No" },
+    "wishes": {
+      "yes": "Yes",
+      "maybe": "Maybe",
+      "no": "No"
+    },
     "reportReasons": {
       "consent": "Broke consent or boundaries",
       "violence": "Violence or threat",
@@ -34,20 +68,59 @@
       "fake": "Didn't look like their photos",
       "other": "Something else"
     },
-    "plans": { "free": "Free", "plus": "Plus", "gold": "Gold", "platinum": "Platinum" },
-    "features": {
-      "unlimitedLikes": { "name": "Unlimited likes", "detail": "Swipe as much as you want." },
-      "rewind": { "name": "Rewind", "detail": "Bring back a profile you passed by mistake." },
-      "travel": { "name": "Travel mode", "detail": "Swipe in another city before your trip." },
-      "incognito": { "name": "Incognito", "detail": "Only people you like can see you." },
-      "seeLikes": { "name": "See who likes you", "detail": "See everyone who liked you." },
-      "weeklySuperLikes": { "name": "5 Super Likes a week", "detail": "Show someone you're really into them." },
-      "monthlyBoost": { "name": "1 Boost a month", "detail": "30 minutes at the top for people nearby." },
-      "priorityLikes": { "name": "Priority Likes", "detail": "Your like gets seen before others." },
-      "sentLikes": { "name": "Sent likes", "detail": "Who you liked in the last 7 days." },
-      "tonight": { "name": "Tonight, anytime", "detail": "Show you're free tonight." }
+    "plans": {
+      "free": "Free",
+      "plus": "Plus",
+      "gold": "Gold",
+      "platinum": "Platinum"
     },
-    "credits": { "boost": "Boost", "superlike": "Super Like", "tonight": "Tonight" },
+    "features": {
+      "unlimitedLikes": {
+        "name": "Unlimited likes",
+        "detail": "Swipe as much as you want."
+      },
+      "rewind": {
+        "name": "Rewind",
+        "detail": "Bring back a profile you passed by mistake."
+      },
+      "travel": {
+        "name": "Travel mode",
+        "detail": "Swipe in another city before your trip."
+      },
+      "incognito": {
+        "name": "Incognito",
+        "detail": "Only people you like can see you."
+      },
+      "seeLikes": {
+        "name": "See who likes you",
+        "detail": "See everyone who liked you."
+      },
+      "weeklySuperLikes": {
+        "name": "5 Super Likes a week",
+        "detail": "Show someone you're really into them."
+      },
+      "monthlyBoost": {
+        "name": "1 Boost a month",
+        "detail": "30 minutes at the top for people nearby."
+      },
+      "priorityLikes": {
+        "name": "Priority Likes",
+        "detail": "Your like gets seen before others."
+      },
+      "sentLikes": {
+        "name": "Sent likes",
+        "detail": "Who you liked in the last 7 days."
+      },
+      "tonight": {
+        "name": "Tonight, anytime",
+        "detail": "Show you're free tonight."
+      }
+    },
+    "credits": {
+      "boost": "Boost",
+      "superlike": "Super Like",
+      "tonight": "Tonight"
+    },
     "cities": {
       "praha": "Prague",
       "brno": "Brno",

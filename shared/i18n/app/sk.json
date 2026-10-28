@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Jednorazovka",
       "repeat": "Opakovane",
-      "myplace": "U mňa",
-      "yourplace": "U teba",
-      "vanilla": "Vanilka",
-      "kinky": "Kinky"
+      "dateFirst": "Najprv rande",
+      "openToMore": "Pokojne aj viac",
+      "figuring": "Zisťujem, čo chcem",
+      "classic": "Klasika",
+      "curious": "Zvedavo",
+      "kink": "Kink",
+      "chatFirst": "Najprv si písať",
+      "videoFirst": "Najprv videohovor",
+      "sober": "Triezvo",
+      "boundaries": "Hranice vopred",
+      "slow": "Pomaly",
+      "spontaneous": "Spontánne",
+      "host": "U mňa",
+      "visit": "U teba",
+      "neutral": "Neutrálne miesto",
+      "single": "Nezadaný/á",
+      "open": "Otvorený vzťah",
+      "poly": "Polyamoria",
+      "couple": "Pár"
+    },
+    "yesGroups": {
+      "intent": "Čo hľadám",
+      "mood": "Naladenie",
+      "comfort": "Kedy sa cítim dobre",
+      "place": "Kde",
+      "status": "Vzťahový status"
     },
     "activities": {
       "kissing": "Bozkávanie a maznanie",
@@ -369,6 +391,12 @@
       "message": "Platí do {time}.",
       "confirm": "Vypnúť",
       "done": "Dnes večer je vypnuté."
+    },
+    "sharedYes": {
+      "one": "{count} spoločné áno",
+      "few": "{count} spoločné áno",
+      "many": "{count} spoločného áno",
+      "other": "{count} spoločných áno"
     }
   },
   "matches": {
@@ -411,7 +439,6 @@
     "name": "Meno",
     "bio": "O mne",
     "bioPlaceholder": "Pár viet o sebe.",
-    "lookingFor": "Čo hľadám",
     "safety": {
       "title": "Bezpečnosť a súkromie",
       "trusted": "Dôveryhodná osoba: {name}",
@@ -453,6 +480,18 @@
     "removePhoto": {
       "title": "Zmazať fotku?",
       "confirm": "Zmazať"
+    },
+    "yes": {
+      "title": "Moje áno",
+      "hint": "Štítky ukazujú, čomu si otvorený/á, nie čo sľubuješ.",
+      "footnote": "Uvidí len ten, kto povedal áno tiež.",
+      "matchOnly": "Uvidí až match",
+      "upTo": {
+        "one": "Najviac {count}",
+        "few": "Najviac {count}",
+        "many": "Najviac {count}",
+        "other": "Najviac {count}"
+      }
     }
   },
   "premium": {
@@ -561,7 +600,8 @@
     "title": "Je to match!",
     "body": "Ty a {name} sa chcete.\nNapíš a dohodnite sa, na čo máte chuť.",
     "sendMessage": "Napísať správu",
-    "keepDiscovering": "Pokračovať v objavovaní"
+    "keepDiscovering": "Pokračovať v objavovaní",
+    "sharedYes": "Spoločné áno"
   },
   "login": {
     "title": "Prihlásenie",

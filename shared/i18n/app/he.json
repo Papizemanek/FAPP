@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "חד-פעמי",
       "repeat": "שוב ושוב",
-      "myplace": "אצלי",
-      "yourplace": "אצלך",
-      "vanilla": "וניל",
-      "kinky": "קינקי"
+      "dateFirst": "קודם דייט",
+      "openToMore": "פתוח/ה ליותר",
+      "figuring": "עוד מגלה מה בא לי",
+      "classic": "קלאסי",
+      "curious": "סקרנות",
+      "kink": "קינק",
+      "chatFirst": "קודם צ'אט",
+      "videoFirst": "קודם שיחת וידאו",
+      "sober": "בלי אלכוהול",
+      "boundaries": "גבולות מראש",
+      "slow": "לאט",
+      "spontaneous": "ספונטני",
+      "host": "אצלי",
+      "visit": "אצלך",
+      "neutral": "מקום ניטרלי",
+      "single": "רווק/ה",
+      "open": "מערכת יחסים פתוחה",
+      "poly": "פוליאמוריה",
+      "couple": "זוג"
+    },
+    "yesGroups": {
+      "intent": "מה אני מחפש/ת",
+      "mood": "וייב",
+      "comfort": "מה עושה לי טוב",
+      "place": "איפה",
+      "status": "מצב משפחתי"
     },
     "activities": {
       "kissing": "נשיקות והתכרבלות",
@@ -367,6 +389,11 @@
       "message": "בתוקף עד {time}.",
       "confirm": "כיבוי",
       "done": "\"הערב\" כבוי."
+    },
+    "sharedYes": {
+      "one": "{count} כן משותף",
+      "two": "{count} כן משותפים",
+      "other": "{count} כן משותפים"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "שם",
     "bio": "עליי",
     "bioPlaceholder": "כמה שורות על עצמכם.",
-    "lookingFor": "מה אני מחפש/ת",
     "safety": {
       "title": "בטיחות ופרטיות",
       "trusted": "איש קשר מהימן: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "למחוק את התמונה?",
       "confirm": "מחיקה"
+    },
+    "yes": {
+      "title": "הכן שלי",
+      "hint": "התגיות מראות למה את/ה פתוח/ה, לא מה את/ה מבטיח/ה.",
+      "footnote": "רק מי שגם אמר/ה כן יראה את זה.",
+      "matchOnly": "גלוי אחרי מאץ'",
+      "upTo": {
+        "one": "עד {count}",
+        "two": "עד {count}",
+        "other": "עד {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "יש התאמה!",
     "body": "אתם ו{name} רוצים זה את זה.\nתגידו היי ותתאמו על מה בא לכם.",
     "sendMessage": "שליחת הודעה",
-    "keepDiscovering": "להמשיך לגלות"
+    "keepDiscovering": "להמשיך לגלות",
+    "sharedYes": "כן משותפים"
   },
   "login": {
     "title": "כניסה",

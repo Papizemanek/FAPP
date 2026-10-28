@@ -12,11 +12,33 @@
     },
     "tags": {
       "oneoff": "Kertajuttu",
-      "repeat": "Uudestaan ja uudestaan",
-      "myplace": "Minun luonani",
-      "yourplace": "Sinun luonasi",
-      "vanilla": "Vanilja",
-      "kinky": "Kinky"
+      "repeat": "Yhä uudestaan",
+      "dateFirst": "Ensin treffit",
+      "openToMore": "Avoin enemmälle",
+      "figuring": "Vielä mietin",
+      "classic": "Perinteinen",
+      "curious": "Utelias",
+      "kink": "Kink",
+      "chatFirst": "Ensin viestit",
+      "videoFirst": "Ensin videopuhelu",
+      "sober": "Selvin päin",
+      "boundaries": "Rajat etukäteen",
+      "slow": "Hitaasti",
+      "spontaneous": "Spontaanisti",
+      "host": "Minun luonani",
+      "visit": "Sinun luonasi",
+      "neutral": "Neutraali paikka",
+      "single": "Sinkku",
+      "open": "Avoin suhde",
+      "poly": "Polyamoria",
+      "couple": "Pari"
+    },
+    "yesGroups": {
+      "intent": "Mitä etsin",
+      "mood": "Fiilis",
+      "comfort": "Mikä tuntuu hyvältä",
+      "place": "Missä",
+      "status": "Suhdetilanne"
     },
     "activities": {
       "kissing": "Suutelu ja halailu",
@@ -365,6 +387,10 @@
       "message": "Voimassa klo {time} asti.",
       "confirm": "Laita pois",
       "done": "”Tänä iltana” on pois päältä."
+    },
+    "sharedYes": {
+      "one": "{count} yhteinen kyllä",
+      "other": "{count} yhteistä kyllää"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Nimi",
     "bio": "Minusta",
     "bioPlaceholder": "Pari riviä itsestäsi.",
-    "lookingFor": "Etsin",
     "safety": {
       "title": "Turvallisuus ja yksityisyys",
       "trusted": "Luottohenkilö: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Poistetaanko kuva?",
       "confirm": "Poista"
+    },
+    "yes": {
+      "title": "Minun kyllä",
+      "hint": "Tagit kertovat, mille olet avoin – eivät sitä, mitä lupaat.",
+      "footnote": "Sen näkevät vain ne, jotka sanoivat myös kyllä.",
+      "matchOnly": "Näkyy matchin jälkeen",
+      "upTo": {
+        "one": "Enintään {count}",
+        "other": "Enintään {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Se on match!",
     "body": "Sinä ja {name} haluatte toisianne.\nSano hei ja sopikaa, mihin olette valmiita.",
     "sendMessage": "Lähetä viesti",
-    "keepDiscovering": "Jatka selaamista"
+    "keepDiscovering": "Jatka selaamista",
+    "sharedYes": "Yhteiset kyllät"
   },
   "login": {
     "title": "Kirjaudu sisään",

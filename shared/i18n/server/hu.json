@@ -83,7 +83,11 @@
       "other": "Legfeljebb {count} fotód lehet."
     },
     "pinsMustDiffer": "A vész-PIN-nek el kell térnie a szokásos PIN-edtől.",
-    "deleteDuringMeetup": "A fiókodat most nem törölheted – randi van folyamatban. Próbáld újra, ha véget ért."
+    "deleteDuringMeetup": "A fiókodat most nem törölheted – randi van folyamatban. Próbáld újra, ha véget ért.",
+    "tooManyYes": {
+      "one": "A(z) „{group}” csoportban legfeljebb {count} címkét válassz.",
+      "other": "A(z) „{group}” csoportban legfeljebb {count} címkét válassz."
+    }
   },
   "photo": {
     "notJpeg": "A fotónak JPEG formátumúnak kell lennie.",
@@ -264,5 +268,12 @@
     "battery": "akkumulátor: {percent}",
     "linkExpired": "Ez a link már nem érvényes",
     "loadFailed": "Nem sikerült betölteni az állapotot. Újrapróbálás…"
+  },
+  "yesGroups": {
+    "intent": "Amit keresek",
+    "mood": "Hangulat",
+    "comfort": "Amitől jól érzem magam",
+    "place": "Hol",
+    "status": "Kapcsolati státusz"
   }
 }

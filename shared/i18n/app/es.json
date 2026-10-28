@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Una sola vez",
       "repeat": "Una y otra vez",
-      "myplace": "En mi casa",
-      "yourplace": "En tu casa",
-      "vanilla": "Vainilla",
-      "kinky": "Kinky"
+      "dateFirst": "Primero una cita",
+      "openToMore": "Abierto/a a más",
+      "figuring": "Descubriéndolo",
+      "classic": "Clásico",
+      "curious": "Curiosidad",
+      "kink": "Kink",
+      "chatFirst": "Primero chatear",
+      "videoFirst": "Antes videollamada",
+      "sober": "Sobrio/a",
+      "boundaries": "Límites primero",
+      "slow": "Con calma",
+      "spontaneous": "Espontáneo/a",
+      "host": "En mi casa",
+      "visit": "En tu casa",
+      "neutral": "Lugar neutral",
+      "single": "Soltero/a",
+      "open": "Relación abierta",
+      "poly": "Poliamor",
+      "couple": "Pareja"
+    },
+    "yesGroups": {
+      "intent": "Qué busco",
+      "mood": "Vibra",
+      "comfort": "Qué me hace sentir bien",
+      "place": "Dónde",
+      "status": "Situación sentimental"
     },
     "activities": {
       "kissing": "Besos y mimos",
@@ -367,6 +389,11 @@
       "message": "Activo hasta {time}.",
       "confirm": "Desactivar",
       "done": "«Esta noche» está desactivado."
+    },
+    "sharedYes": {
+      "one": "{count} sí en común",
+      "many": "{count} sí en común",
+      "other": "{count} sí en común"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Nombre",
     "bio": "Sobre mí",
     "bioPlaceholder": "Unas líneas sobre ti.",
-    "lookingFor": "Busco",
     "safety": {
       "title": "Seguridad y privacidad",
       "trusted": "Persona de confianza: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "¿Eliminar la foto?",
       "confirm": "Eliminar"
+    },
+    "yes": {
+      "title": "Mis sí",
+      "hint": "Las etiquetas muestran a qué estás abierto/a, no lo que prometes.",
+      "footnote": "Solo lo verá quien también haya dicho que sí.",
+      "matchOnly": "Visible tras un match",
+      "upTo": {
+        "one": "Hasta {count}",
+        "many": "Hasta {count}",
+        "other": "Hasta {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "¡Es un match!",
     "body": "{name} y tú se gustan.\nSaluda y pónganse de acuerdo en lo que quieren.",
     "sendMessage": "Enviar un mensaje",
-    "keepDiscovering": "Seguir descubriendo"
+    "keepDiscovering": "Seguir descubriendo",
+    "sharedYes": "Sí en común"
   },
   "login": {
     "title": "Iniciar sesión",

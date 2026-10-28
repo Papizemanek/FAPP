@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "O singură dată",
       "repeat": "Din nou și din nou",
-      "myplace": "La mine",
-      "yourplace": "La tine",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Întâi o întâlnire",
+      "openToMore": "Poate și mai mult",
+      "figuring": "Încă îmi dau seama",
+      "classic": "Clasic",
+      "curious": "Curios/oasă",
+      "kink": "Kink",
+      "chatFirst": "Întâi chat",
+      "videoFirst": "Întâi apel video",
+      "sober": "Treaz/ă",
+      "boundaries": "Limite din start",
+      "slow": "Încet",
+      "spontaneous": "Spontan",
+      "host": "La mine",
+      "visit": "La tine",
+      "neutral": "Loc neutru",
+      "single": "Singur/ă",
+      "open": "Relație deschisă",
+      "poly": "Poliamor",
+      "couple": "Cuplu"
+    },
+    "yesGroups": {
+      "intent": "Ce caut",
+      "mood": "Vibe",
+      "comfort": "Ce mă face să mă simt bine",
+      "place": "Unde",
+      "status": "Statut relațional"
     },
     "activities": {
       "kissing": "Săruturi și îmbrățișări",
@@ -367,6 +389,11 @@
       "message": "Activ până la {time}.",
       "confirm": "Dezactivează",
       "done": "„În seara asta” e dezactivat."
+    },
+    "sharedYes": {
+      "one": "{count} da comun",
+      "few": "{count} da comune",
+      "other": "{count} de da comune"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Nume",
     "bio": "Despre mine",
     "bioPlaceholder": "Câteva rânduri despre tine.",
-    "lookingFor": "Ce caut",
     "safety": {
       "title": "Siguranță și confidențialitate",
       "trusted": "Persoană de încredere: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Ștergi poza?",
       "confirm": "Șterge"
+    },
+    "yes": {
+      "title": "Da-ul meu",
+      "hint": "Etichetele arată la ce ești deschis/ă, nu ce promiți.",
+      "footnote": "Îl văd doar cei care au spus și ei da.",
+      "matchOnly": "Vizibil după match",
+      "upTo": {
+        "one": "Maximum {count}",
+        "few": "Maximum {count}",
+        "other": "Maximum {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "E un match!",
     "body": "Tu și {name} vă plăceți.\nSpune salut și puneți-vă de acord la ce aveți chef.",
     "sendMessage": "Trimite un mesaj",
-    "keepDiscovering": "Descoperă în continuare"
+    "keepDiscovering": "Descoperă în continuare",
+    "sharedYes": "Da-uri comune"
   },
   "login": {
     "title": "Conectare",

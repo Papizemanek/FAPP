@@ -83,7 +83,11 @@
       "other": "En fazla {count} fotoğrafın olabilir."
     },
     "pinsMustDiffer": "Acil durum PIN'in normal PIN'inden farklı olmalı.",
-    "deleteDuringMeetup": "Hesabını şu an silemezsin – bir buluşma devam ediyor. Bittiğinde tekrar dene."
+    "deleteDuringMeetup": "Hesabını şu an silemezsin – bir buluşma devam ediyor. Bittiğinde tekrar dene.",
+    "tooManyYes": {
+      "one": "“{group}” grubunda en fazla {count} etiket seç.",
+      "other": "“{group}” grubunda en fazla {count} etiket seç."
+    }
   },
   "photo": {
     "notJpeg": "Fotoğraf JPEG olmalı.",
@@ -264,5 +268,12 @@
     "battery": "pil {percent}",
     "linkExpired": "Bu bağlantı artık geçerli değil",
     "loadFailed": "Durum yüklenemedi. Yeniden deneniyor…"
+  },
+  "yesGroups": {
+    "intent": "Ne arıyorum",
+    "mood": "Ruh hâli",
+    "comfort": "Kendimi ne rahat hissettirir",
+    "place": "Nerede",
+    "status": "İlişki durumu"
   }
 }

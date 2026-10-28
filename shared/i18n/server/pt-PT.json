@@ -85,7 +85,12 @@
       "other": "Podes ter até {count} fotos."
     },
     "pinsMustDiffer": "O teu PIN de emergência tem de ser diferente do PIN normal.",
-    "deleteDuringMeetup": "Não podes eliminar a conta agora – há um encontro a decorrer. Tenta novamente quando terminar."
+    "deleteDuringMeetup": "Não podes eliminar a conta agora – há um encontro a decorrer. Tenta novamente quando terminar.",
+    "tooManyYes": {
+      "one": "Em “{group}”, escolhe no máximo {count} etiqueta.",
+      "many": "Em “{group}”, escolhe no máximo {count} de etiquetas.",
+      "other": "Em “{group}”, escolhe no máximo {count} etiquetas."
+    }
   },
   "photo": {
     "notJpeg": "A foto tem de estar em JPEG.",
@@ -268,5 +273,12 @@
     "battery": "bateria {percent}",
     "linkExpired": "Este link já não é válido",
     "loadFailed": "Não foi possível carregar o estado. A tentar novamente…"
+  },
+  "yesGroups": {
+    "intent": "O que procuro",
+    "mood": "Ambiente",
+    "comfort": "O que me deixa à vontade",
+    "place": "Onde",
+    "status": "Estado da relação"
   }
 }

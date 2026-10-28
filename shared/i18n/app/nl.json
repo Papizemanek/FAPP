@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Eenmalig",
       "repeat": "Steeds weer",
-      "myplace": "Bij mij",
-      "yourplace": "Bij jou",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Eerst daten",
+      "openToMore": "Open voor meer",
+      "figuring": "Ik ontdek het nog",
+      "classic": "Klassiek",
+      "curious": "Nieuwsgierig",
+      "kink": "Kink",
+      "chatFirst": "Eerst chatten",
+      "videoFirst": "Eerst videobellen",
+      "sober": "Nuchter",
+      "boundaries": "Grenzen vooraf",
+      "slow": "Rustig aan",
+      "spontaneous": "Spontaan",
+      "host": "Bij mij",
+      "visit": "Bij jou",
+      "neutral": "Neutrale plek",
+      "single": "Single",
+      "open": "Open relatie",
+      "poly": "Polyamoreus",
+      "couple": "Stel"
+    },
+    "yesGroups": {
+      "intent": "Op zoek naar",
+      "mood": "Vibe",
+      "comfort": "Waar ik me fijn bij voel",
+      "place": "Waar",
+      "status": "Relatiestatus"
     },
     "activities": {
       "kissing": "Zoenen en knuffelen",
@@ -365,6 +387,10 @@
       "message": "Actief tot {time}.",
       "confirm": "Uitzetten",
       "done": "Vanavond staat uit."
+    },
+    "sharedYes": {
+      "one": "{count} gedeeld ja",
+      "other": "{count} gedeelde ja's"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Naam",
     "bio": "Over mij",
     "bioPlaceholder": "Een paar regels over jezelf.",
-    "lookingFor": "Op zoek naar",
     "safety": {
       "title": "Veiligheid en privacy",
       "trusted": "Vertrouwenspersoon: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Foto verwijderen?",
       "confirm": "Verwijderen"
+    },
+    "yes": {
+      "title": "Mijn ja",
+      "hint": "Tags laten zien waar je voor openstaat, niet wat je belooft.",
+      "footnote": "Alleen mensen die ook ja zeiden, zien het.",
+      "matchOnly": "Zichtbaar na een match",
+      "upTo": {
+        "one": "Max. {count}",
+        "other": "Max. {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Het is een match!",
     "body": "Jij en {name} willen elkaar.\nZeg hoi en spreek af waar jullie zin in hebben.",
     "sendMessage": "Stuur een bericht",
-    "keepDiscovering": "Verder ontdekken"
+    "keepDiscovering": "Verder ontdekken",
+    "sharedYes": "Gedeelde ja's"
   },
   "login": {
     "title": "Inloggen",

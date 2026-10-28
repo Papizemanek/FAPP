@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Só uma vez",
       "repeat": "Para repetir",
-      "myplace": "Em minha casa",
-      "yourplace": "Em tua casa",
-      "vanilla": "Baunilha",
-      "kinky": "Kinky"
+      "dateFirst": "Encontro antes",
+      "openToMore": "Aberto/a a mais",
+      "figuring": "Ainda a descobrir",
+      "classic": "Clássico",
+      "curious": "Curiosidade",
+      "kink": "Kink",
+      "chatFirst": "Conversa antes",
+      "videoFirst": "Videochamada antes",
+      "sober": "Sóbrio/a",
+      "boundaries": "Limites primeiro",
+      "slow": "Devagar",
+      "spontaneous": "Espontâneo",
+      "host": "Em minha casa",
+      "visit": "Em tua casa",
+      "neutral": "Local neutro",
+      "single": "Solteiro/a",
+      "open": "Relação aberta",
+      "poly": "Poliamor",
+      "couple": "Casal"
+    },
+    "yesGroups": {
+      "intent": "O que procuro",
+      "mood": "Ambiente",
+      "comfort": "O que me deixa à vontade",
+      "place": "Onde",
+      "status": "Estado da relação"
     },
     "activities": {
       "kissing": "Beijos e carícias",
@@ -367,6 +389,11 @@
       "message": "Ativo até às {time}.",
       "confirm": "Desligar",
       "done": "«Esta noite» desligado."
+    },
+    "sharedYes": {
+      "one": "{count} sim em comum",
+      "many": "{count} de sins em comum",
+      "other": "{count} sins em comum"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Nome",
     "bio": "Sobre mim",
     "bioPlaceholder": "Algumas linhas sobre ti.",
-    "lookingFor": "O que procuro",
     "safety": {
       "title": "Segurança e privacidade",
       "trusted": "Contacto de confiança: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Apagar foto?",
       "confirm": "Apagar"
+    },
+    "yes": {
+      "title": "O meu sim",
+      "hint": "As etiquetas mostram aquilo a que estás aberto/a, não o que prometes.",
+      "footnote": "Só quem também disse sim vai ver.",
+      "matchOnly": "Visível após o match",
+      "upTo": {
+        "one": "Até {count}",
+        "many": "Até {count}",
+        "other": "Até {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "É um match!",
     "body": "Tu e {name} querem-se.\nDiz olá e combinem o que vos apetece.",
     "sendMessage": "Enviar mensagem",
-    "keepDiscovering": "Continuar a descobrir"
+    "keepDiscovering": "Continuar a descobrir",
+    "sharedYes": "Sins em comum"
   },
   "login": {
     "title": "Iniciar sessão",

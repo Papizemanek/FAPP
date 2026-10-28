@@ -1,4 +1,4 @@
-import { GENDERS, MAX_PROFILE_PHOTOS, TAGS, TRAVEL_CITIES, type TravelCityId } from '@yesyes/shared';
+import { GENDERS, MAX_PROFILE_PHOTOS, TAG_GROUP, TRAVEL_CITIES, YES_GROUPS, type TravelCityId, type YesGroup } from '@yesyes/shared';
 import { LOCALES } from '@yesyes/shared/i18n';
 import { Image } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -15,7 +15,7 @@ import { pickPhotoBase64 } from '@/lib/photos';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
 
-const tagKeys = Object.keys(TAGS) as Tag[];
+const yesGroups = Object.entries(YES_GROUPS) as [YesGroup, (typeof YES_GROUPS)[YesGroup]][];
 const genderKeys = Object.keys(GENDERS) as Gender[];
 const cityKeys = Object.keys(TRAVEL_CITIES) as TravelCityId[];
 
@@ -135,13 +135,31 @@ export default function ProfileScreen() {
           <Field label={t('profile.name')} value={form.name} onChangeText={(name) => patch({ name })} />
           <Field label={t('profile.bio')} value={form.bio} onChangeText={(bio) => patch({ bio })} multiline placeholder={t('profile.bioPlaceholder')} />
 
-          <View style={{ gap: 10 }}>
-            <Label>{t('profile.lookingFor')}</Label>
-            <View style={s.wrap}>
-              {tagKeys.map((tag) => (
-                <Chip key={tag} label={t(`labels.tags.${tag}`)} selected={form.tags.includes(tag)} onPress={() => patch({ tags: toggle(form.tags, tag) })} />
-              ))}
+          <View style={{ gap: 14 }}>
+            <View style={{ gap: 6 }}>
+              <Text style={s.yesTitle}>
+                {t('profile.yes.title')}
+                <Text style={{ color: colors.accent }}>*</Text>
+              </Text>
+              <Text style={s.hint2}>{t('profile.yes.hint')}</Text>
             </View>
+            {yesGroups.map(([group, { max, matchOnly, tags }]) => (
+              <View key={group} style={{ gap: 8 }}>
+                <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', gap: 8 }}>
+                  <Label>{t(`labels.yesGroups.${group}`)}</Label>
+                  <Text style={s.hint2}>{matchOnly ? t('profile.yes.matchOnly') : t('profile.yes.upTo', { count: max })}</Text>
+                </View>
+                <View style={s.wrap}>
+                  {(Object.keys(tags) as Tag[]).map((tag) => (
+                    <Chip key={tag} label={t(`labels.tags.${tag}`)} selected={form.tags.includes(tag)} onPress={() => patch({ tags: toggleYes(form.tags, tag) })} />
+                  ))}
+                </View>
+              </View>
+            ))}
+            <Text style={s.hint2}>
+              <Text style={{ color: colors.accent }}>*</Text>
+              {t('profile.yes.footnote')}
+            </Text>
           </View>
 
           <Banner
@@ -243,6 +261,16 @@ export default function ProfileScreen() {
   );
 }
 
+/** Výběr štítku s limitem skupiny: u skupiny s jedním štítkem přepne, u plné skupiny nic nepřidá. */
+function toggleYes(list: Tag[], tag: Tag): Tag[] {
+  if (list.includes(tag)) return list.filter((x) => x !== tag);
+  const group = TAG_GROUP[tag];
+  const { max } = YES_GROUPS[group];
+  const inGroup = list.filter((x) => TAG_GROUP[x] === group);
+  if (max === 1) return [...list.filter((x) => TAG_GROUP[x] !== group), tag];
+  return inGroup.length >= max ? list : [...list, tag];
+}
+
 function toForm(me: Me | null) {
   return {
     name: me?.name ?? '',
@@ -267,4 +295,5 @@ const s = StyleSheet.create({
   hint: { fontFamily: fonts.regular, fontSize: 13, color: colors.muted, marginTop: -10 },
   hint2: { fontFamily: fonts.regular, fontSize: 13, color: colors.muted },
   wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
+  yesTitle: { fontFamily: fonts.display, fontSize: 24, color: colors.text, letterSpacing: -0.5 },
 });

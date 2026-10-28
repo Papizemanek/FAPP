@@ -1,4 +1,4 @@
-import { ACTIVITIES, CHECK_IN_GRACE_MINUTES } from '../../shared/constants.js';
+import { ACTIVITIES, CHECK_IN_GRACE_MINUTES, sharedYes } from '../../shared/constants.js';
 import { effectiveLocation, isActiveUntil } from './billing.js';
 import { imageUrl } from './images.js';
 import { HttpError, ageFrom, distanceKm, nowIso, parseJson } from './util.js';
@@ -8,7 +8,11 @@ const AGREEMENT_PAST_AFTER_MS = 12 * 3600_000;
 
 export const getUser = (db, id) => db.prepare('SELECT * FROM users WHERE id = ?').get(id);
 
-export function publicProfile(user, viewer) {
+/**
+ * Profil, jak ho vidí `viewer`. Štítky „Moje ano*“: cizí vidí jen společná ano (bez místa a vztahového
+ * statusu), match vidí všechny štítky druhého a společná ano včetně místa a statusu.
+ */
+export function publicProfile(user, viewer, { matched = false } = {}) {
   let distance = null;
   const here = effectiveLocation(user);
   if (viewer && viewer.lat != null && here.lat != null) {
@@ -22,12 +26,18 @@ export function publicProfile(user, viewer) {
     gender: user.gender,
     bio: user.bio,
     photos: parseJson(user.photos, []).map(imageUrl),
-    tags: parseJson(user.tags, []),
+    ...yesView(parseJson(user.tags, []), viewer ? parseJson(viewer.tags, []) : null, matched),
     verified: user.verification_status === 'approved',
     distanceKm: distance,
     traveling: here.traveling,
     tonight: isActiveUntil(user.tonight_until),
   };
+}
+
+function yesView(theirs, mine, matched) {
+  if (!mine) return { tags: theirs, sharedYes: [] };
+  const shared = sharedYes(mine, theirs, { matched });
+  return { tags: matched ? theirs : shared, sharedYes: shared };
 }
 
 export function ownProfile(user) {

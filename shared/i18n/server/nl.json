@@ -83,7 +83,11 @@
       "other": "Je kunt maximaal {count} foto’s hebben."
     },
     "pinsMustDiffer": "Je noodpincode moet anders zijn dan je gewone pincode.",
-    "deleteDuringMeetup": "Je kunt je account nu niet verwijderen – er is een date bezig. Probeer het opnieuw als die voorbij is."
+    "deleteDuringMeetup": "Je kunt je account nu niet verwijderen – er is een date bezig. Probeer het opnieuw als die voorbij is.",
+    "tooManyYes": {
+      "one": "Kies in ‘{group}’ maximaal {count} tag.",
+      "other": "Kies in ‘{group}’ maximaal {count} tags."
+    }
   },
   "photo": {
     "notJpeg": "De foto moet een JPEG zijn.",
@@ -264,5 +268,12 @@
     "battery": "batterij {percent}",
     "linkExpired": "Deze link is niet meer geldig",
     "loadFailed": "De status kon niet worden geladen. Opnieuw proberen…"
+  },
+  "yesGroups": {
+    "intent": "Op zoek naar",
+    "mood": "Vibe",
+    "comfort": "Waar ik me fijn bij voel",
+    "place": "Waar",
+    "status": "Relatiestatus"
   }
 }

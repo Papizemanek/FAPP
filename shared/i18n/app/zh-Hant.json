@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "一次性",
       "repeat": "可以多次",
-      "myplace": "在我家",
-      "yourplace": "在你家",
-      "vanilla": "常規",
-      "kinky": "另類"
+      "dateFirst": "先約會",
+      "openToMore": "可以更進一步",
+      "figuring": "還在摸索",
+      "classic": "常規",
+      "curious": "好奇",
+      "kink": "Kink",
+      "chatFirst": "先聊天",
+      "videoFirst": "先視訊通話",
+      "sober": "清醒狀態",
+      "boundaries": "先說清界線",
+      "slow": "慢慢來",
+      "spontaneous": "隨性",
+      "host": "在我家",
+      "visit": "在你家",
+      "neutral": "中立地點",
+      "single": "單身",
+      "open": "開放關係",
+      "poly": "多元戀愛",
+      "couple": "情侶"
+    },
+    "yesGroups": {
+      "intent": "我在找",
+      "mood": "氛圍",
+      "comfort": "讓我舒服的方式",
+      "place": "地點",
+      "status": "感情狀態"
     },
     "activities": {
       "kissing": "親吻和擁抱",
@@ -363,6 +385,9 @@
       "message": "有效至 {time}。",
       "confirm": "關閉",
       "done": "「今晚」已關閉。"
+    },
+    "sharedYes": {
+      "other": "{count} 個共同 yes"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "名字",
     "bio": "關於我",
     "bioPlaceholder": "簡單介紹一下自己。",
-    "lookingFor": "我在找",
     "safety": {
       "title": "安全與隱私",
       "trusted": "信任的人：{name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "要刪除照片嗎？",
       "confirm": "刪除"
+    },
+    "yes": {
+      "title": "我的 yes",
+      "hint": "標籤表示你願意嘗試什麼，而不是你承諾什麼。",
+      "footnote": "只有同樣說了 yes 的人才看得到。",
+      "matchOnly": "配對後可見",
+      "upTo": {
+        "other": "最多 {count} 個"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "配對成功！",
     "body": "你和 {name} 都想要對方。\n打個招呼，約定一下你們想做什麼。",
     "sendMessage": "傳送訊息",
-    "keepDiscovering": "繼續探索"
+    "keepDiscovering": "繼續探索",
+    "sharedYes": "共同的 yes"
   },
   "login": {
     "title": "登入",

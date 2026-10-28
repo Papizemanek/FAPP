@@ -83,7 +83,11 @@
       "other": "Du kan ha maks {count} bilder."
     },
     "pinsMustDiffer": "Nødpinkoden må være en annen enn den vanlige pinkoden.",
-    "deleteDuringMeetup": "Du kan ikke slette kontoen akkurat nå – en date pågår. Prøv igjen når den er over."
+    "deleteDuringMeetup": "Du kan ikke slette kontoen akkurat nå – en date pågår. Prøv igjen når den er over.",
+    "tooManyYes": {
+      "one": "I «{group}» kan du velge maks {count} tagg.",
+      "other": "I «{group}» kan du velge maks {count} tagger."
+    }
   },
   "photo": {
     "notJpeg": "Bildet må være en JPEG.",
@@ -264,5 +268,12 @@
     "battery": "batteri {percent}",
     "linkExpired": "Lenken er ikke lenger gyldig",
     "loadFailed": "Kunne ikke laste inn statusen. Prøver igjen…"
+  },
+  "yesGroups": {
+    "intent": "Jeg ser etter",
+    "mood": "Stemning",
+    "comfort": "Hva som gjør meg komfortabel",
+    "place": "Hvor",
+    "status": "Sivilstatus"
   }
 }

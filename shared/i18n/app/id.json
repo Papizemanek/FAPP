@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Sekali saja",
       "repeat": "Berulang kali",
-      "myplace": "Tempatku",
-      "yourplace": "Tempatmu",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Kencan dulu",
+      "openToMore": "Terbuka untuk lebih",
+      "figuring": "Masih mencari tahu",
+      "classic": "Klasik",
+      "curious": "Penasaran",
+      "kink": "Kink",
+      "chatFirst": "Chat dulu",
+      "videoFirst": "Video call dulu",
+      "sober": "Tanpa mabuk",
+      "boundaries": "Batasan di awal",
+      "slow": "Pelan-pelan",
+      "spontaneous": "Spontan",
+      "host": "Tempatku",
+      "visit": "Tempatmu",
+      "neutral": "Tempat netral",
+      "single": "Lajang",
+      "open": "Hubungan terbuka",
+      "poly": "Poliamori",
+      "couple": "Pasangan"
+    },
+    "yesGroups": {
+      "intent": "Mencari",
+      "mood": "Suasana hati",
+      "comfort": "Yang bikin aku nyaman",
+      "place": "Di mana",
+      "status": "Status hubungan"
     },
     "activities": {
       "kissing": "Ciuman dan bermesraan",
@@ -363,6 +385,9 @@
       "message": "Aktif sampai {time}.",
       "confirm": "Matikan",
       "done": "Malam ini nonaktif."
+    },
+    "sharedYes": {
+      "other": "{count} iya yang sama"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "Nama",
     "bio": "Tentang aku",
     "bioPlaceholder": "Beberapa kalimat tentang dirimu.",
-    "lookingFor": "Mencari",
     "safety": {
       "title": "Keselamatan dan privasi",
       "trusted": "Kontak tepercaya: {name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "Hapus foto?",
       "confirm": "Hapus"
+    },
+    "yes": {
+      "title": "Iya-ku",
+      "hint": "Tag menunjukkan apa yang kamu terbuka untuk, bukan apa yang kamu janjikan.",
+      "footnote": "Hanya orang yang juga bilang iya yang akan melihatnya.",
+      "matchOnly": "Terlihat setelah match",
+      "upTo": {
+        "other": "Maksimal {count}"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "Kalian match!",
     "body": "Kamu dan {name} saling menginginkan.\nSapa dia dan sepakati apa yang kalian mau.",
     "sendMessage": "Kirim pesan",
-    "keepDiscovering": "Lanjut menjelajah"
+    "keepDiscovering": "Lanjut menjelajah",
+    "sharedYes": "Iya yang sama"
   },
   "login": {
     "title": "Masuk",

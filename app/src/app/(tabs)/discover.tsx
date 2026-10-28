@@ -274,13 +274,21 @@ export default function Discover() {
                 </View>
               ) : null}
               {top.bio ? <Text style={s.bio}>{top.bio}</Text> : null}
-              <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-                {top.tags.map((tag) => (
-                  <Text key={tag} style={s.tag}>
-                    {t(`labels.tags.${tag}`)}
+              {top.sharedYes.length > 0 ? (
+                <View style={{ gap: 6 }}>
+                  <Text style={s.sharedYes}>
+                    {t('discover.sharedYes', { count: top.sharedYes.length })}
+                    <Text style={{ color: colors.accent }}>*</Text>
                   </Text>
-                ))}
-              </View>
+                  <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
+                    {top.sharedYes.map((tag) => (
+                      <Text key={tag} style={s.tag}>
+                        {t(`labels.tags.${tag}`)}
+                      </Text>
+                    ))}
+                  </View>
+                </View>
+              ) : null}
             </View>
           </Animated.View>
         )}
@@ -367,6 +375,7 @@ const s = StyleSheet.create({
   age: { fontFamily: fonts.medium, fontSize: 26, color: colors.text },
   meta: { fontFamily: fonts.regular, fontSize: 14, color: '#D9CFDC' },
   bio: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.text },
+  sharedYes: { fontFamily: fonts.bold, fontSize: 14, color: colors.text },
   tag: {
     fontFamily: fonts.semibold,
     fontSize: 13,

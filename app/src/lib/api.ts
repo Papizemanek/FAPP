@@ -29,7 +29,10 @@ export type Profile = {
   gender: Gender;
   bio: string;
   photos: string[];
+  /** Štítky „Moje ano*“, které smím vidět: u cizích jen společná ano, u matche všechny, u sebe všechny. */
   tags: Tag[];
+  /** Společná ano s přihlášeným (u matche včetně místa a vztahového statusu). */
+  sharedYes: Tag[];
   verified: boolean;
   distanceKm: number | null;
   /** „Na cestách“ – swipuje v jiném městě. */

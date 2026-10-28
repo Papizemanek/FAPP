@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Einmalig",
       "repeat": "Immer wieder",
-      "myplace": "Bei mir",
-      "yourplace": "Bei dir",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Erst ein Date",
+      "openToMore": "Offen für mehr",
+      "figuring": "Finde es noch raus",
+      "classic": "Klassisch",
+      "curious": "Neugierig",
+      "kink": "Kink",
+      "chatFirst": "Erst schreiben",
+      "videoFirst": "Erst Videocall",
+      "sober": "Nüchtern",
+      "boundaries": "Grenzen vorab",
+      "slow": "Langsam",
+      "spontaneous": "Spontan",
+      "host": "Bei mir",
+      "visit": "Bei dir",
+      "neutral": "Neutraler Ort",
+      "single": "Single",
+      "open": "Offene Beziehung",
+      "poly": "Polyamor",
+      "couple": "Paar"
+    },
+    "yesGroups": {
+      "intent": "Ich suche",
+      "mood": "Vibe",
+      "comfort": "Damit fühle ich mich wohl",
+      "place": "Wo",
+      "status": "Beziehungsstatus"
     },
     "activities": {
       "kissing": "Küssen und Kuscheln",
@@ -365,6 +387,10 @@
       "message": "Aktiv bis {time}.",
       "confirm": "Ausschalten",
       "done": "Heute Abend ist aus."
+    },
+    "sharedYes": {
+      "one": "{count} gemeinsames Ja",
+      "other": "{count} gemeinsame Jas"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Name",
     "bio": "Über mich",
     "bioPlaceholder": "Ein paar Zeilen über dich.",
-    "lookingFor": "Ich suche",
     "safety": {
       "title": "Sicherheit und Privatsphäre",
       "trusted": "Vertrauensperson: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Foto löschen?",
       "confirm": "Löschen"
+    },
+    "yes": {
+      "title": "Mein Ja",
+      "hint": "Tags zeigen, wofür du offen bist – nicht, was du versprichst.",
+      "footnote": "Nur wer auch Ja gesagt hat, sieht es.",
+      "matchOnly": "Sichtbar nach einem Match",
+      "upTo": {
+        "one": "Bis zu {count}",
+        "other": "Bis zu {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Es ist ein Match!",
     "body": "Du und {name} wollt einander.\nSchreibt euch und klärt, worauf ihr Lust habt.",
     "sendMessage": "Nachricht schreiben",
-    "keepDiscovering": "Weiter entdecken"
+    "keepDiscovering": "Weiter entdecken",
+    "sharedYes": "Gemeinsame Jas"
   },
   "login": {
     "title": "Anmelden",

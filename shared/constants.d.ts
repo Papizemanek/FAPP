@@ -1,7 +1,18 @@
 export declare const APP_NAME: string;
 export declare const MIN_AGE: number;
 export declare const GENDERS: Record<'man' | 'woman' | 'nonbinary', string>;
-export declare const TAGS: Record<'oneoff' | 'repeat' | 'myplace' | 'yourplace' | 'vanilla' | 'kinky', string>;
+export type YesGroup = 'intent' | 'mood' | 'comfort' | 'place' | 'status';
+export type YesTag =
+  | 'oneoff' | 'repeat' | 'dateFirst' | 'openToMore' | 'figuring'
+  | 'classic' | 'curious' | 'kink'
+  | 'chatFirst' | 'videoFirst' | 'sober' | 'boundaries' | 'slow' | 'spontaneous'
+  | 'host' | 'visit' | 'neutral'
+  | 'single' | 'open' | 'poly' | 'couple';
+export declare const YES_GROUPS: Record<YesGroup, { max: number; matchOnly?: boolean; tags: Partial<Record<YesTag, string>> }>;
+export declare const TAGS: Record<YesTag, string>;
+export declare const TAG_GROUP: Record<YesTag, YesGroup>;
+export declare const LEGACY_TAGS: Record<string, YesTag>;
+export declare function sharedYes(mine: readonly string[], theirs: readonly string[], opts?: { matched?: boolean }): YesTag[];
 export declare const ACTIVITIES: Record<'kissing' | 'oral' | 'vaginal' | 'anal' | 'toys' | 'overnight', string>;
 export declare const WISHES: Record<'yes' | 'maybe' | 'no', string>;
 export declare const CONSENT_TEXT_VERSION: number;

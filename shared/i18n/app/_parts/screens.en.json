@@ -51,6 +51,10 @@
       "message": "Active until {time}.",
       "confirm": "Turn off",
       "done": "Tonight is off."
+    },
+    "sharedYes": {
+      "one": "{count} shared yes",
+      "other": "{count} shared yeses"
     }
   },
   "matches": {
@@ -89,7 +93,16 @@
     "name": "Name",
     "bio": "About me",
     "bioPlaceholder": "A few lines about yourself.",
-    "lookingFor": "Looking for",
+    "yes": {
+      "title": "My yes",
+      "hint": "Tags show what you're open to, not what you promise.",
+      "footnote": "Only people who said yes too will see it.",
+      "matchOnly": "Visible after a match",
+      "upTo": {
+        "one": "Up to {count}",
+        "other": "Up to {count}"
+      }
+    },
     "safety": {
       "title": "Safety and privacy",
       "trusted": "Trusted contact: {name}",
@@ -227,7 +240,8 @@
     "title": "It's a match!",
     "body": "You and {name} want each other.\nSay hi and agree on what you're into.",
     "sendMessage": "Send a message",
-    "keepDiscovering": "Keep discovering"
+    "keepDiscovering": "Keep discovering",
+    "sharedYes": "Shared yeses"
   },
   "login": {
     "title": "Sign in",

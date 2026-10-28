@@ -83,7 +83,11 @@
       "other": "You can have up to {count} photos."
     },
     "pinsMustDiffer": "Your duress PIN must be different from your regular PIN.",
-    "deleteDuringMeetup": "You can't delete your account right now – a meetup is in progress. Try again once it's over."
+    "deleteDuringMeetup": "You can't delete your account right now – a meetup is in progress. Try again once it's over.",
+    "tooManyYes": {
+      "one": "In “{group}”, pick at most {count} tag.",
+      "other": "In “{group}”, pick at most {count} tags."
+    }
   },
   "photo": {
     "notJpeg": "The photo must be a JPEG.",
@@ -264,5 +268,12 @@
     "battery": "battery {percent}",
     "linkExpired": "This link is no longer valid",
     "loadFailed": "Couldn't load the status. Retrying…"
+  },
+  "yesGroups": {
+    "intent": "What I'm looking for",
+    "mood": "Vibe",
+    "comfort": "What makes me comfortable",
+    "place": "Where",
+    "status": "Relationship status"
   }
 }

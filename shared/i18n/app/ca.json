@@ -12,11 +12,33 @@
     },
     "tags": {
       "oneoff": "Una sola vegada",
-      "repeat": "Una vegada i una altra",
-      "myplace": "A casa meva",
-      "yourplace": "A casa teva",
-      "vanilla": "Vainilla",
-      "kinky": "Kinky"
+      "repeat": "Una i altra vegada",
+      "dateFirst": "Primer una cita",
+      "openToMore": "Obert/a a més",
+      "figuring": "Descobrint-ho",
+      "classic": "Clàssic",
+      "curious": "Curiositat",
+      "kink": "Kink",
+      "chatFirst": "Primer xatejar",
+      "videoFirst": "Abans videotrucada",
+      "sober": "Sobri/a",
+      "boundaries": "Límits primer",
+      "slow": "Amb calma",
+      "spontaneous": "Espontani/a",
+      "host": "A casa meva",
+      "visit": "A casa teva",
+      "neutral": "Lloc neutral",
+      "single": "Solter/a",
+      "open": "Relació oberta",
+      "poly": "Poliamor",
+      "couple": "Parella"
+    },
+    "yesGroups": {
+      "intent": "Què busco",
+      "mood": "Vibra",
+      "comfort": "Què em fa sentir bé",
+      "place": "On",
+      "status": "Situació sentimental"
     },
     "activities": {
       "kissing": "Petons i carícies",
@@ -367,6 +389,11 @@
       "message": "Actiu fins a les {time}.",
       "confirm": "Desactiva",
       "done": "«Aquesta nit» està desactivat."
+    },
+    "sharedYes": {
+      "one": "{count} sí en comú",
+      "many": "{count} sí en comú",
+      "other": "{count} sí en comú"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Nom",
     "bio": "Sobre mi",
     "bioPlaceholder": "Unes quantes línies sobre tu.",
-    "lookingFor": "Què busco",
     "safety": {
       "title": "Seguretat i privadesa",
       "trusted": "Persona de confiança: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Vols esborrar la foto?",
       "confirm": "Esborra"
+    },
+    "yes": {
+      "title": "Els meus sí",
+      "hint": "Les etiquetes mostren a què estàs obert/a, no el que prometes.",
+      "footnote": "Només ho veurà qui també hagi dit que sí.",
+      "matchOnly": "Visible després d'un match",
+      "upTo": {
+        "one": "Fins a {count}",
+        "many": "Fins a {count}",
+        "other": "Fins a {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "És un match!",
     "body": "Tu i {name} us agradeu.\nSaluda i poseu-vos d'acord en què us ve de gust.",
     "sendMessage": "Envia un missatge",
-    "keepDiscovering": "Continua descobrint"
+    "keepDiscovering": "Continua descobrint",
+    "sharedYes": "Sí en comú"
   },
   "login": {
     "title": "Inicia la sessió",

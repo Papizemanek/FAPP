@@ -81,7 +81,10 @@
       "other": "Bạn có thể có tối đa {count} ảnh."
     },
     "pinsMustDiffer": "PIN khẩn cấp phải khác với PIN thường của bạn.",
-    "deleteDuringMeetup": "Bạn không thể xóa tài khoản lúc này – đang có buổi hẹn diễn ra. Hãy thử lại khi buổi hẹn kết thúc."
+    "deleteDuringMeetup": "Bạn không thể xóa tài khoản lúc này – đang có buổi hẹn diễn ra. Hãy thử lại khi buổi hẹn kết thúc.",
+    "tooManyYes": {
+      "other": "Trong “{group}”, chọn tối đa {count} thẻ."
+    }
   },
   "photo": {
     "notJpeg": "Ảnh phải ở định dạng JPEG.",
@@ -260,5 +263,12 @@
     "battery": "pin {percent}",
     "linkExpired": "Liên kết này không còn hiệu lực",
     "loadFailed": "Không tải được trạng thái. Đang thử lại…"
+  },
+  "yesGroups": {
+    "intent": "Mình đang tìm gì",
+    "mood": "Tâm trạng",
+    "comfort": "Điều khiến mình thoải mái",
+    "place": "Ở đâu",
+    "status": "Tình trạng quan hệ"
   }
 }

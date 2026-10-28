@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Tek seferlik",
       "repeat": "Tekrar tekrar",
-      "myplace": "Bende",
-      "yourplace": "Sende",
-      "vanilla": "Vanilya",
-      "kinky": "Kinky"
+      "dateFirst": "Önce buluşma",
+      "openToMore": "Fazlasına açığım",
+      "figuring": "Hâlâ keşfediyorum",
+      "classic": "Klasik",
+      "curious": "Meraklı",
+      "kink": "Kink",
+      "chatFirst": "Önce yazışma",
+      "videoFirst": "Önce görüntülü arama",
+      "sober": "Ayık",
+      "boundaries": "Önce sınırlar",
+      "slow": "Yavaş",
+      "spontaneous": "Spontane",
+      "host": "Bende",
+      "visit": "Sende",
+      "neutral": "Tarafsız bir yer",
+      "single": "Bekâr",
+      "open": "Açık ilişki",
+      "poly": "Poliamori",
+      "couple": "Çift"
+    },
+    "yesGroups": {
+      "intent": "Ne arıyorum",
+      "mood": "Ruh hâli",
+      "comfort": "Kendimi ne rahat hissettirir",
+      "place": "Nerede",
+      "status": "İlişki durumu"
     },
     "activities": {
       "kissing": "Öpüşme ve sarılma",
@@ -365,6 +387,10 @@
       "message": "Şu saate kadar aktif: {time}.",
       "confirm": "Kapat",
       "done": "“Bu gece” kapatıldı."
+    },
+    "sharedYes": {
+      "one": "{count} ortak evet",
+      "other": "{count} ortak evet"
     }
   },
   "matches": {
@@ -403,7 +429,6 @@
     "name": "Ad",
     "bio": "Hakkımda",
     "bioPlaceholder": "Kendin hakkında birkaç satır.",
-    "lookingFor": "Aradığım",
     "safety": {
       "title": "Güvenlik ve gizlilik",
       "trusted": "Güvendiğin kişi: {name}",
@@ -445,6 +470,16 @@
     "removePhoto": {
       "title": "Fotoğraf silinsin mi?",
       "confirm": "Sil"
+    },
+    "yes": {
+      "title": "Evetlerim",
+      "hint": "Etiketler neye açık olduğunu gösterir, ne vaat ettiğini değil.",
+      "footnote": "Sadece onlar da evet diyenler görür.",
+      "matchOnly": "Eşleşmeden sonra görünür",
+      "upTo": {
+        "one": "En fazla {count}",
+        "other": "En fazla {count}"
+      }
     }
   },
   "premium": {
@@ -541,7 +576,8 @@
     "title": "Eşleştiniz!",
     "body": "Sen ve {name} birbirinizi istiyorsunuz.\nMerhaba de ve neler istediğiniz konusunda anlaşın.",
     "sendMessage": "Mesaj gönder",
-    "keepDiscovering": "Keşfetmeye devam et"
+    "keepDiscovering": "Keşfetmeye devam et",
+    "sharedYes": "Ortak evetler"
   },
   "login": {
     "title": "Giriş yap",

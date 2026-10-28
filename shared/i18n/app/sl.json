@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Enkratno",
       "repeat": "Večkrat",
-      "myplace": "Pri meni",
-      "yourplace": "Pri tebi",
-      "vanilla": "Vanilija",
-      "kinky": "Kinky"
+      "dateFirst": "Najprej zmenek",
+      "openToMore": "Odprt/a za več",
+      "figuring": "Še ugotavljam",
+      "classic": "Klasika",
+      "curious": "Radovednost",
+      "kink": "Kink",
+      "chatFirst": "Najprej klepet",
+      "videoFirst": "Najprej videoklic",
+      "sober": "Trezno",
+      "boundaries": "Meje vnaprej",
+      "slow": "Počasi",
+      "spontaneous": "Spontano",
+      "host": "Pri meni",
+      "visit": "Pri tebi",
+      "neutral": "Nevtralen kraj",
+      "single": "Samski/a",
+      "open": "Odprta zveza",
+      "poly": "Poliamorija",
+      "couple": "Par"
+    },
+    "yesGroups": {
+      "intent": "Kaj iščem",
+      "mood": "Razpoloženje",
+      "comfort": "Kaj mi ustreza",
+      "place": "Kje",
+      "status": "Status zveze"
     },
     "activities": {
       "kissing": "Poljubljanje in crkljanje",
@@ -369,6 +391,12 @@
       "message": "Velja do {time}.",
       "confirm": "Izklopi",
       "done": "„Nocoj“ je izklopljeno."
+    },
+    "sharedYes": {
+      "one": "{count} skupni da",
+      "two": "{count} skupna da",
+      "few": "{count} skupni da",
+      "other": "{count} skupnih da"
     }
   },
   "matches": {
@@ -411,7 +439,6 @@
     "name": "Ime",
     "bio": "O meni",
     "bioPlaceholder": "Nekaj stavkov o sebi.",
-    "lookingFor": "Kaj iščem",
     "safety": {
       "title": "Varnost in zasebnost",
       "trusted": "Zaupna oseba: {name}",
@@ -453,6 +480,18 @@
     "removePhoto": {
       "title": "Želiš izbrisati fotografijo?",
       "confirm": "Izbriši"
+    },
+    "yes": {
+      "title": "Moj da",
+      "hint": "Oznake kažejo, za kaj si odprt/a, ne kaj obljubljaš.",
+      "footnote": "Vidijo le tisti, ki so prav tako rekli da.",
+      "matchOnly": "Vidno po matchu",
+      "upTo": {
+        "one": "Največ {count}",
+        "two": "Največ {count}",
+        "few": "Največ {count}",
+        "other": "Največ {count}"
+      }
     }
   },
   "premium": {
@@ -561,7 +600,8 @@
     "title": "Ujemata se!",
     "body": "Ti in {name} se želita.\nNapiši in se dogovorita, česa si želita.",
     "sendMessage": "Napiši sporočilo",
-    "keepDiscovering": "Odkrivaj naprej"
+    "keepDiscovering": "Odkrivaj naprej",
+    "sharedYes": "Skupni da"
   },
   "login": {
     "title": "Prijava",

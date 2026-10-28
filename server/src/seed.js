@@ -11,14 +11,14 @@ if (!config.dev) throw new Error('Seed je jen pro vývoj.');
 const db = openDb(config.dbFile);
 
 const people = [
-  ['Lucie', 'woman', ['man'], '1997-03-12', 'Ráda začínám drinkem. Pak uvidíme.', ['oneoff', 'myplace']],
-  ['Klara', 'woman', ['man', 'woman'], '1992-07-01', 'Jasná domluva, žádné drama.', ['repeat', 'vanilla']],
-  ['Eva', 'woman', ['man'], '2000-11-23', 'Večer po práci, ne přes den.', ['yourplace', 'kinky']],
-  ['Tereza', 'woman', ['woman', 'man'], '1995-01-30', 'Nejdřív kafe, pak se uvidí.', ['oneoff', 'vanilla']],
-  ['Jakub', 'man', ['woman'], '1990-05-17', 'Sportovec, nekuřák, diskrétní.', ['repeat', 'yourplace']],
-  ['Martin', 'man', ['woman', 'man'], '1988-09-09', 'Pohodový, respektuju hranice.', ['oneoff', 'myplace']],
-  ['Adam', 'man', ['man'], '1996-12-02', 'Hledám někoho na občasné večery.', ['repeat', 'kinky']],
-  ['Sam', 'nonbinary', ['man', 'woman', 'nonbinary'], '1998-04-04', 'Otevřené, citlivé, bez spěchu.', ['oneoff', 'vanilla']],
+  ['Lucie', 'woman', ['man'], '1997-03-12', 'Ráda začínám drinkem. Pak uvidíme.', ['oneoff', 'curious', 'chatFirst', 'host', 'single']],
+  ['Klara', 'woman', ['man', 'woman'], '1992-07-01', 'Jasná domluva, žádné drama.', ['repeat', 'classic', 'boundaries', 'slow', 'visit']],
+  ['Eva', 'woman', ['man'], '2000-11-23', 'Večer po práci, ne přes den.', ['oneoff', 'kink', 'boundaries', 'sober', 'visit', 'open']],
+  ['Tereza', 'woman', ['woman', 'man'], '1995-01-30', 'Nejdřív kafe, pak se uvidí.', ['dateFirst', 'classic', 'chatFirst', 'neutral', 'single']],
+  ['Jakub', 'man', ['woman'], '1990-05-17', 'Sportovec, nekuřák, diskrétní.', ['repeat', 'classic', 'spontaneous', 'visit', 'single']],
+  ['Martin', 'man', ['woman', 'man'], '1988-09-09', 'Pohodový, respektuju hranice.', ['oneoff', 'openToMore', 'curious', 'boundaries', 'host']],
+  ['Adam', 'man', ['man'], '1996-12-02', 'Hledám někoho na občasné večery.', ['repeat', 'kink', 'boundaries', 'host', 'poly']],
+  ['Sam', 'nonbinary', ['man', 'woman', 'nonbinary'], '1998-04-04', 'Otevřené, citlivé, bez spěchu.', ['figuring', 'curious', 'slow', 'videoFirst', 'neutral']],
 ];
 
 const insert = db.prepare(

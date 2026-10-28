@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "一回きり",
       "repeat": "何度でも",
-      "myplace": "自分の家で",
-      "yourplace": "相手の家で",
-      "vanilla": "ノーマル",
-      "kinky": "アブノーマル"
+      "dateFirst": "まずはデート",
+      "openToMore": "それ以上もOK",
+      "figuring": "模索中",
+      "classic": "クラシック",
+      "curious": "興味あり",
+      "kink": "キンク",
+      "chatFirst": "まずはチャット",
+      "videoFirst": "まずはビデオ通話",
+      "sober": "しらふで",
+      "boundaries": "境界線は先に",
+      "slow": "ゆっくり",
+      "spontaneous": "その場のノリ",
+      "host": "自分の家で",
+      "visit": "相手の家で",
+      "neutral": "中立な場所",
+      "single": "独身",
+      "open": "オープンな関係",
+      "poly": "ポリアモリー",
+      "couple": "カップル"
+    },
+    "yesGroups": {
+      "intent": "探しているもの",
+      "mood": "ムード",
+      "comfort": "心地いいこと",
+      "place": "場所",
+      "status": "交際ステータス"
     },
     "activities": {
       "kissing": "キス・いちゃいちゃ",
@@ -363,6 +385,9 @@
       "message": "{time}まで有効です。",
       "confirm": "オフにする",
       "done": "「今夜」をオフにしました。"
+    },
+    "sharedYes": {
+      "other": "共通のYes {count}件"
     }
   },
   "matches": {
@@ -399,7 +424,6 @@
     "name": "名前",
     "bio": "自己紹介",
     "bioPlaceholder": "自分について少し書いてみましょう。",
-    "lookingFor": "探しているもの",
     "safety": {
       "title": "安全とプライバシー",
       "trusted": "信頼できる人：{name}",
@@ -441,6 +465,15 @@
     "removePhoto": {
       "title": "写真を削除しますか？",
       "confirm": "削除"
+    },
+    "yes": {
+      "title": "わたしのYes",
+      "hint": "タグはあなたが受け入れられることを示すもので、約束ではありません。",
+      "footnote": "Yesと答えた人だけに表示されます。",
+      "matchOnly": "マッチ後に表示",
+      "upTo": {
+        "other": "最大{count}個"
+      }
     }
   },
   "premium": {
@@ -531,7 +564,8 @@
     "title": "マッチしました！",
     "body": "あなたと{name}さんはお互いを求めています。\nあいさつして、何をしたいか話し合いましょう。",
     "sendMessage": "メッセージを送る",
-    "keepDiscovering": "さがし続ける"
+    "keepDiscovering": "さがし続ける",
+    "sharedYes": "共通のYes"
   },
   "login": {
     "title": "ログイン",

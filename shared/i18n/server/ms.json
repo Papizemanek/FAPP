@@ -81,7 +81,10 @@
       "other": "Anda boleh mempunyai sehingga {count} foto."
     },
     "pinsMustDiffer": "PIN kecemasan anda mestilah berbeza daripada PIN biasa anda.",
-    "deleteDuringMeetup": "Anda tidak boleh memadam akaun anda sekarang – pertemuan sedang berlangsung. Cuba lagi selepas ia tamat."
+    "deleteDuringMeetup": "Anda tidak boleh memadam akaun anda sekarang – pertemuan sedang berlangsung. Cuba lagi selepas ia tamat.",
+    "tooManyYes": {
+      "other": "Dalam “{group}”, pilih paling banyak {count} tag."
+    }
   },
   "photo": {
     "notJpeg": "Foto mestilah dalam format JPEG.",
@@ -260,5 +263,12 @@
     "battery": "bateri {percent}",
     "linkExpired": "Pautan ini tidak lagi sah",
     "loadFailed": "Tidak dapat memuatkan status. Mencuba semula…"
+  },
+  "yesGroups": {
+    "intent": "Apa yang saya cari",
+    "mood": "Mood",
+    "comfort": "Apa yang buat saya selesa",
+    "place": "Di mana",
+    "status": "Status hubungan"
   }
 }

@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Jednokratno",
       "repeat": "Opet i opet",
-      "myplace": "Kod mene",
-      "yourplace": "Kod tebe",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Prvo spoj",
+      "openToMore": "Može i više",
+      "figuring": "Još shvaćam",
+      "classic": "Klasika",
+      "curious": "Znatiželjno",
+      "kink": "Kink",
+      "chatFirst": "Prvo dopisivanje",
+      "videoFirst": "Prvo videopoziv",
+      "sober": "Trijezno",
+      "boundaries": "Granice unaprijed",
+      "slow": "Polako",
+      "spontaneous": "Spontano",
+      "host": "Kod mene",
+      "visit": "Kod tebe",
+      "neutral": "Neutralno mjesto",
+      "single": "Slobodan/na",
+      "open": "Otvorena veza",
+      "poly": "Poliamorija",
+      "couple": "Par"
+    },
+    "yesGroups": {
+      "intent": "Što tražim",
+      "mood": "Raspoloženje",
+      "comfort": "Što mi paše",
+      "place": "Gdje",
+      "status": "Status veze"
     },
     "activities": {
       "kissing": "Ljubljenje i maženje",
@@ -367,6 +389,11 @@
       "message": "Aktivno do {time}.",
       "confirm": "Isključi",
       "done": "„Večeras“ je isključeno."
+    },
+    "sharedYes": {
+      "one": "{count} zajednički da",
+      "few": "{count} zajednička da",
+      "other": "{count} zajedničkih da"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Ime",
     "bio": "O meni",
     "bioPlaceholder": "Par rečenica o sebi.",
-    "lookingFor": "Tražim",
     "safety": {
       "title": "Sigurnost i privatnost",
       "trusted": "Osoba od povjerenja: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Izbrisati fotografiju?",
       "confirm": "Izbriši"
+    },
+    "yes": {
+      "title": "Moje da",
+      "hint": "Oznake pokazuju za što si otvoren/a, a ne što obećavaš.",
+      "footnote": "Vidjet će samo oni koji su također rekli da.",
+      "matchOnly": "Vidljivo nakon matcha",
+      "upTo": {
+        "one": "Najviše {count}",
+        "few": "Najviše {count}",
+        "other": "Najviše {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "Imate match!",
     "body": "Ti i {name} želite jedno drugo.\nJavi se i dogovorite za što ste.",
     "sendMessage": "Pošalji poruku",
-    "keepDiscovering": "Nastavi otkrivati"
+    "keepDiscovering": "Nastavi otkrivati",
+    "sharedYes": "Zajednički da"
   },
   "login": {
     "title": "Prijava",

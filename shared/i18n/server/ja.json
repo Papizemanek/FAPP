@@ -81,7 +81,10 @@
       "other": "写真は最大{count}枚までです。"
     },
     "pinsMustDiffer": "緊急PINは通常のPINと別の番号にしてください。",
-    "deleteDuringMeetup": "デート中のため、今はアカウントを削除できません。デートが終わってからもう一度お試しください。"
+    "deleteDuringMeetup": "デート中のため、今はアカウントを削除できません。デートが終わってからもう一度お試しください。",
+    "tooManyYes": {
+      "other": "「{group}」で選べるタグは最大{count}個です。"
+    }
   },
   "photo": {
     "notJpeg": "写真はJPEG形式にしてください。",
@@ -260,5 +263,12 @@
     "battery": "バッテリー {percent}",
     "linkExpired": "このリンクはすでに無効です",
     "loadFailed": "状況を読み込めませんでした。再試行しています…"
+  },
+  "yesGroups": {
+    "intent": "探しているもの",
+    "mood": "ムード",
+    "comfort": "心地いいこと",
+    "place": "場所",
+    "status": "交際ステータス"
   }
 }

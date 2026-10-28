@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Una volta sola",
       "repeat": "Ancora e ancora",
-      "myplace": "Da me",
-      "yourplace": "Da te",
-      "vanilla": "Vanilla",
-      "kinky": "Kinky"
+      "dateFirst": "Prima un appuntamento",
+      "openToMore": "Aperto/a a di più",
+      "figuring": "Sto capendo",
+      "classic": "Classico",
+      "curious": "Curiosità",
+      "kink": "Kink",
+      "chatFirst": "Prima in chat",
+      "videoFirst": "Prima videochiamata",
+      "sober": "Da sobri",
+      "boundaries": "Limiti chiari prima",
+      "slow": "Con calma",
+      "spontaneous": "Spontaneità",
+      "host": "Da me",
+      "visit": "Da te",
+      "neutral": "Posto neutro",
+      "single": "Single",
+      "open": "Relazione aperta",
+      "poly": "Poliamore",
+      "couple": "Coppia"
+    },
+    "yesGroups": {
+      "intent": "Cosa cerco",
+      "mood": "Mood",
+      "comfort": "Cosa mi fa stare bene",
+      "place": "Dove",
+      "status": "Situazione sentimentale"
     },
     "activities": {
       "kissing": "Baci e coccole",
@@ -367,6 +389,11 @@
       "message": "Attivo fino alle {time}.",
       "confirm": "Disattiva",
       "done": "«Stasera» è disattivato."
+    },
+    "sharedYes": {
+      "one": "{count} sì in comune",
+      "many": "{count} sì in comune",
+      "other": "{count} sì in comune"
     }
   },
   "matches": {
@@ -407,7 +434,6 @@
     "name": "Nome",
     "bio": "Su di me",
     "bioPlaceholder": "Qualche riga su di te.",
-    "lookingFor": "Cosa cerco",
     "safety": {
       "title": "Sicurezza e privacy",
       "trusted": "Persona di fiducia: {name}",
@@ -449,6 +475,17 @@
     "removePhoto": {
       "title": "Eliminare la foto?",
       "confirm": "Elimina"
+    },
+    "yes": {
+      "title": "I miei sì",
+      "hint": "I tag mostrano a cosa sei aperto/a, non cosa prometti.",
+      "footnote": "Lo vedrà solo chi ha detto sì a sua volta.",
+      "matchOnly": "Visibile dopo un match",
+      "upTo": {
+        "one": "Fino a {count}",
+        "many": "Fino a {count}",
+        "other": "Fino a {count}"
+      }
     }
   },
   "premium": {
@@ -551,7 +588,8 @@
     "title": "È un match!",
     "body": "Tu e {name} vi piacete.\nSaluta e mettetevi d'accordo su cosa vi va.",
     "sendMessage": "Invia un messaggio",
-    "keepDiscovering": "Continua a scoprire"
+    "keepDiscovering": "Continua a scoprire",
+    "sharedYes": "Sì in comune"
   },
   "login": {
     "title": "Accedi",

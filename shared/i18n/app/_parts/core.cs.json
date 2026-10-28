@@ -13,10 +13,32 @@
     "tags": {
       "oneoff": "Jednorázovka",
       "repeat": "Opakovaně",
-      "myplace": "U mě",
-      "yourplace": "U tebe",
-      "vanilla": "Vanilka",
-      "kinky": "Kinky"
+      "dateFirst": "Nejdřív rande",
+      "openToMore": "Klidně i víc",
+      "figuring": "Zjišťuju, co chci",
+      "classic": "Klasika",
+      "curious": "Zvědavě",
+      "kink": "Kink",
+      "chatFirst": "Nejdřív si psát",
+      "videoFirst": "Nejdřív videohovor",
+      "sober": "Střízlivě",
+      "boundaries": "Hranice předem",
+      "slow": "Pomalu",
+      "spontaneous": "Spontánně",
+      "host": "U mě",
+      "visit": "U tebe",
+      "neutral": "Neutrální místo",
+      "single": "Nezadaný/á",
+      "open": "Otevřený vztah",
+      "poly": "Polyamorie",
+      "couple": "Pár"
+    },
+    "yesGroups": {
+      "intent": "Co hledám",
+      "mood": "Naladění",
+      "comfort": "Jak se cítím dobře",
+      "place": "Kde",
+      "status": "Vztahový status"
     },
     "activities": {
       "kissing": "Líbání a mazlení",

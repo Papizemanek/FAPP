@@ -53,6 +53,12 @@
       "message": "Platí do {time}.",
       "confirm": "Vypnout",
       "done": "Dnes večer je vypnuté."
+    },
+    "sharedYes": {
+      "one": "{count} společné ano",
+      "few": "{count} společná ano",
+      "many": "{count} společného ano",
+      "other": "{count} společných ano"
     }
   },
   "matches": {
@@ -95,7 +101,18 @@
     "name": "Jméno",
     "bio": "O mně",
     "bioPlaceholder": "Pár vět o sobě.",
-    "lookingFor": "Co hledám",
+    "yes": {
+      "title": "Moje ano",
+      "hint": "Štítky ukazují, k čemu jsi otevřený/á, ne co slibuješ.",
+      "footnote": "Uvidí jen ten, kdo řekl ano taky.",
+      "matchOnly": "Uvidí až match",
+      "upTo": {
+        "one": "Nejvýš {count}",
+        "few": "Nejvýš {count}",
+        "many": "Nejvýš {count}",
+        "other": "Nejvýš {count}"
+      }
+    },
     "safety": {
       "title": "Bezpečnost a soukromí",
       "trusted": "Důvěryhodná osoba: {name}",
@@ -245,7 +262,8 @@
     "title": "Je to match!",
     "body": "Ty a {name} se chcete.\nNapiš a domluvte se, na co máte chuť.",
     "sendMessage": "Napsat zprávu",
-    "keepDiscovering": "Pokračovat v objevování"
+    "keepDiscovering": "Pokračovat v objevování",
+    "sharedYes": "Společná ano"
   },
   "login": {
     "title": "Přihlášení",

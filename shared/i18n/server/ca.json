@@ -85,7 +85,12 @@
       "other": "Pots tenir fins a {count} fotos."
     },
     "pinsMustDiffer": "El PIN d'emergència ha de ser diferent del PIN normal.",
-    "deleteDuringMeetup": "Ara no pots esborrar el compte – hi ha una trobada en curs. Torna-ho a provar quan s'acabi."
+    "deleteDuringMeetup": "Ara no pots esborrar el compte – hi ha una trobada en curs. Torna-ho a provar quan s'acabi.",
+    "tooManyYes": {
+      "one": "A «{group}», tria com a màxim {count} etiqueta.",
+      "many": "A «{group}», tria com a màxim {count} etiquetes.",
+      "other": "A «{group}», tria com a màxim {count} etiquetes."
+    }
   },
   "photo": {
     "notJpeg": "La foto ha de ser en format JPEG.",
@@ -268,5 +273,12 @@
     "battery": "bateria {percent}",
     "linkExpired": "Aquest enllaç ja no és vàlid",
     "loadFailed": "No s'ha pogut carregar l'estat. S'està tornant a provar…"
+  },
+  "yesGroups": {
+    "intent": "Què busco",
+    "mood": "Vibra",
+    "comfort": "Què em fa sentir bé",
+    "place": "On",
+    "status": "Situació sentimental"
   }
 }

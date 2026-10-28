@@ -2,7 +2,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Avatar, Body, Button, Screen } from '@/components/ui';
-import { api, type MatchDetail } from '@/lib/api';
+import { api, type MatchDetail, type Tag } from '@/lib/api';
 import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
@@ -12,10 +12,14 @@ export default function MatchModal() {
   const { matchId, name } = useLocalSearchParams<{ matchId: string; name: string }>();
   const { me } = useSession();
   const [partnerPhoto, setPartnerPhoto] = useState<string | null>(null);
+  const [shared, setShared] = useState<Tag[]>([]);
 
   useEffect(() => {
     api<MatchDetail>('GET', `/matches/${matchId}`)
-      .then((d) => setPartnerPhoto(d.partner.photos[0] ?? null))
+      .then((d) => {
+        setPartnerPhoto(d.partner.photos[0] ?? null);
+        setShared(d.partner.sharedYes ?? []);
+      })
       .catch(() => {});
   }, [matchId]);
 
@@ -36,6 +40,21 @@ export default function MatchModal() {
             {t('match.body', { name: name ?? '' })}
           </Body>
         </View>
+        {shared.length > 0 ? (
+          <View style={{ gap: 10, alignItems: 'center' }}>
+            <Text style={{ fontFamily: fonts.bold, fontSize: 14, color: colors.muted }}>
+              {t('match.sharedYes')}
+              <Text style={{ color: colors.accent }}>*</Text>
+            </Text>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6 }}>
+              {shared.map((tag) => (
+                <Text key={tag} style={{ fontFamily: fonts.semibold, fontSize: 13, color: colors.text, backgroundColor: colors.accentBg, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6, overflow: 'hidden' }}>
+                  {t(`labels.tags.${tag}`)}
+                </Text>
+              ))}
+            </View>
+          </View>
+        ) : null}
       </View>
       <View style={{ gap: 12 }}>
         <Button label={t('match.sendMessage')} onPress={() => router.replace(`/chat/${matchId}`)} />
