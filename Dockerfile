@@ -1,6 +1,6 @@
 # Server YesYes (API, hlídač check-inů, stránka pro důvěryhodnou osobu).
 # Databáze SQLite leží v /data – na hostingu tam připoj trvalý disk (volume), jinak se po restartu smaže.
-FROM node:22-slim
+FROM node:25-slim
 WORKDIR /srv
 ENV DB_FILE=/data/yesyes.db PORT=3000
 COPY package.json package-lock.json ./
