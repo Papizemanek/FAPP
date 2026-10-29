@@ -26,7 +26,8 @@ export async function reportLocation(loc: Loc) {
       const res = await fetch(`/api/safety/${id}/location`, {
         method: 'POST',
         credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        // Přihlášení je v cookie; X-Requested-With server vyžaduje u každé změny (ochrana proti CSRF).
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}`, 'X-Requested-With': 'yesyes', 'X-Client': 'web' },
         body: JSON.stringify({ lat: loc.coords.latitude, lng: loc.coords.longitude, accuracy: loc.coords.accuracy, battery: level }),
       });
       if (res.status !== 404 && res.status !== 409) stillActive.push(id);
