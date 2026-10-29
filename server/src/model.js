@@ -55,6 +55,7 @@ export function ownProfile(user) {
     trustedPhone: user.trusted_phone,
     hasCheckinPin: !!user.checkin_pin_hash,
     hasDuressPin: !!user.duress_pin_hash,
+    twoFactor: !!user.totp_enabled,
     discreet: !!user.discreet,
     verificationStatus: user.verification_status,
     status: user.status,

@@ -47,7 +47,7 @@ export function applyDecision(db, config, decision) {
   if (ageFrom(dateOfBirth) < MIN_AGE) {
     finish('declined', 'underage', 'declined');
     db.prepare("UPDATE users SET status = 'suspended', status_reason = 'Nezletilá osoba' WHERE id = ?").run(user.id);
-    db.prepare('DELETE FROM sessions WHERE user_id = ?').run(user.id);
+    db.prepare('DELETE FROM auth_sessions WHERE user_id = ?').run(user.id);
     return;
   }
 
@@ -62,7 +62,7 @@ export function applyDecision(db, config, decision) {
   if (banned) {
     finish('declined', 'banned', 'declined');
     db.prepare("UPDATE users SET status = 'banned', status_reason = 'Dříve zablokovaná osoba' WHERE id = ?").run(user.id);
-    db.prepare('DELETE FROM sessions WHERE user_id = ?').run(user.id);
+    db.prepare('DELETE FROM auth_sessions WHERE user_id = ?').run(user.id);
     return;
   }
 
@@ -74,7 +74,7 @@ export function applyDecision(db, config, decision) {
     nowIso(),
     personHash,
     documentHash,
-    dateOfBirth,
+    db.seal(dateOfBirth),
     user.id,
   );
 }

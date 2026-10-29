@@ -19,6 +19,14 @@ export class HttpError extends Error {
 
 export const nowIso = () => new Date().toISOString();
 
+export function readCookie(req, name) {
+  for (const part of String(req.get('cookie') ?? '').split(';')) {
+    const [k, ...v] = part.trim().split('=');
+    if (k === name) return v.join('=');
+  }
+  return null;
+}
+
 export const token = (bytes = 24) => randomBytes(bytes).toString('base64url');
 
 export function hashSecret(secret) {

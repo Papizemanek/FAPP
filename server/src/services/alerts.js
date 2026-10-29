@@ -30,8 +30,8 @@ export function createAlerts({ db, sms }) {
   function enqueue(session, body) {
     db.prepare('INSERT INTO sms_outbox (safety_session_id, to_phone, body, created_at) VALUES (?, ?, ?, ?)').run(
       session.id,
-      session.trusted_phone,
-      body,
+      db.seal(session.trusted_phone),
+      db.seal(body),
       nowIso(),
     );
     flushSoon();

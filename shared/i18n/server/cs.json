@@ -63,7 +63,9 @@
     "reason": "důvod",
     "details": "podrobnosti",
     "resolution": "řešení",
-    "days": "počet dní"
+    "days": "počet dní",
+    "newPassword": "nové heslo",
+    "session": "zařízení"
   },
   "auth": {
     "confirmAdult": "Musíš potvrdit, že je ti 18 let nebo víc.",
@@ -75,7 +77,10 @@
     "banned": "Účet byl zablokován za porušení pravidel.",
     "notLoggedIn": "Nejsi přihlášený/á.",
     "suspended": "Účet je pozastavený do kontroly moderátorem.",
-    "verifyFirst": "Nejdřív si ověř totožnost."
+    "verifyFirst": "Nejdřív si ověř totožnost.",
+    "badCode": "Kód nesedí nebo už vypršel. Zkus to znovu, případně si nech poslat nový.",
+    "tooManyAttempts": "Příliš mnoho pokusů. Zkus to za chvíli.",
+    "loginExpired": "Přihlášení vypršelo. Zadej znovu e-mail a heslo."
   },
   "profile": {
     "wrongPassword": "Špatné heslo.",
@@ -285,5 +290,41 @@
     "comfort": "Jak se cítím dobře",
     "place": "Kde",
     "status": "Vztahový status"
+  },
+  "account": {
+    "samePassword": "Nové heslo musí být jiné než současné.",
+    "twoFactorOn": "Dvoufázové ověření už je zapnuté.",
+    "twoFactorOff": "Dvoufázové ověření není zapnuté.",
+    "twoFactorSetupFirst": "Nejdřív si vygeneruj klíč pro autentizační aplikaci."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Ověřovací kód: {code}",
+      "body": "Tvůj kód pro dokončení registrace je {code}.\n\nPlatí 15 minut. Pokud ses neregistroval/a, tenhle e-mail ignoruj."
+    },
+    "accountExists": {
+      "subject": "Pokus o registraci",
+      "body": "Někdo se právě pokusil založit účet s touto e-mailovou adresou. Účet už ale máš.\n\nPokud jsi to byl/a ty, prostě se přihlas (případně si obnov heslo). Pokud ne, nic nedělej – tvůj účet zůstává v bezpečí."
+    },
+    "resetCode": {
+      "subject": "Kód pro obnovu hesla: {code}",
+      "body": "Tvůj kód pro obnovu hesla je {code}.\n\nPlatí 15 minut. Pokud jsi o obnovu nežádal/a, tenhle e-mail ignoruj – heslo zůstává beze změny."
+    },
+    "newLogin": {
+      "subject": "Nové přihlášení do účtu",
+      "body": "Do tvého účtu se právě někdo přihlásil ({device}).\n\nPokud jsi to nebyl/a ty, hned si změň heslo a v nastavení zabezpečení odhlas ostatní zařízení."
+    },
+    "passwordChanged": {
+      "subject": "Heslo bylo změněno",
+      "body": "Heslo k tvému účtu bylo právě změněno a ostatní zařízení byla odhlášena.\n\nPokud jsi to nebyl/a ty, obnov si heslo přes „Zapomenuté heslo“ a napiš nám."
+    },
+    "twoFactorOn": {
+      "subject": "Dvoufázové ověření zapnuto",
+      "body": "K přihlášení do tvého účtu je teď potřeba i kód z autentizační aplikace.\n\nZáložní kódy si ulož na bezpečné místo."
+    },
+    "twoFactorOff": {
+      "subject": "Dvoufázové ověření vypnuto",
+      "body": "Dvoufázové ověření bylo u tvého účtu vypnuto.\n\nPokud jsi to nebyl/a ty, hned si změň heslo."
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { DatabaseSync } from 'node:sqlite';
 import { LEGACY_TAGS, TAGS } from '../../shared/constants.js';
+import { emailIndex } from './crypto.js';
 
 const SCHEMA = `
 CREATE TABLE IF NOT EXISTS users (
@@ -34,11 +35,93 @@ CREATE TABLE IF NOT EXISTS users (
 );
 CREATE UNIQUE INDEX IF NOT EXISTS users_person ON users (person_hash) WHERE person_hash IS NOT NULL;
 
-CREATE TABLE IF NOT EXISTS sessions (
-  token TEXT PRIMARY KEY,
+-- Přihlášení (zařízení). Token se ukládá jen jako SHA-256 otisk; vyprší po neaktivitě i absolutně.
+CREATE TABLE IF NOT EXISTS auth_sessions (
+  id INTEGER PRIMARY KEY,
+  token_hash TEXT NOT NULL UNIQUE,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL DEFAULT 'app',
+  device TEXT NOT NULL DEFAULT '',
   push_token TEXT,
-  created_at TEXT NOT NULL
+  created_at TEXT NOT NULL,
+  last_used_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS auth_sessions_user ON auth_sessions (user_id);
+
+-- Jednorázové kódy z e-mailu (registrace, obnova hesla) a druhý krok přihlášení. Jen otisky.
+CREATE TABLE IF NOT EXISTS email_codes (
+  id INTEGER PRIMARY KEY,
+  purpose TEXT NOT NULL,
+  email_hash TEXT NOT NULL,
+  code_hash TEXT NOT NULL,
+  payload TEXT NOT NULL DEFAULT '',
+  attempts INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS email_codes_lookup ON email_codes (purpose, email_hash);
+
+CREATE TABLE IF NOT EXISTS login_challenges (
+  token_hash TEXT PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL DEFAULT 'app',
+  device TEXT NOT NULL DEFAULT '',
+  attempts INTEGER NOT NULL DEFAULT 0,
+  expires_at TEXT NOT NULL
+);
+
+-- Záložní kódy pro dvoufázové ověření (jen otisky, každý jde použít jednou).
+CREATE TABLE IF NOT EXISTS recovery_codes (
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  code_hash TEXT NOT NULL,
+  used_at TEXT,
+  PRIMARY KEY (user_id, code_hash)
+);
+
+-- Neúspěšná přihlášení podle e-mailu (otisku) – zpomalení hádání hesel i z mnoha IP adres.
+CREATE TABLE IF NOT EXISTS login_throttle (
+  key TEXT PRIMARY KEY,
+  failures INTEGER NOT NULL DEFAULT 0,
+  locked_until TEXT,
+  updated_at TEXT NOT NULL
+);
+
+-- Limity požadavků (pevné minutové okno). V databázi, aby platily i po restartu.
+CREATE TABLE IF NOT EXISTS rate_hits (
+  key TEXT NOT NULL,
+  win INTEGER NOT NULL,
+  hits INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (key, win)
+);
+
+-- Moderátoři: osobní účty s heslem a TOTP, každý přístup se zapisuje do auditu.
+CREATE TABLE IF NOT EXISTS moderators (
+  id INTEGER PRIMARY KEY,
+  email_hash TEXT NOT NULL UNIQUE,
+  email TEXT NOT NULL,
+  name TEXT NOT NULL,
+  password_hash TEXT NOT NULL,
+  totp_secret TEXT NOT NULL,
+  totp_last_step INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL,
+  disabled_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS admin_sessions (
+  token_hash TEXT PRIMARY KEY,
+  moderator_id INTEGER NOT NULL REFERENCES moderators(id) ON DELETE CASCADE,
+  created_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS audit_log (
+  id INTEGER PRIMARY KEY,
+  moderator_id INTEGER,
+  action TEXT NOT NULL,
+  target TEXT NOT NULL DEFAULT '',
+  ip TEXT NOT NULL DEFAULT '',
+  at TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS verification_sessions (
@@ -304,6 +387,12 @@ const MIGRATIONS = [
   // Jazyk SMS jedné schůzky – zafixuje se při startu, ať všechny SMS k jedné schůzce chodí stejně.
   // Starší schůzky (NULL) používají jazyk uživatele.
   ['safety_sessions', 'locale', 'TEXT'],
+  // Bezpečnost účtu: slepý index e-mailu, dvoufázové ověření, čas změny hesla.
+  ['users', 'email_hash', 'TEXT'],
+  ['users', 'totp_secret', 'TEXT'],
+  ['users', 'totp_enabled', 'INTEGER NOT NULL DEFAULT 0'],
+  ['users', 'totp_last_step', 'INTEGER NOT NULL DEFAULT 0'],
+  ['users', 'password_changed_at', 'TEXT'],
 ];
 
 function migrate(db) {
@@ -312,6 +401,9 @@ function migrate(db) {
     if (!exists) db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
   }
   migrateTags(db);
+  db.exec('CREATE UNIQUE INDEX IF NOT EXISTS users_email_hash ON users (email_hash) WHERE email_hash IS NOT NULL');
+  // Staré přihlašovací tokeny byly uložené čitelně – zahodit, každý se přihlásí znovu.
+  db.exec('DROP TABLE IF EXISTS sessions');
 }
 
 // Štítky z doby před „Moje ano*“ → nové (U mě → host, Vanilka → classic…); neznámé zahodí.
@@ -325,6 +417,104 @@ function migrateTags(db) {
     const next = [...new Set(JSON.parse(tags).map((tag) => LEGACY_TAGS[tag] ?? tag))].filter((tag) => tag in TAGS);
     update.run(JSON.stringify(next), id);
   }
+}
+
+// Sloupce šifrované v klidu (AES-256-GCM, crypto.js). Seznam slouží k zašifrování starších dat
+// při startu a ke skriptu na rotaci klíčů. Zapisuje se přes db.seal(), čte se automaticky (enableSealing).
+export const SEALED_COLUMNS = {
+  users: ['email', 'name', 'birthdate', 'gender', 'interested_in', 'bio', 'tags', 'lat', 'lng', 'trusted_name', 'trusted_phone', 'totp_secret'],
+  safety_sessions: ['partner_name', 'partner_photo', 'place', 'trusted_name', 'trusted_phone', 'lat', 'lng'],
+  sms_outbox: ['to_phone', 'body'],
+  agreements: ['place', 'safeword'],
+  agreement_wishes: ['wishes', 'note'],
+  messages: ['body'],
+  reports: ['details'],
+  feedback: ['details'],
+  waitlist: ['email'],
+  images: ['data'],
+  email_codes: ['payload'],
+  moderators: ['email', 'totp_secret'],
+};
+
+/**
+ * Zapne šifrování v klidu: výsledky všech dotazů se automaticky dešifrují (kód pracuje s čistými hodnotami)
+ * a db.seal(value) / db.sealBytes(buf) šifrují při zápisu. Starší nezašifrovaná data se zašifrují hned.
+ */
+export function enableSealing(db, sealer, { emailIndexKey } = {}) {
+  if (db.sealer) return db;
+  const prepare = db.prepare.bind(db);
+  const openRow = (row) => {
+    if (!row) return row;
+    for (const key of Object.keys(row)) {
+      const v = row[key];
+      if (typeof v === 'string' ? v.charCodeAt(0) === 118 /* v */ : v instanceof Uint8Array) row[key] = sealer.tryOpen(v);
+    }
+    return row;
+  };
+  db.prepare = (sql) => {
+    const stmt = prepare(sql);
+    return {
+      run: (...args) => stmt.run(...args),
+      get: (...args) => openRow(stmt.get(...args)),
+      all: (...args) => stmt.all(...args).map(openRow),
+      raw: stmt,
+    };
+  };
+  db.sealer = sealer;
+  db.seal = (value) => sealer.seal(value);
+  db.sealBytes = (buf) => sealer.sealBytes(buf);
+  db.emailIndexKey = emailIndexKey;
+  encryptAtRest(db, prepare);
+  return db;
+}
+
+/** Zašifruje vše, co ještě zašifrované není (data z doby před šifrováním v klidu). */
+function encryptAtRest(db, prepare) {
+  const { sealer } = db;
+  // Slepý index e-mailu se musí spočítat z čistého e-mailu, tedy dřív, než se e-mail zašifruje.
+  if (db.emailIndexKey) {
+    const rows = prepare("SELECT id, email FROM users WHERE email_hash IS NULL OR email_hash = ''").all();
+    const update = prepare('UPDATE users SET email_hash = ? WHERE id = ?');
+    for (const { id, email } of rows) update.run(emailIndex(db.emailIndexKey, sealer.openText(email)), id);
+  }
+  for (const [table, columns] of Object.entries(SEALED_COLUMNS)) {
+    for (const column of columns) {
+      const rows = prepare(
+        `SELECT rowid AS rid, ${column} AS v FROM ${table}
+         WHERE ${column} IS NOT NULL AND ${column} != ''
+           AND NOT (typeof(${column}) = 'text' AND ${column} GLOB 'v[0-9]*:*')
+           AND NOT (typeof(${column}) = 'blob' AND substr(${column}, 1, 3) = CAST('YYE' AS BLOB))`,
+      ).all();
+      const update = prepare(`UPDATE ${table} SET ${column} = ? WHERE rowid = ?`);
+      for (const { rid, v } of rows) {
+        if (sealer.isSealed(v)) continue;
+        update.run(v instanceof Uint8Array ? sealer.sealBytes(v) : sealer.seal(v), rid);
+      }
+    }
+  }
+}
+
+/**
+ * Přešifruje všechny šifrované hodnoty aktuálním klíčem z keyringu (po přidání nového klíče).
+ * Vrací počet přešifrovaných hodnot. Pak jde starý klíč z DATA_KEYS vyřadit.
+ */
+export function rotateKeys(db) {
+  const { sealer } = db;
+  let count = 0;
+  for (const [table, columns] of Object.entries(SEALED_COLUMNS)) {
+    for (const column of columns) {
+      const select = db.prepare(`SELECT rowid AS rid, ${column} AS v FROM ${table} WHERE ${column} IS NOT NULL AND ${column} != ''`).raw;
+      const update = db.prepare(`UPDATE ${table} SET ${column} = ? WHERE rowid = ?`);
+      for (const { rid, v } of select.all()) {
+        const version = sealer.versionOf(v);
+        if (version === sealer.current) continue;
+        const plain = v instanceof Uint8Array ? sealer.openBytes(v) : sealer.open(v);
+        update.run(v instanceof Uint8Array ? sealer.sealBytes(plain) : sealer.seal(plain), rid);
+        count += 1;
+      }
+    }
+  }
+  return count;
 }
 
 export function openDb(file = ':memory:') {

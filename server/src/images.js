@@ -58,7 +58,7 @@ export function saveImage(db, { ownerId, kind, matchId = null, base64 }) {
     ownerId,
     kind,
     matchId,
-    clean,
+    db.sealBytes(clean),
     nowIso(),
   );
   return id;

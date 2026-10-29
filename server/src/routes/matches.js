@@ -26,7 +26,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
   const messageView = (m, viewerId, locale) => ({
     id: m.id,
     mine: m.sender_id === viewerId,
-    text: sealer.open(m.body),
+    text: sealer.openText(m.body),
     imageUrl: m.image_id ? `/api/images/${m.image_id}` : null,
     // Bezpečnostní upozornění vidí jen příjemce zprávy – v jeho jazyce.
     warning: m.sender_id === viewerId ? '' : warningText(m.warning, locale),
@@ -54,7 +54,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
           matchedAt: row.matched_at,
           partner: publicProfile(row, req.user, { matched: true }),
           lastMessage: last
-            ? { text: last.image_id && !last.body ? tr(req.locale, 'chat.photo') : sealer.open(last.body), mine: last.sender_id === req.user.id, at: last.created_at }
+            ? { text: last.image_id && !last.body ? tr(req.locale, 'chat.photo') : sealer.openText(last.body), mine: last.sender_id === req.user.id, at: last.created_at }
             : null,
           agreementStatus: agreement ? agreementStatus(db, agreement, match) : null,
         };

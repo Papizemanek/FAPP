@@ -3,6 +3,7 @@ import { GENDERS, MAX_PROFILE_PHOTOS, MIN_AGE, TAGS, TAG_GROUP, YES_GROUPS } fro
 import { msg } from '../i18n.js';
 import { saveImage } from '../images.js';
 import { getUser, ownProfile } from '../model.js';
+import { checkSecondFactor } from '../security.js';
 import { moderate } from '../services/moderation.js';
 import {
   HttpError,
@@ -54,11 +55,12 @@ export function profileRoutes({ db }) {
     if (verdict.action === 'block') throw new HttpError(400, verdict.messageKey);
 
     const fields = {
-      name: str(b.name, 'fields.name', { min: 2, max: 40 }),
-      bio,
-      gender: oneOf(b.gender, 'fields.gender', GENDERS),
-      interested_in: JSON.stringify(listOf(b.interestedIn, 'fields.interestedIn', GENDERS, { min: 1 })),
-      tags: JSON.stringify(yesTags(b.tags ?? [])),
+      // Údaje o sexuálním životě a orientaci (GDPR čl. 9) jsou v databázi zašifrované.
+      name: db.seal(str(b.name, 'fields.name', { min: 2, max: 40 })),
+      bio: db.seal(bio),
+      gender: db.seal(oneOf(b.gender, 'fields.gender', GENDERS)),
+      interested_in: db.seal(JSON.stringify(listOf(b.interestedIn, 'fields.interestedIn', GENDERS, { min: 1 }))),
+      tags: db.seal(JSON.stringify(yesTags(b.tags ?? []))),
       age_min: ageMin,
       age_max: ageMax,
       max_distance_km: int(b.maxDistanceKm, 'fields.maxDistance', { min: 1, max: 300 }),
@@ -75,7 +77,7 @@ export function profileRoutes({ db }) {
   r.put('/location', (req, res) => {
     const lat = snapToGrid(num(req.body?.lat, 'fields.lat', { min: -90, max: 90 }));
     const lng = snapToGrid(num(req.body?.lng, 'fields.lng', { min: -180, max: 180 }));
-    db.prepare('UPDATE users SET lat = ?, lng = ? WHERE id = ?').run(lat, lng, req.user.id);
+    db.prepare('UPDATE users SET lat = ?, lng = ? WHERE id = ?').run(db.seal(lat), db.seal(lng), req.user.id);
     res.json(ownProfile(me(req)));
   });
 
@@ -99,8 +101,8 @@ export function profileRoutes({ db }) {
   r.put('/safety', (req, res) => {
     const b = req.body ?? {};
     const updates = {
-      trusted_name: str(b.trustedName, 'fields.trustedName', { min: 2, max: 40 }),
-      trusted_phone: phone(b.trustedPhone, 'fields.trustedPhone'),
+      trusted_name: db.seal(str(b.trustedName, 'fields.trustedName', { min: 2, max: 40 })),
+      trusted_phone: db.seal(phone(b.trustedPhone, 'fields.trustedPhone')),
       discreet: bool(b.discreet) ? 1 : 0,
     };
     if (b.checkinPin !== undefined || b.duressPin !== undefined) {
@@ -121,6 +123,7 @@ export function profileRoutes({ db }) {
 
   r.delete('/', (req, res) => {
     requirePassword(req);
+    if (req.user.totp_enabled && !checkSecondFactor(db, req.user, req.body?.code)) throw new HttpError(400, 'auth.badCode');
     // Ani protějšek nesmí smazáním účtu „uklidit“ schůzku, při které má druhý zapnutý bezpečnostní režim.
     const active = db
       .prepare(

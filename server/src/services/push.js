@@ -41,8 +41,8 @@ export function notify(db, push, userId, { title, body, data = {} }) {
   const user = db.prepare('SELECT discreet, locale FROM users WHERE id = ?').get(userId);
   if (!user) return;
   const tokens = db
-    .prepare('SELECT DISTINCT push_token FROM sessions WHERE user_id = ? AND push_token IS NOT NULL')
-    .all(userId)
+    .prepare('SELECT DISTINCT push_token FROM auth_sessions WHERE user_id = ? AND push_token IS NOT NULL AND expires_at > ?')
+    .all(userId, new Date().toISOString())
     .map((r) => r.push_token);
   if (tokens.length === 0) return;
   const discreet = !!user.discreet;

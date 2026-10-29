@@ -1,5 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
 import { localeFromRequest, tr } from './i18n.js';
+import { readCookie } from './util.js';
 
 // Uzavřený provoz (ACCESS_KEY): server je na internetu, ale bez klíče z něj nikdo nic nedostane.
 //   – nativní aplikace posílá hlavičku X-Access-Key (EXPO_PUBLIC_ACCESS_KEY),
@@ -23,14 +24,6 @@ const OPEN = [
 export const ACCESS_COOKIE = 'yy_access';
 const digest = (s) => createHash('sha256').update(String(s)).digest();
 const cookieValue = (key) => createHash('sha256').update(`yesyes-access:${key}`).digest('hex');
-
-function readCookie(req, name) {
-  for (const part of String(req.get('cookie') ?? '').split(';')) {
-    const [k, ...v] = part.trim().split('=');
-    if (k === name) return v.join('=');
-  }
-  return null;
-}
 
 export function accessGate(accessKey) {
   const expected = digest(accessKey);

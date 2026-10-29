@@ -87,14 +87,14 @@ export function agreementRoutes({ db, services, sealer }) {
         current.condom !== logistics.condom ||
         current.sober !== logistics.sober ||
         current.public_first !== logistics.public_first ||
-        sealer.open(current.safeword) !== logistics.safeword;
+        sealer.openText(current.safeword) !== logistics.safeword;
       if (logisticsChanged) {
         db.prepare(
           `UPDATE agreements SET meet_at = ?, place = ?, condom = ?, sober = ?, public_first = ?, safeword = ?,
              version = version + 1, proposed_by = ?, updated_at = ? WHERE id = ?`,
         ).run(
           logistics.meet_at,
-          logistics.place,
+          db.seal(logistics.place),
           logistics.condom,
           logistics.sober,
           logistics.public_first,
@@ -116,7 +116,7 @@ export function agreementRoutes({ db, services, sealer }) {
           match.id,
           req.user.id,
           logistics.meet_at,
-          logistics.place,
+          db.seal(logistics.place),
           logistics.condom,
           logistics.sober,
           logistics.public_first,

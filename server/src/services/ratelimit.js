@@ -1,21 +1,23 @@
 import { HttpError } from '../util.js';
 
-/** Jednoduchý limit požadavků v paměti (na jeden proces). limiter('login', 10) = 10 za minutu. */
-export function createLimiter({ enabled = true } = {}) {
-  const hits = new Map();
+/**
+ * Limit požadavků: limiter('login', 10) = 10 za minutu na přihlášeného uživatele, jinak na IP adresu.
+ * Počítadla jsou v databázi (pevné minutové okno), takže platí i po restartu serveru.
+ */
+export function createLimiter({ enabled = true, db } = {}) {
   let calls = 0;
-
   return (name, perMinute) => (req, _res, next) => {
     if (!enabled) return next();
-    const now = Date.now();
-    if (++calls % 1000 === 0) {
-      for (const [key, times] of hits) if (now - times[times.length - 1] > 60_000) hits.delete(key);
-    }
+    const window = Math.floor(Date.now() / 60_000);
+    if (++calls % 500 === 0) db.prepare('DELETE FROM rate_hits WHERE win < ?').run(window - 1);
     const key = `${name}:${req.user?.id ?? req.ip}`;
-    const recent = (hits.get(key) ?? []).filter((t) => now - t < 60_000);
-    if (recent.length >= perMinute) throw new HttpError(429, 'errors.rateLimited');
-    recent.push(now);
-    hits.set(key, recent);
+    const row = db
+      .prepare(
+        `INSERT INTO rate_hits (key, win, hits) VALUES (?, ?, 1)
+         ON CONFLICT(key, win) DO UPDATE SET hits = hits + 1 RETURNING hits`,
+      )
+      .get(key, window);
+    if (row.hits > perMinute) throw new HttpError(429, 'errors.rateLimited');
     next();
   };
 }

@@ -166,7 +166,7 @@ describe('chat a moderace', () => {
     const theirs = await t.call('GET', `/api/matches/${matchId}/messages`, { token: b.token });
     assert.equal(mine.body[0].warning, '');
     assert.match(theirs.body[0].warning, /mimo aplikaci/);
-    const stored = t.db.prepare('SELECT body FROM messages WHERE match_id = ?').get(matchId).body;
+    const stored = t.rawGet('SELECT body FROM messages WHERE match_id = ?', matchId).body;
     assert.ok(stored.startsWith('v1:'));
     assert.equal(stored.includes('777'), false);
   });
@@ -250,9 +250,9 @@ describe('domluva', () => {
     const m = await t.makeMatch();
     const agreement = await t.confirmedAgreement(m, { safeword: 'Brokolice', wishes: { anal: 'yes' } });
     assert.equal(agreement.safeword, 'Brokolice');
-    const row = t.db.prepare('SELECT safeword FROM agreements WHERE id = ?').get(agreement.id);
+    const row = t.rawGet('SELECT safeword FROM agreements WHERE id = ?', agreement.id);
     assert.equal(row.safeword.includes('Brokolice'), false);
-    const wish = t.db.prepare('SELECT wishes FROM agreement_wishes WHERE agreement_id = ?').get(agreement.id);
+    const wish = t.rawGet('SELECT wishes FROM agreement_wishes WHERE agreement_id = ?', agreement.id);
     assert.equal(wish.wishes.includes('anal'), false);
   });
 
@@ -490,7 +490,7 @@ describe('nahlášení, hodnocení, moderátoři', () => {
   test('ban platí na osobu – nový účet se stejnou totožností neprojde ověřením', async () => {
     const bad = await t.makeUser({ name: 'Zlouny', lastName: 'Zabanovany', birthdate: '1985-08-08' });
     assert.equal((await t.call('POST', `/api/admin/users/${bad.id}/ban`, { body: {} })).status, 401);
-    const ban = await t.call('POST', `/api/admin/users/${bad.id}/ban`, { headers: { Authorization: 'Bearer dev-admin' }, body: { reason: 'násilí' } });
+    const ban = await t.call('POST', `/api/admin/users/${bad.id}/ban`, { headers: await t.adminHeaders(), body: { reason: 'násilí' } });
     assert.equal(ban.body.status, 'banned');
 
     const again = await t.makeUser({ verify: false });
@@ -507,7 +507,7 @@ describe('nahlášení, hodnocení, moderátoři', () => {
 
   test('moderátor čte jen nahlášené konverzace', async () => {
     const m = await t.makeMatch();
-    const admin = { headers: { Authorization: 'Bearer dev-admin' } };
+    const admin = { headers: await t.adminHeaders() };
     assert.equal((await t.call('GET', `/api/admin/matches/${m.matchId}/messages`, admin)).status, 403);
     await t.call('POST', `/api/matches/${m.matchId}/messages`, { token: m.a.token, body: { text: 'ahoj' } });
     await t.call('POST', `/api/users/${m.a.id}/report`, { token: m.b.token, body: { reason: 'harassment' } });

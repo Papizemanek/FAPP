@@ -2,6 +2,9 @@ import { readFileSync } from 'node:fs';
 import { createApp } from '../src/app.js';
 import { loadConfig } from '../src/config.js';
 import { openDb } from '../src/db.js';
+import { createModerator } from '../src/moderators.js';
+import { totpAt } from '../src/security.js';
+import { memoryEmail } from '../src/services/email.js';
 import { memoryPush } from '../src/services/push.js';
 import { memorySms } from '../src/services/sms.js';
 import { devVerification } from '../src/services/verification.js';
@@ -19,7 +22,7 @@ export function jpegWithExif() {
 export async function startTestServer({ env = {} } = {}) {
   const config = { ...loadConfig({ NODE_ENV: 'test', DATA_KEY: Buffer.alloc(32, 1).toString('base64'), ...env }), dev: true };
   const db = openDb(':memory:');
-  const services = { sms: memorySms(), push: memoryPush(), verification: devVerification() };
+  const services = { sms: memorySms(), push: memoryPush(), verification: devVerification(), email: memoryEmail() };
   const { app, ctx } = createApp({ db, config, services, rateLimit: false });
   const server = await new Promise((resolve) => {
     const s = app.listen(0, () => resolve(s));
@@ -61,11 +64,7 @@ export async function startTestServer({ env = {} } = {}) {
     headers = {},
   } = {}) {
     const email = `${name.toLowerCase()}${counter}@test.cz`;
-    const reg = await call('POST', '/api/auth/register', {
-      headers,
-      body: { email, password: 'tajne-heslo-123', name, birthdate, gender, interestedIn, confirmAdult: true, acceptRules: true },
-    });
-    if (reg.status !== 201) throw new Error(`register ${reg.status} ${JSON.stringify(reg.body)}`);
+    const reg = await register({ email, password: 'tajne-heslo-123', name, birthdate, gender, interestedIn }, headers);
     const token = reg.body.token;
     if (verify) {
       await call('POST', '/api/verification/start', { token });
@@ -75,6 +74,35 @@ export async function startTestServer({ env = {} } = {}) {
       await call('PUT', '/api/me/location', { token, body: { lat, lng } });
     }
     return { token, id: reg.body.user.id, name, email };
+  }
+
+  /** Poslední kód z e-mailu pro danou adresu (registrace, obnova hesla). */
+  const lastCode = (address) => {
+    const mail = services.email.sent.filter((m) => m.to === address).at(-1);
+    return mail?.text.match(/\b(\d{6})\b/)?.[1] ?? null;
+  };
+
+  /** Registrace celá: údaje → kód z e-mailu → účet. */
+  async function register(body, headers = {}) {
+    const start = await call('POST', '/api/auth/register', { headers, body: { confirmAdult: true, acceptRules: true, ...body } });
+    if (start.status !== 202) throw new Error(`register ${start.status} ${JSON.stringify(start.body)}`);
+    const reg = await call('POST', '/api/auth/register/verify', { headers, body: { email: body.email, code: lastCode(body.email) } });
+    if (reg.status !== 201) throw new Error(`register verify ${reg.status} ${JSON.stringify(reg.body)}`);
+    return reg;
+  }
+
+  // Moderátor pro testy moderátorského API (heslo + TOTP → token).
+  const moderator = createModerator(db, { email: 'mod@test.cz', name: 'Moderátor', password: 'moderatorske-heslo-123' });
+  let adminToken = null;
+  async function adminHeaders() {
+    if (!adminToken) {
+      const res = await call('POST', '/api/admin/login', {
+        body: { email: 'mod@test.cz', password: 'moderatorske-heslo-123', code: totpAt(moderator.secret, Math.floor(Date.now() / 30_000)) },
+      });
+      if (res.status !== 200) throw new Error(`admin login ${res.status}`);
+      adminToken = res.body.token;
+    }
+    return { Authorization: `Bearer ${adminToken}` };
   }
 
   async function makeMatch(opts = {}) {
@@ -135,6 +163,12 @@ export async function startTestServer({ env = {} } = {}) {
     ctx,
     services,
     call,
+    /** Řádek přímo z databáze bez automatického dešifrování (kontrola šifrování v klidu). */
+    rawGet: (sql, ...args) => db.prepare(sql).raw.get(...args),
+    rawAll: (sql, ...args) => db.prepare(sql).raw.all(...args),
+    register,
+    lastCode,
+    adminHeaders,
     makeUser,
     makeMatch,
     setSafety,

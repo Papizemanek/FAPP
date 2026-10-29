@@ -11,7 +11,6 @@ before(async () => {
 });
 after(() => t.close());
 
-const admin = { authorization: 'Bearer dev-admin' };
 const billing = async (u) => (await t.call('GET', '/api/billing', { token: u.token })).body;
 const buy = (u, productId) => t.call('POST', '/api/billing/purchase', { token: u.token, body: { productId } });
 const like = (u, target, extra = {}) => t.call('POST', '/api/swipes', { token: u.token, body: { targetId: target.id, like: true, ...extra } });
@@ -66,14 +65,14 @@ describe('start zdarma (free režim)', () => {
 
   test('darované předplatné od admina platí i ve free režimu', async () => {
     const [a] = await people(1, place());
-    const res = await t.call('POST', `/api/admin/users/${a.id}/plan`, { headers: admin, body: { plan: 'gold', days: 30 } });
+    const res = await t.call('POST', `/api/admin/users/${a.id}/plan`, { headers: await t.adminHeaders(), body: { plan: 'gold', days: 30 } });
     assert.equal(res.body.plan, 'gold');
     const status = await billing(a);
     assert.equal(status.plan, 'gold');
     assert.equal(status.features.seeLikes, true);
     assert.equal(status.superLikes.weeklyLeft, WEEKLY_SUPER_LIKES);
 
-    await t.call('POST', `/api/admin/users/${a.id}/plan`, { headers: admin, body: { plan: 'free' } });
+    await t.call('POST', `/api/admin/users/${a.id}/plan`, { headers: await t.adminHeaders(), body: { plan: 'free' } });
     assert.equal((await billing(a)).plan, 'free');
   });
 });

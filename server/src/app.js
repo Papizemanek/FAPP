@@ -4,8 +4,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { accessGate } from './accessGate.js';
 import { createSealer } from './crypto.js';
+import { enableSealing } from './db.js';
+import { SECURITY_TXT, securityHeaders, staticCsp } from './headers.js';
 import { localeFromRequest, tr } from './i18n.js';
 import { adminRoutes } from './routes/admin.js';
+import { accountRoutes } from './routes/account.js';
 import { agreementRoutes } from './routes/agreements.js';
 import { authRoutes } from './routes/auth.js';
 import { billingRoutes } from './routes/billing.js';
@@ -30,13 +33,8 @@ export function createApp({ db, config, services, rateLimit = true }) {
   app.disable('x-powered-by');
   if (process.env.TRUST_PROXY) app.set('trust proxy', process.env.TRUST_PROXY);
 
-  app.use((_req, res, next) => {
-    res.set('X-Content-Type-Options', 'nosniff');
-    res.set('X-Frame-Options', 'DENY');
-    res.set('Referrer-Policy', 'no-referrer');
-    if (!config.dev) res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-    next();
-  });
+  app.use(securityHeaders());
+  app.get('/.well-known/security.txt', (_req, res) => res.type('text/plain').send(SECURITY_TXT(config.publicUrl)));
   if (config.accessKey) app.use(accessGate(config.accessKey));
   // Jazyk odpovědi (chyby). requireAuth ho upřesní podle uloženého jazyka uživatele.
   app.use((req, _res, next) => {
@@ -44,21 +42,29 @@ export function createApp({ db, config, services, rateLimit = true }) {
     next();
   });
   // rawBody je potřeba pro ověření podpisu webhooku ověřovací služby.
-  app.use(express.json({ limit: '4mb', verify: (req, _res, buf) => (req.rawBody = buf) }));
+  // Velké tělo (fotka v base64) jen tam, kde se fotky nahrávají; jinde 64 kB proti zahlcení serveru.
+  const keepRaw = (req, _res, buf) => (req.rawBody = buf);
+  const photoUpload = /^\/api\/(me\/photos|matches\/\d+\/messages)$/;
+  const bigJson = express.json({ limit: '4mb', verify: keepRaw });
+  const smallJson = express.json({ limit: '64kb', verify: keepRaw });
+  app.use((req, res, next) => (photoUpload.test(req.path) ? bigJson : smallJson)(req, res, next));
 
+  // Šifrování v klidu: citlivé sloupce se zapisují zašifrované a při čtení se samy dešifrují (db.js).
+  enableSealing(db, createSealer(config.dataKey), { emailIndexKey: config.emailIndexKey });
   const ctx = {
     db,
     config,
     services,
-    sealer: createSealer(config.dataKey),
+    sealer: db.sealer,
     alerts: createAlerts({ db, sms: services.sms }),
-    limiter: createLimiter({ enabled: rateLimit }),
+    limiter: createLimiter({ enabled: rateLimit, db }),
   };
 
   app.get('/health', (_req, res) => res.json({ ok: true }));
   app.use('/vendor/leaflet', express.static(leafletDir, { maxAge: '7d' }));
   app.use(shareRoutes(ctx));
   app.use('/api/auth', authRoutes(ctx));
+  app.use('/api/me', accountRoutes(ctx));
   app.use('/api/me', profileRoutes(ctx));
   app.use('/api/verification', verificationRoutes(ctx));
   app.use('/api/images', imageRoutes(ctx));
@@ -90,15 +96,16 @@ export function createApp({ db, config, services, rateLimit = true }) {
       });
     });
     app.get('/icon.png', (_req, res) => res.sendFile(path.join(config.webAppDir, 'icon.png')));
+    const webAppHtml = fs.readFileSync(webAppIndex, 'utf8');
     app.get(/^\/(?!api\/).*/, (_req, res) => {
       res.set('Cache-Control', 'no-cache');
-      res.sendFile(webAppIndex);
+      res.type('html').send(webAppHtml);
     });
   }
 
   // Sestavený web (npm run build -w web) – pokud existuje, server ho rovnou servíruje na /.
   if (config.webDir && fs.existsSync(path.join(config.webDir, 'index.html'))) {
-    app.use(express.static(config.webDir, { maxAge: '1h', extensions: ['html'] }));
+    app.use(express.static(config.webDir, { maxAge: '1h', extensions: ['html'], setHeaders: staticCsp }));
   }
 
   // Chyby se překládají až tady, podle jazyka požadavku. params slouží jen k překladu a do odpovědi nejdou.

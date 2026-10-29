@@ -12,12 +12,12 @@ test('čekací listina: e-mail se uloží zašifrovaný, duplicita nic neprozrad
   const body = { email: 'Lucie@Example.cz', city: 'brno', locale: 'de', consent: true };
   assert.equal((await t.call('POST', '/api/waitlist', { body })).status, 201);
   assert.equal((await t.call('POST', '/api/waitlist', { body: { ...body, email: 'lucie@example.cz' } })).status, 201);
-  const rows = t.db.prepare('SELECT * FROM waitlist').all();
+  const rows = t.rawAll('SELECT * FROM waitlist');
   assert.equal(rows.length, 1);
   assert.equal(rows[0].city, 'brno');
   assert.equal(rows[0].locale, 'de');
   assert.ok(!rows[0].email.includes('lucie'));
-  const list = await t.call('GET', '/api/admin/waitlist', { headers: { authorization: 'Bearer dev-admin' } });
+  const list = await t.call('GET', '/api/admin/waitlist', { headers: await t.adminHeaders() });
   assert.equal(list.body[0].email, 'lucie@example.cz');
 });
 

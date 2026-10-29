@@ -2,13 +2,14 @@
 // Demo profily (e-mail @demo.yesyes) ve vývojovém režimu automaticky lajkují zpátky.
 import { readFileSync } from 'node:fs';
 import { loadConfig } from './config.js';
-import { openDb } from './db.js';
+import { createSealer, emailIndex } from './crypto.js';
+import { enableSealing, openDb } from './db.js';
 import { saveImage } from './images.js';
 import { hashSecret, nowIso, snapToGrid, token } from './util.js';
 
 const config = loadConfig();
 if (!config.dev) throw new Error('Seed je jen pro vývoj.');
-const db = openDb(config.dbFile);
+const db = enableSealing(openDb(config.dbFile), createSealer(config.dataKey), { emailIndexKey: config.emailIndexKey });
 
 const people = [
   ['Lucie', 'woman', ['man'], '1997-03-12', 'Ráda začínám drinkem. Pak uvidíme.', ['oneoff', 'curious', 'chatFirst', 'host', 'single']],
@@ -22,27 +23,29 @@ const people = [
 ];
 
 const insert = db.prepare(
-  `INSERT INTO users (email, password_hash, name, birthdate, gender, interested_in, bio, tags, lat, lng,
+  `INSERT INTO users (email_hash, email, password_hash, name, birthdate, gender, interested_in, bio, tags, lat, lng,
      trusted_name, trusted_phone, checkin_pin_hash, duress_pin_hash, verification_status, verified_at, person_hash, created_at)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'approved', ?, ?, ?)`,
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'approved', ?, ?, ?)`,
 );
 
 for (const [i, [name, gender, interestedIn, birthdate, bio, tags]] of people.entries()) {
   const email = `${name.toLowerCase()}@demo.yesyes`;
-  if (db.prepare('SELECT 1 FROM users WHERE email = ?').get(email)) continue;
+  if (db.prepare('SELECT 1 FROM users WHERE email_hash = ?').get(emailIndex(config.emailIndexKey, email))) continue;
+  const seal = (v) => db.seal(v);
   const { lastInsertRowid } = insert.run(
-    email,
+    emailIndex(config.emailIndexKey, email),
+    seal(email),
     hashSecret('demo-heslo-123'),
-    name === 'Klara' ? 'Klára' : name,
-    birthdate,
-    gender,
-    JSON.stringify(interestedIn),
-    bio,
-    JSON.stringify(tags),
-    snapToGrid(50.08 + (i - 4) * 0.012),
-    snapToGrid(14.43 + ((i % 3) - 1) * 0.02),
-    'Demo kontakt',
-    '+420600000000',
+    seal(name === 'Klara' ? 'Klára' : name),
+    seal(birthdate),
+    seal(gender),
+    seal(JSON.stringify(interestedIn)),
+    seal(bio),
+    seal(JSON.stringify(tags)),
+    seal(snapToGrid(50.08 + (i - 4) * 0.012)),
+    seal(snapToGrid(14.43 + ((i % 3) - 1) * 0.02)),
+    seal('Demo kontakt'),
+    seal('+420600000000'),
     hashSecret('1234'),
     hashSecret('9999'),
     nowIso(),

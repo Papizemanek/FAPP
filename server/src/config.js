@@ -1,3 +1,5 @@
+import { deriveKey } from './crypto.js';
+
 // Konfigurace z proměnných prostředí. Ve vývoji má rozumné výchozí hodnoty,
 // v produkci (NODE_ENV=production) chybějící tajemství zastaví start.
 
@@ -17,9 +19,13 @@ export function loadConfig(env = process.env) {
     port,
     publicUrl: (env.PUBLIC_URL ?? `http://localhost:${port}`).replace(/\/$/, ''),
     dbFile: env.DB_FILE ?? 'yesyes.db',
-    dataKey: required('DATA_KEY', DEV_DATA_KEY),
+    // Jeden klíč v base64, nebo keyring pro rotaci: "v2:<base64>,v1:<base64>" (první je aktuální).
+    dataKey: env.DATA_KEYS || required('DATA_KEY', DEV_DATA_KEY),
     identitySecret: required('IDENTITY_SECRET', 'dev-identity-secret'),
-    adminToken: required('ADMIN_TOKEN', 'dev-admin'),
+    // Moderátorské API jen z těchto IP adres (čárkami; prázdné = odkudkoli, ale vždy heslo + TOTP).
+    adminIps: (env.ADMIN_IPS ?? '').split(',').map((s) => s.trim()).filter(Boolean),
+    emailProvider: env.EMAIL_PROVIDER ?? (dev ? 'console' : 'resend'),
+    resend: { apiKey: env.RESEND_API_KEY, from: env.EMAIL_FROM },
     verificationProvider: env.VERIFICATION_PROVIDER ?? (dev ? 'dev' : 'veriff'),
     veriff: {
       baseUrl: env.VERIFF_BASE_URL ?? 'https://stationapi.veriff.com',
@@ -48,6 +54,16 @@ export function loadConfig(env = process.env) {
     webAppDir: env.WEB_APP_DIR ?? new URL('../webapp/', import.meta.url).pathname,
     webDir: env.WEB_DIR ?? new URL('../../web/dist/', import.meta.url).pathname,
   };
+
+  // Slepý index e-mailů – odvozený z IDENTITY_SECRET, ať nejde o další tajemství na hlídání.
+  config.emailIndexKey = deriveKey(config.identitySecret, 'email-index');
+
+  // Vývojový režim (simulované ověření totožnosti, kódy v logu) nesmí být veřejně dostupný bez klíče.
+  const local = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(config.publicUrl);
+  if (dev && !local && !config.accessKey && env.ALLOW_PUBLIC_DEV !== '1') {
+    throw new Error('Vývojový režim na veřejné adrese běží jen za přístupovým klíčem (ACCESS_KEY).');
+  }
+  if (!dev && config.identitySecret.length < 32) throw new Error('IDENTITY_SECRET musí mít aspoň 32 znaků.');
 
   if (!['free', 'paid'].includes(config.billingMode)) throw new Error('BILLING_MODE musí být free nebo paid.');
   if (!['dev', 'revenuecat'].includes(config.paymentsProvider)) throw new Error('PAYMENTS_PROVIDER musí být dev nebo revenuecat.');

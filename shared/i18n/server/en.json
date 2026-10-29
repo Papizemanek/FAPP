@@ -61,7 +61,9 @@
     "reason": "reason",
     "details": "details",
     "resolution": "resolution",
-    "days": "number of days"
+    "days": "number of days",
+    "newPassword": "new password",
+    "session": "device"
   },
   "auth": {
     "confirmAdult": "You must confirm you're 18 or older.",
@@ -73,7 +75,10 @@
     "banned": "This account was banned for breaking the rules.",
     "notLoggedIn": "You're not signed in.",
     "suspended": "Your account is suspended until a moderator reviews it.",
-    "verifyFirst": "Verify your identity first."
+    "verifyFirst": "Verify your identity first.",
+    "badCode": "That code is wrong or has expired. Try again or request a new one.",
+    "tooManyAttempts": "Too many attempts. Try again in a moment.",
+    "loginExpired": "Your sign-in timed out. Enter your email and password again."
   },
   "profile": {
     "wrongPassword": "Wrong password.",
@@ -275,5 +280,41 @@
     "comfort": "What makes me comfortable",
     "place": "Where",
     "status": "Relationship status"
+  },
+  "account": {
+    "samePassword": "The new password must differ from the current one.",
+    "twoFactorOn": "Two-step verification is already on.",
+    "twoFactorOff": "Two-step verification isn't on.",
+    "twoFactorSetupFirst": "Generate a key for your authenticator app first."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Verification code: {code}",
+      "body": "Your code to finish signing up is {code}.\n\nIt's valid for 15 minutes. If you didn't sign up, ignore this email."
+    },
+    "accountExists": {
+      "subject": "Sign-up attempt",
+      "body": "Someone just tried to create an account with this email address, but you already have one.\n\nIf it was you, just sign in (or reset your password). If not, do nothing – your account stays safe."
+    },
+    "resetCode": {
+      "subject": "Password reset code: {code}",
+      "body": "Your password reset code is {code}.\n\nIt's valid for 15 minutes. If you didn't ask for a reset, ignore this email – your password stays the same."
+    },
+    "newLogin": {
+      "subject": "New sign-in to your account",
+      "body": "Someone just signed in to your account ({device}).\n\nIf it wasn't you, change your password right away and sign out other devices in security settings."
+    },
+    "passwordChanged": {
+      "subject": "Your password was changed",
+      "body": "The password for your account was just changed and other devices were signed out.\n\nIf it wasn't you, reset your password via “Forgot password” and contact us."
+    },
+    "twoFactorOn": {
+      "subject": "Two-step verification turned on",
+      "body": "Signing in to your account now also needs a code from your authenticator app.\n\nKeep your backup codes somewhere safe."
+    },
+    "twoFactorOff": {
+      "subject": "Two-step verification turned off",
+      "body": "Two-step verification was turned off for your account.\n\nIf it wasn't you, change your password right away."
+    }
   }
 }
