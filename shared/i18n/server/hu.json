@@ -61,7 +61,9 @@
     "reason": "ok",
     "details": "részletek",
     "resolution": "megoldás",
-    "days": "napok száma"
+    "days": "napok száma",
+    "newPassword": "új jelszó",
+    "session": "eszköz"
   },
   "auth": {
     "confirmAdult": "Meg kell erősítened, hogy elmúltál 18 éves.",
@@ -73,7 +75,10 @@
     "banned": "Ezt a fiókot szabályszegés miatt kitiltottuk.",
     "notLoggedIn": "Nem vagy bejelentkezve.",
     "suspended": "A fiókod fel van függesztve, amíg egy moderátor át nem nézi.",
-    "verifyFirst": "Előbb igazold a személyazonosságodat."
+    "verifyFirst": "Előbb igazold a személyazonosságodat.",
+    "badCode": "A kód hibás vagy lejárt. Próbáld újra, vagy kérj újat.",
+    "tooManyAttempts": "Túl sok próbálkozás. Próbáld újra egy kicsit később.",
+    "loginExpired": "A bejelentkezés lejárt. Add meg újra az e-mail-címed és a jelszavad."
   },
   "profile": {
     "wrongPassword": "Hibás jelszó.",
@@ -275,5 +280,41 @@
     "comfort": "Amitől jól érzem magam",
     "place": "Hol",
     "status": "Kapcsolati státusz"
+  },
+  "account": {
+    "samePassword": "Az új jelszónak különböznie kell a jelenlegitől.",
+    "twoFactorOn": "A kétlépcsős azonosítás már be van kapcsolva.",
+    "twoFactorOff": "A kétlépcsős azonosítás nincs bekapcsolva.",
+    "twoFactorSetupFirst": "Először hozz létre egy kulcsot a hitelesítő alkalmazásodhoz."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Ellenőrző kód: {code}",
+      "body": "A regisztráció befejezéséhez szükséges kódod: {code}.\n\n15 percig érvényes. Ha nem te regisztráltál, hagyd figyelmen kívül ezt az e-mailt."
+    },
+    "accountExists": {
+      "subject": "Regisztrációs kísérlet",
+      "body": "Valaki az imént megpróbált fiókot létrehozni ezzel az e-mail-címmel, de neked már van fiókod.\n\nHa te voltál, egyszerűen jelentkezz be (vagy állítsd vissza a jelszavad). Ha nem, nem kell tenned semmit – a fiókod biztonságban van."
+    },
+    "resetCode": {
+      "subject": "Jelszó-visszaállító kód: {code}",
+      "body": "A jelszavad visszaállításához szükséges kód: {code}.\n\n15 percig érvényes. Ha nem kértél visszaállítást, hagyd figyelmen kívül ezt az e-mailt – a jelszavad nem változik."
+    },
+    "newLogin": {
+      "subject": "Új bejelentkezés a fiókodba",
+      "body": "Valaki az imént bejelentkezett a fiókodba ({device}).\n\nHa nem te voltál, azonnal változtasd meg a jelszavad, és a biztonsági beállításokban jelentkeztesd ki a többi eszközt."
+    },
+    "passwordChanged": {
+      "subject": "A jelszavad megváltozott",
+      "body": "A fiókod jelszavát az imént megváltoztatták, a többi eszközt pedig kijelentkeztettük.\n\nHa nem te voltál, állítsd vissza a jelszavad az „Elfelejtett jelszó” lehetőséggel, és írj nekünk."
+    },
+    "twoFactorOn": {
+      "subject": "Kétlépcsős azonosítás bekapcsolva",
+      "body": "A fiókodba való bejelentkezéshez mostantól a hitelesítő alkalmazásodban látható kód is szükséges.\n\nA tartalék kódokat tárold biztonságos helyen."
+    },
+    "twoFactorOff": {
+      "subject": "Kétlépcsős azonosítás kikapcsolva",
+      "body": "A fiókodnál kikapcsolták a kétlépcsős azonosítást.\n\nHa nem te voltál, azonnal változtasd meg a jelszavad."
+    }
   }
 }

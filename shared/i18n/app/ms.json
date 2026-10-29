@@ -571,7 +571,11 @@
     "title": "Log masuk",
     "email": "E-mel",
     "password": "Kata laluan",
-    "submit": "Log masuk"
+    "submit": "Log masuk",
+    "twoFactorTitle": "Pengesahan 2 langkah",
+    "twoFactorHint": "Masukkan kod daripada apl pengesah anda atau salah satu kod sandaran anda.",
+    "code": "Kod",
+    "forgot": "Lupa kata laluan"
   },
   "register": {
     "title": "Cipta akaun",
@@ -586,7 +590,12 @@
     "confirmAdult": "Saya berumur 18 tahun atau lebih.",
     "acceptRules": "Saya bersetuju dengan peraturan komuniti dan pemprosesan data saya, termasuk data tentang kehidupan seks saya, supaya YesYes dapat berfungsi.",
     "verifyNote": "Sejurus selepas ini, kami akan mengesahkan identiti dan umur anda (dokumen pengenalan dan swafoto). Kami tidak menyimpan dokumen pengenalan anda.",
-    "continue": "Teruskan"
+    "continue": "Teruskan",
+    "codeTitle": "Semak e-mel anda",
+    "codeSent": "Kami telah menghantar kod 6 digit ke {email}. Jika anda sudah mempunyai akaun, anda akan menerima notis sebaliknya – log masuk sahaja.",
+    "code": "Kod daripada e-mel",
+    "confirmCode": "Sahkan dan cipta akaun",
+    "resend": "Hantar kod semula"
   },
   "verify": {
     "title": "Sahkan bahawa ini anda",
@@ -697,5 +706,53 @@
     "faceId": "YesYes menggunakan Face ID untuk membuka kunci, supaya tiada orang lain boleh melihat isinya.",
     "photos": "Pilih foto untuk profil anda.",
     "camera": "Ambil gambar diri anda untuk profil."
+  },
+  "forgot": {
+    "title": "Tetapkan semula kata laluan",
+    "intro": "Kami akan menghantar kod melalui e-mel supaya anda boleh menetapkan kata laluan baharu.",
+    "send": "Hantar kod",
+    "sent": "Jika terdapat akaun untuk {email}, kami telah menghantar kod 6 digit kepadanya. Kod ini sah selama 15 minit.",
+    "newPassword": "Kata laluan baharu (sekurang-kurangnya 10 aksara)",
+    "save": "Tetapkan kata laluan baharu",
+    "done": "Kata laluan anda telah ditukar dan semua peranti telah dilog keluar. Log masuk dengan kata laluan baharu anda.",
+    "toLogin": "Log masuk"
+  },
+  "security": {
+    "title": "Keselamatan akaun",
+    "bannerOff": "Hidupkan pengesahan 2 langkah dan semak peranti yang sedang log masuk.",
+    "passwordChanged": "Kata laluan ditukar. Peranti lain telah dilog keluar.",
+    "currentPassword": "Kata laluan semasa",
+    "continue": "Teruskan",
+    "twoFactor": {
+      "title": "Pengesahan 2 langkah",
+      "on": "Pengesahan 2 langkah dihidupkan",
+      "off": "Pengesahan 2 langkah dimatikan",
+      "hint": "Log masuk juga akan memerlukan kod daripada apl pengesah (cth. Google Authenticator, 1Password). Kata laluan sahaja tidak mencukupi.",
+      "enable": "Hidupkan pengesahan 2 langkah",
+      "disable": "Matikan pengesahan 2 langkah",
+      "scan": "Tambahkan YesYes pada apl pengesah anda – dengan butang di bawah, atau taip kunci. Kemudian masukkan kod yang dipaparkan oleh apl.",
+      "openApp": "Buka dalam apl pengesah",
+      "key": "Kunci untuk kemasukan manual",
+      "code": "Kod daripada apl",
+      "confirm": "Hidupkan",
+      "codesIntro": "Selesai. Simpan kod sandaran ini di tempat yang selamat (cth. pengurus kata laluan). Setiap kod boleh digunakan sekali sahaja, untuk ketika telefon anda tiada bersama anda.",
+      "saveCodes": "Simpan kod sandaran",
+      "codesDone": "Saya sudah menyimpannya",
+      "codeOrBackup": "Kod apl atau kod sandaran"
+    },
+    "password": {
+      "title": "Tukar kata laluan",
+      "new": "Kata laluan baharu",
+      "hint": "Sekurang-kurangnya 10 aksara. Peranti lain akan dilog keluar.",
+      "save": "Tukar kata laluan"
+    },
+    "devices": {
+      "title": "Peranti yang log masuk",
+      "unknown": "Peranti tidak diketahui",
+      "current": "Peranti ini",
+      "lastUsed": "Kali terakhir digunakan {date}",
+      "signOut": "Log keluar",
+      "signOutOthers": "Log keluar semua peranti lain"
+    }
   }
 }

@@ -583,7 +583,11 @@
     "title": "Bejelentkezés",
     "email": "E-mail",
     "password": "Jelszó",
-    "submit": "Bejelentkezés"
+    "submit": "Bejelentkezés",
+    "twoFactorTitle": "Kétlépcsős azonosítás",
+    "twoFactorHint": "Írd be a hitelesítő alkalmazásban látható kódot vagy az egyik tartalék kódodat.",
+    "code": "Kód",
+    "forgot": "Elfelejtett jelszó"
   },
   "register": {
     "title": "Fiók létrehozása",
@@ -598,7 +602,12 @@
     "confirmAdult": "Elmúltam 18 éves.",
     "acceptRules": "Elfogadom a közösségi szabályokat és az adataim kezelését – beleértve a szexuális életemre vonatkozó adatokat is –, hogy az YesYes működni tudjon.",
     "verifyNote": "Ezután rögtön ellenőrizzük a személyazonosságodat és az életkorodat (igazolvány és szelfi). Az igazolványodat nem tároljuk.",
-    "continue": "Tovább"
+    "continue": "Tovább",
+    "codeTitle": "Nézd meg az e-mailjeidet",
+    "codeSent": "Küldtünk egy 6 jegyű kódot a(z) {email} címre. Ha már van itt fiókod, kód helyett értesítést kapsz – csak jelentkezz be.",
+    "code": "Kód az e-mailből",
+    "confirmCode": "Ellenőrzés és fiók létrehozása",
+    "resend": "Kód újraküldése"
   },
   "verify": {
     "title": "Igazold, hogy te vagy az",
@@ -710,5 +719,53 @@
     "faceId": "Az YesYes Face ID-val oldható fel, így más nem nézhet bele.",
     "photos": "Válassz fotókat a profilodhoz.",
     "camera": "Készíts magadról fotót a profilodhoz."
+  },
+  "forgot": {
+    "title": "Jelszó visszaállítása",
+    "intro": "E-mailben küldünk egy kódot, amellyel új jelszót állíthatsz be.",
+    "send": "Kód küldése",
+    "sent": "Ha tartozik fiók a(z) {email} címhez, elküldtük rá a 6 jegyű kódot. 15 percig érvényes.",
+    "newPassword": "Új jelszó (legalább 10 karakter)",
+    "save": "Új jelszó beállítása",
+    "done": "A jelszavad megváltozott, és minden eszközt kijelentkeztettünk. Jelentkezz be az új jelszavaddal.",
+    "toLogin": "Bejelentkezés"
+  },
+  "security": {
+    "title": "Fiókbiztonság",
+    "bannerOff": "Kapcsold be a kétlépcsős azonosítást, és nézd át a bejelentkezett eszközöket.",
+    "passwordChanged": "A jelszó megváltozott. A többi eszközt kijelentkeztettük.",
+    "currentPassword": "Jelenlegi jelszó",
+    "continue": "Tovább",
+    "twoFactor": {
+      "title": "Kétlépcsős azonosítás",
+      "on": "A kétlépcsős azonosítás be van kapcsolva",
+      "off": "A kétlépcsős azonosítás ki van kapcsolva",
+      "hint": "Bejelentkezéskor egy hitelesítő alkalmazásban (pl. Google Authenticator, 1Password) megjelenő kódra is szükség lesz. A jelszó önmagában nem lesz elég.",
+      "enable": "Kétlépcsős azonosítás bekapcsolása",
+      "disable": "Kétlépcsős azonosítás kikapcsolása",
+      "scan": "Add hozzá a YesYes-t a hitelesítő alkalmazásodhoz – az alábbi gombbal vagy a kulcs kézi beírásával. Ezután írd be a kódot, amelyet az alkalmazás mutat.",
+      "openApp": "Megnyitás a hitelesítő alkalmazásban",
+      "key": "Kulcs kézi megadáshoz",
+      "code": "Kód az alkalmazásból",
+      "confirm": "Bekapcsolás",
+      "codesIntro": "Kész. Tárold ezeket a tartalék kódokat biztonságos helyen (pl. jelszókezelőben). Mindegyik egyszer használható, arra az esetre, ha nincs kéznél a telefonod.",
+      "saveCodes": "Tartalék kódok mentése",
+      "codesDone": "Elmentettem őket",
+      "codeOrBackup": "Alkalmazáskód vagy tartalék kód"
+    },
+    "password": {
+      "title": "Jelszó módosítása",
+      "new": "Új jelszó",
+      "hint": "Legalább 10 karakter. A módosítás után a többi eszköz kijelentkezik.",
+      "save": "Jelszó módosítása"
+    },
+    "devices": {
+      "title": "Bejelentkezett eszközök",
+      "unknown": "Ismeretlen eszköz",
+      "current": "Ez az eszköz",
+      "lastUsed": "Utoljára használva: {date}",
+      "signOut": "Kijelentkeztetés",
+      "signOutOthers": "Az összes többi eszköz kijelentkeztetése"
+    }
   }
 }

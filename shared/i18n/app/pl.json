@@ -607,7 +607,11 @@
     "title": "Logowanie",
     "email": "E-mail",
     "password": "Hasło",
-    "submit": "Zaloguj się"
+    "submit": "Zaloguj się",
+    "twoFactorTitle": "Weryfikacja dwuetapowa",
+    "twoFactorHint": "Wpisz kod z aplikacji uwierzytelniającej lub jeden z kodów zapasowych.",
+    "code": "Kod",
+    "forgot": "Nie pamiętam hasła"
   },
   "register": {
     "title": "Utwórz konto",
@@ -622,7 +626,12 @@
     "confirmAdult": "Mam co najmniej 18 lat.",
     "acceptRules": "Akceptuję zasady społeczności i zgadzam się na przetwarzanie moich danych, w tym danych o moim życiu seksualnym, aby YesYes mógł działać.",
     "verifyNote": "Zaraz potem zweryfikujemy twoją tożsamość i wiek (dokument i selfie). Nie przechowujemy twojego dokumentu.",
-    "continue": "Dalej"
+    "continue": "Dalej",
+    "codeTitle": "Sprawdź skrzynkę e-mail",
+    "codeSent": "Wysłaliśmy 6-cyfrowy kod na adres {email}. Jeśli masz już konto, zamiast kodu dostaniesz powiadomienie – po prostu się zaloguj.",
+    "code": "Kod z e-maila",
+    "confirmCode": "Zweryfikuj i utwórz konto",
+    "resend": "Wyślij kod ponownie"
   },
   "verify": {
     "title": "Potwierdź, że to ty",
@@ -736,5 +745,53 @@
     "faceId": "YesYes odblokowuje się przez Face ID, żeby nikt inny nie zajrzał do środka.",
     "photos": "Wybierz zdjęcia do profilu.",
     "camera": "Zrób sobie zdjęcie do profilu."
+  },
+  "forgot": {
+    "title": "Resetowanie hasła",
+    "intro": "Wyślemy Ci e-mailem kod do ustawienia nowego hasła.",
+    "send": "Wyślij kod",
+    "sent": "Jeśli istnieje konto dla {email}, wysłaliśmy na nie 6-cyfrowy kod. Jest ważny przez 15 minut.",
+    "newPassword": "Nowe hasło (co najmniej 10 znaków)",
+    "save": "Ustaw nowe hasło",
+    "done": "Hasło zostało zmienione, a wszystkie urządzenia wylogowane. Zaloguj się nowym hasłem.",
+    "toLogin": "Zaloguj się"
+  },
+  "security": {
+    "title": "Bezpieczeństwo konta",
+    "bannerOff": "Włącz weryfikację dwuetapową i sprawdź zalogowane urządzenia.",
+    "passwordChanged": "Hasło zmienione. Inne urządzenia zostały wylogowane.",
+    "currentPassword": "Obecne hasło",
+    "continue": "Dalej",
+    "twoFactor": {
+      "title": "Weryfikacja dwuetapowa",
+      "on": "Weryfikacja dwuetapowa jest włączona",
+      "off": "Weryfikacja dwuetapowa jest wyłączona",
+      "hint": "Przy logowaniu potrzebny będzie też kod z aplikacji uwierzytelniającej (np. Google Authenticator, 1Password). Samo hasło nie wystarczy.",
+      "enable": "Włącz weryfikację dwuetapową",
+      "disable": "Wyłącz weryfikację dwuetapową",
+      "scan": "Dodaj YesYes do aplikacji uwierzytelniającej – przyciskiem poniżej albo wpisując klucz. Potem wpisz kod, który pokaże aplikacja.",
+      "openApp": "Otwórz w aplikacji uwierzytelniającej",
+      "key": "Klucz do wpisania ręcznie",
+      "code": "Kod z aplikacji",
+      "confirm": "Włącz",
+      "codesIntro": "Gotowe. Przechowuj te kody zapasowe w bezpiecznym miejscu (np. w menedżerze haseł). Każdy działa raz – na wypadek, gdy nie masz przy sobie telefonu.",
+      "saveCodes": "Zapisz kody zapasowe",
+      "codesDone": "Mam je zapisane",
+      "codeOrBackup": "Kod z aplikacji lub kod zapasowy"
+    },
+    "password": {
+      "title": "Zmień hasło",
+      "new": "Nowe hasło",
+      "hint": "Co najmniej 10 znaków. Inne urządzenia zostaną wylogowane.",
+      "save": "Zmień hasło"
+    },
+    "devices": {
+      "title": "Zalogowane urządzenia",
+      "unknown": "Nieznane urządzenie",
+      "current": "To urządzenie",
+      "lastUsed": "Ostatnio używane {date}",
+      "signOut": "Wyloguj",
+      "signOutOthers": "Wyloguj wszystkie inne urządzenia"
+    }
   }
 }

@@ -583,7 +583,11 @@
     "title": "Logg inn",
     "email": "E-post",
     "password": "Passord",
-    "submit": "Logg inn"
+    "submit": "Logg inn",
+    "twoFactorTitle": "Totrinnsbekreftelse",
+    "twoFactorHint": "Skriv inn koden fra autentiseringsappen din, eller en av reservekodene dine.",
+    "code": "Kode",
+    "forgot": "Glemt passordet"
   },
   "register": {
     "title": "Opprett konto",
@@ -598,7 +602,12 @@
     "confirmAdult": "Jeg er 18 år eller eldre.",
     "acceptRules": "Jeg godtar fellesskapets regler og behandlingen av opplysningene mine, inkludert opplysninger om sexlivet mitt, slik at YesYes kan fungere.",
     "verifyNote": "Rett etterpå verifiserer vi identiteten og alderen din (legitimasjon og selfie). Vi lagrer ikke legitimasjonen din.",
-    "continue": "Fortsett"
+    "continue": "Fortsett",
+    "codeTitle": "Sjekk e-posten din",
+    "codeSent": "Vi har sendt en 6-sifret kode til {email}. Hvis du allerede har en konto, får du i stedet et varsel – bare logg inn.",
+    "code": "Kode fra e-post",
+    "confirmCode": "Bekreft og opprett konto",
+    "resend": "Send koden på nytt"
   },
   "verify": {
     "title": "Bekreft at det er deg",
@@ -710,5 +719,53 @@
     "faceId": "YesYes bruker Face ID til å låse opp, slik at ingen andre kan se inn.",
     "photos": "Velg bilder til profilen din.",
     "camera": "Ta et bilde av deg selv til profilen din."
+  },
+  "forgot": {
+    "title": "Tilbakestill passord",
+    "intro": "Vi sender deg en kode på e-post, så du kan velge et nytt passord.",
+    "send": "Send kode",
+    "sent": "Hvis det finnes en konto for {email}, har vi sendt en 6-sifret kode dit. Den er gyldig i 15 minutter.",
+    "newPassword": "Nytt passord (minst 10 tegn)",
+    "save": "Lagre nytt passord",
+    "done": "Passordet ditt er endret, og alle enheter er logget ut. Logg inn med det nye passordet.",
+    "toLogin": "Logg inn"
+  },
+  "security": {
+    "title": "Kontosikkerhet",
+    "bannerOff": "Slå på totrinnsbekreftelse og sjekk hvilke enheter som er pålogget.",
+    "passwordChanged": "Passordet er endret. Andre enheter er logget ut.",
+    "currentPassword": "Nåværende passord",
+    "continue": "Fortsett",
+    "twoFactor": {
+      "title": "Totrinnsbekreftelse",
+      "on": "Totrinnsbekreftelse er på",
+      "off": "Totrinnsbekreftelse er av",
+      "hint": "Når du logger inn, trenger du også en kode fra en autentiseringsapp (f.eks. Google Authenticator, 1Password). Passordet alene holder ikke.",
+      "enable": "Slå på totrinnsbekreftelse",
+      "disable": "Slå av totrinnsbekreftelse",
+      "scan": "Legg til YesYes i autentiseringsappen din – med knappen nedenfor, eller skriv inn nøkkelen. Skriv så inn koden appen viser.",
+      "openApp": "Åpne i autentiseringsappen",
+      "key": "Nøkkel for manuell inntasting",
+      "code": "Kode fra appen",
+      "confirm": "Slå på",
+      "codesIntro": "Ferdig. Oppbevar disse reservekodene et trygt sted (f.eks. i en passordbehandler). Hver kode virker én gang, for når du ikke har telefonen din.",
+      "saveCodes": "Lagre reservekoder",
+      "codesDone": "Jeg har lagret dem",
+      "codeOrBackup": "Appkode eller reservekode"
+    },
+    "password": {
+      "title": "Endre passord",
+      "new": "Nytt passord",
+      "hint": "Minst 10 tegn. Andre enheter blir logget ut.",
+      "save": "Endre passord"
+    },
+    "devices": {
+      "title": "Påloggede enheter",
+      "unknown": "Ukjent enhet",
+      "current": "Denne enheten",
+      "lastUsed": "Sist brukt {date}",
+      "signOut": "Logg ut",
+      "signOutOthers": "Logg ut alle andre enheter"
+    }
   }
 }

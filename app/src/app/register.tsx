@@ -2,7 +2,7 @@ import { GENDERS } from '@yesyes/shared';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, View } from 'react-native';
-import { Body, Button, Checkbox, Chip, ErrorText, Field, Header, Label, Screen, Title } from '@/components/ui';
+import { Body, Button, Checkbox, Chip, CodeField, ErrorText, Field, Header, Label, Screen, Title } from '@/components/ui';
 import { api, errorMessage, type Gender, type Me } from '@/lib/api';
 import { useT } from '@/lib/i18n';
 import { useSession } from '@/lib/session';
@@ -39,6 +39,9 @@ export default function Register() {
   const [rules, setRules] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  // Druhý krok: kód z e-mailu (server neprozradí, jestli e-mail už má účet – případně pošle jen upozornění).
+  const [codeSent, setCodeSent] = useState(false);
+  const [code, setCode] = useState('');
 
   const toggleInterest = (g: Gender) => setInterestedIn((list) => (list.includes(g) ? list.filter((x) => x !== g) : [...list, g]));
 
@@ -48,7 +51,7 @@ export default function Register() {
     setBusy(true);
     setError('');
     try {
-      const res = await api<{ token: string; user: Me }>('POST', '/auth/register', {
+      await api('POST', '/auth/register', {
         name,
         email,
         password,
@@ -58,6 +61,20 @@ export default function Register() {
         confirmAdult: adult,
         acceptRules: rules,
       });
+      setCodeSent(true);
+      setCode('');
+    } catch (err) {
+      setError(errorMessage(err));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const confirm = async () => {
+    setBusy(true);
+    setError('');
+    try {
+      const res = await api<{ token: string; user: Me }>('POST', '/auth/register/verify', { email, code });
       await signIn(res.token, res.user);
       router.replace('/verify');
     } catch (err) {
@@ -66,6 +83,24 @@ export default function Register() {
       setBusy(false);
     }
   };
+
+  if (codeSent) {
+    return (
+      <Screen>
+        <Header onBack={() => setCodeSent(false)} />
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
+          <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 0, gap: 18 }} keyboardShouldPersistTaps="handled">
+            <Title>{t('register.codeTitle')}</Title>
+            <Body muted>{t('register.codeSent', { email: email.trim() })}</Body>
+            <CodeField value={code} onChangeText={setCode} label={t('register.code')} />
+            <ErrorText>{error}</ErrorText>
+            <Button label={t('register.confirmCode')} onPress={confirm} loading={busy} disabled={code.replace(/\D/g, '').length !== 6} />
+            <Button variant="ghost" label={t('register.resend')} onPress={submit} disabled={busy} />
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </Screen>
+    );
+  }
 
   const ready = name && email && password.length >= 10 && birthdate && gender && interestedIn.length > 0 && adult && rules;
 

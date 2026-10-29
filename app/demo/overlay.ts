@@ -244,6 +244,35 @@ function toast(m: Sms) {
   setTimeout(() => t.remove(), 9000);
 }
 
+/** E-mail z bezpečnosti účtu (kód k registraci, obnově hesla…) – v demu se jen ukáže. */
+function emailToast(m: { to: string; subject: string; text: string }) {
+  if (!root) return;
+  const t = el('button', {
+    position: 'absolute',
+    top: 'calc(10px + env(safe-area-inset-top, 0px))',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: 'min(420px, calc(100vw - 24px))',
+    textAlign: 'left',
+    background: C.surface,
+    color: C.text,
+    border: `1px solid ${C.line}`,
+    borderRadius: '16px',
+    padding: '12px 14px',
+    font: `400 14px/1.45 ${FONT}`,
+    boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+    pointerEvents: 'auto',
+    cursor: 'pointer',
+    whiteSpace: 'pre-line',
+  });
+  t.appendChild(el('div', { fontSize: '12px', color: C.muted }, `E-mail pro ${m.to} · ukázka, nic se neodeslalo`));
+  t.appendChild(el('div', { fontWeight: '700' }, m.subject));
+  t.appendChild(el('div', {}, m.text));
+  t.addEventListener('click', () => t.remove());
+  root.appendChild(t);
+  setTimeout(() => t.remove(), 30000);
+}
+
 function openShare(sessionId: number) {
   if (!root || !hooks) return;
   closePanel();
@@ -324,6 +353,10 @@ export const overlay = {
     } catch {
       setTimeout(openPanel, 1200);
     }
+  },
+  email(m: { to: string; subject: string; text: string }) {
+    ensureRoot();
+    emailToast(m);
   },
   sms(m: Omit<Sms, 'at'>) {
     const full = { ...m, at: Date.now() };

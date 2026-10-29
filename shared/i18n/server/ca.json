@@ -62,7 +62,9 @@
     "reason": "motiu",
     "details": "detalls",
     "resolution": "resolució",
-    "days": "nombre de dies"
+    "days": "nombre de dies",
+    "newPassword": "contrasenya nova",
+    "session": "dispositiu"
   },
   "auth": {
     "confirmAdult": "Has de confirmar que tens 18 anys o més.",
@@ -74,7 +76,10 @@
     "banned": "Aquest compte s'ha bloquejat per incomplir les normes.",
     "notLoggedIn": "No has iniciat la sessió.",
     "suspended": "El teu compte està suspès fins que l'equip de moderació el revisi.",
-    "verifyFirst": "Primer verifica la teva identitat."
+    "verifyFirst": "Primer verifica la teva identitat.",
+    "badCode": "El codi no és correcte o ha caducat. Torna-ho a provar o demana’n un de nou.",
+    "tooManyAttempts": "Massa intents. Torna-ho a provar d’aquí a un moment.",
+    "loginExpired": "L’inici de sessió ha caducat. Torna a introduir el correu i la contrasenya."
   },
   "profile": {
     "wrongPassword": "Contrasenya incorrecta.",
@@ -280,5 +285,41 @@
     "comfort": "Què em fa sentir bé",
     "place": "On",
     "status": "Situació sentimental"
+  },
+  "account": {
+    "samePassword": "La contrasenya nova ha de ser diferent de l’actual.",
+    "twoFactorOn": "La verificació en dos passos ja està activada.",
+    "twoFactorOff": "La verificació en dos passos no està activada.",
+    "twoFactorSetupFirst": "Primer genera una clau per a la teva aplicació d’autenticació."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Codi de verificació: {code}",
+      "body": "El teu codi per completar el registre és {code}.\n\nÉs vàlid durant 15 minuts. Si no t’has registrat, ignora aquest correu."
+    },
+    "accountExists": {
+      "subject": "Intent de registre",
+      "body": "Algú acaba d’intentar crear un compte amb aquesta adreça de correu, però ja en tens un.\n\nSi has estat tu, només cal que iniciïs la sessió (o que restableixis la contrasenya). Si no, no cal que facis res: el teu compte continua segur."
+    },
+    "resetCode": {
+      "subject": "Codi per restablir la contrasenya: {code}",
+      "body": "El teu codi per restablir la contrasenya és {code}.\n\nÉs vàlid durant 15 minuts. Si no l’has demanat, ignora aquest correu: la contrasenya no canviarà."
+    },
+    "newLogin": {
+      "subject": "Nou inici de sessió al teu compte",
+      "body": "Algú acaba d’iniciar la sessió al teu compte ({device}).\n\nSi no has estat tu, canvia la contrasenya immediatament i tanca la sessió als altres dispositius des de la configuració de seguretat."
+    },
+    "passwordChanged": {
+      "subject": "S’ha canviat la teva contrasenya",
+      "body": "S’acaba de canviar la contrasenya del teu compte i s’ha tancat la sessió als altres dispositius.\n\nSi no has estat tu, restableix la contrasenya amb «He oblidat la contrasenya» i posa’t en contacte amb nosaltres."
+    },
+    "twoFactorOn": {
+      "subject": "S’ha activat la verificació en dos passos",
+      "body": "Ara, per iniciar la sessió al teu compte també necessitaràs un codi de la teva aplicació d’autenticació.\n\nDesa els codis de seguretat en un lloc segur."
+    },
+    "twoFactorOff": {
+      "subject": "S’ha desactivat la verificació en dos passos",
+      "body": "S’ha desactivat la verificació en dos passos del teu compte.\n\nSi no has estat tu, canvia la contrasenya immediatament."
+    }
   }
 }

@@ -60,7 +60,9 @@
     "reason": "sebab",
     "details": "butiran",
     "resolution": "penyelesaian",
-    "days": "bilangan hari"
+    "days": "bilangan hari",
+    "newPassword": "kata laluan baharu",
+    "session": "peranti"
   },
   "auth": {
     "confirmAdult": "Anda mesti mengesahkan bahawa anda berumur 18 tahun atau lebih.",
@@ -72,7 +74,10 @@
     "banned": "Akaun ini telah disekat kerana melanggar peraturan.",
     "notLoggedIn": "Anda belum log masuk.",
     "suspended": "Akaun anda digantung sehingga moderator menyemaknya.",
-    "verifyFirst": "Sahkan identiti anda dahulu."
+    "verifyFirst": "Sahkan identiti anda dahulu.",
+    "badCode": "Kod itu salah atau telah tamat tempoh. Cuba lagi atau minta kod baharu.",
+    "tooManyAttempts": "Terlalu banyak percubaan. Cuba lagi sebentar lagi.",
+    "loginExpired": "Log masuk anda telah tamat masa. Masukkan e-mel dan kata laluan anda sekali lagi."
   },
   "profile": {
     "wrongPassword": "Kata laluan salah.",
@@ -270,5 +275,41 @@
     "comfort": "Apa yang buat saya selesa",
     "place": "Di mana",
     "status": "Status hubungan"
+  },
+  "account": {
+    "samePassword": "Kata laluan baharu mestilah berbeza daripada kata laluan semasa.",
+    "twoFactorOn": "Pengesahan 2 langkah sudah dihidupkan.",
+    "twoFactorOff": "Pengesahan 2 langkah belum dihidupkan.",
+    "twoFactorSetupFirst": "Jana kunci untuk apl pengesah anda terlebih dahulu."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Kod pengesahan: {code}",
+      "body": "Kod anda untuk melengkapkan pendaftaran ialah {code}.\n\nKod ini sah selama 15 minit. Jika anda tidak mendaftar, abaikan e-mel ini."
+    },
+    "accountExists": {
+      "subject": "Percubaan pendaftaran",
+      "body": "Seseorang baru sahaja cuba mencipta akaun dengan alamat e-mel ini, tetapi anda sudah mempunyai akaun.\n\nJika itu anda, log masuk sahaja (atau tetapkan semula kata laluan anda). Jika bukan, anda tidak perlu berbuat apa-apa – akaun anda kekal selamat."
+    },
+    "resetCode": {
+      "subject": "Kod tetapan semula kata laluan: {code}",
+      "body": "Kod tetapan semula kata laluan anda ialah {code}.\n\nKod ini sah selama 15 minit. Jika anda tidak meminta tetapan semula, abaikan e-mel ini – kata laluan anda kekal sama."
+    },
+    "newLogin": {
+      "subject": "Log masuk baharu ke akaun anda",
+      "body": "Seseorang baru sahaja log masuk ke akaun anda ({device}).\n\nJika itu bukan anda, tukar kata laluan anda dengan segera dan log keluar peranti lain dalam tetapan keselamatan."
+    },
+    "passwordChanged": {
+      "subject": "Kata laluan anda telah ditukar",
+      "body": "Kata laluan akaun anda baru sahaja ditukar dan peranti lain telah dilog keluar.\n\nJika itu bukan anda, tetapkan semula kata laluan anda melalui “Lupa kata laluan” dan hubungi kami."
+    },
+    "twoFactorOn": {
+      "subject": "Pengesahan 2 langkah dihidupkan",
+      "body": "Log masuk ke akaun anda kini juga memerlukan kod daripada apl pengesah anda.\n\nSimpan kod sandaran anda di tempat yang selamat."
+    },
+    "twoFactorOff": {
+      "subject": "Pengesahan 2 langkah dimatikan",
+      "body": "Pengesahan 2 langkah telah dimatikan untuk akaun anda.\n\nJika itu bukan anda, tukar kata laluan anda dengan segera."
+    }
   }
 }

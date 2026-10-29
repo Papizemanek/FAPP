@@ -595,7 +595,11 @@
     "title": "Conectare",
     "email": "E-mail",
     "password": "Parolă",
-    "submit": "Conectează-te"
+    "submit": "Conectează-te",
+    "twoFactorTitle": "Verificare în doi pași",
+    "twoFactorHint": "Introdu codul din aplicația de autentificare sau unul dintre codurile de rezervă.",
+    "code": "Cod",
+    "forgot": "Ai uitat parola?"
   },
   "register": {
     "title": "Creează cont",
@@ -610,7 +614,12 @@
     "confirmAdult": "Am 18 ani sau mai mult.",
     "acceptRules": "Sunt de acord cu regulile comunității și cu prelucrarea datelor mele, inclusiv a celor despre viața mea sexuală, pentru ca YesYes să poată funcționa.",
     "verifyNote": "Imediat după aceea îți verificăm identitatea și vârsta (act de identitate și selfie). Nu păstrăm actul tău.",
-    "continue": "Continuă"
+    "continue": "Continuă",
+    "codeTitle": "Verifică-ți e-mailul",
+    "codeSent": "Am trimis un cod din 6 cifre la {email}. Dacă ai deja un cont, vei primi în schimb o notificare – doar conectează-te.",
+    "code": "Codul din e-mail",
+    "confirmCode": "Verifică și creează contul",
+    "resend": "Trimite din nou codul"
   },
   "verify": {
     "title": "Confirmă că ești tu",
@@ -723,5 +732,53 @@
     "faceId": "YesYes folosește Face ID pentru deblocare, ca nimeni altcineva să nu se poată uita înăuntru.",
     "photos": "Alege poze pentru profilul tău.",
     "camera": "Fă-ți o poză pentru profil."
+  },
+  "forgot": {
+    "title": "Resetează parola",
+    "intro": "Îți trimitem pe e-mail un cod ca să setezi o parolă nouă.",
+    "send": "Trimite codul",
+    "sent": "Dacă există un cont pentru {email}, i-am trimis un cod din 6 cifre. Este valabil 15 minute.",
+    "newPassword": "Parolă nouă (cel puțin 10 caractere)",
+    "save": "Setează parola nouă",
+    "done": "Parola a fost schimbată și toate dispozitivele au fost deconectate. Conectează-te cu parola nouă.",
+    "toLogin": "Conectează-te"
+  },
+  "security": {
+    "title": "Securitatea contului",
+    "bannerOff": "Activează verificarea în doi pași și verifică dispozitivele conectate.",
+    "passwordChanged": "Parola a fost schimbată. Celelalte dispozitive au fost deconectate.",
+    "currentPassword": "Parola actuală",
+    "continue": "Continuă",
+    "twoFactor": {
+      "title": "Verificare în doi pași",
+      "on": "Verificarea în doi pași este activată",
+      "off": "Verificarea în doi pași este dezactivată",
+      "hint": "La conectare vei avea nevoie și de un cod dintr-o aplicație de autentificare (de ex. Google Authenticator, 1Password). Parola singură nu va mai fi suficientă.",
+      "enable": "Activează verificarea în doi pași",
+      "disable": "Dezactivează verificarea în doi pași",
+      "scan": "Adaugă YesYes în aplicația de autentificare – cu butonul de mai jos sau introducând cheia. Apoi introdu codul afișat de aplicație.",
+      "openApp": "Deschide în aplicația de autentificare",
+      "key": "Cheie pentru introducere manuală",
+      "code": "Codul din aplicație",
+      "confirm": "Activează",
+      "codesIntro": "Gata. Păstrează aceste coduri de rezervă într-un loc sigur (de ex. un manager de parole). Fiecare funcționează o singură dată, pentru când nu ai telefonul la tine.",
+      "saveCodes": "Salvează codurile de rezervă",
+      "codesDone": "Le-am salvat",
+      "codeOrBackup": "Cod din aplicație sau cod de rezervă"
+    },
+    "password": {
+      "title": "Schimbă parola",
+      "new": "Parolă nouă",
+      "hint": "Cel puțin 10 caractere. Celelalte dispozitive vor fi deconectate.",
+      "save": "Schimbă parola"
+    },
+    "devices": {
+      "title": "Dispozitive conectate",
+      "unknown": "Dispozitiv necunoscut",
+      "current": "Acest dispozitiv",
+      "lastUsed": "Folosit ultima dată: {date}",
+      "signOut": "Deconectează",
+      "signOutOthers": "Deconectează toate celelalte dispozitive"
+    }
   }
 }

@@ -1,0 +1,18 @@
+# Týdenní kontrola aktualizací závislostí (bezpečnostní opravy chodí i mimo plán).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      expo:
+        patterns: ['expo*', '@expo/*', 'react-native*']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly

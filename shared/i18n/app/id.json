@@ -571,7 +571,11 @@
     "title": "Masuk",
     "email": "Email",
     "password": "Kata sandi",
-    "submit": "Masuk"
+    "submit": "Masuk",
+    "twoFactorTitle": "Verifikasi 2 langkah",
+    "twoFactorHint": "Masukkan kode dari aplikasi autentikator kamu, atau salah satu kode cadangan kamu.",
+    "code": "Kode",
+    "forgot": "Lupa kata sandi"
   },
   "register": {
     "title": "Buat akun",
@@ -586,7 +590,12 @@
     "confirmAdult": "Aku berusia 18 tahun atau lebih.",
     "acceptRules": "Aku menyetujui aturan komunitas dan pemrosesan dataku, termasuk data tentang kehidupan seksualku, agar YesYes dapat berfungsi.",
     "verifyNote": "Setelah ini, kami akan langsung memverifikasi identitas dan usiamu (kartu identitas dan selfie). Kami tidak menyimpan kartu identitasmu.",
-    "continue": "Lanjut"
+    "continue": "Lanjut",
+    "codeTitle": "Cek email kamu",
+    "codeSent": "Kami telah mengirim kode 6 digit ke {email}. Kalau kamu sudah punya akun, kamu akan menerima pemberitahuan sebagai gantinya – cukup masuk saja.",
+    "code": "Kode dari email",
+    "confirmCode": "Verifikasi dan buat akun",
+    "resend": "Kirim ulang kode"
   },
   "verify": {
     "title": "Verifikasi bahwa ini kamu",
@@ -697,5 +706,53 @@
     "faceId": "YesYes menggunakan Face ID untuk membuka kunci, agar tak ada orang lain yang bisa melihat isinya.",
     "photos": "Pilih foto untuk profilmu.",
     "camera": "Potret dirimu untuk profilmu."
+  },
+  "forgot": {
+    "title": "Atur ulang kata sandi",
+    "intro": "Kami akan mengirim kode ke email kamu untuk membuat kata sandi baru.",
+    "send": "Kirim kode",
+    "sent": "Jika ada akun untuk {email}, kami telah mengirim kode 6 digit ke alamat tersebut. Kode berlaku selama 15 menit.",
+    "newPassword": "Kata sandi baru (minimal 10 karakter)",
+    "save": "Simpan kata sandi baru",
+    "done": "Kata sandi kamu sudah diubah dan semua perangkat telah dikeluarkan. Masuk dengan kata sandi baru kamu.",
+    "toLogin": "Masuk"
+  },
+  "security": {
+    "title": "Keamanan akun",
+    "bannerOff": "Aktifkan verifikasi 2 langkah dan periksa perangkat yang sedang masuk.",
+    "passwordChanged": "Kata sandi diubah. Perangkat lain telah dikeluarkan.",
+    "currentPassword": "Kata sandi saat ini",
+    "continue": "Lanjutkan",
+    "twoFactor": {
+      "title": "Verifikasi 2 langkah",
+      "on": "Verifikasi 2 langkah aktif",
+      "off": "Verifikasi 2 langkah nonaktif",
+      "hint": "Saat masuk, kamu juga akan memerlukan kode dari aplikasi autentikator (mis. Google Authenticator, 1Password). Kata sandi saja tidak akan cukup.",
+      "enable": "Aktifkan verifikasi 2 langkah",
+      "disable": "Nonaktifkan verifikasi 2 langkah",
+      "scan": "Tambahkan YesYes ke aplikasi autentikator kamu – dengan tombol di bawah, atau ketik kuncinya secara manual. Lalu masukkan kode yang ditampilkan aplikasi.",
+      "openApp": "Buka di aplikasi autentikator",
+      "key": "Kunci untuk dimasukkan manual",
+      "code": "Kode dari aplikasi",
+      "confirm": "Aktifkan",
+      "codesIntro": "Selesai. Simpan kode cadangan ini di tempat yang aman (mis. pengelola kata sandi). Setiap kode hanya bisa dipakai sekali, untuk saat ponsel kamu tidak ada.",
+      "saveCodes": "Simpan kode cadangan",
+      "codesDone": "Sudah saya simpan",
+      "codeOrBackup": "Kode aplikasi atau kode cadangan"
+    },
+    "password": {
+      "title": "Ubah kata sandi",
+      "new": "Kata sandi baru",
+      "hint": "Minimal 10 karakter. Perangkat lain akan dikeluarkan.",
+      "save": "Ubah kata sandi"
+    },
+    "devices": {
+      "title": "Perangkat yang sedang masuk",
+      "unknown": "Perangkat tidak dikenal",
+      "current": "Perangkat ini",
+      "lastUsed": "Terakhir digunakan {date}",
+      "signOut": "Keluarkan",
+      "signOutOthers": "Keluarkan semua perangkat lain"
+    }
   }
 }

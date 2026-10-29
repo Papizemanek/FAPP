@@ -583,7 +583,11 @@
     "title": "Kirjaudu sisään",
     "email": "Sähköposti",
     "password": "Salasana",
-    "submit": "Kirjaudu sisään"
+    "submit": "Kirjaudu sisään",
+    "twoFactorTitle": "Kaksivaiheinen vahvistus",
+    "twoFactorHint": "Anna todennussovelluksesi koodi tai yksi varakoodeistasi.",
+    "code": "Koodi",
+    "forgot": "Unohditko salasanan?"
   },
   "register": {
     "title": "Luo tili",
@@ -598,7 +602,12 @@
     "confirmAdult": "Olen vähintään 18-vuotias.",
     "acceptRules": "Hyväksyn yhteisön säännöt ja tietojeni käsittelyn, mukaan lukien seksuaalielämääni koskevat tiedot, jotta YesYes voi toimia.",
     "verifyNote": "Heti tämän jälkeen vahvistamme henkilöllisyytesi ja ikäsi (henkilöllisyystodistus ja selfie). Emme säilytä henkilöllisyystodistustasi.",
-    "continue": "Jatka"
+    "continue": "Jatka",
+    "codeTitle": "Tarkista sähköpostisi",
+    "codeSent": "Lähetimme 6-numeroisen koodin osoitteeseen {email}. Jos sinulla on jo tili, saat sen sijaan ilmoituksen – kirjaudu silloin vain sisään.",
+    "code": "Koodi sähköpostista",
+    "confirmCode": "Vahvista ja luo tili",
+    "resend": "Lähetä koodi uudelleen"
   },
   "verify": {
     "title": "Vahvista, että se olet sinä",
@@ -710,5 +719,53 @@
     "faceId": "YesYes käyttää Face ID:tä lukituksen avaamiseen, jotta kukaan muu ei pääse kurkistamaan sisälle.",
     "photos": "Valitse kuvat profiiliisi.",
     "camera": "Ota itsestäsi kuva profiiliisi."
+  },
+  "forgot": {
+    "title": "Nollaa salasana",
+    "intro": "Lähetämme sinulle sähköpostitse koodin, jolla voit asettaa uuden salasanan.",
+    "send": "Lähetä koodi",
+    "sent": "Jos osoitteelle {email} on tili, lähetimme siihen 6-numeroisen koodin. Se on voimassa 15 minuuttia.",
+    "newPassword": "Uusi salasana (vähintään 10 merkkiä)",
+    "save": "Aseta uusi salasana",
+    "done": "Salasanasi on vaihdettu ja kaikki laitteet on kirjattu ulos. Kirjaudu sisään uudella salasanallasi.",
+    "toLogin": "Kirjaudu sisään"
+  },
+  "security": {
+    "title": "Tilin turvallisuus",
+    "bannerOff": "Ota kaksivaiheinen vahvistus käyttöön ja tarkista kirjautuneet laitteesi.",
+    "passwordChanged": "Salasana vaihdettu. Muut laitteet on kirjattu ulos.",
+    "currentPassword": "Nykyinen salasana",
+    "continue": "Jatka",
+    "twoFactor": {
+      "title": "Kaksivaiheinen vahvistus",
+      "on": "Kaksivaiheinen vahvistus on käytössä",
+      "off": "Kaksivaiheinen vahvistus ei ole käytössä",
+      "hint": "Kirjautumiseen tarvitaan silloin myös koodi todennussovelluksesta (esim. Google Authenticator, 1Password). Pelkkä salasana ei riitä.",
+      "enable": "Ota kaksivaiheinen vahvistus käyttöön",
+      "disable": "Poista kaksivaiheinen vahvistus käytöstä",
+      "scan": "Lisää YesYes todennussovellukseesi – alla olevalla painikkeella tai kirjoittamalla avain. Anna sitten sovelluksen näyttämä koodi.",
+      "openApp": "Avaa todennussovelluksessa",
+      "key": "Avain manuaalista syöttöä varten",
+      "code": "Koodi sovelluksesta",
+      "confirm": "Ota käyttöön",
+      "codesIntro": "Valmista. Säilytä nämä varakoodit turvallisessa paikassa (esim. salasanojen hallintasovelluksessa). Kukin toimii kerran – silloin, kun puhelin ei ole käsillä.",
+      "saveCodes": "Tallenna varakoodit",
+      "codesDone": "Tallensin ne",
+      "codeOrBackup": "Sovelluksen koodi tai varakoodi"
+    },
+    "password": {
+      "title": "Vaihda salasana",
+      "new": "Uusi salasana",
+      "hint": "Vähintään 10 merkkiä. Muut laitteet kirjataan ulos.",
+      "save": "Vaihda salasana"
+    },
+    "devices": {
+      "title": "Kirjautuneet laitteet",
+      "unknown": "Tuntematon laite",
+      "current": "Tämä laite",
+      "lastUsed": "Viimeksi käytetty {date}",
+      "signOut": "Kirjaa ulos",
+      "signOutOthers": "Kirjaa ulos kaikki muut laitteet"
+    }
   }
 }

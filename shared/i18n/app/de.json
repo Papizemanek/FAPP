@@ -583,7 +583,11 @@
     "title": "Anmelden",
     "email": "E-Mail",
     "password": "Passwort",
-    "submit": "Anmelden"
+    "submit": "Anmelden",
+    "twoFactorTitle": "Zwei-Faktor-Authentifizierung",
+    "twoFactorHint": "Gib den Code aus deiner Authenticator-App oder einen deiner Backup-Codes ein.",
+    "code": "Code",
+    "forgot": "Passwort vergessen"
   },
   "register": {
     "title": "Konto erstellen",
@@ -598,7 +602,12 @@
     "confirmAdult": "Ich bin 18 oder älter.",
     "acceptRules": "Ich stimme den Community-Regeln und der Verarbeitung meiner Daten zu, einschließlich Daten zu meinem Sexualleben, damit YesYes funktionieren kann.",
     "verifyNote": "Gleich danach verifizieren wir deine Identität und dein Alter (Ausweis und Selfie). Deinen Ausweis speichern wir nicht.",
-    "continue": "Weiter"
+    "continue": "Weiter",
+    "codeTitle": "Schau in dein E-Mail-Postfach",
+    "codeSent": "Wir haben einen 6-stelligen Code an {email} geschickt. Falls du schon ein Konto hast, bekommst du stattdessen einen Hinweis – melde dich dann einfach an.",
+    "code": "Code aus der E-Mail",
+    "confirmCode": "Bestätigen und Konto erstellen",
+    "resend": "Code erneut senden"
   },
   "verify": {
     "title": "Bestätige, dass du es bist",
@@ -710,5 +719,53 @@
     "faceId": "YesYes nutzt Face ID zum Entsperren, damit niemand sonst hineinschauen kann.",
     "photos": "Wähle Fotos für dein Profil aus.",
     "camera": "Mach ein Foto von dir für dein Profil."
+  },
+  "forgot": {
+    "title": "Passwort zurücksetzen",
+    "intro": "Wir schicken dir per E-Mail einen Code, mit dem du ein neues Passwort festlegen kannst.",
+    "send": "Code senden",
+    "sent": "Falls es ein Konto für {email} gibt, haben wir einen 6-stelligen Code dorthin geschickt. Er ist 15 Minuten gültig.",
+    "newPassword": "Neues Passwort (mindestens 10 Zeichen)",
+    "save": "Neues Passwort festlegen",
+    "done": "Dein Passwort wurde geändert und alle Geräte wurden abgemeldet. Melde dich mit deinem neuen Passwort an.",
+    "toLogin": "Anmelden"
+  },
+  "security": {
+    "title": "Kontosicherheit",
+    "bannerOff": "Aktiviere die Zwei-Faktor-Authentifizierung und überprüfe deine angemeldeten Geräte.",
+    "passwordChanged": "Passwort geändert. Andere Geräte wurden abgemeldet.",
+    "currentPassword": "Aktuelles Passwort",
+    "continue": "Weiter",
+    "twoFactor": {
+      "title": "Zwei-Faktor-Authentifizierung",
+      "on": "Zwei-Faktor-Authentifizierung ist aktiviert",
+      "off": "Zwei-Faktor-Authentifizierung ist deaktiviert",
+      "hint": "Zum Anmelden brauchst du dann zusätzlich einen Code aus einer Authenticator-App (z. B. Google Authenticator, 1Password). Das Passwort allein reicht nicht mehr.",
+      "enable": "Zwei-Faktor-Authentifizierung aktivieren",
+      "disable": "Zwei-Faktor-Authentifizierung deaktivieren",
+      "scan": "Füge YesYes zu deiner Authenticator-App hinzu – über den Button unten oder durch Eingabe des Schlüssels. Gib dann den Code ein, den die App anzeigt.",
+      "openApp": "In Authenticator-App öffnen",
+      "key": "Schlüssel zur manuellen Eingabe",
+      "code": "Code aus der App",
+      "confirm": "Aktivieren",
+      "codesIntro": "Fertig. Bewahre diese Backup-Codes sicher auf (z. B. in einem Passwort-Manager). Jeder funktioniert einmal – für den Fall, dass du dein Handy nicht zur Hand hast.",
+      "saveCodes": "Backup-Codes speichern",
+      "codesDone": "Ich habe sie gespeichert",
+      "codeOrBackup": "App-Code oder Backup-Code"
+    },
+    "password": {
+      "title": "Passwort ändern",
+      "new": "Neues Passwort",
+      "hint": "Mindestens 10 Zeichen. Andere Geräte werden abgemeldet.",
+      "save": "Passwort ändern"
+    },
+    "devices": {
+      "title": "Angemeldete Geräte",
+      "unknown": "Unbekanntes Gerät",
+      "current": "Dieses Gerät",
+      "lastUsed": "Zuletzt verwendet: {date}",
+      "signOut": "Abmelden",
+      "signOutOthers": "Alle anderen Geräte abmelden"
+    }
   }
 }

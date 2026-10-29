@@ -61,7 +61,9 @@
     "reason": "neden",
     "details": "ayrıntılar",
     "resolution": "çözüm",
-    "days": "gün sayısı"
+    "days": "gün sayısı",
+    "newPassword": "yeni şifre",
+    "session": "cihaz"
   },
   "auth": {
     "confirmAdult": "18 yaşında veya daha büyük olduğunu onaylaman gerekiyor.",
@@ -73,7 +75,10 @@
     "banned": "Bu hesap kuralları çiğnediği için yasaklandı.",
     "notLoggedIn": "Giriş yapmadın.",
     "suspended": "Hesabın bir moderatör inceleyene kadar askıya alındı.",
-    "verifyFirst": "Önce kimliğini doğrula."
+    "verifyFirst": "Önce kimliğini doğrula.",
+    "badCode": "Kod yanlış veya süresi dolmuş. Tekrar dene ya da yeni bir kod iste.",
+    "tooManyAttempts": "Çok fazla deneme yapıldı. Biraz sonra tekrar dene.",
+    "loginExpired": "Giriş işleminin süresi doldu. E-postanı ve şifreni tekrar gir."
   },
   "profile": {
     "wrongPassword": "Yanlış şifre.",
@@ -275,5 +280,41 @@
     "comfort": "Kendimi ne rahat hissettirir",
     "place": "Nerede",
     "status": "İlişki durumu"
+  },
+  "account": {
+    "samePassword": "Yeni şifre mevcut şifreden farklı olmalı.",
+    "twoFactorOn": "İki adımlı doğrulama zaten açık.",
+    "twoFactorOff": "İki adımlı doğrulama açık değil.",
+    "twoFactorSetupFirst": "Önce kimlik doğrulama uygulaman için bir anahtar oluştur."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Doğrulama kodu: {code}",
+      "body": "Kaydını tamamlamak için kodun: {code}.\n\nKod 15 dakika geçerli. Kayıt olmadıysan bu e-postayı yok say."
+    },
+    "accountExists": {
+      "subject": "Kayıt denemesi",
+      "body": "Az önce biri bu e-posta adresiyle hesap oluşturmaya çalıştı, ancak zaten bir hesabın var.\n\nBu sensen, sadece giriş yap (veya şifreni sıfırla). Değilsen bir şey yapmana gerek yok – hesabın güvende."
+    },
+    "resetCode": {
+      "subject": "Şifre sıfırlama kodu: {code}",
+      "body": "Şifre sıfırlama kodun: {code}.\n\nKod 15 dakika geçerli. Sıfırlama istemediysen bu e-postayı yok say – şifren değişmeyecek."
+    },
+    "newLogin": {
+      "subject": "Hesabına yeni giriş",
+      "body": "Az önce hesabına giriş yapıldı ({device}).\n\nBu sen değilsen hemen şifreni değiştir ve güvenlik ayarlarından diğer cihazlarda oturumu kapat."
+    },
+    "passwordChanged": {
+      "subject": "Şifren değiştirildi",
+      "body": "Hesabının şifresi az önce değiştirildi ve diğer cihazlarda oturum kapatıldı.\n\nBu sen değilsen şifreni “Şifremi unuttum” ile sıfırla ve bizimle iletişime geç."
+    },
+    "twoFactorOn": {
+      "subject": "İki adımlı doğrulama açıldı",
+      "body": "Hesabına giriş yaparken artık kimlik doğrulama uygulamandan bir kod da gerekiyor.\n\nYedek kodlarını güvenli bir yerde sakla."
+    },
+    "twoFactorOff": {
+      "subject": "İki adımlı doğrulama kapatıldı",
+      "body": "Hesabın için iki adımlı doğrulama kapatıldı.\n\nBu sen değilsen hemen şifreni değiştir."
+    }
   }
 }

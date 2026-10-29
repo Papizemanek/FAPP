@@ -157,13 +157,15 @@ Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů)
 
 | Co | Proměnné | Poznámka |
 | --- | --- | --- |
-| Šifrovací klíč dat | `DATA_KEY` (32 B v base64), `IDENTITY_SECRET` | `openssl rand -base64 32`. Bez nich server v produkci nenastartuje. **Nesmí se ztratit** – bez nich nejdou přečíst zprávy a nefungují bany. |
+| Šifrovací klíč dat | `DATA_KEY` (32 B v base64) nebo `DATA_KEYS` (keyring pro rotaci), `IDENTITY_SECRET` (≥ 32 znaků) | `openssl rand -base64 32`. Bez nich server v produkci nenastartuje. **Nesmí se ztratit** – bez nich nejdou přečíst profily ani zprávy a nefungují bany a přihlášení. Rotace a zálohy: [SECURITY.md](SECURITY.md). |
+| E-maily (kódy, upozornění) | `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM` | Registrace a obnova hesla přes kód z e-mailu, upozornění na přihlášení. Odesílatel neutrální (např. `Účet <ucet@yesyesapp.com>`). |
+| Zálohy | `BACKUP_KEY` | `npm run backup -w server` – šifrovaná záloha mimo hosting, denně. |
 | Ověření totožnosti | `VERIFICATION_PROVIDER=veriff`, `VERIFF_API_KEY`, `VERIFF_SHARED_SECRET` | Webhook: `POST {PUBLIC_URL}/api/verification/webhook`. Názvy polí ve webhooku ověřit proti aktuální dokumentaci Veriffu. Alternativa pro ČR: Bankovní identita. |
 | SMS | `SMS_PROVIDER=twilio`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM` nebo `TWILIO_MESSAGING_SERVICE_SID` | Bezpečnostně kritické – zprávy jdou přes frontu s opakováním. |
 | Push notifikace | `PUSH_PROVIDER=expo`, v aplikaci `EAS_PROJECT_ID` | |
 | Mapy na Androidu | `GOOGLE_MAPS_API_KEY` (při buildu aplikace) | |
 | Předplatné | `BILLING_MODE` (`free`/`paid`), `PAYMENTS_PROVIDER=revenuecat`, `REVENUECAT_WEBHOOK_AUTH` | Na startu `free`. Webhook: `POST {PUBLIC_URL}/api/billing/webhook/revenuecat`. Před zapnutím `paid` přidat do aplikace SDK `react-native-purchases` (funkce `purchase` v `app/src/lib/billing.ts`) a založit produkty v obchodech (ID v `shared/constants.js` → `PRODUCTS`). Testerům jde dát předplatné přes `POST /api/admin/users/:id/plan`. |
-| Moderátoři | `ADMIN_TOKEN` | API pod `/api/admin` (fronta příznaků, detail uživatele, nahlášené konverzace, suspend/ban/reinstate). Zatím bez UI. |
+| Moderátoři | `npm run moderator -w server -- add …` | Osobní účty (heslo + TOTP), API pod `/api/admin` s auditem každého přístupu, volitelně `ADMIN_IPS`. Zatím bez UI. Viz [SECURITY.md](SECURITY.md). |
 | Web | `WEB_ORIGINS` (čárkami), `WEB_DIR` | Povolené domény webu pro čekací listinu; složka statického webu (výchozí `web/dist`). |
 | Uzavřený provoz | `ACCESS_KEY` (server), `EXPO_PUBLIC_ACCESS_KEY` (aplikace) | Bez klíče server nic neukáže: API jako prázdný server, web za heslem, noindex. Volné zůstávají odkazy pro důvěryhodnou osobu, webhooky a `/health`. Na ostrý start proměnnou smaž. |
 | Ostatní | `PUBLIC_URL`, `PORT`, `DB_FILE`, `TRUST_PROXY`, `NODE_ENV=production` | HTTPS je nutnost. |

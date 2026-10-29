@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { ConfirmSheet, PickerSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
-import { Banner, Button, Chip, ErrorText, Field, Label, Screen, Stepper, Title, Toggle } from '@/components/ui';
+import { Banner, Button, Chip, CodeField, ErrorText, Field, Label, Screen, Stepper, Title, Toggle } from '@/components/ui';
 import { api, errorMessage, imageSource, type Billing, type Gender, type Me, type Tag } from '@/lib/api';
 import { openPaywall, setBilling, showPaid, useBilling } from '@/lib/billing';
 import { formatDate } from '@/lib/format';
@@ -36,6 +36,7 @@ export default function ProfileScreen() {
   }, [focus, searchY]);
   const [saved, setSaved] = useState(false);
   const [deletePassword, setDeletePassword] = useState('');
+  const [deleteCode, setDeleteCode] = useState('');
   const [showDelete, setShowDelete] = useState(false);
   const [photoToRemove, setPhotoToRemove] = useState<string | null>(null);
   const billing = useBilling();
@@ -82,7 +83,7 @@ export default function ProfileScreen() {
 
   const deleteAccount = async () => {
     try {
-      await api('DELETE', '/me', { password: deletePassword });
+      await api('DELETE', '/me', { password: deletePassword, code: deleteCode });
       await signOut();
       router.replace('/welcome');
     } catch (err) {
@@ -170,6 +171,14 @@ export default function ProfileScreen() {
             action={t('profile.safety.edit')}
             onPress={() => router.push('/safety-settings')}
           />
+          <Banner
+            tone={me.twoFactor ? 'safe' : 'neutral'}
+            icon="shield"
+            title={t('security.title')}
+            subtitle={me.twoFactor ? t('security.twoFactor.on') : t('security.bannerOff')}
+            action={t('profile.safety.edit')}
+            onPress={() => router.push('/security')}
+          />
 
           {showPaid(billing) ? (
             <View style={{ gap: 12 }}>
@@ -242,7 +251,8 @@ export default function ProfileScreen() {
           {showDelete ? (
             <View style={{ gap: 10 }}>
               <Field label={t('profile.deletePassword')} value={deletePassword} onChangeText={setDeletePassword} secureTextEntry />
-              <Button variant="danger" label={t('profile.deleteForever')} onPress={deleteAccount} disabled={!deletePassword} />
+              {me.twoFactor ? <CodeField label={t('security.twoFactor.codeOrBackup')} value={deleteCode} onChangeText={setDeleteCode} allowRecovery /> : null}
+              <Button variant="danger" label={t('profile.deleteForever')} onPress={deleteAccount} disabled={!deletePassword || (me.twoFactor && deleteCode.length < 6)} />
             </View>
           ) : (
             <Button variant="danger" label={t('profile.deleteAccount')} height={48} onPress={() => setShowDelete(true)} />

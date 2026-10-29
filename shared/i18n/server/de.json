@@ -61,7 +61,9 @@
     "reason": "Grund",
     "details": "Details",
     "resolution": "Entscheidung",
-    "days": "Anzahl der Tage"
+    "days": "Anzahl der Tage",
+    "newPassword": "neues Passwort",
+    "session": "Gerät"
   },
   "auth": {
     "confirmAdult": "Du musst bestätigen, dass du 18 oder älter bist.",
@@ -73,7 +75,10 @@
     "banned": "Dieses Konto wurde wegen Regelverstößen gesperrt.",
     "notLoggedIn": "Du bist nicht angemeldet.",
     "suspended": "Dein Konto ist vorläufig gesperrt, bis die Moderation es geprüft hat.",
-    "verifyFirst": "Verifiziere zuerst deine Identität."
+    "verifyFirst": "Verifiziere zuerst deine Identität.",
+    "badCode": "Der Code ist falsch oder abgelaufen. Versuch es noch einmal oder fordere einen neuen an.",
+    "tooManyAttempts": "Zu viele Versuche. Versuch es gleich noch einmal.",
+    "loginExpired": "Deine Anmeldung ist abgelaufen. Gib deine E-Mail-Adresse und dein Passwort erneut ein."
   },
   "profile": {
     "wrongPassword": "Falsches Passwort.",
@@ -275,5 +280,41 @@
     "comfort": "Damit fühle ich mich wohl",
     "place": "Wo",
     "status": "Beziehungsstatus"
+  },
+  "account": {
+    "samePassword": "Das neue Passwort muss sich vom aktuellen unterscheiden.",
+    "twoFactorOn": "Die Zwei-Faktor-Authentifizierung ist bereits aktiviert.",
+    "twoFactorOff": "Die Zwei-Faktor-Authentifizierung ist nicht aktiviert.",
+    "twoFactorSetupFirst": "Erstelle zuerst einen Schlüssel für deine Authenticator-App."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Bestätigungscode: {code}",
+      "body": "Dein Code zum Abschließen der Registrierung lautet {code}.\n\nEr ist 15 Minuten gültig. Falls du dich nicht registriert hast, ignoriere diese E-Mail."
+    },
+    "accountExists": {
+      "subject": "Registrierungsversuch",
+      "body": "Gerade hat jemand versucht, mit dieser E-Mail-Adresse ein Konto zu erstellen, aber du hast bereits eins.\n\nWarst du das, melde dich einfach an (oder setze dein Passwort zurück). Falls nicht, musst du nichts tun – dein Konto bleibt sicher."
+    },
+    "resetCode": {
+      "subject": "Code zum Zurücksetzen des Passworts: {code}",
+      "body": "Dein Code zum Zurücksetzen des Passworts lautet {code}.\n\nEr ist 15 Minuten gültig. Falls du das nicht angefordert hast, ignoriere diese E-Mail – dein Passwort bleibt unverändert."
+    },
+    "newLogin": {
+      "subject": "Neue Anmeldung bei deinem Konto",
+      "body": "Gerade hat sich jemand bei deinem Konto angemeldet ({device}).\n\nWarst du das nicht, ändere sofort dein Passwort und melde in den Sicherheitseinstellungen andere Geräte ab."
+    },
+    "passwordChanged": {
+      "subject": "Dein Passwort wurde geändert",
+      "body": "Das Passwort für dein Konto wurde gerade geändert und andere Geräte wurden abgemeldet.\n\nWarst du das nicht, setze dein Passwort über „Passwort vergessen“ zurück und kontaktiere uns."
+    },
+    "twoFactorOn": {
+      "subject": "Zwei-Faktor-Authentifizierung aktiviert",
+      "body": "Zum Anmelden bei deinem Konto brauchst du jetzt zusätzlich einen Code aus deiner Authenticator-App.\n\nBewahre deine Backup-Codes sicher auf."
+    },
+    "twoFactorOff": {
+      "subject": "Zwei-Faktor-Authentifizierung deaktiviert",
+      "body": "Die Zwei-Faktor-Authentifizierung für dein Konto wurde deaktiviert.\n\nWarst du das nicht, ändere sofort dein Passwort."
+    }
   }
 }

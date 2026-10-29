@@ -62,7 +62,9 @@
     "reason": "motivo",
     "details": "detalhes",
     "resolution": "resolução",
-    "days": "número de dias"
+    "days": "número de dias",
+    "newPassword": "nova palavra-passe",
+    "session": "dispositivo"
   },
   "auth": {
     "confirmAdult": "Tens de confirmar que tens 18 anos ou mais.",
@@ -74,7 +76,10 @@
     "banned": "Esta conta foi banida por violar as regras.",
     "notLoggedIn": "Não tens sessão iniciada.",
     "suspended": "A tua conta está suspensa até ser analisada por um moderador.",
-    "verifyFirst": "Primeiro, verifica a tua identidade."
+    "verifyFirst": "Primeiro, verifica a tua identidade.",
+    "badCode": "Esse código está errado ou expirou. Tenta novamente ou pede um novo.",
+    "tooManyAttempts": "Demasiadas tentativas. Tenta novamente daqui a pouco.",
+    "loginExpired": "O início de sessão expirou. Introduz novamente o teu e-mail e a palavra-passe."
   },
   "profile": {
     "wrongPassword": "Palavra-passe incorreta.",
@@ -280,5 +285,41 @@
     "comfort": "O que me deixa à vontade",
     "place": "Onde",
     "status": "Estado da relação"
+  },
+  "account": {
+    "samePassword": "A nova palavra-passe tem de ser diferente da atual.",
+    "twoFactorOn": "A verificação em dois passos já está ativada.",
+    "twoFactorOff": "A verificação em dois passos não está ativada.",
+    "twoFactorSetupFirst": "Primeiro gera uma chave para a tua aplicação de autenticação."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Código de verificação: {code}",
+      "body": "O teu código para concluir o registo é {code}.\n\nÉ válido durante 15 minutos. Se não te registaste, ignora este e-mail."
+    },
+    "accountExists": {
+      "subject": "Tentativa de registo",
+      "body": "Alguém acabou de tentar criar uma conta com este endereço de e-mail, mas já tens uma.\n\nSe foste tu, basta iniciares sessão (ou repores a palavra-passe). Se não foste, não faças nada – a tua conta continua segura."
+    },
+    "resetCode": {
+      "subject": "Código para repor a palavra-passe: {code}",
+      "body": "O teu código para repor a palavra-passe é {code}.\n\nÉ válido durante 15 minutos. Se não pediste para a repor, ignora este e-mail – a tua palavra-passe mantém-se igual."
+    },
+    "newLogin": {
+      "subject": "Novo início de sessão na tua conta",
+      "body": "Alguém acabou de iniciar sessão na tua conta ({device}).\n\nSe não foste tu, altera já a tua palavra-passe e termina a sessão nos outros dispositivos nas definições de segurança."
+    },
+    "passwordChanged": {
+      "subject": "A tua palavra-passe foi alterada",
+      "body": "A palavra-passe da tua conta acabou de ser alterada e a sessão foi terminada nos outros dispositivos.\n\nSe não foste tu, repõe a palavra-passe em “Esqueci-me da palavra-passe” e contacta-nos."
+    },
+    "twoFactorOn": {
+      "subject": "Verificação em dois passos ativada",
+      "body": "Para iniciar sessão na tua conta, agora também é preciso um código da tua aplicação de autenticação.\n\nGuarda os teus códigos de recuperação num local seguro."
+    },
+    "twoFactorOff": {
+      "subject": "Verificação em dois passos desativada",
+      "body": "A verificação em dois passos foi desativada na tua conta.\n\nSe não foste tu, altera já a tua palavra-passe."
+    }
   }
 }

@@ -62,7 +62,9 @@
     "reason": "motif",
     "details": "détails",
     "resolution": "résolution",
-    "days": "nombre de jours"
+    "days": "nombre de jours",
+    "newPassword": "nouveau mot de passe",
+    "session": "appareil"
   },
   "auth": {
     "confirmAdult": "Tu dois confirmer que tu as 18 ans ou plus.",
@@ -74,7 +76,10 @@
     "banned": "Ce compte a été banni pour non-respect des règles.",
     "notLoggedIn": "Tu dois d'abord te connecter.",
     "suspended": "Ton compte est suspendu jusqu'à son examen par l'équipe de modération.",
-    "verifyFirst": "Vérifie d'abord ton identité."
+    "verifyFirst": "Vérifie d'abord ton identité.",
+    "badCode": "Ce code est incorrect ou a expiré. Réessaie ou demandes-en un nouveau.",
+    "tooManyAttempts": "Trop de tentatives. Réessaie dans un instant.",
+    "loginExpired": "Ta connexion a expiré. Saisis à nouveau ton e-mail et ton mot de passe."
   },
   "profile": {
     "wrongPassword": "Mot de passe incorrect.",
@@ -280,5 +285,41 @@
     "comfort": "Ce qui me met à l'aise",
     "place": "Où",
     "status": "Situation amoureuse"
+  },
+  "account": {
+    "samePassword": "Le nouveau mot de passe doit être différent de l’actuel.",
+    "twoFactorOn": "La validation en deux étapes est déjà activée.",
+    "twoFactorOff": "La validation en deux étapes n’est pas activée.",
+    "twoFactorSetupFirst": "Génère d’abord une clé pour ton application d’authentification."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Code de vérification : {code}",
+      "body": "Ton code pour finaliser l’inscription est {code}.\n\nIl est valable 15 minutes. Si tu n’es pas à l’origine de cette inscription, ignore cet e-mail."
+    },
+    "accountExists": {
+      "subject": "Tentative d’inscription",
+      "body": "Quelqu’un vient d’essayer de créer un compte avec cette adresse e-mail, mais tu en as déjà un.\n\nSi c’était toi, connecte-toi simplement (ou réinitialise ton mot de passe). Sinon, tu n’as rien à faire – ton compte reste en sécurité."
+    },
+    "resetCode": {
+      "subject": "Code de réinitialisation du mot de passe : {code}",
+      "body": "Ton code de réinitialisation du mot de passe est {code}.\n\nIl est valable 15 minutes. Si tu n’as pas demandé de réinitialisation, ignore cet e-mail – ton mot de passe reste inchangé."
+    },
+    "newLogin": {
+      "subject": "Nouvelle connexion à ton compte",
+      "body": "Quelqu’un vient de se connecter à ton compte ({device}).\n\nSi ce n’était pas toi, change immédiatement ton mot de passe et déconnecte les autres appareils dans les paramètres de sécurité."
+    },
+    "passwordChanged": {
+      "subject": "Ton mot de passe a été modifié",
+      "body": "Le mot de passe de ton compte vient d’être modifié et les autres appareils ont été déconnectés.\n\nSi ce n’était pas toi, réinitialise ton mot de passe via « Mot de passe oublié » et contacte-nous."
+    },
+    "twoFactorOn": {
+      "subject": "Validation en deux étapes activée",
+      "body": "Pour te connecter à ton compte, il te faut désormais aussi un code de ton application d’authentification.\n\nConserve tes codes de secours en lieu sûr."
+    },
+    "twoFactorOff": {
+      "subject": "Validation en deux étapes désactivée",
+      "body": "La validation en deux étapes a été désactivée pour ton compte.\n\nSi ce n’était pas toi, change immédiatement ton mot de passe."
+    }
   }
 }

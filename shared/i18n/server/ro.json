@@ -62,7 +62,9 @@
     "reason": "motiv",
     "details": "detalii",
     "resolution": "rezolvare",
-    "days": "număr de zile"
+    "days": "număr de zile",
+    "newPassword": "parola nouă",
+    "session": "dispozitiv"
   },
   "auth": {
     "confirmAdult": "Trebuie să confirmi că ai 18 ani sau mai mult.",
@@ -74,7 +76,10 @@
     "banned": "Contul a primit interdicție pentru încălcarea regulilor.",
     "notLoggedIn": "Nu te-ai conectat.",
     "suspended": "Contul tău e suspendat până când îl verifică un moderator.",
-    "verifyFirst": "Mai întâi verifică-ți identitatea."
+    "verifyFirst": "Mai întâi verifică-ți identitatea.",
+    "badCode": "Codul este greșit sau a expirat. Încearcă din nou sau cere unul nou.",
+    "tooManyAttempts": "Prea multe încercări. Încearcă din nou peste puțin timp.",
+    "loginExpired": "Conectarea a expirat. Introdu din nou e-mailul și parola."
   },
   "profile": {
     "wrongPassword": "Parolă greșită.",
@@ -280,5 +285,41 @@
     "comfort": "Ce mă face să mă simt bine",
     "place": "Unde",
     "status": "Statut relațional"
+  },
+  "account": {
+    "samePassword": "Parola nouă trebuie să fie diferită de cea actuală.",
+    "twoFactorOn": "Verificarea în doi pași este deja activată.",
+    "twoFactorOff": "Verificarea în doi pași nu este activată.",
+    "twoFactorSetupFirst": "Mai întâi generează o cheie pentru aplicația de autentificare."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Cod de verificare: {code}",
+      "body": "Codul tău pentru finalizarea înregistrării este {code}.\n\nEste valabil 15 minute. Dacă nu te-ai înregistrat tu, ignoră acest e-mail."
+    },
+    "accountExists": {
+      "subject": "Încercare de înregistrare",
+      "body": "Cineva tocmai a încercat să creeze un cont cu această adresă de e-mail, dar tu ai deja unul.\n\nDacă ai fost tu, doar conectează-te (sau resetează-ți parola). Dacă nu, nu face nimic – contul tău rămâne în siguranță."
+    },
+    "resetCode": {
+      "subject": "Cod de resetare a parolei: {code}",
+      "body": "Codul tău de resetare a parolei este {code}.\n\nEste valabil 15 minute. Dacă nu ai cerut resetarea, ignoră acest e-mail – parola ta rămâne aceeași."
+    },
+    "newLogin": {
+      "subject": "Conectare nouă la contul tău",
+      "body": "Cineva tocmai s-a conectat la contul tău ({device}).\n\nDacă nu ai fost tu, schimbă-ți imediat parola și deconectează celelalte dispozitive din setările de securitate."
+    },
+    "passwordChanged": {
+      "subject": "Parola ta a fost schimbată",
+      "body": "Parola contului tău tocmai a fost schimbată, iar celelalte dispozitive au fost deconectate.\n\nDacă nu ai fost tu, resetează-ți parola prin „Ai uitat parola?” și contactează-ne."
+    },
+    "twoFactorOn": {
+      "subject": "Verificarea în doi pași a fost activată",
+      "body": "De acum, conectarea la contul tău necesită și un cod din aplicația de autentificare.\n\nPăstrează codurile de rezervă într-un loc sigur."
+    },
+    "twoFactorOff": {
+      "subject": "Verificarea în doi pași a fost dezactivată",
+      "body": "Verificarea în doi pași a fost dezactivată pentru contul tău.\n\nDacă nu ai fost tu, schimbă-ți imediat parola."
+    }
   }
 }

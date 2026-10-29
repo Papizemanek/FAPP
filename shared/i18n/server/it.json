@@ -62,7 +62,9 @@
     "reason": "motivo",
     "details": "dettagli",
     "resolution": "risoluzione",
-    "days": "numero di giorni"
+    "days": "numero di giorni",
+    "newPassword": "nuova password",
+    "session": "dispositivo"
   },
   "auth": {
     "confirmAdult": "Devi confermare di avere 18 anni o più.",
@@ -74,7 +76,10 @@
     "banned": "Questo account è stato bannato per violazione delle regole.",
     "notLoggedIn": "Non hai effettuato l'accesso.",
     "suspended": "Il tuo account è sospeso finché non verrà esaminato dalla moderazione.",
-    "verifyFirst": "Prima verifica la tua identità."
+    "verifyFirst": "Prima verifica la tua identità.",
+    "badCode": "Il codice è errato o scaduto. Riprova o richiedine uno nuovo.",
+    "tooManyAttempts": "Troppi tentativi. Riprova tra poco.",
+    "loginExpired": "L'accesso è scaduto. Inserisci di nuovo email e password."
   },
   "profile": {
     "wrongPassword": "Password errata.",
@@ -280,5 +285,41 @@
     "comfort": "Cosa mi fa stare bene",
     "place": "Dove",
     "status": "Situazione sentimentale"
+  },
+  "account": {
+    "samePassword": "La nuova password deve essere diversa da quella attuale.",
+    "twoFactorOn": "La verifica in due passaggi è già attiva.",
+    "twoFactorOff": "La verifica in due passaggi non è attiva.",
+    "twoFactorSetupFirst": "Prima genera una chiave per la tua app di autenticazione."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Codice di verifica: {code}",
+      "body": "Il tuo codice per completare la registrazione è {code}.\n\nÈ valido per 15 minuti. Se non hai richiesto la registrazione, ignora questa email."
+    },
+    "accountExists": {
+      "subject": "Tentativo di registrazione",
+      "body": "Qualcuno ha appena provato a creare un account con questo indirizzo email, ma ne hai già uno.\n\nSe eri tu, accedi semplicemente (o reimposta la password). Altrimenti non fare nulla: il tuo account resta al sicuro."
+    },
+    "resetCode": {
+      "subject": "Codice per reimpostare la password: {code}",
+      "body": "Il tuo codice per reimpostare la password è {code}.\n\nÈ valido per 15 minuti. Se non hai chiesto di reimpostarla, ignora questa email: la tua password resta invariata."
+    },
+    "newLogin": {
+      "subject": "Nuovo accesso al tuo account",
+      "body": "Qualcuno ha appena effettuato l'accesso al tuo account ({device}).\n\nSe non eri tu, cambia subito la password e disconnetti gli altri dispositivi nelle impostazioni di sicurezza."
+    },
+    "passwordChanged": {
+      "subject": "La tua password è stata cambiata",
+      "body": "La password del tuo account è stata appena cambiata e gli altri dispositivi sono stati disconnessi.\n\nSe non eri tu, reimposta la password con «Password dimenticata» e contattaci."
+    },
+    "twoFactorOn": {
+      "subject": "Verifica in due passaggi attivata",
+      "body": "Per accedere al tuo account ora serve anche un codice della tua app di autenticazione.\n\nConserva i codici di backup in un posto sicuro."
+    },
+    "twoFactorOff": {
+      "subject": "Verifica in due passaggi disattivata",
+      "body": "La verifica in due passaggi è stata disattivata per il tuo account.\n\nSe non eri tu, cambia subito la password."
+    }
   }
 }

@@ -27,12 +27,11 @@ Odškrtávej si jednotlivé kroky. Když se něco zasekne, pošli mi, na kterém
 
 ## Část B – vygeneruj tajné klíče
 
-- [ ] **B1.** V Terminálu (Git Bash) spusť tyto čtyři příkazy a každý výsledek si ulož do poznámek pod daným jménem:
+- [ ] **B1.** V Terminálu (Git Bash) spusť tyto tři příkazy a každý výsledek si ulož do poznámek pod daným jménem:
 
 ```bash
 openssl rand -base64 32   # → DATA_KEY
 openssl rand -base64 32   # → IDENTITY_SECRET
-openssl rand -base64 32   # → ADMIN_TOKEN
 openssl rand -hex 24      # → ACCESS_KEY (přístupový klíč k celému serveru)
 ```
 
@@ -50,7 +49,6 @@ openssl rand -hex 24      # → ACCESS_KEY (přístupový klíč k celému serve
 ```
 DATA_KEY=…
 IDENTITY_SECRET=…
-ADMIN_TOKEN=…
 ACCESS_KEY=…
 PORT=3000
 TRUST_PROXY=1
@@ -119,7 +117,10 @@ npx eas-cli env:create --environment preview --name EXPO_PUBLIC_ACCESS_KEY --val
 
 ## Část E – co otestovat (dva telefony)
 
-- [ ] **E1. Registrace** na obou telefonech (různé e-maily, věk 18+).
+- [ ] **E1. Registrace** na obou telefonech (různé e-maily, věk 18+). V testovacím režimu se e-maily neposílají –
+      6místný kód najdeš v Railway → **Deployments → View Logs** (řádek „[E-mail → …] Ověřovací kód“).
+- [ ] **E1b. Zabezpečení účtu:** Profil → Zabezpečení účtu → zapni dvoufázové ověření (Google Authenticator nebo
+      1Password), odhlas se a přihlas znovu s kódem. Vyzkoušej i „Zapomenuté heslo“ (kód je zase v logu).
 - [ ] **E2. Ověření:** „Ověřit totožnost“ → „Simulovat úspěšné ověření (testovací režim)“.
 - [ ] **E3. Profil:** nahraj fotku, povol polohu. Telefony musí být v okruhu nastavené vzdálenosti.
 - [ ] **E4. Swipe** doprava na obou → match → chat (zkus i poslat fotku).
@@ -143,6 +144,8 @@ npx eas-cli env:create --environment preview --name EXPO_PUBLIC_ACCESS_KEY --val
 ## Údržba
 
 - Server se aktualizuje sám po každé změně ve větvi. Aplikaci po změně kódu sestav znovu (D5).
+- Proměnnou `ADMIN_TOKEN` už server nepoužívá – můžeš ji na Railway smazat. Moderátoři mají vlastní účty
+  (heslo + kód z autentizační aplikace), viz SECURITY.md → Moderátoři.
 - Kdyby přístupový klíč unikl: změň `ACCESS_KEY` na Railway i v Expu
   (`npx eas-cli env:update --environment preview --name EXPO_PUBLIC_ACCESS_KEY`) a sestav aplikaci znovu.
 - Po testování: Railway → projekt → Settings → **Delete Project** (smaže server i data).

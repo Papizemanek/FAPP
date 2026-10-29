@@ -595,7 +595,11 @@
     "title": "Prijava",
     "email": "E-mail",
     "password": "Lozinka",
-    "submit": "Prijavi se"
+    "submit": "Prijavi se",
+    "twoFactorTitle": "Potvrda u dva koraka",
+    "twoFactorHint": "Unesi kôd iz aplikacije za autentifikaciju ili jedan od rezervnih kôdova.",
+    "code": "Kôd",
+    "forgot": "Zaboravljena lozinka"
   },
   "register": {
     "title": "Izradi račun",
@@ -610,7 +614,12 @@
     "confirmAdult": "Imam 18 ili više godina.",
     "acceptRules": "Prihvaćam pravila zajednice i obradu svojih podataka, uključujući podatke o spolnom životu, kako bi YesYes mogao raditi.",
     "verifyNote": "Odmah nakon toga provjerit ćemo tvoj identitet i dob (osobni dokument i selfie). Tvoj dokument ne pohranjujemo.",
-    "continue": "Nastavi"
+    "continue": "Nastavi",
+    "codeTitle": "Provjeri e-poštu",
+    "codeSent": "Na {email} poslali smo 6-znamenkasti kôd. Ako ovdje već imaš račun, umjesto kôda stići će ti obavijest – samo se prijavi.",
+    "code": "Kôd iz e-pošte",
+    "confirmCode": "Potvrdi i izradi račun",
+    "resend": "Ponovno pošalji kôd"
   },
   "verify": {
     "title": "Potvrdi da si to ti",
@@ -723,5 +732,53 @@
     "faceId": "YesYes koristi Face ID za otključavanje, da nitko drugi ne može zaviriti unutra.",
     "photos": "Odaberi fotografije za svoj profil.",
     "camera": "Fotografiraj se za svoj profil."
+  },
+  "forgot": {
+    "title": "Ponovno postavljanje lozinke",
+    "intro": "Poslat ćemo ti e-poštom kôd kojim ćeš postaviti novu lozinku.",
+    "send": "Pošalji kôd",
+    "sent": "Ako za {email} postoji račun, poslali smo na tu adresu 6-znamenkasti kôd. Vrijedi 15 minuta.",
+    "newPassword": "Nova lozinka (najmanje 10 znakova)",
+    "save": "Postavi novu lozinku",
+    "done": "Lozinka je promijenjena i odjavili smo sve uređaje. Prijavi se novom lozinkom.",
+    "toLogin": "Prijavi se"
+  },
+  "security": {
+    "title": "Sigurnost računa",
+    "bannerOff": "Uključi potvrdu u dva koraka i provjeri prijavljene uređaje.",
+    "passwordChanged": "Lozinka je promijenjena. Ostale uređaje smo odjavili.",
+    "currentPassword": "Trenutačna lozinka",
+    "continue": "Nastavi",
+    "twoFactor": {
+      "title": "Potvrda u dva koraka",
+      "on": "Potvrda u dva koraka je uključena",
+      "off": "Potvrda u dva koraka je isključena",
+      "hint": "Za prijavu će trebati i kôd iz aplikacije za autentifikaciju (npr. Google Authenticator, 1Password). Sama lozinka neće biti dovoljna.",
+      "enable": "Uključi potvrdu u dva koraka",
+      "disable": "Isključi potvrdu u dva koraka",
+      "scan": "Dodaj YesYes u aplikaciju za autentifikaciju – gumbom ispod ili ručnim upisom ključa. Zatim unesi kôd koji ti aplikacija prikaže.",
+      "openApp": "Otvori u aplikaciji za autentifikaciju",
+      "key": "Ključ za ručni unos",
+      "code": "Kôd iz aplikacije",
+      "confirm": "Uključi",
+      "codesIntro": "Gotovo. Spremi ove rezervne kôdove na sigurno mjesto (npr. u upravitelj lozinki). Svaki se može upotrijebiti jednom, kad nemaš telefon pri ruci.",
+      "saveCodes": "Spremi rezervne kôdove",
+      "codesDone": "Kôdovi su spremljeni",
+      "codeOrBackup": "Kôd iz aplikacije ili rezervni kôd"
+    },
+    "password": {
+      "title": "Promjena lozinke",
+      "new": "Nova lozinka",
+      "hint": "Najmanje 10 znakova. Ostali uređaji bit će odjavljeni.",
+      "save": "Promijeni lozinku"
+    },
+    "devices": {
+      "title": "Prijavljeni uređaji",
+      "unknown": "Nepoznat uređaj",
+      "current": "Ovaj uređaj",
+      "lastUsed": "Zadnje korištenje: {date}",
+      "signOut": "Odjavi",
+      "signOutOthers": "Odjavi sve ostale uređaje"
+    }
   }
 }

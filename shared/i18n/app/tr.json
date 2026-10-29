@@ -583,7 +583,11 @@
     "title": "Giriş yap",
     "email": "E-posta",
     "password": "Şifre",
-    "submit": "Giriş yap"
+    "submit": "Giriş yap",
+    "twoFactorTitle": "İki adımlı doğrulama",
+    "twoFactorHint": "Kimlik doğrulama uygulamandaki kodu veya yedek kodlarından birini gir.",
+    "code": "Kod",
+    "forgot": "Şifremi unuttum"
   },
   "register": {
     "title": "Hesap oluştur",
@@ -598,7 +602,12 @@
     "confirmAdult": "18 yaşında veya daha büyüğüm.",
     "acceptRules": "Topluluk kurallarını ve YesYes'in çalışabilmesi için cinsel hayatıma ilişkin veriler dahil verilerimin işlenmesini kabul ediyorum.",
     "verifyNote": "Hemen ardından kimliğini ve yaşını doğrulayacağız (kimlik belgesi ve selfie). Kimlik belgeni saklamıyoruz.",
-    "continue": "Devam"
+    "continue": "Devam",
+    "codeTitle": "E-postanı kontrol et",
+    "codeSent": "{email} adresine 6 haneli bir kod gönderdik. Zaten bir hesabın varsa onun yerine bir bildirim alırsın – o zaman sadece giriş yap.",
+    "code": "E-postadaki kod",
+    "confirmCode": "Doğrula ve hesap oluştur",
+    "resend": "Kodu tekrar gönder"
   },
   "verify": {
     "title": "Sen olduğunu doğrula",
@@ -710,5 +719,53 @@
     "faceId": "YesYes, kilidi açmak için Face ID kullanır; böylece başka kimse içeriye bakamaz.",
     "photos": "Profilin için fotoğraf seç.",
     "camera": "Profilin için kendi fotoğrafını çek."
+  },
+  "forgot": {
+    "title": "Şifreyi sıfırla",
+    "intro": "Yeni şifre belirlemen için sana e-postayla bir kod göndereceğiz.",
+    "send": "Kod gönder",
+    "sent": "{email} için bir hesap varsa, bu adrese 6 haneli bir kod gönderdik. Kod 15 dakika geçerli.",
+    "newPassword": "Yeni şifre (en az 10 karakter)",
+    "save": "Yeni şifreyi kaydet",
+    "done": "Şifren değiştirildi ve tüm cihazlarda oturum kapatıldı. Yeni şifrenle giriş yap.",
+    "toLogin": "Giriş yap"
+  },
+  "security": {
+    "title": "Hesap güvenliği",
+    "bannerOff": "İki adımlı doğrulamayı aç ve oturum açık cihazlarını kontrol et.",
+    "passwordChanged": "Şifre değiştirildi. Diğer cihazlarda oturum kapatıldı.",
+    "currentPassword": "Mevcut şifre",
+    "continue": "Devam",
+    "twoFactor": {
+      "title": "İki adımlı doğrulama",
+      "on": "İki adımlı doğrulama açık",
+      "off": "İki adımlı doğrulama kapalı",
+      "hint": "Giriş yaparken kimlik doğrulama uygulamasından (ör. Google Authenticator, 1Password) bir kod da gerekecek. Sadece şifre yetmeyecek.",
+      "enable": "İki adımlı doğrulamayı aç",
+      "disable": "İki adımlı doğrulamayı kapat",
+      "scan": "YesYes'i kimlik doğrulama uygulamana ekle – aşağıdaki düğmeyle ya da anahtarı elle girerek. Sonra uygulamanın gösterdiği kodu gir.",
+      "openApp": "Kimlik doğrulama uygulamasında aç",
+      "key": "Elle giriş için anahtar",
+      "code": "Uygulamadaki kod",
+      "confirm": "Aç",
+      "codesIntro": "Tamam. Bu yedek kodları güvenli bir yerde sakla (ör. bir şifre yöneticisinde). Her biri bir kez çalışır; telefonun yanında olmadığında kullanabilirsin.",
+      "saveCodes": "Yedek kodları kaydet",
+      "codesDone": "Kaydettim",
+      "codeOrBackup": "Uygulama kodu veya yedek kod"
+    },
+    "password": {
+      "title": "Şifreyi değiştir",
+      "new": "Yeni şifre",
+      "hint": "En az 10 karakter. Diğer cihazlarda oturum kapatılacak.",
+      "save": "Şifreyi değiştir"
+    },
+    "devices": {
+      "title": "Oturum açık cihazlar",
+      "unknown": "Bilinmeyen cihaz",
+      "current": "Bu cihaz",
+      "lastUsed": "Son kullanım: {date}",
+      "signOut": "Oturumu kapat",
+      "signOutOthers": "Diğer tüm cihazlarda oturumu kapat"
+    }
   }
 }

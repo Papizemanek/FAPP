@@ -62,7 +62,9 @@
     "reason": "motivo",
     "details": "detalhes",
     "resolution": "resolução",
-    "days": "número de dias"
+    "days": "número de dias",
+    "newPassword": "nova senha",
+    "session": "dispositivo"
   },
   "auth": {
     "confirmAdult": "Você precisa confirmar que tem 18 anos ou mais.",
@@ -74,7 +76,10 @@
     "banned": "Esta conta foi banida por violar as regras.",
     "notLoggedIn": "Você não entrou na sua conta.",
     "suspended": "Sua conta está suspensa até ser analisada por um moderador.",
-    "verifyFirst": "Primeiro, verifique sua identidade."
+    "verifyFirst": "Primeiro, verifique sua identidade.",
+    "badCode": "Esse código está errado ou expirou. Tente de novo ou peça um novo.",
+    "tooManyAttempts": "Muitas tentativas. Tente de novo daqui a pouco.",
+    "loginExpired": "Seu login expirou. Digite seu e-mail e senha de novo."
   },
   "profile": {
     "wrongPassword": "Senha incorreta.",
@@ -280,5 +285,41 @@
     "comfort": "O que me deixa à vontade",
     "place": "Onde",
     "status": "Status de relacionamento"
+  },
+  "account": {
+    "samePassword": "A nova senha precisa ser diferente da atual.",
+    "twoFactorOn": "A verificação em duas etapas já está ativada.",
+    "twoFactorOff": "A verificação em duas etapas não está ativada.",
+    "twoFactorSetupFirst": "Primeiro gere uma chave para o seu app autenticador."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Código de verificação: {code}",
+      "body": "Seu código para concluir o cadastro é {code}.\n\nEle vale por 15 minutos. Se você não fez o cadastro, ignore este e-mail."
+    },
+    "accountExists": {
+      "subject": "Tentativa de cadastro",
+      "body": "Alguém acabou de tentar criar uma conta com este endereço de e-mail, mas você já tem uma.\n\nSe foi você, é só entrar (ou redefinir sua senha). Se não foi, não faça nada – sua conta continua segura."
+    },
+    "resetCode": {
+      "subject": "Código para redefinir a senha: {code}",
+      "body": "Seu código para redefinir a senha é {code}.\n\nEle vale por 15 minutos. Se você não pediu a redefinição, ignore este e-mail – sua senha continua a mesma."
+    },
+    "newLogin": {
+      "subject": "Novo login na sua conta",
+      "body": "Alguém acabou de entrar na sua conta ({device}).\n\nSe não foi você, altere sua senha agora mesmo e desconecte os outros dispositivos nas configurações de segurança."
+    },
+    "passwordChanged": {
+      "subject": "Sua senha foi alterada",
+      "body": "A senha da sua conta acabou de ser alterada e os outros dispositivos foram desconectados.\n\nSe não foi você, redefina sua senha em “Esqueci a senha” e fale com a gente."
+    },
+    "twoFactorOn": {
+      "subject": "Verificação em duas etapas ativada",
+      "body": "Agora, para entrar na sua conta, também é preciso um código do seu app autenticador.\n\nGuarde seus códigos de backup em um lugar seguro."
+    },
+    "twoFactorOff": {
+      "subject": "Verificação em duas etapas desativada",
+      "body": "A verificação em duas etapas foi desativada na sua conta.\n\nSe não foi você, altere sua senha agora mesmo."
+    }
   }
 }

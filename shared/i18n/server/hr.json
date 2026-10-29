@@ -62,7 +62,9 @@
     "reason": "razlog",
     "details": "detalji",
     "resolution": "rješenje",
-    "days": "broj dana"
+    "days": "broj dana",
+    "newPassword": "nova lozinka",
+    "session": "uređaj"
   },
   "auth": {
     "confirmAdult": "Moraš potvrditi da imaš 18 ili više godina.",
@@ -74,7 +76,10 @@
     "banned": "Ovaj račun je zabranjen zbog kršenja pravila.",
     "notLoggedIn": "Nisi prijavljen/a.",
     "suspended": "Tvoj račun je suspendiran dok ga ne pregleda moderator.",
-    "verifyFirst": "Najprije potvrdi svoj identitet."
+    "verifyFirst": "Najprije potvrdi svoj identitet.",
+    "badCode": "Kôd nije točan ili je istekao. Pokušaj ponovno ili zatraži novi.",
+    "tooManyAttempts": "Previše pokušaja. Pokušaj ponovno za koji trenutak.",
+    "loginExpired": "Prijava je istekla. Ponovno unesi e-adresu i lozinku."
   },
   "profile": {
     "wrongPassword": "Pogrešna lozinka.",
@@ -280,5 +285,41 @@
     "comfort": "Što mi paše",
     "place": "Gdje",
     "status": "Status veze"
+  },
+  "account": {
+    "samePassword": "Nova lozinka mora se razlikovati od trenutačne.",
+    "twoFactorOn": "Potvrda u dva koraka već je uključena.",
+    "twoFactorOff": "Potvrda u dva koraka nije uključena.",
+    "twoFactorSetupFirst": "Najprije generiraj ključ za aplikaciju za autentifikaciju."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Kôd za potvrdu: {code}",
+      "body": "Tvoj kôd za dovršetak registracije je {code}.\n\nVrijedi 15 minuta. Ako nisi zatražio/la registraciju, zanemari ovu poruku."
+    },
+    "accountExists": {
+      "subject": "Pokušaj registracije",
+      "body": "Netko je upravo pokušao izraditi račun s ovom e-adresom, ali ti već imaš račun.\n\nAko si to bio/la ti, samo se prijavi (ili ponovno postavi lozinku). Ako nisi, ne trebaš ništa poduzeti – tvoj račun ostaje siguran."
+    },
+    "resetCode": {
+      "subject": "Kôd za ponovno postavljanje lozinke: {code}",
+      "body": "Tvoj kôd za ponovno postavljanje lozinke je {code}.\n\nVrijedi 15 minuta. Ako to nisi zatražio/la, zanemari ovu poruku – lozinka ostaje nepromijenjena."
+    },
+    "newLogin": {
+      "subject": "Nova prijava na tvoj račun",
+      "body": "Netko se upravo prijavio na tvoj račun ({device}).\n\nAko to nisi bio/la ti, odmah promijeni lozinku i u sigurnosnim postavkama odjavi ostale uređaje."
+    },
+    "passwordChanged": {
+      "subject": "Tvoja lozinka je promijenjena",
+      "body": "Lozinka tvog računa upravo je promijenjena, a ostali uređaji su odjavljeni.\n\nAko to nisi bio/la ti, ponovno postavi lozinku putem „Zaboravljena lozinka“ i javi nam se."
+    },
+    "twoFactorOn": {
+      "subject": "Potvrda u dva koraka je uključena",
+      "body": "Za prijavu na tvoj račun sada je potreban i kôd iz aplikacije za autentifikaciju.\n\nRezervne kôdove spremi na sigurno mjesto."
+    },
+    "twoFactorOff": {
+      "subject": "Potvrda u dva koraka je isključena",
+      "body": "Potvrda u dva koraka isključena je za tvoj račun.\n\nAko to nisi bio/la ti, odmah promijeni lozinku."
+    }
   }
 }

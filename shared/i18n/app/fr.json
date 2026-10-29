@@ -595,7 +595,11 @@
     "title": "Connexion",
     "email": "Courriel",
     "password": "Mot de passe",
-    "submit": "Se connecter"
+    "submit": "Se connecter",
+    "twoFactorTitle": "Validation en deux étapes",
+    "twoFactorHint": "Saisis le code de ton application d’authentification ou l’un de tes codes de secours.",
+    "code": "Code",
+    "forgot": "Mot de passe oublié"
   },
   "register": {
     "title": "Créer un compte",
@@ -610,7 +614,12 @@
     "confirmAdult": "J'ai 18 ans ou plus.",
     "acceptRules": "J'accepte les règles de la communauté et le traitement de mes données, y compris celles sur ma vie sexuelle, pour que YesYes puisse fonctionner.",
     "verifyNote": "Juste après, nous vérifierons ton identité et ton âge (pièce d'identité et selfie). Nous ne conservons pas ta pièce d'identité.",
-    "continue": "Continuer"
+    "continue": "Continuer",
+    "codeTitle": "Consulte tes e-mails",
+    "codeSent": "Nous avons envoyé un code à 6 chiffres à {email}. Si tu as déjà un compte, tu recevras plutôt un message d’information – connecte-toi simplement.",
+    "code": "Code reçu par e-mail",
+    "confirmCode": "Vérifier et créer le compte",
+    "resend": "Renvoyer le code"
   },
   "verify": {
     "title": "Vérifie que c'est bien toi",
@@ -723,5 +732,53 @@
     "faceId": "YesYes utilise Face ID pour se déverrouiller, afin que personne d'autre ne puisse voir son contenu.",
     "photos": "Choisis des photos pour ton profil.",
     "camera": "Prends-toi en photo pour ton profil."
+  },
+  "forgot": {
+    "title": "Réinitialiser le mot de passe",
+    "intro": "Nous t’enverrons un code par e-mail pour définir un nouveau mot de passe.",
+    "send": "Envoyer le code",
+    "sent": "Si un compte existe pour {email}, nous y avons envoyé un code à 6 chiffres. Il est valable 15 minutes.",
+    "newPassword": "Nouveau mot de passe (au moins 10 caractères)",
+    "save": "Définir le nouveau mot de passe",
+    "done": "Ton mot de passe a été modifié et tous les appareils ont été déconnectés. Connecte-toi avec ton nouveau mot de passe.",
+    "toLogin": "Se connecter"
+  },
+  "security": {
+    "title": "Sécurité du compte",
+    "bannerOff": "Active la validation en deux étapes et vérifie tes appareils connectés.",
+    "passwordChanged": "Mot de passe modifié. Les autres appareils ont été déconnectés.",
+    "currentPassword": "Mot de passe actuel",
+    "continue": "Continuer",
+    "twoFactor": {
+      "title": "Validation en deux étapes",
+      "on": "La validation en deux étapes est activée",
+      "off": "La validation en deux étapes est désactivée",
+      "hint": "Pour te connecter, il te faudra aussi un code d’une application d’authentification (p. ex. Google Authenticator, 1Password). Le mot de passe seul ne suffira plus.",
+      "enable": "Activer la validation en deux étapes",
+      "disable": "Désactiver la validation en deux étapes",
+      "scan": "Ajoute YesYes à ton application d’authentification – avec le bouton ci-dessous ou en saisissant la clé. Saisis ensuite le code affiché par l’application.",
+      "openApp": "Ouvrir dans l’application d’authentification",
+      "key": "Clé à saisir manuellement",
+      "code": "Code de l’application",
+      "confirm": "Activer",
+      "codesIntro": "C’est fait. Conserve ces codes de secours en lieu sûr (p. ex. dans un gestionnaire de mots de passe). Chacun ne sert qu’une fois, si tu n’as pas ton téléphone.",
+      "saveCodes": "Enregistrer les codes de secours",
+      "codesDone": "Je les ai enregistrés",
+      "codeOrBackup": "Code de l’application ou code de secours"
+    },
+    "password": {
+      "title": "Changer le mot de passe",
+      "new": "Nouveau mot de passe",
+      "hint": "Au moins 10 caractères. Les autres appareils seront déconnectés.",
+      "save": "Changer le mot de passe"
+    },
+    "devices": {
+      "title": "Appareils connectés",
+      "unknown": "Appareil inconnu",
+      "current": "Cet appareil",
+      "lastUsed": "Dernière utilisation : {date}",
+      "signOut": "Déconnecter",
+      "signOutOthers": "Déconnecter tous les autres appareils"
+    }
   }
 }

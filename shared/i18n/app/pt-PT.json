@@ -595,7 +595,11 @@
     "title": "Iniciar sessão",
     "email": "E-mail",
     "password": "Palavra-passe",
-    "submit": "Iniciar sessão"
+    "submit": "Iniciar sessão",
+    "twoFactorTitle": "Verificação em dois passos",
+    "twoFactorHint": "Introduz o código da tua aplicação de autenticação ou um dos teus códigos de recuperação.",
+    "code": "Código",
+    "forgot": "Esqueci-me da palavra-passe"
   },
   "register": {
     "title": "Criar conta",
@@ -610,7 +614,12 @@
     "confirmAdult": "Tenho 18 anos ou mais.",
     "acceptRules": "Aceito as regras da comunidade e o tratamento dos meus dados, incluindo dados sobre a minha vida sexual, para que o YesYes possa funcionar.",
     "verifyNote": "Logo a seguir, vamos verificar a tua identidade e idade (documento e selfie). Não guardamos o teu documento.",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "codeTitle": "Verifica o teu e-mail",
+    "codeSent": "Enviámos um código de 6 dígitos para {email}. Se já tens uma conta, vais receber um aviso – basta iniciares sessão.",
+    "code": "Código do e-mail",
+    "confirmCode": "Verificar e criar conta",
+    "resend": "Reenviar código"
   },
   "verify": {
     "title": "Confirma que és tu",
@@ -723,5 +732,53 @@
     "faceId": "O YesYes usa o Face ID para desbloquear, para que mais ninguém possa ver o que lá está.",
     "photos": "Escolhe fotos para o teu perfil.",
     "camera": "Tira uma foto tua para o perfil."
+  },
+  "forgot": {
+    "title": "Repor palavra-passe",
+    "intro": "Vamos enviar-te por e-mail um código para definires uma nova palavra-passe.",
+    "send": "Enviar código",
+    "sent": "Se existir uma conta para {email}, enviámos-lhe um código de 6 dígitos. É válido durante 15 minutos.",
+    "newPassword": "Nova palavra-passe (pelo menos 10 caracteres)",
+    "save": "Definir nova palavra-passe",
+    "done": "A tua palavra-passe foi alterada e a sessão foi terminada em todos os dispositivos. Inicia sessão com a nova palavra-passe.",
+    "toLogin": "Iniciar sessão"
+  },
+  "security": {
+    "title": "Segurança da conta",
+    "bannerOff": "Ativa a verificação em dois passos e verifica os dispositivos com sessão iniciada.",
+    "passwordChanged": "Palavra-passe alterada. A sessão foi terminada nos outros dispositivos.",
+    "currentPassword": "Palavra-passe atual",
+    "continue": "Continuar",
+    "twoFactor": {
+      "title": "Verificação em dois passos",
+      "on": "A verificação em dois passos está ativada",
+      "off": "A verificação em dois passos está desativada",
+      "hint": "Para iniciar sessão, vais precisar também de um código de uma aplicação de autenticação (p. ex. Google Authenticator, 1Password). Só a palavra-passe não chega.",
+      "enable": "Ativar verificação em dois passos",
+      "disable": "Desativar verificação em dois passos",
+      "scan": "Adiciona o YesYes à tua aplicação de autenticação – com o botão abaixo ou introduzindo a chave. Depois, introduz o código que a aplicação mostrar.",
+      "openApp": "Abrir na aplicação de autenticação",
+      "key": "Chave para introdução manual",
+      "code": "Código da aplicação",
+      "confirm": "Ativar",
+      "codesIntro": "Feito. Guarda estes códigos de recuperação num local seguro (p. ex. um gestor de palavras-passe). Cada um funciona uma vez, para quando não tiveres o telemóvel contigo.",
+      "saveCodes": "Guardar códigos de recuperação",
+      "codesDone": "Já os guardei",
+      "codeOrBackup": "Código da aplicação ou de recuperação"
+    },
+    "password": {
+      "title": "Alterar palavra-passe",
+      "new": "Nova palavra-passe",
+      "hint": "Pelo menos 10 caracteres. A sessão será terminada nos outros dispositivos.",
+      "save": "Alterar palavra-passe"
+    },
+    "devices": {
+      "title": "Dispositivos com sessão iniciada",
+      "unknown": "Dispositivo desconhecido",
+      "current": "Este dispositivo",
+      "lastUsed": "Última utilização: {date}",
+      "signOut": "Terminar sessão",
+      "signOutOthers": "Terminar sessão em todos os outros dispositivos"
+    }
   }
 }

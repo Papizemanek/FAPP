@@ -607,7 +607,11 @@
     "title": "Prihlásenie",
     "email": "E-mail",
     "password": "Heslo",
-    "submit": "Prihlásiť sa"
+    "submit": "Prihlásiť sa",
+    "twoFactorTitle": "Dvojstupňové overenie",
+    "twoFactorHint": "Zadaj kód z overovacej aplikácie alebo jeden zo záložných kódov.",
+    "code": "Kód",
+    "forgot": "Zabudnuté heslo"
   },
   "register": {
     "title": "Vytvoriť účet",
@@ -622,7 +626,12 @@
     "confirmAdult": "Mám 18 rokov alebo viac.",
     "acceptRules": "Súhlasím s pravidlami komunity a so spracovaním svojich údajov vrátane údajov o sexuálnom živote, aby mohol YesYes fungovať.",
     "verifyNote": "Hneď potom overíme tvoju totožnosť a vek (doklad a selfie). Doklad si neukladáme.",
-    "continue": "Pokračovať"
+    "continue": "Pokračovať",
+    "codeTitle": "Skontroluj e-mail",
+    "codeSent": "Na {email} sme poslali 6-miestny kód. Ak už máš účet, namiesto neho ti príde upozornenie – stačí sa prihlásiť.",
+    "code": "Kód z e-mailu",
+    "confirmCode": "Overiť a vytvoriť účet",
+    "resend": "Poslať kód znova"
   },
   "verify": {
     "title": "Over, že si to ty",
@@ -736,5 +745,53 @@
     "faceId": "YesYes sa odomyká cez Face ID, aby doň nikto nenazrel.",
     "photos": "Vyber si fotky do profilu.",
     "camera": "Odfoť sa do profilu."
+  },
+  "forgot": {
+    "title": "Obnovenie hesla",
+    "intro": "Pošleme ti e-mailom kód na nastavenie nového hesla.",
+    "send": "Poslať kód",
+    "sent": "Ak existuje účet pre {email}, poslali sme naň 6-miestny kód. Platí 15 minút.",
+    "newPassword": "Nové heslo (aspoň 10 znakov)",
+    "save": "Nastaviť nové heslo",
+    "done": "Heslo je zmenené a všetky zariadenia boli odhlásené. Prihlás sa novým heslom.",
+    "toLogin": "Prihlásiť sa"
+  },
+  "security": {
+    "title": "Zabezpečenie účtu",
+    "bannerOff": "Zapni dvojstupňové overenie a skontroluj prihlásené zariadenia.",
+    "passwordChanged": "Heslo je zmenené. Ostatné zariadenia boli odhlásené.",
+    "currentPassword": "Aktuálne heslo",
+    "continue": "Pokračovať",
+    "twoFactor": {
+      "title": "Dvojstupňové overenie",
+      "on": "Dvojstupňové overenie je zapnuté",
+      "off": "Dvojstupňové overenie je vypnuté",
+      "hint": "Pri prihlásení bude treba aj kód z overovacej aplikácie (napr. Google Authenticator, 1Password). Samotné heslo nebude stačiť.",
+      "enable": "Zapnúť dvojstupňové overenie",
+      "disable": "Vypnúť dvojstupňové overenie",
+      "scan": "Pridaj YesYes do overovacej aplikácie – tlačidlom nižšie alebo zadaním kľúča. Potom zadaj kód, ktorý aplikácia zobrazí.",
+      "openApp": "Otvoriť v overovacej aplikácii",
+      "key": "Kľúč na ručné zadanie",
+      "code": "Kód z aplikácie",
+      "confirm": "Zapnúť",
+      "codesIntro": "Hotovo. Ulož si tieto záložné kódy na bezpečné miesto (napr. do správcu hesiel). Každý funguje raz – pre prípad, keď nebudeš mať pri sebe telefón.",
+      "saveCodes": "Uložiť záložné kódy",
+      "codesDone": "Mám ich uložené",
+      "codeOrBackup": "Kód z aplikácie alebo záložný kód"
+    },
+    "password": {
+      "title": "Zmena hesla",
+      "new": "Nové heslo",
+      "hint": "Aspoň 10 znakov. Ostatné zariadenia budú odhlásené.",
+      "save": "Zmeniť heslo"
+    },
+    "devices": {
+      "title": "Prihlásené zariadenia",
+      "unknown": "Neznáme zariadenie",
+      "current": "Toto zariadenie",
+      "lastUsed": "Naposledy použité {date}",
+      "signOut": "Odhlásiť",
+      "signOutOthers": "Odhlásiť všetky ostatné zariadenia"
+    }
   }
 }

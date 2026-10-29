@@ -595,7 +595,11 @@
     "title": "Entrar",
     "email": "E-mail",
     "password": "Senha",
-    "submit": "Entrar"
+    "submit": "Entrar",
+    "twoFactorTitle": "Verificação em duas etapas",
+    "twoFactorHint": "Digite o código do seu app autenticador ou um dos seus códigos de backup.",
+    "code": "Código",
+    "forgot": "Esqueci a senha"
   },
   "register": {
     "title": "Criar conta",
@@ -610,7 +614,12 @@
     "confirmAdult": "Tenho 18 anos ou mais.",
     "acceptRules": "Aceito as regras da comunidade e o tratamento dos meus dados, incluindo dados sobre a minha vida sexual, para que o YesYes possa funcionar.",
     "verifyNote": "Logo em seguida, vamos verificar sua identidade e idade (documento e selfie). Não guardamos seu documento.",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "codeTitle": "Confira seu e-mail",
+    "codeSent": "Enviamos um código de 6 dígitos para {email}. Se você já tem uma conta, vai receber um aviso – é só entrar.",
+    "code": "Código do e-mail",
+    "confirmCode": "Verificar e criar conta",
+    "resend": "Reenviar código"
   },
   "verify": {
     "title": "Confirme que é você",
@@ -723,5 +732,53 @@
     "faceId": "O YesYes usa o Face ID para desbloquear, para que ninguém mais veja o que tem dentro.",
     "photos": "Escolha fotos para o seu perfil.",
     "camera": "Tire uma foto sua para o perfil."
+  },
+  "forgot": {
+    "title": "Redefinir senha",
+    "intro": "Vamos enviar um código por e-mail para você criar uma nova senha.",
+    "send": "Enviar código",
+    "sent": "Se existir uma conta para {email}, enviamos um código de 6 dígitos. Ele vale por 15 minutos.",
+    "newPassword": "Nova senha (pelo menos 10 caracteres)",
+    "save": "Definir nova senha",
+    "done": "Sua senha foi alterada e todos os dispositivos foram desconectados. Entre com a nova senha.",
+    "toLogin": "Entrar"
+  },
+  "security": {
+    "title": "Segurança da conta",
+    "bannerOff": "Ative a verificação em duas etapas e confira seus dispositivos conectados.",
+    "passwordChanged": "Senha alterada. Os outros dispositivos foram desconectados.",
+    "currentPassword": "Senha atual",
+    "continue": "Continuar",
+    "twoFactor": {
+      "title": "Verificação em duas etapas",
+      "on": "A verificação em duas etapas está ativada",
+      "off": "A verificação em duas etapas está desativada",
+      "hint": "Para entrar, você também vai precisar de um código de um app autenticador (ex.: Google Authenticator, 1Password). Só a senha não será suficiente.",
+      "enable": "Ativar verificação em duas etapas",
+      "disable": "Desativar verificação em duas etapas",
+      "scan": "Adicione o YesYes ao seu app autenticador – pelo botão abaixo ou digitando a chave. Depois, digite o código que o app mostrar.",
+      "openApp": "Abrir no app autenticador",
+      "key": "Chave para inserção manual",
+      "code": "Código do app",
+      "confirm": "Ativar",
+      "codesIntro": "Pronto. Guarde estes códigos de backup em um lugar seguro (ex.: um gerenciador de senhas). Cada um funciona uma vez, para quando você estiver sem o celular.",
+      "saveCodes": "Salvar códigos de backup",
+      "codesDone": "Já salvei",
+      "codeOrBackup": "Código do app ou código de backup"
+    },
+    "password": {
+      "title": "Alterar senha",
+      "new": "Nova senha",
+      "hint": "Pelo menos 10 caracteres. Os outros dispositivos serão desconectados.",
+      "save": "Alterar senha"
+    },
+    "devices": {
+      "title": "Dispositivos conectados",
+      "unknown": "Dispositivo desconhecido",
+      "current": "Este dispositivo",
+      "lastUsed": "Último uso: {date}",
+      "signOut": "Sair",
+      "signOutOthers": "Desconectar todos os outros dispositivos"
+    }
   }
 }

@@ -1,0 +1,12 @@
+# Výchozí pravidla gitleaks + výjimky pro testovací a vývojové hodnoty, které tajemství nejsou.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Vývojové a testovací hodnoty"
+paths = [
+  '''server/test/''',
+  '''app/demo/''',
+  '''server/webapp/index\.html''',
+  '''package-lock\.json''',
+]

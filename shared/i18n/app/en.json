@@ -583,7 +583,11 @@
     "title": "Sign in",
     "email": "Email",
     "password": "Password",
-    "submit": "Sign in"
+    "submit": "Sign in",
+    "twoFactorTitle": "Two-step verification",
+    "twoFactorHint": "Enter the code from your authenticator app, or one of your backup codes.",
+    "code": "Code",
+    "forgot": "Forgot password"
   },
   "register": {
     "title": "Create account",
@@ -598,7 +602,12 @@
     "confirmAdult": "I'm 18 or older.",
     "acceptRules": "I agree to the community rules and to the processing of my data, including data about my sex life, so that YesYes can work.",
     "verifyNote": "Right after this, we'll verify your identity and age (ID and selfie). We don't store your ID.",
-    "continue": "Continue"
+    "continue": "Continue",
+    "codeTitle": "Check your email",
+    "codeSent": "We sent a 6-digit code to {email}. If you already have an account, you'll get a notice instead – just sign in.",
+    "code": "Code from email",
+    "confirmCode": "Verify and create account",
+    "resend": "Send code again"
   },
   "verify": {
     "title": "Verify it's you",
@@ -614,6 +623,54 @@
     "retry": "Try again",
     "start": "Verify identity",
     "signOut": "Sign out"
+  },
+  "forgot": {
+    "title": "Reset password",
+    "intro": "We'll email you a code to set a new password.",
+    "send": "Send code",
+    "sent": "If there's an account for {email}, we sent it a 6-digit code. It's valid for 15 minutes.",
+    "newPassword": "New password (at least 10 characters)",
+    "save": "Set new password",
+    "done": "Your password is changed and all devices were signed out. Sign in with your new password.",
+    "toLogin": "Sign in"
+  },
+  "security": {
+    "title": "Account security",
+    "bannerOff": "Turn on two-step verification and check your signed-in devices.",
+    "passwordChanged": "Password changed. Other devices were signed out.",
+    "currentPassword": "Current password",
+    "continue": "Continue",
+    "twoFactor": {
+      "title": "Two-step verification",
+      "on": "Two-step verification is on",
+      "off": "Two-step verification is off",
+      "hint": "Signing in will also need a code from an authenticator app (e.g. Google Authenticator, 1Password). A password alone won't be enough.",
+      "enable": "Turn on two-step verification",
+      "disable": "Turn off two-step verification",
+      "scan": "Add YesYes to your authenticator app – with the button below, or type in the key. Then enter the code the app shows.",
+      "openApp": "Open in authenticator app",
+      "key": "Key for manual entry",
+      "code": "Code from the app",
+      "confirm": "Turn on",
+      "codesIntro": "Done. Keep these backup codes somewhere safe (e.g. a password manager). Each works once, for when you don't have your phone.",
+      "saveCodes": "Save backup codes",
+      "codesDone": "I've saved them",
+      "codeOrBackup": "App code or backup code"
+    },
+    "password": {
+      "title": "Change password",
+      "new": "New password",
+      "hint": "At least 10 characters. Other devices will be signed out.",
+      "save": "Change password"
+    },
+    "devices": {
+      "title": "Signed-in devices",
+      "unknown": "Unknown device",
+      "current": "This device",
+      "lastUsed": "Last used {date}",
+      "signOut": "Sign out",
+      "signOutOthers": "Sign out all other devices"
+    }
   },
   "common": {
     "back": "Back",

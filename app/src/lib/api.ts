@@ -43,6 +43,12 @@ export type Profile = {
   superLike?: boolean;
 };
 
+/** Přihlášení na jednom zařízení (Nastavení → Zabezpečení účtu). */
+export type DeviceSession = { id: number; kind: 'app' | 'web'; device: string; createdAt: string; lastUsedAt: string; current: boolean };
+
+/** Odpověď přihlášení: buď rovnou přihlášení, nebo výzva k druhému kroku (2FA). */
+export type LoginResult = { token: string; user: Me } | { twoFactor: true; challenge: string };
+
 export type Me = Profile & {
   photoIds: string[];
   email: string;
@@ -56,6 +62,8 @@ export type Me = Profile & {
   trustedPhone: string;
   hasCheckinPin: boolean;
   hasDuressPin: boolean;
+  /** Dvoufázové ověření (kód z autentizační aplikace) je zapnuté. */
+  twoFactor: boolean;
   discreet: boolean;
   verificationStatus: 'none' | 'pending' | 'approved' | 'declined';
   status: 'active' | 'suspended' | 'banned';

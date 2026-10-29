@@ -61,7 +61,9 @@
     "reason": "reden",
     "details": "details",
     "resolution": "afhandeling",
-    "days": "aantal dagen"
+    "days": "aantal dagen",
+    "newPassword": "nieuw wachtwoord",
+    "session": "apparaat"
   },
   "auth": {
     "confirmAdult": "Je moet bevestigen dat je 18 jaar of ouder bent.",
@@ -73,7 +75,10 @@
     "banned": "Dit account is verbannen omdat de regels zijn overtreden.",
     "notLoggedIn": "Je bent niet ingelogd.",
     "suspended": "Je account is opgeschort tot een moderator het heeft beoordeeld.",
-    "verifyFirst": "Verifieer eerst je identiteit."
+    "verifyFirst": "Verifieer eerst je identiteit.",
+    "badCode": "Die code is onjuist of verlopen. Probeer het opnieuw of vraag een nieuwe aan.",
+    "tooManyAttempts": "Te veel pogingen. Probeer het zo opnieuw.",
+    "loginExpired": "Je inlogsessie is verlopen. Voer je e-mailadres en wachtwoord opnieuw in."
   },
   "profile": {
     "wrongPassword": "Verkeerd wachtwoord.",
@@ -275,5 +280,41 @@
     "comfort": "Waar ik me fijn bij voel",
     "place": "Waar",
     "status": "Relatiestatus"
+  },
+  "account": {
+    "samePassword": "Het nieuwe wachtwoord moet anders zijn dan het huidige.",
+    "twoFactorOn": "Verificatie in twee stappen staat al aan.",
+    "twoFactorOff": "Verificatie in twee stappen staat niet aan.",
+    "twoFactorSetupFirst": "Genereer eerst een sleutel voor je authenticator-app."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Verificatiecode: {code}",
+      "body": "Je code om je registratie af te ronden is {code}.\n\nDeze is 15 minuten geldig. Heb je je niet geregistreerd? Negeer deze e-mail dan."
+    },
+    "accountExists": {
+      "subject": "Registratiepoging",
+      "body": "Iemand probeerde zojuist een account aan te maken met dit e-mailadres, maar je hebt er al een.\n\nWas jij het? Log dan gewoon in (of reset je wachtwoord). Zo niet, dan hoef je niets te doen – je account blijft veilig."
+    },
+    "resetCode": {
+      "subject": "Code om je wachtwoord te resetten: {code}",
+      "body": "Je code om je wachtwoord te resetten is {code}.\n\nDeze is 15 minuten geldig. Heb je geen reset aangevraagd? Negeer deze e-mail dan – je wachtwoord blijft hetzelfde."
+    },
+    "newLogin": {
+      "subject": "Nieuwe inlog op je account",
+      "body": "Iemand heeft zojuist ingelogd op je account ({device}).\n\nWas jij dit niet? Wijzig dan meteen je wachtwoord en log andere apparaten uit via de beveiligingsinstellingen."
+    },
+    "passwordChanged": {
+      "subject": "Je wachtwoord is gewijzigd",
+      "body": "Het wachtwoord van je account is zojuist gewijzigd en andere apparaten zijn uitgelogd.\n\nWas jij dit niet? Reset dan je wachtwoord via ‘Wachtwoord vergeten’ en neem contact met ons op."
+    },
+    "twoFactorOn": {
+      "subject": "Verificatie in twee stappen aangezet",
+      "body": "Om in te loggen op je account heb je nu ook een code uit je authenticator-app nodig.\n\nBewaar je back-upcodes op een veilige plek."
+    },
+    "twoFactorOff": {
+      "subject": "Verificatie in twee stappen uitgezet",
+      "body": "Verificatie in twee stappen is uitgezet voor je account.\n\nWas jij dit niet? Wijzig dan meteen je wachtwoord."
+    }
   }
 }

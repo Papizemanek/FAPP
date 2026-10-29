@@ -607,7 +607,11 @@
     "title": "Prijava",
     "email": "E-pošta",
     "password": "Geslo",
-    "submit": "Prijava"
+    "submit": "Prijava",
+    "twoFactorTitle": "Preverjanje v dveh korakih",
+    "twoFactorHint": "Vnesi kodo iz aplikacije za preverjanje pristnosti ali eno od rezervnih kod.",
+    "code": "Koda",
+    "forgot": "Pozabljeno geslo"
   },
   "register": {
     "title": "Ustvari račun",
@@ -622,7 +626,12 @@
     "confirmAdult": "Imam 18 let ali več.",
     "acceptRules": "Strinjam se s pravili skupnosti in z obdelavo svojih podatkov, vključno s podatki o spolnem življenju, da lahko YesYes deluje.",
     "verifyNote": "Takoj nato preverimo tvojo identiteto in starost (dokument in selfie). Dokumenta ne shranjujemo.",
-    "continue": "Nadaljuj"
+    "continue": "Nadaljuj",
+    "codeTitle": "Preveri e-pošto",
+    "codeSent": "Na {email} smo poslali 6-mestno kodo. Če že imaš račun, boš namesto tega dobil(a) obvestilo – samo se prijavi.",
+    "code": "Koda iz e-pošte",
+    "confirmCode": "Potrdi in ustvari račun",
+    "resend": "Ponovno pošlji kodo"
   },
   "verify": {
     "title": "Potrdi, da si to ti",
@@ -736,5 +745,53 @@
     "faceId": "YesYes se odklepa s Face ID, da vanj ne pogleda nihče drug.",
     "photos": "Izberi fotografije za profil.",
     "camera": "Fotografiraj se za profil."
+  },
+  "forgot": {
+    "title": "Ponastavitev gesla",
+    "intro": "Po e-pošti ti bomo poslali kodo za nastavitev novega gesla.",
+    "send": "Pošlji kodo",
+    "sent": "Če za {email} obstaja račun, smo nanj poslali 6-mestno kodo. Velja 15 minut.",
+    "newPassword": "Novo geslo (vsaj 10 znakov)",
+    "save": "Nastavi novo geslo",
+    "done": "Geslo je spremenjeno, vse naprave pa so odjavljene. Prijavi se z novim geslom.",
+    "toLogin": "Prijava"
+  },
+  "security": {
+    "title": "Varnost računa",
+    "bannerOff": "Vklopi preverjanje v dveh korakih in preveri prijavljene naprave.",
+    "passwordChanged": "Geslo je spremenjeno. Druge naprave so odjavljene.",
+    "currentPassword": "Trenutno geslo",
+    "continue": "Nadaljuj",
+    "twoFactor": {
+      "title": "Preverjanje v dveh korakih",
+      "on": "Preverjanje v dveh korakih je vklopljeno",
+      "off": "Preverjanje v dveh korakih je izklopljeno",
+      "hint": "Za prijavo boš potreboval(a) tudi kodo iz aplikacije za preverjanje pristnosti (npr. Google Authenticator, 1Password). Samo geslo ne bo dovolj.",
+      "enable": "Vklopi preverjanje v dveh korakih",
+      "disable": "Izklopi preverjanje v dveh korakih",
+      "scan": "Dodaj YesYes v aplikacijo za preverjanje pristnosti – z gumbom spodaj ali z vnosom ključa. Nato vnesi kodo, ki jo prikaže aplikacija.",
+      "openApp": "Odpri v aplikaciji za preverjanje pristnosti",
+      "key": "Ključ za ročni vnos",
+      "code": "Koda iz aplikacije",
+      "confirm": "Vklopi",
+      "codesIntro": "Končano. Te rezervne kode shrani na varno mesto (npr. v upravitelja gesel). Vsaka deluje enkrat – za primer, ko telefona ne boš imel(a) pri sebi.",
+      "saveCodes": "Shrani rezervne kode",
+      "codesDone": "Shranjeno",
+      "codeOrBackup": "Koda iz aplikacije ali rezervna koda"
+    },
+    "password": {
+      "title": "Spremeni geslo",
+      "new": "Novo geslo",
+      "hint": "Vsaj 10 znakov. Druge naprave bodo odjavljene.",
+      "save": "Spremeni geslo"
+    },
+    "devices": {
+      "title": "Prijavljene naprave",
+      "unknown": "Neznana naprava",
+      "current": "Ta naprava",
+      "lastUsed": "Nazadnje uporabljeno {date}",
+      "signOut": "Odjavi",
+      "signOutOthers": "Odjavi vse druge naprave"
+    }
   }
 }

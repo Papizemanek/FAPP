@@ -60,7 +60,9 @@
     "reason": "原因",
     "details": "详细说明",
     "resolution": "处理结果",
-    "days": "天数"
+    "days": "天数",
+    "newPassword": "新密码",
+    "session": "设备"
   },
   "auth": {
     "confirmAdult": "你必须确认自己已年满 18 岁。",
@@ -72,7 +74,10 @@
     "banned": "此账户因违反规则已被封禁。",
     "notLoggedIn": "你尚未登录。",
     "suspended": "你的账户已被暂停，等待审核员审核。",
-    "verifyFirst": "请先验证你的身份。"
+    "verifyFirst": "请先验证你的身份。",
+    "badCode": "验证码错误或已过期。请重试或获取新的验证码。",
+    "tooManyAttempts": "尝试次数过多。请稍后再试。",
+    "loginExpired": "登录已超时。请重新输入邮箱和密码。"
   },
   "profile": {
     "wrongPassword": "密码错误。",
@@ -270,5 +275,41 @@
     "comfort": "让我舒服的方式",
     "place": "地点",
     "status": "感情状态"
+  },
+  "account": {
+    "samePassword": "新密码不能与当前密码相同。",
+    "twoFactorOn": "两步验证已开启。",
+    "twoFactorOff": "两步验证未开启。",
+    "twoFactorSetupFirst": "请先为身份验证器应用生成密钥。"
+  },
+  "email": {
+    "registerCode": {
+      "subject": "验证码：{code}",
+      "body": "你用于完成注册的验证码是 {code}。\n\n验证码 15 分钟内有效。如果你没有注册，请忽略此邮件。"
+    },
+    "accountExists": {
+      "subject": "注册尝试",
+      "body": "刚刚有人尝试使用此邮箱地址创建账号，但你已经有账号了。\n\n如果是你本人，直接登录（或重置密码）即可。如果不是，无需任何操作——你的账号依然安全。"
+    },
+    "resetCode": {
+      "subject": "密码重置验证码：{code}",
+      "body": "你的密码重置验证码是 {code}。\n\n验证码 15 分钟内有效。如果你没有申请重置，请忽略此邮件——你的密码不会改变。"
+    },
+    "newLogin": {
+      "subject": "你的账号有新的登录",
+      "body": "刚刚有人登录了你的账号（{device}）。\n\n如果不是你本人，请立即更改密码，并在安全设置中退出其他设备。"
+    },
+    "passwordChanged": {
+      "subject": "你的密码已更改",
+      "body": "你的账号密码刚刚已更改，其他设备已退出登录。\n\n如果不是你本人，请通过“忘记密码”重置密码并联系我们。"
+    },
+    "twoFactorOn": {
+      "subject": "两步验证已开启",
+      "body": "现在登录你的账号时，还需要输入身份验证器应用中的验证码。\n\n请将备用码保存在安全的地方。"
+    },
+    "twoFactorOff": {
+      "subject": "两步验证已关闭",
+      "body": "你的账号已关闭两步验证。\n\n如果不是你本人，请立即更改密码。"
+    }
   }
 }

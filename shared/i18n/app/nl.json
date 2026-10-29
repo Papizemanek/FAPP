@@ -583,7 +583,11 @@
     "title": "Inloggen",
     "email": "E-mail",
     "password": "Wachtwoord",
-    "submit": "Inloggen"
+    "submit": "Inloggen",
+    "twoFactorTitle": "Verificatie in twee stappen",
+    "twoFactorHint": "Voer de code uit je authenticator-app in, of een van je back-upcodes.",
+    "code": "Code",
+    "forgot": "Wachtwoord vergeten"
   },
   "register": {
     "title": "Account maken",
@@ -598,7 +602,12 @@
     "confirmAdult": "Ik ben 18 jaar of ouder.",
     "acceptRules": "Ik ga akkoord met de communityregels en met de verwerking van mijn gegevens, inclusief gegevens over mijn seksleven, zodat YesYes kan werken.",
     "verifyNote": "Direct hierna verifiëren we je identiteit en leeftijd (ID-bewijs en selfie). We bewaren je ID-bewijs niet.",
-    "continue": "Doorgaan"
+    "continue": "Doorgaan",
+    "codeTitle": "Check je e-mail",
+    "codeSent": "We hebben een 6-cijferige code naar {email} gestuurd. Heb je al een account? Dan krijg je in plaats daarvan een melding – log gewoon in.",
+    "code": "Code uit e-mail",
+    "confirmCode": "Verifiëren en account aanmaken",
+    "resend": "Code opnieuw sturen"
   },
   "verify": {
     "title": "Bevestig dat jij het bent",
@@ -710,5 +719,53 @@
     "faceId": "YesYes gebruikt Face ID om te ontgrendelen, zodat niemand anders kan meekijken.",
     "photos": "Kies foto’s voor je profiel.",
     "camera": "Maak een foto van jezelf voor je profiel."
+  },
+  "forgot": {
+    "title": "Wachtwoord resetten",
+    "intro": "We mailen je een code waarmee je een nieuw wachtwoord kunt instellen.",
+    "send": "Code sturen",
+    "sent": "Als er een account is voor {email}, hebben we daar een 6-cijferige code naartoe gestuurd. Die is 15 minuten geldig.",
+    "newPassword": "Nieuw wachtwoord (minstens 10 tekens)",
+    "save": "Nieuw wachtwoord instellen",
+    "done": "Je wachtwoord is gewijzigd en alle apparaten zijn uitgelogd. Log in met je nieuwe wachtwoord.",
+    "toLogin": "Inloggen"
+  },
+  "security": {
+    "title": "Accountbeveiliging",
+    "bannerOff": "Zet verificatie in twee stappen aan en controleer je ingelogde apparaten.",
+    "passwordChanged": "Wachtwoord gewijzigd. Andere apparaten zijn uitgelogd.",
+    "currentPassword": "Huidig wachtwoord",
+    "continue": "Doorgaan",
+    "twoFactor": {
+      "title": "Verificatie in twee stappen",
+      "on": "Verificatie in twee stappen staat aan",
+      "off": "Verificatie in twee stappen staat uit",
+      "hint": "Bij het inloggen heb je dan ook een code uit een authenticator-app nodig (bijv. Google Authenticator, 1Password). Alleen een wachtwoord is niet genoeg.",
+      "enable": "Verificatie in twee stappen aanzetten",
+      "disable": "Verificatie in twee stappen uitzetten",
+      "scan": "Voeg YesYes toe aan je authenticator-app – met de knop hieronder, of typ de sleutel in. Voer daarna de code in die de app toont.",
+      "openApp": "Openen in authenticator-app",
+      "key": "Sleutel voor handmatige invoer",
+      "code": "Code uit de app",
+      "confirm": "Aanzetten",
+      "codesIntro": "Klaar. Bewaar deze back-upcodes op een veilige plek (bijv. een wachtwoordmanager). Elke code werkt één keer, voor als je je telefoon niet bij de hand hebt.",
+      "saveCodes": "Back-upcodes opslaan",
+      "codesDone": "Ik heb ze opgeslagen",
+      "codeOrBackup": "App-code of back-upcode"
+    },
+    "password": {
+      "title": "Wachtwoord wijzigen",
+      "new": "Nieuw wachtwoord",
+      "hint": "Minstens 10 tekens. Andere apparaten worden uitgelogd.",
+      "save": "Wachtwoord wijzigen"
+    },
+    "devices": {
+      "title": "Ingelogde apparaten",
+      "unknown": "Onbekend apparaat",
+      "current": "Dit apparaat",
+      "lastUsed": "Laatst gebruikt {date}",
+      "signOut": "Uitloggen",
+      "signOutOthers": "Alle andere apparaten uitloggen"
+    }
   }
 }

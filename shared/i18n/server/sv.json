@@ -61,7 +61,9 @@
     "reason": "anledning",
     "details": "detaljer",
     "resolution": "beslut",
-    "days": "antal dagar"
+    "days": "antal dagar",
+    "newPassword": "nytt lösenord",
+    "session": "enhet"
   },
   "auth": {
     "confirmAdult": "Du måste bekräfta att du är 18 år eller äldre.",
@@ -73,7 +75,10 @@
     "banned": "Kontot har stängts av för brott mot reglerna.",
     "notLoggedIn": "Du är inte inloggad.",
     "suspended": "Ditt konto är avstängt tills en moderator har granskat det.",
-    "verifyFirst": "Verifiera din identitet först."
+    "verifyFirst": "Verifiera din identitet först.",
+    "badCode": "Koden är fel eller har gått ut. Försök igen eller begär en ny.",
+    "tooManyAttempts": "För många försök. Försök igen om en stund.",
+    "loginExpired": "Inloggningen tog för lång tid. Ange din e-postadress och ditt lösenord igen."
   },
   "profile": {
     "wrongPassword": "Fel lösenord.",
@@ -275,5 +280,41 @@
     "comfort": "Vad som känns bra för mig",
     "place": "Var",
     "status": "Relationsstatus"
+  },
+  "account": {
+    "samePassword": "Det nya lösenordet måste skilja sig från det nuvarande.",
+    "twoFactorOn": "Tvåstegsverifiering är redan på.",
+    "twoFactorOff": "Tvåstegsverifiering är inte på.",
+    "twoFactorSetupFirst": "Skapa först en nyckel för din autentiseringsapp."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Verifieringskod: {code}",
+      "body": "Din kod för att slutföra registreringen är {code}.\n\nDen gäller i 15 minuter. Om du inte har registrerat dig kan du ignorera det här mejlet."
+    },
+    "accountExists": {
+      "subject": "Försök att registrera konto",
+      "body": "Någon försökte nyss skapa ett konto med den här e-postadressen, men du har redan ett.\n\nOm det var du, logga bara in (eller återställ lösenordet). Om inte behöver du inte göra något – ditt konto är säkert."
+    },
+    "resetCode": {
+      "subject": "Kod för att återställa lösenordet: {code}",
+      "body": "Din kod för att återställa lösenordet är {code}.\n\nDen gäller i 15 minuter. Om du inte har bett om en återställning kan du ignorera det här mejlet – ditt lösenord är oförändrat."
+    },
+    "newLogin": {
+      "subject": "Ny inloggning på ditt konto",
+      "body": "Någon loggade nyss in på ditt konto ({device}).\n\nOm det inte var du, byt lösenord direkt och logga ut andra enheter i säkerhetsinställningarna."
+    },
+    "passwordChanged": {
+      "subject": "Ditt lösenord har ändrats",
+      "body": "Lösenordet för ditt konto har nyss ändrats och andra enheter har loggats ut.\n\nOm det inte var du, återställ lösenordet via ”Glömt lösenordet” och kontakta oss."
+    },
+    "twoFactorOn": {
+      "subject": "Tvåstegsverifiering har slagits på",
+      "body": "För att logga in på ditt konto behövs nu även en kod från din autentiseringsapp.\n\nSpara dina reservkoder på ett säkert ställe."
+    },
+    "twoFactorOff": {
+      "subject": "Tvåstegsverifiering har stängts av",
+      "body": "Tvåstegsverifiering har stängts av för ditt konto.\n\nOm det inte var du, byt lösenord direkt."
+    }
   }
 }

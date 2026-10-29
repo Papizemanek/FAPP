@@ -63,7 +63,9 @@
     "reason": "razlog",
     "details": "podrobnosti",
     "resolution": "rešitev",
-    "days": "število dni"
+    "days": "število dni",
+    "newPassword": "novo geslo",
+    "session": "naprava"
   },
   "auth": {
     "confirmAdult": "Potrditi moraš, da imaš 18 let ali več.",
@@ -75,7 +77,10 @@
     "banned": "Račun je bil blokiran zaradi kršitve pravil.",
     "notLoggedIn": "Nisi prijavljen/a.",
     "suspended": "Račun je začasno ustavljen do pregleda moderatorja.",
-    "verifyFirst": "Najprej preveri identiteto."
+    "verifyFirst": "Najprej preveri identiteto.",
+    "badCode": "Koda je napačna ali je potekla. Poskusi znova ali zahtevaj novo.",
+    "tooManyAttempts": "Preveč poskusov. Poskusi znova čez trenutek.",
+    "loginExpired": "Čas za prijavo je potekel. Znova vnesi e-pošto in geslo."
   },
   "profile": {
     "wrongPassword": "Napačno geslo.",
@@ -285,5 +290,41 @@
     "comfort": "Kaj mi ustreza",
     "place": "Kje",
     "status": "Status zveze"
+  },
+  "account": {
+    "samePassword": "Novo geslo se mora razlikovati od trenutnega.",
+    "twoFactorOn": "Preverjanje v dveh korakih je že vklopljeno.",
+    "twoFactorOff": "Preverjanje v dveh korakih ni vklopljeno.",
+    "twoFactorSetupFirst": "Najprej ustvari ključ za aplikacijo za preverjanje pristnosti."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Potrditvena koda: {code}",
+      "body": "Tvoja koda za dokončanje registracije je {code}.\n\nVelja 15 minut. Če se nisi registriral(a), prezri to sporočilo."
+    },
+    "accountExists": {
+      "subject": "Poskus registracije",
+      "body": "Nekdo je pravkar poskusil ustvariti račun s tem e-poštnim naslovom, vendar račun že imaš.\n\nČe si bil(a) to ti, se samo prijavi (ali ponastavi geslo). Če ne, ti ni treba storiti ničesar – tvoj račun ostaja varen."
+    },
+    "resetCode": {
+      "subject": "Koda za ponastavitev gesla: {code}",
+      "body": "Tvoja koda za ponastavitev gesla je {code}.\n\nVelja 15 minut. Če ponastavitve nisi zahteval(a), prezri to sporočilo – geslo ostane enako."
+    },
+    "newLogin": {
+      "subject": "Nova prijava v tvoj račun",
+      "body": "Nekdo se je pravkar prijavil v tvoj račun ({device}).\n\nČe to nisi bil(a) ti, takoj spremeni geslo in v varnostnih nastavitvah odjavi druge naprave."
+    },
+    "passwordChanged": {
+      "subject": "Tvoje geslo je bilo spremenjeno",
+      "body": "Geslo za tvoj račun je bilo pravkar spremenjeno, druge naprave pa so bile odjavljene.\n\nČe to nisi bil(a) ti, ponastavi geslo prek »Pozabljeno geslo« in nas kontaktiraj."
+    },
+    "twoFactorOn": {
+      "subject": "Preverjanje v dveh korakih je vklopljeno",
+      "body": "Za prijavo v tvoj račun je zdaj potrebna tudi koda iz aplikacije za preverjanje pristnosti.\n\nRezervne kode shrani na varno mesto."
+    },
+    "twoFactorOff": {
+      "subject": "Preverjanje v dveh korakih je izklopljeno",
+      "body": "Preverjanje v dveh korakih je bilo za tvoj račun izklopljeno.\n\nČe to nisi bil(a) ti, takoj spremeni geslo."
+    }
   }
 }

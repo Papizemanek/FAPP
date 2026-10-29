@@ -10,7 +10,7 @@ COPY app/package.json app/
 RUN npm ci --omit=dev -w server -w shared --include-workspace-root=false --ignore-scripts && npm cache clean --force
 COPY shared shared
 COPY server server
-RUN mkdir -p /data
+RUN mkdir -p /data && chown node:node /data
 EXPOSE 3000
 WORKDIR /srv/server
-CMD ["sh", "-c", "node --disable-warning=ExperimentalWarning src/index.js"]
+CMD ["sh", "/srv/server/docker-start.sh"]

@@ -571,7 +571,11 @@
     "title": "登入",
     "email": "電子郵件",
     "password": "密碼",
-    "submit": "登入"
+    "submit": "登入",
+    "twoFactorTitle": "兩步驟驗證",
+    "twoFactorHint": "輸入驗證器應用程式中的驗證碼，或任一組備用碼。",
+    "code": "驗證碼",
+    "forgot": "忘記密碼"
   },
   "register": {
     "title": "建立帳號",
@@ -586,7 +590,12 @@
     "confirmAdult": "我已年滿 18 歲。",
     "acceptRules": "我同意社群規範，並同意為了讓 YesYes 正常運作而處理我的資料，包括與我性生活相關的資料。",
     "verifyNote": "接下來我們會立即驗證你的身分和年齡（證件和自拍）。我們不會保存你的證件。",
-    "continue": "繼續"
+    "continue": "繼續",
+    "codeTitle": "查看你的電子郵件",
+    "codeSent": "我們已將 6 位數驗證碼寄到 {email}。如果你已經有帳號，會改收到一則通知——直接登入即可。",
+    "code": "電子郵件中的驗證碼",
+    "confirmCode": "驗證並建立帳號",
+    "resend": "重新傳送驗證碼"
   },
   "verify": {
     "title": "驗證你的身分",
@@ -697,5 +706,53 @@
     "faceId": "YesYes 使用 Face ID 解鎖，這樣別人就無法查看其中的內容。",
     "photos": "選擇要用於個人檔案的照片。",
     "camera": "為個人檔案拍一張自己的照片。"
+  },
+  "forgot": {
+    "title": "重設密碼",
+    "intro": "我們會用電子郵件寄給你一組驗證碼，讓你設定新密碼。",
+    "send": "傳送驗證碼",
+    "sent": "如果 {email} 有對應的帳號，我們已寄出 6 位數驗證碼。驗證碼 15 分鐘內有效。",
+    "newPassword": "新密碼（至少 10 個字元）",
+    "save": "設定新密碼",
+    "done": "密碼已變更，所有裝置皆已登出。請使用新密碼登入。",
+    "toLogin": "登入"
+  },
+  "security": {
+    "title": "帳號安全性",
+    "bannerOff": "開啟兩步驟驗證，並檢查已登入的裝置。",
+    "passwordChanged": "密碼已變更。其他裝置已登出。",
+    "currentPassword": "目前的密碼",
+    "continue": "繼續",
+    "twoFactor": {
+      "title": "兩步驟驗證",
+      "on": "兩步驟驗證已開啟",
+      "off": "兩步驟驗證已關閉",
+      "hint": "登入時還需要輸入驗證器應用程式（例如 Google Authenticator、1Password）中的驗證碼。只有密碼將無法登入。",
+      "enable": "開啟兩步驟驗證",
+      "disable": "關閉兩步驟驗證",
+      "scan": "將 YesYes 加入你的驗證器應用程式——使用下方按鈕，或手動輸入金鑰。接著輸入應用程式顯示的驗證碼。",
+      "openApp": "在驗證器應用程式中開啟",
+      "key": "手動輸入用的金鑰",
+      "code": "應用程式中的驗證碼",
+      "confirm": "開啟",
+      "codesIntro": "完成。請將這些備用碼存放在安全的地方（例如密碼管理工具）。每組備用碼只能使用一次，供手機不在身邊時使用。",
+      "saveCodes": "儲存備用碼",
+      "codesDone": "我已儲存",
+      "codeOrBackup": "應用程式驗證碼或備用碼"
+    },
+    "password": {
+      "title": "變更密碼",
+      "new": "新密碼",
+      "hint": "至少 10 個字元。其他裝置將會登出。",
+      "save": "變更密碼"
+    },
+    "devices": {
+      "title": "已登入的裝置",
+      "unknown": "不明裝置",
+      "current": "這部裝置",
+      "lastUsed": "上次使用：{date}",
+      "signOut": "登出",
+      "signOutOthers": "登出所有其他裝置"
+    }
   }
 }

@@ -61,7 +61,9 @@
     "reason": "syy",
     "details": "lisätiedot",
     "resolution": "ratkaisu",
-    "days": "päivien määrä"
+    "days": "päivien määrä",
+    "newPassword": "uusi salasana",
+    "session": "laite"
   },
   "auth": {
     "confirmAdult": "Sinun täytyy vahvistaa, että olet vähintään 18-vuotias.",
@@ -73,7 +75,10 @@
     "banned": "Tämä tili on suljettu sääntörikkomusten vuoksi.",
     "notLoggedIn": "Et ole kirjautunut sisään.",
     "suspended": "Tilisi on jäädytetty, kunnes moderaattori on tarkistanut sen.",
-    "verifyFirst": "Vahvista ensin henkilöllisyytesi."
+    "verifyFirst": "Vahvista ensin henkilöllisyytesi.",
+    "badCode": "Koodi on väärä tai vanhentunut. Yritä uudelleen tai pyydä uusi koodi.",
+    "tooManyAttempts": "Liian monta yritystä. Yritä hetken päästä uudelleen.",
+    "loginExpired": "Kirjautuminen aikakatkaistiin. Anna sähköpostiosoitteesi ja salasanasi uudelleen."
   },
   "profile": {
     "wrongPassword": "Väärä salasana.",
@@ -275,5 +280,41 @@
     "comfort": "Mikä tuntuu hyvältä",
     "place": "Missä",
     "status": "Suhdetilanne"
+  },
+  "account": {
+    "samePassword": "Uuden salasanan on oltava eri kuin nykyinen.",
+    "twoFactorOn": "Kaksivaiheinen vahvistus on jo käytössä.",
+    "twoFactorOff": "Kaksivaiheinen vahvistus ei ole käytössä.",
+    "twoFactorSetupFirst": "Luo ensin avain todennussovellustasi varten."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Vahvistuskoodi: {code}",
+      "body": "Koodisi rekisteröitymisen viimeistelyyn on {code}.\n\nSe on voimassa 15 minuuttia. Jos et rekisteröitynyt, voit jättää tämän viestin huomiotta."
+    },
+    "accountExists": {
+      "subject": "Rekisteröitymisyritys",
+      "body": "Joku yritti juuri luoda tilin tällä sähköpostiosoitteella, mutta sinulla on jo tili.\n\nJos se olit sinä, kirjaudu vain sisään (tai nollaa salasanasi). Jos et, sinun ei tarvitse tehdä mitään – tilisi on edelleen turvassa."
+    },
+    "resetCode": {
+      "subject": "Salasanan nollauskoodi: {code}",
+      "body": "Salasanasi nollauskoodi on {code}.\n\nSe on voimassa 15 minuuttia. Jos et pyytänyt nollausta, voit jättää tämän viestin huomiotta – salasanasi pysyy ennallaan."
+    },
+    "newLogin": {
+      "subject": "Uusi kirjautuminen tilillesi",
+      "body": "Joku kirjautui juuri tilillesi ({device}).\n\nJos se et ollut sinä, vaihda salasanasi heti ja kirjaa muut laitteet ulos turvallisuusasetuksista."
+    },
+    "passwordChanged": {
+      "subject": "Salasanasi on vaihdettu",
+      "body": "Tilisi salasana vaihdettiin juuri, ja muut laitteet kirjattiin ulos.\n\nJos se et ollut sinä, nollaa salasanasi kohdasta ”Unohditko salasanan?” ja ota meihin yhteyttä."
+    },
+    "twoFactorOn": {
+      "subject": "Kaksivaiheinen vahvistus otettu käyttöön",
+      "body": "Tilillesi kirjautumiseen tarvitaan nyt myös koodi todennussovelluksestasi.\n\nSäilytä varakoodisi turvallisessa paikassa."
+    },
+    "twoFactorOff": {
+      "subject": "Kaksivaiheinen vahvistus poistettu käytöstä",
+      "body": "Tilisi kaksivaiheinen vahvistus poistettiin käytöstä.\n\nJos se et ollut sinä, vaihda salasanasi heti."
+    }
   }
 }

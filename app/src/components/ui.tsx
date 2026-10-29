@@ -157,6 +157,23 @@ export function Field({ label, hint, ...props }: TextInputProps & { label: strin
   );
 }
 
+/** Jednorázový kód (z e-mailu nebo autentizační aplikace). allowRecovery = i záložní kód „xxxxx-xxxxx“. */
+export function CodeField({ label, value, onChangeText, allowRecovery = false }: { label: string; value: string; onChangeText: (v: string) => void; allowRecovery?: boolean }) {
+  return (
+    <Field
+      label={label}
+      value={value}
+      onChangeText={(v) => onChangeText(allowRecovery ? v.replace(/[^0-9a-zA-Z-]/g, '').slice(0, 11) : v.replace(/\D/g, '').slice(0, 6))}
+      keyboardType={allowRecovery ? 'default' : 'number-pad'}
+      autoCapitalize="none"
+      autoCorrect={false}
+      autoComplete="one-time-code"
+      textContentType="oneTimeCode"
+      style={[styles.input, { fontFamily: fonts.bold, fontSize: 22, letterSpacing: allowRecovery ? 2 : 8, textAlign: 'center' }]}
+    />
+  );
+}
+
 export function Checkbox({ checked, onToggle, children, tone = 'safe' }: { checked: boolean; onToggle: () => void; children: ReactNode; tone?: 'safe' | 'accent' }) {
   const color = tone === 'safe' ? colors.safe : colors.accent;
   return (

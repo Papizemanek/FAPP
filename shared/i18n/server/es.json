@@ -62,7 +62,9 @@
     "reason": "motivo",
     "details": "detalles",
     "resolution": "resolución",
-    "days": "número de días"
+    "days": "número de días",
+    "newPassword": "nueva contraseña",
+    "session": "dispositivo"
   },
   "auth": {
     "confirmAdult": "Debes confirmar que tienes 18 años o más.",
@@ -74,7 +76,10 @@
     "banned": "Esta cuenta fue bloqueada por incumplir las normas.",
     "notLoggedIn": "No has iniciado sesión.",
     "suspended": "Tu cuenta está suspendida hasta que la revise el equipo de moderación.",
-    "verifyFirst": "Primero verifica tu identidad."
+    "verifyFirst": "Primero verifica tu identidad.",
+    "badCode": "El código no es correcto o ha caducado. Inténtalo de nuevo o solicita uno nuevo.",
+    "tooManyAttempts": "Demasiados intentos. Vuelve a intentarlo en un momento.",
+    "loginExpired": "Tu inicio de sesión ha caducado. Vuelve a introducir tu correo y tu contraseña."
   },
   "profile": {
     "wrongPassword": "Contraseña incorrecta.",
@@ -280,5 +285,41 @@
     "comfort": "Qué me hace sentir bien",
     "place": "Dónde",
     "status": "Situación sentimental"
+  },
+  "account": {
+    "samePassword": "La nueva contraseña debe ser distinta de la actual.",
+    "twoFactorOn": "La verificación en dos pasos ya está activada.",
+    "twoFactorOff": "La verificación en dos pasos no está activada.",
+    "twoFactorSetupFirst": "Primero genera una clave para tu app de autenticación."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Código de verificación: {code}",
+      "body": "Tu código para completar el registro es {code}.\n\nEs válido durante 15 minutos. Si no te has registrado, ignora este correo."
+    },
+    "accountExists": {
+      "subject": "Intento de registro",
+      "body": "Alguien acaba de intentar crear una cuenta con esta dirección de correo, pero ya tienes una.\n\nSi has sido tú, simplemente inicia sesión (o restablece tu contraseña). Si no, no hagas nada: tu cuenta sigue segura."
+    },
+    "resetCode": {
+      "subject": "Código para restablecer la contraseña: {code}",
+      "body": "Tu código para restablecer la contraseña es {code}.\n\nEs válido durante 15 minutos. Si no lo has solicitado, ignora este correo: tu contraseña no cambiará."
+    },
+    "newLogin": {
+      "subject": "Nuevo inicio de sesión en tu cuenta",
+      "body": "Alguien acaba de iniciar sesión en tu cuenta ({device}).\n\nSi no has sido tú, cambia tu contraseña de inmediato y cierra la sesión en los demás dispositivos desde los ajustes de seguridad."
+    },
+    "passwordChanged": {
+      "subject": "Tu contraseña se ha cambiado",
+      "body": "La contraseña de tu cuenta se acaba de cambiar y se ha cerrado la sesión en los demás dispositivos.\n\nSi no has sido tú, restablece tu contraseña con «He olvidado mi contraseña» y ponte en contacto con nosotros."
+    },
+    "twoFactorOn": {
+      "subject": "Verificación en dos pasos activada",
+      "body": "Ahora, para iniciar sesión en tu cuenta también necesitarás un código de tu app de autenticación.\n\nGuarda tus códigos de respaldo en un lugar seguro."
+    },
+    "twoFactorOff": {
+      "subject": "Verificación en dos pasos desactivada",
+      "body": "Se ha desactivado la verificación en dos pasos de tu cuenta.\n\nSi no has sido tú, cambia tu contraseña de inmediato."
+    }
   }
 }

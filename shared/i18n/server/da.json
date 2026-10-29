@@ -61,7 +61,9 @@
     "reason": "årsag",
     "details": "detaljer",
     "resolution": "afgørelse",
-    "days": "antal dage"
+    "days": "antal dage",
+    "newPassword": "ny adgangskode",
+    "session": "enhed"
   },
   "auth": {
     "confirmAdult": "Du skal bekræfte, at du er 18 år eller ældre.",
@@ -73,7 +75,10 @@
     "banned": "Denne konto er blevet udelukket for at bryde reglerne.",
     "notLoggedIn": "Du er ikke logget ind.",
     "suspended": "Din konto er suspenderet, indtil en moderator har gennemgået den.",
-    "verifyFirst": "Verificer din identitet først."
+    "verifyFirst": "Verificer din identitet først.",
+    "badCode": "Koden er forkert eller udløbet. Prøv igen, eller bed om en ny.",
+    "tooManyAttempts": "For mange forsøg. Prøv igen om lidt.",
+    "loginExpired": "Dit login er udløbet. Indtast din e-mail og adgangskode igen."
   },
   "profile": {
     "wrongPassword": "Forkert adgangskode.",
@@ -275,5 +280,41 @@
     "comfort": "Det gør mig tryg",
     "place": "Hvor",
     "status": "Forholdsstatus"
+  },
+  "account": {
+    "samePassword": "Den nye adgangskode skal være forskellig fra den nuværende.",
+    "twoFactorOn": "Totrinsbekræftelse er allerede slået til.",
+    "twoFactorOff": "Totrinsbekræftelse er ikke slået til.",
+    "twoFactorSetupFirst": "Generér først en nøgle til din godkendelsesapp."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Bekræftelseskode: {code}",
+      "body": "Din kode til at fuldføre tilmeldingen er {code}.\n\nDen er gyldig i 15 minutter. Hvis du ikke har tilmeldt dig, kan du se bort fra denne e-mail."
+    },
+    "accountExists": {
+      "subject": "Forsøg på tilmelding",
+      "body": "Nogen har lige forsøgt at oprette en konto med denne e-mailadresse, men du har allerede en.\n\nHvis det var dig, så log bare ind (eller nulstil din adgangskode). Hvis ikke, skal du ikke gøre noget – din konto er stadig sikker."
+    },
+    "resetCode": {
+      "subject": "Kode til nulstilling af adgangskode: {code}",
+      "body": "Din kode til nulstilling af adgangskoden er {code}.\n\nDen er gyldig i 15 minutter. Hvis du ikke har bedt om en nulstilling, kan du se bort fra denne e-mail – din adgangskode forbliver den samme."
+    },
+    "newLogin": {
+      "subject": "Nyt login på din konto",
+      "body": "Nogen har lige logget ind på din konto ({device}).\n\nHvis det ikke var dig, så skift din adgangskode med det samme, og log andre enheder ud under sikkerhedsindstillinger."
+    },
+    "passwordChanged": {
+      "subject": "Din adgangskode er blevet ændret",
+      "body": "Adgangskoden til din konto er lige blevet ændret, og andre enheder er logget ud.\n\nHvis det ikke var dig, så nulstil din adgangskode via “Glemt adgangskode”, og kontakt os."
+    },
+    "twoFactorOn": {
+      "subject": "Totrinsbekræftelse slået til",
+      "body": "Når du logger ind på din konto, skal du nu også bruge en kode fra din godkendelsesapp.\n\nOpbevar dine backupkoder et sikkert sted."
+    },
+    "twoFactorOff": {
+      "subject": "Totrinsbekræftelse slået fra",
+      "body": "Totrinsbekræftelse er blevet slået fra for din konto.\n\nHvis det ikke var dig, så skift din adgangskode med det samme."
+    }
   }
 }

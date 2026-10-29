@@ -60,7 +60,9 @@
     "reason": "alasan",
     "details": "detail",
     "resolution": "penyelesaian",
-    "days": "jumlah hari"
+    "days": "jumlah hari",
+    "newPassword": "kata sandi baru",
+    "session": "perangkat"
   },
   "auth": {
     "confirmAdult": "Kamu harus mengonfirmasi bahwa kamu berusia 18 tahun atau lebih.",
@@ -72,7 +74,10 @@
     "banned": "Akun ini diblokir karena melanggar aturan.",
     "notLoggedIn": "Kamu belum masuk.",
     "suspended": "Akunmu ditangguhkan sampai moderator meninjaunya.",
-    "verifyFirst": "Verifikasi identitasmu dulu."
+    "verifyFirst": "Verifikasi identitasmu dulu.",
+    "badCode": "Kode salah atau sudah kedaluwarsa. Coba lagi atau minta kode baru.",
+    "tooManyAttempts": "Terlalu banyak percobaan. Coba lagi sebentar lagi.",
+    "loginExpired": "Sesi masuk kamu habis. Masukkan email dan kata sandi lagi."
   },
   "profile": {
     "wrongPassword": "Kata sandi salah.",
@@ -270,5 +275,41 @@
     "comfort": "Yang bikin aku nyaman",
     "place": "Di mana",
     "status": "Status hubungan"
+  },
+  "account": {
+    "samePassword": "Kata sandi baru harus berbeda dari kata sandi saat ini.",
+    "twoFactorOn": "Verifikasi 2 langkah sudah aktif.",
+    "twoFactorOff": "Verifikasi 2 langkah belum aktif.",
+    "twoFactorSetupFirst": "Buat kunci untuk aplikasi autentikator kamu terlebih dahulu."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Kode verifikasi: {code}",
+      "body": "Kode kamu untuk menyelesaikan pendaftaran adalah {code}.\n\nKode berlaku selama 15 menit. Jika kamu tidak mendaftar, abaikan email ini."
+    },
+    "accountExists": {
+      "subject": "Percobaan pendaftaran",
+      "body": "Seseorang baru saja mencoba membuat akun dengan alamat email ini, tetapi kamu sudah punya akun.\n\nJika itu kamu, cukup masuk (atau atur ulang kata sandi). Jika bukan, tidak perlu melakukan apa pun – akun kamu tetap aman."
+    },
+    "resetCode": {
+      "subject": "Kode atur ulang kata sandi: {code}",
+      "body": "Kode untuk mengatur ulang kata sandi kamu adalah {code}.\n\nKode berlaku selama 15 menit. Jika kamu tidak memintanya, abaikan email ini – kata sandi kamu tidak berubah."
+    },
+    "newLogin": {
+      "subject": "Login baru ke akun kamu",
+      "body": "Seseorang baru saja masuk ke akun kamu ({device}).\n\nJika itu bukan kamu, segera ubah kata sandi dan keluarkan perangkat lain di pengaturan keamanan."
+    },
+    "passwordChanged": {
+      "subject": "Kata sandi kamu telah diubah",
+      "body": "Kata sandi akun kamu baru saja diubah dan perangkat lain telah dikeluarkan.\n\nJika itu bukan kamu, atur ulang kata sandi melalui “Lupa kata sandi” dan hubungi kami."
+    },
+    "twoFactorOn": {
+      "subject": "Verifikasi 2 langkah diaktifkan",
+      "body": "Untuk masuk ke akun kamu, sekarang juga diperlukan kode dari aplikasi autentikator kamu.\n\nSimpan kode cadangan kamu di tempat yang aman."
+    },
+    "twoFactorOff": {
+      "subject": "Verifikasi 2 langkah dinonaktifkan",
+      "body": "Verifikasi 2 langkah untuk akun kamu telah dinonaktifkan.\n\nJika itu bukan kamu, segera ubah kata sandi."
+    }
   }
 }

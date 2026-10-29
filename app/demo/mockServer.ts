@@ -30,6 +30,7 @@ import {
 } from '@yesyes/shared';
 import { moderate } from '../../server/src/services/moderation.js';
 import { overlay } from './overlay';
+import { newSecret, verifyTotp } from './totp';
 import { srv, translateError } from './serverText';
 
 type Gender = 'man' | 'woman' | 'nonbinary';
@@ -55,6 +56,10 @@ type User = {
   checkinPin: string | null;
   duressPin: string | null;
   discreet: boolean;
+  /** Dvoufázové ověření (TOTP) – klíč a záložní kódy. */
+  totpSecret?: string | null;
+  twoFactor?: boolean;
+  recoveryCodes?: string[];
   verificationStatus: 'none' | 'pending' | 'approved' | 'declined';
   status: 'active' | 'suspended' | 'banned';
   demo: boolean;
@@ -405,6 +410,7 @@ function own(u: User) {
     trustedPhone: u.trustedPhone,
     hasCheckinPin: !!u.checkinPin,
     hasDuressPin: !!u.duressPin,
+    twoFactor: !!u.twoFactor,
     discreet: u.discreet,
     verificationStatus: u.verificationStatus,
     status: u.status,
@@ -666,7 +672,49 @@ function normalizePhone(raw: string) {
   return n;
 }
 
-// auth
+// auth – jako server: registrace a obnova hesla přes kód z e-mailu (v demu se ukáže jako „e-mail“),
+// odpověď nikdy neprozradí, jestli účet existuje; volitelné dvoufázové ověření.
+const codes = new Map<string, { code: string; payload?: Record<string, unknown>; attempts: number; expires: number }>();
+const challenges = new Map<string, { userId: number; attempts: number; expires: number }>();
+const sixDigits = () => String(Math.floor(Math.random() * 1_000_000)).padStart(6, '0');
+
+function issueCode(purpose: string, email: string, payload?: Record<string, unknown>) {
+  const code = sixDigits();
+  codes.set(`${purpose}:${email}`, { code, payload, attempts: 0, expires: Date.now() + 15 * 60_000 });
+  return code;
+}
+function consumeCode(purpose: string, email: string, given: unknown) {
+  const key = `${purpose}:${email}`;
+  const entry = codes.get(key);
+  const bad = () => new HttpError(400, srv('auth.badCode'));
+  if (!entry || entry.expires < Date.now() || entry.attempts >= 5) throw bad();
+  if (String(given ?? '').replace(/\D/g, '') !== entry.code) {
+    entry.attempts += 1;
+    throw bad();
+  }
+  codes.delete(key);
+  return entry.payload;
+}
+const mail = (to: string, key: string, params: Record<string, string> = {}) =>
+  overlay.email({ to, subject: srv(`email.${key}.subject`, params), text: srv(`email.${key}.body`, params) });
+
+function secondFactorOk(u: User, code: unknown) {
+  if (u.totpSecret && verifyTotp(u.totpSecret, String(code ?? ''))) return true;
+  const raw = String(code ?? '').toLowerCase().replace(/[^0-9a-z]/g, '');
+  const i = (u.recoveryCodes ?? []).indexOf(raw);
+  if (i < 0) return false;
+  u.recoveryCodes!.splice(i, 1);
+  return true;
+}
+const recoveryCodes = () => Array.from({ length: 10 }, () => Math.random().toString(36).slice(2, 12).padEnd(10, '0'));
+
+function signInUser(u: User, status = 200) {
+  const t = token();
+  db.tokens[t] = u.id;
+  save();
+  return { status, json: { token: t, user: own(u) } };
+}
+
 route('POST', '/auth/register', (c) => {
   const b = c.body;
   const email = str(b.email).toLowerCase();
@@ -677,7 +725,15 @@ route('POST', '/auth/register', (c) => {
   if (b.confirmAdult !== true) throw new HttpError(400, 'Musíš potvrdit, že je ti 18 let nebo víc.');
   if (b.acceptRules !== true) throw new HttpError(400, 'Musíš souhlasit s pravidly a se zpracováním údajů.');
   if (ageFrom(str(b.birthdate)) < MIN_AGE) throw new HttpError(403, 'YesYes je jen pro lidi starší 18 let.');
-  if (db.users.some((u) => u.email === email)) throw new HttpError(409, 'Účet s tímhle e-mailem už existuje.');
+  if (db.users.some((u) => u.email === email)) mail(email, 'accountExists');
+  else mail(email, 'registerCode', { code: issueCode('register', email, b) });
+  return { status: 202, json: { pending: true } };
+});
+
+route('POST', '/auth/register/verify', (c) => {
+  const email = str(c.body.email).toLowerCase();
+  const b = consumeCode('register', email, c.body.code) as Record<string, unknown>;
+  if (db.users.some((u) => u.email === email)) throw new HttpError(400, srv('auth.badCode'));
   const user: User = {
     id: id(),
     email,
@@ -710,18 +766,98 @@ route('POST', '/auth/register', (c) => {
     .filter((u) => u.demo && u.interestedIn.includes(user.gender) && user.interestedIn.includes(u.gender))
     .slice(0, 3)
     .forEach((u, i) => db.swipes.push({ from: u.id, to: user.id, like: true, super: i === 0, at: nowIso() }));
-  const t = token();
-  db.tokens[t] = user.id;
-  return { status: 201, json: { token: t, user: own(user) } };
+  return signInUser(user, 201);
 });
 
 route('POST', '/auth/login', (c) => {
   const u = db.users.find((x) => x.email === str(c.body.email).toLowerCase());
   if (!u || u.password !== c.body.password) throw new HttpError(401, 'Špatný e-mail nebo heslo.');
-  const t = token();
-  db.tokens[t] = u.id;
-  return { token: t, user: own(u) };
+  if (u.twoFactor) {
+    const challenge = token();
+    challenges.set(challenge, { userId: u.id, attempts: 0, expires: Date.now() + 5 * 60_000 });
+    return { twoFactor: true, challenge };
+  }
+  mail(u.email, 'newLogin', { device: 'Tento prohlížeč' });
+  return signInUser(u).json;
 });
+route('POST', '/auth/login/2fa', (c) => {
+  const ch = challenges.get(str(c.body.challenge));
+  const u = ch && db.users.find((x) => x.id === ch.userId);
+  if (!ch || !u || ch.expires < Date.now() || ch.attempts >= 5) throw new HttpError(401, srv('auth.loginExpired'));
+  if (!secondFactorOk(u, c.body.code)) {
+    ch.attempts += 1;
+    throw new HttpError(400, srv('auth.badCode'));
+  }
+  challenges.delete(str(c.body.challenge));
+  return signInUser(u).json;
+});
+route('POST', '/auth/password/forgot', (c) => {
+  const email = str(c.body.email).toLowerCase();
+  const u = db.users.find((x) => x.email === email);
+  if (u) mail(email, 'resetCode', { code: issueCode('reset', email) });
+  return { status: 202, json: { pending: true } };
+});
+route('POST', '/auth/password/reset', (c) => {
+  const email = str(c.body.email).toLowerCase();
+  if (str(c.body.password).length < 10) throw new HttpError(400, 'Pole heslo je příliš krátké.');
+  consumeCode('reset', email, c.body.code);
+  const u = db.users.find((x) => x.email === email);
+  if (!u) throw new HttpError(400, srv('auth.badCode'));
+  u.password = str(c.body.password);
+  for (const [t, id] of Object.entries(db.tokens)) if (id === u.id) delete db.tokens[t];
+  mail(email, 'passwordChanged');
+  return null;
+});
+
+// zabezpečení účtu
+const myTokens = (c: Ctx) => Object.entries(db.tokens).filter(([, id]) => id === c.user?.id).map(([t]) => t);
+route('GET', '/me/sessions', (c) => {
+  requireUser(c, { allowSuspended: true });
+  return myTokens(c).map((t, i) => ({ id: i + 1, kind: 'web', device: t === c.token ? 'Tento prohlížeč' : 'Jiné zařízení', createdAt: nowIso(), lastUsedAt: nowIso(), current: t === c.token }));
+});
+route('DELETE', '/me/sessions/:id', (c, [sid]) => {
+  requireUser(c, { allowSuspended: true });
+  const t = myTokens(c)[Number(sid) - 1];
+  if (t && t !== c.token) delete db.tokens[t];
+  return null;
+});
+route('POST', '/me/sessions/revoke-others', (c) => {
+  requireUser(c, { allowSuspended: true });
+  for (const t of myTokens(c)) if (t !== c.token) delete db.tokens[t];
+  return null;
+});
+route('PUT', '/me/password', (c) => {
+  const u = requireUser(c, { allowSuspended: true });
+  if (c.body.password !== u.password) throw new HttpError(403, 'Špatné heslo.');
+  if (str(c.body.newPassword).length < 10) throw new HttpError(400, 'Pole nové heslo je příliš krátké.');
+  u.password = str(c.body.newPassword);
+  for (const t of myTokens(c)) if (t !== c.token) delete db.tokens[t];
+  mail(u.email, 'passwordChanged');
+  return null;
+});
+route('POST', '/me/2fa/setup', (c) => {
+  const u = requireUser(c, { allowSuspended: true });
+  if (c.body.password !== u.password) throw new HttpError(403, 'Špatné heslo.');
+  u.totpSecret = newSecret();
+  return { secret: u.totpSecret, otpauthUrl: `otpauth://totp/YesYes:${encodeURIComponent(u.email)}?secret=${u.totpSecret}&issuer=YesYes` };
+});
+route('POST', '/me/2fa/enable', (c) => {
+  const u = requireUser(c, { allowSuspended: true });
+  if (!u.totpSecret || !verifyTotp(u.totpSecret, str(c.body.code))) throw new HttpError(400, srv('auth.badCode'));
+  u.twoFactor = true;
+  u.recoveryCodes = recoveryCodes();
+  mail(u.email, 'twoFactorOn');
+  return { recoveryCodes: u.recoveryCodes.map((x) => `${x.slice(0, 5)}-${x.slice(5)}`), user: own(u) };
+});
+route('POST', '/me/2fa/disable', (c) => {
+  const u = requireUser(c, { allowSuspended: true });
+  if (c.body.password !== u.password) throw new HttpError(403, 'Špatné heslo.');
+  if (!secondFactorOk(u, c.body.code)) throw new HttpError(400, srv('auth.badCode'));
+  Object.assign(u, { twoFactor: false, totpSecret: null, recoveryCodes: [] });
+  mail(u.email, 'twoFactorOff');
+  return { user: own(u) };
+});
+
 route('POST', '/auth/logout', (c) => {
   if (c.token) delete db.tokens[c.token];
   return null;
@@ -798,6 +934,7 @@ route('PUT', '/me/safety', (c) => {
 route('DELETE', '/me', (c) => {
   const u = requireUser(c, { allowSuspended: true });
   if (c.body.password !== u.password) throw new HttpError(403, 'Špatné heslo.');
+  if (u.twoFactor && !secondFactorOk(u, c.body.code)) throw new HttpError(400, srv('auth.badCode'));
   if (db.safety.some((s) => !s.endedAt && s.userId === u.id)) throw new HttpError(409, 'Účet teď nejde smazat – probíhá schůzka.');
   db.users = db.users.filter((x) => x.id !== u.id);
   return null;

@@ -61,7 +61,9 @@
     "reason": "årsak",
     "details": "detaljer",
     "resolution": "avgjørelse",
-    "days": "antall dager"
+    "days": "antall dager",
+    "newPassword": "nytt passord",
+    "session": "enhet"
   },
   "auth": {
     "confirmAdult": "Du må bekrefte at du er 18 år eller eldre.",
@@ -73,7 +75,10 @@
     "banned": "Kontoen er utestengt for brudd på reglene.",
     "notLoggedIn": "Du er ikke logget inn.",
     "suspended": "Kontoen din er suspendert til en moderator har gått gjennom den.",
-    "verifyFirst": "Verifiser identiteten din først."
+    "verifyFirst": "Verifiser identiteten din først.",
+    "badCode": "Koden er feil eller har utløpt. Prøv igjen, eller be om en ny.",
+    "tooManyAttempts": "For mange forsøk. Prøv igjen om litt.",
+    "loginExpired": "Innloggingen ble tidsavbrutt. Skriv inn e-post og passord på nytt."
   },
   "profile": {
     "wrongPassword": "Feil passord.",
@@ -275,5 +280,41 @@
     "comfort": "Hva som gjør meg komfortabel",
     "place": "Hvor",
     "status": "Sivilstatus"
+  },
+  "account": {
+    "samePassword": "Det nye passordet må være forskjellig fra det nåværende.",
+    "twoFactorOn": "Totrinnsbekreftelse er allerede på.",
+    "twoFactorOff": "Totrinnsbekreftelse er ikke på.",
+    "twoFactorSetupFirst": "Generer først en nøkkel for autentiseringsappen din."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Bekreftelseskode: {code}",
+      "body": "Koden din for å fullføre registreringen er {code}.\n\nDen er gyldig i 15 minutter. Hvis du ikke har registrert deg, kan du se bort fra denne e-posten."
+    },
+    "accountExists": {
+      "subject": "Forsøk på registrering",
+      "body": "Noen prøvde nettopp å opprette en konto med denne e-postadressen, men du har allerede en.\n\nHvis det var deg, er det bare å logge inn (eller tilbakestille passordet). Hvis ikke, trenger du ikke gjøre noe – kontoen din er trygg."
+    },
+    "resetCode": {
+      "subject": "Kode for å tilbakestille passordet: {code}",
+      "body": "Koden din for å tilbakestille passordet er {code}.\n\nDen er gyldig i 15 minutter. Hvis du ikke ba om tilbakestilling, kan du se bort fra denne e-posten – passordet ditt forblir det samme."
+    },
+    "newLogin": {
+      "subject": "Ny innlogging på kontoen din",
+      "body": "Noen logget nettopp inn på kontoen din ({device}).\n\nHvis det ikke var deg, endre passordet med en gang og logg ut andre enheter i sikkerhetsinnstillingene."
+    },
+    "passwordChanged": {
+      "subject": "Passordet ditt er endret",
+      "body": "Passordet for kontoen din ble nettopp endret, og andre enheter ble logget ut.\n\nHvis det ikke var deg, tilbakestill passordet via «Glemt passordet» og kontakt oss."
+    },
+    "twoFactorOn": {
+      "subject": "Totrinnsbekreftelse er slått på",
+      "body": "Innlogging på kontoen din krever nå også en kode fra autentiseringsappen din.\n\nOppbevar reservekodene dine et trygt sted."
+    },
+    "twoFactorOff": {
+      "subject": "Totrinnsbekreftelse er slått av",
+      "body": "Totrinnsbekreftelse ble slått av for kontoen din.\n\nHvis det ikke var deg, endre passordet med en gang."
+    }
   }
 }

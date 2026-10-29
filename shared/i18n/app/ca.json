@@ -595,7 +595,11 @@
     "title": "Inicia la sessió",
     "email": "Correu electrònic",
     "password": "Contrasenya",
-    "submit": "Inicia la sessió"
+    "submit": "Inicia la sessió",
+    "twoFactorTitle": "Verificació en dos passos",
+    "twoFactorHint": "Introdueix el codi de la teva aplicació d’autenticació o un dels teus codis de seguretat.",
+    "code": "Codi",
+    "forgot": "He oblidat la contrasenya"
   },
   "register": {
     "title": "Crea un compte",
@@ -610,7 +614,12 @@
     "confirmAdult": "Tinc 18 anys o més.",
     "acceptRules": "Accepto les normes de la comunitat i el tractament de les meves dades, incloses les dades sobre la meva vida sexual, perquè YesYes pugui funcionar.",
     "verifyNote": "Just després verificarem la teva identitat i la teva edat (document d'identitat i selfie). No guardem el teu document.",
-    "continue": "Continua"
+    "continue": "Continua",
+    "codeTitle": "Revisa el correu",
+    "codeSent": "Hem enviat un codi de 6 xifres a {email}. Si ja tens un compte, rebràs un avís: només cal que iniciïs la sessió.",
+    "code": "Codi del correu",
+    "confirmCode": "Verifica i crea el compte",
+    "resend": "Torna a enviar el codi"
   },
   "verify": {
     "title": "Verifica que ets tu",
@@ -723,5 +732,53 @@
     "faceId": "YesYes fa servir Face ID per desbloquejar-se, perquè ningú més no en pugui veure el contingut.",
     "photos": "Tria fotos per al teu perfil.",
     "camera": "Fes-te una foto per al teu perfil."
+  },
+  "forgot": {
+    "title": "Restableix la contrasenya",
+    "intro": "T’enviarem un codi per correu perquè puguis establir una contrasenya nova.",
+    "send": "Envia el codi",
+    "sent": "Si hi ha un compte per a {email}, hi hem enviat un codi de 6 xifres. És vàlid durant 15 minuts.",
+    "newPassword": "Contrasenya nova (com a mínim 10 caràcters)",
+    "save": "Estableix la contrasenya nova",
+    "done": "S’ha canviat la contrasenya i s’ha tancat la sessió a tots els dispositius. Inicia la sessió amb la contrasenya nova.",
+    "toLogin": "Inicia la sessió"
+  },
+  "security": {
+    "title": "Seguretat del compte",
+    "bannerOff": "Activa la verificació en dos passos i revisa els dispositius amb la sessió iniciada.",
+    "passwordChanged": "S’ha canviat la contrasenya. S’ha tancat la sessió als altres dispositius.",
+    "currentPassword": "Contrasenya actual",
+    "continue": "Continua",
+    "twoFactor": {
+      "title": "Verificació en dos passos",
+      "on": "La verificació en dos passos està activada",
+      "off": "La verificació en dos passos està desactivada",
+      "hint": "Per iniciar la sessió també necessitaràs un codi d’una aplicació d’autenticació (p. ex., Google Authenticator, 1Password). Amb la contrasenya sola no n’hi haurà prou.",
+      "enable": "Activa la verificació en dos passos",
+      "disable": "Desactiva la verificació en dos passos",
+      "scan": "Afegeix YesYes a la teva aplicació d’autenticació amb el botó de sota o escrivint la clau. Després introdueix el codi que mostri l’aplicació.",
+      "openApp": "Obre a l’aplicació d’autenticació",
+      "key": "Clau per introduir manualment",
+      "code": "Codi de l’aplicació",
+      "confirm": "Activa",
+      "codesIntro": "Fet. Desa aquests codis de seguretat en un lloc segur (p. ex., un gestor de contrasenyes). Cadascun funciona una sola vegada, per quan no tinguis el mòbil.",
+      "saveCodes": "Desa els codis de seguretat",
+      "codesDone": "Ja els he desat",
+      "codeOrBackup": "Codi de l’aplicació o codi de seguretat"
+    },
+    "password": {
+      "title": "Canvia la contrasenya",
+      "new": "Contrasenya nova",
+      "hint": "Com a mínim 10 caràcters. Es tancarà la sessió als altres dispositius.",
+      "save": "Canvia la contrasenya"
+    },
+    "devices": {
+      "title": "Dispositius amb la sessió iniciada",
+      "unknown": "Dispositiu desconegut",
+      "current": "Aquest dispositiu",
+      "lastUsed": "Darrer ús: {date}",
+      "signOut": "Tanca la sessió",
+      "signOutOthers": "Tanca la sessió a tots els altres dispositius"
+    }
   }
 }

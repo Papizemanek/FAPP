@@ -60,7 +60,9 @@
     "reason": "lý do",
     "details": "chi tiết",
     "resolution": "cách xử lý",
-    "days": "số ngày"
+    "days": "số ngày",
+    "newPassword": "mật khẩu mới",
+    "session": "thiết bị"
   },
   "auth": {
     "confirmAdult": "Bạn phải xác nhận mình đã đủ 18 tuổi trở lên.",
@@ -72,7 +74,10 @@
     "banned": "Tài khoản này đã bị cấm vì vi phạm quy tắc.",
     "notLoggedIn": "Bạn chưa đăng nhập.",
     "suspended": "Tài khoản của bạn bị tạm khóa cho đến khi người kiểm duyệt xem xét.",
-    "verifyFirst": "Hãy xác minh danh tính trước."
+    "verifyFirst": "Hãy xác minh danh tính trước.",
+    "badCode": "Mã không đúng hoặc đã hết hạn. Hãy thử lại hoặc yêu cầu mã mới.",
+    "tooManyAttempts": "Quá nhiều lần thử. Hãy thử lại sau ít phút.",
+    "loginExpired": "Phiên đăng nhập đã hết thời gian. Hãy nhập lại email và mật khẩu."
   },
   "profile": {
     "wrongPassword": "Sai mật khẩu.",
@@ -270,5 +275,41 @@
     "comfort": "Điều khiến mình thoải mái",
     "place": "Ở đâu",
     "status": "Tình trạng quan hệ"
+  },
+  "account": {
+    "samePassword": "Mật khẩu mới phải khác mật khẩu hiện tại.",
+    "twoFactorOn": "Xác minh hai bước đã được bật.",
+    "twoFactorOff": "Xác minh hai bước chưa được bật.",
+    "twoFactorSetupFirst": "Hãy tạo khóa cho ứng dụng xác thực trước."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Mã xác minh: {code}",
+      "body": "Mã để hoàn tất đăng ký của bạn là {code}.\n\nMã có hiệu lực trong 15 phút. Nếu bạn không đăng ký, hãy bỏ qua email này."
+    },
+    "accountExists": {
+      "subject": "Có người thử đăng ký",
+      "body": "Vừa có người thử tạo tài khoản bằng địa chỉ email này, nhưng bạn đã có tài khoản rồi.\n\nNếu đó là bạn, chỉ cần đăng nhập (hoặc đặt lại mật khẩu). Nếu không, bạn không cần làm gì – tài khoản của bạn vẫn an toàn."
+    },
+    "resetCode": {
+      "subject": "Mã đặt lại mật khẩu: {code}",
+      "body": "Mã đặt lại mật khẩu của bạn là {code}.\n\nMã có hiệu lực trong 15 phút. Nếu bạn không yêu cầu đặt lại, hãy bỏ qua email này – mật khẩu của bạn vẫn giữ nguyên."
+    },
+    "newLogin": {
+      "subject": "Có lượt đăng nhập mới vào tài khoản của bạn",
+      "body": "Vừa có người đăng nhập vào tài khoản của bạn ({device}).\n\nNếu đó không phải bạn, hãy đổi mật khẩu ngay và đăng xuất các thiết bị khác trong phần cài đặt bảo mật."
+    },
+    "passwordChanged": {
+      "subject": "Mật khẩu của bạn đã được đổi",
+      "body": "Mật khẩu tài khoản của bạn vừa được đổi và các thiết bị khác đã được đăng xuất.\n\nNếu đó không phải bạn, hãy đặt lại mật khẩu qua “Quên mật khẩu” và liên hệ với chúng mình."
+    },
+    "twoFactorOn": {
+      "subject": "Đã bật xác minh hai bước",
+      "body": "Từ giờ, khi đăng nhập vào tài khoản của bạn sẽ cần thêm mã từ ứng dụng xác thực.\n\nHãy cất các mã dự phòng ở nơi an toàn."
+    },
+    "twoFactorOff": {
+      "subject": "Đã tắt xác minh hai bước",
+      "body": "Xác minh hai bước đã được tắt cho tài khoản của bạn.\n\nNếu đó không phải bạn, hãy đổi mật khẩu ngay."
+    }
   }
 }

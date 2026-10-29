@@ -583,7 +583,11 @@
     "title": "Logga in",
     "email": "E-post",
     "password": "Lösenord",
-    "submit": "Logga in"
+    "submit": "Logga in",
+    "twoFactorTitle": "Tvåstegsverifiering",
+    "twoFactorHint": "Ange koden från din autentiseringsapp eller en av dina reservkoder.",
+    "code": "Kod",
+    "forgot": "Glömt lösenordet"
   },
   "register": {
     "title": "Skapa konto",
@@ -598,7 +602,12 @@
     "confirmAdult": "Jag är 18 år eller äldre.",
     "acceptRules": "Jag godkänner gemenskapens regler och behandlingen av mina uppgifter, inklusive uppgifter om mitt sexliv, så att YesYes kan fungera.",
     "verifyNote": "Direkt efter det verifierar vi din identitet och ålder (id-handling och selfie). Vi sparar inte din id-handling.",
-    "continue": "Fortsätt"
+    "continue": "Fortsätt",
+    "codeTitle": "Kolla din e-post",
+    "codeSent": "Vi har skickat en 6-siffrig kod till {email}. Om du redan har ett konto får du ett meddelande om det i stället – logga bara in.",
+    "code": "Kod från e-post",
+    "confirmCode": "Verifiera och skapa konto",
+    "resend": "Skicka koden igen"
   },
   "verify": {
     "title": "Bekräfta att det är du",
@@ -710,5 +719,53 @@
     "faceId": "YesYes använder Face ID för att låsa upp, så att ingen annan kan titta in.",
     "photos": "Välj bilder till din profil.",
     "camera": "Ta en bild på dig själv till din profil."
+  },
+  "forgot": {
+    "title": "Återställ lösenord",
+    "intro": "Vi mejlar dig en kod så att du kan välja ett nytt lösenord.",
+    "send": "Skicka kod",
+    "sent": "Om det finns ett konto för {email} har vi skickat en 6-siffrig kod dit. Den gäller i 15 minuter.",
+    "newPassword": "Nytt lösenord (minst 10 tecken)",
+    "save": "Spara nytt lösenord",
+    "done": "Ditt lösenord är ändrat och alla enheter har loggats ut. Logga in med ditt nya lösenord.",
+    "toLogin": "Logga in"
+  },
+  "security": {
+    "title": "Kontosäkerhet",
+    "bannerOff": "Slå på tvåstegsverifiering och kolla vilka enheter som är inloggade.",
+    "passwordChanged": "Lösenordet är ändrat. Andra enheter har loggats ut.",
+    "currentPassword": "Nuvarande lösenord",
+    "continue": "Fortsätt",
+    "twoFactor": {
+      "title": "Tvåstegsverifiering",
+      "on": "Tvåstegsverifiering är på",
+      "off": "Tvåstegsverifiering är av",
+      "hint": "För att logga in behövs då även en kod från en autentiseringsapp (t.ex. Google Authenticator, 1Password). Bara lösenordet räcker inte.",
+      "enable": "Slå på tvåstegsverifiering",
+      "disable": "Stäng av tvåstegsverifiering",
+      "scan": "Lägg till YesYes i din autentiseringsapp – med knappen nedan eller genom att skriva in nyckeln. Ange sedan koden som appen visar.",
+      "openApp": "Öppna i autentiseringsappen",
+      "key": "Nyckel för manuell inmatning",
+      "code": "Kod från appen",
+      "confirm": "Slå på",
+      "codesIntro": "Klart. Spara de här reservkoderna på ett säkert ställe (t.ex. i en lösenordshanterare). Varje kod fungerar en gång, för när du inte har telefonen till hands.",
+      "saveCodes": "Spara reservkoder",
+      "codesDone": "Jag har sparat dem",
+      "codeOrBackup": "Kod från appen eller reservkod"
+    },
+    "password": {
+      "title": "Byt lösenord",
+      "new": "Nytt lösenord",
+      "hint": "Minst 10 tecken. Andra enheter loggas ut.",
+      "save": "Byt lösenord"
+    },
+    "devices": {
+      "title": "Inloggade enheter",
+      "unknown": "Okänd enhet",
+      "current": "Den här enheten",
+      "lastUsed": "Senast använd {date}",
+      "signOut": "Logga ut",
+      "signOutOthers": "Logga ut alla andra enheter"
+    }
   }
 }

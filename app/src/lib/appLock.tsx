@@ -34,8 +34,9 @@ export function AppLockProvider({ children, signedIn }: { children: ReactNode; s
     storage.getAppLock().then((on) => {
       setEnabledState(on);
       setLocked(on);
-      if (on) ScreenCapture.enableAppSwitcherProtectionAsync().catch(() => {});
     });
+    // Přepínač aplikací ukazuje místo obsahu (chat, profily) jen rozmazanou plochu – vždy, i bez zámku.
+    ScreenCapture.enableAppSwitcherProtectionAsync().catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -52,8 +53,6 @@ export function AppLockProvider({ children, signedIn }: { children: ReactNode; s
     if (on && !(await authenticate())) return false;
     await storage.setAppLock(on);
     setEnabledState(on);
-    if (on) await ScreenCapture.enableAppSwitcherProtectionAsync().catch(() => {});
-    else await ScreenCapture.disableAppSwitcherProtectionAsync().catch(() => {});
     return true;
   }, []);
 

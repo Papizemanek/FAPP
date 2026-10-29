@@ -269,7 +269,11 @@
     "title": "Přihlášení",
     "email": "E-mail",
     "password": "Heslo",
-    "submit": "Přihlásit se"
+    "submit": "Přihlásit se",
+    "twoFactorTitle": "Dvoufázové ověření",
+    "twoFactorHint": "Zadej kód z autentizační aplikace, nebo jeden ze záložních kódů.",
+    "code": "Kód",
+    "forgot": "Zapomenuté heslo"
   },
   "register": {
     "title": "Vytvořit účet",
@@ -284,7 +288,12 @@
     "confirmAdult": "Je mi 18 let nebo víc.",
     "acceptRules": "Souhlasím s pravidly komunity a se zpracováním svých údajů, včetně údajů o sexuálním životě, pro fungování YesYes.",
     "verifyNote": "Hned potom ověříme tvou totožnost a věk (doklad a selfie). Doklad si neukládáme.",
-    "continue": "Pokračovat"
+    "continue": "Pokračovat",
+    "codeTitle": "Zkontroluj e-mail",
+    "codeSent": "Na {email} jsme poslali 6místný kód. Pokud tu už účet máš, přijde ti místo kódu upozornění – stačí se přihlásit.",
+    "code": "Kód z e-mailu",
+    "confirmCode": "Ověřit a vytvořit účet",
+    "resend": "Poslat kód znovu"
   },
   "verify": {
     "title": "Ověř, že jsi to ty",
@@ -300,5 +309,53 @@
     "retry": "Zkusit znovu",
     "start": "Ověřit totožnost",
     "signOut": "Odhlásit se"
+  },
+  "forgot": {
+    "title": "Obnova hesla",
+    "intro": "Pošleme ti na e-mail kód, se kterým si nastavíš nové heslo.",
+    "send": "Poslat kód",
+    "sent": "Pokud k {email} existuje účet, poslali jsme na něj 6místný kód. Platí 15 minut.",
+    "newPassword": "Nové heslo (aspoň 10 znaků)",
+    "save": "Nastavit nové heslo",
+    "done": "Heslo je změněné a všechna zařízení jsme odhlásili. Přihlas se novým heslem.",
+    "toLogin": "Přihlásit se"
+  },
+  "security": {
+    "title": "Zabezpečení účtu",
+    "bannerOff": "Zapni dvoufázové ověření a zkontroluj přihlášená zařízení.",
+    "passwordChanged": "Heslo je změněné. Ostatní zařízení jsme odhlásili.",
+    "currentPassword": "Současné heslo",
+    "continue": "Pokračovat",
+    "twoFactor": {
+      "title": "Dvoufázové ověření",
+      "on": "Dvoufázové ověření je zapnuté",
+      "off": "Dvoufázové ověření je vypnuté",
+      "hint": "Při přihlášení bude potřeba i kód z autentizační aplikace (např. Google Authenticator, 1Password). Heslo samo nestačí.",
+      "enable": "Zapnout dvoufázové ověření",
+      "disable": "Vypnout dvoufázové ověření",
+      "scan": "Přidej YesYes do autentizační aplikace – tlačítkem níže, nebo ručně opiš klíč. Pak zadej kód, který ti aplikace ukáže.",
+      "openApp": "Otevřít v autentizační aplikaci",
+      "key": "Klíč pro ruční zadání",
+      "code": "Kód z aplikace",
+      "confirm": "Zapnout",
+      "codesIntro": "Hotovo. Ulož si tyhle záložní kódy na bezpečné místo (např. do správce hesel). Každý jde použít jednou, když nebudeš mít telefon po ruce.",
+      "saveCodes": "Uložit záložní kódy",
+      "codesDone": "Mám je uložené",
+      "codeOrBackup": "Kód z aplikace nebo záložní kód"
+    },
+    "password": {
+      "title": "Změna hesla",
+      "new": "Nové heslo",
+      "hint": "Aspoň 10 znaků. Ostatní zařízení se po změně odhlásí.",
+      "save": "Změnit heslo"
+    },
+    "devices": {
+      "title": "Přihlášená zařízení",
+      "unknown": "Neznámé zařízení",
+      "current": "Toto zařízení",
+      "lastUsed": "Naposledy {date}",
+      "signOut": "Odhlásit",
+      "signOutOthers": "Odhlásit všechna ostatní zařízení"
+    }
   }
 }

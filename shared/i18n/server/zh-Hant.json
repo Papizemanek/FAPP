@@ -60,7 +60,9 @@
     "reason": "原因",
     "details": "詳細說明",
     "resolution": "處理結果",
-    "days": "天數"
+    "days": "天數",
+    "newPassword": "新密碼",
+    "session": "裝置"
   },
   "auth": {
     "confirmAdult": "你必須確認自己已年滿 18 歲。",
@@ -72,7 +74,10 @@
     "banned": "此帳號因違反規範已被停權。",
     "notLoggedIn": "你尚未登入。",
     "suspended": "你的帳號已停用，等待版主審核。",
-    "verifyFirst": "請先驗證你的身分。"
+    "verifyFirst": "請先驗證你的身分。",
+    "badCode": "驗證碼錯誤或已過期。請再試一次，或索取新的驗證碼。",
+    "tooManyAttempts": "嘗試次數過多。請稍後再試。",
+    "loginExpired": "登入已逾時。請重新輸入電子郵件和密碼。"
   },
   "profile": {
     "wrongPassword": "密碼錯誤。",
@@ -270,5 +275,41 @@
     "comfort": "讓我舒服的方式",
     "place": "地點",
     "status": "感情狀態"
+  },
+  "account": {
+    "samePassword": "新密碼必須與目前的密碼不同。",
+    "twoFactorOn": "兩步驟驗證已經開啟。",
+    "twoFactorOff": "兩步驟驗證尚未開啟。",
+    "twoFactorSetupFirst": "請先為驗證器應用程式產生金鑰。"
+  },
+  "email": {
+    "registerCode": {
+      "subject": "驗證碼：{code}",
+      "body": "你完成註冊的驗證碼是 {code}。\n\n驗證碼 15 分鐘內有效。如果你沒有註冊，請忽略這封郵件。"
+    },
+    "accountExists": {
+      "subject": "註冊嘗試",
+      "body": "剛剛有人嘗試用這個電子郵件地址建立帳號，但你已經有帳號了。\n\n如果是你本人，直接登入（或重設密碼）即可。如果不是，無需採取任何行動——你的帳號仍然安全。"
+    },
+    "resetCode": {
+      "subject": "密碼重設驗證碼：{code}",
+      "body": "你的密碼重設驗證碼是 {code}。\n\n驗證碼 15 分鐘內有效。如果你沒有要求重設，請忽略這封郵件——你的密碼不會變更。"
+    },
+    "newLogin": {
+      "subject": "你的帳號有新的登入",
+      "body": "剛剛有人登入了你的帳號（{device}）。\n\n如果不是你本人，請立即變更密碼，並在安全性設定中登出其他裝置。"
+    },
+    "passwordChanged": {
+      "subject": "你的密碼已變更",
+      "body": "你的帳號密碼剛剛已變更，其他裝置也已登出。\n\n如果不是你本人，請透過「忘記密碼」重設密碼並與我們聯絡。"
+    },
+    "twoFactorOn": {
+      "subject": "兩步驟驗證已開啟",
+      "body": "現在登入你的帳號時，還需要輸入驗證器應用程式中的驗證碼。\n\n請將備用碼存放在安全的地方。"
+    },
+    "twoFactorOff": {
+      "subject": "兩步驟驗證已關閉",
+      "body": "你的帳號已關閉兩步驟驗證。\n\n如果不是你本人，請立即變更密碼。"
+    }
   }
 }

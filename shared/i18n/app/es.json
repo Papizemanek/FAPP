@@ -595,7 +595,11 @@
     "title": "Iniciar sesión",
     "email": "Correo electrónico",
     "password": "Contraseña",
-    "submit": "Iniciar sesión"
+    "submit": "Iniciar sesión",
+    "twoFactorTitle": "Verificación en dos pasos",
+    "twoFactorHint": "Introduce el código de tu app de autenticación o uno de tus códigos de respaldo.",
+    "code": "Código",
+    "forgot": "He olvidado mi contraseña"
   },
   "register": {
     "title": "Crear cuenta",
@@ -610,7 +614,12 @@
     "confirmAdult": "Tengo 18 años o más.",
     "acceptRules": "Acepto las normas de la comunidad y el tratamiento de mis datos, incluidos los datos sobre mi vida sexual, para que YesYes pueda funcionar.",
     "verifyNote": "Justo después verificaremos tu identidad y tu edad (documento de identidad y selfie). No guardamos tu documento.",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "codeTitle": "Revisa tu correo",
+    "codeSent": "Hemos enviado un código de 6 dígitos a {email}. Si ya tienes una cuenta, recibirás un aviso en su lugar: solo tienes que iniciar sesión.",
+    "code": "Código del correo",
+    "confirmCode": "Verificar y crear cuenta",
+    "resend": "Reenviar código"
   },
   "verify": {
     "title": "Verifica que eres tú",
@@ -723,5 +732,53 @@
     "faceId": "YesYes usa Face ID para desbloquearse, para que nadie más pueda ver su contenido.",
     "photos": "Elige fotos para tu perfil.",
     "camera": "Tómate una foto para tu perfil."
+  },
+  "forgot": {
+    "title": "Restablecer contraseña",
+    "intro": "Te enviaremos un código por correo para que establezcas una nueva contraseña.",
+    "send": "Enviar código",
+    "sent": "Si existe una cuenta para {email}, le hemos enviado un código de 6 dígitos. Es válido durante 15 minutos.",
+    "newPassword": "Nueva contraseña (mínimo 10 caracteres)",
+    "save": "Establecer nueva contraseña",
+    "done": "Tu contraseña se ha cambiado y se ha cerrado la sesión en todos los dispositivos. Inicia sesión con tu nueva contraseña.",
+    "toLogin": "Iniciar sesión"
+  },
+  "security": {
+    "title": "Seguridad de la cuenta",
+    "bannerOff": "Activa la verificación en dos pasos y revisa tus dispositivos con sesión iniciada.",
+    "passwordChanged": "Contraseña cambiada. Se ha cerrado la sesión en los demás dispositivos.",
+    "currentPassword": "Contraseña actual",
+    "continue": "Continuar",
+    "twoFactor": {
+      "title": "Verificación en dos pasos",
+      "on": "La verificación en dos pasos está activada",
+      "off": "La verificación en dos pasos está desactivada",
+      "hint": "Para iniciar sesión también necesitarás un código de una app de autenticación (p. ej., Google Authenticator, 1Password). La contraseña sola no bastará.",
+      "enable": "Activar la verificación en dos pasos",
+      "disable": "Desactivar la verificación en dos pasos",
+      "scan": "Añade YesYes a tu app de autenticación con el botón de abajo o escribiendo la clave. Después introduce el código que muestre la app.",
+      "openApp": "Abrir en la app de autenticación",
+      "key": "Clave para introducir manualmente",
+      "code": "Código de la app",
+      "confirm": "Activar",
+      "codesIntro": "Listo. Guarda estos códigos de respaldo en un lugar seguro (p. ej., un gestor de contraseñas). Cada uno sirve una sola vez, para cuando no tengas el móvil.",
+      "saveCodes": "Guardar códigos de respaldo",
+      "codesDone": "Ya los he guardado",
+      "codeOrBackup": "Código de la app o de respaldo"
+    },
+    "password": {
+      "title": "Cambiar contraseña",
+      "new": "Nueva contraseña",
+      "hint": "Mínimo 10 caracteres. Se cerrará la sesión en los demás dispositivos.",
+      "save": "Cambiar contraseña"
+    },
+    "devices": {
+      "title": "Dispositivos con sesión iniciada",
+      "unknown": "Dispositivo desconocido",
+      "current": "Este dispositivo",
+      "lastUsed": "Último uso: {date}",
+      "signOut": "Cerrar sesión",
+      "signOutOthers": "Cerrar sesión en todos los demás dispositivos"
+    }
   }
 }

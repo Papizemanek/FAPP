@@ -595,7 +595,11 @@
     "title": "Accedi",
     "email": "Email",
     "password": "Password",
-    "submit": "Accedi"
+    "submit": "Accedi",
+    "twoFactorTitle": "Verifica in due passaggi",
+    "twoFactorHint": "Inserisci il codice della tua app di autenticazione o uno dei tuoi codici di backup.",
+    "code": "Codice",
+    "forgot": "Password dimenticata"
   },
   "register": {
     "title": "Crea un account",
@@ -610,7 +614,12 @@
     "confirmAdult": "Ho 18 anni o più.",
     "acceptRules": "Accetto le regole della community e il trattamento dei miei dati, compresi quelli sulla mia vita sessuale, per il funzionamento di YesYes.",
     "verifyNote": "Subito dopo verificheremo la tua identità e la tua età (documento e selfie). Non conserviamo il tuo documento.",
-    "continue": "Continua"
+    "continue": "Continua",
+    "codeTitle": "Controlla la tua email",
+    "codeSent": "Abbiamo inviato un codice di 6 cifre a {email}. Se hai già un account, riceverai invece un avviso: ti basta accedere.",
+    "code": "Codice dall'email",
+    "confirmCode": "Verifica e crea l'account",
+    "resend": "Invia di nuovo il codice"
   },
   "verify": {
     "title": "Verifica che sei tu",
@@ -723,5 +732,53 @@
     "faceId": "YesYes usa Face ID per sbloccarsi, così nessun altro può vederne il contenuto.",
     "photos": "Scegli le foto per il tuo profilo.",
     "camera": "Scattati una foto per il tuo profilo."
+  },
+  "forgot": {
+    "title": "Reimposta la password",
+    "intro": "Ti invieremo via email un codice per impostare una nuova password.",
+    "send": "Invia codice",
+    "sent": "Se esiste un account associato a {email}, ti abbiamo inviato un codice di 6 cifre. È valido per 15 minuti.",
+    "newPassword": "Nuova password (almeno 10 caratteri)",
+    "save": "Imposta nuova password",
+    "done": "Password cambiata: abbiamo disconnesso tutti i dispositivi. Accedi con la nuova password.",
+    "toLogin": "Accedi"
+  },
+  "security": {
+    "title": "Sicurezza dell'account",
+    "bannerOff": "Attiva la verifica in due passaggi e controlla i dispositivi connessi.",
+    "passwordChanged": "Password cambiata. Abbiamo disconnesso gli altri dispositivi.",
+    "currentPassword": "Password attuale",
+    "continue": "Continua",
+    "twoFactor": {
+      "title": "Verifica in due passaggi",
+      "on": "La verifica in due passaggi è attiva",
+      "off": "La verifica in due passaggi non è attiva",
+      "hint": "Per accedere servirà anche un codice da un'app di autenticazione (ad es. Google Authenticator, 1Password). La sola password non basterà.",
+      "enable": "Attiva la verifica in due passaggi",
+      "disable": "Disattiva la verifica in due passaggi",
+      "scan": "Aggiungi YesYes alla tua app di autenticazione con il pulsante qui sotto, oppure inserisci la chiave a mano. Poi inserisci il codice che ti mostra l'app.",
+      "openApp": "Apri nell'app di autenticazione",
+      "key": "Chiave per l'inserimento manuale",
+      "code": "Codice dell'app",
+      "confirm": "Attiva",
+      "codesIntro": "Fatto. Conserva questi codici di backup in un posto sicuro (ad es. in un gestore di password). Ognuno funziona una sola volta, per quando non hai il telefono a portata di mano.",
+      "saveCodes": "Salva i codici di backup",
+      "codesDone": "Li ho salvati",
+      "codeOrBackup": "Codice dell'app o codice di backup"
+    },
+    "password": {
+      "title": "Cambia password",
+      "new": "Nuova password",
+      "hint": "Almeno 10 caratteri. Gli altri dispositivi verranno disconnessi.",
+      "save": "Cambia password"
+    },
+    "devices": {
+      "title": "Dispositivi connessi",
+      "unknown": "Dispositivo sconosciuto",
+      "current": "Questo dispositivo",
+      "lastUsed": "Ultimo utilizzo: {date}",
+      "signOut": "Disconnetti",
+      "signOutOthers": "Disconnetti tutti gli altri dispositivi"
+    }
   }
 }

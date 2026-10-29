@@ -571,7 +571,11 @@
     "title": "登录",
     "email": "邮箱",
     "password": "密码",
-    "submit": "登录"
+    "submit": "登录",
+    "twoFactorTitle": "两步验证",
+    "twoFactorHint": "输入身份验证器应用中的验证码，或你的任一备用码。",
+    "code": "验证码",
+    "forgot": "忘记密码"
   },
   "register": {
     "title": "创建账户",
@@ -586,7 +590,12 @@
     "confirmAdult": "我已年满 18 岁。",
     "acceptRules": "我同意社区规则，并同意为了让 YesYes 正常运行而处理我的数据，包括与我性生活相关的数据。",
     "verifyNote": "接下来我们会立即验证你的身份和年龄（证件和自拍）。我们不会保存你的证件。",
-    "continue": "继续"
+    "continue": "继续",
+    "codeTitle": "查看你的邮箱",
+    "codeSent": "我们已向 {email} 发送了 6 位验证码。如果你已有账号，你会收到一条提醒——直接登录即可。",
+    "code": "邮件中的验证码",
+    "confirmCode": "验证并创建账号",
+    "resend": "重新发送验证码"
   },
   "verify": {
     "title": "验证你的身份",
@@ -697,5 +706,53 @@
     "faceId": "YesYes 使用面容 ID 解锁，这样别人就无法查看其中的内容。",
     "photos": "选择用于个人资料的照片。",
     "camera": "为个人资料拍一张自己的照片。"
+  },
+  "forgot": {
+    "title": "重置密码",
+    "intro": "我们会通过邮件给你发送验证码，用于设置新密码。",
+    "send": "发送验证码",
+    "sent": "如果 {email} 有对应的账号，我们已向其发送 6 位验证码。验证码 15 分钟内有效。",
+    "newPassword": "新密码（至少 10 个字符）",
+    "save": "设置新密码",
+    "done": "密码已更改，所有设备均已退出登录。请使用新密码登录。",
+    "toLogin": "登录"
+  },
+  "security": {
+    "title": "账号安全",
+    "bannerOff": "开启两步验证，并检查已登录的设备。",
+    "passwordChanged": "密码已更改。其他设备已退出登录。",
+    "currentPassword": "当前密码",
+    "continue": "继续",
+    "twoFactor": {
+      "title": "两步验证",
+      "on": "两步验证已开启",
+      "off": "两步验证已关闭",
+      "hint": "登录时还需要输入身份验证器应用（如 Google Authenticator、1Password）中的验证码。仅凭密码将无法登录。",
+      "enable": "开启两步验证",
+      "disable": "关闭两步验证",
+      "scan": "将 YesYes 添加到你的身份验证器应用——点击下方按钮，或手动输入密钥。然后输入应用显示的验证码。",
+      "openApp": "在身份验证器应用中打开",
+      "key": "手动输入密钥",
+      "code": "应用中的验证码",
+      "confirm": "开启",
+      "codesIntro": "完成。请将这些备用码保存在安全的地方（如密码管理器）。每个备用码只能使用一次，供你手机不在身边时使用。",
+      "saveCodes": "保存备用码",
+      "codesDone": "我已保存",
+      "codeOrBackup": "应用验证码或备用码"
+    },
+    "password": {
+      "title": "更改密码",
+      "new": "新密码",
+      "hint": "至少 10 个字符。其他设备将退出登录。",
+      "save": "更改密码"
+    },
+    "devices": {
+      "title": "已登录的设备",
+      "unknown": "未知设备",
+      "current": "此设备",
+      "lastUsed": "上次使用：{date}",
+      "signOut": "退出登录",
+      "signOutOthers": "退出所有其他设备"
+    }
   }
 }

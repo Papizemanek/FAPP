@@ -583,7 +583,11 @@
     "title": "Log ind",
     "email": "E-mail",
     "password": "Adgangskode",
-    "submit": "Log ind"
+    "submit": "Log ind",
+    "twoFactorTitle": "Totrinsbekræftelse",
+    "twoFactorHint": "Indtast koden fra din godkendelsesapp eller en af dine backupkoder.",
+    "code": "Kode",
+    "forgot": "Glemt adgangskode"
   },
   "register": {
     "title": "Opret konto",
@@ -598,7 +602,12 @@
     "confirmAdult": "Jeg er 18 år eller ældre.",
     "acceptRules": "Jeg accepterer fællesskabets regler og behandlingen af mine data, herunder data om mit sexliv, så YesYes kan fungere.",
     "verifyNote": "Lige bagefter verificerer vi din identitet og alder (ID og selfie). Vi gemmer ikke dit ID.",
-    "continue": "Fortsæt"
+    "continue": "Fortsæt",
+    "codeTitle": "Tjek din e-mail",
+    "codeSent": "Vi har sendt en 6-cifret kode til {email}. Hvis du allerede har en konto, får du i stedet en besked – så skal du bare logge ind.",
+    "code": "Kode fra e-mail",
+    "confirmCode": "Bekræft og opret konto",
+    "resend": "Send kode igen"
   },
   "verify": {
     "title": "Bekræft, at det er dig",
@@ -710,5 +719,53 @@
     "faceId": "YesYes bruger Face ID til at låse op, så ingen andre kan kigge med.",
     "photos": "Vælg billeder til din profil.",
     "camera": "Tag et billede af dig selv til din profil."
+  },
+  "forgot": {
+    "title": "Nulstil adgangskode",
+    "intro": "Vi sender dig en kode på e-mail, så du kan vælge en ny adgangskode.",
+    "send": "Send kode",
+    "sent": "Hvis der findes en konto for {email}, har vi sendt en 6-cifret kode dertil. Den er gyldig i 15 minutter.",
+    "newPassword": "Ny adgangskode (mindst 10 tegn)",
+    "save": "Gem ny adgangskode",
+    "done": "Din adgangskode er ændret, og alle enheder er logget ud. Log ind med din nye adgangskode.",
+    "toLogin": "Log ind"
+  },
+  "security": {
+    "title": "Kontosikkerhed",
+    "bannerOff": "Slå totrinsbekræftelse til, og tjek, hvilke enheder der er logget ind.",
+    "passwordChanged": "Adgangskoden er ændret. Andre enheder er logget ud.",
+    "currentPassword": "Nuværende adgangskode",
+    "continue": "Fortsæt",
+    "twoFactor": {
+      "title": "Totrinsbekræftelse",
+      "on": "Totrinsbekræftelse er slået til",
+      "off": "Totrinsbekræftelse er slået fra",
+      "hint": "For at logge ind skal du også bruge en kode fra en godkendelsesapp (f.eks. Google Authenticator, 1Password). Adgangskoden alene er ikke nok.",
+      "enable": "Slå totrinsbekræftelse til",
+      "disable": "Slå totrinsbekræftelse fra",
+      "scan": "Tilføj YesYes til din godkendelsesapp – med knappen nedenfor, eller indtast nøglen. Indtast derefter den kode, appen viser.",
+      "openApp": "Åbn i godkendelsesapp",
+      "key": "Nøgle til manuel indtastning",
+      "code": "Kode fra appen",
+      "confirm": "Slå til",
+      "codesIntro": "Færdig. Opbevar disse backupkoder et sikkert sted (f.eks. i en adgangskodeadministrator). Hver kode virker én gang – til når du ikke har din telefon.",
+      "saveCodes": "Gem backupkoder",
+      "codesDone": "Jeg har gemt dem",
+      "codeOrBackup": "Appkode eller backupkode"
+    },
+    "password": {
+      "title": "Skift adgangskode",
+      "new": "Ny adgangskode",
+      "hint": "Mindst 10 tegn. Andre enheder bliver logget ud.",
+      "save": "Skift adgangskode"
+    },
+    "devices": {
+      "title": "Enheder, der er logget ind",
+      "unknown": "Ukendt enhed",
+      "current": "Denne enhed",
+      "lastUsed": "Sidst brugt {date}",
+      "signOut": "Log ud",
+      "signOutOthers": "Log alle andre enheder ud"
+    }
   }
 }

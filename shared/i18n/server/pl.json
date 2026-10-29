@@ -63,7 +63,9 @@
     "reason": "powód",
     "details": "szczegóły",
     "resolution": "rozstrzygnięcie",
-    "days": "liczba dni"
+    "days": "liczba dni",
+    "newPassword": "nowe hasło",
+    "session": "urządzenie"
   },
   "auth": {
     "confirmAdult": "Musisz potwierdzić, że masz co najmniej 18 lat.",
@@ -75,7 +77,10 @@
     "banned": "To konto zostało zablokowane za łamanie zasad.",
     "notLoggedIn": "Nie jesteś zalogowany(-a).",
     "suspended": "Twoje konto jest zawieszone do czasu sprawdzenia przez moderatora.",
-    "verifyFirst": "Najpierw zweryfikuj tożsamość."
+    "verifyFirst": "Najpierw zweryfikuj tożsamość.",
+    "badCode": "Kod jest nieprawidłowy lub wygasł. Spróbuj ponownie albo poproś o nowy.",
+    "tooManyAttempts": "Zbyt wiele prób. Spróbuj ponownie za chwilę.",
+    "loginExpired": "Czas na zalogowanie minął. Wpisz ponownie e-mail i hasło."
   },
   "profile": {
     "wrongPassword": "Nieprawidłowe hasło.",
@@ -285,5 +290,41 @@
     "comfort": "Co daje mi komfort",
     "place": "Gdzie",
     "status": "Status związku"
+  },
+  "account": {
+    "samePassword": "Nowe hasło musi się różnić od obecnego.",
+    "twoFactorOn": "Weryfikacja dwuetapowa jest już włączona.",
+    "twoFactorOff": "Weryfikacja dwuetapowa nie jest włączona.",
+    "twoFactorSetupFirst": "Najpierw wygeneruj klucz dla aplikacji uwierzytelniającej."
+  },
+  "email": {
+    "registerCode": {
+      "subject": "Kod weryfikacyjny: {code}",
+      "body": "Twój kod do dokończenia rejestracji to {code}.\n\nJest ważny przez 15 minut. Jeśli to nie Ty zakładasz konto, zignoruj tę wiadomość."
+    },
+    "accountExists": {
+      "subject": "Próba rejestracji",
+      "body": "Ktoś przed chwilą próbował założyć konto z tym adresem e-mail, ale masz już konto.\n\nJeśli to Ty, po prostu się zaloguj (albo zresetuj hasło). Jeśli nie, nic nie rób – Twoje konto jest bezpieczne."
+    },
+    "resetCode": {
+      "subject": "Kod do resetowania hasła: {code}",
+      "body": "Twój kod do resetowania hasła to {code}.\n\nJest ważny przez 15 minut. Jeśli to nie Ty prosisz o reset, zignoruj tę wiadomość – hasło pozostanie bez zmian."
+    },
+    "newLogin": {
+      "subject": "Nowe logowanie na Twoje konto",
+      "body": "Ktoś przed chwilą zalogował się na Twoje konto ({device}).\n\nJeśli to nie Ty, od razu zmień hasło i wyloguj inne urządzenia w ustawieniach bezpieczeństwa."
+    },
+    "passwordChanged": {
+      "subject": "Twoje hasło zostało zmienione",
+      "body": "Hasło do Twojego konta zostało właśnie zmienione, a inne urządzenia wylogowane.\n\nJeśli to nie Ty, zresetuj hasło przez „Nie pamiętam hasła” i skontaktuj się z nami."
+    },
+    "twoFactorOn": {
+      "subject": "Weryfikacja dwuetapowa włączona",
+      "body": "Logowanie na Twoje konto wymaga teraz także kodu z aplikacji uwierzytelniającej.\n\nPrzechowuj kody zapasowe w bezpiecznym miejscu."
+    },
+    "twoFactorOff": {
+      "subject": "Weryfikacja dwuetapowa wyłączona",
+      "body": "Weryfikacja dwuetapowa została wyłączona dla Twojego konta.\n\nJeśli to nie Ty, od razu zmień hasło."
+    }
   }
 }
