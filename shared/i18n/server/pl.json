@@ -75,7 +75,7 @@
     "emailTaken": "Konto z tym e-mailem już istnieje.",
     "wrongCredentials": "Nieprawidłowy e-mail lub hasło.",
     "banned": "To konto zostało zablokowane za łamanie zasad.",
-    "notLoggedIn": "Nie jesteś zalogowany(-a).",
+    "notLoggedIn": "Sesja wygasła. Zaloguj się ponownie.",
     "suspended": "Twoje konto jest zawieszone do czasu sprawdzenia przez moderatora.",
     "verifyFirst": "Najpierw zweryfikuj tożsamość.",
     "badCode": "Kod jest nieprawidłowy lub wygasł. Spróbuj ponownie albo poproś o nowy.",
@@ -187,7 +187,11 @@
     "invalidInterval": "Nieprawidłowy odstęp check-inów."
   },
   "reports": {
-    "feedbackSent": "Ocena została już wysłana."
+    "feedbackSent": {
+      "man": "Ocenę już wysłałeś.",
+      "woman": "Ocenę już wysłałaś.",
+      "other": "Ocena została już wysłana."
+    }
   },
   "verification": {
     "unknown": "Nieznana weryfikacja.",
@@ -218,7 +222,11 @@
       "body": "Komuś naprawdę na tobie zależy."
     },
     "message": {
-      "photo": "Wysłano zdjęcie"
+      "photo": {
+        "man": "Wysłał zdjęcie",
+        "woman": "Wysłała zdjęcie",
+        "other": "Wysłano zdjęcie"
+      }
     },
     "agreementComplete": {
       "title": "Ustalenia gotowe",
@@ -226,36 +234,76 @@
     },
     "agreementNew": {
       "title": "Nowe ustalenia",
-      "body": "{name} rozpoczyna ustalenia. Zaznacz, na co masz ochotę."
+      "body": {
+        "man": "{name} rozpoczął ustalenia. Zaznacz, na co masz ochotę.",
+        "woman": "{name} rozpoczęła ustalenia. Zaznacz, na co masz ochotę.",
+        "other": "{name} rozpoczyna ustalenia. Zaznacz, na co masz ochotę."
+      }
     },
     "agreementChanged": {
       "title": "Ustalenia zmienione",
-      "body": "{name} zmienia godzinę, miejsce lub zasady. Potwierdź je ponownie."
+      "body": {
+        "man": "{name} zmienił godzinę, miejsce lub zasady. Potwierdź je ponownie.",
+        "woman": "{name} zmieniła godzinę, miejsce lub zasady. Potwierdź je ponownie.",
+        "other": "{name} zmienia godzinę, miejsce lub zasady. Potwierdź je ponownie."
+      }
     },
     "agreementUpdated": {
       "title": "Ustalenia zaktualizowane",
-      "body": "{name} aktualizuje swoje życzenia."
+      "body": {
+        "man": "{name} zaktualizował swoje życzenia.",
+        "woman": "{name} zaktualizowała swoje życzenia.",
+        "other": "{name} aktualizuje swoje życzenia."
+      }
     },
     "agreementRevoked": {
       "title": "Ustalenia anulowane",
-      "body": "{name} anulował(a) ustalenia. Spotkanie się nie odbędzie – i trzeba to uszanować."
+      "body": {
+        "man": "{name} anulował ustalenia. Spotkanie się nie odbędzie – i trzeba to uszanować.",
+        "woman": "{name} anulowała ustalenia. Spotkanie się nie odbędzie – i trzeba to uszanować.",
+        "other": "{name} anulował(a) ustalenia. Spotkanie się nie odbędzie – i trzeba to uszanować."
+      }
     },
     "checkInOverdue": {
-      "title": "Pominięty check-in",
-      "body": "{name} dostał(a) alert. Potwierdź, że wszystko w porządku."
+      "title": {
+        "man": "Przegapiłeś check-in",
+        "woman": "Przegapiłaś check-in",
+        "other": "Pominięty check-in"
+      },
+      "body": "Zaufana osoba ({name}) dostała alert. Potwierdź, że wszystko w porządku."
     }
   },
   "sms": {
-    "started": "{name} ma spotkanie i wybrał(a) cię jako zaufaną osobę. Tu zobaczysz, gdzie jest i czy wszystko w porządku: {url}",
+    "started": {
+      "man": "{name} ma spotkanie i wybrał cię jako zaufaną osobę. Tu zobaczysz, gdzie jest i czy wszystko w porządku: {url}",
+      "woman": "{name} ma spotkanie i wybrała cię jako zaufaną osobę. Tu zobaczysz, gdzie jest i czy wszystko w porządku: {url}",
+      "other": "{name} ma spotkanie i wskazuje cię jako zaufaną osobę. Tu zobaczysz, gdzie jest i czy wszystko w porządku: {url}"
+    },
     "alarm": "ALARM: {name} potrzebuje pomocy. Lokalizacja i szczegóły: {url}",
-    "overdue": "{name} nie odezwał(a) się - potwierdzenie, że wszystko w porządku, miało przyjść do {time}. Spróbuj zadzwonić. Lokalizacja: {url}",
-    "backOk": "{name} odezwał(a) się i potwierdził(a), że wszystko w porządku.",
-    "sosCancelled": "{name} odwołał(a) alarm - to była pomyłka, wszystko w porządku.",
-    "endedOk": "{name} zakończył(a) spotkanie i wszystko w porządku. Dzięki za wsparcie.",
+    "overdue": {
+      "man": "{name} nie odezwał się - potwierdzenie, że wszystko w porządku, miało przyjść do {time}. Spróbuj zadzwonić. Lokalizacja: {url}",
+      "woman": "{name} nie odezwała się - potwierdzenie, że wszystko w porządku, miało przyjść do {time}. Spróbuj zadzwonić. Lokalizacja: {url}",
+      "other": "{name} nie odezwał(a) się - potwierdzenie, że wszystko w porządku, miało przyjść do {time}. Spróbuj zadzwonić. Lokalizacja: {url}"
+    },
+    "backOk": {
+      "man": "{name} odezwał się i potwierdził, że wszystko w porządku.",
+      "woman": "{name} odezwała się i potwierdziła, że wszystko w porządku.",
+      "other": "{name} odezwał(a) się i potwierdził(a), że wszystko w porządku."
+    },
+    "sosCancelled": {
+      "man": "{name} odwołał alarm - to była pomyłka, wszystko w porządku.",
+      "woman": "{name} odwołała alarm - to była pomyłka, wszystko w porządku.",
+      "other": "{name} odwołał(a) alarm - to była pomyłka, wszystko w porządku."
+    },
+    "endedOk": {
+      "man": "{name} zakończył spotkanie i wszystko w porządku. Dzięki za wsparcie.",
+      "woman": "{name} zakończyła spotkanie i wszystko w porządku. Dzięki za wsparcie.",
+      "other": "{name} zakończył(a) spotkanie i wszystko w porządku. Dzięki za wsparcie."
+    },
     "someone": "Bliska ci osoba"
   },
   "share": {
-    "pageTitle": "YesYes – link bezpieczeństwa",
+    "pageTitle": "Link bezpieczeństwa",
     "header": "Link bezpieczeństwa",
     "loading": "Wczytywanie…",
     "call": "Zadzwoń pod {number}",
@@ -265,13 +313,25 @@
     "partnerLead": "Spotkanie z:",
     "okTitle": "{name}: wszystko w porządku",
     "okDetail": "Ostatnie potwierdzenie o {last}. Następne oczekiwane do {next}.",
-    "overdueTitle": "{name} nie odezwał(a) się",
+    "overdueTitle": {
+      "man": "{name} nie odezwał się",
+      "woman": "{name} nie odezwała się",
+      "other": "{name} nie odezwał(a) się"
+    },
     "overdueDetail": "Potwierdzenie miało przyjść do {due}. Spróbuj zadzwonić. Jeśli nikt nie odbiera, zadzwoń pod {number} i podaj adres z mapy.",
     "alarmTitle": "{name} potrzebuje pomocy",
     "alarmDetail": "Alarm o {time}. Zadzwoń pod {number} i podaj lokalizację z mapy oraz miejsce spotkania poniżej.",
     "endedTitle": "Spotkanie się zakończyło",
-    "endedDetail": "{name} potwierdził(a), że wszystko w porządku.",
-    "endedDetailAlarm": "{name} potwierdził(a), że wszystko w porządku. Podczas spotkania włączył się alarm – zapytaj, czy na pewno wszystko gra.",
+    "endedDetail": {
+      "man": "{name} potwierdził, że wszystko w porządku.",
+      "woman": "{name} potwierdziła, że wszystko w porządku.",
+      "other": "{name} potwierdził(a), że wszystko w porządku."
+    },
+    "endedDetailAlarm": {
+      "man": "{name} potwierdził, że wszystko w porządku. Podczas spotkania włączył się alarm – zapytaj, czy na pewno wszystko gra.",
+      "woman": "{name} potwierdziła, że wszystko w porządku. Podczas spotkania włączył się alarm – zapytaj, czy na pewno wszystko gra.",
+      "other": "{name} potwierdził(a), że wszystko w porządku. Podczas spotkania włączył się alarm – zapytaj, czy na pewno wszystko gra."
+    },
     "footer": "Lokalizacja przestanie być widoczna, gdy {name} zakończy spotkanie.",
     "locationJustNow": "Lokalizacja przed chwilą",
     "locationAgo": {

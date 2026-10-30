@@ -74,7 +74,7 @@
     "emailTaken": "Račun s ovim e-mailom već postoji.",
     "wrongCredentials": "Pogrešan e-mail ili lozinka.",
     "banned": "Ovaj račun je zabranjen zbog kršenja pravila.",
-    "notLoggedIn": "Nisi prijavljen/a.",
+    "notLoggedIn": "Prijava je istekla. Prijavi se ponovno.",
     "suspended": "Tvoj račun je suspendiran dok ga ne pregleda moderator.",
     "verifyFirst": "Najprije potvrdi svoj identitet.",
     "badCode": "Kôd nije točan ili je istekao. Pokušaj ponovno ili zatraži novi.",
@@ -183,7 +183,11 @@
     "invalidInterval": "Neispravan interval javljanja."
   },
   "reports": {
-    "feedbackSent": "Povratnu informaciju već si poslao/la."
+    "feedbackSent": {
+      "man": "Povratnu informaciju već si poslao.",
+      "woman": "Povratnu informaciju već si poslala.",
+      "other": "Povratna informacija je već poslana."
+    }
   },
   "verification": {
     "unknown": "Nepoznata provjera.",
@@ -214,7 +218,11 @@
       "body": "Nekome se stvarno sviđaš."
     },
     "message": {
-      "photo": "Poslao/la je fotografiju"
+      "photo": {
+        "man": "Poslao je fotografiju",
+        "woman": "Poslala je fotografiju",
+        "other": "Šalje fotografiju"
+      }
     },
     "agreementComplete": {
       "title": "Dogovor je gotov",
@@ -222,36 +230,76 @@
     },
     "agreementNew": {
       "title": "Novi dogovor",
-      "body": "{name} je započeo/la dogovor. Sad ispuni za što si."
+      "body": {
+        "man": "{name} je započeo dogovor. Sad ispuni za što si.",
+        "woman": "{name} je započela dogovor. Sad ispuni za što si.",
+        "other": "{name} je započeo/la dogovor. Sad ispuni za što si."
+      }
     },
     "agreementChanged": {
       "title": "Dogovor je promijenjen",
-      "body": "{name} je promijenio/la vrijeme, mjesto ili pravila. Ponovno ih potvrdi."
+      "body": {
+        "man": "{name} je promijenio vrijeme, mjesto ili pravila. Ponovno ih potvrdi.",
+        "woman": "{name} je promijenila vrijeme, mjesto ili pravila. Ponovno ih potvrdi.",
+        "other": "{name} je promijenio/la vrijeme, mjesto ili pravila. Ponovno ih potvrdi."
+      }
     },
     "agreementUpdated": {
       "title": "Dogovor je ažuriran",
-      "body": "{name} je ažurirao/la svoje želje."
+      "body": {
+        "man": "{name} je ažurirao svoje želje.",
+        "woman": "{name} je ažurirala svoje želje.",
+        "other": "{name} je ažurirao/la svoje želje."
+      }
     },
     "agreementRevoked": {
       "title": "Dogovor je otkazan",
-      "body": "{name} je otkazao/la dogovor. Susret otpada – i to treba poštovati."
+      "body": {
+        "man": "{name} je otkazao dogovor. Susret otpada – i to treba poštovati.",
+        "woman": "{name} je otkazala dogovor. Susret otpada – i to treba poštovati.",
+        "other": "{name} je otkazao/la dogovor. Susret otpada – i to treba poštovati."
+      }
     },
     "checkInOverdue": {
-      "title": "Propustio/la si javljanje",
-      "body": "{name} je dobio/la upozorenje. Potvrdi da si dobro."
+      "title": {
+        "man": "Propustio si javljanje",
+        "woman": "Propustila si javljanje",
+        "other": "Javljanje je propušteno"
+      },
+      "body": "Osoba od povjerenja ({name}) dobila je upozorenje. Potvrdi da si dobro."
     }
   },
   "sms": {
-    "started": "{name} ima susret i odabrao/la te kao osobu od povjerenja. Ovdje vidiš gdje je i je li dobro: {url}",
+    "started": {
+      "man": "{name} ima susret i odabrao te je kao osobu od povjerenja. Ovdje vidiš gdje je i je li dobro: {url}",
+      "woman": "{name} ima susret i odabrala te je kao osobu od povjerenja. Ovdje vidiš gdje je i je li dobro: {url}",
+      "other": "{name} ima susret i odabrao/la te je kao osobu od povjerenja. Ovdje vidiš gdje je i je li dobro: {url}"
+    },
     "alarm": "UZBUNA: {name} treba pomoć. Lokacija i detalji: {url}",
-    "overdue": "{name} se nije javio/la - trebao/la je potvrditi da je dobro do {time}. Pokušaj nazvati. Lokacija: {url}",
-    "backOk": "{name} se javio/la i potvrdio/la da je dobro.",
-    "sosCancelled": "{name} je otkazao/la uzbunu - bila je greška, dobro je.",
-    "endedOk": "{name} je završio/la susret i dobro je. Hvala što si bio/la tu.",
+    "overdue": {
+      "man": "{name} se nije javio - trebao je potvrditi da je dobro do {time}. Pokušaj nazvati. Lokacija: {url}",
+      "woman": "{name} se nije javila - trebala je potvrditi da je dobro do {time}. Pokušaj nazvati. Lokacija: {url}",
+      "other": "{name} se nije javio/la - potvrda da je dobro trebala je stići do {time}. Pokušaj nazvati. Lokacija: {url}"
+    },
+    "backOk": {
+      "man": "{name} se javio i potvrdio da je dobro.",
+      "woman": "{name} se javila i potvrdila da je dobro.",
+      "other": "Stigla je potvrda: {name} je dobro."
+    },
+    "sosCancelled": {
+      "man": "{name} je otkazao uzbunu - bila je greška, dobro je.",
+      "woman": "{name} je otkazala uzbunu - bila je greška, dobro je.",
+      "other": "{name} je otkazao/la uzbunu - bila je greška, dobro je."
+    },
+    "endedOk": {
+      "man": "{name} je završio susret i dobro je. Hvala na podršci.",
+      "woman": "{name} je završila susret i dobro je. Hvala na podršci.",
+      "other": "{name} je završio/la susret i dobro je. Hvala na podršci."
+    },
     "someone": "Tvoja bliska osoba"
   },
   "share": {
-    "pageTitle": "YesYes – sigurnosna poveznica",
+    "pageTitle": "Sigurnosna poveznica",
     "header": "Sigurnosna poveznica",
     "loading": "Učitavanje…",
     "call": "Nazovi {number}",
@@ -261,13 +309,25 @@
     "partnerLead": "Susret s:",
     "okTitle": "{name} je dobro",
     "okDetail": "Posljednje javljanje u {last}. Sljedeće se očekuje do {next}.",
-    "overdueTitle": "{name} se nije javio/la",
+    "overdueTitle": {
+      "man": "{name} se nije javio",
+      "woman": "{name} se nije javila",
+      "other": "{name} se nije javio/la"
+    },
     "overdueDetail": "Javljanje je trebalo stići do {due}. Pokušaj nazvati. Ako se ne javi, nazovi {number} i reci im adresu s karte.",
     "alarmTitle": "{name} treba pomoć",
     "alarmDetail": "Uzbuna u {time}. Nazovi {number} i reci im lokaciju s karte i mjesto susreta navedeno ispod.",
     "endedTitle": "Susret je završio",
-    "endedDetail": "{name} je potvrdio/la da je dobro.",
-    "endedDetailAlarm": "{name} je potvrdio/la da je dobro. Tijekom susreta pokrenuta je uzbuna – pitaj je li sve u redu.",
+    "endedDetail": {
+      "man": "{name} je potvrdio da je dobro.",
+      "woman": "{name} je potvrdila da je dobro.",
+      "other": "{name} je potvrdio/la da je dobro."
+    },
+    "endedDetailAlarm": {
+      "man": "{name} je potvrdio da je dobro. Tijekom susreta pokrenuta je uzbuna – pitaj je li sve u redu.",
+      "woman": "{name} je potvrdila da je dobro. Tijekom susreta pokrenuta je uzbuna – pitaj je li sve u redu.",
+      "other": "{name} je potvrdio/la da je dobro. Tijekom susreta pokrenuta je uzbuna – pitaj je li sve u redu."
+    },
     "footer": "Lokacija prestaje biti vidljiva čim {name} završi susret.",
     "locationJustNow": "Lokacija upravo sada",
     "locationAgo": {
@@ -295,23 +355,23 @@
   "email": {
     "registerCode": {
       "subject": "Kôd za potvrdu: {code}",
-      "body": "Tvoj kôd za dovršetak registracije je {code}.\n\nVrijedi 15 minuta. Ako nisi zatražio/la registraciju, zanemari ovu poruku."
+      "body": "Tvoj kôd za dovršetak registracije je {code}.\n\nVrijedi 15 minuta. Ako ne znaš za ovu registraciju, zanemari ovu poruku."
     },
     "accountExists": {
       "subject": "Pokušaj registracije",
-      "body": "Netko je upravo pokušao izraditi račun s ovom e-adresom, ali ti već imaš račun.\n\nAko si to bio/la ti, samo se prijavi (ili ponovno postavi lozinku). Ako nisi, ne trebaš ništa poduzeti – tvoj račun ostaje siguran."
+      "body": "Netko je upravo pokušao izraditi račun s ovom e-adresom, ali ti već imaš račun.\n\nAko znaš za to, samo se prijavi (ili ponovno postavi lozinku). Ako ne znaš, ne trebaš ništa poduzeti – tvoj račun ostaje siguran."
     },
     "resetCode": {
       "subject": "Kôd za ponovno postavljanje lozinke: {code}",
-      "body": "Tvoj kôd za ponovno postavljanje lozinke je {code}.\n\nVrijedi 15 minuta. Ako to nisi zatražio/la, zanemari ovu poruku – lozinka ostaje nepromijenjena."
+      "body": "Tvoj kôd za ponovno postavljanje lozinke je {code}.\n\nVrijedi 15 minuta. Ako ne znaš za ovaj zahtjev, zanemari ovu poruku – lozinka ostaje nepromijenjena."
     },
     "newLogin": {
       "subject": "Nova prijava na tvoj račun",
-      "body": "Netko se upravo prijavio na tvoj račun ({device}).\n\nAko to nisi bio/la ti, odmah promijeni lozinku i u sigurnosnim postavkama odjavi ostale uređaje."
+      "body": "Netko se upravo prijavio na tvoj račun ({device}).\n\nAko ne znaš za to, odmah promijeni lozinku i u sigurnosnim postavkama odjavi ostale uređaje."
     },
     "passwordChanged": {
       "subject": "Tvoja lozinka je promijenjena",
-      "body": "Lozinka tvog računa upravo je promijenjena, a ostali uređaji su odjavljeni.\n\nAko to nisi bio/la ti, ponovno postavi lozinku putem „Zaboravljena lozinka“ i javi nam se."
+      "body": "Lozinka tvog računa upravo je promijenjena, a ostali uređaji su odjavljeni.\n\nAko ne znaš za to, ponovno postavi lozinku putem „Zaboravljena lozinka“ i javi nam se."
     },
     "twoFactorOn": {
       "subject": "Potvrda u dva koraka je uključena",
@@ -319,7 +379,7 @@
     },
     "twoFactorOff": {
       "subject": "Potvrda u dva koraka je isključena",
-      "body": "Potvrda u dva koraka isključena je za tvoj račun.\n\nAko to nisi bio/la ti, odmah promijeni lozinku."
+      "body": "Potvrda u dva koraka isključena je za tvoj račun.\n\nAko ne znaš za to, odmah promijeni lozinku."
     }
   }
 }

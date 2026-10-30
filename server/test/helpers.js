@@ -29,6 +29,7 @@ export async function startTestServer({ env = {} } = {}) {
   });
   const base = `http://127.0.0.1:${server.address().port}`;
   config.publicUrl = base;
+  config.shareUrl = base;
 
   async function call(method, path, { token, body, headers = {} } = {}) {
     const res = await fetch(base + path, {

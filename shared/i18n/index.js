@@ -102,6 +102,13 @@ export function parseAcceptLanguage(header) {
 const PLURAL_KEYS = new Set(['zero', 'one', 'two', 'few', 'many', 'other']);
 const isPlural = (v) => v && typeof v === 'object' && 'other' in v && Object.keys(v).every((k) => PLURAL_KEYS.has(k));
 
+// Rod: hodnota { man, woman, other } se vybere podle params.gender ('man' | 'woman', jinak 'other').
+// Jazyky bez rodu (angličtina…) mají obyčejný text. 'other' je i pro nebinární a neznámé.
+const GENDER_KEYS = new Set(['man', 'woman', 'other']);
+export const isGendered = (v) =>
+  v && typeof v === 'object' && 'other' in v && ('man' in v || 'woman' in v) && Object.keys(v).every((k) => GENDER_KEYS.has(k));
+const genderKey = (g) => (g === 'man' || g === 'woman' ? g : 'other');
+
 function lookup(dict, key) {
   let node = dict;
   for (const part of key.split('.')) {
@@ -122,13 +129,16 @@ function pluralCategory(locale, count) {
 /**
  * t('discover.empty') nebo t('likes.count', { count: 3 }).
  * Proměnné ve tvaru {name}. Množné číslo: hodnota je objekt { one, few, many, other } podle CLDR.
+ * Rod: hodnota { man, woman, other } podle params.gender (texty o druhém člověku: t('…', { name, gender })).
  * Chybějící klíč → záložní jazyk → samotný klíč (ať je hned vidět, co chybí).
  */
-export function createTranslator(locale, dict, fallbackDict = {}) {
+export function createTranslator(locale, dict, fallbackDict = {}, { defaultGender } = {}) {
   const resolve = (key, params) => {
     let value = lookup(dict, key);
     if (value === undefined || value === '') value = lookup(fallbackDict, key);
     if (value === undefined) return key;
+    // Bez params.gender platí výchozí rod (v aplikaci rod přihlášeného – texty o sobě: „Zmeškal/a jsi…“).
+    if (isGendered(value)) value = value[genderKey(params?.gender ?? defaultGender?.())] ?? value.other;
     if (isPlural(value)) {
       const count = Number(params?.count ?? 0);
       value = value[pluralCategory(locale, count)] ?? value.other;

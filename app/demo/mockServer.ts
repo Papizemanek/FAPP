@@ -525,10 +525,12 @@ export function shareView(sessionId: number) {
   if (!s) return null;
   const status = shareStatus(s);
   const name = userById(s.userId)?.name ?? '';
-  if (status === 'ended') return { status, name, endedAt: s.endedAt, hadAlarm: !!(s.sosAt || s.silentAlarmAt) };
+  const gender = userById(s.userId)?.gender;
+  if (status === 'ended') return { status, name, gender, endedAt: s.endedAt, hadAlarm: !!(s.sosAt || s.silentAlarmAt) };
   return {
     status,
     name,
+    gender,
     lastCheckInAt: s.lastCheckInAt,
     nextCheckInDue: new Date(due(s)).toISOString(),
     alarmAt: s.sosAt ?? s.silentAlarmAt,
@@ -557,6 +559,7 @@ function sms(s: Safety, text: string) {
 }
 
 const userName = (s: Safety) => userById(s.userId)?.name ?? srv('sms.someone');
+const userGender = (s: Safety) => userById(s.userId)?.gender;
 const time = (iso: string) => new Date(iso).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 
 // Hlídač check-inů – na serveru běží každých 30 s, tady při každém požadavku a každých 5 s.
@@ -567,7 +570,7 @@ function watchdog() {
     s.overdueAlertedAt = nowIso();
     changed = true;
     if (s.sosAt || s.silentAlarmAt) continue;
-    sms(s, srv('sms.overdue', { name: userName(s), time: time(new Date(due(s)).toISOString()), url: shareUrl(s) }));
+    sms(s, srv('sms.overdue', { gender: userGender(s), name: userName(s), time: time(new Date(due(s)).toISOString()), url: shareUrl(s) }));
   }
   // simulovaná poloha telefonu během schůzky
   for (const s of db.safety) {
@@ -1300,7 +1303,7 @@ route('POST', '/matches/:id/safety', (c, [mid]) => {
   };
   db.safety.push(s);
   if (other.demo) later(2500, () => (m.partnerSafety = true));
-  sms(s, srv('sms.started', { name: me.name, url: shareUrl(s) }));
+  sms(s, srv('sms.started', { gender: me.gender, name: me.name, url: shareUrl(s) }));
   return { status: 201, json: safetyView(s) };
 });
 
@@ -1330,7 +1333,7 @@ route('POST', '/safety/:id/checkin', (c, [sid]) => {
   s.overdueAlertedAt = null;
   s.wrongPins = 0;
   if (r === 'duress') raiseSilentAlarm(s);
-  else if (wasAlerted && !s.silentAlarmAt && !s.sosAt) sms(s, srv('sms.backOk', { name: me.name }));
+  else if (wasAlerted && !s.silentAlarmAt && !s.sosAt) sms(s, srv('sms.backOk', { gender: me.gender, name: me.name }));
   return safetyView(s);
 });
 route('POST', '/safety/:id/sos', (c, [sid]) => {
@@ -1352,7 +1355,7 @@ route('POST', '/safety/:id/sos/cancel', (c, [sid]) => {
   } else {
     s.sosAt = null;
     s.lastCheckInAt = nowIso();
-    if (!s.silentAlarmAt) sms(s, srv('sms.sosCancelled', { name: me.name }));
+    if (!s.silentAlarmAt) sms(s, srv('sms.sosCancelled', { gender: me.gender, name: me.name }));
   }
   return safetyView(s);
 });
@@ -1370,7 +1373,7 @@ route('POST', '/safety/:id/end', (c, [sid]) => {
     s.endKind = 'ok';
     s.lat = s.lng = s.battery = null;
     s.locationAt = null;
-    sms(s, srv('sms.endedOk', { name: me.name }));
+    sms(s, srv('sms.endedOk', { gender: me.gender, name: me.name }));
   }
   return safetyView(s);
 });
@@ -1382,11 +1385,14 @@ route('GET', '/feedback/pending', (c) => {
     .filter((a) => a.wasConfirmed && !db.feedback.some((f) => f.agreementId === a.id && f.authorId === me.id))
     .map((a) => ({ a, m: db.matches.find((m) => m.id === a.matchId) }))
     .filter(({ a, m }) => m && (m.a === me.id || m.b === me.id) && db.safety.some((s) => s.agreementId === a.id && s.endedAt))
-    .map(({ a, m }) => ({ agreementId: a.id, matchId: m!.id, partnerName: userById(m!.a === me.id ? m!.b : m!.a)?.name ?? '', meetAt: a.meetAt }));
+    .map(({ a, m }) => {
+      const partner = userById(m!.a === me.id ? m!.b : m!.a);
+      return { agreementId: a.id, matchId: m!.id, partnerName: partner?.name ?? '', partnerGender: partner?.gender, meetAt: a.meetAt };
+    });
 });
 route('POST', '/feedback/:id', (c, [aid]) => {
   const me = requireUser(c, { allowSuspended: true });
-  if (db.feedback.some((f) => f.agreementId === Number(aid) && f.authorId === me.id)) throw new HttpError(409, 'Hodnocení už jsi poslal/a.');
+  if (db.feedback.some((f) => f.agreementId === Number(aid) && f.authorId === me.id)) throw new HttpError(409, srv('reports.feedbackSent', { gender: me.gender }));
   db.feedback.push({ agreementId: Number(aid), authorId: me.id });
   return { status: 201, json: { ok: true } };
 });

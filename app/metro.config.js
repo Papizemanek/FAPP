@@ -12,7 +12,7 @@ if (demoMode || webMode) {
   const demo = (file) => path.join(__dirname, 'demo', file);
   const web = (file) => path.join(__dirname, 'webapp', file);
   const modules = {
-    'react-native-maps': demo('shims/maps.js'),
+    'react-native-maps': webMode ? web('shims/maps.js') : demo('shims/maps.js'),
     'expo-notifications': demo('shims/notifications.js'),
     'expo-screen-capture': demo('shims/screen-capture.js'),
     'expo-local-authentication': demo('shims/local-authentication.js'),

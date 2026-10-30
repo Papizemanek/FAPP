@@ -28,7 +28,11 @@
       "host": "La mine",
       "visit": "La tine",
       "neutral": "Loc neutru",
-      "single": "Singur/ă",
+      "single": {
+        "man": "Singur",
+        "woman": "Singură",
+        "other": "Single"
+      },
       "open": "Relație deschisă",
       "poly": "Poliamor",
       "couple": "Cuplu"
@@ -198,7 +202,12 @@
     "startMeetup": "Începe întâlnirea",
     "revoke": "Anulează acordul",
     "revokeConfirmTitle": "Anulezi acordul?",
-    "revokeConfirmMessage": "Întâlnirea nu mai are loc. Nu trebuie să explici nimic – {name} primește doar o notificare."
+    "revokeConfirmMessage": "Întâlnirea nu mai are loc. Nu trebuie să explici nimic – {name} primește doar o notificare.",
+    "unsetIsNo": {
+      "one": "Ai ales {count} din {total}. Ce nu alegi contează ca nu.",
+      "few": "Ai ales {count} din {total}. Ce nu alegi contează ca nu.",
+      "other": "Ai ales {count} din {total}. Ce nu alegi contează ca nu."
+    }
   },
   "meetup": {
     "title": "Întâlnire · {name}",
@@ -251,7 +260,12 @@
     "pinSubtitleOk": "Că ești bine.",
     "pinSubtitleEnd": "Că întâlnirea s-a încheiat și ești bine.",
     "revokeConfirmTitle": "Anulezi acordul?",
-    "revokeConfirmMessage": "{name} va primi o notificare. Nu trebuie să explici nimic. Modul siguranță rămâne activ până când îl oprești."
+    "revokeConfirmMessage": "{name} va primi o notificare. Nu trebuie să explici nimic. Modul siguranță rămâne activ până când îl oprești.",
+    "meetingAt": "Întâlnire: {when} · {place}",
+    "earlyTitle": "Întâlnirea ta e mai târziu",
+    "earlyMessage": "V-ați înțeles pentru {when}. Dacă activezi acum modul siguranță, {name} primește imediat un SMS, iar check-in-urile încep de acum. Activezi acum?",
+    "earlyConfirm": "Activează acum",
+    "agreementLink": "Acord"
   },
   "feedback": {
     "title": "Cum a fost întâlnirea?",
@@ -294,7 +308,12 @@
     "detailsLabel": "Detalii (opțional)",
     "submit": "Raportează",
     "thanksTitle": "Mulțumim",
-    "thanksMessage": "Am primit raportarea. Nu vă veți mai vedea."
+    "thanksMessage": "Am primit raportarea. Nu vă veți mai vedea.",
+    "blocked": "V-am blocat reciproc – nu vă veți mai vedea și nu vă veți mai putea scrie.",
+    "blockedWithName": "{name} nu te mai poate vedea și nu-ți mai poate scrie.",
+    "nextSteps": "Raportarea e anonimă. Un moderator o verifică, de obicei în 24 de ore, și suspendă sau blochează contul în funcție de gravitate.",
+    "danger": "Dacă ești în pericol, sună la 112.",
+    "backToMessages": "Înapoi la mesaje"
   },
   "chat": {
     "unavailable": "Chatul nu e disponibil",
@@ -312,7 +331,8 @@
     "block": "Blochează",
     "unmatch": "Anulează match-ul",
     "blockConfirmTitle": "Blochezi?",
-    "blockConfirmMessage": "Tu și {name} nu vă veți mai vedea, iar chatul va dispărea."
+    "blockConfirmMessage": "Tu și {name} nu vă veți mai vedea, iar chatul va dispărea.",
+    "emptyHint": "Trimite primul mesaj către {name}. Începe cu ceva ce aveți în comun sau deschide direct acordul."
   },
   "safetySettings": {
     "title": "Siguranță și confidențialitate",
@@ -334,7 +354,8 @@
     "appLockHint": "Face ID, amprentă sau codul telefonului la fiecare deschidere a aplicației.",
     "discreet": "Mod discret",
     "discreetHint": "O pictogramă neutră și notificări fără conținut – nimeni nu-și dă seama ce aplicație e.",
-    "save": "Salvează"
+    "save": "Salvează",
+    "pinsMustDiffer": "PIN-ul de urgență trebuie să fie diferit de PIN-ul obișnuit."
   },
   "tabs": {
     "discover": "Descoperă",
@@ -478,7 +499,11 @@
     },
     "yes": {
       "title": "Da-ul meu",
-      "hint": "Etichetele arată la ce ești deschis/ă, nu ce promiți.",
+      "hint": {
+        "man": "Etichetele arată la ce ești deschis, nu ce promiți.",
+        "woman": "Etichetele arată la ce ești deschisă, nu ce promiți.",
+        "other": "Etichetele arată la ce ai deschidere, nu ce promiți."
+      },
       "footnote": "Îl văd doar cei care au spus și ei da.",
       "matchOnly": "Vizibil după match",
       "upTo": {
@@ -619,7 +644,17 @@
     "codeSent": "Am trimis un cod din 6 cifre la {email}. Dacă ai deja un cont, vei primi în schimb o notificare – doar conectează-te.",
     "code": "Codul din e-mail",
     "confirmCode": "Verifică și creează contul",
-    "resend": "Trimite din nou codul"
+    "resend": "Trimite din nou codul",
+    "missing": {
+      "name": "Completează-ți numele.",
+      "email": "Completează-ți e-mailul.",
+      "password": "Parola trebuie să aibă cel puțin 10 caractere.",
+      "birthdate": "Completează-ți data nașterii.",
+      "gender": "Alege cine ești.",
+      "showMe": "Alege pe cine să-ți arătăm.",
+      "adult": "Confirmă că ai 18 ani sau mai mult.",
+      "rules": "Mai trebuie să accepți regulile."
+    }
   },
   "verify": {
     "title": "Confirmă că ești tu",
@@ -634,7 +669,8 @@
     "devApprove": "Simulează o verificare reușită (mod de test)",
     "retry": "Încearcă din nou",
     "start": "Verifică identitatea",
-    "signOut": "Deconectează-te"
+    "signOut": "Deconectează-te",
+    "continue": "Continuă verificarea"
   },
   "common": {
     "back": "Înapoi",
@@ -650,7 +686,8 @@
     "open": "Deschide",
     "show": "Vezi",
     "confirm": "Confirmă",
-    "errorGeneric": "Ceva n-a mers bine."
+    "errorGeneric": "Ceva n-a mers bine.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} are modul siguranță activat",
@@ -780,5 +817,12 @@
       "signOut": "Deconectează",
       "signOutOthers": "Deconectează toate celelalte dispozitive"
     }
+  },
+  "settings": {
+    "title": "Setări",
+    "search": "Pe cine vreau să văd",
+    "safety": "Siguranță și cont",
+    "plan": "Abonament",
+    "account": "Cont"
   }
 }

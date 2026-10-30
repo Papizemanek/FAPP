@@ -198,7 +198,11 @@
     "startMeetup": "Date starten",
     "revoke": "Afspraak intrekken",
     "revokeConfirmTitle": "Afspraak intrekken?",
-    "revokeConfirmMessage": "De date gaat niet door. Je hoeft niets uit te leggen – {name} krijgt alleen een melding."
+    "revokeConfirmMessage": "De date gaat niet door. Je hoeft niets uit te leggen – {name} krijgt alleen een melding.",
+    "unsetIsNo": {
+      "one": "{count} van {total} gekozen. Alles wat je niet kiest, telt als nee.",
+      "other": "{count} van {total} gekozen. Alles wat je niet kiest, telt als nee."
+    }
   },
   "meetup": {
     "title": "Date · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "Dat alles goed met je is.",
     "pinSubtitleEnd": "Dat de date voorbij is en alles goed met je is.",
     "revokeConfirmTitle": "Afspraak intrekken?",
-    "revokeConfirmMessage": "{name} krijgt een melding. Je hoeft niets uit te leggen. De veiligheidsmodus blijft aan tot je hem beëindigt."
+    "revokeConfirmMessage": "{name} krijgt een melding. Je hoeft niets uit te leggen. De veiligheidsmodus blijft aan tot je hem beëindigt.",
+    "meetingAt": "Date: {when} · {place}",
+    "earlyTitle": "Je date is pas later",
+    "earlyMessage": "Jullie hebben {when} afgesproken. Als je de veiligheidsmodus nu aanzet, krijgt {name} meteen een sms en beginnen de check-ins nu al. Nu aanzetten?",
+    "earlyConfirm": "Nu aanzetten",
+    "agreementLink": "Afspraak"
   },
   "feedback": {
     "title": "Hoe ging de date?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Details (optioneel)",
     "submit": "Melden",
     "thanksTitle": "Bedankt",
-    "thanksMessage": "We hebben je melding ontvangen. Jullie zien elkaar niet meer."
+    "thanksMessage": "We hebben je melding ontvangen. Jullie zien elkaar niet meer.",
+    "blocked": "We hebben die persoon geblokkeerd – jullie kunnen elkaar niet meer zien of berichten sturen.",
+    "blockedWithName": "{name} kan je niet meer zien en je geen berichten meer sturen.",
+    "nextSteps": "Meldingen zijn anoniem. Een moderator bekijkt de melding, meestal binnen 24 uur, en blokkeert het account tijdelijk of definitief, afhankelijk van hoe ernstig het is.",
+    "danger": "Ben je in gevaar? Bel 112.",
+    "backToMessages": "Terug naar berichten"
   },
   "chat": {
     "unavailable": "Chat niet beschikbaar",
@@ -311,7 +325,8 @@
     "block": "Blokkeren",
     "unmatch": "Match opheffen",
     "blockConfirmTitle": "Blokkeren?",
-    "blockConfirmMessage": "Jij en {name} zien elkaar niet meer en de chat verdwijnt."
+    "blockConfirmMessage": "Jij en {name} zien elkaar niet meer en de chat verdwijnt.",
+    "emptyHint": "Stuur {name} als eerste een bericht. Begin met iets wat jullie gemeen hebben, of open meteen de afspraak."
   },
   "safetySettings": {
     "title": "Veiligheid en privacy",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, vingerafdruk of de toegangscode van je telefoon, telkens als je de app opent.",
     "discreet": "Discrete modus",
     "discreetHint": "Een neutraal icoon en meldingen zonder inhoud – niemand ziet welke app het is.",
-    "save": "Opslaan"
+    "save": "Opslaan",
+    "pinsMustDiffer": "Je noodpincode moet anders zijn dan je gewone pincode."
   },
   "tabs": {
     "discover": "Ontdekken",
@@ -607,7 +623,17 @@
     "codeSent": "We hebben een 6-cijferige code naar {email} gestuurd. Heb je al een account? Dan krijg je in plaats daarvan een melding – log gewoon in.",
     "code": "Code uit e-mail",
     "confirmCode": "Verifiëren en account aanmaken",
-    "resend": "Code opnieuw sturen"
+    "resend": "Code opnieuw sturen",
+    "missing": {
+      "name": "Vul je naam in.",
+      "email": "Vul je e-mailadres in.",
+      "password": "Je wachtwoord moet minstens 10 tekens hebben.",
+      "birthdate": "Vul je geboortedatum in.",
+      "gender": "Kies wie je bent.",
+      "showMe": "Kies wie we je moeten laten zien.",
+      "adult": "Bevestig dat je 18 jaar of ouder bent.",
+      "rules": "Je moet de regels nog accepteren."
+    }
   },
   "verify": {
     "title": "Bevestig dat jij het bent",
@@ -622,7 +648,8 @@
     "devApprove": "Geslaagde verificatie simuleren (testmodus)",
     "retry": "Opnieuw proberen",
     "start": "Identiteit verifiëren",
-    "signOut": "Uitloggen"
+    "signOut": "Uitloggen",
+    "continue": "Verificatie voortzetten"
   },
   "common": {
     "back": "Terug",
@@ -638,7 +665,8 @@
     "open": "Openen",
     "show": "Bekijken",
     "confirm": "Bevestigen",
-    "errorGeneric": "Er ging iets mis."
+    "errorGeneric": "Er ging iets mis.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} heeft de veiligheidsmodus aan",
@@ -767,5 +795,12 @@
       "signOut": "Uitloggen",
       "signOutOthers": "Alle andere apparaten uitloggen"
     }
+  },
+  "settings": {
+    "title": "Instellingen",
+    "search": "Wie ik wil zien",
+    "safety": "Veiligheid en account",
+    "plan": "Abonnement",
+    "account": "Account"
   }
 }

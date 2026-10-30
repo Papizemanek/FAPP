@@ -1,10 +1,11 @@
 import * as LocalAuthentication from 'expo-local-authentication';
 import * as ScreenCapture from 'expo-screen-capture';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Alert, AppState, StyleSheet, View } from 'react-native';
+import { AppState, StyleSheet, View } from 'react-native';
 import { Body, Button, Logo, Title } from '@/components/ui';
 import { i18n, useT } from '@/lib/i18n';
 import { api, errorMessage, type SafetySession } from './api';
+import { showNotice } from './notice';
 import { storage } from './storage';
 import { colors } from './theme';
 
@@ -81,9 +82,9 @@ function LockScreen({ onUnlock, signedIn }: { onUnlock: () => void; signedIn: bo
     try {
       await Promise.all(active.map((s) => api('POST', `/safety/${s.id}/sos`)));
       const name = active[0]?.trustedName;
-      Alert.alert(t('appLock.sosSentTitle'), name ? t('appLock.sosSentBody', { name }) : t('appLock.sosSentBodyNoName'));
+      showNotice(t('appLock.sosSentTitle'), name ? t('appLock.sosSentBody', { name }) : t('appLock.sosSentBodyNoName'));
     } catch (err) {
-      Alert.alert(t('appLock.sosFailedTitle'), errorMessage(err));
+      showNotice(t('appLock.sosFailedTitle'), errorMessage(err));
     }
   };
 

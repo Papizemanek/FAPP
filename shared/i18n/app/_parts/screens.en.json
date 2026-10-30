@@ -271,7 +271,17 @@
     "codeSent": "We sent a 6-digit code to {email}. If you already have an account, you'll get a notice instead – just sign in.",
     "code": "Code from email",
     "confirmCode": "Verify and create account",
-    "resend": "Send code again"
+    "resend": "Send code again",
+    "missing": {
+      "name": "Fill in your name.",
+      "email": "Fill in your email.",
+      "password": "Your password needs at least 10 characters.",
+      "birthdate": "Fill in your date of birth.",
+      "gender": "Choose who you are.",
+      "showMe": "Choose who we should show you.",
+      "adult": "Confirm you're 18 or older.",
+      "rules": "We still need you to accept the rules."
+    }
   },
   "verify": {
     "title": "Verify it's you",
@@ -286,7 +296,8 @@
     "devApprove": "Simulate successful verification (test mode)",
     "retry": "Try again",
     "start": "Verify identity",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "continue": "Continue verification"
   },
   "forgot": {
     "title": "Reset password",
@@ -335,5 +346,12 @@
       "signOut": "Sign out",
       "signOutOthers": "Sign out all other devices"
     }
+  },
+  "settings": {
+    "title": "Settings",
+    "search": "Who I want to see",
+    "safety": "Safety and account",
+    "plan": "Subscription",
+    "account": "Account"
   }
 }

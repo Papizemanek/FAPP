@@ -13,7 +13,8 @@
     "open": "Open",
     "show": "View",
     "confirm": "Confirm",
-    "errorGeneric": "Something went wrong."
+    "errorGeneric": "Something went wrong.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} has safety mode on",

@@ -242,16 +242,16 @@
     }
   },
   "sms": {
-    "started": "{name} tiene una cita y te eligió como persona de confianza. Mira dónde está y si está bien: {url}",
+    "started": "{name} tiene un encuentro y te eligió como persona de confianza. Mira dónde está y si está bien: {url}",
     "alarm": "ALERTA: {name} necesita ayuda. Ubicación y detalles: {url}",
     "overdue": "{name} no ha confirmado que está bien; el plazo era {time}. Intenta llamar. Ubicación: {url}",
     "backOk": "{name} hizo check-in y confirmó que está bien.",
     "sosCancelled": "{name} canceló la alerta: fue un error, está bien.",
-    "endedOk": "{name} terminó la cita y está bien. Gracias por estar ahí.",
+    "endedOk": "{name} terminó el encuentro y está bien. Gracias por estar ahí.",
     "someone": "Una persona de tu entorno"
   },
   "share": {
-    "pageTitle": "YesYes – enlace de seguridad",
+    "pageTitle": "Enlace de seguridad",
     "header": "Enlace de seguridad",
     "loading": "Cargando…",
     "call": "Llamar al {number}",
@@ -267,7 +267,7 @@
     "alarmDetail": "Alerta: {time}. Llama al {number} y da la ubicación del mapa y el lugar de la cita que aparece abajo.",
     "endedTitle": "La cita terminó",
     "endedDetail": "{name} confirmó que está bien.",
-    "endedDetailAlarm": "{name} confirmó que está bien. Durante la cita se activó una alerta: pregunta si todo va bien.",
+    "endedDetailAlarm": "{name} confirmó que está bien. Durante el encuentro se activó una alerta: pregunta si todo va bien.",
     "footer": "La ubicación dejará de verse cuando {name} termine la cita.",
     "locationJustNow": "Ubicación ahora mismo",
     "locationAgo": {

@@ -28,7 +28,8 @@ function startOfDay(d: Date) {
 }
 
 type Form = {
-  wishes: Record<Activity, Wish>;
+  // Nevybraná aktivita = ne. Nic není předvybrané, ať formulář nevypadá jako už vyplněný.
+  wishes: Partial<Record<Activity, Wish>>;
   note: string;
   dayOffset: number;
   time: string;
@@ -39,10 +40,8 @@ type Form = {
   publicFirst: boolean;
 };
 
-const noWishes = () => Object.fromEntries(activityKeys.map((k) => [k, 'no'])) as Record<Activity, Wish>;
-
 function formFrom(a: Agreement | null): Form {
-  const base: Form = { wishes: noWishes(), note: '', dayOffset: 0, time: '21:00', place: '', safeword: '', condom: true, sober: true, publicFirst: false };
+  const base: Form = { wishes: {}, note: '', dayOffset: 0, time: '21:00', place: '', safeword: '', condom: true, sober: true, publicFirst: false };
   if (!a) return base;
   const meet = new Date(a.meetAt);
   return {
@@ -100,6 +99,7 @@ export default function AgreementScreen() {
 
   const agreement = detail?.agreement ?? null;
   const partnerName = detail?.partner.name ?? '';
+  const partnerGender = detail?.partner.gender;
   const editable = !!agreement && ['pending', 'confirmed'].includes(agreement.status);
 
   const update = (patch: Partial<Form>, logistics = false) => {
@@ -169,7 +169,7 @@ export default function AgreementScreen() {
       return blockedByCooldown ? (
         <Banner
           tone="alarm"
-          title={t('agreement.revokedByPartnerTitle', { name: partnerName })}
+          title={t('agreement.revokedByPartnerTitle', { name: partnerName, gender: partnerGender })}
           subtitle={t('agreement.revokedByPartnerSubtitle', { name: partnerName })}
         />
       ) : (
@@ -184,10 +184,10 @@ export default function AgreementScreen() {
       return <Banner tone="safe" icon="shieldCheck" title={t('agreement.confirmedTitle')} subtitle={t('agreement.confirmedSubtitle')} />;
     }
     if (agreement?.confirmedByMe) {
-      return <Banner tone="warn" title={t('agreement.myPartDoneTitle')} subtitle={t('agreement.myPartDoneSubtitle', { name: partnerName })} />;
+      return <Banner tone="warn" title={t('agreement.myPartDoneTitle')} subtitle={t('agreement.myPartDoneSubtitle', { name: partnerName, gender: partnerGender })} />;
     }
     if (agreement?.partnerFilled) {
-      return <Banner tone="warn" title={t('agreement.partnerFilledTitle', { name: partnerName })} subtitle={t('agreement.partnerFilledSubtitle')} />;
+      return <Banner tone="warn" title={t('agreement.partnerFilledTitle', { name: partnerName, gender: partnerGender })} subtitle={t('agreement.partnerFilledSubtitle')} />;
     }
     return <Banner tone="warn" title={t('agreement.fillTitle')} subtitle={t('agreement.fillSubtitle')} />;
   })();
@@ -246,6 +246,9 @@ export default function AgreementScreen() {
           <View style={{ gap: 10 }}>
             <Label>{t('agreement.wishesLabel')}</Label>
             <Text style={s.hint}>{partnerName ? t('agreement.wishesHint', { name: partnerName }) : t('agreement.wishesHintNoName')}</Text>
+            <Text style={s.hint}>
+              {t('agreement.unsetIsNo', { count: activityKeys.filter((a) => form.wishes[a]).length, total: activityKeys.length })}
+            </Text>
             {activityKeys.map((a) => (
               <View key={a} style={s.wishRow}>
                 <Text style={s.wishLabel}>{t(`labels.activities.${a}`)}</Text>

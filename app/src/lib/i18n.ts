@@ -21,12 +21,16 @@ const load = (code: string) => {
 const fallback = load(FALLBACK_LOCALE);
 let locale = deviceLocale();
 let override: string | null = null;
-let translate: Translate = createTranslator(locale, load(locale), fallback);
+// Rod přihlášeného – texty o sobě („Zmeškal/a jsi check-in“) se podle něj skloňují. Texty o druhém
+// člověku dostávají jeho rod v parametru gender.
+let selfGender: string | null = null;
+const options = { defaultGender: () => selfGender };
+let translate: Translate = createTranslator(locale, load(locale), fallback, options);
 const listeners = new Set<() => void>();
 
 function apply(code: string) {
   locale = code;
-  translate = createTranslator(code, load(code), code === FALLBACK_LOCALE ? {} : fallback);
+  translate = createTranslator(code, load(code), code === FALLBACK_LOCALE ? {} : fallback, options);
   // Zrcadlové rozložení (arabština, hebrejština, urdština) se projeví po dalším spuštění aplikace.
   I18nManager.allowRTL(true);
   if (I18nManager.isRTL !== isRTL(code)) I18nManager.forceRTL(isRTL(code));
@@ -55,6 +59,14 @@ export const i18n = {
       override = saved;
       if (saved !== locale) apply(saved);
     }
+  },
+  /** Rod přihlášeného (po přihlášení a změně profilu). */
+  setSelfGender(gender: string | null) {
+    if (gender === selfGender) return;
+    selfGender = gender;
+    // nová funkce, ať se komponenty s useT překreslí
+    translate = createTranslator(locale, load(locale), locale === FALLBACK_LOCALE ? {} : fallback, options);
+    listeners.forEach((fn) => fn());
   },
   /** Jazyk pro formátování čísel a dat (Intl). */
   get intlLocale() {

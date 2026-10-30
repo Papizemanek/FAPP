@@ -198,7 +198,12 @@
     "startMeetup": "Lancer le rendez-vous",
     "revoke": "Annuler l'accord",
     "revokeConfirmTitle": "Annuler l'accord ?",
-    "revokeConfirmMessage": "Le rendez-vous n'aura pas lieu. Tu n'as rien à expliquer – {name} reçoit juste une notification."
+    "revokeConfirmMessage": "Le rendez-vous n'aura pas lieu. Tu n'as rien à expliquer – {name} reçoit juste une notification.",
+    "unsetIsNo": {
+      "one": "{count} sur {total} choisi. Tout ce que tu ne choisis pas compte comme un non.",
+      "many": "{count} sur {total} choisis. Tout ce que tu ne choisis pas compte comme un non.",
+      "other": "{count} sur {total} choisis. Tout ce que tu ne choisis pas compte comme un non."
+    }
   },
   "meetup": {
     "title": "Rendez-vous · {name}",
@@ -251,7 +256,12 @@
     "pinSubtitleOk": "Que tu vas bien.",
     "pinSubtitleEnd": "Que le rendez-vous est terminé et que tu vas bien.",
     "revokeConfirmTitle": "Annuler l'accord ?",
-    "revokeConfirmMessage": "{name} recevra une notification. Tu n'as rien à expliquer. Le mode sécurité reste actif jusqu'à ce que tu y mettes fin."
+    "revokeConfirmMessage": "{name} recevra une notification. Tu n'as rien à expliquer. Le mode sécurité reste actif jusqu'à ce que tu y mettes fin.",
+    "meetingAt": "Rendez-vous : {when} · {place}",
+    "earlyTitle": "Ton rendez-vous est plus tard",
+    "earlyMessage": "Vous avez convenu de {when}. Si tu actives le mode sécurité maintenant, {name} reçoit tout de suite un SMS et les check-ins commencent dès maintenant. L'activer maintenant ?",
+    "earlyConfirm": "Activer maintenant",
+    "agreementLink": "Accord"
   },
   "feedback": {
     "title": "Comment s'est passé le rendez-vous ?",
@@ -294,7 +304,12 @@
     "detailsLabel": "Détails (facultatif)",
     "submit": "Signaler",
     "thanksTitle": "Merci",
-    "thanksMessage": "Nous avons bien reçu ton signalement. Vous ne vous verrez plus."
+    "thanksMessage": "Nous avons bien reçu ton signalement. Vous ne vous verrez plus.",
+    "blocked": "Nous avons bloqué cette personne – vous ne pourrez plus vous voir ni vous écrire.",
+    "blockedWithName": "{name} ne peut plus te voir ni t'écrire.",
+    "nextSteps": "Les signalements sont anonymes. L'équipe de modération l'examine, généralement sous 24 heures, et suspend ou bannit le compte selon la gravité.",
+    "danger": "Si tu es en danger, appelle le 112.",
+    "backToMessages": "Retour aux messages"
   },
   "chat": {
     "unavailable": "Le chat n'est pas disponible",
@@ -312,7 +327,8 @@
     "block": "Bloquer",
     "unmatch": "Annuler le match",
     "blockConfirmTitle": "Bloquer ?",
-    "blockConfirmMessage": "{name} et toi ne vous verrez plus, et la conversation disparaîtra."
+    "blockConfirmMessage": "{name} et toi ne vous verrez plus, et la conversation disparaîtra.",
+    "emptyHint": "Écris en premier à {name}. Commence par un point commun ou ouvre directement l'accord."
   },
   "safetySettings": {
     "title": "Sécurité et confidentialité",
@@ -334,7 +350,8 @@
     "appLockHint": "Face ID, empreinte digitale ou code du téléphone à chaque ouverture de l'appli.",
     "discreet": "Mode discret",
     "discreetHint": "Une icône neutre et des notifications sans contenu – personne ne peut deviner de quelle appli il s'agit.",
-    "save": "Enregistrer"
+    "save": "Enregistrer",
+    "pinsMustDiffer": "Ton PIN de détresse doit être différent de ton PIN habituel."
   },
   "tabs": {
     "discover": "Découvrir",
@@ -478,7 +495,11 @@
     },
     "yes": {
       "title": "Mes oui",
-      "hint": "Les tags montrent ce à quoi tu es ouvert·e, pas ce que tu promets.",
+      "hint": {
+        "man": "Les tags montrent ce à quoi tu es ouvert, pas ce que tu promets.",
+        "woman": "Les tags montrent ce à quoi tu es ouverte, pas ce que tu promets.",
+        "other": "Les tags montrent ce à quoi tu es ouvert·e, pas ce que tu promets."
+      },
       "footnote": "Seules les personnes qui ont aussi dit oui le verront.",
       "matchOnly": "Visible après un match",
       "upTo": {
@@ -619,7 +640,17 @@
     "codeSent": "Nous avons envoyé un code à 6 chiffres à {email}. Si tu as déjà un compte, tu recevras plutôt un message d’information – connecte-toi simplement.",
     "code": "Code reçu par e-mail",
     "confirmCode": "Vérifier et créer le compte",
-    "resend": "Renvoyer le code"
+    "resend": "Renvoyer le code",
+    "missing": {
+      "name": "Indique ton prénom.",
+      "email": "Indique ton courriel.",
+      "password": "Ton mot de passe doit contenir au moins 10 caractères.",
+      "birthdate": "Indique ta date de naissance.",
+      "gender": "Choisis qui tu es.",
+      "showMe": "Choisis qui on doit te montrer.",
+      "adult": "Confirme que tu as 18 ans ou plus.",
+      "rules": "Il nous faut encore ton accord sur les règles."
+    }
   },
   "verify": {
     "title": "Vérifie que c'est bien toi",
@@ -634,7 +665,8 @@
     "devApprove": "Simuler une vérification réussie (mode test)",
     "retry": "Réessayer",
     "start": "Vérifier mon identité",
-    "signOut": "Se déconnecter"
+    "signOut": "Se déconnecter",
+    "continue": "Continuer la vérification"
   },
   "common": {
     "back": "Retour",
@@ -650,7 +682,8 @@
     "open": "Ouvrir",
     "show": "Voir",
     "confirm": "Confirmer",
-    "errorGeneric": "Une erreur s'est produite."
+    "errorGeneric": "Une erreur s'est produite.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} a activé le mode sécurité",
@@ -780,5 +813,12 @@
       "signOut": "Déconnecter",
       "signOutOthers": "Déconnecter tous les autres appareils"
     }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "search": "Qui je veux voir",
+    "safety": "Sécurité et compte",
+    "plan": "Abonnement",
+    "account": "Compte"
   }
 }

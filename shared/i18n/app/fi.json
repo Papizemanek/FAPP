@@ -198,7 +198,11 @@
     "startMeetup": "Aloita treffit",
     "revoke": "Peru sopimus",
     "revokeConfirmTitle": "Perutaanko sopimus?",
-    "revokeConfirmMessage": "Treffit peruuntuvat. Sinun ei tarvitse selittää mitään – {name} saa vain ilmoituksen."
+    "revokeConfirmMessage": "Treffit peruuntuvat. Sinun ei tarvitse selittää mitään – {name} saa vain ilmoituksen.",
+    "unsetIsNo": {
+      "one": "Valittu {count}/{total}. Kaikki, mitä et valitse, tarkoittaa ei.",
+      "other": "Valittu {count}/{total}. Kaikki, mitä et valitse, tarkoittaa ei."
+    }
   },
   "meetup": {
     "title": "Treffit · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "Että olet kunnossa.",
     "pinSubtitleEnd": "Että treffit ovat ohi ja olet kunnossa.",
     "revokeConfirmTitle": "Perutaanko sopimus?",
-    "revokeConfirmMessage": "{name} saa ilmoituksen. Sinun ei tarvitse selittää mitään. Turvatila on päällä, kunnes lopetat sen."
+    "revokeConfirmMessage": "{name} saa ilmoituksen. Sinun ei tarvitse selittää mitään. Turvatila on päällä, kunnes lopetat sen.",
+    "meetingAt": "Treffit: {when} · {place}",
+    "earlyTitle": "Treffinne ovat myöhemmin",
+    "earlyMessage": "Sovitte ajaksi {when}. Jos laitat turvatilan päälle nyt, {name} saa heti tekstiviestin ja kuittaukset alkavat nyt. Laitetaanko päälle nyt?",
+    "earlyConfirm": "Laita päälle nyt",
+    "agreementLink": "Sopimus"
   },
   "feedback": {
     "title": "Miten treffit menivät?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Lisätiedot (valinnainen)",
     "submit": "Ilmoita",
     "thanksTitle": "Kiitos",
-    "thanksMessage": "Olemme vastaanottaneet ilmoituksesi. Ette enää näe toisianne."
+    "thanksMessage": "Olemme vastaanottaneet ilmoituksesi. Ette enää näe toisianne.",
+    "blocked": "Estimme hänet – ette enää näe toisianne ettekä voi lähettää viestejä toisillenne.",
+    "blockedWithName": "{name} ei voi enää nähdä sinua eikä lähettää sinulle viestejä.",
+    "nextSteps": "Ilmoitukset ovat nimettömiä. Moderaattori käsittelee ilmoituksen yleensä 24 tunnin kuluessa ja jäädyttää tai sulkee tilin tilanteen vakavuuden mukaan.",
+    "danger": "Jos olet vaarassa, soita 112.",
+    "backToMessages": "Takaisin viesteihin"
   },
   "chat": {
     "unavailable": "Chat ei ole käytettävissä",
@@ -311,7 +325,8 @@
     "block": "Estä",
     "unmatch": "Pura match",
     "blockConfirmTitle": "Estetäänkö?",
-    "blockConfirmMessage": "Sinä ja {name} ette enää näe toisianne, ja chat katoaa."
+    "blockConfirmMessage": "Sinä ja {name} ette enää näe toisianne, ja chat katoaa.",
+    "emptyHint": "Kirjoita käyttäjälle {name} ensin. Aloita jostain yhteisestä tai avaa suoraan sopimus."
   },
   "safetySettings": {
     "title": "Turvallisuus ja yksityisyys",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, sormenjälki tai puhelimen pääsykoodi aina, kun avaat sovelluksen.",
     "discreet": "Huomaamaton tila",
     "discreetHint": "Neutraali kuvake ja ilmoitukset ilman sisältöä – kukaan ei tiedä, mikä sovellus on kyseessä.",
-    "save": "Tallenna"
+    "save": "Tallenna",
+    "pinsMustDiffer": "Hätä-PIN-koodin on oltava eri kuin tavallinen PIN-koodisi."
   },
   "tabs": {
     "discover": "Löydä",
@@ -607,7 +623,17 @@
     "codeSent": "Lähetimme 6-numeroisen koodin osoitteeseen {email}. Jos sinulla on jo tili, saat sen sijaan ilmoituksen – kirjaudu silloin vain sisään.",
     "code": "Koodi sähköpostista",
     "confirmCode": "Vahvista ja luo tili",
-    "resend": "Lähetä koodi uudelleen"
+    "resend": "Lähetä koodi uudelleen",
+    "missing": {
+      "name": "Täytä nimesi.",
+      "email": "Täytä sähköpostiosoitteesi.",
+      "password": "Salasanassa on oltava vähintään 10 merkkiä.",
+      "birthdate": "Täytä syntymäaikasi.",
+      "gender": "Valitse, kuka olet.",
+      "showMe": "Valitse, keitä sinulle näytetään.",
+      "adult": "Vahvista, että olet vähintään 18-vuotias.",
+      "rules": "Tarvitsemme vielä hyväksyntäsi säännöille."
+    }
   },
   "verify": {
     "title": "Vahvista, että se olet sinä",
@@ -622,7 +648,8 @@
     "devApprove": "Simuloi onnistunut vahvistus (testitila)",
     "retry": "Yritä uudelleen",
     "start": "Vahvista henkilöllisyys",
-    "signOut": "Kirjaudu ulos"
+    "signOut": "Kirjaudu ulos",
+    "continue": "Jatka vahvistusta"
   },
   "common": {
     "back": "Takaisin",
@@ -638,7 +665,8 @@
     "open": "Avaa",
     "show": "Näytä",
     "confirm": "Vahvista",
-    "errorGeneric": "Jokin meni pieleen."
+    "errorGeneric": "Jokin meni pieleen.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} käyttää turvatilaa",
@@ -767,5 +795,12 @@
       "signOut": "Kirjaa ulos",
       "signOutOthers": "Kirjaa ulos kaikki muut laitteet"
     }
+  },
+  "settings": {
+    "title": "Asetukset",
+    "search": "Keitä haluan nähdä",
+    "safety": "Turvallisuus ja tili",
+    "plan": "Tilaus",
+    "account": "Tili"
   }
 }

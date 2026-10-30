@@ -158,12 +158,29 @@ export function Field({ label, hint, ...props }: TextInputProps & { label: strin
 }
 
 /** Jednorázový kód (z e-mailu nebo autentizační aplikace). allowRecovery = i záložní kód „xxxxx-xxxxx“. */
-export function CodeField({ label, value, onChangeText, allowRecovery = false }: { label: string; value: string; onChangeText: (v: string) => void; allowRecovery?: boolean }) {
+export function CodeField({
+  label,
+  value,
+  onChangeText,
+  allowRecovery = false,
+  onComplete,
+}: {
+  label: string;
+  value: string;
+  onChangeText: (v: string) => void;
+  allowRecovery?: boolean;
+  /** Zavolá se, jakmile je zadaných 6 číslic – kód se odešle sám. */
+  onComplete?: (code: string) => void;
+}) {
   return (
     <Field
       label={label}
       value={value}
-      onChangeText={(v) => onChangeText(allowRecovery ? v.replace(/[^0-9a-zA-Z-]/g, '').slice(0, 11) : v.replace(/\D/g, '').slice(0, 6))}
+      onChangeText={(v) => {
+        const next = allowRecovery ? v.replace(/[^0-9a-zA-Z-]/g, '').slice(0, 11) : v.replace(/\D/g, '').slice(0, 6);
+        onChangeText(next);
+        if (onComplete && /^\d{6}$/.test(next) && next !== value) onComplete(next);
+      }}
       keyboardType={allowRecovery ? 'default' : 'number-pad'}
       autoCapitalize="none"
       autoCorrect={false}

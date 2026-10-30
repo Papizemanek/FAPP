@@ -28,7 +28,11 @@
       "host": "אצלי",
       "visit": "אצלך",
       "neutral": "מקום ניטרלי",
-      "single": "רווק/ה",
+      "single": {
+        "man": "רווק",
+        "woman": "רווקה",
+        "other": "רווק/ה"
+      },
       "open": "מערכת יחסים פתוחה",
       "poly": "פוליאמוריה",
       "couple": "זוג"
@@ -63,9 +67,17 @@
       "other": "אחר"
     },
     "feedbackReasons": {
-      "consent": "לא כיבד/ה גבולות או \"די\"",
+      "consent": {
+        "man": "לא כיבד גבולות או \"די\"",
+        "woman": "לא כיבדה גבולות או \"די\"",
+        "other": "לא כיבד/ה גבולות או \"די\""
+      },
       "safety": "הרגשתי בסכנה",
-      "fake": "לא נראה/תה כמו בתמונות",
+      "fake": {
+        "man": "לא נראה כמו בתמונות",
+        "woman": "לא נראתה כמו בתמונות",
+        "other": "לא נראה/תה כמו בתמונות"
+      },
       "other": "משהו אחר"
     },
     "plans": {
@@ -151,7 +163,11 @@
     "title": "תיאום",
     "titleWithName": "תיאום · {name}",
     "timeFormatError": "הזינו שעה בפורמט HH:MM, למשל 21:00.",
-    "revokedByPartnerTitle": "{name} ביטל/ה את התיאום",
+    "revokedByPartnerTitle": {
+      "man": "{name} ביטל את התיאום",
+      "woman": "{name} ביטלה את התיאום",
+      "other": "{name} ביטל/ה את התיאום"
+    },
     "revokedByPartnerSubtitle": "עכשיו רק {name} יכול/ה לפתוח תיאום חדש.",
     "revokedTitle": "התיאום בוטל",
     "revokedSubtitle": "אפשר לפתוח תיאום חדש.",
@@ -162,8 +178,16 @@
     "confirmedTitle": "שניכם מילאתם את התיאום",
     "confirmedSubtitle": "במקום, כל אחד מכם יכול לשנות את דעתו בכל רגע.",
     "myPartDoneTitle": "החלק שלכם מוכן",
-    "myPartDoneSubtitle": "{name} עוד לא מילא/ה או אישר/ה.",
-    "partnerFilledTitle": "{name} מילא/ה את החלק שלו/ה",
+    "myPartDoneSubtitle": {
+      "man": "{name} עוד לא מילא או אישר.",
+      "woman": "{name} עוד לא מילאה או אישרה.",
+      "other": "{name} עוד לא מילא/ה או אישר/ה."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} מילא את החלק שלו",
+      "woman": "{name} מילאה את החלק שלה",
+      "other": "{name} מילא/ה את החלק שלו/ה"
+    },
     "partnerFilledSubtitle": "מלאו את שלכם – תראו רק את מה ששניכם מסכימים עליו.",
     "fillTitle": "מלאו את החלק שלכם",
     "fillSubtitle": "תראו רק את מה ששניכם מסכימים עליו.",
@@ -198,7 +222,12 @@
     "startMeetup": "התחלת מפגש",
     "revoke": "ביטול התיאום",
     "revokeConfirmTitle": "לבטל את התיאום?",
-    "revokeConfirmMessage": "המפגש לא יתקיים. אין צורך להסביר כלום – ל{name} תישלח רק הודעה."
+    "revokeConfirmMessage": "המפגש לא יתקיים. אין צורך להסביר כלום – ל{name} תישלח רק הודעה.",
+    "unsetIsNo": {
+      "one": "נבחר {count} מתוך {total}. מה שלא תבחרו נחשב כ\"לא\".",
+      "two": "נבחרו {count} מתוך {total}. מה שלא תבחרו נחשב כ\"לא\".",
+      "other": "נבחרו {count} מתוך {total}. מה שלא תבחרו נחשב כ\"לא\"."
+    }
   },
   "meetup": {
     "title": "מפגש · {name}",
@@ -251,7 +280,12 @@
     "pinSubtitleOk": "שאתם בסדר.",
     "pinSubtitleEnd": "שהמפגש הסתיים ואתם בסדר.",
     "revokeConfirmTitle": "לבטל את התיאום?",
-    "revokeConfirmMessage": "ל{name} תישלח הודעה. אין צורך להסביר כלום. מצב הבטיחות ימשיך לפעול עד שתסיימו אותו."
+    "revokeConfirmMessage": "ל{name} תישלח הודעה. אין צורך להסביר כלום. מצב הבטיחות ימשיך לפעול עד שתסיימו אותו.",
+    "meetingAt": "מפגש: {when} · {place}",
+    "earlyTitle": "המפגש שלכם מאוחר יותר",
+    "earlyMessage": "המפגש נקבע ל{when}. אם תפעילו עכשיו את מצב הבטיחות, ל{name} תישלח מיד הודעת SMS והצ'ק-אין יתחיל כבר עכשיו. להפעיל עכשיו?",
+    "earlyConfirm": "להפעיל עכשיו",
+    "agreementLink": "תיאום"
   },
   "feedback": {
     "title": "איך היה המפגש?",
@@ -294,7 +328,12 @@
     "detailsLabel": "פרטים (לא חובה)",
     "submit": "דיווח",
     "thanksTitle": "תודה",
-    "thanksMessage": "קיבלנו את הדיווח שלכם. לא תראו יותר זה את זה."
+    "thanksMessage": "קיבלנו את הדיווח שלכם. לא תראו יותר זה את זה.",
+    "blocked": "חסמנו אתכם זה מזה – לא תוכלו יותר לראות זה את זה או לשלוח הודעות.",
+    "blockedWithName": "ל{name} כבר אין אפשרות לראות אתכם או לשלוח לכם הודעות.",
+    "nextSteps": "הדיווח אנונימי. צוות המודרציה בודק אותו, בדרך כלל תוך 24 שעות, ולפי החומרה משעה או חוסם את החשבון.",
+    "danger": "אם אתם בסכנה, התקשרו ל-112.",
+    "backToMessages": "חזרה להודעות"
   },
   "chat": {
     "unavailable": "הצ'אט לא זמין",
@@ -312,7 +351,8 @@
     "block": "חסימה",
     "unmatch": "ביטול התאמה",
     "blockConfirmTitle": "לחסום?",
-    "blockConfirmMessage": "אתם ו{name} לא תראו יותר זה את זה, והצ'אט ייעלם."
+    "blockConfirmMessage": "אתם ו{name} לא תראו יותר זה את זה, והצ'אט ייעלם.",
+    "emptyHint": "שלחו ל{name} הודעה ראשונה. אפשר להתחיל ממשהו משותף, או לפתוח ישר את התיאום."
   },
   "safetySettings": {
     "title": "בטיחות ופרטיות",
@@ -334,7 +374,8 @@
     "appLockHint": "Face ID, טביעת אצבע או קוד הטלפון בכל פתיחה של האפליקציה.",
     "discreet": "מצב דיסקרטי",
     "discreetHint": "סמל ניטרלי והתראות בלי תוכן – אף אחד לא יבין איזו אפליקציה זו.",
-    "save": "שמירה"
+    "save": "שמירה",
+    "pinsMustDiffer": "קוד המצוקה חייב להיות שונה מקוד ה-PIN הרגיל."
   },
   "tabs": {
     "discover": "גילוי",
@@ -478,7 +519,11 @@
     },
     "yes": {
       "title": "הכן שלי",
-      "hint": "התגיות מראות למה את/ה פתוח/ה, לא מה את/ה מבטיח/ה.",
+      "hint": {
+        "man": "התגיות מראות למה אתה פתוח, לא מה אתה מבטיח.",
+        "woman": "התגיות מראות למה את פתוחה, לא מה את מבטיחה.",
+        "other": "התגיות מראות למה אתם פתוחים, לא מה אתם מבטיחים."
+      },
       "footnote": "רק מי שגם אמר/ה כן יראה את זה.",
       "matchOnly": "גלוי אחרי מאץ'",
       "upTo": {
@@ -619,7 +664,17 @@
     "codeSent": "שלחנו קוד בן 6 ספרות אל {email}. אם כבר יש לך חשבון אצלנו, תגיע במקום זאת הודעה – פשוט להתחבר.",
     "code": "הקוד מהמייל",
     "confirmCode": "אימות ויצירת חשבון",
-    "resend": "שליחת הקוד שוב"
+    "resend": "שליחת הקוד שוב",
+    "missing": {
+      "name": "מלאו את השם.",
+      "email": "מלאו את כתובת המייל.",
+      "password": "הסיסמה צריכה להכיל לפחות 10 תווים.",
+      "birthdate": "מלאו את תאריך הלידה.",
+      "gender": "בחרו מי אתם.",
+      "showMe": "בחרו את מי להציג לכם.",
+      "adult": "אשרו שמלאו לכם 18 שנים לפחות.",
+      "rules": "עוד צריך לאשר את הכללים."
+    }
   },
   "verify": {
     "title": "אמתו שזה אתם",
@@ -634,7 +689,8 @@
     "devApprove": "הדמיית אימות מוצלח (מצב בדיקה)",
     "retry": "לנסות שוב",
     "start": "אימות זהות",
-    "signOut": "יציאה"
+    "signOut": "יציאה",
+    "continue": "להמשיך באימות"
   },
   "common": {
     "back": "חזרה",
@@ -650,7 +706,8 @@
     "open": "פתיחה",
     "show": "הצגה",
     "confirm": "אישור",
-    "errorGeneric": "משהו השתבש."
+    "errorGeneric": "משהו השתבש.",
+    "ok": "אישור"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "ל{name} יש מצב בטיחות פעיל",
@@ -661,16 +718,28 @@
     "missingSubtitle": "כל אחד ממלא על מה בא לו – תראו רק את החפיפה.",
     "fill": "מילוי",
     "revokedByMeTitle": "ביטלתם את התיאום",
-    "revokedByPartnerTitle": "{name} ביטל/ה את התיאום",
+    "revokedByPartnerTitle": {
+      "man": "{name} ביטל את התיאום",
+      "woman": "{name} ביטלה את התיאום",
+      "other": "{name} ביטל/ה את התיאום"
+    },
     "revokedSubtitle": "המפגש לא יתקיים.",
     "revokedCooldownSubtitle": "המפגש לא יתקיים. רק {name} יכול/ה לפתוח תיאום חדש.",
     "newAgreement": "תיאום חדש",
     "confirmedTitle": "התיאום הושלם",
     "confirmedSubtitle": "במקום, כל אחד מכם יכול לשנות את דעתו בכל רגע.",
-    "partnerFilledTitle": "{name} מילא/ה את התיאום",
+    "partnerFilledTitle": {
+      "man": "{name} מילא את התיאום",
+      "woman": "{name} מילאה את התיאום",
+      "other": "{name} מילא/ה את התיאום"
+    },
     "waitingForYouTitle": "התיאום מחכה לכם",
     "fillYoursSubtitle": "מלאו על מה בא לכם – תראו רק את החפיפה.",
-    "partnerPendingTitle": "{name} עוד לא מילא/ה",
+    "partnerPendingTitle": {
+      "man": "{name} עוד לא מילא",
+      "woman": "{name} עוד לא מילאה",
+      "other": "{name} עוד לא מילא/ה"
+    },
     "partnerPendingSubtitle": "התיאום יושלם אחרי ששניכם תמלאו אותו."
   },
   "fakeCall": {
@@ -780,5 +849,12 @@
       "signOut": "ניתוק",
       "signOutOthers": "ניתוק כל שאר המכשירים"
     }
+  },
+  "settings": {
+    "title": "הגדרות",
+    "search": "את מי אני רוצה לראות",
+    "safety": "בטיחות וחשבון",
+    "plan": "מינוי",
+    "account": "חשבון"
   }
 }

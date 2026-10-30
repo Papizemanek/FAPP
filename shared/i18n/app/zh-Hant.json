@@ -198,7 +198,10 @@
     "startMeetup": "開始約會",
     "revoke": "取消約定",
     "revokeConfirmTitle": "要取消約定嗎？",
-    "revokeConfirmMessage": "約會將取消。你不需要解釋任何事——{name} 只會收到一則通知。"
+    "revokeConfirmMessage": "約會將取消。你不需要解釋任何事——{name} 只會收到一則通知。",
+    "unsetIsNo": {
+      "other": "已選 {count} 項，共 {total} 項。沒選的都算作「不」。"
+    }
   },
   "meetup": {
     "title": "約會 · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "確認你沒事。",
     "pinSubtitleEnd": "確認約會已結束而且你沒事。",
     "revokeConfirmTitle": "要取消約定嗎？",
-    "revokeConfirmMessage": "{name} 會收到通知。你不需要解釋任何事。安全模式會持續運作，直到你結束它。"
+    "revokeConfirmMessage": "{name} 會收到通知。你不需要解釋任何事。安全模式會持續運作，直到你結束它。",
+    "meetingAt": "約會：{when} · {place}",
+    "earlyTitle": "約會時間還沒到",
+    "earlyMessage": "你們約在 {when}。如果現在就開啟安全模式，{name} 會立即收到簡訊，報平安也會從現在開始。現在開啟嗎？",
+    "earlyConfirm": "現在開啟",
+    "agreementLink": "約定"
   },
   "feedback": {
     "title": "約會還好嗎？",
@@ -292,7 +300,12 @@
     "detailsLabel": "詳細說明（選填）",
     "submit": "檢舉",
     "thanksTitle": "謝謝你",
-    "thanksMessage": "我們已收到你的檢舉。你們將不會再看到彼此。"
+    "thanksMessage": "我們已收到你的檢舉。你們將不會再看到彼此。",
+    "blocked": "我們已封鎖對方——你們將不會再看到彼此，也無法互傳訊息。",
+    "blockedWithName": "{name} 將無法再看到你或傳訊息給你。",
+    "nextSteps": "檢舉是匿名的。審核人員通常會在 24 小時內處理，並依情節輕重暫時停權或永久停用該帳號。",
+    "danger": "如果你身處危險，請撥打 112。",
+    "backToMessages": "返回訊息"
   },
   "chat": {
     "unavailable": "無法使用聊天",
@@ -310,7 +323,8 @@
     "block": "封鎖",
     "unmatch": "取消配對",
     "blockConfirmTitle": "要封鎖嗎？",
-    "blockConfirmMessage": "你和 {name} 將不會再看到彼此，聊天也會消失。"
+    "blockConfirmMessage": "你和 {name} 將不會再看到彼此，聊天也會消失。",
+    "emptyHint": "先傳個訊息給 {name} 吧。可以從你們的共同點聊起，也可以直接打開約定。"
   },
   "safetySettings": {
     "title": "安全與隱私",
@@ -332,7 +346,8 @@
     "appLockHint": "每次開啟 App 時使用 Face ID、指紋或手機密碼。",
     "discreet": "低調模式",
     "discreetHint": "普通的圖示和不顯示內容的通知——沒人看得出這是什麼 App。",
-    "save": "儲存"
+    "save": "儲存",
+    "pinsMustDiffer": "緊急 PIN 碼必須與一般 PIN 碼不同。"
   },
   "tabs": {
     "discover": "探索",
@@ -595,7 +610,17 @@
     "codeSent": "我們已將 6 位數驗證碼寄到 {email}。如果你已經有帳號，會改收到一則通知——直接登入即可。",
     "code": "電子郵件中的驗證碼",
     "confirmCode": "驗證並建立帳號",
-    "resend": "重新傳送驗證碼"
+    "resend": "重新傳送驗證碼",
+    "missing": {
+      "name": "請填寫名字。",
+      "email": "請填寫電子郵件。",
+      "password": "密碼至少需要 10 個字元。",
+      "birthdate": "請填寫出生日期。",
+      "gender": "請選擇你的身分。",
+      "showMe": "請選擇想看到誰。",
+      "adult": "請確認你已年滿 18 歲。",
+      "rules": "你還需要同意規則。"
+    }
   },
   "verify": {
     "title": "驗證你的身分",
@@ -610,7 +635,8 @@
     "devApprove": "模擬驗證成功（測試模式）",
     "retry": "再試一次",
     "start": "驗證身分",
-    "signOut": "登出"
+    "signOut": "登出",
+    "continue": "繼續驗證"
   },
   "common": {
     "back": "返回",
@@ -626,7 +652,8 @@
     "open": "開啟",
     "show": "查看",
     "confirm": "確認",
-    "errorGeneric": "發生錯誤。"
+    "errorGeneric": "發生錯誤。",
+    "ok": "好"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} 開啟了安全模式",
@@ -754,5 +781,12 @@
       "signOut": "登出",
       "signOutOthers": "登出所有其他裝置"
     }
+  },
+  "settings": {
+    "title": "設定",
+    "search": "我想看到誰",
+    "safety": "安全與帳號",
+    "plan": "訂閱",
+    "account": "帳號"
   }
 }

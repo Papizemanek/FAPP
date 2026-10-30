@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { api, setAuthToken, setSessionReady, setUnauthorizedHandler, type Me } from './api';
 import { setBilling } from './billing';
+import { i18n } from './i18n';
 import { registerPushToken } from './notifications';
 import { storage } from './storage';
 
@@ -18,6 +19,7 @@ const SessionContext = createContext<Session | null>(null);
 export function SessionProvider({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState<Session['status']>('loading');
   const [me, setMe] = useState<Me | null>(null);
+  useEffect(() => i18n.setSelfGender(me?.gender ?? null), [me?.gender]);
 
   const clear = useCallback(async () => {
     setAuthToken(null);

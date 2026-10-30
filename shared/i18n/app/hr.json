@@ -28,7 +28,11 @@
       "host": "Kod mene",
       "visit": "Kod tebe",
       "neutral": "Neutralno mjesto",
-      "single": "Slobodan/na",
+      "single": {
+        "man": "Slobodan",
+        "woman": "Slobodna",
+        "other": "Single"
+      },
       "open": "Otvorena veza",
       "poly": "Poliamorija",
       "couple": "Par"
@@ -63,9 +67,21 @@
       "other": "Ostalo"
     },
     "feedbackReasons": {
-      "consent": "Nije poštovao/la granice ili „stop“",
-      "safety": "Nisam se osjećao/la sigurno",
-      "fake": "Nije izgledao/la kao na fotografijama",
+      "consent": {
+        "man": "Nije poštovao granice ili „stop“",
+        "woman": "Nije poštovala granice ili „stop“",
+        "other": "Granice ili „stop“ nisu poštovani"
+      },
+      "safety": {
+        "man": "Nisam se osjećao sigurno",
+        "woman": "Nisam se osjećala sigurno",
+        "other": "Nisam se osjećao/la sigurno"
+      },
+      "fake": {
+        "man": "Nije izgledao kao na fotografijama",
+        "woman": "Nije izgledala kao na fotografijama",
+        "other": "Ne izgleda kao na fotografijama"
+      },
       "other": "Nešto drugo"
     },
     "plans": {
@@ -109,7 +125,11 @@
       },
       "sentLikes": {
         "name": "Poslani lajkovi",
-        "detail": "Koga si lajkao/la u zadnjih 7 dana."
+        "detail": {
+          "man": "Koga si lajkao u zadnjih 7 dana.",
+          "woman": "Koga si lajkala u zadnjih 7 dana.",
+          "other": "Tvoji lajkovi u zadnjih 7 dana."
+        }
       },
       "tonight": {
         "name": "Večeras, bilo kad",
@@ -151,7 +171,11 @@
     "title": "Dogovor",
     "titleWithName": "Dogovor · {name}",
     "timeFormatError": "Unesi vrijeme kao HH:MM, npr. 21:00.",
-    "revokedByPartnerTitle": "{name} je otkazao/la dogovor",
+    "revokedByPartnerTitle": {
+      "man": "{name} je otkazao dogovor",
+      "woman": "{name} je otkazala dogovor",
+      "other": "{name} je otkazao/la dogovor"
+    },
     "revokedByPartnerSubtitle": "Novi dogovor sada može započeti samo {name}.",
     "revokedTitle": "Dogovor je otkazan",
     "revokedSubtitle": "Možeš započeti novi.",
@@ -162,8 +186,16 @@
     "confirmedTitle": "Oboje ste ispunili dogovor",
     "confirmedSubtitle": "Na licu mjesta svatko od vas može se bilo kada predomisliti.",
     "myPartDoneTitle": "Tvoj dio je gotov",
-    "myPartDoneSubtitle": "{name} još nije ispunio/la ili potvrdio/la svoj dio.",
-    "partnerFilledTitle": "{name} je ispunio/la svoj dio",
+    "myPartDoneSubtitle": {
+      "man": "{name} još nije ispunio ili potvrdio svoj dio.",
+      "woman": "{name} još nije ispunila ili potvrdila svoj dio.",
+      "other": "{name} još nije ispunio/la ili potvrdio/la svoj dio."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} je ispunio svoj dio",
+      "woman": "{name} je ispunila svoj dio",
+      "other": "{name} je ispunio/la svoj dio"
+    },
     "partnerFilledSubtitle": "Ispuni svoj – vidjet ćete samo ono oko čega se slažete.",
     "fillTitle": "Ispuni svoj dio",
     "fillSubtitle": "Vidjet ćete samo ono oko čega se slažete.",
@@ -198,13 +230,18 @@
     "startMeetup": "Započni susret",
     "revoke": "Otkaži dogovor",
     "revokeConfirmTitle": "Otkazati dogovor?",
-    "revokeConfirmMessage": "Susret otpada. Ne moraš ništa objašnjavati – {name} dobiva samo obavijest."
+    "revokeConfirmMessage": "Susret otpada. Ne moraš ništa objašnjavati – {name} dobiva samo obavijest.",
+    "unsetIsNo": {
+      "one": "Odabrano {count} od {total}. Što ne odabereš, računamo kao ne.",
+      "few": "Odabrano {count} od {total}. Što ne odabereš, računamo kao ne.",
+      "other": "Odabrano {count} od {total}. Što ne odabereš, računamo kao ne."
+    }
   },
   "meetup": {
     "title": "Susret · {name}",
     "fakeCallerDefault": "Mama",
     "endedTitle": "Susret je završen",
-    "endedMessage": "{name} je dobio/la poruku da si dobro.",
+    "endedMessage": "Osoba od povjerenja ({name}) dobila je poruku da si dobro.",
     "sosFailed": "Uzbunu nije bilo moguće poslati: {error} Pokušaj ponovno ili nazovi: {name}.",
     "needAgreementTitle": "Prvo dovršite dogovor",
     "needAgreementSubtitle": "Susret možeš započeti kad oboje ispunite i potvrdite dogovor.",
@@ -228,7 +265,7 @@
     "checkIn": "Javljanje",
     "now": "sada",
     "imOk": "Dobro sam",
-    "overdueHint": "{name} je dobio/la upozorenje. Potvrdi PIN-om da si dobro.",
+    "overdueHint": "Osoba od povjerenja ({name}) dobila je upozorenje. Potvrdi PIN-om da si dobro.",
     "graceHint": {
       "one": "Ako se ne javiš u roku od {count} minute nakon dogovorenog vremena, {name} dobiva upozorenje s tvojom lokacijom.",
       "few": "Ako se ne javiš u roku od {count} minute nakon dogovorenog vremena, {name} dobiva upozorenje s tvojom lokacijom.",
@@ -244,14 +281,19 @@
     "revoke": "Otkaži dogovor",
     "end": "Završi susret",
     "sosSentTitle": "Uzbuna je poslana",
-    "sosSentBody": "{trusted} je dobio/la tvoju točnu lokaciju i informaciju s kim si. {partner} neće ništa vidjeti.",
+    "sosSentBody": "Osoba od povjerenja ({trusted}) dobila je tvoju točnu lokaciju i informaciju s kim si. {partner} neće ništa vidjeti.",
     "sosMistake": "Bila je greška – dobro sam",
     "sosHide": "Sakrij (uzbuna ostaje uključena)",
     "pinTitle": "Potvrdi PIN-om",
     "pinSubtitleOk": "Da si dobro.",
     "pinSubtitleEnd": "Da je susret gotov i da si dobro.",
     "revokeConfirmTitle": "Otkazati dogovor?",
-    "revokeConfirmMessage": "{name} će dobiti obavijest. Ne moraš ništa objašnjavati. Sigurnosni način radi dalje dok ga ne završiš."
+    "revokeConfirmMessage": "{name} će dobiti obavijest. Ne moraš ništa objašnjavati. Sigurnosni način radi dalje dok ga ne završiš.",
+    "meetingAt": "Susret: {when} · {place}",
+    "earlyTitle": "Susret je tek kasnije",
+    "earlyMessage": "Dogovor je za {when}. Ako sad uključiš sigurnosni način, {name} odmah dobiva SMS, a javljanja počinju od sada. Uključiti sada?",
+    "earlyConfirm": "Uključi sada",
+    "agreementLink": "Dogovor"
   },
   "feedback": {
     "title": "Kako je prošao susret?",
@@ -294,7 +336,12 @@
     "detailsLabel": "Detalji (neobavezno)",
     "submit": "Prijavi",
     "thanksTitle": "Hvala",
-    "thanksMessage": "Primili smo tvoju prijavu. Više se nećete vidjeti."
+    "thanksMessage": "Primili smo tvoju prijavu. Više se nećete vidjeti.",
+    "blocked": "Blokirali smo vas međusobno – više se nećete vidjeti ni dopisivati.",
+    "blockedWithName": "{name} te više ne može vidjeti niti ti pisati.",
+    "nextSteps": "Prijava je anonimna. Moderator je pregledava, obično unutar 24 sata, i ovisno o ozbiljnosti suspendira ili blokira račun.",
+    "danger": "Ako si u opasnosti, nazovi 112.",
+    "backToMessages": "Natrag na poruke"
   },
   "chat": {
     "unavailable": "Chat nije dostupan",
@@ -312,7 +359,8 @@
     "block": "Blokiraj",
     "unmatch": "Poništi match",
     "blockConfirmTitle": "Blokirati?",
-    "blockConfirmMessage": "Ti i {name} više se nećete vidjeti, a chat će nestati."
+    "blockConfirmMessage": "Ti i {name} više se nećete vidjeti, a chat će nestati.",
+    "emptyHint": "Ti i {name} još se niste dopisivali. Napiši prvu poruku – počni s nečim što vam je zajedničko ili odmah otvori dogovor."
   },
   "safetySettings": {
     "title": "Sigurnost i privatnost",
@@ -334,7 +382,8 @@
     "appLockHint": "Face ID, otisak prsta ili šifra mobitela svaki put kad otvoriš aplikaciju.",
     "discreet": "Diskretni način",
     "discreetHint": "Neutralna ikona i obavijesti bez sadržaja – nitko ne može prepoznati o kojoj je aplikaciji riječ.",
-    "save": "Spremi"
+    "save": "Spremi",
+    "pinsMustDiffer": "Hitni PIN mora biti različit od običnog PIN-a."
   },
   "tabs": {
     "discover": "Otkrivaj",
@@ -478,7 +527,11 @@
     },
     "yes": {
       "title": "Moje da",
-      "hint": "Oznake pokazuju za što si otvoren/a, a ne što obećavaš.",
+      "hint": {
+        "man": "Oznake pokazuju za što si otvoren, a ne što obećavaš.",
+        "woman": "Oznake pokazuju za što si otvorena, a ne što obećavaš.",
+        "other": "Oznake pokazuju što te zanima, a ne što obećavaš."
+      },
       "footnote": "Vidjet će samo oni koji su također rekli da.",
       "matchOnly": "Vidljivo nakon matcha",
       "upTo": {
@@ -578,7 +631,11 @@
     "emptySent": "U zadnjih 7 dana nema lajkova bez matcha.",
     "superLikePending": "Super lajk · čeka",
     "pending": "Čeka odgovor",
-    "sentTitle": "Koga si lajkao/la",
+    "sentTitle": {
+      "man": "Koga si lajkao",
+      "woman": "Koga si lajkala",
+      "other": "Tvoji lajkovi"
+    },
     "platinumText": "Uz YesYes Platinum vidjet ćeš svoje lajkove iz zadnjih 7 dana.",
     "platinumCta": "Vidi ih uz Platinum",
     "likeBack": "Uzvrati lajk",
@@ -619,7 +676,17 @@
     "codeSent": "Na {email} poslali smo 6-znamenkasti kôd. Ako ovdje već imaš račun, umjesto kôda stići će ti obavijest – samo se prijavi.",
     "code": "Kôd iz e-pošte",
     "confirmCode": "Potvrdi i izradi račun",
-    "resend": "Ponovno pošalji kôd"
+    "resend": "Ponovno pošalji kôd",
+    "missing": {
+      "name": "Upiši ime.",
+      "email": "Upiši e-adresu.",
+      "password": "Lozinka mora imati najmanje 10 znakova.",
+      "birthdate": "Upiši datum rođenja.",
+      "gender": "Odaberi tko si.",
+      "showMe": "Odaberi koga ti trebamo prikazivati.",
+      "adult": "Potvrdi da imaš 18 ili više godina.",
+      "rules": "Još nam treba tvoj pristanak na pravila."
+    }
   },
   "verify": {
     "title": "Potvrdi da si to ti",
@@ -634,7 +701,8 @@
     "devApprove": "Simuliraj uspješnu provjeru (testni način)",
     "retry": "Pokušaj ponovno",
     "start": "Provjeri identitet",
-    "signOut": "Odjavi se"
+    "signOut": "Odjavi se",
+    "continue": "Nastavi provjeru"
   },
   "common": {
     "back": "Natrag",
@@ -650,7 +718,8 @@
     "open": "Otvori",
     "show": "Prikaži",
     "confirm": "Potvrdi",
-    "errorGeneric": "Nešto je pošlo po zlu."
+    "errorGeneric": "Nešto je pošlo po zlu.",
+    "ok": "U redu"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} ima uključen sigurnosni način",
@@ -660,17 +729,33 @@
     "missingTitle": "Još nema dogovora",
     "missingSubtitle": "Svatko ispuni za što je – vidjet ćete samo gdje se podudarate.",
     "fill": "Ispuni",
-    "revokedByMeTitle": "Otkazao/la si dogovor",
-    "revokedByPartnerTitle": "{name} je otkazao/la dogovor",
+    "revokedByMeTitle": {
+      "man": "Otkazao si dogovor",
+      "woman": "Otkazala si dogovor",
+      "other": "Otkazao/la si dogovor"
+    },
+    "revokedByPartnerTitle": {
+      "man": "{name} je otkazao dogovor",
+      "woman": "{name} je otkazala dogovor",
+      "other": "{name} je otkazao/la dogovor"
+    },
     "revokedSubtitle": "Susret otpada.",
     "revokedCooldownSubtitle": "Susret otpada. Novi dogovor može započeti samo {name}.",
     "newAgreement": "Novi dogovor",
     "confirmedTitle": "Dogovor je gotov",
     "confirmedSubtitle": "Na licu mjesta svatko od vas može se bilo kada predomisliti.",
-    "partnerFilledTitle": "{name} je ispunio/la dogovor",
+    "partnerFilledTitle": {
+      "man": "{name} je ispunio dogovor",
+      "woman": "{name} je ispunila dogovor",
+      "other": "{name} je ispunio/la dogovor"
+    },
     "waitingForYouTitle": "Dogovor čeka tebe",
     "fillYoursSubtitle": "Ispuni za što si ti – vidjet ćete samo gdje se podudarate.",
-    "partnerPendingTitle": "{name} još nije ispunio/la",
+    "partnerPendingTitle": {
+      "man": "{name} još nije ispunio",
+      "woman": "{name} još nije ispunila",
+      "other": "{name} još nije ispunio/la"
+    },
     "partnerPendingSubtitle": "Dogovor je gotov kad ga oboje ispunite."
   },
   "fakeCall": {
@@ -722,7 +807,7 @@
     "sosHold": "SOS – pritisni i drži",
     "unlock": "Otključaj",
     "sosSentTitle": "Uzbuna je poslana",
-    "sosSentBody": "{name} je dobio/la upozorenje s tvojom lokacijom.",
+    "sosSentBody": "Osoba od povjerenja ({name}) dobila je upozorenje s tvojom lokacijom.",
     "sosSentBodyNoName": "Tvoja osoba od povjerenja dobila je upozorenje s tvojom lokacijom.",
     "sosFailedTitle": "Slanje nije uspjelo"
   },
@@ -780,5 +865,12 @@
       "signOut": "Odjavi",
       "signOutOthers": "Odjavi sve ostale uređaje"
     }
+  },
+  "settings": {
+    "title": "Postavke",
+    "search": "Koga želim vidjeti",
+    "safety": "Sigurnost i račun",
+    "plan": "Pretplata",
+    "account": "Račun"
   }
 }

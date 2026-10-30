@@ -198,7 +198,10 @@
     "startMeetup": "만남 시작",
     "revoke": "합의 취소",
     "revokeConfirmTitle": "합의를 취소할까요?",
-    "revokeConfirmMessage": "만남은 취소돼요. 아무것도 설명할 필요 없어요. {name}님은 알림만 받아요."
+    "revokeConfirmMessage": "만남은 취소돼요. 아무것도 설명할 필요 없어요. {name}님은 알림만 받아요.",
+    "unsetIsNo": {
+      "other": "{total}개 중 {count}개 선택됨. 선택하지 않은 건 모두 ‘아니요’로 처리돼요."
+    }
   },
   "meetup": {
     "title": "만남 · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "무사하다는 걸 확인해요.",
     "pinSubtitleEnd": "만남이 끝났고 무사하다는 걸 확인해요.",
     "revokeConfirmTitle": "합의를 취소할까요?",
-    "revokeConfirmMessage": "{name}님이 알림을 받아요. 아무것도 설명할 필요 없어요. 안전 모드는 직접 종료할 때까지 계속 작동해요."
+    "revokeConfirmMessage": "{name}님이 알림을 받아요. 아무것도 설명할 필요 없어요. 안전 모드는 직접 종료할 때까지 계속 작동해요.",
+    "meetingAt": "만남: {when} · {place}",
+    "earlyTitle": "만남 시간은 아직이에요",
+    "earlyMessage": "{when}에 만나기로 했어요. 지금 안전 모드를 켜면 {name}님에게 바로 문자가 가고 체크인도 지금부터 시작돼요. 지금 켤까요?",
+    "earlyConfirm": "지금 켜기",
+    "agreementLink": "합의"
   },
   "feedback": {
     "title": "만남은 어땠나요?",
@@ -292,7 +300,12 @@
     "detailsLabel": "자세한 내용 (선택)",
     "submit": "신고하기",
     "thanksTitle": "감사합니다",
-    "thanksMessage": "신고가 접수됐어요. 더 이상 서로 보이지 않아요."
+    "thanksMessage": "신고가 접수됐어요. 더 이상 서로 보이지 않아요.",
+    "blocked": "차단했어요. 이제 서로 보거나 메시지를 보낼 수 없어요.",
+    "blockedWithName": "{name}님은 이제 나를 보거나 나에게 메시지를 보낼 수 없어요.",
+    "nextSteps": "신고는 익명이에요. 모더레이터가 보통 24시간 안에 검토하고, 심각한 정도에 따라 계정을 정지하거나 영구 차단해요.",
+    "danger": "위험한 상황이라면 112에 전화하세요.",
+    "backToMessages": "메시지로 돌아가기"
   },
   "chat": {
     "unavailable": "채팅을 사용할 수 없어요",
@@ -310,7 +323,8 @@
     "block": "차단",
     "unmatch": "매치 취소",
     "blockConfirmTitle": "차단할까요?",
-    "blockConfirmMessage": "나와 {name}님은 더 이상 서로 볼 수 없고, 채팅도 사라져요."
+    "blockConfirmMessage": "나와 {name}님은 더 이상 서로 볼 수 없고, 채팅도 사라져요.",
+    "emptyHint": "{name}님에게 먼저 메시지를 보내 보세요. 공통점으로 시작하거나 바로 합의를 열어도 돼요."
   },
   "safetySettings": {
     "title": "안전 및 개인정보",
@@ -332,7 +346,8 @@
     "appLockHint": "앱을 열 때마다 Face ID, 지문 또는 휴대폰 암호를 사용해요.",
     "discreet": "눈에 띄지 않는 모드",
     "discreetHint": "평범한 아이콘과 내용 없는 알림 – 무슨 앱인지 아무도 알 수 없어요.",
-    "save": "저장"
+    "save": "저장",
+    "pinsMustDiffer": "긴급 PIN은 일반 PIN과 달라야 해요."
   },
   "tabs": {
     "discover": "탐색",
@@ -595,7 +610,17 @@
     "codeSent": "{email}(으)로 6자리 코드를 보냈어요. 이미 계정이 있다면 대신 안내 메일이 가요. 그냥 로그인하세요.",
     "code": "이메일로 받은 코드",
     "confirmCode": "인증하고 계정 만들기",
-    "resend": "코드 다시 보내기"
+    "resend": "코드 다시 보내기",
+    "missing": {
+      "name": "이름을 입력하세요.",
+      "email": "이메일을 입력하세요.",
+      "password": "비밀번호는 10자 이상이어야 해요.",
+      "birthdate": "생년월일을 입력하세요.",
+      "gender": "내가 누구인지 선택하세요.",
+      "showMe": "누구를 보여 드릴지 선택하세요.",
+      "adult": "만 18세 이상인지 확인해 주세요.",
+      "rules": "규칙에 동의해 주세요."
+    }
   },
   "verify": {
     "title": "본인 인증",
@@ -610,7 +635,8 @@
     "devApprove": "인증 성공 시뮬레이션 (테스트 모드)",
     "retry": "다시 시도",
     "start": "본인 인증하기",
-    "signOut": "로그아웃"
+    "signOut": "로그아웃",
+    "continue": "인증 계속하기"
   },
   "common": {
     "back": "뒤로",
@@ -626,7 +652,8 @@
     "open": "열기",
     "show": "보기",
     "confirm": "확인",
-    "errorGeneric": "문제가 발생했어요."
+    "errorGeneric": "문제가 발생했어요.",
+    "ok": "확인"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name}님이 안전 모드를 켰어요",
@@ -754,5 +781,12 @@
       "signOut": "로그아웃",
       "signOutOthers": "다른 모든 기기에서 로그아웃"
     }
+  },
+  "settings": {
+    "title": "설정",
+    "search": "보고 싶은 사람",
+    "safety": "안전 및 계정",
+    "plan": "구독",
+    "account": "계정"
   }
 }

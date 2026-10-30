@@ -28,7 +28,11 @@
       "host": "U mňa",
       "visit": "U teba",
       "neutral": "Neutrálne miesto",
-      "single": "Nezadaný/á",
+      "single": {
+        "man": "Nezadaný",
+        "woman": "Nezadaná",
+        "other": "Single"
+      },
       "open": "Otvorený vzťah",
       "poly": "Polyamoria",
       "couple": "Pár"
@@ -63,9 +67,21 @@
       "other": "Iné"
     },
     "feedbackReasons": {
-      "consent": "Nerešpektoval/a hranice alebo „stop“",
-      "safety": "Cítil/a som sa v ohrození",
-      "fake": "Nevyzeral/a ako na fotkách",
+      "consent": {
+        "man": "Nerešpektoval hranice alebo „stop“",
+        "woman": "Nerešpektovala hranice alebo „stop“",
+        "other": "Nerešpektoval/a hranice alebo „stop“"
+      },
+      "safety": {
+        "man": "Cítil som sa v ohrození",
+        "woman": "Cítila som sa v ohrození",
+        "other": "Cítil/a som sa v ohrození"
+      },
+      "fake": {
+        "man": "Nevyzeral ako na fotkách",
+        "woman": "Nevyzerala ako na fotkách",
+        "other": "Nevyzeral/a ako na fotkách"
+      },
       "other": "Niečo iné"
     },
     "plans": {
@@ -109,7 +125,11 @@
       },
       "sentLikes": {
         "name": "Odoslané lajky",
-        "detail": "Koho si lajkol/a za posledných 7 dní."
+        "detail": {
+          "man": "Koho si lajkol za posledných 7 dní.",
+          "woman": "Koho si lajkla za posledných 7 dní.",
+          "other": "Koho si lajkol/a za posledných 7 dní."
+        }
       },
       "tonight": {
         "name": "Dnes večer kedykoľvek",
@@ -151,7 +171,11 @@
     "title": "Dohoda",
     "titleWithName": "Dohoda · {name}",
     "timeFormatError": "Čas zadaj ako HH:MM, napríklad 21:00.",
-    "revokedByPartnerTitle": "{name} zrušil/a dohodu",
+    "revokedByPartnerTitle": {
+      "man": "{name} zrušil dohodu",
+      "woman": "{name} zrušila dohodu",
+      "other": "{name} zrušil/a dohodu"
+    },
     "revokedByPartnerSubtitle": "Novú dohodu teraz môže otvoriť len {name}.",
     "revokedTitle": "Dohoda bola zrušená",
     "revokedSubtitle": "Môžeš otvoriť novú.",
@@ -162,8 +186,16 @@
     "confirmedTitle": "Dohodu ste vyplnili obaja",
     "confirmedSubtitle": "Na mieste sa môžete kedykoľvek rozhodnúť inak.",
     "myPartDoneTitle": "Tvoja časť je hotová",
-    "myPartDoneSubtitle": "{name} ešte nevyplnil/a alebo nepotvrdil/a.",
-    "partnerFilledTitle": "{name} vyplnil/a svoju časť",
+    "myPartDoneSubtitle": {
+      "man": "{name} ešte nevyplnil alebo nepotvrdil.",
+      "woman": "{name} ešte nevyplnila alebo nepotvrdila.",
+      "other": "{name} ešte nevyplnil/a alebo nepotvrdil/a."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} vyplnil svoju časť",
+      "woman": "{name} vyplnila svoju časť",
+      "other": "{name} vyplnil/a svoju časť"
+    },
     "partnerFilledSubtitle": "Vyplň tú svoju – uvidíte len zhodu.",
     "fillTitle": "Vyplň svoju časť",
     "fillSubtitle": "Uvidíte len to, na čom sa zhodnete.",
@@ -198,13 +230,19 @@
     "startMeetup": "Začať stretnutie",
     "revoke": "Zrušiť dohodu",
     "revokeConfirmTitle": "Zrušiť dohodu?",
-    "revokeConfirmMessage": "Stretnutie sa nekoná. Nemusíš nič vysvetľovať – {name} dostane len oznámenie."
+    "revokeConfirmMessage": "Stretnutie sa nekoná. Nemusíš nič vysvetľovať – {name} dostane len oznámenie.",
+    "unsetIsNo": {
+      "one": "Vybrané: {count} z {total}. Čo nevyberieš, počítame ako nie.",
+      "few": "Vybrané: {count} z {total}. Čo nevyberieš, počítame ako nie.",
+      "many": "Vybrané: {count} z {total}. Čo nevyberieš, počítame ako nie.",
+      "other": "Vybrané: {count} z {total}. Čo nevyberieš, počítame ako nie."
+    }
   },
   "meetup": {
     "title": "Stretnutie · {name}",
     "fakeCallerDefault": "Mamina",
     "endedTitle": "Stretnutie ukončené",
-    "endedMessage": "{name} dostal/a správu, že si v poriadku.",
+    "endedMessage": "Dôveryhodná osoba ({name}) dostala správu, že si v poriadku.",
     "sosFailed": "Poplach sa nepodarilo odoslať: {error} Skús to znova alebo zavolaj {name}.",
     "needAgreementTitle": "Najprv hotová dohoda",
     "needAgreementSubtitle": "Stretnutie sa dá začať, až keď dohodu vyplníte a potvrdíte obaja.",
@@ -228,7 +266,7 @@
     "checkIn": "Check-in",
     "now": "teraz",
     "imOk": "Som v poriadku",
-    "overdueHint": "{name} dostal/a upozornenie. Potvrď PIN-om, že si v poriadku.",
+    "overdueHint": "Dôveryhodná osoba ({name}) dostala upozornenie. Potvrď PIN-om, že si v poriadku.",
     "graceHint": {
       "one": "Keď sa do {count} minúty po termíne neozveš, {name} dostane upozornenie s tvojou polohou.",
       "few": "Keď sa do {count} minút po termíne neozveš, {name} dostane upozornenie s tvojou polohou.",
@@ -245,14 +283,19 @@
     "revoke": "Zrušiť dohodu",
     "end": "Ukončiť stretnutie",
     "sosSentTitle": "Poplach odoslaný",
-    "sosSentBody": "{trusted} dostal/a tvoju presnú polohu a informáciu, s kým si. {partner} nič neuvidí.",
+    "sosSentBody": "Dôveryhodná osoba ({trusted}) dostala tvoju presnú polohu a informáciu, s kým si. {partner} nič neuvidí.",
     "sosMistake": "Bol to omyl – som OK",
     "sosHide": "Skryť (poplach trvá ďalej)",
     "pinTitle": "Potvrď PIN-om",
     "pinSubtitleOk": "Že si v poriadku.",
     "pinSubtitleEnd": "Že je stretnutie na konci a si v poriadku.",
     "revokeConfirmTitle": "Zrušiť dohodu?",
-    "revokeConfirmMessage": "{name} dostane oznámenie. Nemusíš nič vysvetľovať. Bezpečnostný režim pobeží ďalej, kým ho neukončíš."
+    "revokeConfirmMessage": "{name} dostane oznámenie. Nemusíš nič vysvetľovať. Bezpečnostný režim pobeží ďalej, kým ho neukončíš.",
+    "meetingAt": "Stretnutie: {when} · {place}",
+    "earlyTitle": "Stretnutie je až neskôr",
+    "earlyMessage": "Dohodli ste sa na {when}. Keď bezpečnostný režim zapneš už teraz, {name} hneď dostane SMS a check-in pobeží odteraz. Zapnúť teraz?",
+    "earlyConfirm": "Zapnúť teraz",
+    "agreementLink": "Dohoda"
   },
   "feedback": {
     "title": "Ako prebehlo stretnutie?",
@@ -285,7 +328,11 @@
       "detail": "Obráť sa na miestnu políciu alebo na miestnu linku pomoci obetiam trestných činov a sexuálneho násilia."
     },
     "medical": "Ak sa stalo niečo proti tvojej vôli, vyhľadaj čo najskôr lekársku pomoc – aj kvôli prevencii tehotenstva a infekcií, niektoré lieky fungujú len do 72 hodín. Stopy sa dajú zaistiť, ak sa ešte nesprchuješ a odložíš si oblečenie. Ale nič z toho nie je podmienkou – oznámiť to môžeš aj neskôr.",
-    "preserved": "Záznam stretnutia (dohodu, správy, poplachy) sme uchovali, keby si ho potreboval/a pre políciu.",
+    "preserved": {
+      "man": "Záznam stretnutia (dohodu, správy, poplachy) sme uchovali, keby si ho potreboval pre políciu.",
+      "woman": "Záznam stretnutia (dohodu, správy, poplachy) sme uchovali, keby si ho potrebovala pre políciu.",
+      "other": "Záznam stretnutia (dohodu, správy, poplachy) sme uchovali, keby si ho potreboval/a pre políciu."
+    },
     "backToApp": "Späť do aplikácie"
   },
   "report": {
@@ -295,7 +342,12 @@
     "detailsLabel": "Podrobnosti (nepovinné)",
     "submit": "Nahlásiť",
     "thanksTitle": "Ďakujeme",
-    "thanksMessage": "Nahlásenie sme prijali. Už sa navzájom neuvidíte."
+    "thanksMessage": "Nahlásenie sme prijali. Už sa navzájom neuvidíte.",
+    "blocked": "Zablokovali sme vás navzájom – už sa neuvidíte a nenapíšete si.",
+    "blockedWithName": "{name} ťa už neuvidí a nenapíše ti.",
+    "nextSteps": "Nahlásenie je anonymné. Moderátor ho preverí, zvyčajne do 24 hodín, a podľa závažnosti účet pozastaví alebo zablokuje.",
+    "danger": "Ak ti hrozí nebezpečenstvo, volaj 112.",
+    "backToMessages": "Späť na správy"
   },
   "chat": {
     "unavailable": "Chat nie je dostupný",
@@ -313,7 +365,8 @@
     "block": "Zablokovať",
     "unmatch": "Zrušiť match",
     "blockConfirmTitle": "Zablokovať?",
-    "blockConfirmMessage": "{name} a ty sa už navzájom neuvidíte a chat zmizne."
+    "blockConfirmMessage": "{name} a ty sa už navzájom neuvidíte a chat zmizne.",
+    "emptyHint": "Napíš {name} prvú správu. Pokojne začni tým, čo máte spoločné, alebo rovno otvor dohodu."
   },
   "safetySettings": {
     "title": "Bezpečnosť a súkromie",
@@ -335,7 +388,8 @@
     "appLockHint": "Face ID, odtlačok prsta alebo kód telefónu pri každom otvorení.",
     "discreet": "Diskrétny režim",
     "discreetHint": "Neutrálna ikona a notifikácie bez obsahu – nikto nespozná, o akú aplikáciu ide.",
-    "save": "Uložiť"
+    "save": "Uložiť",
+    "pinsMustDiffer": "Núdzový PIN musí byť iný ako bežný PIN."
   },
   "tabs": {
     "discover": "Objavuj",
@@ -366,7 +420,11 @@
     "nextPhoto": "Ďalšia fotka",
     "stampLike": "CHCEM",
     "stampNope": "NIE",
-    "superLikedYou": "Dal/a ti super lajk",
+    "superLikedYou": {
+      "man": "Dal ti super lajk",
+      "woman": "Dala ti super lajk",
+      "other": "Dal/a ti super lajk"
+    },
     "distance": "{km} km od teba",
     "rewind": "Vrátiť posledný swipe",
     "pass": "Preskočiť",
@@ -419,7 +477,11 @@
       "many": "Lajklo ťa {count} človeka – uvidíš ich s Gold",
       "other": "Lajklo ťa {count} ľudí – uvidíš ich s Gold"
     },
-    "likesHint": "Kto ťa lajkol a koho si lajkol/a ty",
+    "likesHint": {
+      "man": "Kto ťa lajkol a koho si lajkol ty",
+      "woman": "Kto ťa lajkol a koho si lajkla ty",
+      "other": "Kto ťa lajkol a koho si lajkol/a ty"
+    },
     "empty": "Zatiaľ žiadny match. Swipuj ďalej – keď sa budete páčiť obom, objaví sa tu.",
     "lastMessageMine": "Ty: {text}",
     "newMatch": "Nový match – napíš prvú správu."
@@ -483,7 +545,11 @@
     },
     "yes": {
       "title": "Moje áno",
-      "hint": "Štítky ukazujú, čomu si otvorený/á, nie čo sľubuješ.",
+      "hint": {
+        "man": "Štítky ukazujú, čomu si otvorený, nie čo sľubuješ.",
+        "woman": "Štítky ukazujú, čomu si otvorená, nie čo sľubuješ.",
+        "other": "Štítky ukazujú, čomu si otvorený/á, nie čo sľubuješ."
+      },
       "footnote": "Uvidí len ten, kto povedal áno tiež.",
       "matchOnly": "Uvidí až match",
       "upTo": {
@@ -590,7 +656,11 @@
     "emptySent": "Za posledných 7 dní žiadne lajky bez matchu.",
     "superLikePending": "Super lajk · čaká",
     "pending": "Čaká na odpoveď",
-    "sentTitle": "Koho si lajkol/a",
+    "sentTitle": {
+      "man": "Koho si lajkol",
+      "woman": "Koho si lajkla",
+      "other": "Koho si lajkol/a"
+    },
     "platinumText": "S YesYes Platinum uvidíš svoje lajky za posledných 7 dní.",
     "platinumCta": "Zobraziť s Platinum",
     "likeBack": "Lajknúť späť",
@@ -631,7 +701,17 @@
     "codeSent": "Na {email} sme poslali 6-miestny kód. Ak už máš účet, namiesto neho ti príde upozornenie – stačí sa prihlásiť.",
     "code": "Kód z e-mailu",
     "confirmCode": "Overiť a vytvoriť účet",
-    "resend": "Poslať kód znova"
+    "resend": "Poslať kód znova",
+    "missing": {
+      "name": "Ešte vyplň meno.",
+      "email": "Ešte vyplň e-mail.",
+      "password": "Heslo musí mať aspoň 10 znakov.",
+      "birthdate": "Ešte vyplň dátum narodenia.",
+      "gender": "Ešte vyber, kto si.",
+      "showMe": "Ešte vyber, koho ti máme ukazovať.",
+      "adult": "Potvrď, že máš 18 rokov alebo viac.",
+      "rules": "Ešte potrebujeme súhlas s pravidlami."
+    }
   },
   "verify": {
     "title": "Over, že si to ty",
@@ -646,7 +726,8 @@
     "devApprove": "Simulovať úspešné overenie (testovací režim)",
     "retry": "Skúsiť znova",
     "start": "Overiť totožnosť",
-    "signOut": "Odhlásiť sa"
+    "signOut": "Odhlásiť sa",
+    "continue": "Pokračovať v overení"
   },
   "common": {
     "back": "Späť",
@@ -662,7 +743,8 @@
     "open": "Otvoriť",
     "show": "Zobraziť",
     "confirm": "Potvrdiť",
-    "errorGeneric": "Niečo sa pokazilo."
+    "errorGeneric": "Niečo sa pokazilo.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} má zapnutý bezpečnostný režim",
@@ -672,17 +754,33 @@
     "missingTitle": "Dohoda zatiaľ chýba",
     "missingSubtitle": "Každý vyplní, na čo má chuť – uvidíte len zhodu.",
     "fill": "Vyplniť",
-    "revokedByMeTitle": "Zrušil/a si dohodu",
-    "revokedByPartnerTitle": "{name} zrušil/a dohodu",
+    "revokedByMeTitle": {
+      "man": "Zrušil si dohodu",
+      "woman": "Zrušila si dohodu",
+      "other": "Zrušil/a si dohodu"
+    },
+    "revokedByPartnerTitle": {
+      "man": "{name} zrušil dohodu",
+      "woman": "{name} zrušila dohodu",
+      "other": "{name} zrušil/a dohodu"
+    },
     "revokedSubtitle": "Stretnutie sa nekoná.",
     "revokedCooldownSubtitle": "Stretnutie sa nekoná. Novú dohodu môže otvoriť len {name}.",
     "newAgreement": "Nová dohoda",
     "confirmedTitle": "Dohoda je hotová",
     "confirmedSubtitle": "Na mieste sa môžete kedykoľvek rozhodnúť inak.",
-    "partnerFilledTitle": "{name} vyplnil/a dohodu",
+    "partnerFilledTitle": {
+      "man": "{name} vyplnil dohodu",
+      "woman": "{name} vyplnila dohodu",
+      "other": "{name} vyplnil/a dohodu"
+    },
     "waitingForYouTitle": "Dohoda čaká na teba",
     "fillYoursSubtitle": "Vyplň, na čo máš chuť ty – uvidíte len zhodu.",
-    "partnerPendingTitle": "{name} ešte nevyplnil/a",
+    "partnerPendingTitle": {
+      "man": "{name} ešte nevyplnil",
+      "woman": "{name} ešte nevyplnila",
+      "other": "{name} ešte nevyplnil/a"
+    },
     "partnerPendingSubtitle": "Dohoda je hotová, až keď ju vyplníte obaja."
   },
   "fakeCall": {
@@ -693,7 +791,11 @@
   },
   "homeBanners": {
     "meetupTitle": "Prebieha stretnutie · {name}",
-    "missedCheckIn": "Zmeškal/a si check-in!",
+    "missedCheckIn": {
+      "man": "Zmeškal si check-in!",
+      "woman": "Zmeškala si check-in!",
+      "other": "Zmeškal/a si check-in!"
+    },
     "safetyOn": "Bezpečnostný režim je zapnutý.",
     "feedbackTitle": "Ako prebehlo stretnutie?",
     "feedbackSubtitle": "{name} – odpoveď uvidí len náš tím.",
@@ -735,7 +837,7 @@
     "sosHold": "SOS – podrž",
     "unlock": "Odomknúť",
     "sosSentTitle": "Poplach odoslaný",
-    "sosSentBody": "{name} dostal/a upozornenie s tvojou polohou.",
+    "sosSentBody": "Dôveryhodná osoba ({name}) dostala upozornenie s tvojou polohou.",
     "sosSentBodyNoName": "Dôveryhodná osoba dostala upozornenie s tvojou polohou.",
     "sosFailedTitle": "Nepodarilo sa odoslať"
   },
@@ -793,5 +895,12 @@
       "signOut": "Odhlásiť",
       "signOutOthers": "Odhlásiť všetky ostatné zariadenia"
     }
+  },
+  "settings": {
+    "title": "Nastavenia",
+    "search": "Koho hľadám",
+    "safety": "Bezpečnosť a účet",
+    "plan": "Predplatné",
+    "account": "Účet"
   }
 }

@@ -18,6 +18,8 @@ export function loadConfig(env = process.env) {
     dev,
     port,
     publicUrl: (env.PUBLIC_URL ?? `http://localhost:${port}`).replace(/\/$/, ''),
+    // Neutrální doména pro odkazy důvěryhodné osobě (např. https://bezpecne-sdileni.cz) – musí vést na tenhle server.
+    shareUrl: (env.SHARE_URL || env.PUBLIC_URL || `http://localhost:${port}`).replace(/\/$/, ''),
     dbFile: env.DB_FILE ?? 'yesyes.db',
     // Jeden klíč v base64, nebo keyring pro rotaci: "v2:<base64>,v1:<base64>" (první je aktuální).
     dataKey: env.DATA_KEYS || required('DATA_KEY', DEV_DATA_KEY),

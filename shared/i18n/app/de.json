@@ -198,7 +198,11 @@
     "startMeetup": "Treffen starten",
     "revoke": "Absprache zurückziehen",
     "revokeConfirmTitle": "Absprache zurückziehen?",
-    "revokeConfirmMessage": "Das Treffen findet nicht statt. Du musst nichts erklären – {name} bekommt nur eine Benachrichtigung."
+    "revokeConfirmMessage": "Das Treffen findet nicht statt. Du musst nichts erklären – {name} bekommt nur eine Benachrichtigung.",
+    "unsetIsNo": {
+      "one": "{count} von {total} ausgewählt. Alles, was du nicht auswählst, zählt als Nein.",
+      "other": "{count} von {total} ausgewählt. Alles, was du nicht auswählst, zählt als Nein."
+    }
   },
   "meetup": {
     "title": "Treffen · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "Dass es dir gut geht.",
     "pinSubtitleEnd": "Dass das Treffen vorbei ist und es dir gut geht.",
     "revokeConfirmTitle": "Absprache zurückziehen?",
-    "revokeConfirmMessage": "{name} bekommt eine Benachrichtigung. Du musst nichts erklären. Der Sicherheitsmodus läuft weiter, bis du ihn beendest."
+    "revokeConfirmMessage": "{name} bekommt eine Benachrichtigung. Du musst nichts erklären. Der Sicherheitsmodus läuft weiter, bis du ihn beendest.",
+    "meetingAt": "Treffen: {when} · {place}",
+    "earlyTitle": "Euer Treffen ist erst später",
+    "earlyMessage": "Ihr habt {when} ausgemacht. Wenn du den Sicherheitsmodus jetzt einschaltest, bekommt {name} sofort eine SMS und die Check-ins laufen ab jetzt. Jetzt einschalten?",
+    "earlyConfirm": "Jetzt einschalten",
+    "agreementLink": "Absprache"
   },
   "feedback": {
     "title": "Wie war das Treffen?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Details (optional)",
     "submit": "Melden",
     "thanksTitle": "Danke",
-    "thanksMessage": "Wir haben deine Meldung erhalten. Ihr seht euch nicht mehr."
+    "thanksMessage": "Wir haben deine Meldung erhalten. Ihr seht euch nicht mehr.",
+    "blocked": "Wir haben die Person blockiert – ihr seht euch nicht mehr und könnt euch nicht mehr schreiben.",
+    "blockedWithName": "{name} kann dich nicht mehr sehen und dir nicht mehr schreiben.",
+    "nextSteps": "Meldungen sind anonym. Unser Moderationsteam prüft sie, meist innerhalb von 24 Stunden, und sperrt das Konto je nach Schwere vorübergehend oder dauerhaft.",
+    "danger": "Wenn du in Gefahr bist, ruf die 112 an.",
+    "backToMessages": "Zurück zu den Nachrichten"
   },
   "chat": {
     "unavailable": "Chat nicht verfügbar",
@@ -311,7 +325,8 @@
     "block": "Blockieren",
     "unmatch": "Match auflösen",
     "blockConfirmTitle": "Blockieren?",
-    "blockConfirmMessage": "Du und {name} seht euch nicht mehr, und der Chat verschwindet."
+    "blockConfirmMessage": "Du und {name} seht euch nicht mehr, und der Chat verschwindet.",
+    "emptyHint": "Schreib {name} als Erstes. Fang mit etwas an, das ihr gemeinsam habt, oder öffne gleich die Absprache."
   },
   "safetySettings": {
     "title": "Sicherheit und Privatsphäre",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, Fingerabdruck oder der Code deines Handys bei jedem Öffnen.",
     "discreet": "Diskreter Modus",
     "discreetHint": "Ein neutrales Icon und Benachrichtigungen ohne Inhalt – niemand erkennt, um welche App es geht.",
-    "save": "Speichern"
+    "save": "Speichern",
+    "pinsMustDiffer": "Deine Notfall-PIN muss sich von deiner normalen PIN unterscheiden."
   },
   "tabs": {
     "discover": "Entdecken",
@@ -607,7 +623,17 @@
     "codeSent": "Wir haben einen 6-stelligen Code an {email} geschickt. Falls du schon ein Konto hast, bekommst du stattdessen einen Hinweis – melde dich dann einfach an.",
     "code": "Code aus der E-Mail",
     "confirmCode": "Bestätigen und Konto erstellen",
-    "resend": "Code erneut senden"
+    "resend": "Code erneut senden",
+    "missing": {
+      "name": "Gib deinen Namen ein.",
+      "email": "Gib deine E-Mail-Adresse ein.",
+      "password": "Dein Passwort braucht mindestens 10 Zeichen.",
+      "birthdate": "Gib dein Geburtsdatum ein.",
+      "gender": "Wähle aus, wer du bist.",
+      "showMe": "Wähle aus, wen wir dir zeigen sollen.",
+      "adult": "Bestätige, dass du 18 oder älter bist.",
+      "rules": "Wir brauchen noch deine Zustimmung zu den Regeln."
+    }
   },
   "verify": {
     "title": "Bestätige, dass du es bist",
@@ -622,7 +648,8 @@
     "devApprove": "Erfolgreiche Verifizierung simulieren (Testmodus)",
     "retry": "Erneut versuchen",
     "start": "Identität verifizieren",
-    "signOut": "Abmelden"
+    "signOut": "Abmelden",
+    "continue": "Verifizierung fortsetzen"
   },
   "common": {
     "back": "Zurück",
@@ -638,7 +665,8 @@
     "open": "Öffnen",
     "show": "Ansehen",
     "confirm": "Bestätigen",
-    "errorGeneric": "Etwas ist schiefgelaufen."
+    "errorGeneric": "Etwas ist schiefgelaufen.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} hat den Sicherheitsmodus an",
@@ -767,5 +795,12 @@
       "signOut": "Abmelden",
       "signOutOthers": "Alle anderen Geräte abmelden"
     }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "search": "Wen ich sehen will",
+    "safety": "Sicherheit und Konto",
+    "plan": "Abo",
+    "account": "Konto"
   }
 }

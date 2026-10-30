@@ -3,7 +3,11 @@
     "title": "Domluva",
     "titleWithName": "Domluva · {name}",
     "timeFormatError": "Čas zadej jako HH:MM, třeba 21:00.",
-    "revokedByPartnerTitle": "{name} domluvu zrušil/a",
+    "revokedByPartnerTitle": {
+      "man": "{name} domluvu zrušil",
+      "woman": "{name} domluvu zrušila",
+      "other": "{name} domluvu zrušil/a"
+    },
     "revokedByPartnerSubtitle": "Novou domluvu teď může otevřít jen {name}.",
     "revokedTitle": "Domluva byla zrušena",
     "revokedSubtitle": "Můžeš otevřít novou.",
@@ -14,8 +18,16 @@
     "confirmedTitle": "Domluvu jste vyplnili oba",
     "confirmedSubtitle": "Na místě se můžete kdykoli rozhodnout jinak.",
     "myPartDoneTitle": "Tvoje část je hotová",
-    "myPartDoneSubtitle": "{name} ještě nevyplnil/a nebo nepotvrdil/a.",
-    "partnerFilledTitle": "{name} svou část vyplnil/a",
+    "myPartDoneSubtitle": {
+      "man": "{name} ještě nevyplnil nebo nepotvrdil.",
+      "woman": "{name} ještě nevyplnila nebo nepotvrdila.",
+      "other": "{name} ještě nevyplnil/a nebo nepotvrdil/a."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} svou část vyplnil",
+      "woman": "{name} svou část vyplnila",
+      "other": "{name} svou část vyplnil/a"
+    },
     "partnerFilledSubtitle": "Vyplň tu svoji – uvidíte jen shodu.",
     "fillTitle": "Vyplň svou část",
     "fillSubtitle": "Uvidíte jen, na čem se shodnete.",
@@ -50,13 +62,19 @@
     "startMeetup": "Zahájit schůzku",
     "revoke": "Zrušit domluvu",
     "revokeConfirmTitle": "Zrušit domluvu?",
-    "revokeConfirmMessage": "Schůzka se nekoná. Nemusíš nic vysvětlovat – {name} dostane jen oznámení."
+    "revokeConfirmMessage": "Schůzka se nekoná. Nemusíš nic vysvětlovat – {name} dostane jen oznámení.",
+    "unsetIsNo": {
+      "one": "Vybráno {count} z {total}. Co nevybereš, počítáme jako ne.",
+      "few": "Vybrány {count} z {total}. Co nevybereš, počítáme jako ne.",
+      "many": "Vybráno {count} z {total}. Co nevybereš, počítáme jako ne.",
+      "other": "Vybráno {count} z {total}. Co nevybereš, počítáme jako ne."
+    }
   },
   "meetup": {
     "title": "Schůzka · {name}",
     "fakeCallerDefault": "Mamka",
     "endedTitle": "Schůzka ukončena",
-    "endedMessage": "{name} dostal/a zprávu, že jsi v pořádku.",
+    "endedMessage": "Důvěryhodná osoba ({name}) dostala zprávu, že jsi v pořádku.",
     "sosFailed": "Poplach se nepodařilo odeslat: {error} Zkus to znovu nebo zavolej {name}.",
     "needAgreementTitle": "Nejdřív hotová domluva",
     "needAgreementSubtitle": "Schůzku jde zahájit, až domluvu vyplníte a potvrdíte oba.",
@@ -80,7 +98,7 @@
     "checkIn": "Check-in",
     "now": "teď",
     "imOk": "Jsem v pořádku",
-    "overdueHint": "{name} dostal/a upozornění. Potvrď PINem, že jsi v pořádku.",
+    "overdueHint": "Důvěryhodná osoba ({name}) dostala upozornění. Potvrď PINem, že jsi v pořádku.",
     "graceHint": {
       "one": "Když se do {count} minuty po termínu neozveš, {name} dostane upozornění s tvou polohou.",
       "few": "Když se do {count} minut po termínu neozveš, {name} dostane upozornění s tvou polohou.",
@@ -97,14 +115,19 @@
     "revoke": "Zrušit domluvu",
     "end": "Ukončit schůzku",
     "sosSentTitle": "Poplach odeslán",
-    "sosSentBody": "{trusted} dostal/a tvoji přesnou polohu a informaci, s kým jsi. {partner} nic neuvidí.",
+    "sosSentBody": "Důvěryhodná osoba ({trusted}) dostala tvoji přesnou polohu a informaci, s kým jsi. {partner} nic neuvidí.",
     "sosMistake": "Byl to omyl – jsem OK",
     "sosHide": "Skrýt (poplach trvá dál)",
     "pinTitle": "Potvrď PINem",
     "pinSubtitleOk": "Že jsi v pořádku.",
     "pinSubtitleEnd": "Že je schůzka u konce a jsi v pořádku.",
     "revokeConfirmTitle": "Zrušit domluvu?",
-    "revokeConfirmMessage": "{name} dostane oznámení. Nemusíš nic vysvětlovat. Bezpečnostní režim poběží dál, dokud ho neukončíš."
+    "revokeConfirmMessage": "{name} dostane oznámení. Nemusíš nic vysvětlovat. Bezpečnostní režim poběží dál, dokud ho neukončíš.",
+    "meetingAt": "Schůzka: {when} · {place}",
+    "earlyTitle": "Schůzka je až později",
+    "earlyMessage": "Domluvili jste se na {when}. Když bezpečný režim zapneš už teď, {name} hned dostane SMS a check-in poběží od teď. Zapnout teď?",
+    "earlyConfirm": "Zapnout teď",
+    "agreementLink": "Domluva"
   },
   "feedback": {
     "title": "Jak proběhla schůzka?",
@@ -137,7 +160,11 @@
       "detail": "Obrať se na místní policii nebo na místní linku pomoci obětem trestných činů a sexuálního násilí."
     },
     "medical": "Pokud došlo k něčemu proti tvé vůli, vyhledej co nejdřív lékařskou pomoc – i kvůli prevenci těhotenství a infekcí, některé léky fungují jen do 72 hodin. Stopy se dají zajistit, když se ještě nesprchuješ a uschováš oblečení. Ale nic z toho není podmínkou – oznámit to můžeš i později.",
-    "preserved": "Záznam schůzky (domluvu, zprávy, poplachy) jsme uchovali, kdybys ho potřeboval/a pro policii.",
+    "preserved": {
+      "man": "Záznam schůzky (domluvu, zprávy, poplachy) jsme uchovali, kdybys ho potřeboval pro policii.",
+      "woman": "Záznam schůzky (domluvu, zprávy, poplachy) jsme uchovali, kdybys ho potřebovala pro policii.",
+      "other": "Záznam schůzky (domluvu, zprávy, poplachy) jsme uchovali, kdybys ho potřeboval/a pro policii."
+    },
     "backToApp": "Zpět do aplikace"
   },
   "report": {
@@ -147,7 +174,12 @@
     "detailsLabel": "Podrobnosti (nepovinné)",
     "submit": "Nahlásit",
     "thanksTitle": "Děkujeme",
-    "thanksMessage": "Nahlášení jsme přijali. Už se navzájem neuvidíte."
+    "thanksMessage": "Nahlášení jsme přijali. Už se navzájem neuvidíte.",
+    "blocked": "Zablokovali jsme vás navzájem – už se neuvidíte a nenapíšete si.",
+    "blockedWithName": "{name} tě už neuvidí a nenapíše ti.",
+    "nextSteps": "Nahlášení je anonymní. Moderátor ho prověří, obvykle do 24 hodin, a podle závažnosti účet pozastaví nebo zablokuje.",
+    "danger": "Pokud ti hrozí nebezpečí, volej 112.",
+    "backToMessages": "Zpět na zprávy"
   },
   "chat": {
     "unavailable": "Chat není dostupný",
@@ -165,7 +197,8 @@
     "block": "Zablokovat",
     "unmatch": "Zrušit match",
     "blockConfirmTitle": "Zablokovat?",
-    "blockConfirmMessage": "{name} a ty se už navzájem neuvidíte a chat zmizí."
+    "blockConfirmMessage": "{name} a ty se už navzájem neuvidíte a chat zmizí.",
+    "emptyHint": "Ty a {name} jste match. Napiš jako první – klidně začni tím, co máte společné, nebo rovnou otevři domluvu."
   },
   "safetySettings": {
     "title": "Bezpečnost a soukromí",
@@ -187,6 +220,7 @@
     "appLockHint": "Face ID, otisk nebo kód telefonu při každém otevření.",
     "discreet": "Diskrétní režim",
     "discreetHint": "Neutrální ikona a notifikace bez obsahu – nikdo nepozná, o jakou aplikaci jde.",
-    "save": "Uložit"
+    "save": "Uložit",
+    "pinsMustDiffer": "Nouzový PIN musí být jiný než běžný PIN."
   }
 }

@@ -10,6 +10,10 @@ const DOMAINS = ['app', 'web', 'store', 'server'];
 const PLURAL = new Set(['zero', 'one', 'two', 'few', 'many', 'other']);
 const STORE_LIMITS = { name: 30, subtitle: 30, promotionalText: 170, keywords: 100, description: 4000, whatsNew: 4000 };
 
+// Rod ({ man, woman, other }) má v jazycích s rodem stejnou roli jako obyčejný text v angličtině.
+const GENDER = new Set(['man', 'woman', 'other']);
+const isGendered = (v) => v && typeof v === 'object' && 'other' in v && ('man' in v || 'woman' in v) && Object.keys(v).every((k) => GENDER.has(k));
+const flat = (v) => (isGendered(v) ? Object.values(v).join(' ') : v);
 const isPlural = (v) => v && typeof v === 'object' && !Array.isArray(v) && 'other' in v && Object.keys(v).every((k) => PLURAL.has(k));
 const params = (s) => [...new Set([...String(s).matchAll(/\{(\w+)\}/g)].map((m) => m[1]))].sort().join(',');
 const load = (domain, code) => {
@@ -31,6 +35,11 @@ function compare(code, domain, ref, cur, prefix) {
     const val = cur?.[key];
     if (val === undefined || val === '') {
       report(code, domain, `chybí ${at}`);
+      continue;
+    }
+    if (isGendered(refVal) || isGendered(val)) {
+      if (typeof val !== 'string' && !isGendered(val)) report(code, domain, `${at} má být text nebo rod ({man, woman, other})`);
+      else if (params(flat(refVal)) !== params(flat(val))) report(code, domain, `${at}: jiné proměnné než v angličtině`);
       continue;
     }
     if (isPlural(refVal) || isPlural(val)) {

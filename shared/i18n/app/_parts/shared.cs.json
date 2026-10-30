@@ -13,7 +13,8 @@
     "open": "Otevřít",
     "show": "Zobrazit",
     "confirm": "Potvrdit",
-    "errorGeneric": "Něco se pokazilo."
+    "errorGeneric": "Něco se pokazilo.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} má zapnutý bezpečnostní režim",
@@ -23,17 +24,33 @@
     "missingTitle": "Domluva zatím chybí",
     "missingSubtitle": "Každý vyplní, na co má chuť – uvidíte jen shodu.",
     "fill": "Vyplnit",
-    "revokedByMeTitle": "Zrušil/a jsi domluvu",
-    "revokedByPartnerTitle": "{name} zrušil/a domluvu",
+    "revokedByMeTitle": {
+      "man": "Zrušil jsi domluvu",
+      "woman": "Zrušila jsi domluvu",
+      "other": "Zrušil/a jsi domluvu"
+    },
+    "revokedByPartnerTitle": {
+      "man": "{name} zrušil domluvu",
+      "woman": "{name} zrušila domluvu",
+      "other": "{name} zrušil/a domluvu"
+    },
     "revokedSubtitle": "Schůzka se nekoná.",
     "revokedCooldownSubtitle": "Schůzka se nekoná. Novou domluvu může otevřít jen {name}.",
     "newAgreement": "Nová domluva",
     "confirmedTitle": "Domluva je hotová",
     "confirmedSubtitle": "Na místě se můžete kdykoli rozhodnout jinak.",
-    "partnerFilledTitle": "{name} vyplnil/a domluvu",
+    "partnerFilledTitle": {
+      "man": "{name} vyplnil domluvu",
+      "woman": "{name} vyplnila domluvu",
+      "other": "{name} vyplnil/a domluvu"
+    },
     "waitingForYouTitle": "Domluva čeká na tebe",
     "fillYoursSubtitle": "Vyplň, na co máš chuť ty – uvidíte jen shodu.",
-    "partnerPendingTitle": "{name} ještě nevyplnil/a",
+    "partnerPendingTitle": {
+      "man": "{name} ještě nevyplnil",
+      "woman": "{name} ještě nevyplnila",
+      "other": "{name} ještě nevyplnil/a"
+    },
     "partnerPendingSubtitle": "Domluva je hotová, až ji vyplníte oba."
   },
   "fakeCall": {
@@ -44,7 +61,11 @@
   },
   "homeBanners": {
     "meetupTitle": "Probíhá schůzka · {name}",
-    "missedCheckIn": "Zmeškal/a jsi check-in!",
+    "missedCheckIn": {
+      "man": "Zmeškal jsi check-in!",
+      "woman": "Zmeškala jsi check-in!",
+      "other": "Zmeškal/a jsi check-in!"
+    },
     "safetyOn": "Bezpečnostní režim je zapnutý.",
     "feedbackTitle": "Jak proběhla schůzka?",
     "feedbackSubtitle": "{name} – odpověď uvidí jen náš tým.",
@@ -86,7 +107,7 @@
     "sosHold": "SOS – podrž",
     "unlock": "Odemknout",
     "sosSentTitle": "Poplach odeslán",
-    "sosSentBody": "{name} dostal/a upozornění s tvou polohou.",
+    "sosSentBody": "Důvěryhodná osoba ({name}) dostala upozornění s tvou polohou.",
     "sosSentBodyNoName": "Důvěryhodná osoba dostala upozornění s tvou polohou.",
     "sosFailedTitle": "Nepodařilo se odeslat"
   },

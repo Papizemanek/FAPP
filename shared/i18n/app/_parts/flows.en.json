@@ -50,7 +50,11 @@
     "startMeetup": "Start meetup",
     "revoke": "Cancel agreement",
     "revokeConfirmTitle": "Cancel the agreement?",
-    "revokeConfirmMessage": "The meetup is off. You don't have to explain anything – {name} only gets a notification."
+    "revokeConfirmMessage": "The meetup is off. You don't have to explain anything – {name} only gets a notification.",
+    "unsetIsNo": {
+      "one": "{count} of {total} chosen. Anything you don't choose counts as no.",
+      "other": "{count} of {total} chosen. Anything you don't choose counts as no."
+    }
   },
   "meetup": {
     "title": "Meetup · {name}",
@@ -102,7 +106,12 @@
     "pinSubtitleOk": "That you're OK.",
     "pinSubtitleEnd": "That the meetup is over and you're OK.",
     "revokeConfirmTitle": "Cancel the agreement?",
-    "revokeConfirmMessage": "{name} will get a notification. You don't have to explain anything. Safety mode keeps running until you end it."
+    "revokeConfirmMessage": "{name} will get a notification. You don't have to explain anything. Safety mode keeps running until you end it.",
+    "meetingAt": "Meeting: {when} · {place}",
+    "earlyTitle": "Your meeting is later",
+    "earlyMessage": "You agreed on {when}. If you turn on safety mode now, {name} gets a text right away and check-ins start now. Turn it on now?",
+    "earlyConfirm": "Turn on now",
+    "agreementLink": "Agreement"
   },
   "feedback": {
     "title": "How did the meetup go?",
@@ -145,7 +154,12 @@
     "detailsLabel": "Details (optional)",
     "submit": "Report",
     "thanksTitle": "Thank you",
-    "thanksMessage": "We've received your report. You won't see each other anymore."
+    "thanksMessage": "We've received your report. You won't see each other anymore.",
+    "blocked": "We've blocked them – you won't see or message each other again.",
+    "blockedWithName": "{name} can't see or message you anymore.",
+    "nextSteps": "Reports are anonymous. A moderator reviews it, usually within 24 hours, and suspends or bans the account depending on how serious it is.",
+    "danger": "If you're in danger, call 112.",
+    "backToMessages": "Back to messages"
   },
   "chat": {
     "unavailable": "Chat isn't available",
@@ -163,7 +177,8 @@
     "block": "Block",
     "unmatch": "Unmatch",
     "blockConfirmTitle": "Block?",
-    "blockConfirmMessage": "You and {name} won't see each other anymore, and the chat will disappear."
+    "blockConfirmMessage": "You and {name} won't see each other anymore, and the chat will disappear.",
+    "emptyHint": "Message {name} first. Start with something you have in common, or open the agreement right away."
   },
   "safetySettings": {
     "title": "Safety and privacy",
@@ -185,6 +200,7 @@
     "appLockHint": "Face ID, fingerprint or your phone's passcode every time you open the app.",
     "discreet": "Discreet mode",
     "discreetHint": "A neutral icon and notifications without content – nobody can tell what app it is.",
-    "save": "Save"
+    "save": "Save",
+    "pinsMustDiffer": "Your emergency PIN must be different from your regular PIN."
   }
 }

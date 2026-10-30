@@ -2,13 +2,14 @@ import { Image } from 'expo-image';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Alert, FlatList, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { AgreementBanner } from '@/components/AgreementBanner';
 import { ActionSheet, ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
 import { Avatar, ErrorText, Header, IconButton, Screen } from '@/components/ui';
 import { api, errorMessage, imageSource, type MatchDetail, type Message } from '@/lib/api';
 import { useT } from '@/lib/i18n';
+import { showNotice } from '@/lib/notice';
 import { pickPhotoBase64 } from '@/lib/photos';
 import { colors, fonts } from '@/lib/theme';
 
@@ -27,18 +28,20 @@ export default function Chat() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [confirmBlock, setConfirmBlock] = useState(false);
   const lastId = useRef(0);
+  const [loaded, setLoaded] = useState(false);
 
   const loadDetail = useCallback(async () => {
     try {
       setDetail(await api<MatchDetail>('GET', `/matches/${id}`));
     } catch (err) {
-      Alert.alert(t('chat.unavailable'), errorMessage(err));
+      showNotice(t('chat.unavailable'), errorMessage(err));
       router.back();
     }
   }, [id]);
 
   const poll = useCallback(async () => {
     const fresh = await api<Message[]>('GET', `/matches/${id}/messages?after=${lastId.current}`).catch(() => []);
+    setLoaded(true);
     if (fresh.length) {
       lastId.current = fresh[fresh.length - 1].id;
       setMessages((m) => [...m, ...fresh]);
@@ -116,6 +119,14 @@ export default function Chat() {
           inverted
           keyExtractor={(m) => String(m.id)}
           contentContainerStyle={{ padding: 14, gap: 8 }}
+          // Prázdný chat: nápověda, jak začít. Seznam je obrácený (inverted), proto je text otočený zpátky.
+          ListEmptyComponent={
+            loaded ? (
+              <View style={s.empty}>
+                <Text style={s.emptyText}>{t('chat.emptyHint', { name: detail?.partner.name ?? '' })}</Text>
+              </View>
+            ) : null
+          }
           renderItem={({ item }) => (
             <View style={{ gap: 6, alignItems: item.mine ? 'flex-end' : 'flex-start' }}>
               {item.warning ? (
@@ -188,6 +199,8 @@ export default function Chat() {
 }
 
 const s = StyleSheet.create({
+  empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 24, paddingVertical: 40, transform: [{ scaleY: -1 }] },
+  emptyText: { fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, color: colors.muted, textAlign: 'center' },
   headerName: { fontFamily: fonts.bold, fontSize: 16, color: colors.text },
   headerMeta: { fontFamily: fonts.regular, fontSize: 13, color: colors.muted },
   bubble: { maxWidth: '78%', paddingHorizontal: 14, paddingVertical: 10, fontFamily: fonts.regular, fontSize: 15, lineHeight: 21, borderRadius: 18, overflow: 'hidden' },

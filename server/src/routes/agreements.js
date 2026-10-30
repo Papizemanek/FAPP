@@ -141,7 +141,7 @@ export function agreementRoutes({ db, services, sealer }) {
     const kind = complete ? 'agreementComplete' : !editable ? 'agreementNew' : logisticsChanged ? 'agreementChanged' : 'agreementUpdated';
     notify(db, services.push, other.id, {
       title: msg(`push.${kind}.title`),
-      body: msg(`push.${kind}.body`, { name: req.user.name }),
+      body: msg(`push.${kind}.body`, { name: req.user.name, gender: req.user.gender }),
       data: { type: 'agreement', matchId: match.id },
     });
     res.status(editable ? 200 : 201).json(agreementView(db, agreement, match, req.user.id, sealer.open));
@@ -162,7 +162,7 @@ export function agreementRoutes({ db, services, sealer }) {
       }
       notify(db, services.push, other.id, {
         title: msg('push.agreementRevoked.title'),
-        body: msg('push.agreementRevoked.body', { name: req.user.name }),
+        body: msg('push.agreementRevoked.body', { name: req.user.name, gender: req.user.gender }),
         data: { type: 'agreement', matchId: match.id },
       });
     }

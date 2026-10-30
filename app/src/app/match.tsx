@@ -13,12 +13,14 @@ export default function MatchModal() {
   const { me } = useSession();
   const [partnerPhoto, setPartnerPhoto] = useState<string | null>(null);
   const [shared, setShared] = useState<Tag[]>([]);
+  const [partnerGender, setPartnerGender] = useState<string | undefined>();
 
   useEffect(() => {
     api<MatchDetail>('GET', `/matches/${matchId}`)
       .then((d) => {
         setPartnerPhoto(d.partner.photos[0] ?? null);
         setShared(d.partner.sharedYes ?? []);
+        setPartnerGender(d.partner.gender);
       })
       .catch(() => {});
   }, [matchId]);
@@ -49,7 +51,7 @@ export default function MatchModal() {
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 6 }}>
               {shared.map((tag) => (
                 <Text key={tag} style={{ fontFamily: fonts.semibold, fontSize: 13, color: colors.text, backgroundColor: colors.accentBg, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 6, overflow: 'hidden' }}>
-                  {t(`labels.tags.${tag}`)}
+                  {t(`labels.tags.${tag}`, { gender: partnerGender })}
                 </Text>
               ))}
             </View>

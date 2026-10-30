@@ -19,7 +19,7 @@ const HELP: { id: 'whiteCircle' | 'police' | 'persefona'; phone?: string; url?: 
 export default function Feedback() {
   const t = useT();
   const locale = useLocale();
-  const { id, name } = useLocalSearchParams<{ id: string; name?: string }>();
+  const { id, name, gender } = useLocalSearchParams<{ id: string; name?: string; gender?: string }>();
   const [bad, setBad] = useState(false);
   const [reason, setReason] = useState<FeedbackReason | null>(null);
   const [details, setDetails] = useState('');
@@ -99,7 +99,7 @@ export default function Feedback() {
           <View style={{ gap: 14 }}>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
               {reasons.map((r) => (
-                <Chip key={r} label={t(`labels.feedbackReasons.${r}`)} selected={reason === r} onPress={() => setReason(r)} />
+                <Chip key={r} label={t(`labels.feedbackReasons.${r}`, r === 'safety' ? undefined : { gender })} selected={reason === r} onPress={() => setReason(r)} />
               ))}
             </View>
             <Field label={t('feedback.detailsLabel')} value={details} onChangeText={setDetails} multiline />

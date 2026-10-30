@@ -71,7 +71,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
       id: match.id,
       partner: publicProfile(other, req.user, { matched: true }),
       agreement: agreementView(db, currentAgreement(db, match.id), match, req.user.id, sealer.open),
-      safety: { mine: ownSafetyView(mine, config.publicUrl), partner: partnerSafetyView(theirs) },
+      safety: { mine: ownSafetyView(mine, config), partner: partnerSafetyView(theirs) },
     });
   });
 
@@ -124,7 +124,7 @@ export function matchRoutes({ db, config, services, sealer, limiter }) {
 
     notify(db, services.push, other.id, {
       title: req.user.name,
-      body: imageId ? msg('push.message.photo') : text.slice(0, 120),
+      body: imageId ? msg('push.message.photo', { gender: req.user.gender }) : text.slice(0, 120),
       data: { type: 'message', matchId: match.id },
     });
     const row = db.prepare('SELECT * FROM messages WHERE id = ?').get(lastInsertRowid);

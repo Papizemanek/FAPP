@@ -1,45 +1,27 @@
-import { GENDERS, MAX_PROFILE_PHOTOS, TAG_GROUP, TRAVEL_CITIES, YES_GROUPS, type TravelCityId, type YesGroup } from '@yesyes/shared';
-import { LOCALES } from '@yesyes/shared/i18n';
+import { MAX_PROFILE_PHOTOS, TAG_GROUP, YES_GROUPS, type YesGroup } from '@yesyes/shared';
 import { Image } from 'expo-image';
-import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useRef, useState } from 'react';
+import { router } from 'expo-router';
+import { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { ConfirmSheet, PickerSheet } from '@/components/Sheet';
+import { ConfirmSheet } from '@/components/Sheet';
 import { Icon } from '@/components/Icon';
-import { Banner, Button, Chip, CodeField, ErrorText, Field, Label, Screen, Stepper, Title, Toggle } from '@/components/ui';
-import { api, errorMessage, imageSource, type Billing, type Gender, type Me, type Tag } from '@/lib/api';
-import { openPaywall, setBilling, showPaid, useBilling } from '@/lib/billing';
-import { formatDate } from '@/lib/format';
-import { i18n, useLocale, useT } from '@/lib/i18n';
+import { Banner, Chip, ErrorText, Field, IconButton, Label, Screen, Title } from '@/components/ui';
+import { api, errorMessage, imageSource, type Me, type Tag } from '@/lib/api';
+import { useT } from '@/lib/i18n';
 import { pickPhotoBase64 } from '@/lib/photos';
 import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
 
 const yesGroups = Object.entries(YES_GROUPS) as [YesGroup, (typeof YES_GROUPS)[YesGroup]][];
-const genderKeys = Object.keys(GENDERS) as Gender[];
-const cityKeys = Object.keys(TRAVEL_CITIES) as TravelCityId[];
 
 export default function ProfileScreen() {
   const t = useT();
-  useLocale(); // výběr jazyka v profilu se po změně překreslí
-  const { me, setMe, signOut } = useSession();
+  const { me, setMe } = useSession();
   const [form, setForm] = useState(() => toForm(me));
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
-  const [languageOpen, setLanguageOpen] = useState(false);
-  // Ikona filtru na objevování otevírá profil rovnou u nastavení hledání.
-  const { focus } = useLocalSearchParams<{ focus?: string }>();
-  const scrollRef = useRef<ScrollView>(null);
-  const [searchY, setSearchY] = useState<number | null>(null);
-  useEffect(() => {
-    if (focus === 'search' && searchY != null) scrollRef.current?.scrollTo({ y: Math.max(0, searchY - 12), animated: true });
-  }, [focus, searchY]);
-  const [saved, setSaved] = useState(false);
-  const [deletePassword, setDeletePassword] = useState('');
-  const [deleteCode, setDeleteCode] = useState('');
-  const [showDelete, setShowDelete] = useState(false);
+  const [saved, setSaved] = useState(true);
   const [photoToRemove, setPhotoToRemove] = useState<string | null>(null);
-  const billing = useBilling();
 
   // Formulář se přenačte jen při změně účtu – přidání fotky nesmaže rozepsané úpravy.
   useEffect(() => setForm(toForm(me)), [me?.id]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -49,13 +31,12 @@ export default function ProfileScreen() {
     setForm((f) => ({ ...f, ...p }));
     setSaved(false);
   };
-  const toggle = <T,>(list: T[], item: T) => (list.includes(item) ? list.filter((x) => x !== item) : [...list, item]);
 
   const save = async () => {
     setBusy(true);
     setError('');
     try {
-      setMe(await api<Me>('PUT', '/me', { ...form, gender: me.gender }));
+      setMe(await api<Me>('PUT', '/me', { ...form, gender: me.gender, interestedIn: me.interestedIn, ageMin: me.ageMin, ageMax: me.ageMax, maxDistanceKm: me.maxDistanceKm }));
       setSaved(true);
     } catch (err) {
       setError(errorMessage(err));
@@ -81,38 +62,21 @@ export default function ProfileScreen() {
     }
   };
 
-  const deleteAccount = async () => {
-    try {
-      await api('DELETE', '/me', { password: deletePassword, code: deleteCode });
-      await signOut();
-      router.replace('/welcome');
-    } catch (err) {
-      setError(errorMessage(err));
-    }
-  };
-
   const safetyReady = me.trustedPhone && me.hasCheckinPin && me.hasDuressPin;
-
-  // Inkognito a „Na cestách“ (Plus). Bez předplatného otevře nabídku.
-  const updateBilling = async (body: { incognito?: boolean; travelCity?: TravelCityId | null }) => {
-    setError('');
-    try {
-      setBilling(await api<Billing>('PUT', '/billing/settings', body));
-    } catch (err) {
-      if (!openPaywall(err)) setError(errorMessage(err));
-    }
-  };
 
   return (
     <Screen edges={['top']}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
         <View style={s.top}>
           <Title>{t('profile.title')}</Title>
-          <Pressable onPress={save} style={s.done} accessibilityRole="button">
-            <Text style={s.doneText}>{busy ? t('profile.saving') : saved ? t('profile.saved') : t('profile.done')}</Text>
-          </Pressable>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <IconButton name="settings" label={t('settings.title')} onPress={() => router.push('/settings')} />
+            <Pressable onPress={save} style={[s.done, saved && s.doneSaved]} accessibilityRole="button">
+              <Text style={[s.doneText, saved && s.doneTextSaved]}>{busy ? t('profile.saving') : saved ? t('profile.saved') : t('common.save')}</Text>
+            </Pressable>
+          </View>
         </View>
-        <ScrollView ref={scrollRef} contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
+        <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 4, gap: 20 }} keyboardShouldPersistTaps="handled">
           {me.status === 'suspended' ? (
             <Banner tone="alarm" title={t('profile.suspended.title')} subtitle={t('profile.suspended.subtitle')} />
           ) : null}
@@ -163,100 +127,17 @@ export default function ProfileScreen() {
             </Text>
           </View>
 
-          <Banner
-            tone={safetyReady ? 'safe' : 'warn'}
-            icon="shieldCheck"
-            title={t('profile.safety.title')}
-            subtitle={safetyReady ? t('profile.safety.trusted', { name: me.trustedName }) : t('profile.safety.setup')}
-            action={t('profile.safety.edit')}
-            onPress={() => router.push('/safety-settings')}
-          />
-          <Banner
-            tone={me.twoFactor ? 'safe' : 'neutral'}
-            icon="shield"
-            title={t('security.title')}
-            subtitle={me.twoFactor ? t('security.twoFactor.on') : t('security.bannerOff')}
-            action={t('profile.safety.edit')}
-            onPress={() => router.push('/security')}
-          />
-
-          {showPaid(billing) ? (
-            <View style={{ gap: 12 }}>
-              <Banner
-                tone={billing.plan === 'free' ? 'neutral' : 'safe'}
-                icon="crown"
-                title={billing.plan === 'free' ? t('profile.plan.freeTitle') : t('profile.plan.title', { plan: t(`labels.plans.${billing.plan}`) })}
-                subtitle={
-                  billing.plan === 'free'
-                    ? t('profile.plan.freeSubtitle')
-                    : billing.planExpiresAt
-                      ? t('profile.plan.validUntil', { date: formatDate(billing.planExpiresAt) })
-                      : undefined
-                }
-                action={billing.plan === 'free' ? t('profile.plan.upgrade') : t('profile.plan.manage')}
-                onPress={() => router.push('/premium')}
-              />
-              <Toggle
-                label={t('profile.incognito.label')}
-                hint={t('profile.incognito.hint')}
-                value={billing.incognito}
-                onChange={(incognito) => updateBilling({ incognito })}
-              />
-              <View style={{ gap: 10 }}>
-                <Label>{t('profile.travel.label')}</Label>
-                <View style={s.wrap}>
-                  <Chip label={t('profile.travel.home')} selected={!billing.travelCity} onPress={() => updateBilling({ travelCity: null })} />
-                  {cityKeys.map((c) => (
-                    <Chip key={c} label={t(`labels.cities.${c}`)} selected={billing.travelCity === c} onPress={() => updateBilling({ travelCity: c })} />
-                  ))}
-                </View>
-                <Text style={s.hint2}>{t('profile.travel.hint')}</Text>
-              </View>
-            </View>
-          ) : null}
-
-          <View style={{ gap: 10 }} onLayout={(e) => setSearchY(e.nativeEvent.layout.y)}>
-            <Label>{t('profile.showMe')}</Label>
-            <View style={s.wrap}>
-              {genderKeys.map((g) => (
-                <Chip key={g} label={t(`labels.gendersPlural.${g}`)} selected={form.interestedIn.includes(g)} onPress={() => patch({ interestedIn: toggle(form.interestedIn, g) })} />
-              ))}
-            </View>
-          </View>
-          <Stepper label={t('profile.ageFrom')} value={form.ageMin} min={18} max={form.ageMax} onChange={(ageMin) => patch({ ageMin })} />
-          <Stepper label={t('profile.ageTo')} value={form.ageMax} min={form.ageMin} max={99} onChange={(ageMax) => patch({ ageMax })} />
-          <Stepper label={t('profile.distance')} value={form.maxDistanceKm} min={1} max={300} step={5} suffix={t('profile.distanceSuffix')} onChange={(maxDistanceKm) => patch({ maxDistanceKm })} />
-
-          <ErrorText>{error}</ErrorText>
-          <Button label={t('profile.save')} onPress={save} loading={busy} />
-
-          <View style={{ gap: 10 }}>
-            <Label>{t('profile.language.title')}</Label>
-            <Pressable accessibilityRole="button" onPress={() => setLanguageOpen(true)} style={s.select}>
-              <Text style={s.selectText}>{LOCALES.find((l) => l.code === i18n.override)?.name ?? t('profile.language.device')}</Text>
-              <Icon name="chevronDown" size={18} color={colors.muted} />
-            </Pressable>
-            <PickerSheet
-              visible={languageOpen}
-              title={t('profile.language.title')}
-              options={[{ value: 'device', label: t('profile.language.device') }, ...LOCALES.map((l) => ({ value: l.code, label: l.name }))]}
-              selected={i18n.override ?? 'device'}
-              onSelect={(code) => void i18n.setLocale(code === 'device' ? null : code)}
-              onClose={() => setLanguageOpen(false)}
+          {!safetyReady ? (
+            <Banner
+              tone="warn"
+              icon="shieldCheck"
+              title={t('profile.safety.title')}
+              subtitle={t('profile.safety.setup')}
+              action={t('profile.safety.edit')}
+              onPress={() => router.push('/safety-settings')}
             />
-            <Text style={s.hint2}>{t('profile.language.rtlHint')}</Text>
-          </View>
-
-          <Button variant="ghost" label={t('profile.signOut')} onPress={async () => { await signOut(); router.replace('/welcome'); }} />
-          {showDelete ? (
-            <View style={{ gap: 10 }}>
-              <Field label={t('profile.deletePassword')} value={deletePassword} onChangeText={setDeletePassword} secureTextEntry />
-              {me.twoFactor ? <CodeField label={t('security.twoFactor.codeOrBackup')} value={deleteCode} onChangeText={setDeleteCode} allowRecovery /> : null}
-              <Button variant="danger" label={t('profile.deleteForever')} onPress={deleteAccount} disabled={!deletePassword || (me.twoFactor && deleteCode.length < 6)} />
-            </View>
-          ) : (
-            <Button variant="danger" label={t('profile.deleteAccount')} height={48} onPress={() => setShowDelete(true)} />
-          )}
+          ) : null}
+          <ErrorText>{error}</ErrorText>
         </ScrollView>
       </KeyboardAvoidingView>
       <ConfirmSheet
@@ -286,10 +167,6 @@ function toForm(me: Me | null) {
     name: me?.name ?? '',
     bio: me?.bio ?? '',
     tags: me?.tags ?? [],
-    interestedIn: me?.interestedIn ?? [],
-    ageMin: me?.ageMin ?? 18,
-    ageMax: me?.ageMax ?? 99,
-    maxDistanceKm: me?.maxDistanceKm ?? 50,
   };
 }
 
@@ -299,6 +176,8 @@ const s = StyleSheet.create({
   top: { height: 64, paddingHorizontal: 20, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   done: { height: 40, paddingHorizontal: 16, borderRadius: 999, backgroundColor: colors.accent, justifyContent: 'center' },
   doneText: { fontFamily: fonts.bold, fontSize: 14, color: colors.onAccent },
+  doneSaved: { backgroundColor: colors.surface2 },
+  doneTextSaved: { color: colors.muted },
   photos: { flexDirection: 'row', gap: 10 },
   photo: { flex: 1, height: 150, borderRadius: 14, overflow: 'hidden', backgroundColor: colors.surface2 },
   photoEmpty: { borderWidth: 1.5, borderStyle: 'dashed', borderColor: '#5A5160', backgroundColor: colors.surface, alignItems: 'center', justifyContent: 'center' },

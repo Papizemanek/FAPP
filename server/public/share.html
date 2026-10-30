@@ -15,8 +15,8 @@
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
   main { max-width: 480px; margin: 0 auto; padding: 20px 16px 32px; display: flex; flex-direction: column; gap: 14px; }
   header { display: flex; align-items: center; justify-content: space-between; min-height: 44px; }
-  .logo { font-weight: 800; font-size: 22px; letter-spacing: -0.5px; }
-  .logo span { color: var(--accent); }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; }
+  .logo svg { color: var(--accent); flex: none; }
   .muted { color: var(--muted); font-size: 14px; }
   .card { padding: 20px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
   .status h1 { margin: 0; font-size: 28px; line-height: 1.15; }
@@ -38,8 +38,8 @@
 <body>
 <main>
   <header>
-    <div class="logo" dir="ltr">YesYes<span>*</span></div>
-    <div class="muted" data-i18n="header">{{header}}</div>
+    <!-- Bez názvu a loga aplikace: stránku může vidět i někdo další v telefonu důvěryhodné osoby. -->
+    <div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 11.5l2 2 4-4"/></svg><span data-i18n="header">{{header}}</span></div>
   </header>
 
   <section id="status" class="card status" aria-live="polite">
@@ -79,6 +79,8 @@
 
   function t(key, params = {}) {
     let value = I18N.messages[key];
+    // rod: { man, woman, other } podle toho, koho se text týká
+    if (value && typeof value === 'object' && ('man' in value || 'woman' in value)) value = value[params.gender] ?? value.other;
     if (value && typeof value === 'object') {
       let category = 'other';
       try {
@@ -117,10 +119,10 @@
     last = d;
     const number = I18N.emergency;
     const texts = {
-      ok: [t('okTitle', { name: d.name }), t('okDetail', { last: d.lastCheckInAt && time(d.lastCheckInAt), next: d.nextCheckInDue && time(d.nextCheckInDue) })],
-      overdue: [t('overdueTitle', { name: d.name }), t('overdueDetail', { due: d.nextCheckInDue && time(d.nextCheckInDue), number })],
-      alarm: [t('alarmTitle', { name: d.name }), t('alarmDetail', { time: d.alarmAt && time(d.alarmAt), number })],
-      ended: [t('endedTitle'), t(d.hadAlarm ? 'endedDetailAlarm' : 'endedDetail', { name: d.name })],
+      ok: [t('okTitle', { name: d.name, gender: d.gender }), t('okDetail', { last: d.lastCheckInAt && time(d.lastCheckInAt), next: d.nextCheckInDue && time(d.nextCheckInDue) })],
+      overdue: [t('overdueTitle', { name: d.name, gender: d.gender }), t('overdueDetail', { due: d.nextCheckInDue && time(d.nextCheckInDue), number })],
+      alarm: [t('alarmTitle', { name: d.name, gender: d.gender }), t('alarmDetail', { time: d.alarmAt && time(d.alarmAt), number })],
+      ended: [t('endedTitle'), t(d.hadAlarm ? 'endedDetailAlarm' : 'endedDetail', { name: d.name, gender: d.gender })],
     };
     const [title, detail] = texts[d.status];
     $('status').className = `card status ${d.status}`;

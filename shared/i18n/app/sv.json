@@ -198,7 +198,11 @@
     "startMeetup": "Starta träffen",
     "revoke": "Avbryt överenskommelsen",
     "revokeConfirmTitle": "Avbryta överenskommelsen?",
-    "revokeConfirmMessage": "Träffen blir inte av. Du behöver inte förklara något – {name} får bara en avisering."
+    "revokeConfirmMessage": "Träffen blir inte av. Du behöver inte förklara något – {name} får bara en avisering.",
+    "unsetIsNo": {
+      "one": "{count} av {total} vald. Det du inte väljer räknas som nej.",
+      "other": "{count} av {total} valda. Det du inte väljer räknas som nej."
+    }
   },
   "meetup": {
     "title": "Träff · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "Att du är okej.",
     "pinSubtitleEnd": "Att träffen är slut och att du är okej.",
     "revokeConfirmTitle": "Avbryta överenskommelsen?",
-    "revokeConfirmMessage": "{name} får en avisering. Du behöver inte förklara något. Säkerhetsläget fortsätter tills du avslutar det."
+    "revokeConfirmMessage": "{name} får en avisering. Du behöver inte förklara något. Säkerhetsläget fortsätter tills du avslutar det.",
+    "meetingAt": "Träff: {when} · {place}",
+    "earlyTitle": "Träffen är senare",
+    "earlyMessage": "Ni bestämde {when}. Om du slår på säkerhetsläget nu får {name} ett sms direkt och incheckningarna börjar redan nu. Slå på nu?",
+    "earlyConfirm": "Slå på nu",
+    "agreementLink": "Överenskommelse"
   },
   "feedback": {
     "title": "Hur gick träffen?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Detaljer (valfritt)",
     "submit": "Rapportera",
     "thanksTitle": "Tack",
-    "thanksMessage": "Vi har tagit emot din rapport. Ni ser inte varandra längre."
+    "thanksMessage": "Vi har tagit emot din rapport. Ni ser inte varandra längre.",
+    "blocked": "Vi har blockerat er från varandra – ni kan inte se eller skriva till varandra längre.",
+    "blockedWithName": "{name} kan inte se dig eller skriva till dig längre.",
+    "nextSteps": "Rapporten är anonym. En moderator granskar den, oftast inom 24 timmar, och stänger av kontot tillfälligt eller permanent beroende på hur allvarligt det är.",
+    "danger": "Om du är i fara, ring 112.",
+    "backToMessages": "Tillbaka till meddelanden"
   },
   "chat": {
     "unavailable": "Chatten är inte tillgänglig",
@@ -311,7 +325,8 @@
     "block": "Blockera",
     "unmatch": "Ta bort match",
     "blockConfirmTitle": "Blockera?",
-    "blockConfirmMessage": "Du och {name} ser inte varandra längre, och chatten försvinner."
+    "blockConfirmMessage": "Du och {name} ser inte varandra längre, och chatten försvinner.",
+    "emptyHint": "Skriv först till {name}. Börja med något ni har gemensamt eller öppna överenskommelsen direkt."
   },
   "safetySettings": {
     "title": "Säkerhet och integritet",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, fingeravtryck eller telefonens lösenkod varje gång du öppnar appen.",
     "discreet": "Diskret läge",
     "discreetHint": "En neutral ikon och aviseringar utan innehåll – ingen kan se vilken app det är.",
-    "save": "Spara"
+    "save": "Spara",
+    "pinsMustDiffer": "Nödpinkoden måste skilja sig från din vanliga pinkod."
   },
   "tabs": {
     "discover": "Upptäck",
@@ -607,7 +623,17 @@
     "codeSent": "Vi har skickat en 6-siffrig kod till {email}. Om du redan har ett konto får du ett meddelande om det i stället – logga bara in.",
     "code": "Kod från e-post",
     "confirmCode": "Verifiera och skapa konto",
-    "resend": "Skicka koden igen"
+    "resend": "Skicka koden igen",
+    "missing": {
+      "name": "Fyll i ditt namn.",
+      "email": "Fyll i din e-postadress.",
+      "password": "Lösenordet måste ha minst 10 tecken.",
+      "birthdate": "Fyll i ditt födelsedatum.",
+      "gender": "Välj vem du är.",
+      "showMe": "Välj vilka vi ska visa för dig.",
+      "adult": "Bekräfta att du är 18 år eller äldre.",
+      "rules": "Du behöver också godkänna reglerna."
+    }
   },
   "verify": {
     "title": "Bekräfta att det är du",
@@ -622,7 +648,8 @@
     "devApprove": "Simulera lyckad verifiering (testläge)",
     "retry": "Försök igen",
     "start": "Verifiera identitet",
-    "signOut": "Logga ut"
+    "signOut": "Logga ut",
+    "continue": "Fortsätt verifieringen"
   },
   "common": {
     "back": "Tillbaka",
@@ -638,7 +665,8 @@
     "open": "Öppna",
     "show": "Visa",
     "confirm": "Bekräfta",
-    "errorGeneric": "Något gick fel."
+    "errorGeneric": "Något gick fel.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} har säkerhetsläget på",
@@ -767,5 +795,12 @@
       "signOut": "Logga ut",
       "signOutOthers": "Logga ut alla andra enheter"
     }
+  },
+  "settings": {
+    "title": "Inställningar",
+    "search": "Vilka jag vill se",
+    "safety": "Säkerhet och konto",
+    "plan": "Abonnemang",
+    "account": "Konto"
   }
 }

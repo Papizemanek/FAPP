@@ -1,5 +1,6 @@
 // Demo panel nad aplikací (čisté DOM, mimo React Native): přihlašovací údaje, „odeslané“ SMS,
 // pohled důvěryhodné osoby a posunutí času. V nativní aplikaci nic z toho není.
+import { srv } from './serverText';
 
 type Sms = { to: string; phone: string; text: string; sessionId: number; at: number };
 type Hooks = {
@@ -296,8 +297,10 @@ function openShare(sessionId: number) {
     const d = h.shareView(sessionId);
     wrap.innerHTML = '';
     const header = el('div', { display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '44px' });
-    const logo = el('div', { font: `800 22px ${DISPLAY}` });
-    logo.innerHTML = `F<span style="color:${C.accent}">*</span>app`;
+    // Jako na serveru: bez názvu a loga aplikace.
+    const logo = el('div', { font: `700 17px ${FONT}`, display: 'flex', alignItems: 'center', gap: '8px' });
+    logo.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${C.accent}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 11.5l2 2 4-4"/></svg>`;
+    logo.appendChild(el('span', {}, srv('share.header')));
     header.append(logo, el('div', { color: C.muted, fontSize: '13px' }, 'Pohled důvěryhodné osoby'));
     wrap.appendChild(header);
     wrap.appendChild(el('div', { color: C.muted, fontSize: '13px' }, 'Tohle uvidí v prohlížeči, když otevře odkaz z SMS. Nepotřebuje aplikaci.'));
@@ -305,10 +308,10 @@ function openShare(sessionId: number) {
       wrap.appendChild(el('div', {}, 'Odkaz už neplatí.'));
     } else {
       const tones: Record<string, [string, string, string, string]> = {
-        ok: [`${d.name} je v pořádku`, `Poslední potvrzení v ${t(d.lastCheckInAt)}. Další čekáme do ${t(d.nextCheckInDue)}.`, C.safe, '#15241F'],
-        overdue: [`${d.name} se neozval/a`, `Potvrzení mělo přijít do ${t(d.nextCheckInDue)}. Zkus zavolat. Když to nebude brát, volej 112 a nadiktuj adresu z mapy.`, C.warn, '#2A2418'],
-        alarm: [`${d.name} potřebuje pomoc`, `Poplach v ${t(d.alarmAt)}. Zavolej 112 a nadiktuj polohu z mapy a místo schůzky níže.`, C.alarm, '#2A1918'],
-        ended: ['Schůzka skončila', `${d.name} potvrdil/a, že je v pořádku.${d.hadAlarm ? ' Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.' : ''}`, C.text, C.surface],
+        ok: [srv('share.okTitle', { name: d.name, gender: d.gender }), `Poslední potvrzení v ${t(d.lastCheckInAt)}. Další čekáme do ${t(d.nextCheckInDue)}.`, C.safe, '#15241F'],
+        overdue: [srv('share.overdueTitle', { name: d.name, gender: d.gender }), `Potvrzení mělo přijít do ${t(d.nextCheckInDue)}. Zkus zavolat. Když to nebude brát, volej 112 a nadiktuj adresu z mapy.`, C.warn, '#2A2418'],
+        alarm: [srv('share.alarmTitle', { name: d.name, gender: d.gender }), `Poplach v ${t(d.alarmAt)}. Zavolej 112 a nadiktuj polohu z mapy a místo schůzky níže.`, C.alarm, '#2A1918'],
+        ended: [srv('share.endedTitle'), srv(d.hadAlarm ? 'share.endedDetailAlarm' : 'share.endedDetail', { name: d.name, gender: d.gender }), C.text, C.surface],
       };
       const [title, detail, color, bg] = tones[d.status];
       const status = el('div', { background: bg, border: `1px solid ${C.line}`, borderRadius: '20px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px' });

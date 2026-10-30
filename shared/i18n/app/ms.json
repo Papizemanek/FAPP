@@ -198,7 +198,10 @@
     "startMeetup": "Mulakan pertemuan",
     "revoke": "Batalkan persetujuan",
     "revokeConfirmTitle": "Batalkan persetujuan?",
-    "revokeConfirmMessage": "Pertemuan dibatalkan. Anda tidak perlu menjelaskan apa-apa – {name} hanya menerima pemberitahuan."
+    "revokeConfirmMessage": "Pertemuan dibatalkan. Anda tidak perlu menjelaskan apa-apa – {name} hanya menerima pemberitahuan.",
+    "unsetIsNo": {
+      "other": "{count} daripada {total} dipilih. Apa-apa yang anda tidak pilih dikira sebagai tidak."
+    }
   },
   "meetup": {
     "title": "Pertemuan · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "Bahawa anda selamat.",
     "pinSubtitleEnd": "Bahawa pertemuan sudah tamat dan anda selamat.",
     "revokeConfirmTitle": "Batalkan persetujuan?",
-    "revokeConfirmMessage": "{name} akan menerima pemberitahuan. Anda tidak perlu menjelaskan apa-apa. Mod keselamatan terus berjalan sehingga anda menamatkannya."
+    "revokeConfirmMessage": "{name} akan menerima pemberitahuan. Anda tidak perlu menjelaskan apa-apa. Mod keselamatan terus berjalan sehingga anda menamatkannya.",
+    "meetingAt": "Pertemuan: {when} · {place}",
+    "earlyTitle": "Pertemuan anda lambat lagi",
+    "earlyMessage": "Anda bersetuju pada {when}. Jika anda mengaktifkan mod keselamatan sekarang, {name} akan terus menerima SMS dan check-in bermula sekarang. Aktifkan sekarang?",
+    "earlyConfirm": "Aktifkan sekarang",
+    "agreementLink": "Persetujuan"
   },
   "feedback": {
     "title": "Bagaimana pertemuan tadi?",
@@ -292,7 +300,12 @@
     "detailsLabel": "Butiran (pilihan)",
     "submit": "Laporkan",
     "thanksTitle": "Terima kasih",
-    "thanksMessage": "Kami telah menerima laporan anda. Anda tidak akan melihat satu sama lain lagi."
+    "thanksMessage": "Kami telah menerima laporan anda. Anda tidak akan melihat satu sama lain lagi.",
+    "blocked": "Kami telah menyekatnya – anda tidak akan dapat melihat atau menghantar mesej kepada satu sama lain lagi.",
+    "blockedWithName": "{name} tidak lagi boleh melihat anda atau menghantar mesej kepada anda.",
+    "nextSteps": "Laporan adalah tanpa nama. Moderator akan menyemaknya, biasanya dalam masa 24 jam, dan menggantung atau mengharamkan akaun itu bergantung pada tahap keseriusannya.",
+    "danger": "Jika anda dalam bahaya, hubungi 112.",
+    "backToMessages": "Kembali ke mesej"
   },
   "chat": {
     "unavailable": "Sembang tidak tersedia",
@@ -310,7 +323,8 @@
     "block": "Sekat",
     "unmatch": "Batalkan padanan",
     "blockConfirmTitle": "Sekat?",
-    "blockConfirmMessage": "Anda dan {name} tidak akan melihat satu sama lain lagi, dan sembang akan hilang."
+    "blockConfirmMessage": "Anda dan {name} tidak akan melihat satu sama lain lagi, dan sembang akan hilang.",
+    "emptyHint": "Hantar mesej kepada {name} dahulu. Mulakan dengan sesuatu yang sama-sama anda minati, atau terus buka persetujuan."
   },
   "safetySettings": {
     "title": "Keselamatan dan privasi",
@@ -332,7 +346,8 @@
     "appLockHint": "Face ID, cap jari atau kod laluan telefon anda setiap kali anda membuka aplikasi.",
     "discreet": "Mod diskret",
     "discreetHint": "Ikon neutral dan pemberitahuan tanpa kandungan – tiada siapa tahu aplikasi apa ini.",
-    "save": "Simpan"
+    "save": "Simpan",
+    "pinsMustDiffer": "PIN kecemasan anda mesti berbeza daripada PIN biasa anda."
   },
   "tabs": {
     "discover": "Teroka",
@@ -595,7 +610,17 @@
     "codeSent": "Kami telah menghantar kod 6 digit ke {email}. Jika anda sudah mempunyai akaun, anda akan menerima notis sebaliknya – log masuk sahaja.",
     "code": "Kod daripada e-mel",
     "confirmCode": "Sahkan dan cipta akaun",
-    "resend": "Hantar kod semula"
+    "resend": "Hantar kod semula",
+    "missing": {
+      "name": "Isi nama anda.",
+      "email": "Isi e-mel anda.",
+      "password": "Kata laluan anda memerlukan sekurang-kurangnya 10 aksara.",
+      "birthdate": "Isi tarikh lahir anda.",
+      "gender": "Pilih siapa anda.",
+      "showMe": "Pilih siapa yang patut kami tunjukkan kepada anda.",
+      "adult": "Sahkan bahawa anda berumur 18 tahun atau lebih.",
+      "rules": "Anda masih perlu menerima peraturan."
+    }
   },
   "verify": {
     "title": "Sahkan bahawa ini anda",
@@ -610,7 +635,8 @@
     "devApprove": "Simulasikan pengesahan berjaya (mod ujian)",
     "retry": "Cuba lagi",
     "start": "Sahkan identiti",
-    "signOut": "Log keluar"
+    "signOut": "Log keluar",
+    "continue": "Teruskan pengesahan"
   },
   "common": {
     "back": "Kembali",
@@ -626,7 +652,8 @@
     "open": "Buka",
     "show": "Lihat",
     "confirm": "Sahkan",
-    "errorGeneric": "Berlaku ralat."
+    "errorGeneric": "Berlaku ralat.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} mengaktifkan mod keselamatan",
@@ -754,5 +781,12 @@
       "signOut": "Log keluar",
       "signOutOthers": "Log keluar semua peranti lain"
     }
+  },
+  "settings": {
+    "title": "Tetapan",
+    "search": "Siapa yang saya mahu lihat",
+    "safety": "Keselamatan dan akaun",
+    "plan": "Langganan",
+    "account": "Akaun"
   }
 }

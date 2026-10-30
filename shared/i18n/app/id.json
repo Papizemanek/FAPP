@@ -198,7 +198,10 @@
     "startMeetup": "Mulai pertemuan",
     "revoke": "Batalkan kesepakatan",
     "revokeConfirmTitle": "Batalkan kesepakatan?",
-    "revokeConfirmMessage": "Pertemuannya batal. Kamu tidak perlu menjelaskan apa pun – {name} hanya menerima notifikasi."
+    "revokeConfirmMessage": "Pertemuannya batal. Kamu tidak perlu menjelaskan apa pun – {name} hanya menerima notifikasi.",
+    "unsetIsNo": {
+      "other": "{count} dari {total} dipilih. Yang tidak kamu pilih dianggap tidak."
+    }
   },
   "meetup": {
     "title": "Pertemuan · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "Bahwa kamu baik-baik saja.",
     "pinSubtitleEnd": "Bahwa pertemuan sudah selesai dan kamu baik-baik saja.",
     "revokeConfirmTitle": "Batalkan kesepakatan?",
-    "revokeConfirmMessage": "{name} akan menerima notifikasi. Kamu tidak perlu menjelaskan apa pun. Mode keselamatan tetap berjalan sampai kamu mengakhirinya."
+    "revokeConfirmMessage": "{name} akan menerima notifikasi. Kamu tidak perlu menjelaskan apa pun. Mode keselamatan tetap berjalan sampai kamu mengakhirinya.",
+    "meetingAt": "Pertemuan: {when} · {place}",
+    "earlyTitle": "Pertemuanmu masih nanti",
+    "earlyMessage": "Kalian sepakat bertemu {when}. Jika kamu mengaktifkan mode keselamatan sekarang, {name} langsung menerima SMS dan check-in dimulai dari sekarang. Aktifkan sekarang?",
+    "earlyConfirm": "Aktifkan sekarang",
+    "agreementLink": "Kesepakatan"
   },
   "feedback": {
     "title": "Bagaimana pertemuannya?",
@@ -292,7 +300,12 @@
     "detailsLabel": "Detail (opsional)",
     "submit": "Laporkan",
     "thanksTitle": "Terima kasih",
-    "thanksMessage": "Kami sudah menerima laporanmu. Kalian tidak akan saling melihat lagi."
+    "thanksMessage": "Kami sudah menerima laporanmu. Kalian tidak akan saling melihat lagi.",
+    "blocked": "Kami sudah memblokir kalian satu sama lain – kalian tidak akan saling melihat atau mengirim pesan lagi.",
+    "blockedWithName": "{name} tidak bisa melihatmu atau mengirimimu pesan lagi.",
+    "nextSteps": "Laporan bersifat anonim. Moderator akan meninjaunya, biasanya dalam 24 jam, lalu menangguhkan atau memblokir akun sesuai tingkat keseriusannya.",
+    "danger": "Jika kamu dalam bahaya, hubungi 112.",
+    "backToMessages": "Kembali ke pesan"
   },
   "chat": {
     "unavailable": "Chat tidak tersedia",
@@ -310,7 +323,8 @@
     "block": "Blokir",
     "unmatch": "Batalkan match",
     "blockConfirmTitle": "Blokir?",
-    "blockConfirmMessage": "Kamu dan {name} tidak akan saling melihat lagi, dan chat akan hilang."
+    "blockConfirmMessage": "Kamu dan {name} tidak akan saling melihat lagi, dan chat akan hilang.",
+    "emptyHint": "Kirim pesan pertama ke {name}. Mulai dari hal yang kalian sukai bersama, atau langsung buka kesepakatan."
   },
   "safetySettings": {
     "title": "Keselamatan dan privasi",
@@ -332,7 +346,8 @@
     "appLockHint": "Face ID, sidik jari, atau kode sandi ponselmu setiap kali membuka aplikasi.",
     "discreet": "Mode samaran",
     "discreetHint": "Ikon netral dan notifikasi tanpa isi – tak ada yang tahu aplikasi apa ini.",
-    "save": "Simpan"
+    "save": "Simpan",
+    "pinsMustDiffer": "PIN daruratmu harus berbeda dari PIN biasamu."
   },
   "tabs": {
     "discover": "Jelajahi",
@@ -595,7 +610,17 @@
     "codeSent": "Kami telah mengirim kode 6 digit ke {email}. Kalau kamu sudah punya akun, kamu akan menerima pemberitahuan sebagai gantinya – cukup masuk saja.",
     "code": "Kode dari email",
     "confirmCode": "Verifikasi dan buat akun",
-    "resend": "Kirim ulang kode"
+    "resend": "Kirim ulang kode",
+    "missing": {
+      "name": "Isi namamu.",
+      "email": "Isi emailmu.",
+      "password": "Kata sandimu harus minimal 10 karakter.",
+      "birthdate": "Isi tanggal lahirmu.",
+      "gender": "Pilih siapa kamu.",
+      "showMe": "Pilih siapa yang ingin kami tampilkan untukmu.",
+      "adult": "Konfirmasi bahwa kamu berusia 18 tahun atau lebih.",
+      "rules": "Kamu masih perlu menyetujui aturannya."
+    }
   },
   "verify": {
     "title": "Verifikasi bahwa ini kamu",
@@ -610,7 +635,8 @@
     "devApprove": "Simulasikan verifikasi berhasil (mode uji)",
     "retry": "Coba lagi",
     "start": "Verifikasi identitas",
-    "signOut": "Keluar"
+    "signOut": "Keluar",
+    "continue": "Lanjutkan verifikasi"
   },
   "common": {
     "back": "Kembali",
@@ -626,7 +652,8 @@
     "open": "Buka",
     "show": "Lihat",
     "confirm": "Konfirmasi",
-    "errorGeneric": "Terjadi kesalahan."
+    "errorGeneric": "Terjadi kesalahan.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} mengaktifkan mode keselamatan",
@@ -754,5 +781,12 @@
       "signOut": "Keluarkan",
       "signOutOthers": "Keluarkan semua perangkat lain"
     }
+  },
+  "settings": {
+    "title": "Pengaturan",
+    "search": "Siapa yang ingin kulihat",
+    "safety": "Keselamatan dan akun",
+    "plan": "Langganan",
+    "account": "Akun"
   }
 }

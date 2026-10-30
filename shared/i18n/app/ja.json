@@ -198,7 +198,10 @@
     "startMeetup": "デートを開始",
     "revoke": "合意をキャンセル",
     "revokeConfirmTitle": "合意をキャンセルしますか？",
-    "revokeConfirmMessage": "デートは中止になります。理由を説明する必要はありません。{name}さんには通知が届くだけです。"
+    "revokeConfirmMessage": "デートは中止になります。理由を説明する必要はありません。{name}さんには通知が届くだけです。",
+    "unsetIsNo": {
+      "other": "{total}件中{count}件を選択中。選ばなかったものは「NG」として扱われます。"
+    }
   },
   "meetup": {
     "title": "デート · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "無事であることを知らせます。",
     "pinSubtitleEnd": "デートが終わり、無事であることを知らせます。",
     "revokeConfirmTitle": "合意をキャンセルしますか？",
-    "revokeConfirmMessage": "{name}さんに通知が届きます。理由を説明する必要はありません。セーフティモードは、あなたが終了するまで続きます。"
+    "revokeConfirmMessage": "{name}さんに通知が届きます。理由を説明する必要はありません。セーフティモードは、あなたが終了するまで続きます。",
+    "meetingAt": "デート：{when}・{place}",
+    "earlyTitle": "デートはまだ先です",
+    "earlyMessage": "約束は{when}です。今セーフティモードをオンにすると、{name}さんにすぐSMSが届き、チェックインも今から始まります。今すぐオンにしますか？",
+    "earlyConfirm": "今すぐオンにする",
+    "agreementLink": "合意"
   },
   "feedback": {
     "title": "デートはどうでしたか？",
@@ -292,7 +300,12 @@
     "detailsLabel": "詳細（任意）",
     "submit": "通報する",
     "thanksTitle": "ありがとうございました",
-    "thanksMessage": "通報を受け付けました。今後お互いが表示されることはありません。"
+    "thanksMessage": "通報を受け付けました。今後お互いが表示されることはありません。",
+    "blocked": "お互いをブロックしました。今後、お互いに表示されることも、メッセージを送り合うこともありません。",
+    "blockedWithName": "{name}さんは今後、あなたを見ることもメッセージを送ることもできません。",
+    "nextSteps": "通報は匿名です。通常24時間以内にモデレーターが確認し、重大さに応じてアカウントを停止または利用禁止にします。",
+    "danger": "危険を感じたら、112に電話してください。",
+    "backToMessages": "メッセージに戻る"
   },
   "chat": {
     "unavailable": "チャットは利用できません",
@@ -310,7 +323,8 @@
     "block": "ブロック",
     "unmatch": "マッチ解除",
     "blockConfirmTitle": "ブロックしますか？",
-    "blockConfirmMessage": "あなたと{name}さんはお互いに表示されなくなり、チャットも消えます。"
+    "blockConfirmMessage": "あなたと{name}さんはお互いに表示されなくなり、チャットも消えます。",
+    "emptyHint": "{name}さんに最初のメッセージを送りましょう。共通点から始めても、すぐに合意を開いてもOKです。"
   },
   "safetySettings": {
     "title": "安全とプライバシー",
@@ -332,7 +346,8 @@
     "appLockHint": "アプリを開くたびに、Face ID、指紋、またはスマホのパスコードが必要になります。",
     "discreet": "目立たないモード",
     "discreetHint": "目立たないアイコンと内容を表示しない通知で、何のアプリか誰にも分かりません。",
-    "save": "保存"
+    "save": "保存",
+    "pinsMustDiffer": "緊急PINは通常のPINとは別の番号にしてください。"
   },
   "tabs": {
     "discover": "さがす",
@@ -595,7 +610,17 @@
     "codeSent": "{email} に6桁のコードを送信しました。すでにアカウントをお持ちの場合は、コードの代わりにお知らせが届きます。そのままログインしてください。",
     "code": "メールに記載のコード",
     "confirmCode": "確認してアカウントを作成",
-    "resend": "コードを再送信"
+    "resend": "コードを再送信",
+    "missing": {
+      "name": "名前を入力してください。",
+      "email": "メールアドレスを入力してください。",
+      "password": "パスワードは10文字以上にしてください。",
+      "birthdate": "生年月日を入力してください。",
+      "gender": "自分の性別を選んでください。",
+      "showMe": "表示する相手を選んでください。",
+      "adult": "18歳以上であることを確認してください。",
+      "rules": "ルールへの同意がまだです。"
+    }
   },
   "verify": {
     "title": "本人確認をしてください",
@@ -610,7 +635,8 @@
     "devApprove": "確認成功をシミュレート（テストモード）",
     "retry": "再試行",
     "start": "本人確認を始める",
-    "signOut": "ログアウト"
+    "signOut": "ログアウト",
+    "continue": "本人確認を続ける"
   },
   "common": {
     "back": "戻る",
@@ -626,7 +652,8 @@
     "open": "開く",
     "show": "表示",
     "confirm": "確認",
-    "errorGeneric": "問題が発生しました。"
+    "errorGeneric": "問題が発生しました。",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name}さんはセーフティモードをオンにしています",
@@ -754,5 +781,12 @@
       "signOut": "ログアウト",
       "signOutOthers": "他のすべての端末からログアウト"
     }
+  },
+  "settings": {
+    "title": "設定",
+    "search": "見たい相手",
+    "safety": "安全とアカウント",
+    "plan": "サブスクリプション",
+    "account": "アカウント"
   }
 }

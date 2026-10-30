@@ -45,10 +45,10 @@ export default function Login() {
       }
     });
 
-  const submitCode = () =>
+  const submitCode = (value = code) =>
     run(async () => {
       try {
-        await finish(await api<{ token: string; user: Me }>('POST', '/auth/login/2fa', { challenge, code }));
+        await finish(await api<{ token: string; user: Me }>('POST', '/auth/login/2fa', { challenge, code: value }));
       } catch (err) {
         // Vypršelá výzva → zpátky na heslo.
         if (err instanceof Error && /401|vypršel|expired/i.test(err.message)) setChallenge(null);
@@ -64,9 +64,9 @@ export default function Login() {
           <ScrollView contentContainerStyle={{ padding: 20, gap: 18 }} keyboardShouldPersistTaps="handled">
             <Title>{t('login.twoFactorTitle')}</Title>
             <Body muted>{t('login.twoFactorHint')}</Body>
-            <CodeField label={t('login.code')} value={code} onChangeText={setCode} allowRecovery />
+            <CodeField label={t('login.code')} value={code} onChangeText={setCode} allowRecovery onComplete={(value) => void submitCode(value)} />
             <ErrorText>{error}</ErrorText>
-            <Button label={t('login.submit')} onPress={submitCode} loading={busy} disabled={code.length < 6} />
+            <Button label={t('login.submit')} onPress={() => submitCode()} loading={busy} disabled={code.length < 6} />
           </ScrollView>
         </KeyboardAvoidingView>
       </Screen>

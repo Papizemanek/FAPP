@@ -73,7 +73,7 @@
     "emailTaken": "Bu e-posta ile zaten bir hesap var.",
     "wrongCredentials": "E-posta veya şifre yanlış.",
     "banned": "Bu hesap kuralları çiğnediği için yasaklandı.",
-    "notLoggedIn": "Giriş yapmadın.",
+    "notLoggedIn": "Oturumun sona erdi. Tekrar giriş yap.",
     "suspended": "Hesabın bir moderatör inceleyene kadar askıya alındı.",
     "verifyFirst": "Önce kimliğini doğrula.",
     "badCode": "Kod yanlış veya süresi dolmuş. Tekrar dene ya da yeni bir kod iste.",
@@ -247,7 +247,7 @@
     "someone": "Yakının olan biri"
   },
   "share": {
-    "pageTitle": "YesYes – güvenlik bağlantısı",
+    "pageTitle": "Güvenlik bağlantısı",
     "header": "Güvenlik bağlantısı",
     "loading": "Yükleniyor…",
     "call": "{number} ara",

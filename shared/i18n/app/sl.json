@@ -28,7 +28,11 @@
       "host": "Pri meni",
       "visit": "Pri tebi",
       "neutral": "Nevtralen kraj",
-      "single": "Samski/a",
+      "single": {
+        "man": "Samski",
+        "woman": "Samska",
+        "other": "Samski/a"
+      },
       "open": "Odprta zveza",
       "poly": "Poliamorija",
       "couple": "Par"
@@ -63,9 +67,21 @@
       "other": "Drugo"
     },
     "feedbackReasons": {
-      "consent": "Ni spoštoval/a meja ali „stop“",
-      "safety": "Počutil/a sem se ogroženo",
-      "fake": "Ni bil/a videti kot na fotografijah",
+      "consent": {
+        "man": "Ni spoštoval meja ali „stop“",
+        "woman": "Ni spoštovala meja ali „stop“",
+        "other": "Ni spoštoval/a meja ali „stop“"
+      },
+      "safety": {
+        "man": "Počutil sem se ogroženo",
+        "woman": "Počutila sem se ogroženo",
+        "other": "Počutil/a sem se ogroženo"
+      },
+      "fake": {
+        "man": "Ni bil videti kot na fotografijah",
+        "woman": "Ni bila videti kot na fotografijah",
+        "other": "Ni bil/a videti kot na fotografijah"
+      },
       "other": "Nekaj drugega"
     },
     "plans": {
@@ -109,7 +125,11 @@
       },
       "sentLikes": {
         "name": "Poslani všečki",
-        "detail": "Koga si všečkal/a v zadnjih 7 dneh."
+        "detail": {
+          "man": "Koga si všečkal v zadnjih 7 dneh.",
+          "woman": "Koga si všečkala v zadnjih 7 dneh.",
+          "other": "Koga si všečkal/a v zadnjih 7 dneh."
+        }
       },
       "tonight": {
         "name": "Nocoj, kadar koli",
@@ -151,7 +171,11 @@
     "title": "Dogovor",
     "titleWithName": "Dogovor · {name}",
     "timeFormatError": "Čas vnesi kot HH:MM, npr. 21:00.",
-    "revokedByPartnerTitle": "{name} je preklical/a dogovor",
+    "revokedByPartnerTitle": {
+      "man": "{name} je preklical dogovor",
+      "woman": "{name} je preklicala dogovor",
+      "other": "{name} je preklical/a dogovor"
+    },
     "revokedByPartnerSubtitle": "Nov dogovor lahko zdaj začne le {name}.",
     "revokedTitle": "Dogovor je bil preklican",
     "revokedSubtitle": "Lahko začneš novega.",
@@ -162,8 +186,16 @@
     "confirmedTitle": "Dogovor sta izpolnila oba",
     "confirmedSubtitle": "Na kraju samem se lahko kadar koli premislita.",
     "myPartDoneTitle": "Tvoj del je končan",
-    "myPartDoneSubtitle": "{name} še ni izpolnil/a ali potrdil/a.",
-    "partnerFilledTitle": "{name} je izpolnil/a svoj del",
+    "myPartDoneSubtitle": {
+      "man": "{name} še ni izpolnil ali potrdil.",
+      "woman": "{name} še ni izpolnila ali potrdila.",
+      "other": "{name} še ni izpolnil/a ali potrdil/a."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} je izpolnil svoj del",
+      "woman": "{name} je izpolnila svoj del",
+      "other": "{name} je izpolnil/a svoj del"
+    },
     "partnerFilledSubtitle": "Izpolni svojega – videla bosta le ujemanje.",
     "fillTitle": "Izpolni svoj del",
     "fillSubtitle": "Videla bosta le to, v čemer se ujemata.",
@@ -198,13 +230,19 @@
     "startMeetup": "Začni zmenek",
     "revoke": "Prekliči dogovor",
     "revokeConfirmTitle": "Želiš preklicati dogovor?",
-    "revokeConfirmMessage": "Zmenka ne bo. Ničesar ti ni treba pojasnjevati – {name} dobi le obvestilo."
+    "revokeConfirmMessage": "Zmenka ne bo. Ničesar ti ni treba pojasnjevati – {name} dobi le obvestilo.",
+    "unsetIsNo": {
+      "one": "Izbrano: {count} od {total}. Kar ne izbereš, štejemo kot ne.",
+      "two": "Izbrano: {count} od {total}. Kar ne izbereš, štejemo kot ne.",
+      "few": "Izbrano: {count} od {total}. Kar ne izbereš, štejemo kot ne.",
+      "other": "Izbrano: {count} od {total}. Kar ne izbereš, štejemo kot ne."
+    }
   },
   "meetup": {
     "title": "Zmenek · {name}",
     "fakeCallerDefault": "Mami",
     "endedTitle": "Zmenek končan",
-    "endedMessage": "{name} je dobil/a sporočilo, da si v redu.",
+    "endedMessage": "Zaupna oseba ({name}) je dobila sporočilo, da si v redu.",
     "sosFailed": "Alarma ni bilo mogoče poslati: {error} Poskusi znova ali pokliči: {name}.",
     "needAgreementTitle": "Najprej dokončaj dogovor",
     "needAgreementSubtitle": "Zmenek lahko začneš, ko dogovor izpolnita in potrdita oba.",
@@ -228,7 +266,7 @@
     "checkIn": "Javljanje",
     "now": "zdaj",
     "imOk": "V redu sem",
-    "overdueHint": "{name} je dobil/a opozorilo. S PIN-om potrdi, da si v redu.",
+    "overdueHint": "Zaupna oseba ({name}) je dobila opozorilo. S PIN-om potrdi, da si v redu.",
     "graceHint": {
       "one": "Če se ne javiš do {count} minute po roku, {name} dobi opozorilo s tvojo lokacijo.",
       "two": "Če se ne javiš do {count} minut po roku, {name} dobi opozorilo s tvojo lokacijo.",
@@ -245,14 +283,19 @@
     "revoke": "Prekliči dogovor",
     "end": "Končaj zmenek",
     "sosSentTitle": "Alarm poslan",
-    "sosSentBody": "{trusted} je dobil/a tvojo natančno lokacijo in podatek, s kom si. {partner} ne vidi ničesar.",
+    "sosSentBody": "Zaupna oseba ({trusted}) je dobila tvojo natančno lokacijo in podatek, s kom si. {partner} ne vidi ničesar.",
     "sosMistake": "Bila je pomota – v redu sem",
     "sosHide": "Skrij (alarm ostane vklopljen)",
     "pinTitle": "Potrdi s PIN-om",
     "pinSubtitleOk": "Da si v redu.",
     "pinSubtitleEnd": "Da je zmenek končan in si v redu.",
     "revokeConfirmTitle": "Želiš preklicati dogovor?",
-    "revokeConfirmMessage": "{name} dobi obvestilo. Ničesar ti ni treba pojasnjevati. Varnostni način teče naprej, dokler ga ne končaš."
+    "revokeConfirmMessage": "{name} dobi obvestilo. Ničesar ti ni treba pojasnjevati. Varnostni način teče naprej, dokler ga ne končaš.",
+    "meetingAt": "Zmenek: {when} · {place}",
+    "earlyTitle": "Zmenek je šele pozneje",
+    "earlyMessage": "Dogovor velja za {when}. Če varnostni način vklopiš že zdaj, {name} takoj dobi SMS in javljanje začne teči že zdaj. Vklopim zdaj?",
+    "earlyConfirm": "Vklopi zdaj",
+    "agreementLink": "Dogovor"
   },
   "feedback": {
     "title": "Kako je bilo na zmenku?",
@@ -285,7 +328,11 @@
       "detail": "Obrni se na lokalno policijo ali lokalno linijo pomoči za žrtve kaznivih dejanj in spolnega nasilja."
     },
     "medical": "Če se je zgodilo kaj proti tvoji volji, čim prej poišči zdravniško pomoč – tudi zaradi preprečevanja nosečnosti in okužb, saj nekatera zdravila delujejo le do 72 ur. Sledi je mogoče zavarovati, če se še ne stuširaš in shraniš oblačila. A nič od tega ni pogoj – prijaviš lahko tudi pozneje.",
-    "preserved": "Zapis zmenka (dogovor, sporočila, alarme) smo ohranili, če bi ga potreboval/a za policijo.",
+    "preserved": {
+      "man": "Zapis zmenka (dogovor, sporočila, alarme) smo ohranili, če bi ga potreboval za policijo.",
+      "woman": "Zapis zmenka (dogovor, sporočila, alarme) smo ohranili, če bi ga potrebovala za policijo.",
+      "other": "Zapis zmenka (dogovor, sporočila, alarme) smo ohranili, če bi ga potreboval/a za policijo."
+    },
     "backToApp": "Nazaj v aplikacijo"
   },
   "report": {
@@ -295,7 +342,12 @@
     "detailsLabel": "Podrobnosti (neobvezno)",
     "submit": "Prijavi",
     "thanksTitle": "Hvala",
-    "thanksMessage": "Prijavo smo prejeli. Ne bosta se več videla."
+    "thanksMessage": "Prijavo smo prejeli. Ne bosta se več videla.",
+    "blocked": "Blokirali smo stik med vama – ne bosta se več videla in si ne bosta več pisala.",
+    "blockedWithName": "{name} te ne more več videti in ti ne more več pisati.",
+    "nextSteps": "Prijava je anonimna. Moderator jo pregleda, običajno v 24 urah, in glede na resnost račun začasno onemogoči ali trajno blokira.",
+    "danger": "Če ti grozi nevarnost, pokliči 112.",
+    "backToMessages": "Nazaj na sporočila"
   },
   "chat": {
     "unavailable": "Klepet ni na voljo",
@@ -313,7 +365,8 @@
     "block": "Blokiraj",
     "unmatch": "Prekliči ujemanje",
     "blockConfirmTitle": "Želiš blokirati?",
-    "blockConfirmMessage": "Ti in {name} se ne bosta več videla, klepet pa bo izginil."
+    "blockConfirmMessage": "Ti in {name} se ne bosta več videla, klepet pa bo izginil.",
+    "emptyHint": "Pošlji prvo sporočilo za {name}. Začni s čim, kar vaju povezuje, ali takoj odpri dogovor."
   },
   "safetySettings": {
     "title": "Varnost in zasebnost",
@@ -335,7 +388,8 @@
     "appLockHint": "Face ID, prstni odtis ali koda telefona ob vsakem odprtju.",
     "discreet": "Diskretni način",
     "discreetHint": "Nevtralna ikona in obvestila brez vsebine – nihče ne ugotovi, za katero aplikacijo gre.",
-    "save": "Shrani"
+    "save": "Shrani",
+    "pinsMustDiffer": "PIN v sili mora biti drugačen od običajnega PIN-a."
   },
   "tabs": {
     "discover": "Odkrivaj",
@@ -483,7 +537,11 @@
     },
     "yes": {
       "title": "Moj da",
-      "hint": "Oznake kažejo, za kaj si odprt/a, ne kaj obljubljaš.",
+      "hint": {
+        "man": "Oznake kažejo, za kaj si odprt, ne kaj obljubljaš.",
+        "woman": "Oznake kažejo, za kaj si odprta, ne kaj obljubljaš.",
+        "other": "Oznake kažejo, za kaj si odprt/a, ne kaj obljubljaš."
+      },
       "footnote": "Vidijo le tisti, ki so prav tako rekli da.",
       "matchOnly": "Vidno po matchu",
       "upTo": {
@@ -590,7 +648,11 @@
     "emptySent": "V zadnjih 7 dneh ni všečkov brez ujemanja.",
     "superLikePending": "Super všeček · čaka",
     "pending": "Čaka na odgovor",
-    "sentTitle": "Koga si všečkal/a",
+    "sentTitle": {
+      "man": "Koga si všečkal",
+      "woman": "Koga si všečkala",
+      "other": "Koga si všečkal/a"
+    },
     "platinumText": "S YesYes Platinum vidiš svoje všečke iz zadnjih 7 dni.",
     "platinumCta": "Poglej s Platinum",
     "likeBack": "Všečkaj nazaj",
@@ -631,7 +693,17 @@
     "codeSent": "Na {email} smo poslali 6-mestno kodo. Če že imaš račun, boš namesto tega dobil(a) obvestilo – samo se prijavi.",
     "code": "Koda iz e-pošte",
     "confirmCode": "Potrdi in ustvari račun",
-    "resend": "Ponovno pošlji kodo"
+    "resend": "Ponovno pošlji kodo",
+    "missing": {
+      "name": "Vpiši še ime.",
+      "email": "Vpiši še e-poštni naslov.",
+      "password": "Geslo mora imeti vsaj 10 znakov.",
+      "birthdate": "Vpiši še datum rojstva.",
+      "gender": "Izberi še, kdo si.",
+      "showMe": "Izberi še, koga naj ti prikazujemo.",
+      "adult": "Potrdi, da imaš 18 let ali več.",
+      "rules": "Potrebujemo še tvoje strinjanje s pravili."
+    }
   },
   "verify": {
     "title": "Potrdi, da si to ti",
@@ -646,7 +718,8 @@
     "devApprove": "Simuliraj uspešno preverjanje (testni način)",
     "retry": "Poskusi znova",
     "start": "Preveri identiteto",
-    "signOut": "Odjava"
+    "signOut": "Odjava",
+    "continue": "Nadaljuj preverjanje"
   },
   "common": {
     "back": "Nazaj",
@@ -662,7 +735,8 @@
     "open": "Odpri",
     "show": "Prikaži",
     "confirm": "Potrdi",
-    "errorGeneric": "Nekaj je šlo narobe."
+    "errorGeneric": "Nekaj je šlo narobe.",
+    "ok": "V redu"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} ima vklopljen varnostni način",
@@ -672,17 +746,33 @@
     "missingTitle": "Dogovora še ni",
     "missingSubtitle": "Vsak izpolni, česa si želi – videla bosta le ujemanje.",
     "fill": "Izpolni",
-    "revokedByMeTitle": "Preklical/a si dogovor",
-    "revokedByPartnerTitle": "{name} je preklical/a dogovor",
+    "revokedByMeTitle": {
+      "man": "Preklical si dogovor",
+      "woman": "Preklicala si dogovor",
+      "other": "Preklical/a si dogovor"
+    },
+    "revokedByPartnerTitle": {
+      "man": "{name} je preklical dogovor",
+      "woman": "{name} je preklicala dogovor",
+      "other": "{name} je preklical/a dogovor"
+    },
     "revokedSubtitle": "Zmenka ne bo.",
     "revokedCooldownSubtitle": "Zmenka ne bo. Nov dogovor lahko začne le {name}.",
     "newAgreement": "Nov dogovor",
     "confirmedTitle": "Dogovor je končan",
     "confirmedSubtitle": "Na kraju samem se lahko kadar koli premislita.",
-    "partnerFilledTitle": "{name} je izpolnil/a dogovor",
+    "partnerFilledTitle": {
+      "man": "{name} je izpolnil dogovor",
+      "woman": "{name} je izpolnila dogovor",
+      "other": "{name} je izpolnil/a dogovor"
+    },
     "waitingForYouTitle": "Dogovor čaka nate",
     "fillYoursSubtitle": "Izpolni, česa si želiš – videla bosta le ujemanje.",
-    "partnerPendingTitle": "{name} še ni izpolnil/a",
+    "partnerPendingTitle": {
+      "man": "{name} še ni izpolnil",
+      "woman": "{name} še ni izpolnila",
+      "other": "{name} še ni izpolnil/a"
+    },
     "partnerPendingSubtitle": "Dogovor bo končan, ko ga izpolnita oba."
   },
   "fakeCall": {
@@ -693,7 +783,11 @@
   },
   "homeBanners": {
     "meetupTitle": "Zmenek poteka · {name}",
-    "missedCheckIn": "Zamudil/a si javljanje!",
+    "missedCheckIn": {
+      "man": "Zamudil si javljanje!",
+      "woman": "Zamudila si javljanje!",
+      "other": "Zamudil/a si javljanje!"
+    },
     "safetyOn": "Varnostni način je vklopljen.",
     "feedbackTitle": "Kako je bilo na zmenku?",
     "feedbackSubtitle": "{name} – odgovor vidi le naša ekipa.",
@@ -735,7 +829,7 @@
     "sosHold": "SOS – pritisni in pridrži",
     "unlock": "Odkleni",
     "sosSentTitle": "Alarm poslan",
-    "sosSentBody": "{name} je dobil/a opozorilo s tvojo lokacijo.",
+    "sosSentBody": "Zaupna oseba ({name}) je dobila opozorilo s tvojo lokacijo.",
     "sosSentBodyNoName": "Zaupna oseba je dobila opozorilo s tvojo lokacijo.",
     "sosFailedTitle": "Pošiljanje ni uspelo"
   },
@@ -793,5 +887,12 @@
       "signOut": "Odjavi",
       "signOutOthers": "Odjavi vse druge naprave"
     }
+  },
+  "settings": {
+    "title": "Nastavitve",
+    "search": "Koga želim videti",
+    "safety": "Varnost in račun",
+    "plan": "Naročnina",
+    "account": "Račun"
   }
 }

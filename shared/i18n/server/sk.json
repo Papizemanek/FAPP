@@ -75,7 +75,7 @@
     "emailTaken": "Účet s týmto e-mailom už existuje.",
     "wrongCredentials": "Nesprávny e-mail alebo heslo.",
     "banned": "Účet bol zablokovaný za porušenie pravidiel.",
-    "notLoggedIn": "Nie si prihlásený/á.",
+    "notLoggedIn": "Prihlásenie vypršalo. Prihlás sa znova.",
     "suspended": "Účet je pozastavený do kontroly moderátorom.",
     "verifyFirst": "Najprv si over totožnosť.",
     "badCode": "Kód je nesprávny alebo vypršal. Skús to znova alebo si vyžiadaj nový.",
@@ -187,7 +187,11 @@
     "invalidInterval": "Neplatný interval check-inu."
   },
   "reports": {
-    "feedbackSent": "Hodnotenie si už poslal/a."
+    "feedbackSent": {
+      "man": "Hodnotenie si už poslal.",
+      "woman": "Hodnotenie si už poslala.",
+      "other": "Hodnotenie si už poslal/a."
+    }
   },
   "verification": {
     "unknown": "Neznáme overenie.",
@@ -218,7 +222,11 @@
       "body": "Niekto o teba naozaj stojí."
     },
     "message": {
-      "photo": "Poslal/a fotku"
+      "photo": {
+        "man": "Poslal fotku",
+        "woman": "Poslala fotku",
+        "other": "Poslal/a fotku"
+      }
     },
     "agreementComplete": {
       "title": "Dohoda je hotová",
@@ -226,36 +234,76 @@
     },
     "agreementNew": {
       "title": "Nová dohoda",
-      "body": "{name} otvoril/a dohodu. Vyplň, na čo máš chuť ty."
+      "body": {
+        "man": "{name} otvoril dohodu. Vyplň, na čo máš chuť ty.",
+        "woman": "{name} otvorila dohodu. Vyplň, na čo máš chuť ty.",
+        "other": "{name} otvoril/a dohodu. Vyplň, na čo máš chuť ty."
+      }
     },
     "agreementChanged": {
       "title": "Dohoda sa zmenila",
-      "body": "{name} zmenil/a čas, miesto alebo pravidlá. Potvrď ich znova."
+      "body": {
+        "man": "{name} zmenil čas, miesto alebo pravidlá. Potvrď ich znova.",
+        "woman": "{name} zmenila čas, miesto alebo pravidlá. Potvrď ich znova.",
+        "other": "{name} zmenil/a čas, miesto alebo pravidlá. Potvrď ich znova."
+      }
     },
     "agreementUpdated": {
       "title": "Dohoda sa upravila",
-      "body": "{name} upravil/a svoje priania."
+      "body": {
+        "man": "{name} upravil svoje priania.",
+        "woman": "{name} upravila svoje priania.",
+        "other": "{name} upravil/a svoje priania."
+      }
     },
     "agreementRevoked": {
       "title": "Dohoda zrušená",
-      "body": "{name} zrušil/a dohodu. Stretnutie sa nekoná – a to treba rešpektovať."
+      "body": {
+        "man": "{name} zrušil dohodu. Stretnutie sa nekoná – a to treba rešpektovať.",
+        "woman": "{name} zrušila dohodu. Stretnutie sa nekoná – a to treba rešpektovať.",
+        "other": "{name} zrušil/a dohodu. Stretnutie sa nekoná – a to treba rešpektovať."
+      }
     },
     "checkInOverdue": {
-      "title": "Zabudol/a si na check-in",
-      "body": "{name} dostal/a upozornenie. Potvrď, že si v poriadku."
+      "title": {
+        "man": "Zabudol si na check-in",
+        "woman": "Zabudla si na check-in",
+        "other": "Zabudol/a si na check-in"
+      },
+      "body": "Dôveryhodná osoba ({name}) dostala upozornenie. Potvrď, že si v poriadku."
     }
   },
   "sms": {
-    "started": "{name} má stretnutie a vybral/a si ťa ako dôveryhodnú osobu. Tu uvidíš, kde je a či je v poriadku: {url}",
+    "started": {
+      "man": "{name} má stretnutie a vybral si ťa ako dôveryhodnú osobu. Tu uvidíš, kde je a či je v poriadku: {url}",
+      "woman": "{name} má stretnutie a vybrala si ťa ako dôveryhodnú osobu. Tu uvidíš, kde je a či je v poriadku: {url}",
+      "other": "{name} má stretnutie a vybral/a si ťa ako dôveryhodnú osobu. Tu uvidíš, kde je a či je v poriadku: {url}"
+    },
     "alarm": "POPLACH: {name} potrebuje pomoc. Poloha a podrobnosti: {url}",
-    "overdue": "{name} sa neozval/a - potvrdenie, že je v poriadku, malo prísť do {time}. Skús zavolať. Poloha: {url}",
-    "backOk": "{name} sa ozval/a a potvrdil/a, že je v poriadku.",
-    "sosCancelled": "{name} zrušil/a poplach - bol to omyl, je v poriadku.",
-    "endedOk": "{name} ukončil/a stretnutie a je v poriadku. Vďaka, že si bol/a k dispozícii.",
+    "overdue": {
+      "man": "{name} sa neozval - potvrdenie, že je v poriadku, malo prísť do {time}. Skús zavolať. Poloha: {url}",
+      "woman": "{name} sa neozvala - potvrdenie, že je v poriadku, malo prísť do {time}. Skús zavolať. Poloha: {url}",
+      "other": "{name} sa neozval/a - potvrdenie, že je v poriadku, malo prísť do {time}. Skús zavolať. Poloha: {url}"
+    },
+    "backOk": {
+      "man": "{name} sa ozval a potvrdil, že je v poriadku.",
+      "woman": "{name} sa ozvala a potvrdila, že je v poriadku.",
+      "other": "{name} sa ozval/a a potvrdil/a, že je v poriadku."
+    },
+    "sosCancelled": {
+      "man": "{name} zrušil poplach - bol to omyl, je v poriadku.",
+      "woman": "{name} zrušila poplach - bol to omyl, je v poriadku.",
+      "other": "{name} zrušil/a poplach - bol to omyl, je v poriadku."
+    },
+    "endedOk": {
+      "man": "{name} ukončil stretnutie a je v poriadku. Vďaka za pomoc.",
+      "woman": "{name} ukončila stretnutie a je v poriadku. Vďaka za pomoc.",
+      "other": "{name} ukončil/a stretnutie a je v poriadku. Vďaka za pomoc."
+    },
     "someone": "Tvoj blízky človek"
   },
   "share": {
-    "pageTitle": "YesYes – bezpečnostný odkaz",
+    "pageTitle": "Bezpečnostný odkaz",
     "header": "Bezpečnostný odkaz",
     "loading": "Načítavam…",
     "call": "Zavolať {number}",
@@ -265,13 +313,25 @@
     "partnerLead": "Na stretnutí s:",
     "okTitle": "{name} je v poriadku",
     "okDetail": "Posledné potvrdenie o {last}. Ďalšie čakáme do {next}.",
-    "overdueTitle": "{name} sa neozval/a",
+    "overdueTitle": {
+      "man": "{name} sa neozval",
+      "woman": "{name} sa neozvala",
+      "other": "{name} sa neozval/a"
+    },
     "overdueDetail": "Potvrdenie malo prísť do {due}. Skús zavolať. Ak to nikto nedvíha, volaj {number} a nadiktuj adresu z mapy.",
     "alarmTitle": "{name} potrebuje pomoc",
     "alarmDetail": "Poplach o {time}. Zavolaj {number} a nadiktuj polohu z mapy a miesto stretnutia nižšie.",
     "endedTitle": "Stretnutie skončilo",
-    "endedDetail": "{name} potvrdil/a, že je v poriadku.",
-    "endedDetailAlarm": "{name} potvrdil/a, že je v poriadku. Počas stretnutia bol spustený poplach – opýtaj sa, či je všetko v poriadku.",
+    "endedDetail": {
+      "man": "{name} potvrdil, že je v poriadku.",
+      "woman": "{name} potvrdila, že je v poriadku.",
+      "other": "{name} potvrdil/a, že je v poriadku."
+    },
+    "endedDetailAlarm": {
+      "man": "{name} potvrdil, že je v poriadku. Počas stretnutia bol spustený poplach – opýtaj sa, či je všetko v poriadku.",
+      "woman": "{name} potvrdila, že je v poriadku. Počas stretnutia bol spustený poplach – opýtaj sa, či je všetko v poriadku.",
+      "other": "{name} potvrdil/a, že je v poriadku. Počas stretnutia bol spustený poplach – opýtaj sa, či je všetko v poriadku."
+    },
     "footer": "Poloha prestane byť viditeľná, keď {name} stretnutie ukončí.",
     "locationJustNow": "Poloha práve teraz",
     "locationAgo": {
@@ -300,23 +360,23 @@
   "email": {
     "registerCode": {
       "subject": "Overovací kód: {code}",
-      "body": "Tvoj kód na dokončenie registrácie je {code}.\n\nPlatí 15 minút. Ak si o registráciu nežiadal(a), tento e-mail ignoruj."
+      "body": "Tvoj kód na dokončenie registrácie je {code}.\n\nPlatí 15 minút. Ak registráciu nezačínaš ty, tento e-mail ignoruj."
     },
     "accountExists": {
       "subject": "Pokus o registráciu",
-      "body": "Niekto sa práve pokúsil vytvoriť účet s touto e-mailovou adresou, no ty už účet máš.\n\nAk si to bol(a) ty, stačí sa prihlásiť (alebo si obnoviť heslo). Ak nie, nemusíš nič robiť – tvoj účet je v bezpečí."
+      "body": "Niekto sa práve pokúsil vytvoriť účet s touto e-mailovou adresou, no ty už účet máš.\n\nAk o tom vieš, stačí sa prihlásiť (alebo si obnoviť heslo). Ak nie, nemusíš nič robiť – tvoj účet je v bezpečí."
     },
     "resetCode": {
       "subject": "Kód na obnovenie hesla: {code}",
-      "body": "Tvoj kód na obnovenie hesla je {code}.\n\nPlatí 15 minút. Ak si o obnovenie nežiadal(a), tento e-mail ignoruj – heslo zostáva rovnaké."
+      "body": "Tvoj kód na obnovenie hesla je {code}.\n\nPlatí 15 minút. Ak o obnovenie nežiadaš ty, tento e-mail ignoruj – heslo zostáva rovnaké."
     },
     "newLogin": {
       "subject": "Nové prihlásenie do tvojho účtu",
-      "body": "Niekto sa práve prihlásil do tvojho účtu ({device}).\n\nAk si to nebol(a) ty, hneď si zmeň heslo a v nastaveniach zabezpečenia odhlás ostatné zariadenia."
+      "body": "Niekto sa práve prihlásil do tvojho účtu ({device}).\n\nAk o tom nevieš, hneď si zmeň heslo a v nastaveniach zabezpečenia odhlás ostatné zariadenia."
     },
     "passwordChanged": {
       "subject": "Tvoje heslo bolo zmenené",
-      "body": "Heslo k tvojmu účtu bolo práve zmenené a ostatné zariadenia boli odhlásené.\n\nAk si to nebol(a) ty, obnov si heslo cez „Zabudnuté heslo“ a kontaktuj nás."
+      "body": "Heslo k tvojmu účtu bolo práve zmenené a ostatné zariadenia boli odhlásené.\n\nAk o tom nevieš, obnov si heslo cez „Zabudnuté heslo“ a kontaktuj nás."
     },
     "twoFactorOn": {
       "subject": "Dvojstupňové overenie zapnuté",
@@ -324,7 +384,7 @@
     },
     "twoFactorOff": {
       "subject": "Dvojstupňové overenie vypnuté",
-      "body": "Dvojstupňové overenie bolo pre tvoj účet vypnuté.\n\nAk si to nebol(a) ty, hneď si zmeň heslo."
+      "body": "Dvojstupňové overenie bolo pre tvoj účet vypnuté.\n\nAk o tom nevieš, hneď si zmeň heslo."
     }
   }
 }

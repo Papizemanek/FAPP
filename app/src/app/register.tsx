@@ -70,11 +70,11 @@ export default function Register() {
     }
   };
 
-  const confirm = async () => {
+  const confirm = async (value = code) => {
     setBusy(true);
     setError('');
     try {
-      const res = await api<{ token: string; user: Me }>('POST', '/auth/register/verify', { email, code });
+      const res = await api<{ token: string; user: Me }>('POST', '/auth/register/verify', { email, code: value });
       await signIn(res.token, res.user);
       router.replace('/verify');
     } catch (err) {
@@ -92,9 +92,9 @@ export default function Register() {
           <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 0, gap: 18 }} keyboardShouldPersistTaps="handled">
             <Title>{t('register.codeTitle')}</Title>
             <Body muted>{t('register.codeSent', { email: email.trim() })}</Body>
-            <CodeField value={code} onChangeText={setCode} label={t('register.code')} />
+            <CodeField value={code} onChangeText={setCode} label={t('register.code')} onComplete={(value) => void confirm(value)} />
             <ErrorText>{error}</ErrorText>
-            <Button label={t('register.confirmCode')} onPress={confirm} loading={busy} disabled={code.replace(/\D/g, '').length !== 6} />
+            <Button label={t('register.confirmCode')} onPress={() => confirm()} loading={busy} disabled={code.replace(/\D/g, '').length !== 6} />
             <Button variant="ghost" label={t('register.resend')} onPress={submit} disabled={busy} />
           </ScrollView>
         </KeyboardAvoidingView>
@@ -102,7 +102,25 @@ export default function Register() {
     );
   }
 
-  const ready = name && email && password.length >= 10 && birthdate && gender && interestedIn.length > 0 && adult && rules;
+  // Neaktivní tlačítko vždy řekne proč – první věc, která ještě chybí.
+  const missing = !name
+    ? 'name'
+    : !email
+      ? 'email'
+      : password.length < 10
+        ? 'password'
+        : !birthdate
+          ? 'birthdate'
+          : !gender
+            ? 'gender'
+            : interestedIn.length === 0
+              ? 'showMe'
+              : !adult
+                ? 'adult'
+                : !rules
+                  ? 'rules'
+                  : null;
+  const ready = !missing;
 
   return (
     <Screen>
@@ -142,6 +160,7 @@ export default function Register() {
             {t('register.verifyNote')}
           </Body>
           <ErrorText>{error}</ErrorText>
+          {missing ? <Body muted style={{ fontSize: 13 }}>{t(`register.missing.${missing}`)}</Body> : null}
           <Button label={t('register.continue')} onPress={submit} loading={busy} disabled={!ready} />
         </ScrollView>
       </KeyboardAvoidingView>

@@ -158,7 +158,7 @@ export type Likes = { count: number; profiles: Profile[] };
 /** Strojově čitelné doplňky chyby (402 = placená funkce). */
 export type ApiErrorData = { code?: 'like_limit' | 'no_credit' | 'upgrade' | 'no_location' | 'no_photo'; resetAt?: string; plan?: PlanId; credit?: CreditKind };
 
-export type PendingFeedback = { agreementId: number; matchId: number; partnerName: string; meetAt: string };
+export type PendingFeedback = { agreementId: number; matchId: number; partnerName: string; partnerGender?: Gender; meetAt: string };
 
 export class ApiError extends Error {
   constructor(

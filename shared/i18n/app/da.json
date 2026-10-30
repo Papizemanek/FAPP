@@ -198,7 +198,11 @@
     "startMeetup": "Start daten",
     "revoke": "Annuller aftalen",
     "revokeConfirmTitle": "Annuller aftalen?",
-    "revokeConfirmMessage": "Daten er aflyst. Du behøver ikke forklare noget – {name} får kun en notifikation."
+    "revokeConfirmMessage": "Daten er aflyst. Du behøver ikke forklare noget – {name} får kun en notifikation.",
+    "unsetIsNo": {
+      "one": "{count} af {total} valgt. Alt, hvad du ikke vælger, tæller som nej.",
+      "other": "{count} af {total} valgt. Alt, hvad du ikke vælger, tæller som nej."
+    }
   },
   "meetup": {
     "title": "Date · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "At du er okay.",
     "pinSubtitleEnd": "At daten er slut, og at du er okay.",
     "revokeConfirmTitle": "Annuller aftalen?",
-    "revokeConfirmMessage": "{name} får en notifikation. Du behøver ikke forklare noget. Sikkerhedstilstanden kører videre, indtil du afslutter den."
+    "revokeConfirmMessage": "{name} får en notifikation. Du behøver ikke forklare noget. Sikkerhedstilstanden kører videre, indtil du afslutter den.",
+    "meetingAt": "Date: {when} · {place}",
+    "earlyTitle": "Jeres date er senere",
+    "earlyMessage": "I har aftalt {when}. Hvis du slår sikkerhedstilstand til nu, får {name} en sms med det samme, og check-ins starter nu. Slå til nu?",
+    "earlyConfirm": "Slå til nu",
+    "agreementLink": "Aftale"
   },
   "feedback": {
     "title": "Hvordan gik daten?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Detaljer (valgfrit)",
     "submit": "Rapportér",
     "thanksTitle": "Tak",
-    "thanksMessage": "Vi har modtaget din rapport. I ser ikke hinanden mere."
+    "thanksMessage": "Vi har modtaget din rapport. I ser ikke hinanden mere.",
+    "blocked": "Vi har blokeret personen – I kan ikke længere se eller skrive til hinanden.",
+    "blockedWithName": "{name} kan ikke længere se dig eller skrive til dig.",
+    "nextSteps": "Rapporter er anonyme. En moderator gennemgår den, som regel inden for 24 timer, og suspenderer eller udelukker kontoen afhængigt af, hvor alvorligt det er.",
+    "danger": "Hvis du er i fare, så ring 112.",
+    "backToMessages": "Tilbage til beskeder"
   },
   "chat": {
     "unavailable": "Chatten er ikke tilgængelig",
@@ -311,7 +325,8 @@
     "block": "Bloker",
     "unmatch": "Fjern match",
     "blockConfirmTitle": "Bloker?",
-    "blockConfirmMessage": "Du og {name} kan ikke længere se hinanden, og chatten forsvinder."
+    "blockConfirmMessage": "Du og {name} kan ikke længere se hinanden, og chatten forsvinder.",
+    "emptyHint": "Skriv til {name} først. Start med noget, I har til fælles, eller åbn aftalen med det samme."
   },
   "safetySettings": {
     "title": "Sikkerhed og privatliv",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, fingeraftryk eller telefonens kode, hver gang du åbner appen.",
     "discreet": "Diskret tilstand",
     "discreetHint": "Et neutralt ikon og notifikationer uden indhold – ingen kan se, hvilken app det er.",
-    "save": "Gem"
+    "save": "Gem",
+    "pinsMustDiffer": "Din nød-pinkode skal være forskellig fra din almindelige pinkode."
   },
   "tabs": {
     "discover": "Udforsk",
@@ -607,7 +623,17 @@
     "codeSent": "Vi har sendt en 6-cifret kode til {email}. Hvis du allerede har en konto, får du i stedet en besked – så skal du bare logge ind.",
     "code": "Kode fra e-mail",
     "confirmCode": "Bekræft og opret konto",
-    "resend": "Send kode igen"
+    "resend": "Send kode igen",
+    "missing": {
+      "name": "Udfyld dit navn.",
+      "email": "Udfyld din e-mail.",
+      "password": "Din adgangskode skal være på mindst 10 tegn.",
+      "birthdate": "Udfyld din fødselsdato.",
+      "gender": "Vælg, hvem du er.",
+      "showMe": "Vælg, hvem vi skal vise dig.",
+      "adult": "Bekræft, at du er 18 år eller ældre.",
+      "rules": "Vi mangler stadig, at du accepterer reglerne."
+    }
   },
   "verify": {
     "title": "Bekræft, at det er dig",
@@ -622,7 +648,8 @@
     "devApprove": "Simuler vellykket verificering (testtilstand)",
     "retry": "Prøv igen",
     "start": "Verificer identitet",
-    "signOut": "Log ud"
+    "signOut": "Log ud",
+    "continue": "Fortsæt verificeringen"
   },
   "common": {
     "back": "Tilbage",
@@ -638,7 +665,8 @@
     "open": "Åbn",
     "show": "Vis",
     "confirm": "Bekræft",
-    "errorGeneric": "Noget gik galt."
+    "errorGeneric": "Noget gik galt.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} har sikkerhedstilstand slået til",
@@ -767,5 +795,12 @@
       "signOut": "Log ud",
       "signOutOthers": "Log alle andre enheder ud"
     }
+  },
+  "settings": {
+    "title": "Indstillinger",
+    "search": "Hvem jeg vil se",
+    "safety": "Sikkerhed og konto",
+    "plan": "Abonnement",
+    "account": "Konto"
   }
 }

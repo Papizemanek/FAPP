@@ -74,7 +74,7 @@
     "emailTaken": "Já existe uma conta com este e-mail.",
     "wrongCredentials": "E-mail ou palavra-passe incorretos.",
     "banned": "Esta conta foi banida por violar as regras.",
-    "notLoggedIn": "Não tens sessão iniciada.",
+    "notLoggedIn": "A tua sessão expirou. Inicia sessão outra vez.",
     "suspended": "A tua conta está suspensa até ser analisada por um moderador.",
     "verifyFirst": "Primeiro, verifica a tua identidade.",
     "badCode": "Esse código está errado ou expirou. Tenta novamente ou pede um novo.",
@@ -251,7 +251,7 @@
     "someone": "Uma pessoa próxima"
   },
   "share": {
-    "pageTitle": "YesYes – link de segurança",
+    "pageTitle": "Link de segurança",
     "header": "Link de segurança",
     "loading": "A carregar…",
     "call": "Ligar para o {number}",

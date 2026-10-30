@@ -72,7 +72,7 @@
     "emailTaken": "使用此電子郵件的帳號已存在。",
     "wrongCredentials": "電子郵件或密碼錯誤。",
     "banned": "此帳號因違反規範已被停權。",
-    "notLoggedIn": "你尚未登入。",
+    "notLoggedIn": "登入已逾時，請重新登入。",
     "suspended": "你的帳號已停用，等待版主審核。",
     "verifyFirst": "請先驗證你的身分。",
     "badCode": "驗證碼錯誤或已過期。請再試一次，或索取新的驗證碼。",
@@ -243,7 +243,7 @@
     "someone": "你身邊的人"
   },
   "share": {
-    "pageTitle": "YesYes – 安全連結",
+    "pageTitle": "安全連結",
     "header": "安全連結",
     "loading": "正在載入…",
     "call": "撥打 {number}",

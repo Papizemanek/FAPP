@@ -148,17 +148,17 @@ describe('SMS a push v jazyce uživatele', () => {
     // Schůzka z doby před překlady (locale NULL) → aktuální jazyk uživatele.
     t.db.prepare('UPDATE safety_sessions SET locale = NULL WHERE id = ?').run(m.session.id);
     await t.call('POST', `/api/safety/${m.session.id}/sos/cancel`, { token: m.a.token, body: { pin: '1234' } });
-    assert.match(lastSms().body, /zrušil\/a poplach – byl to omyl/);
+    assert.match(lastSms().body, /zrušila poplach – byl to omyl/);
   });
 
   test('česky registrovaný uživatel má SMS i push dál česky', async () => {
     const m = await meetup();
-    assert.match(lastSms().body, /vybral\/a si tě jako důvěryhodnou osobu/);
+    assert.match(lastSms().body, /vybrala si tě jako důvěryhodnou osobu/, 'tvar podle pohlaví (testovací uživatelka je žena)');
     const agreement = (await t.call('GET', `/api/matches/${m.matchId}`, { token: m.b.token })).body.agreement;
     await t.call('POST', `/api/agreements/${agreement.id}/revoke`, { token: m.b.token, headers: EN });
     const push = t.services.push.sent.at(-1);
     assert.equal(push.title, 'Domluva zrušena', 'jazyk příjemce, ne odesílatele');
-    assert.equal(push.body, `${m.b.name} domluvu zrušil/a. Schůzka se nekoná – a to je potřeba respektovat.`);
+    assert.equal(push.body, `${m.b.name} domluvu zrušil. Schůzka se nekoná – a to je potřeba respektovat.`);
   });
 });
 
@@ -190,7 +190,8 @@ describe('stránka pro důvěryhodnou osobu', () => {
 
     const en = await page('?lang=en', { 'Accept-Language': 'cs' });
     assert.match(en, /<html lang="en" dir="ltr">/);
-    assert.match(en, /<title>YesYes – safety link<\/title>/);
+    assert.match(en, /<title>Safety link<\/title>/);
+    assert.equal(en.includes('YesYes'), false, 'stránka neprozradí název aplikace');
     const embedded = JSON.parse(en.match(/<script id="i18n" type="application\/json">(.*?)<\/script>/s)[1]);
     assert.equal(embedded.locale, 'en');
     assert.equal(embedded.explicit, true);

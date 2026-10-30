@@ -62,9 +62,9 @@ export default function Security() {
       setStep('scan');
     });
 
-  const enableTwoFactor = () =>
+  const enableTwoFactor = (value = code) =>
     run(async () => {
-      const res = await api<{ recoveryCodes: string[]; user: Me }>('POST', '/me/2fa/enable', { code });
+      const res = await api<{ recoveryCodes: string[]; user: Me }>('POST', '/me/2fa/enable', { code: value });
       setMe(res.user);
       setRecoveryCodes(res.recoveryCodes);
       setSecret(null);
@@ -134,8 +134,8 @@ export default function Security() {
                     {secret.secret.match(/.{1,4}/g)?.join(' ')}
                   </Text>
                 </View>
-                <CodeField label={t('security.twoFactor.code')} value={code} onChangeText={setCode} />
-                <Button label={t('security.twoFactor.confirm')} onPress={enableTwoFactor} loading={busy} disabled={code.length !== 6} />
+                <CodeField label={t('security.twoFactor.code')} value={code} onChangeText={setCode} onComplete={(value) => void enableTwoFactor(value)} />
+                <Button label={t('security.twoFactor.confirm')} onPress={() => enableTwoFactor()} loading={busy} disabled={code.length !== 6} />
                 <Button variant="ghost" label={t('common.cancel')} onPress={() => setStep('idle')} />
               </>
             ) : null}

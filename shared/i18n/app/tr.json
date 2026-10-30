@@ -198,7 +198,11 @@
     "startMeetup": "Buluşmayı başlat",
     "revoke": "Anlaşmayı iptal et",
     "revokeConfirmTitle": "Anlaşma iptal edilsin mi?",
-    "revokeConfirmMessage": "Buluşma iptal. Hiçbir şey açıklamak zorunda değilsin – {name} yalnızca bir bildirim alır."
+    "revokeConfirmMessage": "Buluşma iptal. Hiçbir şey açıklamak zorunda değilsin – {name} yalnızca bir bildirim alır.",
+    "unsetIsNo": {
+      "one": "{total} içinden {count} seçildi. Seçmediğin her şey “hayır” sayılır.",
+      "other": "{total} içinden {count} seçildi. Seçmediğin her şey “hayır” sayılır."
+    }
   },
   "meetup": {
     "title": "Buluşma · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "İyi olduğunu.",
     "pinSubtitleEnd": "Buluşmanın bittiğini ve iyi olduğunu.",
     "revokeConfirmTitle": "Anlaşma iptal edilsin mi?",
-    "revokeConfirmMessage": "{name} bir bildirim alacak. Hiçbir şey açıklamak zorunda değilsin. Güvenlik modu sen bitirene kadar çalışmaya devam eder."
+    "revokeConfirmMessage": "{name} bir bildirim alacak. Hiçbir şey açıklamak zorunda değilsin. Güvenlik modu sen bitirene kadar çalışmaya devam eder.",
+    "meetingAt": "Buluşma: {when} · {place}",
+    "earlyTitle": "Buluşman daha sonra",
+    "earlyMessage": "{when} için anlaştınız. Güvenlik modunu şimdi açarsan {name} hemen bir SMS alır ve check-in'ler şimdiden başlar. Şimdi açılsın mı?",
+    "earlyConfirm": "Şimdi aç",
+    "agreementLink": "Anlaşma"
   },
   "feedback": {
     "title": "Buluşma nasıl geçti?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Ayrıntılar (isteğe bağlı)",
     "submit": "Şikâyet et",
     "thanksTitle": "Teşekkürler",
-    "thanksMessage": "Şikâyetini aldık. Birbirinizi artık görmeyeceksiniz."
+    "thanksMessage": "Şikâyetini aldık. Birbirinizi artık görmeyeceksiniz.",
+    "blocked": "Engelledik – artık birbirinizi görmeyecek ve mesajlaşamayacaksınız.",
+    "blockedWithName": "{name} artık seni göremez ve sana mesaj atamaz.",
+    "nextSteps": "Şikâyetler anonimdir. Bir moderatör şikâyeti genellikle 24 saat içinde inceler ve ne kadar ciddi olduğuna göre hesabı askıya alır ya da kapatır.",
+    "danger": "Tehlikedeysen 112'yi ara.",
+    "backToMessages": "Mesajlara dön"
   },
   "chat": {
     "unavailable": "Sohbet kullanılamıyor",
@@ -311,7 +325,8 @@
     "block": "Engelle",
     "unmatch": "Eşleşmeyi kaldır",
     "blockConfirmTitle": "Engellensin mi?",
-    "blockConfirmMessage": "Sen ve {name} birbirinizi artık görmeyeceksiniz ve sohbet kaybolacak."
+    "blockConfirmMessage": "Sen ve {name} birbirinizi artık görmeyeceksiniz ve sohbet kaybolacak.",
+    "emptyHint": "{name} ile sohbete ilk sen başla. Ortak bir noktanızdan bahsedebilir ya da hemen anlaşmayı açabilirsin."
   },
   "safetySettings": {
     "title": "Güvenlik ve gizlilik",
@@ -333,7 +348,8 @@
     "appLockHint": "Uygulamayı her açtığında Face ID, parmak izi veya telefon şifren.",
     "discreet": "Göze batmayan mod",
     "discreetHint": "Nötr bir simge ve içeriksiz bildirimler – kimse bunun hangi uygulama olduğunu anlayamaz.",
-    "save": "Kaydet"
+    "save": "Kaydet",
+    "pinsMustDiffer": "Acil durum PIN'in normal PIN'inden farklı olmalı."
   },
   "tabs": {
     "discover": "Keşfet",
@@ -607,7 +623,17 @@
     "codeSent": "{email} adresine 6 haneli bir kod gönderdik. Zaten bir hesabın varsa onun yerine bir bildirim alırsın – o zaman sadece giriş yap.",
     "code": "E-postadaki kod",
     "confirmCode": "Doğrula ve hesap oluştur",
-    "resend": "Kodu tekrar gönder"
+    "resend": "Kodu tekrar gönder",
+    "missing": {
+      "name": "Adını gir.",
+      "email": "E-postanı gir.",
+      "password": "Şifren en az 10 karakter olmalı.",
+      "birthdate": "Doğum tarihini gir.",
+      "gender": "Kim olduğunu seç.",
+      "showMe": "Sana kimleri gösterelim, seç.",
+      "adult": "18 yaşında veya daha büyük olduğunu onayla.",
+      "rules": "Kuralları kabul etmen gerekiyor."
+    }
   },
   "verify": {
     "title": "Sen olduğunu doğrula",
@@ -622,7 +648,8 @@
     "devApprove": "Başarılı doğrulamayı simüle et (test modu)",
     "retry": "Tekrar dene",
     "start": "Kimliği doğrula",
-    "signOut": "Çıkış yap"
+    "signOut": "Çıkış yap",
+    "continue": "Doğrulamaya devam et"
   },
   "common": {
     "back": "Geri",
@@ -638,7 +665,8 @@
     "open": "Aç",
     "show": "Görüntüle",
     "confirm": "Onayla",
-    "errorGeneric": "Bir şeyler ters gitti."
+    "errorGeneric": "Bir şeyler ters gitti.",
+    "ok": "Tamam"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} için güvenlik modu açık",
@@ -767,5 +795,12 @@
       "signOut": "Oturumu kapat",
       "signOutOthers": "Diğer tüm cihazlarda oturumu kapat"
     }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "search": "Kimleri görmek istiyorum",
+    "safety": "Güvenlik ve hesap",
+    "plan": "Abonelik",
+    "account": "Hesap"
   }
 }

@@ -15,12 +15,12 @@ const time = (locale, iso) => {
 };
 
 export const smsText = {
-  started: (locale, name, url) => tr(locale, 'sms.started', { name, url }),
+  started: (locale, name, url, gender) => tr(locale, 'sms.started', { name, url, gender }),
   alarm: (locale, name, url) => tr(locale, 'sms.alarm', { name, url }),
-  overdue: (locale, name, dueIso, url) => tr(locale, 'sms.overdue', { name, time: time(locale, dueIso), url }),
-  backOk: (locale, name) => tr(locale, 'sms.backOk', { name }),
-  sosCancelled: (locale, name) => tr(locale, 'sms.sosCancelled', { name }),
-  endedOk: (locale, name) => tr(locale, 'sms.endedOk', { name }),
+  overdue: (locale, name, dueIso, url, gender) => tr(locale, 'sms.overdue', { name, time: time(locale, dueIso), url, gender }),
+  backOk: (locale, name, gender) => tr(locale, 'sms.backOk', { name, gender }),
+  sosCancelled: (locale, name, gender) => tr(locale, 'sms.sosCancelled', { name, gender }),
+  endedOk: (locale, name, gender) => tr(locale, 'sms.endedOk', { name, gender }),
 };
 
 export function createAlerts({ db, sms }) {

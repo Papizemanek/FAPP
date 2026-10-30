@@ -75,7 +75,7 @@
     "emailTaken": "Účet s tímhle e-mailem už existuje.",
     "wrongCredentials": "Špatný e-mail nebo heslo.",
     "banned": "Účet byl zablokován za porušení pravidel.",
-    "notLoggedIn": "Nejsi přihlášený/á.",
+    "notLoggedIn": "Přihlášení vypršelo. Přihlas se znovu.",
     "suspended": "Účet je pozastavený do kontroly moderátorem.",
     "verifyFirst": "Nejdřív si ověř totožnost.",
     "badCode": "Kód nesedí nebo už vypršel. Zkus to znovu, případně si nech poslat nový.",
@@ -187,7 +187,11 @@
     "invalidInterval": "Neplatný interval check-inu."
   },
   "reports": {
-    "feedbackSent": "Hodnocení už jsi poslal/a."
+    "feedbackSent": {
+      "man": "Hodnocení už jsi poslal.",
+      "woman": "Hodnocení už jsi poslala.",
+      "other": "Hodnocení už jsi poslal/a."
+    }
   },
   "verification": {
     "unknown": "Neznámé ověření.",
@@ -218,7 +222,11 @@
       "body": "Někdo o tebe opravdu stojí."
     },
     "message": {
-      "photo": "Poslal/a fotku"
+      "photo": {
+        "man": "Poslal fotku",
+        "woman": "Poslala fotku",
+        "other": "Poslal/a fotku"
+      }
     },
     "agreementComplete": {
       "title": "Domluva je hotová",
@@ -226,36 +234,76 @@
     },
     "agreementNew": {
       "title": "Nová domluva",
-      "body": "{name} otevřel/a domluvu. Vyplň, na co máš chuť ty."
+      "body": {
+        "man": "{name} otevřel domluvu. Vyplň, na co máš chuť ty.",
+        "woman": "{name} otevřela domluvu. Vyplň, na co máš chuť ty.",
+        "other": "{name} otevřel/a domluvu. Vyplň, na co máš chuť ty."
+      }
     },
     "agreementChanged": {
       "title": "Domluva se změnila",
-      "body": "{name} změnil/a čas, místo nebo pravidla. Potvrď je znovu."
+      "body": {
+        "man": "{name} změnil čas, místo nebo pravidla. Potvrď je znovu.",
+        "woman": "{name} změnila čas, místo nebo pravidla. Potvrď je znovu.",
+        "other": "{name} změnil/a čas, místo nebo pravidla. Potvrď je znovu."
+      }
     },
     "agreementUpdated": {
       "title": "Domluva se upravila",
-      "body": "{name} upravil/a svá přání."
+      "body": {
+        "man": "{name} upravil svá přání.",
+        "woman": "{name} upravila svá přání.",
+        "other": "{name} upravil/a svá přání."
+      }
     },
     "agreementRevoked": {
       "title": "Domluva zrušena",
-      "body": "{name} domluvu zrušil/a. Schůzka se nekoná – a to je potřeba respektovat."
+      "body": {
+        "man": "{name} domluvu zrušil. Schůzka se nekoná – a to je potřeba respektovat.",
+        "woman": "{name} domluvu zrušila. Schůzka se nekoná – a to je potřeba respektovat.",
+        "other": "{name} domluvu zrušil/a. Schůzka se nekoná – a to je potřeba respektovat."
+      }
     },
     "checkInOverdue": {
-      "title": "Zapomněl/a jsi na check-in",
-      "body": "{name} dostal/a upozornění. Potvrď, že jsi v pořádku."
+      "title": {
+        "man": "Zapomněl jsi na check-in",
+        "woman": "Zapomněla jsi na check-in",
+        "other": "Zapomněl/a jsi na check-in"
+      },
+      "body": "Důvěryhodná osoba ({name}) dostala upozornění. Potvrď, že jsi v pořádku."
     }
   },
   "sms": {
-    "started": "{name} má schůzku a vybral/a si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: {url}",
+    "started": {
+      "man": "{name} má schůzku a vybral si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: {url}",
+      "woman": "{name} má schůzku a vybrala si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: {url}",
+      "other": "{name} má schůzku a vybral/a si tě jako důvěryhodnou osobu. Tady uvidíš, kde je a jestli je v pořádku: {url}"
+    },
     "alarm": "POPLACH: {name} potřebuje pomoc. Poloha a podrobnosti: {url}",
-    "overdue": "{name} se neozval/a – potvrzení, že je v pořádku, mělo přijít do {time}. Zkus zavolat. Poloha: {url}",
-    "backOk": "{name} se ozval/a a potvrdil/a, že je v pořádku.",
-    "sosCancelled": "{name} zrušil/a poplach – byl to omyl, je v pořádku.",
-    "endedOk": "{name} ukončil/a schůzku a je v pořádku. Díky, že jsi byl/a k dispozici.",
+    "overdue": {
+      "man": "{name} se neozval – potvrzení, že je v pořádku, mělo přijít do {time}. Zkus zavolat. Poloha: {url}",
+      "woman": "{name} se neozvala – potvrzení, že je v pořádku, mělo přijít do {time}. Zkus zavolat. Poloha: {url}",
+      "other": "{name} se neozval/a – potvrzení, že je v pořádku, mělo přijít do {time}. Zkus zavolat. Poloha: {url}"
+    },
+    "backOk": {
+      "man": "{name} se ozval a potvrdil, že je v pořádku.",
+      "woman": "{name} se ozvala a potvrdila, že je v pořádku.",
+      "other": "{name} se ozval/a a potvrdil/a, že je v pořádku."
+    },
+    "sosCancelled": {
+      "man": "{name} zrušil poplach – byl to omyl, je v pořádku.",
+      "woman": "{name} zrušila poplach – byl to omyl, je v pořádku.",
+      "other": "{name} zrušil/a poplach – byl to omyl, je v pořádku."
+    },
+    "endedOk": {
+      "man": "{name} ukončil schůzku a je v pořádku. Díky za pomoc.",
+      "woman": "{name} ukončila schůzku a je v pořádku. Díky za pomoc.",
+      "other": "{name} ukončil/a schůzku a je v pořádku. Díky za pomoc."
+    },
     "someone": "Tvůj blízký člověk"
   },
   "share": {
-    "pageTitle": "YesYes – bezpečnostní odkaz",
+    "pageTitle": "Bezpečnostní odkaz",
     "header": "Bezpečnostní odkaz",
     "loading": "Načítám…",
     "call": "Zavolat {number}",
@@ -265,13 +313,25 @@
     "partnerLead": "Na schůzce s:",
     "okTitle": "{name} je v pořádku",
     "okDetail": "Poslední potvrzení v {last}. Další čekáme do {next}.",
-    "overdueTitle": "{name} se neozval/a",
+    "overdueTitle": {
+      "man": "{name} se neozval",
+      "woman": "{name} se neozvala",
+      "other": "{name} se neozval/a"
+    },
     "overdueDetail": "Potvrzení mělo přijít do {due}. Zkus zavolat. Když to nebude brát, volej {number} a nadiktuj adresu z mapy.",
     "alarmTitle": "{name} potřebuje pomoc",
     "alarmDetail": "Poplach v {time}. Zavolej {number} a nadiktuj polohu z mapy a místo schůzky níže.",
     "endedTitle": "Schůzka skončila",
-    "endedDetail": "{name} potvrdil/a, že je v pořádku.",
-    "endedDetailAlarm": "{name} potvrdil/a, že je v pořádku. Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.",
+    "endedDetail": {
+      "man": "{name} potvrdil, že je v pořádku.",
+      "woman": "{name} potvrdila, že je v pořádku.",
+      "other": "{name} potvrdil/a, že je v pořádku."
+    },
+    "endedDetailAlarm": {
+      "man": "{name} potvrdil, že je v pořádku. Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.",
+      "woman": "{name} potvrdila, že je v pořádku. Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku.",
+      "other": "{name} potvrdil/a, že je v pořádku. Během schůzky byl spuštěn poplach – zeptej se, jestli je všechno v pořádku."
+    },
     "footer": "Poloha přestane být vidět, jakmile {name} schůzku ukončí.",
     "locationJustNow": "Poloha právě teď",
     "locationAgo": {
@@ -300,23 +360,23 @@
   "email": {
     "registerCode": {
       "subject": "Ověřovací kód: {code}",
-      "body": "Tvůj kód pro dokončení registrace je {code}.\n\nPlatí 15 minut. Pokud ses neregistroval/a, tenhle e-mail ignoruj."
+      "body": "Tvůj kód pro dokončení registrace je {code}.\n\nPlatí 15 minut. Pokud registraci nezačínáš ty, tenhle e-mail ignoruj."
     },
     "accountExists": {
       "subject": "Pokus o registraci",
-      "body": "Někdo se právě pokusil založit účet s touto e-mailovou adresou. Účet už ale máš.\n\nPokud jsi to byl/a ty, prostě se přihlas (případně si obnov heslo). Pokud ne, nic nedělej – tvůj účet zůstává v bezpečí."
+      "body": "Někdo se právě pokusil založit účet s touto e-mailovou adresou. Účet už ale máš.\n\nPokud o tom víš, prostě se přihlas (případně si obnov heslo). Pokud ne, nic nedělej – tvůj účet zůstává v bezpečí."
     },
     "resetCode": {
       "subject": "Kód pro obnovu hesla: {code}",
-      "body": "Tvůj kód pro obnovu hesla je {code}.\n\nPlatí 15 minut. Pokud jsi o obnovu nežádal/a, tenhle e-mail ignoruj – heslo zůstává beze změny."
+      "body": "Tvůj kód pro obnovu hesla je {code}.\n\nPlatí 15 minut. Pokud o obnovu nežádáš ty, tenhle e-mail ignoruj – heslo zůstává beze změny."
     },
     "newLogin": {
       "subject": "Nové přihlášení do účtu",
-      "body": "Do tvého účtu se právě někdo přihlásil ({device}).\n\nPokud jsi to nebyl/a ty, hned si změň heslo a v nastavení zabezpečení odhlas ostatní zařízení."
+      "body": "Do tvého účtu se právě někdo přihlásil ({device}).\n\nPokud o tom nevíš, hned si změň heslo a v nastavení zabezpečení odhlas ostatní zařízení."
     },
     "passwordChanged": {
       "subject": "Heslo bylo změněno",
-      "body": "Heslo k tvému účtu bylo právě změněno a ostatní zařízení byla odhlášena.\n\nPokud jsi to nebyl/a ty, obnov si heslo přes „Zapomenuté heslo“ a napiš nám."
+      "body": "Heslo k tvému účtu bylo právě změněno a ostatní zařízení byla odhlášena.\n\nPokud o tom nevíš, obnov si heslo přes „Zapomenuté heslo“ a napiš nám."
     },
     "twoFactorOn": {
       "subject": "Dvoufázové ověření zapnuto",
@@ -324,7 +384,7 @@
     },
     "twoFactorOff": {
       "subject": "Dvoufázové ověření vypnuto",
-      "body": "Dvoufázové ověření bylo u tvého účtu vypnuto.\n\nPokud jsi to nebyl/a ty, hned si změň heslo."
+      "body": "Dvoufázové ověření bylo u tvého účtu vypnuto.\n\nPokud o tom nevíš, hned si změň heslo."
     }
   }
 }

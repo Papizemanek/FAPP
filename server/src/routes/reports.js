@@ -83,7 +83,7 @@ export function reportRoutes({ db, sealer }) {
     const now = Date.now();
     const rows = db
       .prepare(
-        `SELECT a.id, a.meet_at, m.id AS match_id, u.name AS partner_name
+        `SELECT a.id, a.meet_at, m.id AS match_id, u.name AS partner_name, u.gender AS partner_gender
          FROM agreements a
          JOIN matches m ON m.id = a.match_id
          JOIN users u ON u.id = CASE WHEN m.user_a = ? THEN m.user_b ELSE m.user_a END
@@ -95,7 +95,7 @@ export function reportRoutes({ db, sealer }) {
         const t = Date.parse(row.meet_at);
         return now - t > FEEDBACK_AFTER_MS && now - t < FEEDBACK_WINDOW_MS;
       });
-    res.json(rows.map((row) => ({ agreementId: row.id, matchId: row.match_id, partnerName: row.partner_name, meetAt: row.meet_at })));
+    res.json(rows.map((row) => ({ agreementId: row.id, matchId: row.match_id, partnerName: row.partner_name, partnerGender: row.partner_gender, meetAt: row.meet_at })));
   });
 
   r.post('/feedback/:agreementId', auth, (req, res) => {
@@ -111,7 +111,7 @@ export function reportRoutes({ db, sealer }) {
         'INSERT OR IGNORE INTO feedback (agreement_id, author_id, about_id, ok, reason, details, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
       )
       .run(agreement.id, req.user.id, otherId, ok ? 1 : 0, reason, sealer.seal(details), nowIso());
-    if (inserted.changes === 0) throw new HttpError(409, 'reports.feedbackSent');
+    if (inserted.changes === 0) throw new HttpError(409, 'reports.feedbackSent', { params: { gender: req.user.gender } });
 
     if (!ok) {
       // Ve výchozím stavu se záznam uchová – rozhoduje ten, kdo hlásí problém.

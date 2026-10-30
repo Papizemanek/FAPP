@@ -86,7 +86,11 @@ export default function Verify() {
           {devMode ? (
             <Button variant="safe" label={t('verify.devApprove')} onPress={devDecide} loading={busy} />
           ) : (
-            <Button label={state?.status === 'declined' ? t('verify.retry') : t('verify.start')} onPress={start} loading={busy} />
+            <Button
+              label={state?.status === 'declined' ? t('verify.retry') : state?.status === 'pending' ? t('verify.continue') : t('verify.start')}
+              onPress={start}
+              loading={busy}
+            />
           )}
           <Button variant="ghost" label={t('verify.signOut')} onPress={async () => { await signOut(); router.replace('/welcome'); }} />
         </View>

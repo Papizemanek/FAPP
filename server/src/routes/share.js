@@ -74,14 +74,18 @@ export function shareRoutes({ db }) {
   r.get('/api/share/:token', noIndex, (req, res) => {
     const s = load(req.params.token);
     const status = shareStatus(s);
-    const name = getUser(db, s.user_id)?.name ?? '';
+    const owner = getUser(db, s.user_id);
+    const name = owner?.name ?? '';
+    // Rod jen kvůli skloňování textů („Lenka potvrdila“), nic víc o člověku stránka neprozradí.
+    const gender = owner?.gender === 'man' || owner?.gender === 'woman' ? owner.gender : 'other';
     const alarmAt = s.sos_at ?? s.silent_alarm_at;
     if (status === 'ended') {
-      return res.json({ status, name, endedAt: s.ended_at, hadAlarm: !!alarmAt });
+      return res.json({ status, name, gender, endedAt: s.ended_at, hadAlarm: !!alarmAt });
     }
     res.json({
       status,
       name,
+      gender,
       startedAt: s.started_at,
       lastCheckInAt: s.last_check_in_at,
       nextCheckInDue: new Date(nextCheckInDue(s)).toISOString(),

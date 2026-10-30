@@ -3,7 +3,7 @@ import * as Location from 'expo-location';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { usePreventScreenCapture } from 'expo-screen-capture';
 import { useCallback, useEffect, useState } from 'react';
-import { Alert, Linking, Modal, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
+import { Linking, Modal, Pressable, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import MapView from 'react-native-maps';
 import { FAKE_CALL_DELAY_SECONDS, FakeCall } from '@/components/FakeCall';
 import { ConfirmSheet } from '@/components/Sheet';
@@ -11,6 +11,8 @@ import { Icon } from '@/components/Icon';
 import { PinPad } from '@/components/PinPad';
 import { Banner, Body, Button, Chip, ErrorText, Header, Label, Screen } from '@/components/ui';
 import { api, errorMessage, type MatchDetail, type SafetySession } from '@/lib/api';
+import { formatDate } from '@/lib/format';
+import { showNotice } from '@/lib/notice';
 import { useT } from '@/lib/i18n';
 import { cancelCheckInReminder, scheduleCheckInReminder, scheduleFakeCallNotification } from '@/lib/notifications';
 import { ensureBackgroundPermission, startSafetyTracking, stopSafetyTracking } from '@/lib/safetyTracking';
@@ -18,6 +20,8 @@ import { useSession } from '@/lib/session';
 import { colors, fonts } from '@/lib/theme';
 
 type PinAction = 'checkin' | 'end' | 'cancelSos' | null;
+
+const EARLY_START_MS = 60 * 60_000;
 
 export default function Meetup() {
   usePreventScreenCapture();
@@ -34,7 +38,7 @@ export default function Meetup() {
   const [now, setNow] = useState(Date.now());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const [confirmRevoke, setConfirmRevoke] = useState(false);
+  const [confirmEarly, setConfirmEarly] = useState(false);
   const [fakeCallAt, setFakeCallAt] = useState<number | null>(null);
   const [fakeCallOpen, setFakeCallOpen] = useState(false);
 
@@ -85,6 +89,10 @@ export default function Meetup() {
   const fakeCaller = trustedName || t('meetup.fakeCallerDefault');
   const ready = !!me?.trustedPhone && !!me?.hasCheckinPin && !!me?.hasDuressPin;
   const agreementOk = detail?.agreement?.status === 'confirmed';
+  const meetAt = detail?.agreement?.meetAt ?? null;
+  const meetWhen = meetAt ? formatDate(meetAt, { weekday: 'short', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+  // Víc než hodinu před schůzkou se zeptáme – jinak by check-in a SMS důvěryhodné osobě běžely zbytečně brzy.
+  const tooEarly = meetAt != null && Date.parse(meetAt) - Date.now() > EARLY_START_MS;
 
   const start = async () => {
     setBusy(true);
@@ -117,7 +125,7 @@ export default function Meetup() {
       await stopSafetyTracking(session.id);
       await cancelCheckInReminder(session.id);
       setPinAction(null);
-      Alert.alert(t('meetup.endedTitle'), t('meetup.endedMessage', { name: trustedName }));
+      showNotice(t('meetup.endedTitle'), t('meetup.endedMessage', { name: trustedName }));
       router.back();
       return;
     }
@@ -134,13 +142,6 @@ export default function Meetup() {
       setSosOpen(false);
       setError(t('meetup.sosFailed', { error: errorMessage(err), name: trustedName }));
     }
-  };
-
-  const revoke = async () => {
-    const agreement = detail?.agreement;
-    if (!agreement || agreement.status === 'revoked') return;
-    await api('POST', `/agreements/${agreement.id}/revoke`).catch(() => {});
-    await load();
   };
 
   if (!loaded) return <Screen />;
@@ -184,9 +185,24 @@ export default function Meetup() {
               ))}
             </View>
           </View>
+          {meetWhen ? <Body muted>{t('meetup.meetingAt', { when: meetWhen, place: detail?.agreement?.place ?? '' })}</Body> : null}
           <ErrorText>{error}</ErrorText>
-          <Button variant="safe" label={t('meetup.start')} onPress={start} loading={busy} disabled={!ready || !agreementOk} />
+          <Button
+            variant="safe"
+            label={t('meetup.start')}
+            onPress={() => (tooEarly ? setConfirmEarly(true) : start())}
+            loading={busy}
+            disabled={!ready || !agreementOk}
+          />
         </ScrollView>
+        <ConfirmSheet
+          visible={confirmEarly}
+          title={t('meetup.earlyTitle')}
+          message={t('meetup.earlyMessage', { when: meetWhen, name: trustedName || t('meetup.fakeCallerDefault') })}
+          confirmLabel={t('meetup.earlyConfirm')}
+          onConfirm={start}
+          onClose={() => setConfirmEarly(false)}
+        />
       </Screen>
     );
   }
@@ -198,7 +214,15 @@ export default function Meetup() {
 
   return (
     <Screen>
-      <Header title={t('meetup.title', { name: partnerName })} />
+      <Header
+        title={t('meetup.title', { name: partnerName })}
+        // Domluvu (i její zrušení) má schůzka v hlavičce – dole jsou jen SOS a konec, ať se ve stresu nic nesplete.
+        right={
+          <Pressable accessibilityRole="link" onPress={() => router.push(`/agreement/${id}`)} style={s.headerLink}>
+            <Text style={s.headerLinkText}>{t('meetup.agreementLink')}</Text>
+          </Pressable>
+        }
+      />
       <ScrollView contentContainerStyle={{ paddingHorizontal: 16, gap: 14, paddingBottom: 12 }}>
         <View style={s.map}>
           <MapView
@@ -260,17 +284,7 @@ export default function Meetup() {
       <View style={{ paddingHorizontal: 16, paddingBottom: 12, gap: 10 }}>
         <ErrorText>{error}</ErrorText>
         <Button variant="sos" label={t('meetup.sos')} onLongPress={sos} height={64} />
-        <View style={{ flexDirection: 'row', gap: 10 }}>
-          <Button
-            variant="ghost"
-            label={t('meetup.revoke')}
-            height={48}
-            style={{ flex: 1 }}
-            onPress={() => setConfirmRevoke(true)}
-            disabled={!detail?.agreement || detail.agreement.status === 'revoked'}
-          />
-          <Button variant="ghost" label={t('meetup.end')} height={48} style={{ flex: 1 }} onPress={() => setPinAction('end')} />
-        </View>
+        <Button variant="ghost" label={t('meetup.end')} height={48} onPress={() => setPinAction('end')} />
       </View>
 
       <Modal visible={sosOpen} transparent animationType="slide" onRequestClose={() => {}}>
@@ -291,15 +305,6 @@ export default function Meetup() {
         />
       </Modal>
 
-      <ConfirmSheet
-        visible={confirmRevoke}
-        title={t('meetup.revokeConfirmTitle')}
-        message={t('meetup.revokeConfirmMessage', { name: partnerName })}
-        confirmLabel={t('meetup.revoke')}
-        destructive
-        onConfirm={revoke}
-        onClose={() => setConfirmRevoke(false)}
-      />
 
       <FakeCall visible={fakeCallOpen} caller={fakeCaller} onClose={() => setFakeCallOpen(false)} />
 
@@ -326,6 +331,8 @@ function Point({ icon, text }: { icon: 'pin' | 'check' | 'lock' | 'shield' | 'us
 }
 
 const s = StyleSheet.create({
+  headerLink: { height: 36, paddingHorizontal: 14, borderRadius: 999, borderWidth: 1, borderColor: colors.line, justifyContent: 'center' },
+  headerLinkText: { fontFamily: fonts.semibold, fontSize: 14, color: colors.text },
   map: { height: 230, borderRadius: 20, overflow: 'hidden', backgroundColor: '#1E1B22', borderWidth: 1, borderColor: colors.lineSoft },
   mapPill: { position: 'absolute', left: 12, bottom: 12, height: 32, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 999, backgroundColor: 'rgba(18,16,20,0.85)' },
   mapPillText: { fontFamily: fonts.semibold, fontSize: 13, color: colors.text },

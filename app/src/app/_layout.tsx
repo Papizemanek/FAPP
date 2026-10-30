@@ -12,6 +12,7 @@ import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppLockProvider } from '@/lib/appLock';
 import { i18n } from '@/lib/i18n';
+import { NoticeHost } from '@/lib/notice';
 import { SessionProvider, useSession } from '@/lib/session';
 import { colors } from '@/lib/theme';
 
@@ -57,6 +58,7 @@ export default function RootLayout() {
       <StatusBar style="light" />
       <SessionProvider>
         <Navigation />
+        <NoticeHost />
       </SessionProvider>
     </SafeAreaProvider>
   );

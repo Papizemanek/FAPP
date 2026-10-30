@@ -11,6 +11,7 @@ import {
   isOverdue,
   nextCheckInDue,
   ownSafetyView,
+  shareLink,
 } from '../model.js';
 import { DEFAULT_LOCALE, msg, tr } from '../i18n.js';
 import { smsText } from '../services/alerts.js';
@@ -24,7 +25,7 @@ import { requireAuth, requireVerified } from './auth.js';
 
 export function safetyRoutes({ db, config, alerts }) {
   const r = Router();
-  const shareUrl = (s) => `${config.publicUrl}/s/${s.share_token}`;
+  const shareUrl = (s) => shareLink(config, s);
   const load = (id) => db.prepare('SELECT * FROM safety_sessions WHERE id = ?').get(Number(id));
   // Jméno a jazyk pro SMS důvěryhodné osobě. Jazyk se zafixuje při startu schůzky,
   // starší schůzky (bez uloženého jazyka) používají aktuální jazyk uživatele.
@@ -35,7 +36,7 @@ export function safetyRoutes({ db, config, alerts }) {
   };
 
   const view = (s) => ({
-    ...ownSafetyView(s, config.publicUrl),
+    ...ownSafetyView(s, config),
     matchId: s.match_id,
     meetAt: s.meet_at,
     place: s.place,
@@ -131,7 +132,7 @@ export function safetyRoutes({ db, config, alerts }) {
         req.user.locale ?? DEFAULT_LOCALE,
       );
     const s = load(lastInsertRowid);
-    alerts.enqueue(s, smsText.started(smsFor(s).locale, req.user.name, shareUrl(s)));
+    alerts.enqueue(s, smsText.started(smsFor(s).locale, req.user.name, shareUrl(s), req.user.gender));
     res.status(201).json(view(s));
   });
 
@@ -170,7 +171,7 @@ export function safetyRoutes({ db, config, alerts }) {
       'UPDATE safety_sessions SET last_check_in_at = ?, overdue_alerted_at = NULL, wrong_pin_count = 0 WHERE id = ?',
     ).run(nowIso(), s.id);
     if (result === 'duress') raiseSilentAlarm(s.id, 'duress');
-    else if (s.overdue_alerted_at && !s.silent_alarm_at && !s.sos_at) alerts.enqueue(s, smsText.backOk(smsFor(s).locale, req.user.name));
+    else if (s.overdue_alerted_at && !s.silent_alarm_at && !s.sos_at) alerts.enqueue(s, smsText.backOk(smsFor(s).locale, req.user.name, req.user.gender));
     res.json(view(load(s.id)));
   });
 
@@ -202,7 +203,7 @@ export function safetyRoutes({ db, config, alerts }) {
         nowIso(),
         s.id,
       );
-      if (!s.silent_alarm_at) alerts.enqueue(s, smsText.sosCancelled(smsFor(s).locale, req.user.name));
+      if (!s.silent_alarm_at) alerts.enqueue(s, smsText.sosCancelled(smsFor(s).locale, req.user.name, req.user.gender));
     }
     res.json(view(load(s.id)));
   });
@@ -228,7 +229,7 @@ export function safetyRoutes({ db, config, alerts }) {
         `UPDATE safety_sessions SET ended_at = ?, end_kind = 'ok',
            lat = NULL, lng = NULL, accuracy = NULL, battery = NULL, location_at = NULL WHERE id = ?`,
       ).run(now, s.id);
-      alerts.enqueue(s, smsText.endedOk(smsFor(s).locale, req.user.name));
+      alerts.enqueue(s, smsText.endedOk(smsFor(s).locale, req.user.name, req.user.gender));
     }
     res.json(view(load(s.id)));
   });
@@ -256,9 +257,9 @@ export function checkOverdue({ db, config, services, alerts }, now = Date.now())
     const locale = s.locale ?? user?.locale ?? DEFAULT_LOCALE;
     const name = user?.name ?? tr(locale, 'sms.someone');
     const due = new Date(nextCheckInDue(s)).toISOString();
-    alerts.enqueue(s, smsText.overdue(locale, name, due, `${config.publicUrl}/s/${s.share_token}`));
+    alerts.enqueue(s, smsText.overdue(locale, name, due, shareLink(config, s), user?.gender));
     notify(db, services.push, s.user_id, {
-      title: msg('push.checkInOverdue.title'),
+      title: msg('push.checkInOverdue.title', { gender: user?.gender }),
       body: msg('push.checkInOverdue.body', { name: s.trusted_name }),
       data: { type: 'safety', safetyId: s.id },
     });

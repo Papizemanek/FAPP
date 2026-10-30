@@ -1,8 +1,8 @@
 import { REPORT_REASONS } from '@yesyes/shared';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
-import { Alert, ScrollView, View } from 'react-native';
-import { Body, Button, Chip, ErrorText, Field, Header, Screen, Title } from '@/components/ui';
+import { ScrollView, View } from 'react-native';
+import { Banner, Body, Button, Chip, ErrorText, Field, Header, Screen, Title } from '@/components/ui';
 import { api, errorMessage, type ReportReason } from '@/lib/api';
 import { useT } from '@/lib/i18n';
 
@@ -15,20 +15,35 @@ export default function Report() {
   const [details, setDetails] = useState('');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const send = async () => {
     setBusy(true);
     setError('');
     try {
       await api('POST', `/users/${id}/report`, { reason, details });
-      Alert.alert(t('report.thanksTitle'), t('report.thanksMessage'));
-      router.replace('/matches');
+      setSent(true);
     } catch (err) {
       setError(errorMessage(err));
     } finally {
       setBusy(false);
     }
   };
+
+  // Potvrzení: člověk musí vědět, že nahlášení prošlo a co se stane dál.
+  if (sent) {
+    return (
+      <Screen>
+        <ScrollView contentContainerStyle={{ padding: 20, paddingTop: 48, gap: 18 }}>
+          <Title>{t('report.thanksTitle')}</Title>
+          <Banner tone="safe" icon="shieldCheck" title={name ? t('report.blockedWithName', { name }) : t('report.blocked')} />
+          <Body>{t('report.nextSteps')}</Body>
+          <Body muted>{t('report.danger')}</Body>
+          <Button label={t('report.backToMessages')} onPress={() => router.replace('/matches')} />
+        </ScrollView>
+      </Screen>
+    );
+  }
 
   return (
     <Screen>

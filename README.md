@@ -159,6 +159,7 @@ Vyzkoušet na vlastních telefonech (testovací server + instalace bez obchodů)
 | --- | --- | --- |
 | Šifrovací klíč dat | `DATA_KEY` (32 B v base64) nebo `DATA_KEYS` (keyring pro rotaci), `IDENTITY_SECRET` (≥ 32 znaků) | `openssl rand -base64 32`. Bez nich server v produkci nenastartuje. **Nesmí se ztratit** – bez nich nejdou přečíst profily ani zprávy a nefungují bany a přihlášení. Rotace a zálohy: [SECURITY.md](SECURITY.md). |
 | E-maily (kódy, upozornění) | `EMAIL_PROVIDER=resend`, `RESEND_API_KEY`, `EMAIL_FROM` | Registrace a obnova hesla přes kód z e-mailu, upozornění na přihlášení. Odesílatel neutrální (např. `Účet <ucet@yesyesapp.com>`). |
+| Odkaz pro důvěryhodnou osobu | `SHARE_URL` | Neutrální doména bez názvu aplikace (např. `https://bezpecne-sdileni.cz`), která vede na tenhle server. Odkaz v SMS pak neprozradí, o jakou aplikaci jde. Bez ní se použije `PUBLIC_URL`. |
 | Zálohy | `BACKUP_KEY` | `npm run backup -w server` – šifrovaná záloha mimo hosting, denně. |
 | Ověření totožnosti | `VERIFICATION_PROVIDER=veriff`, `VERIFF_API_KEY`, `VERIFF_SHARED_SECRET` | Webhook: `POST {PUBLIC_URL}/api/verification/webhook`. Názvy polí ve webhooku ověřit proti aktuální dokumentaci Veriffu. Alternativa pro ČR: Bankovní identita. |
 | SMS | `SMS_PROVIDER=twilio`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM` nebo `TWILIO_MESSAGING_SERVICE_SID` | Bezpečnostně kritické – zprávy jdou přes frontu s opakováním. |

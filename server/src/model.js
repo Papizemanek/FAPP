@@ -200,12 +200,18 @@ export const activeSafetySession = (db, userId, matchId) =>
     .prepare('SELECT * FROM safety_sessions WHERE user_id = ? AND match_id = ? AND ended_at IS NULL ORDER BY id DESC LIMIT 1')
     .get(userId, matchId);
 
-export function ownSafetyView(s, publicUrl) {
+/**
+ * Odkaz pro důvěryhodnou osobu. SHARE_URL může být neutrální doména (bez názvu aplikace),
+ * ať z odkazu v SMS nikdo nepozná, o jakou aplikaci jde. Musí vést na tenhle server.
+ */
+export const shareLink = (config, s) => `${config.shareUrl}/s/${s.share_token}`;
+
+export function ownSafetyView(s, config) {
   if (!s) return null;
   return {
     id: s.id,
     status: ownStatus(s),
-    shareUrl: `${publicUrl}/s/${s.share_token}`,
+    shareUrl: shareLink(config, s),
     trustedName: s.trusted_name,
     checkInMinutes: s.check_in_minutes,
     startedAt: s.started_at,

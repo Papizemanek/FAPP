@@ -198,7 +198,10 @@
     "startMeetup": "开始约会",
     "revoke": "取消约定",
     "revokeConfirmTitle": "取消约定？",
-    "revokeConfirmMessage": "约会将取消。你不需要解释任何事——{name} 只会收到一条通知。"
+    "revokeConfirmMessage": "约会将取消。你不需要解释任何事——{name} 只会收到一条通知。",
+    "unsetIsNo": {
+      "other": "已选 {count} 项，共 {total} 项。没选的都算作“不”。"
+    }
   },
   "meetup": {
     "title": "约会 · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "确认你没事。",
     "pinSubtitleEnd": "确认约会已结束且你没事。",
     "revokeConfirmTitle": "取消约定？",
-    "revokeConfirmMessage": "{name} 会收到通知。你不需要解释任何事。安全模式会一直运行，直到你结束它。"
+    "revokeConfirmMessage": "{name} 会收到通知。你不需要解释任何事。安全模式会一直运行，直到你结束它。",
+    "meetingAt": "约会：{when} · {place}",
+    "earlyTitle": "约会时间还没到",
+    "earlyMessage": "你们约在 {when}。如果现在就开启安全模式，{name} 会立即收到短信，报平安也会从现在开始。现在开启吗？",
+    "earlyConfirm": "现在开启",
+    "agreementLink": "约定"
   },
   "feedback": {
     "title": "约会怎么样？",
@@ -292,7 +300,12 @@
     "detailsLabel": "详细说明（选填）",
     "submit": "举报",
     "thanksTitle": "谢谢你",
-    "thanksMessage": "我们已收到你的举报。你们将不会再看到彼此。"
+    "thanksMessage": "我们已收到你的举报。你们将不会再看到彼此。",
+    "blocked": "我们已屏蔽对方——你们将不会再看到彼此，也无法互发消息。",
+    "blockedWithName": "{name} 将无法再看到你或给你发消息。",
+    "nextSteps": "举报是匿名的。审核员通常会在 24 小时内处理，并根据严重程度暂停或封禁该账号。",
+    "danger": "如果你身处危险，请拨打 112。",
+    "backToMessages": "返回消息"
   },
   "chat": {
     "unavailable": "聊天不可用",
@@ -310,7 +323,8 @@
     "block": "屏蔽",
     "unmatch": "取消配对",
     "blockConfirmTitle": "屏蔽？",
-    "blockConfirmMessage": "你和 {name} 将不会再看到彼此，聊天也会消失。"
+    "blockConfirmMessage": "你和 {name} 将不会再看到彼此，聊天也会消失。",
+    "emptyHint": "先给 {name} 发条消息吧。可以从你们的共同点聊起，也可以直接打开约定。"
   },
   "safetySettings": {
     "title": "安全与隐私",
@@ -332,7 +346,8 @@
     "appLockHint": "每次打开 App 时使用面容 ID、指纹或手机密码。",
     "discreet": "隐蔽模式",
     "discreetHint": "普通图标和不显示内容的通知——没人看得出这是什么 App。",
-    "save": "保存"
+    "save": "保存",
+    "pinsMustDiffer": "紧急 PIN 必须与普通 PIN 不同。"
   },
   "tabs": {
     "discover": "发现",
@@ -595,7 +610,17 @@
     "codeSent": "我们已向 {email} 发送了 6 位验证码。如果你已有账号，你会收到一条提醒——直接登录即可。",
     "code": "邮件中的验证码",
     "confirmCode": "验证并创建账号",
-    "resend": "重新发送验证码"
+    "resend": "重新发送验证码",
+    "missing": {
+      "name": "请填写名字。",
+      "email": "请填写邮箱。",
+      "password": "密码至少需要 10 个字符。",
+      "birthdate": "请填写出生日期。",
+      "gender": "请选择你的身份。",
+      "showMe": "请选择想看到谁。",
+      "adult": "请确认你已年满 18 岁。",
+      "rules": "你还需要同意规则。"
+    }
   },
   "verify": {
     "title": "验证你的身份",
@@ -610,7 +635,8 @@
     "devApprove": "模拟验证成功（测试模式）",
     "retry": "重试",
     "start": "验证身份",
-    "signOut": "退出登录"
+    "signOut": "退出登录",
+    "continue": "继续验证"
   },
   "common": {
     "back": "返回",
@@ -626,7 +652,8 @@
     "open": "打开",
     "show": "查看",
     "confirm": "确认",
-    "errorGeneric": "出了点问题。"
+    "errorGeneric": "出了点问题。",
+    "ok": "好"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} 开启了安全模式",
@@ -754,5 +781,12 @@
       "signOut": "退出登录",
       "signOutOthers": "退出所有其他设备"
     }
+  },
+  "settings": {
+    "title": "设置",
+    "search": "我想看到谁",
+    "safety": "安全与账号",
+    "plan": "订阅",
+    "account": "账号"
   }
 }

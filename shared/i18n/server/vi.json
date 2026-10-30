@@ -72,7 +72,7 @@
     "emailTaken": "Đã có tài khoản dùng email này.",
     "wrongCredentials": "Sai email hoặc mật khẩu.",
     "banned": "Tài khoản này đã bị cấm vì vi phạm quy tắc.",
-    "notLoggedIn": "Bạn chưa đăng nhập.",
+    "notLoggedIn": "Phiên đăng nhập đã hết hạn. Hãy đăng nhập lại.",
     "suspended": "Tài khoản của bạn bị tạm khóa cho đến khi người kiểm duyệt xem xét.",
     "verifyFirst": "Hãy xác minh danh tính trước.",
     "badCode": "Mã không đúng hoặc đã hết hạn. Hãy thử lại hoặc yêu cầu mã mới.",
@@ -243,7 +243,7 @@
     "someone": "Một người thân của bạn"
   },
   "share": {
-    "pageTitle": "YesYes – liên kết an toàn",
+    "pageTitle": "Liên kết an toàn",
     "header": "Liên kết an toàn",
     "loading": "Đang tải…",
     "call": "Gọi {number}",

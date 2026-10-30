@@ -28,7 +28,11 @@
       "host": "A casa meva",
       "visit": "A casa teva",
       "neutral": "Lloc neutral",
-      "single": "Solter/a",
+      "single": {
+        "man": "Solter",
+        "woman": "Soltera",
+        "other": "Sense parella"
+      },
       "open": "Relació oberta",
       "poly": "Poliamor",
       "couple": "Parella"
@@ -198,7 +202,12 @@
     "startMeetup": "Inicia la trobada",
     "revoke": "Cancel·la l'acord",
     "revokeConfirmTitle": "Vols cancel·lar l'acord?",
-    "revokeConfirmMessage": "La trobada queda anul·lada. No has d'explicar res – {name} només rep una notificació."
+    "revokeConfirmMessage": "La trobada queda anul·lada. No has d'explicar res – {name} només rep una notificació.",
+    "unsetIsNo": {
+      "one": "Has triat {count} de {total}. El que no triïs compta com un no.",
+      "many": "Has triat {count} de {total}. El que no triïs compta com un no.",
+      "other": "Has triat {count} de {total}. El que no triïs compta com un no."
+    }
   },
   "meetup": {
     "title": "Trobada · {name}",
@@ -251,7 +260,12 @@
     "pinSubtitleOk": "Que estàs bé.",
     "pinSubtitleEnd": "Que la trobada s'ha acabat i estàs bé.",
     "revokeConfirmTitle": "Vols cancel·lar l'acord?",
-    "revokeConfirmMessage": "{name} rebrà una notificació. No has d'explicar res. El mode seguretat continuarà actiu fins que l'aturis."
+    "revokeConfirmMessage": "{name} rebrà una notificació. No has d'explicar res. El mode seguretat continuarà actiu fins que l'aturis.",
+    "meetingAt": "Trobada: {when} · {place}",
+    "earlyTitle": "La trobada és més tard",
+    "earlyMessage": "Heu acordat {when}. Si actives ara el mode seguretat, {name} rebrà un SMS de seguida i els check-ins començaran ara. L'actives ara?",
+    "earlyConfirm": "Activa'l ara",
+    "agreementLink": "Acord"
   },
   "feedback": {
     "title": "Com ha anat la trobada?",
@@ -294,7 +308,12 @@
     "detailsLabel": "Detalls (opcional)",
     "submit": "Denuncia",
     "thanksTitle": "Gràcies",
-    "thanksMessage": "Hem rebut la teva denúncia. Ja no us veureu més."
+    "thanksMessage": "Hem rebut la teva denúncia. Ja no us veureu més.",
+    "blocked": "Hem bloquejat aquesta persona – ja no us veureu ni us podreu escriure.",
+    "blockedWithName": "{name} ja no et podrà veure ni escriure't.",
+    "nextSteps": "Les denúncies són anònimes. L'equip de moderació la revisa, normalment en 24 hores, i suspèn o bloqueja el compte segons la gravetat.",
+    "danger": "Si estàs en perill, truca al 112.",
+    "backToMessages": "Torna als missatges"
   },
   "chat": {
     "unavailable": "El xat no està disponible",
@@ -312,7 +331,8 @@
     "block": "Bloqueja",
     "unmatch": "Desfés el match",
     "blockConfirmTitle": "Vols bloquejar?",
-    "blockConfirmMessage": "Tu i {name} ja no us veureu més, i el xat desapareixerà."
+    "blockConfirmMessage": "Tu i {name} ja no us veureu més, i el xat desapareixerà.",
+    "emptyHint": "Escriu primer a {name}. Comença amb alguna cosa que tingueu en comú o obre directament l'acord."
   },
   "safetySettings": {
     "title": "Seguretat i privadesa",
@@ -334,7 +354,8 @@
     "appLockHint": "Face ID, empremta o codi del telèfon cada vegada que obris l'app.",
     "discreet": "Mode discret",
     "discreetHint": "Una icona neutra i notificacions sense contingut – ningú no sabrà de quina app es tracta.",
-    "save": "Desa"
+    "save": "Desa",
+    "pinsMustDiffer": "El PIN d'emergència ha de ser diferent del PIN habitual."
   },
   "tabs": {
     "discover": "Descobreix",
@@ -478,7 +499,11 @@
     },
     "yes": {
       "title": "Els meus sí",
-      "hint": "Les etiquetes mostren a què estàs obert/a, no el que prometes.",
+      "hint": {
+        "man": "Les etiquetes mostren a què estàs obert, no el que prometes.",
+        "woman": "Les etiquetes mostren a què estàs oberta, no el que prometes.",
+        "other": "Les etiquetes mostren allò que t'interessa, no el que prometes."
+      },
       "footnote": "Només ho veurà qui també hagi dit que sí.",
       "matchOnly": "Visible després d'un match",
       "upTo": {
@@ -619,7 +644,17 @@
     "codeSent": "Hem enviat un codi de 6 xifres a {email}. Si ja tens un compte, rebràs un avís: només cal que iniciïs la sessió.",
     "code": "Codi del correu",
     "confirmCode": "Verifica i crea el compte",
-    "resend": "Torna a enviar el codi"
+    "resend": "Torna a enviar el codi",
+    "missing": {
+      "name": "Escriu el teu nom.",
+      "email": "Escriu el teu correu electrònic.",
+      "password": "La contrasenya ha de tenir almenys 10 caràcters.",
+      "birthdate": "Escriu la teva data de naixement.",
+      "gender": "Tria qui ets.",
+      "showMe": "Tria a qui t'hem de mostrar.",
+      "adult": "Confirma que tens 18 anys o més.",
+      "rules": "Encara cal que acceptis les normes."
+    }
   },
   "verify": {
     "title": "Verifica que ets tu",
@@ -634,7 +669,8 @@
     "devApprove": "Simula una verificació correcta (mode de prova)",
     "retry": "Torna-ho a provar",
     "start": "Verifica la identitat",
-    "signOut": "Tanca la sessió"
+    "signOut": "Tanca la sessió",
+    "continue": "Continua la verificació"
   },
   "common": {
     "back": "Enrere",
@@ -650,7 +686,8 @@
     "open": "Obre",
     "show": "Mostra",
     "confirm": "Confirma",
-    "errorGeneric": "Alguna cosa ha anat malament."
+    "errorGeneric": "Alguna cosa ha anat malament.",
+    "ok": "D'acord"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} té el mode seguretat activat",
@@ -780,5 +817,12 @@
       "signOut": "Tanca la sessió",
       "signOutOthers": "Tanca la sessió a tots els altres dispositius"
     }
+  },
+  "settings": {
+    "title": "Configuració",
+    "search": "Qui vull veure",
+    "safety": "Seguretat i compte",
+    "plan": "Subscripció",
+    "account": "Compte"
   }
 }

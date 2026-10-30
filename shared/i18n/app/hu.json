@@ -198,7 +198,11 @@
     "startMeetup": "Randi indítása",
     "revoke": "Megállapodás visszavonása",
     "revokeConfirmTitle": "Visszavonod a megállapodást?",
-    "revokeConfirmMessage": "A randi elmarad. Nem kell semmit megmagyaráznod – {name} csak értesítést kap."
+    "revokeConfirmMessage": "A randi elmarad. Nem kell semmit megmagyaráznod – {name} csak értesítést kap.",
+    "unsetIsNo": {
+      "one": "Kiválasztva: {count} / {total}. Amit nem választasz ki, az nemnek számít.",
+      "other": "Kiválasztva: {count} / {total}. Amit nem választasz ki, az nemnek számít."
+    }
   },
   "meetup": {
     "title": "Randi · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "Hogy jól vagy.",
     "pinSubtitleEnd": "Hogy a randinak vége, és jól vagy.",
     "revokeConfirmTitle": "Visszavonod a megállapodást?",
-    "revokeConfirmMessage": "{name} értesítést kap. Nem kell semmit megmagyaráznod. A biztonsági mód addig fut, amíg be nem fejezed."
+    "revokeConfirmMessage": "{name} értesítést kap. Nem kell semmit megmagyaráznod. A biztonsági mód addig fut, amíg be nem fejezed.",
+    "meetingAt": "Randi: {when} · {place}",
+    "earlyTitle": "A randi csak később lesz",
+    "earlyMessage": "Az egyeztetett időpont: {when}. Ha most bekapcsolod a biztonsági módot, {name} azonnal SMS-t kap, és a check-inek már most elindulnak. Bekapcsolod most?",
+    "earlyConfirm": "Bekapcsolás most",
+    "agreementLink": "Megállapodás"
   },
   "feedback": {
     "title": "Milyen volt a randi?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Részletek (nem kötelező)",
     "submit": "Jelentés",
     "thanksTitle": "Köszönjük",
-    "thanksMessage": "Megkaptuk a jelentésedet. Többé nem látjátok egymást."
+    "thanksMessage": "Megkaptuk a jelentésedet. Többé nem látjátok egymást.",
+    "blocked": "Letiltottunk titeket egymásnál – többé nem látjátok egymást, és nem írhattok egymásnak.",
+    "blockedWithName": "{name} többé nem lát téged, és nem írhat neked.",
+    "nextSteps": "A jelentés névtelen. Egy moderátor átnézi, általában 24 órán belül, és a súlyosságtól függően felfüggeszti vagy letiltja a fiókot.",
+    "danger": "Ha veszélyben vagy, hívd a 112-t.",
+    "backToMessages": "Vissza az üzenetekhez"
   },
   "chat": {
     "unavailable": "A csevegés nem érhető el",
@@ -311,7 +325,8 @@
     "block": "Letiltás",
     "unmatch": "Match törlése",
     "blockConfirmTitle": "Letiltod?",
-    "blockConfirmMessage": "Te és {name} többé nem látjátok egymást, és a csevegés eltűnik."
+    "blockConfirmMessage": "Te és {name} többé nem látjátok egymást, és a csevegés eltűnik.",
+    "emptyHint": "{name} még nem kapott tőled üzenetet. Írj te először: kezdd valami közös dologgal, vagy nyisd meg rögtön a megállapodást."
   },
   "safetySettings": {
     "title": "Biztonság és adatvédelem",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, ujjlenyomat vagy a telefonod kódja minden megnyitáskor.",
     "discreet": "Diszkrét mód",
     "discreetHint": "Semleges ikon és tartalom nélküli értesítések – senki sem tudja meg, milyen alkalmazásról van szó.",
-    "save": "Mentés"
+    "save": "Mentés",
+    "pinsMustDiffer": "A vész-PIN-nek különböznie kell a szokásos PIN-edtől."
   },
   "tabs": {
     "discover": "Felfedezés",
@@ -607,7 +623,17 @@
     "codeSent": "Küldtünk egy 6 jegyű kódot a(z) {email} címre. Ha már van itt fiókod, kód helyett értesítést kapsz – csak jelentkezz be.",
     "code": "Kód az e-mailből",
     "confirmCode": "Ellenőrzés és fiók létrehozása",
-    "resend": "Kód újraküldése"
+    "resend": "Kód újraküldése",
+    "missing": {
+      "name": "Add meg a neved.",
+      "email": "Add meg az e-mail-címed.",
+      "password": "A jelszónak legalább 10 karakterből kell állnia.",
+      "birthdate": "Add meg a születési dátumod.",
+      "gender": "Válaszd ki, ki vagy.",
+      "showMe": "Válaszd ki, kiket mutassunk neked.",
+      "adult": "Erősítsd meg, hogy elmúltál 18 éves.",
+      "rules": "Még el kell fogadnod a szabályokat."
+    }
   },
   "verify": {
     "title": "Igazold, hogy te vagy az",
@@ -622,7 +648,8 @@
     "devApprove": "Sikeres ellenőrzés szimulálása (tesztmód)",
     "retry": "Újra",
     "start": "Személyazonosság ellenőrzése",
-    "signOut": "Kijelentkezés"
+    "signOut": "Kijelentkezés",
+    "continue": "Ellenőrzés folytatása"
   },
   "common": {
     "back": "Vissza",
@@ -638,7 +665,8 @@
     "open": "Megnyitás",
     "show": "Megtekintés",
     "confirm": "Megerősítés",
-    "errorGeneric": "Hiba történt."
+    "errorGeneric": "Hiba történt.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} bekapcsolta a biztonsági módot",
@@ -767,5 +795,12 @@
       "signOut": "Kijelentkeztetés",
       "signOutOthers": "Az összes többi eszköz kijelentkeztetése"
     }
+  },
+  "settings": {
+    "title": "Beállítások",
+    "search": "Kiket szeretnék látni",
+    "safety": "Biztonság és fiók",
+    "plan": "Előfizetés",
+    "account": "Fiók"
   }
 }

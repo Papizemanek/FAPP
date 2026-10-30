@@ -217,6 +217,25 @@ describe('webová verze: přihlášení v cookie', () => {
   });
 });
 
+describe('webová verze: poloha během schůzky', () => {
+  test('poloha z webu (cookie) projde s hlavičkou proti CSRF, bez ní ne', async () => {
+    const m = await t.makeMatch();
+    await t.setSafety(m.a);
+    await t.confirmedAgreement(m);
+    const start = await t.call('POST', `/api/matches/${m.matchId}/safety`, { token: m.a.token, body: { checkInMinutes: 30 } });
+    const login = await t.call('POST', '/api/auth/login', { headers: { 'X-Client': 'web' }, body: { email: m.a.email, password: 'tajne-heslo-123' } });
+    const cookie = login.raw.headers.get('set-cookie').split(';')[0];
+    const body = { lat: 50.08, lng: 14.42, accuracy: 20, battery: 0.5 };
+    const path = `/api/safety/${start.body.id}/location`;
+    // Přesně takhle posílá polohu webová verze (app/webapp/safetyTracking.ts).
+    const web = { Cookie: cookie, Authorization: 'Bearer cookie', 'X-Requested-With': 'yesyes', 'X-Client': 'web' };
+    assert.equal((await t.call('POST', path, { headers: { Cookie: cookie, Authorization: 'Bearer cookie' }, body })).status, 401);
+    assert.equal((await t.call('POST', path, { headers: web, body })).status, 204);
+    const share = await t.call('GET', `/api/share/${start.body.shareUrl.split('/s/')[1]}`);
+    assert.equal(share.body.location.lat, 50.08, 'důvěryhodná osoba polohu vidí');
+  });
+});
+
 describe('hlavičky a limity', () => {
   test('API má přísnou CSP, stránka pro důvěryhodnou osobu povoluje jen své skripty', async () => {
     const health = await t.call('GET', '/health');

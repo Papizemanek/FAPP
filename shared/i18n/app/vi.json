@@ -198,7 +198,10 @@
     "startMeetup": "Bắt đầu buổi hẹn",
     "revoke": "Hủy thỏa thuận",
     "revokeConfirmTitle": "Hủy thỏa thuận?",
-    "revokeConfirmMessage": "Buổi hẹn sẽ bị hủy. Bạn không cần giải thích gì cả – {name} chỉ nhận được một thông báo."
+    "revokeConfirmMessage": "Buổi hẹn sẽ bị hủy. Bạn không cần giải thích gì cả – {name} chỉ nhận được một thông báo.",
+    "unsetIsNo": {
+      "other": "Đã chọn {count} trên {total}. Những gì bạn không chọn sẽ được tính là “không”."
+    }
   },
   "meetup": {
     "title": "Buổi hẹn · {name}",
@@ -249,7 +252,12 @@
     "pinSubtitleOk": "Rằng bạn ổn.",
     "pinSubtitleEnd": "Rằng buổi hẹn đã kết thúc và bạn ổn.",
     "revokeConfirmTitle": "Hủy thỏa thuận?",
-    "revokeConfirmMessage": "{name} sẽ nhận được thông báo. Bạn không cần giải thích gì cả. Chế độ an toàn vẫn chạy cho đến khi bạn kết thúc."
+    "revokeConfirmMessage": "{name} sẽ nhận được thông báo. Bạn không cần giải thích gì cả. Chế độ an toàn vẫn chạy cho đến khi bạn kết thúc.",
+    "meetingAt": "Buổi hẹn: {when} · {place}",
+    "earlyTitle": "Buổi hẹn của bạn chưa đến giờ",
+    "earlyMessage": "Hai bạn đã hẹn lúc {when}. Nếu bật chế độ an toàn ngay bây giờ, {name} sẽ nhận được SMS ngay và check-in sẽ bắt đầu từ bây giờ. Bật ngay chứ?",
+    "earlyConfirm": "Bật ngay",
+    "agreementLink": "Thỏa thuận"
   },
   "feedback": {
     "title": "Buổi hẹn thế nào?",
@@ -292,7 +300,12 @@
     "detailsLabel": "Chi tiết (không bắt buộc)",
     "submit": "Báo cáo",
     "thanksTitle": "Cảm ơn bạn",
-    "thanksMessage": "Chúng tôi đã nhận được báo cáo của bạn. Hai bạn sẽ không thấy nhau nữa."
+    "thanksMessage": "Chúng tôi đã nhận được báo cáo của bạn. Hai bạn sẽ không thấy nhau nữa.",
+    "blocked": "Chúng tôi đã chặn người đó – hai bạn sẽ không thấy nhau hay nhắn tin cho nhau nữa.",
+    "blockedWithName": "{name} sẽ không thể thấy hay nhắn tin cho bạn nữa.",
+    "nextSteps": "Báo cáo được ẩn danh. Người kiểm duyệt sẽ xem xét, thường trong vòng 24 giờ, và tạm khóa hoặc cấm tài khoản tùy mức độ nghiêm trọng.",
+    "danger": "Nếu bạn đang gặp nguy hiểm, hãy gọi 112.",
+    "backToMessages": "Quay lại tin nhắn"
   },
   "chat": {
     "unavailable": "Không thể trò chuyện",
@@ -310,7 +323,8 @@
     "block": "Chặn",
     "unmatch": "Hủy tương hợp",
     "blockConfirmTitle": "Chặn?",
-    "blockConfirmMessage": "Bạn và {name} sẽ không thấy nhau nữa, và cuộc trò chuyện sẽ biến mất."
+    "blockConfirmMessage": "Bạn và {name} sẽ không thấy nhau nữa, và cuộc trò chuyện sẽ biến mất.",
+    "emptyHint": "Hãy nhắn cho {name} trước. Bắt đầu bằng điểm chung của hai bạn, hoặc mở thỏa thuận ngay."
   },
   "safetySettings": {
     "title": "An toàn và quyền riêng tư",
@@ -332,7 +346,8 @@
     "appLockHint": "Face ID, vân tay hoặc mật mã điện thoại mỗi lần bạn mở ứng dụng.",
     "discreet": "Chế độ kín đáo",
     "discreetHint": "Biểu tượng trung tính và thông báo không có nội dung – không ai biết đây là ứng dụng gì.",
-    "save": "Lưu"
+    "save": "Lưu",
+    "pinsMustDiffer": "PIN khẩn cấp phải khác với PIN thông thường."
   },
   "tabs": {
     "discover": "Khám phá",
@@ -595,7 +610,17 @@
     "codeSent": "Chúng mình đã gửi mã 6 chữ số đến {email}. Nếu bạn đã có tài khoản, bạn sẽ nhận được thông báo thay vào đó – chỉ cần đăng nhập.",
     "code": "Mã trong email",
     "confirmCode": "Xác minh và tạo tài khoản",
-    "resend": "Gửi lại mã"
+    "resend": "Gửi lại mã",
+    "missing": {
+      "name": "Hãy điền tên của bạn.",
+      "email": "Hãy điền email của bạn.",
+      "password": "Mật khẩu cần có ít nhất 10 ký tự.",
+      "birthdate": "Hãy điền ngày sinh của bạn.",
+      "gender": "Hãy chọn bạn là ai.",
+      "showMe": "Hãy chọn người bạn muốn chúng tôi hiển thị.",
+      "adult": "Hãy xác nhận bạn từ 18 tuổi trở lên.",
+      "rules": "Bạn cần đồng ý với các quy tắc."
+    }
   },
   "verify": {
     "title": "Xác minh đó là bạn",
@@ -610,7 +635,8 @@
     "devApprove": "Giả lập xác minh thành công (chế độ thử nghiệm)",
     "retry": "Thử lại",
     "start": "Xác minh danh tính",
-    "signOut": "Đăng xuất"
+    "signOut": "Đăng xuất",
+    "continue": "Tiếp tục xác minh"
   },
   "common": {
     "back": "Quay lại",
@@ -626,7 +652,8 @@
     "open": "Mở",
     "show": "Xem",
     "confirm": "Xác nhận",
-    "errorGeneric": "Đã xảy ra lỗi."
+    "errorGeneric": "Đã xảy ra lỗi.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} đang bật chế độ an toàn",
@@ -754,5 +781,12 @@
       "signOut": "Đăng xuất",
       "signOutOthers": "Đăng xuất khỏi tất cả thiết bị khác"
     }
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "search": "Mình muốn thấy ai",
+    "safety": "An toàn và tài khoản",
+    "plan": "Gói đăng ký",
+    "account": "Tài khoản"
   }
 }

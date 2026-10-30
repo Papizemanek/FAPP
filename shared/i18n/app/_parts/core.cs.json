@@ -28,7 +28,11 @@
       "host": "U mě",
       "visit": "U tebe",
       "neutral": "Neutrální místo",
-      "single": "Nezadaný/á",
+      "single": {
+        "man": "Nezadaný",
+        "woman": "Nezadaná",
+        "other": "Single"
+      },
       "open": "Otevřený vztah",
       "poly": "Polyamorie",
       "couple": "Pár"
@@ -63,9 +67,21 @@
       "other": "Jiné"
     },
     "feedbackReasons": {
-      "consent": "Nerespektoval/a hranice nebo „stop“",
-      "safety": "Cítil/a jsem se v ohrožení",
-      "fake": "Nevypadal/a jako na fotkách",
+      "consent": {
+        "man": "Nerespektoval hranice nebo „stop“",
+        "woman": "Nerespektovala hranice nebo „stop“",
+        "other": "Nerespektoval/a hranice nebo „stop“"
+      },
+      "safety": {
+        "man": "Cítil jsem se v ohrožení",
+        "woman": "Cítila jsem se v ohrožení",
+        "other": "Cítil/a jsem se v ohrožení"
+      },
+      "fake": {
+        "man": "Nevypadal jako na fotkách",
+        "woman": "Nevypadala jako na fotkách",
+        "other": "Nevypadal/a jako na fotkách"
+      },
       "other": "Něco jiného"
     },
     "plans": {
@@ -109,7 +125,11 @@
       },
       "sentLikes": {
         "name": "Odeslané lajky",
-        "detail": "Koho jsi lajkl/a za posledních 7 dní."
+        "detail": {
+          "man": "Koho jsi lajkl za posledních 7 dní.",
+          "woman": "Koho jsi lajkla za posledních 7 dní.",
+          "other": "Koho jsi lajkl/a za posledních 7 dní."
+        }
       },
       "tonight": {
         "name": "Dnes večer kdykoli",

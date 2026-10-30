@@ -105,6 +105,9 @@ export default function SafetySettings() {
           </View>
 
           <ErrorText>{error}</ErrorText>
+          {changePins && checkinPin.length >= 4 && checkinPin === duressPin ? (
+            <ErrorText>{t('safetySettings.pinsMustDiffer')}</ErrorText>
+          ) : null}
           <Button label={t('safetySettings.save')} onPress={save} loading={busy} disabled={!trustedName || !trustedPhone || !pinsValid} />
         </ScrollView>
       </KeyboardAvoidingView>

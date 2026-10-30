@@ -73,7 +73,7 @@
     "emailTaken": "Det finns redan ett konto med den här e-postadressen.",
     "wrongCredentials": "Fel e-post eller lösenord.",
     "banned": "Kontot har stängts av för brott mot reglerna.",
-    "notLoggedIn": "Du är inte inloggad.",
+    "notLoggedIn": "Du har loggats ut. Logga in igen.",
     "suspended": "Ditt konto är avstängt tills en moderator har granskat det.",
     "verifyFirst": "Verifiera din identitet först.",
     "badCode": "Koden är fel eller har gått ut. Försök igen eller begär en ny.",
@@ -247,7 +247,7 @@
     "someone": "En person som står dig nära"
   },
   "share": {
-    "pageTitle": "YesYes – trygghetslänk",
+    "pageTitle": "Trygghetslänk",
     "header": "Trygghetslänk",
     "loading": "Läser in…",
     "call": "Ring {number}",

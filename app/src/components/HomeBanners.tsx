@@ -39,7 +39,7 @@ export function HomeBanners() {
           title={t('homeBanners.feedbackTitle')}
           subtitle={t('homeBanners.feedbackSubtitle', { name: f.partnerName })}
           action={t('homeBanners.feedbackAction')}
-          onPress={() => router.push(`/feedback/${f.agreementId}?name=${encodeURIComponent(f.partnerName)}`)}
+          onPress={() => router.push(`/feedback/${f.agreementId}?name=${encodeURIComponent(f.partnerName)}&gender=${f.partnerGender ?? ''}`)}
         />
       ))}
     </View>

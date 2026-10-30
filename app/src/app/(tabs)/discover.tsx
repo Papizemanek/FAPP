@@ -26,7 +26,9 @@ const premium = (params: Record<string, string>) => router.push({ pathname: '/pr
 
 export default function Discover() {
   const t = useT();
-  const { setMe } = useSession();
+  const { me, setMe } = useSession();
+  const hasLocation = useRef(false);
+  hasLocation.current = !!me?.hasLocation;
   const [deck, setDeck] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
   const [problem, setProblem] = useState<Problem>(null);
@@ -45,21 +47,37 @@ export default function Discover() {
     noticeTimer.current = setTimeout(() => setNotice(''), 3500);
   }, []);
 
+  // Nová poloha z telefonu (zaokrouhlená na ~1 km), jednou za spuštění. Vrací, jestli se poslala.
+  const updateLocation = useCallback(async () => {
+    if (locationSent.current) return false;
+    const perm = await Location.getForegroundPermissionsAsync();
+    if (!perm.granted) return false;
+    const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+    setMe(await api('PUT', '/me/location', { lat: loc.coords.latitude, lng: loc.coords.longitude }));
+    locationSent.current = true;
+    return true;
+  }, [setMe]);
+
+  const fetchDeck = useCallback(async () => {
+    setDeck(await api<Profile[]>('GET', '/discover'));
+    setPhotoIndex(0);
+  }, []);
+
   const load = useCallback(async () => {
     setLoading(true);
     setProblem(null);
     try {
-      // Polohu (zaokrouhlenou na ~1 km) aktualizujeme jednou za spuštění, pokud ji uživatel povolil.
-      if (!locationSent.current) {
-        const perm = await Location.getForegroundPermissionsAsync();
-        if (perm.granted) {
-          const loc = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
-          setMe(await api('PUT', '/me/location', { lat: loc.coords.latitude, lng: loc.coords.longitude }));
-          locationSent.current = true;
-        }
+      // Když server polohu zná, lidi ukážeme hned a GPS (uvnitř budovy klidně 20 s) dotáhneme na pozadí.
+      // Bez uložené polohy na ni musíme počkat.
+      if (hasLocation.current) {
+        await fetchDeck();
+        void updateLocation()
+          .then((moved) => (moved ? fetchDeck() : undefined))
+          .catch(() => {});
+      } else {
+        await updateLocation();
+        await fetchDeck();
       }
-      setDeck(await api<Profile[]>('GET', '/discover'));
-      setPhotoIndex(0);
       void refreshBilling();
     } catch (err) {
       const message = errorMessage(err);
@@ -69,7 +87,7 @@ export default function Discover() {
     } finally {
       setLoading(false);
     }
-  }, [setMe]);
+  }, [fetchDeck, updateLocation]);
 
   useFocusEffect(
     useCallback(() => {
@@ -202,11 +220,11 @@ export default function Discover() {
               />
             </>
           ) : null}
-          <IconButton name="sliders" label={t('discover.searchSettings')} onPress={() => router.push({ pathname: '/profile', params: { focus: 'search' } })} />
+          <IconButton name="sliders" label={t('discover.searchSettings')} onPress={() => router.push('/settings')} />
         </View>
       </View>
       {paid && billing.travelCity ? (
-        <Pressable accessibilityRole="button" onPress={() => router.push('/profile')} style={s.travel}>
+        <Pressable accessibilityRole="button" onPress={() => router.push('/settings')} style={s.travel}>
           <Icon name="globe" size={16} color={colors.accent} />
           <Text style={s.travelText}>{t('discover.travelingIn', { city: t(`labels.cities.${billing.travelCity}`) })}</Text>
           <Text style={[s.travelText, { color: colors.muted }]}>{t('discover.change')}</Text>
@@ -257,7 +275,7 @@ export default function Discover() {
             <View style={s.info} pointerEvents="none">
               {top.superLike || top.tonight || top.traveling ? (
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-                  {top.superLike ? <Badge icon="star" label={t('discover.superLikedYou')} color={colors.warn} /> : null}
+                  {top.superLike ? <Badge icon="star" label={t('discover.superLikedYou', { gender: top.gender })} color={colors.warn} /> : null}
                   {top.tonight ? <Badge icon="moon" label={t('discover.tonight')} color={colors.accent} /> : null}
                   {top.traveling ? <Badge icon="globe" label={t('discover.traveling')} color={colors.muted} /> : null}
                 </View>
@@ -283,7 +301,7 @@ export default function Discover() {
                   <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
                     {top.sharedYes.map((tag) => (
                       <Text key={tag} style={s.tag}>
-                        {t(`labels.tags.${tag}`)}
+                        {t(`labels.tags.${tag}`, { gender: top.gender })}
                       </Text>
                     ))}
                   </View>

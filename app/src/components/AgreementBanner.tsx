@@ -52,7 +52,7 @@ export function AgreementBanner({ detail }: { detail: MatchDetail }) {
       return (
         <Banner
           tone="alarm"
-          title={agreement.revokedByMe ? t('agreementBanner.revokedByMeTitle') : t('agreementBanner.revokedByPartnerTitle', { name: partner.name })}
+          title={agreement.revokedByMe ? t('agreementBanner.revokedByMeTitle') : t('agreementBanner.revokedByPartnerTitle', { name: partner.name, gender: partner.gender })}
           subtitle={cooldown ? t('agreementBanner.revokedCooldownSubtitle', { name: partner.name }) : t('agreementBanner.revokedSubtitle')}
           action={cooldown ? undefined : t('agreementBanner.newAgreement')}
           onPress={cooldown ? undefined : open}
@@ -75,7 +75,7 @@ export function AgreementBanner({ detail }: { detail: MatchDetail }) {
       return (
         <Banner
           tone="warn"
-          title={agreement.partnerFilled ? t('agreementBanner.partnerFilledTitle', { name: partner.name }) : t('agreementBanner.waitingForYouTitle')}
+          title={agreement.partnerFilled ? t('agreementBanner.partnerFilledTitle', { name: partner.name, gender: partner.gender }) : t('agreementBanner.waitingForYouTitle')}
           subtitle={t('agreementBanner.fillYoursSubtitle')}
           action={t('agreementBanner.fill')}
           onPress={open}
@@ -85,7 +85,7 @@ export function AgreementBanner({ detail }: { detail: MatchDetail }) {
     return (
       <Banner
         tone="warn"
-        title={t('agreementBanner.partnerPendingTitle', { name: partner.name })}
+        title={t('agreementBanner.partnerPendingTitle', { name: partner.name, gender: partner.gender })}
         subtitle={t('agreementBanner.partnerPendingSubtitle')}
         action={t('common.show')}
         onPress={open}

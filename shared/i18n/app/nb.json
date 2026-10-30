@@ -198,7 +198,11 @@
     "startMeetup": "Start daten",
     "revoke": "Avbryt avtalen",
     "revokeConfirmTitle": "Avbryte avtalen?",
-    "revokeConfirmMessage": "Daten blir ikke noe av. Du trenger ikke forklare noe – {name} får bare et varsel."
+    "revokeConfirmMessage": "Daten blir ikke noe av. Du trenger ikke forklare noe – {name} får bare et varsel.",
+    "unsetIsNo": {
+      "one": "{count} av {total} valgt. Alt du ikke velger, teller som nei.",
+      "other": "{count} av {total} valgt. Alt du ikke velger, teller som nei."
+    }
   },
   "meetup": {
     "title": "Date · {name}",
@@ -250,7 +254,12 @@
     "pinSubtitleOk": "At du er ok.",
     "pinSubtitleEnd": "At daten er over, og at du er ok.",
     "revokeConfirmTitle": "Avbryte avtalen?",
-    "revokeConfirmMessage": "{name} får et varsel. Du trenger ikke forklare noe. Sikkerhetsmodus fortsetter til du avslutter den."
+    "revokeConfirmMessage": "{name} får et varsel. Du trenger ikke forklare noe. Sikkerhetsmodus fortsetter til du avslutter den.",
+    "meetingAt": "Møte: {when} · {place}",
+    "earlyTitle": "Møtet ditt er senere",
+    "earlyMessage": "Dere avtalte {when}. Hvis du slår på sikkerhetsmodus nå, får {name} en SMS med en gang, og innsjekkingene starter nå. Vil du slå den på nå?",
+    "earlyConfirm": "Slå på nå",
+    "agreementLink": "Avtale"
   },
   "feedback": {
     "title": "Hvordan gikk daten?",
@@ -293,7 +302,12 @@
     "detailsLabel": "Detaljer (valgfritt)",
     "submit": "Rapporter",
     "thanksTitle": "Takk",
-    "thanksMessage": "Vi har mottatt rapporten din. Dere ser ikke hverandre mer."
+    "thanksMessage": "Vi har mottatt rapporten din. Dere ser ikke hverandre mer.",
+    "blocked": "Vi har blokkert personen – dere kan ikke se hverandre eller sende meldinger lenger.",
+    "blockedWithName": "{name} kan ikke lenger se deg eller sende deg meldinger.",
+    "nextSteps": "Rapporter er anonyme. En moderator går gjennom rapporten, vanligvis innen 24 timer, og suspenderer eller utestenger kontoen avhengig av hvor alvorlig det er.",
+    "danger": "Er du i fare, ring 112.",
+    "backToMessages": "Tilbake til meldinger"
   },
   "chat": {
     "unavailable": "Chatten er ikke tilgjengelig",
@@ -311,7 +325,8 @@
     "block": "Blokker",
     "unmatch": "Fjern match",
     "blockConfirmTitle": "Blokkere?",
-    "blockConfirmMessage": "Du og {name} ser ikke hverandre mer, og chatten forsvinner."
+    "blockConfirmMessage": "Du og {name} ser ikke hverandre mer, og chatten forsvinner.",
+    "emptyHint": "Send melding til {name} først. Start med noe dere har felles, eller åpne avtalen med en gang."
   },
   "safetySettings": {
     "title": "Sikkerhet og personvern",
@@ -333,7 +348,8 @@
     "appLockHint": "Face ID, fingeravtrykk eller telefonens kode hver gang du åpner appen.",
     "discreet": "Diskret modus",
     "discreetHint": "Et nøytralt ikon og varsler uten innhold – ingen kan se hvilken app det er.",
-    "save": "Lagre"
+    "save": "Lagre",
+    "pinsMustDiffer": "Nødpinkoden må være en annen enn den vanlige pinkoden."
   },
   "tabs": {
     "discover": "Utforsk",
@@ -607,7 +623,17 @@
     "codeSent": "Vi har sendt en 6-sifret kode til {email}. Hvis du allerede har en konto, får du i stedet et varsel – bare logg inn.",
     "code": "Kode fra e-post",
     "confirmCode": "Bekreft og opprett konto",
-    "resend": "Send koden på nytt"
+    "resend": "Send koden på nytt",
+    "missing": {
+      "name": "Fyll inn navnet ditt.",
+      "email": "Fyll inn e-postadressen din.",
+      "password": "Passordet må ha minst 10 tegn.",
+      "birthdate": "Fyll inn fødselsdatoen din.",
+      "gender": "Velg hvem du er.",
+      "showMe": "Velg hvem vi skal vise deg.",
+      "adult": "Bekreft at du er 18 år eller eldre.",
+      "rules": "Du må fortsatt godta reglene."
+    }
   },
   "verify": {
     "title": "Bekreft at det er deg",
@@ -622,7 +648,8 @@
     "devApprove": "Simuler vellykket verifisering (testmodus)",
     "retry": "Prøv igjen",
     "start": "Verifiser identitet",
-    "signOut": "Logg ut"
+    "signOut": "Logg ut",
+    "continue": "Fortsett verifiseringen"
   },
   "common": {
     "back": "Tilbake",
@@ -638,7 +665,8 @@
     "open": "Åpne",
     "show": "Vis",
     "confirm": "Bekreft",
-    "errorGeneric": "Noe gikk galt."
+    "errorGeneric": "Noe gikk galt.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} har sikkerhetsmodus på",
@@ -767,5 +795,12 @@
       "signOut": "Logg ut",
       "signOutOthers": "Logg ut alle andre enheter"
     }
+  },
+  "settings": {
+    "title": "Innstillinger",
+    "search": "Hvem jeg vil se",
+    "safety": "Sikkerhet og konto",
+    "plan": "Abonnement",
+    "account": "Konto"
   }
 }

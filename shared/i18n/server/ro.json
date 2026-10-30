@@ -74,7 +74,7 @@
     "emailTaken": "Există deja un cont cu acest e-mail.",
     "wrongCredentials": "E-mail sau parolă greșită.",
     "banned": "Contul a primit interdicție pentru încălcarea regulilor.",
-    "notLoggedIn": "Nu te-ai conectat.",
+    "notLoggedIn": "Sesiunea a expirat. Conectează-te din nou.",
     "suspended": "Contul tău e suspendat până când îl verifică un moderator.",
     "verifyFirst": "Mai întâi verifică-ți identitatea.",
     "badCode": "Codul este greșit sau a expirat. Încearcă din nou sau cere unul nou.",
@@ -251,7 +251,7 @@
     "someone": "O persoană apropiată"
   },
   "share": {
-    "pageTitle": "YesYes – link de siguranță",
+    "pageTitle": "Link de siguranță",
     "header": "Link de siguranță",
     "loading": "Se încarcă…",
     "call": "Sună la {number}",

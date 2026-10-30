@@ -7,6 +7,12 @@ export declare function isRTL(code: LocaleCode): boolean;
 export declare function matchLocale(tags: readonly (string | null | undefined)[] | undefined, fallback?: LocaleCode): LocaleCode;
 export declare function parseAcceptLanguage(header: string | null | undefined): string[];
 export type Dict = Record<string, unknown>;
-export type TranslateParams = Record<string, string | number>;
+export type TranslateParams = Record<string, string | number | null | undefined>;
 export type Translate = (key: string, params?: TranslateParams) => string;
-export declare function createTranslator(locale: LocaleCode, dict: Dict, fallbackDict?: Dict): Translate;
+export declare function createTranslator(
+  locale: LocaleCode,
+  dict: Dict,
+  fallbackDict?: Dict,
+  options?: { defaultGender?: () => string | null | undefined },
+): Translate;
+export declare function isGendered(value: unknown): boolean;

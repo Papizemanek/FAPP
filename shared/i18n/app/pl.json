@@ -28,7 +28,11 @@
       "host": "U mnie",
       "visit": "U ciebie",
       "neutral": "Neutralne miejsce",
-      "single": "Singiel/ka",
+      "single": {
+        "man": "Singiel",
+        "woman": "Singielka",
+        "other": "Bez pary"
+      },
       "open": "Otwarty związek",
       "poly": "Poliamoria",
       "couple": "Para"
@@ -63,9 +67,21 @@
       "other": "Inne"
     },
     "feedbackReasons": {
-      "consent": "Nie szanowano moich granic ani „stop”",
-      "safety": "Poczucie zagrożenia",
-      "fake": "Inny wygląd niż na zdjęciach",
+      "consent": {
+        "man": "Nie szanował moich granic ani „stop”",
+        "woman": "Nie szanowała moich granic ani „stop”",
+        "other": "Nie szanowano moich granic ani „stop”"
+      },
+      "safety": {
+        "man": "Czułem się zagrożony",
+        "woman": "Czułam się zagrożona",
+        "other": "Poczucie zagrożenia"
+      },
+      "fake": {
+        "man": "Wyglądał inaczej niż na zdjęciach",
+        "woman": "Wyglądała inaczej niż na zdjęciach",
+        "other": "Inny wygląd niż na zdjęciach"
+      },
       "other": "Coś innego"
     },
     "plans": {
@@ -109,7 +125,11 @@
       },
       "sentLikes": {
         "name": "Wysłane polubienia",
-        "detail": "Osoby polubione przez ciebie w ostatnich 7 dniach."
+        "detail": {
+          "man": "Kogo polubiłeś w ostatnich 7 dniach.",
+          "woman": "Kogo polubiłaś w ostatnich 7 dniach.",
+          "other": "Osoby polubione przez ciebie w ostatnich 7 dniach."
+        }
       },
       "tonight": {
         "name": "Dziś wieczorem, kiedy chcesz",
@@ -151,7 +171,11 @@
     "title": "Ustalenia",
     "titleWithName": "Ustalenia · {name}",
     "timeFormatError": "Wpisz godzinę jako GG:MM, np. 21:00.",
-    "revokedByPartnerTitle": "{name} anulował(a) ustalenia",
+    "revokedByPartnerTitle": {
+      "man": "{name} anulował ustalenia",
+      "woman": "{name} anulowała ustalenia",
+      "other": "{name} anulował(a) ustalenia"
+    },
     "revokedByPartnerSubtitle": "Nowe ustalenia może teraz rozpocząć tylko {name}.",
     "revokedTitle": "Ustalenia zostały anulowane",
     "revokedSubtitle": "Możesz zacząć nowe.",
@@ -162,8 +186,16 @@
     "confirmedTitle": "Ustalenia wypełnione przez obie strony",
     "confirmedSubtitle": "Na miejscu każda ze stron może w każdej chwili zmienić zdanie.",
     "myPartDoneTitle": "Twoja część jest gotowa",
-    "myPartDoneSubtitle": "{name} jeszcze nie wypełnił(a) ani nie potwierdził(a) swojej.",
-    "partnerFilledTitle": "{name} wypełnił(a) swoją część",
+    "myPartDoneSubtitle": {
+      "man": "{name} jeszcze nie wypełnił ani nie potwierdził swojej.",
+      "woman": "{name} jeszcze nie wypełniła ani nie potwierdziła swojej.",
+      "other": "{name} jeszcze nie wypełnił(a) ani nie potwierdził(a) swojej."
+    },
+    "partnerFilledTitle": {
+      "man": "{name} wypełnił swoją część",
+      "woman": "{name} wypełniła swoją część",
+      "other": "{name} wypełnił(a) swoją część"
+    },
     "partnerFilledSubtitle": "Wypełnij swoją – zobaczycie tylko to, w czym się zgadzacie.",
     "fillTitle": "Wypełnij swoją część",
     "fillSubtitle": "Zobaczycie tylko to, w czym się zgadzacie.",
@@ -198,13 +230,19 @@
     "startMeetup": "Rozpocznij spotkanie",
     "revoke": "Anuluj ustalenia",
     "revokeConfirmTitle": "Anulować ustalenia?",
-    "revokeConfirmMessage": "Spotkanie się nie odbędzie. Nie musisz niczego tłumaczyć – {name} dostanie tylko powiadomienie."
+    "revokeConfirmMessage": "Spotkanie się nie odbędzie. Nie musisz niczego tłumaczyć – {name} dostanie tylko powiadomienie.",
+    "unsetIsNo": {
+      "one": "Wybrano {count} z {total}. Czego nie wybierzesz, liczymy jako nie.",
+      "few": "Wybrano {count} z {total}. Czego nie wybierzesz, liczymy jako nie.",
+      "many": "Wybrano {count} z {total}. Czego nie wybierzesz, liczymy jako nie.",
+      "other": "Wybrano {count} z {total}. Czego nie wybierzesz, liczymy jako nie."
+    }
   },
   "meetup": {
     "title": "Spotkanie · {name}",
     "fakeCallerDefault": "Mama",
     "endedTitle": "Spotkanie zakończone",
-    "endedMessage": "{name} dostał(a) wiadomość, że wszystko u ciebie w porządku.",
+    "endedMessage": "Zaufana osoba ({name}) dostała wiadomość, że wszystko u ciebie w porządku.",
     "sosFailed": "Nie udało się wysłać alarmu: {error} Spróbuj ponownie lub zadzwoń: {name}.",
     "needAgreementTitle": "Najpierw dokończ ustalenia",
     "needAgreementSubtitle": "Spotkanie możesz rozpocząć, gdy obie strony wypełnią i potwierdzą ustalenia.",
@@ -228,7 +266,7 @@
     "checkIn": "Check-in",
     "now": "teraz",
     "imOk": "Wszystko OK",
-    "overdueHint": "{name} dostał(a) alert. Potwierdź PIN-em, że wszystko w porządku.",
+    "overdueHint": "Zaufana osoba ({name}) dostała alert. Potwierdź PIN-em, że wszystko w porządku.",
     "graceHint": {
       "one": "Jeśli nie odezwiesz się w ciągu {count} minuty od wyznaczonej godziny, {name} dostanie alert z twoją lokalizacją.",
       "few": "Jeśli nie odezwiesz się w ciągu {count} minut od wyznaczonej godziny, {name} dostanie alert z twoją lokalizacją.",
@@ -245,14 +283,19 @@
     "revoke": "Anuluj ustalenia",
     "end": "Zakończ spotkanie",
     "sosSentTitle": "Alarm wysłany",
-    "sosSentBody": "{trusted} dostał(a) twoją dokładną lokalizację i informację, z kim jesteś. {partner} niczego nie zobaczy.",
+    "sosSentBody": "Zaufana osoba ({trusted}) dostała twoją dokładną lokalizację i informację, z kim jesteś. {partner} niczego nie zobaczy.",
     "sosMistake": "To była pomyłka – wszystko OK",
     "sosHide": "Ukryj (alarm trwa dalej)",
     "pinTitle": "Potwierdź PIN-em",
     "pinSubtitleOk": "Że wszystko w porządku.",
     "pinSubtitleEnd": "Że spotkanie się skończyło i wszystko w porządku.",
     "revokeConfirmTitle": "Anulować ustalenia?",
-    "revokeConfirmMessage": "{name} dostanie powiadomienie. Nie musisz niczego tłumaczyć. Tryb bezpieczeństwa działa dalej, dopóki go nie zakończysz."
+    "revokeConfirmMessage": "{name} dostanie powiadomienie. Nie musisz niczego tłumaczyć. Tryb bezpieczeństwa działa dalej, dopóki go nie zakończysz.",
+    "meetingAt": "Spotkanie: {when} · {place}",
+    "earlyTitle": "Spotkanie jest później",
+    "earlyMessage": "Termin spotkania: {when}. Jeśli włączysz tryb bezpieczeństwa już teraz, {name} od razu dostanie SMS, a check-iny ruszą od teraz. Włączyć teraz?",
+    "earlyConfirm": "Włącz teraz",
+    "agreementLink": "Ustalenia"
   },
   "feedback": {
     "title": "Jak poszło spotkanie?",
@@ -295,7 +338,12 @@
     "detailsLabel": "Szczegóły (opcjonalnie)",
     "submit": "Zgłoś",
     "thanksTitle": "Dziękujemy",
-    "thanksMessage": "Otrzymaliśmy zgłoszenie. Nie będziecie się już widzieć."
+    "thanksMessage": "Otrzymaliśmy zgłoszenie. Nie będziecie się już widzieć.",
+    "blocked": "Zablokowaliśmy tę osobę – nie będziecie się już widzieć ani do siebie pisać.",
+    "blockedWithName": "{name} nie zobaczy cię już ani do ciebie nie napisze.",
+    "nextSteps": "Zgłoszenia są anonimowe. Moderator sprawdza je zwykle w ciągu 24 godzin i w zależności od wagi sprawy zawiesza lub blokuje konto.",
+    "danger": "Jeśli grozi ci niebezpieczeństwo, dzwoń pod 112.",
+    "backToMessages": "Wróć do wiadomości"
   },
   "chat": {
     "unavailable": "Czat jest niedostępny",
@@ -313,7 +361,8 @@
     "block": "Zablokuj",
     "unmatch": "Usuń parę",
     "blockConfirmTitle": "Zablokować?",
-    "blockConfirmMessage": "Ty i {name} nie będziecie się już widzieć, a czat zniknie."
+    "blockConfirmMessage": "Ty i {name} nie będziecie się już widzieć, a czat zniknie.",
+    "emptyHint": "Ty i {name}: czas na pierwszą wiadomość. Zacznij od czegoś, co macie wspólnego, albo od razu otwórz ustalenia."
   },
   "safetySettings": {
     "title": "Bezpieczeństwo i prywatność",
@@ -335,7 +384,8 @@
     "appLockHint": "Face ID, odcisk palca lub kod telefonu przy każdym otwarciu.",
     "discreet": "Tryb dyskretny",
     "discreetHint": "Neutralna ikona i powiadomienia bez treści – nikt nie pozna, co to za aplikacja.",
-    "save": "Zapisz"
+    "save": "Zapisz",
+    "pinsMustDiffer": "Awaryjny PIN musi być inny niż zwykły PIN."
   },
   "tabs": {
     "discover": "Odkrywaj",
@@ -366,7 +416,11 @@
     "nextPhoto": "Następne zdjęcie",
     "stampLike": "CHCĘ",
     "stampNope": "NIE",
-    "superLikedYou": "Super Like dla ciebie",
+    "superLikedYou": {
+      "man": "Dał ci Super Like",
+      "woman": "Dała ci Super Like",
+      "other": "Super Like dla ciebie"
+    },
     "distance": "{km} km od ciebie",
     "rewind": "Cofnij ostatni ruch",
     "pass": "Pomiń",
@@ -483,7 +537,11 @@
     },
     "yes": {
       "title": "Moje tak",
-      "hint": "Tagi pokazują, na co jesteś otwarty/a, a nie co obiecujesz.",
+      "hint": {
+        "man": "Tagi pokazują, na co jesteś otwarty, a nie co obiecujesz.",
+        "woman": "Tagi pokazują, na co jesteś otwarta, a nie co obiecujesz.",
+        "other": "Tagi pokazują twoją otwartość, a nie obietnice."
+      },
       "footnote": "Zobaczą to tylko osoby, które też powiedziały tak.",
       "matchOnly": "Widoczne po matchu",
       "upTo": {
@@ -590,7 +648,11 @@
     "emptySent": "Brak polubień bez pary w ostatnich 7 dniach.",
     "superLikePending": "Super Like · czeka",
     "pending": "Czeka na odpowiedź",
-    "sentTitle": "Twoje polubienia",
+    "sentTitle": {
+      "man": "Kogo polubiłeś",
+      "woman": "Kogo polubiłaś",
+      "other": "Twoje polubienia"
+    },
     "platinumText": "Z YesYes Platinum zobaczysz swoje polubienia z ostatnich 7 dni.",
     "platinumCta": "Zobacz z Platinum",
     "likeBack": "Odwzajemnij",
@@ -631,7 +693,17 @@
     "codeSent": "Wysłaliśmy 6-cyfrowy kod na adres {email}. Jeśli masz już konto, zamiast kodu dostaniesz powiadomienie – po prostu się zaloguj.",
     "code": "Kod z e-maila",
     "confirmCode": "Zweryfikuj i utwórz konto",
-    "resend": "Wyślij kod ponownie"
+    "resend": "Wyślij kod ponownie",
+    "missing": {
+      "name": "Wpisz jeszcze imię.",
+      "email": "Wpisz jeszcze e-mail.",
+      "password": "Hasło musi mieć co najmniej 10 znaków.",
+      "birthdate": "Wpisz jeszcze datę urodzenia.",
+      "gender": "Wybierz jeszcze, kim jesteś.",
+      "showMe": "Wybierz jeszcze, kogo mamy ci pokazywać.",
+      "adult": "Potwierdź, że masz co najmniej 18 lat.",
+      "rules": "Potrzebujemy jeszcze akceptacji zasad."
+    }
   },
   "verify": {
     "title": "Potwierdź, że to ty",
@@ -646,7 +718,8 @@
     "devApprove": "Symuluj udaną weryfikację (tryb testowy)",
     "retry": "Spróbuj ponownie",
     "start": "Zweryfikuj tożsamość",
-    "signOut": "Wyloguj się"
+    "signOut": "Wyloguj się",
+    "continue": "Kontynuuj weryfikację"
   },
   "common": {
     "back": "Wstecz",
@@ -662,7 +735,8 @@
     "open": "Otwórz",
     "show": "Pokaż",
     "confirm": "Potwierdź",
-    "errorGeneric": "Coś poszło nie tak."
+    "errorGeneric": "Coś poszło nie tak.",
+    "ok": "OK"
   },
   "agreementBanner": {
     "partnerSafetyTitle": "{name} ma włączony tryb bezpieczeństwa",
@@ -672,17 +746,33 @@
     "missingTitle": "Brak ustaleń",
     "missingSubtitle": "Każda ze stron zaznacza, na co ma ochotę – zobaczycie tylko to, co wspólne.",
     "fill": "Wypełnij",
-    "revokedByMeTitle": "Ustalenia anulowane przez ciebie",
-    "revokedByPartnerTitle": "{name} anulował(a) ustalenia",
+    "revokedByMeTitle": {
+      "man": "Anulowałeś ustalenia",
+      "woman": "Anulowałaś ustalenia",
+      "other": "Ustalenia anulowane przez ciebie"
+    },
+    "revokedByPartnerTitle": {
+      "man": "{name} anulował ustalenia",
+      "woman": "{name} anulowała ustalenia",
+      "other": "{name} anulował(a) ustalenia"
+    },
     "revokedSubtitle": "Spotkanie się nie odbędzie.",
     "revokedCooldownSubtitle": "Spotkanie się nie odbędzie. Nowe ustalenia może rozpocząć tylko {name}.",
     "newAgreement": "Nowe ustalenia",
     "confirmedTitle": "Ustalenia gotowe",
     "confirmedSubtitle": "Na miejscu każda ze stron może w każdej chwili zmienić zdanie.",
-    "partnerFilledTitle": "{name} wypełnił(a) ustalenia",
+    "partnerFilledTitle": {
+      "man": "{name} wypełnił ustalenia",
+      "woman": "{name} wypełniła ustalenia",
+      "other": "{name} wypełnił(a) ustalenia"
+    },
     "waitingForYouTitle": "Ustalenia czekają na ciebie",
     "fillYoursSubtitle": "Zaznacz, na co masz ochotę – zobaczycie tylko to, co wspólne.",
-    "partnerPendingTitle": "{name} jeszcze nie wypełnił(a)",
+    "partnerPendingTitle": {
+      "man": "{name} jeszcze nie wypełnił",
+      "woman": "{name} jeszcze nie wypełniła",
+      "other": "{name} jeszcze nie wypełnił(a)"
+    },
     "partnerPendingSubtitle": "Ustalenia będą gotowe, gdy wypełnią je obie strony."
   },
   "fakeCall": {
@@ -693,7 +783,11 @@
   },
   "homeBanners": {
     "meetupTitle": "Spotkanie trwa · {name}",
-    "missedCheckIn": "Pominięty check-in!",
+    "missedCheckIn": {
+      "man": "Przegapiłeś check-in!",
+      "woman": "Przegapiłaś check-in!",
+      "other": "Pominięty check-in!"
+    },
     "safetyOn": "Tryb bezpieczeństwa jest włączony.",
     "feedbackTitle": "Jak poszło spotkanie?",
     "feedbackSubtitle": "{name} – odpowiedź zobaczy tylko nasz zespół.",
@@ -735,7 +829,7 @@
     "sosHold": "SOS – naciśnij i przytrzymaj",
     "unlock": "Odblokuj",
     "sosSentTitle": "Alarm wysłany",
-    "sosSentBody": "{name} dostał(a) alert z twoją lokalizacją.",
+    "sosSentBody": "Zaufana osoba ({name}) dostała alert z twoją lokalizacją.",
     "sosSentBodyNoName": "Twoja zaufana osoba dostała alert z twoją lokalizacją.",
     "sosFailedTitle": "Nie udało się wysłać"
   },
@@ -793,5 +887,12 @@
       "signOut": "Wyloguj",
       "signOutOthers": "Wyloguj wszystkie inne urządzenia"
     }
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "search": "Kogo chcę widzieć",
+    "safety": "Bezpieczeństwo i konto",
+    "plan": "Subskrypcja",
+    "account": "Konto"
   }
 }
